@@ -1,7 +1,7 @@
 ---
 title : Edx - Large Language Models Application through Production (Module 3)
 notetype : feed
-date : 28-03-2024
+date : 27-03-2024
 ---
 
 # Module 3: Multi-stage Reasoning
