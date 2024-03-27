@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  jekyll:
+  lawd:
     external: false
 
 services:
@@ -9,10 +9,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: jekyll
+    container_name: lawd
     restart: always
     networks:
-      - jekyll
+      - lawd
     volumes:
       - ./_posts:/usr/src/app/_posts
       - ./_notes:/usr/src/app/_notes

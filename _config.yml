@@ -79,7 +79,7 @@ preferences:
   flashcards:
     enabled: false #Not supported in NotesGadern theme
   homepage: 
-    enabled: true ##If you need a homepage, change this to true and edit _includes/Homepage.html
+    enabled: false ##If you need a homepage, change this to true and edit _includes/Homepage.html
 
 encoding: utf-8
 
@@ -123,7 +123,7 @@ defaults:
       permalink: /posts/:title
       content-type: post
   - scope:
-      path: "/notes"
+      path: ""
       type: notes
     values:
       layout: Post

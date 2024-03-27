@@ -1,10 +1,15 @@
 ---
-title : 
-notetype : [Edx] Large Language Models: Application through Production (Module: 3)
-date : 16-03-2022
+title : Edx - Large Language Models Application through Production (Module 3)
+notetype : feed
+date : 28-03-2024
 ---
 
 # Module 3: Multi-stage Reasoning
+
+## Summary
+- LLM Chains ช่วยทำให้เราสามารถสร้าง workflow ของ LLM ได้
+- LangChain เป็น Tools ที่มีตัวเชื่อมกับ LLM หลายๆเจ้าแล้ว + และสามารถใส่ Tools อื่นๆเข้าไปได้เช่น Qdrant
+- LLM Agents ช่วยแก้โจทย์ต่างๆโดย วางแผน แล้ว ทำงานด้วย Tools ที่มี
 
 ## 1. Prompt Engineering
 ### Note
@@ -39,6 +44,23 @@ Additionally, it underscores the importance of well-trained LLMs capable of gene
 - เพื่อที่จะแก้ปัญหาตาม Task ใดๆจะต้องมีส่วนประกอบ 2 ส่วนคือ
     - LLM = Reasoning/Decision (Brain)
     - Set of tools ที่จะใช้สำหรับแก้ปัญหา (เช่น search web / save memory)
+- LLM Plugins ส่วนเสริมของตัว LLM หรือก็คือ set of tools ต่างๆ เช่น support text, image, audio, video, ...
+- Auto-GPT เหมือนเป็นการ self prompt ตัวเองทำหน้าที่เหมือนเป็น Agents ที่ไปสั่ง ChatGPT อีกที เช่นสั่งให้หาเมนูอาหารมา แต่แทนที่จะไปหามาแค่ menu แต่เป็นการไปจัดทำมาเป็น ไฟล์ + รูป ใส่เอาไว้ให้เลย พร้อทนำไปใช้
+    - ทำงานอัตโนมัติได้เอง (แค่ set goal แล้วให้มันหาวิธีทำเอง)
+    - ทำงานเร็ว ผิดพลาดน้อย
+    - แต่อาจจะเปลือง token ได้
+- Guide + Paid
+    - ChatGPT Plugins
+    - Dust.tt
+    - Al21
+- UnGuide + Paid
+    - HuggingGPT/Jarvis
+- Guide + OpenSource
+    - LangChain
+    - Hugging Face Transformers Agents
+- UnGuide + OpenSource
+    - BabyAGI
+    - AutoGPT
 
 ### ChatGPT 3.5
 ```
@@ -48,3 +70,4 @@ The transcript discusses creating prompt templates for tasks like summarization 
 
 Additionally, it underscores the importance of well-trained LLMs capable of generating code snippets from natural language, allowing them to act as central reasoning tools with access to resources like search engines and email clients. Ultimately, the transcript highlights the potential of LLMs and LLM chains to drive complex and innovative applications across various domains.
 ```
+
