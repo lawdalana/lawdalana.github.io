@@ -2732,7 +2732,7 @@ a.navbar-item,
     width: 40%; }
   .columns.is-mobile > .column.is-three-fifths {
     flex: none;
-    width: 60%; }
+    width: 0%; }
   .columns.is-mobile > .column.is-four-fifths {
     flex: none;
     width: 80%; }
@@ -3196,7 +3196,7 @@ a.navbar-item,
       width: 40%; }
     .column.is-three-fifths-desktop {
       flex: none;
-      width: 60%; }
+      width: 80%; }
     .column.is-four-fifths-desktop {
       flex: none;
       width: 80%; }
@@ -3312,7 +3312,7 @@ a.navbar-item,
       width: 40%; }
     .column.is-three-fifths-widescreen {
       flex: none;
-      width: 60%; }
+      width: 80%; }
     .column.is-four-fifths-widescreen {
       flex: none;
       width: 80%; }
@@ -3428,7 +3428,7 @@ a.navbar-item,
       width: 40%; }
     .column.is-three-fifths-fullhd {
       flex: none;
-      width: 60%; }
+      width: 80%; }
     .column.is-four-fifths-fullhd {
       flex: none;
       width: 80%; }
@@ -3887,7 +3887,7 @@ a.navbar-item,
 @media screen and (min-width: 769px), print {
   .section.is-note .column.is-primary-content,
     .note-page-section {
-      padding: 3rem 8rem; } 
+      padding: 2rem 2rem; } 
   .note-cards .content {
     width: 88%; }
     }

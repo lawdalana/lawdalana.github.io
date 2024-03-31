@@ -1,7 +1,7 @@
 ---
-title : Edx - LLM Application through Production (Module 3)
+title : Edx - LLM Application through Production (Module 4)
 notetype : feed
-date : 27-03-2024
+date : 30-03-2024
 ---
 
 # Module 3: Multi-stage Reasoning
@@ -19,8 +19,6 @@ date : 27-03-2024
     - input
     - output format 
 
-![example_code_prompt](/assets/img/edx/llm/edx_llm_m3_promt.png)
-
 ### ChatGPT 3.5
 ```
 The video discusses the importance of well-written prompts in eliciting good responses from large language models (LLMs). A systematic approach to prompt engineering is emphasized to ensure optimal performance. The process involves creating prompt templates and using them to guide the LLM in generating summaries of articles, with a focus on emotive phrases. The summary prompt template is constructed step by step, including task description and input variables. The generated summaries can then be used as input for sentiment analysis. The video introduces the concept of chaining LLMs, where the output of one model serves as input for another, paving the way for further exploration into LLM chains in subsequent videos.
@@ -31,10 +29,8 @@ The video discusses the importance of well-written prompts in eliciting good res
 - Exmaple: Article -> Summarise Article (LLM) -> Classify sentiment of article (LLM) -> Sentiment of Article
 - เราสามารถเลือก LLM Model ในแต่ละส่วนได้ (เลือก model ที่เหมาะกับงาน)
 - LangChain คือ Tool ที่ช่วยให้ทำงานง่ายขึ้นในการ Chain LLM
-- บางงานเราต้องทำการ evaluation tool for correctness. เช่น Math
+- บางงานเราต้องทำการ evaluation tool for correctness. และต้อง
 
-![example_chain](/assets/img/edx/llm/edx_llm_m3_chain.png)
-![example_code_chain](/assets/img/edx/llm/edx_llm_m3_chain2.png)
 ### ChatGPT 3.5
 ```
 The video introduces LLM chains, a concept where multiple large language models (LLMs) are interconnected with various tools, popularized by the LangChain library in 2022. LangChain facilitates the integration of LLMs and tools, enabling diverse applications.
@@ -45,13 +41,9 @@ Additionally, it underscores the importance of well-trained LLMs capable of gene
 ```
 ## 3.Agents
 - Agents are LLM-based systems that execute the ReadsonAction loop.
-    - ![llm_agent](/assets/img/edx/llm/edx_llm_m3_agent.png)
-    - ![llm_agent2](/assets/img/edx/llm/edx_llm_m3_agent3.png)
 - เพื่อที่จะแก้ปัญหาตาม Task ใดๆจะต้องมีส่วนประกอบ 2 ส่วนคือ
     - LLM = Reasoning/Decision (Brain)
     - Set of tools ที่จะใช้สำหรับแก้ปัญหา (เช่น search web / save memory)
-    - ![Green=List to do; Red=Action to do; Yellow=Observation](/assets/img/edx/llm/edx_llm_m3_agent2.png)
-
 - LLM Plugins ส่วนเสริมของตัว LLM หรือก็คือ set of tools ต่างๆ เช่น support text, image, audio, video, ...
 - Auto-GPT เหมือนเป็นการ self prompt ตัวเองทำหน้าที่เหมือนเป็น Agents ที่ไปสั่ง ChatGPT อีกที เช่นสั่งให้หาเมนูอาหารมา แต่แทนที่จะไปหามาแค่ menu แต่เป็นการไปจัดทำมาเป็น ไฟล์ + รูป ใส่เอาไว้ให้เลย พร้อทนำไปใช้
     - ทำงานอัตโนมัติได้เอง (แค่ set goal แล้วให้มันหาวิธีทำเอง)
@@ -69,8 +61,6 @@ Additionally, it underscores the importance of well-trained LLMs capable of gene
 - UnGuide + OpenSource
     - BabyAGI
     - AutoGPT
-
-![Green=List to do; Red=Action to do; Yellow=Observation](/assets/img/edx/llm/edx_llm_m3_agent4.png)
 
 ### ChatGPT 3.5
 ```
