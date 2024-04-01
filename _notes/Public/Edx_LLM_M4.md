@@ -22,7 +22,7 @@ date : 30-03-2024
 - มี Tools ต่างๆถูกสร้างขึ้นเพื่อช่วยในการพัฒนา Trining/Fine-Tuning process
 - การ Evaluating model นั้นสำคัญ
     - Generic evaluation tasks นั้นเหมาะกับทุก model
-    - Specifiv evalution tasks นั้นเกี่ยวข้องกับ LLM Focus
+    - Specific evalution tasks นั้นเกี่ยวข้องกับ LLM Focus
 
 ![flow_develop](/assets/img/edx/llm/edx_llm_m4_apply.png)
 
@@ -51,7 +51,7 @@ The transcript explores using few-shot learning as a solution to a problem. It o
 
 ## 3.Fine-Tuning: Instruction-following LLMs
 - ถ้าเรามี Premade example เราสามารถทำท่าคล้ายๆกับ Few-shot Learning ได้เลย
-- แต่ถ้าเราไม่มี Premade exmaple เราสามารถ follow ตาม instuction ของ model ได้เลบ
+- แต่ถ้าเราไม่มี Premade exmaple เราสามารถ follow ตาม instuction ของ model ได้เลย
 - ข้อดี
     - ไม่ได้ต้องการ Data เหมือน Few-shot หรือจะเรียกวิธีนี้ว่า zero-shot learning
     - Performance ขึ้นกับ model ที่เอามา Train ว่าเหมาะรึเปล่า
@@ -96,7 +96,7 @@ This section explores utilizing a proprietary or LLM (Large Language Model) as a
 - ข้อเสีย
     - ต้องใช้เวลาและเงิน จำนวนมากในการ Train
     - ต้องใช้ Data จำนวนมาก
-    - คนที่ทำต้องมี skill experise ใน LLM
+    - คนที่ทำต้องมี skill expertise ใน LLM
 - เราสามาร fine-tuning ขึ้นกับ data ที่เรามีโดยสามารถทำได้โดย
     - Self-instuction (Alpaca/Dolly V1 ใช้ LLM ในการช่วยสร้าง data set โดยการ augmentation)
     - High-quality fine-tune (Dolly V2 ถ้ามี Data ดีอยู่แล้วก็สามารถ fine-tuning ได้เลย)
@@ -141,7 +141,6 @@ Dolly, introduced in 2023, revolutionized large language modeling by focusing on
 ![dolly](/assets/img/edx/llm/edx_llm_m4_perplexity.png)
 > [Perplexity คืออะไร](https://medium.com/@gunanini784/%E0%B8%A7%E0%B8%B4%E0%B8%96%E0%B8%B5%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%82%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B8%A5-cf98823a1a02) วิธีง่ายๆในการประเมินประสิทธิภาพของโมเดล คือ ประเมินว่าผลลัพท์ที่ได้ออกมานั้นทำให้เราประหลาดใจมากเพียงใด ถ้าทำให้เรารู้สึกประหลาดใจหรือต่างจากที่เราคิดไว้มากเท่าใด ก็เท่ากับว่าค่า perplexity นั้นก็จะสูงตามไปด้วย จึงพูดได้ว่าค่า perplexity และ ความรู้สึกประหลาดใจ มีความสัมพันธ์เป็นสัดส่วนเชิงเส้นต่อกัน (linearly proportional)
 โดยตามทฤษฎีแล้วถ้าค่า k เพิ่มขึ้น ค่า Perplexity ก็จะน้อยลง และถ้าพบว่าค่า Perplexity “ต่ำ” มากเท่าไร ก็หมายความว่าโมเดลนั้นมีประสิทธิภาพดีมากเท่านั้น 
-- 
 
 ### ChatGPT 3.5
 ```
@@ -208,8 +207,8 @@ Task-specific evaluation metrics are essential for assessing language model perf
     - ใช้ LLM มาทำการช่วยให้คะแนนตัว Final Answer
 - ขั้นตอนการทำ Online Evaluation
     - เก็บ Feedback จาก User ทุกครั้งที่มีการเรียก
-    - Direct Feeback (Thumbs up/Thumbs down) explicit data
-    - Indirect Feedback (clicked on link, did not click) implicit data
+        - Direct Feeback (Thumbs up/Thumbs down) explicit data
+        - Indirect Feedback (clicked on link, did not click) implicit data
     - Track Feedback overtime
 
 
