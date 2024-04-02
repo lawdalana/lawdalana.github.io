@@ -133,10 +133,10 @@ Dolly, introduced in 2023, revolutionized large language modeling by focusing on
 - Models LLM ที่ดีควรจะมี Accuracy สูงแต่ Perplexity ต่ำ
     - Accuracy = คำต่อไปถูกหรือผิด
     - Perplexity = ตัวเลือกนั้นมั่นใจแค่ไหน
-- [[Perplexity]] ดีกว่า Accuracy แต่ยังไม่สามารถวัดคุณภาพของ result ได้อยู่ดี
+- Perplexity ดีกว่า Accuracy แต่ยังไม่สามารถวัดคุณภาพของ result ได้อยู่ดี
 - ดังนั้น Task อื่นๆจะใช้การวัดผลที่เหมาะกับงานนั้นๆเช่น 
-    - Translation - [[BLEU]]
-    - Summarization - [[ROUGE]]
+    - Translation - BLEU
+    - Summarization - ROUGE
 
 ![dolly](/assets/img/edx/llm/edx_llm_m4_perplexity.png)
 > [Perplexity คืออะไร](https://medium.com/@gunanini784/%E0%B8%A7%E0%B8%B4%E0%B8%96%E0%B8%B5%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%82%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B8%A5-cf98823a1a02) วิธีง่ายๆในการประเมินประสิทธิภาพของโมเดล คือ ประเมินว่าผลลัพท์ที่ได้ออกมานั้นทำให้เราประหลาดใจมากเพียงใด ถ้าทำให้เรารู้สึกประหลาดใจหรือต่างจากที่เราคิดไว้มากเท่าใด ก็เท่ากับว่าค่า perplexity นั้นก็จะสูงตามไปด้วย จึงพูดได้ว่าค่า perplexity และ ความรู้สึกประหลาดใจ มีความสัมพันธ์เป็นสัดส่วนเชิงเส้นต่อกัน (linearly proportional)
@@ -148,19 +148,19 @@ Fine-tuning large language models (LLMs) offers numerous applications, but evalu
 ```
 
 ## 8.Task-specific Evaluations
-- BiLingual Evaluation Understaudy ([[BLEU]]) for translation
+- BiLingual Evaluation Understudy (BLEU) for translation
     - unigram จะเป็นการเช็ต word ว่าเกิดขึ้นกี่ครั้ง เปรียบเทียบระหว่าง predict กับ Actual
     - bigram = เทียบ 2 คำต่อกัน, Trigram = เทียบ 3 คำต่อกัน
     - ค่ามาก = model translation ยิ่งดี
 
 ![dolly](/assets/img/edx/llm/edx_llm_m4_BLEU.png)
-- Recall-Oriented Understudy for Gisting Evaluation ([[ROUGE]]) for summarization
+- Recall-Oriented Understudy for Gisting Evaluation (ROUGE) for summarization
     - คล้ายกับการคำนวน BLEU Score แต่ของ ROUGE จะเป็นการคำนวน จำนวนคำที่ match / จำนวนคำที่มี
 
 ![dolly](/assets/img/edx/llm/edx_llm_m4_ROUGE.png)
 
 - แต่การวัด Score นั้นไม่ควรวัดเพียงแค่ Data ของเราเองแต่เราควรใช้ Data ของคนอื่นด้วย
-- Standard Question and Answering Dataset [[SQuAD]] Dataset คือ dataset ถามตอบที่ใช้กันทั่วไปในการ วัดผลเปรียบเทียบ Models LLM
+- Standard Question and Answering Dataset SQuAD Dataset คือ dataset ถามตอบที่ใช้กันทั่วไปในการ วัดผลเปรียบเทียบ Models LLM
 - Evaluation Metrics at the cutting edge
     - Target application
         - NLP Task เช่จ Q&A, reading comprehension, and summarization
@@ -168,7 +168,7 @@ Fine-tuning large language models (LLMs) offers numerous applications, but evalu
         - ให้คนมาโหวต
     - Aligment
         - `Helpful` ทำได้ตาม instuction และตอบคำถามตามที่ User ต้องการ วัดผลได้โดยให้คน Vote
-        - `Honest` วัดผลโดยคนให้คะแนนเรื่อง [[hallucinations]] และใช้ TruthfulQA benchmark dataset
+        - `Honest` วัดผลโดยคนให้คะแนนเรื่อง hallucinations และใช้ TruthfulQA benchmark dataset
         - `Harmless` วัดผลโดยคนให้และระบบอัตโนมัติให้คะแนนความ toxicity (RealToxicityPrompts) หรือ ระบบวัด Bias(Winogender, CrowS-Pairs)
 
 ### Related link
