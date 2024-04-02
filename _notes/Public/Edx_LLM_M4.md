@@ -40,7 +40,7 @@ Module 4 delves into the adaptability of large language models, stressing the im
     - จ่ายแค่ค่า computation
 - ข้อเสียคือ 
     - Data ที่เอามาทำ few-shot ต้องดีและครอบคลุมทุกเป้าหมายที่วางไว้ 
-    - เนื่องจากเราไม่ได้ train มาทำให้ต้องใช้ model ใหญ่เพื่อให้ได้ performance ที่ดีกว่าแต่ model ใหญ้ไม่เหมาะกับ Computer ทั่วไป
+    - เนื่องจากเราไม่ได้ train มาทำให้ต้องใช้ model ใหญ่เพื่อให้ได้ performance ที่ดีกว่า แต่ model ใหญ้ไม่เหมาะกับ Computer ทั่วไป
 
 ![few-shot](/assets/img/edx/llm/edx_llm_m4_few-shot.png)
 
@@ -149,7 +149,7 @@ Fine-tuning large language models (LLMs) offers numerous applications, but evalu
 
 ## 8.Task-specific Evaluations
 - BiLingual Evaluation Understudy (BLEU) for translation
-    - unigram จะเป็นการเช็ต word ว่าเกิดขึ้นกี่ครั้ง เปรียบเทียบระหว่าง predict กับ Actual
+    - unigram จะเป็นการเช็ต word ว่าเกิดขึ้นกี่ครั้ง เปรียบเทียบระหว่าง Predict กับ Actual
     - bigram = เทียบ 2 คำต่อกัน, Trigram = เทียบ 3 คำต่อกัน
     - ค่ามาก = model translation ยิ่งดี
 
@@ -184,7 +184,7 @@ Task-specific evaluation metrics are essential for assessing language model perf
 - ปกติเราใช้ LLM Agent เป็นตัวช่วยในการตัดสินใจ (The reasoning engine)
 - ยกตัวอย่าง Application ที่ใช้กันก็คือ Retrieval Augmented Generation Chatbot (RAGs) โดยปกติเราจะใช้ LLM ในการช่วยในการตัดสินใจว่า Query ที่ใส่เข้าไปเกี่ยวข้องกันยังไง
 - คำถาม: ทำไมการวัดผลถึงยาก = ปัญหาแรกเลยคือ Data ไม่พอ
-    - โดยปกติแล้วจะไม่เริ่มต้นด้วย Dataset แต่จะเริ่มจาก Idea/Proplem แล้วสร้าง Application ขึ้นมาซึ่งถ้าเจาะจงมากก็จะไม่สามารถหา Dataset ตั้งต้นได้
+    - โดยปกติแล้วจะไม่เริ่มต้นด้วย Dataset แต่จะเริ่มจาก Idea/Problem แล้วสร้าง Application ขึ้นมา ซึ่งถ้าเจาะจงมากก็จะไม่สามารถหา Dataset ตั้งต้นได้
     - รวมถึงการที่เราไม่รู้ว่าเราควรรวบรวม Data หน้าตาแบบไหน เพราะมันไม่มี guide ในการรวบรวม Data
 
 ![dolly](/assets/img/edx/llm/edx_llm_m4_guest.png)
@@ -201,8 +201,8 @@ Task-specific evaluation metrics are essential for assessing language model perf
         - ใช้ LLM มาช่วยในการตัดสินว่า Final Answer นั้นตรงกับที่เรา Query รึเปล่า
         - รับ Feedback โดยตรงจาก User ทั้ง Direct/Indirect Feeback
 - ขั้นตอนการทำ Offline Evaluation
-    - สร้าง test dataset
-    - รัน test data ด้วย model LLM ของเราที่ fine-tuning แล้ว
+    - สร้าง Test dataset
+    - รัน Test data ด้วย model LLM ของเราที่ Fine-Tuning แล้ว
     - ตรวจสอบเบื้องต้นด้วยตา (not scalable)
     - ใช้ LLM มาทำการช่วยให้คะแนนตัว Final Answer
 - ขั้นตอนการทำ Online Evaluation
