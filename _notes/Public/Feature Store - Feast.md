@@ -27,7 +27,7 @@ date : 01-04-2024
     - ปกติ Feast จะเก็บเฉพาะ Data ที่ process แล้วเหมากับการเอาไปใช้ได้เลย โดยส่วมมาก Feast จะถูกต่อเข้ากับ upstream systems
     - Feast ถูกสร้างให้ push streaming feature เข้ามาแต่ไม่ได้ถูกออกแบบให้ไป pull จาก streaming source
     - Feast สามารถเชื่อม feature store กับ model version ได้แต่ไม่ได้มีความสามารถถึงขนาด capturing end-to-end lineage from raw data sources to model versions
-    - Feast สามารถเชื่อมต่อกับ  Great Expectations (Experiment platform) ได้แต่ไม่สามารถที่จะช่วยตรวจจับ หรือ แก้ไขปัญหา data drift / data quality ได้ (ควนไปตรวจจับที่ data pipeline)
+    - Feast สามารถเชื่อมต่อกับ  Great Expectations ได้แต่ไม่สามารถที่จะช่วยตรวจจับ หรือ แก้ไขปัญหา data drift / data quality ได้ (ควรไปตรวจจับที่ data pipeline)
 - [Use Cases](https://docs.feast.dev/#example-use-cases)
     - Personalizing online recommendations
     - Online fraud detection
