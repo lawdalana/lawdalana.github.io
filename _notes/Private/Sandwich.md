@@ -5,7 +5,7 @@ date : 19-04-2024
 ---
 
 ## Sandwich
-1. Sandwich Spam (6/10)
+1.Sandwich Spam (6/10)
 - รถชาติโอเค เหมือนเบคอนแต่ไม่กรอบเท่า
 - Next Improvement
     - ปิ้งขนมปังให้กรอบสักเล็กน้อย
