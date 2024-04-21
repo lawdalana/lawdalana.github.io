@@ -12,6 +12,7 @@ Softmax Function หรือ SoftArgMax Function หรือ Normalized Expone
 ข้อเสีย
 - เหมาะกับการใช้งานที่คาดหวัง Output ที่ถูกต้องอันเดียวเท่านั้น (ใกล้เคียง Max Function)
 - เนื่องจาก ตัวหารต้อง Sum รวมทั้งหมดทุก Item ทุกครั้ง จึงทำให้มีปัญหาเรื่อง Performance ถ้ามีจำนวน Item มาก ๆ เช่น Output เป็น 1 ใน 500,000 คำใน Dictionary ในงาน NLP
+
 Cr.Surapong Kanoktipsatharporn
 ```
 
