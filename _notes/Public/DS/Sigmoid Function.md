@@ -18,5 +18,20 @@ Cr.Surapong Kanoktipsatharporn
 ![Formula](/assets/img/Other/Sigmoid_Formula.png)
 ![Formula](/assets/img/Other/Sigmoid_Chart.webp)
 
+---
+
+# Sigmoid Loss Function
+- tf.nn.sigmoid_cross_entropy_with_logits
+- tf.nn.weighted_cross_entropy_with_logits
+- tf.losses.sigmoid_cross_entropy
+
+Sigmoid loss function is for binary classification. But tensorflow functions are more general and allow to do multi-label classification, when the classes are independent. In other words, `tf.nn.sigmoid_cross_entropy_with_logits` solves N binary classifications at once.
+
+The labels must be one-hot encoded or can contain soft class probabilities.
+
+tf.losses.sigmoid_cross_entropy in addition allows to set the in-batch weights, i.e. make some examples more important than others. tf.nn.weighted_cross_entropy_with_logits allows to set class weights (remember, the classification is binary), i.e. make positive errors larger than negative errors. This is useful when the training data is unbalanced.
+
 Resource
 - https://www.bualabs.com/archives/1261/what-is-activation-function-what-is-sigmoid-function-activation-function-ep-1/
+- https://stackoverflow.com/questions/47034888/how-to-choose-cross-entropy-loss-in-tensorflow
+
