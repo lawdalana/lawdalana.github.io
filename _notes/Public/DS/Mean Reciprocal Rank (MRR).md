@@ -1,5 +1,5 @@
 ---
-title : Mean Reciprocal Rank(MRR)
+title : Mean Reciprocal Rank (MRR)
 notetype : feed
 date : 22-04-2024
 ---
