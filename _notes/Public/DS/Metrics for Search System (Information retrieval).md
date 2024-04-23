@@ -170,3 +170,4 @@ Resource
 - https://nlp.stanford.edu/IR-book/pdf/08eval.pdf
 - https://amitness.com/2020/08/information-retrieval-evaluation/
 - https://seranking.com/blog/pagerank/#:~:text=PageRank%20is%20an%20algorithm%20for,a%20given%20web%20page%20had.
+- https://truedmp.atlassian.net/wiki/spaces/AI/pages/5002790082/Explore+Metrics+about+Search+System+Information+retrieval
