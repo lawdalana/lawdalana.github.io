@@ -1,5 +1,5 @@
 ---
-title : AI2041
+title : Book - AI2041
 notetype : feed
 date : 15-04-2024
 ---
