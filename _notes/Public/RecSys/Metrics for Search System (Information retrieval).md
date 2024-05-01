@@ -48,17 +48,17 @@ Top queries is noting the most common queries over a fixed amount of time. The t
 #### 1. Precision@k
 This metric quantifies how many items in the top-K results were relevant.
 
-![Precision](/assets/img/Metrix/precision.png)
+![Precision](/assets/img/Metrix/precision.avif)
 
 #### 2. Recall@k
 This metric gives how many actual relevant results were shown out of all actual relevant results for the query.
 
-![Recall](/assets/img/Metrix/recall.png)
+![Recall](/assets/img/Metrix/recall.avif)
 
 #### 3. F1@K
 This is a combined metric that incorporates both Precision@k and Recall@k by taking their harmonic mean.
 
-![F1](/assets/img/Metrix/f1.png)
+![F1](/assets/img/Metrix/f1.avif)
 
 ---
 
@@ -67,76 +67,76 @@ This is a combined metric that incorporates both Precision@k and Recall@k by tak
 #### 1. [[Mean Reciprocal Rank (MRR)]]
 This metric is useful when we want our system to return the best relevant item and want that item to be at a higher position.
 
-![MRR](/assets/img/Metrix/MRR.png)
+![MRR](/assets/img/Metrix/MRR.avif)
 
 
 #### 2. Average Precision(AP)
 Average Precision is a metric that evaluates whether all of the ground-truth relevant items selected by the model are ranked higher or not. Unlike MRR, it considers all the relevant items.
 - rel(k)rel(k) is an indicator function which is 1 when the item at rank K is relevant.
 - P(k)P(k) is the Precision@k metric
-![AP](/assets/img/Metrix/AP.png)
+![AP](/assets/img/Metrix/AP.avif)
 
 
 #### 3. Mean Average Precision(MAP)
 If we want to evaluate average precision across multiple queries, we can use the MAP. It is simply the mean of the average precision for all queries.
 
-![MAP](/assets/img/Metrix/MAP.png)
+![MAP](/assets/img/Metrix/MAP.avif)
 
 ---
 
 ### Graded Relevance
 We have a ranking model that gives us back 5-most relevant results for a certain query. The first item had a relevance score of 3 as per our ground-truth annotation, the second item has a relevance score of 2 and so on.
 
-![Graded Relevance](/assets/img/Metrix/grade_relevance.png)
+![Graded Relevance](/assets/img/Metrix/grade_relevance.avif)
 
 #### 1. Cumulative Gain (CG@k)
 This metric uses a simple idea to just sum up the relevance scores for top-K items. The total score is called cumulative gain.
 
-![CG](/assets/img/Metrix/CG.png)
+![CG](/assets/img/Metrix/CG.avif)
 
 `Problem: CG doesn’t take into account the order of the relevant items. So, even if we swap a less-relevant item to the first position, the CG@2 will be the same.`
 
-![CG](/assets/img/Metrix/CG2.png)
+![CG](/assets/img/Metrix/CG2.avif)
 
 
 #### 2. Discounted Cumulative Gain (DCG@k)
 The simple cumulative gain doesn’t take into account the position. But, we would normally want items with a high relevance score to be present at a better rank.
 
-![DCG](/assets/img/Metrix/DCG.png)
+![DCG](/assets/img/Metrix/DCG.avif)
 
 Using this penalty, we can now calculate the discounted cumulative gain simply by taking the sum of the relevance score normalized by the penalty.
 
-![DCG](/assets/img/Metrix/DCG2.png)
+![DCG](/assets/img/Metrix/DCG2.avif)
 
 ##### Example
 
-![Example DCG](/assets/img/Metrix/DCG3.png)
+![Example DCG](/assets/img/Metrix/DCG3.avif)
 
 There is also an alternative formulation for DCG@K that gives more penalty if relevant items are ranked lower. `This formulation is preferred more in industry.`
 
-![DCG Formula](/assets/img/Metrix/DCG4.png)
+![DCG Formula](/assets/img/Metrix/DCG4.avif)
 
 While DCG solves the issues with cumulative gain, it has a limitation. Suppose we a query Q1 with 3 results and query Q2 with 5 results. Then the query with 5 results Q2 will have a larger overall DCG score. But we can’t say that query 2 was better than query 1.
 
-![Example DCG](/assets/img/Metrix/DCG5.png)
+![Example DCG](/assets/img/Metrix/DCG5.avif)
 
 #### 3. Normalized Discounted Cumulative Gain (NDCG@k)
 To allow a comparison of DCG across queries, we can use NDCG that normalizes the DCG values using the ideal order of the relevant items.
 
-![NDCG](/assets/img/Metrix/NDCG.png)
+![NDCG](/assets/img/Metrix/NDCG.avif)
 
 ##### Example
 
 ###### Actual Relevance
-![NDCG Actual Relevance](/assets/img/Metrix/NDCG2.png)
+![NDCG Actual Relevance](/assets/img/Metrix/NDCG2.avif)
 
 ###### Ideally Relevance
 we would have wanted the items to be sorted in descending order of relevance scores.
 
-![NDCG Ideally Relevance](/assets/img/Metrix/NDCG3.png)
+![NDCG Ideally Relevance](/assets/img/Metrix/NDCG3.avif)
 
 ###### Result
-![NDCG Ideally Relevance](/assets/img/Metrix/NDCG4.png)
+![NDCG Ideally Relevance](/assets/img/Metrix/NDCG4.avif)
 
 ---
 

@@ -15,8 +15,8 @@ Sigmoid Function เป็นฟังก์ชันที่เป็น Curve
 Cr.Surapong Kanoktipsatharporn
 ```
 
-![Formula](/assets/img/Other/Sigmoid_Formula.png)
-![Formula](/assets/img/Other/Sigmoid_Chart.webp)
+![Formula](/assets/img/Other/Sigmoid_Formula.avif)
+![Formula](/assets/img/Other/Sigmoid_Chart.avif)
 
 ---
 

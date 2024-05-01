@@ -14,7 +14,7 @@ virus 	|viruses, virii, viri| 	viruses| 	1 |	1
 
 MRR = (1/3 + 1/2 + 1) / 3 = 11/18 = ~0.61
 
-![Formula](/assets/img/Other/MRR.jpeg)
+![Formula](/assets/img/Other/MRR.avif)
 
 ---
 Resource

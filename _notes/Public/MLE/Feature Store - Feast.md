@@ -6,7 +6,7 @@ date : 01-04-2024
 
 # Summary
 
-![overview](/assets/img/edx/feast/feast_0.png)
+![overview](/assets/img/edx/feast/feast_0.avif)
 
 - [Feast](https://docs.feast.dev/) ย่อมาจาก (**Fea**ture **St**ore)
 - [Feast](https://docs.feast.dev/#what-is-feast)  ช่วยทำให้
@@ -39,4 +39,4 @@ date : 01-04-2024
 ## [Architecture](https://docs.feast.dev/getting-started/architecture-and-components/overview)
 
 
-![Architecture](/assets/img/edx/feast/feast_architecture_0.png)
+![Architecture](/assets/img/edx/feast/feast_architecture_0.avif)

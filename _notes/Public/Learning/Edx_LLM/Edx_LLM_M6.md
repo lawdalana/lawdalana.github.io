@@ -25,7 +25,7 @@ date : 30-04-2024
     2. Staging เป็นส่วน unit tests, integration tests
     3. Production เป็นส่วน Model Training, Serving , Model Evaluate, Monitoring (MLFlow)
 
-![MLOps](/assets/img/edx/llm/edx_llm_m6_MLOps.png)
+![MLOps](/assets/img/edx/llm/edx_llm_m6_MLOps.avif)
 
 ### ChatGPT 3.5
 ```
@@ -37,22 +37,22 @@ LLMOps, or Legal and Ethical MLOps, adds another layer of complexity to traditio
 - มีส่วนที่เปลี่ยนแปลงจาก MLOps ดังเดิม
 - Model จะกลายเป็น LLM หรือ Pipieline เช่น LangChain หรือเป็นการเรียก service เช่น Vector Database
 - Model Training จะกลายเป็น Model fine-tuning, Pipeline tunging, Prompt engineering และยังต้องใช้ Cost มากขึ้นเพื่อจัดการกับปัญหา Performance
-![LLMOps Model](/assets/img/edx/llm/edx_llm_m6_LLMOps01.png)
-![LLMOps Model](/assets/img/edx/llm/edx_llm_m6_LLMOps05.png)
+![LLMOps Model](/assets/img/edx/llm/edx_llm_m6_LLMOps01.avif)
+![LLMOps Model](/assets/img/edx/llm/edx_llm_m6_LLMOps05.avif)
 - User feedback จะเป็น Data ที่สำคัญที่อาจจะรวมกันระหว่าง internal และ external
 - Monitoring จะมี human feedback loop เข้ามาเสริมด้วย
-![LLMOps FeedBack](/assets/img/edx/llm/edx_llm_m6_LLMOps02.png)
+![LLMOps FeedBack](/assets/img/edx/llm/edx_llm_m6_LLMOps02.avif)
 - Automate testing จะยากขึ้นและกลายเป็นงาน human evaluation ที่ต้องให้คนจำนวนน้อยๆ มาทดลองใช้ก่อน เพื่อเพิ่มความมั่นใจก่อนจะปล่อยไปให้ users ใช้
-![Automate testing](/assets/img/edx/llm/edx_llm_m6_LLMOps03.png)
+![Automate testing](/assets/img/edx/llm/edx_llm_m6_LLMOps03.avif)
 - Production tools มีการเปลี่ยน
     - Vector Database
     - ใช้ CPU, GPU มากขึ้น
-![LLMOps Service](/assets/img/edx/llm/edx_llm_m6_LLMOps04.png)
+![LLMOps Service](/assets/img/edx/llm/edx_llm_m6_LLMOps04.avif)
 - Inference & Serving ก็จะมีปัญหาเรื่องของ Cost, Latency, Performance tradeoffs โดยเฉพาะถ้าเราใช้ 3rd-party LLM APIs
-![Serving](/assets/img/edx/llm/edx_llm_m6_LLMOps06.png)
+![Serving](/assets/img/edx/llm/edx_llm_m6_LLMOps06.avif)
 
 
-![Serving](/assets/img/edx/llm/edx_llm_m6_LLMOps07.png)
+![Serving](/assets/img/edx/llm/edx_llm_m6_LLMOps07.avif)
 
 ### ChatGPT 3.5
 ```
@@ -73,8 +73,8 @@ LLMOps, or Legal and Ethical MLOps, adapts the traditional MLOps architecture to
     - Template สร้างมาเพื่อ standardize prompt format ให้ตรงกับที่เราต้องการ Tools ที่ใช้เช่น LangChain, LlamaIndex
     - Automate แทนที่ Manual Prompt Engineering ด้วย Automated Tuning เช่น DSP (Demonstrate-Search-Predict-Framework)
 - Packaging models or pipeline for deployment พยายามส้ราง standard ในการ deploy model หลายๆแบบ เช่นการใช้ MLFlow มาช่วย
-![Packaging models](/assets/img/edx/llm/edx_llm_m6_LLMOps08.png)
-![MLFlow](/assets/img/edx/llm/edx_llm_m6_LLMOps10.png)
+![Packaging models](/assets/img/edx/llm/edx_llm_m6_LLMOps08.avif)
+![MLFlow](/assets/img/edx/llm/edx_llm_m6_LLMOps10.avif)
 - Scaling Out เพื่อรองรับกับ Data และ Model ขนาดใหญ่
     - Fine-Tunging and Training เช่น Tensorflow, PyTorch, DeepSpeed, Ray
     - Serving and inferences
@@ -97,7 +97,7 @@ LLMOps, or Legal and Ethical MLOps, adapts the traditional MLOps architecture to
 - Deploy model vs Deploy code เราต้องเลือกว่าจะเอาอะไรขึ้น prod บ้าง
 - Service architecture 
     - กรณีที่ใช้ Vector Database
-    ![Vector Database](/assets/img/edx/llm/edx_llm_m6_LLMOps11.png)
+    ![Vector Database](/assets/img/edx/llm/edx_llm_m6_LLMOps11.avif)
     - Complex model ด้านหลังมีสิ่งที่ต้องระวัง
         - เราไม่สามารถควบคุม Models behavior ได้มากนัก
         - เราอาจจะต้องทำ Model version ไว้ด้วย แต่ถ้าใช้ API 3rd-party บางรายก็มีทำ support ไว้อยู่แล้ว

@@ -7,21 +7,21 @@ date : 30-04-2024
 # Comparison Table
 
 ## Spec
-![LLM Spec Table](/assets/img/edx/llm/comparison_table_1.png)
+![LLM Spec Table](/assets/img/edx/llm/comparison_table_1.avif)
 
 ## Model Evaluate
-![Model Comparison](/assets/img/edx/llm/comparison_table_0.png)
+![Model Comparison](/assets/img/edx/llm/comparison_table_0.avif)
 
 ## Cost
-![Model Cost](/assets/img/edx/llm/comparison_table_2.png)
+![Model Cost](/assets/img/edx/llm/comparison_table_2.avif)
 
 ## GPU (LLama 2)
 
 ### Speed
-![GPU Speed](/assets/img/edx/llm/LLM_GPU-Benchmarks01.png)
+![GPU Speed](/assets/img/edx/llm/LLM_GPU-Benchmarks01.avif)
 
 ### Memory
-![GPU Memory](/assets/img/edx/llm/LLM_GPU-Benchmarks02.png)
+![GPU Memory](/assets/img/edx/llm/LLM_GPU-Benchmarks02.avif)
 
 
 # Reference

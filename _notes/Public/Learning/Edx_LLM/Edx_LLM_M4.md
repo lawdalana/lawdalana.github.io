@@ -24,7 +24,7 @@ date : 30-03-2024
     - Generic evaluation tasks นั้นเหมาะกับทุก model
     - Specific evalution tasks นั้นเกี่ยวข้องกับ LLM Focus
 
-![flow_develop](/assets/img/edx/llm/edx_llm_m4_apply.png)
+![flow_develop](/assets/img/edx/llm/edx_llm_m4_apply.avif)
 
 ### ChatGPT 3.5
 ```
@@ -42,7 +42,7 @@ Module 4 delves into the adaptability of large language models, stressing the im
     - Data ที่เอามาทำ few-shot ต้องดีและครอบคลุมทุกเป้าหมายที่วางไว้ 
     - เนื่องจากเราไม่ได้ train มาทำให้ต้องใช้ model ใหญ่เพื่อให้ได้ performance ที่ดีกว่า แต่ model ใหญ้ไม่เหมาะกับ Computer ทั่วไป
 
-![few-shot](/assets/img/edx/llm/edx_llm_m4_few-shot.png)
+![few-shot](/assets/img/edx/llm/edx_llm_m4_few-shot.avif)
 
 ### ChatGPT 3.5
 ```
@@ -60,7 +60,7 @@ The transcript explores using few-shot learning as a solution to a problem. It o
     - ถ้า data ที่ใช้ train model ไม่เหมือนกับ Dataset ของเราจะทำให้ performance แย่ไปเลย
     - เนื่องจากเราไม่ได้ train มาทำให้ต้องใช้ model ใหญ่เพื่อให้ได้ performance ที่ดีกว่าแต่ model ใหญ้ไม่เหมาะกับ Computer ทั่วไป
 
-![zero_shot](/assets/img/edx/llm/edx_llm_m4_instruction_follow.png)
+![zero_shot](/assets/img/edx/llm/edx_llm_m4_instruction_follow.avif)
 
 ### ChatGPT 3.5
 ```
@@ -77,7 +77,7 @@ This segment explores another approach to utilizing open-sourced large language 
     - Data privacy / Security
     - Vendor lock-in
 
-![LLMaaS](/assets/img/edx/llm/edx_llm_m4_LLMaaS.png)
+![LLMaaS](/assets/img/edx/llm/edx_llm_m4_LLMaaS.avif)
 
 ### ChatGPT 3.5
 ```
@@ -101,7 +101,7 @@ This section explores utilizing a proprietary or LLM (Large Language Model) as a
     - Self-instuction (Alpaca/Dolly V1 ใช้ LLM ในการช่วยสร้าง data set โดยการ augmentation)
     - High-quality fine-tune (Dolly V2 ถ้ามี Data ดีอยู่แล้วก็สามารถ fine-tuning ได้เลย)
 
-![LLM DIY](/assets/img/edx/llm/edx_llm_m4_LLM_DIY.png)
+![LLM DIY](/assets/img/edx/llm/edx_llm_m4_LLM_DIY.avif)
 
 ### ChatGPT 3.5
 ```
@@ -109,14 +109,14 @@ If existing LLM offerings don't meet our requirements, the next step is to build
 ```
 
 ## 6.Dolly
-![dolly](/assets/img/edx/llm/edx_llm_m4_dolly.png)
+![dolly](/assets/img/edx/llm/edx_llm_m4_dolly.avif)
 
 - [Dolly](https://huggingface.co/databricks/dolly-v2-12b) เป็น instuction-following LLM ที่มี parameter ขนาด 12B
     - เริ่มจากนำโมเดลจาก Pythia 12 billion มา Train โดยใช้ [Pile Dataset](https://pile.eleuther.ai/)
     - หลังจากนั้นก็ Fine-tuning โดยใช้ Databrick-dolly-15k dataset (Data high quality intellectual tasks produced by the employees of Databricks)
 - เป็น Project ที่ insprired มาจาก Stanford Alpaca Project แต่ไม่มีปัญหาเรื่อง commercial เหมือน Alpaca
 
-![dolly](/assets/img/edx/llm/edx_llm_m4_alpaca.png)
+![dolly](/assets/img/edx/llm/edx_llm_m4_alpaca.avif)
 
 - Future of Dolly
     - 2018 - 2023 สร้าง transformer models ที่ใหญ่จน parameter แตะ 1 Trillion.
@@ -138,7 +138,7 @@ Dolly, introduced in 2023, revolutionized large language modeling by focusing on
     - Translation - BLEU
     - Summarization - ROUGE
 
-![dolly](/assets/img/edx/llm/edx_llm_m4_perplexity.png)
+![dolly](/assets/img/edx/llm/edx_llm_m4_perplexity.avif)
 > [Perplexity คืออะไร](https://medium.com/@gunanini784/%E0%B8%A7%E0%B8%B4%E0%B8%96%E0%B8%B5%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%82%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B8%A5-cf98823a1a02) วิธีง่ายๆในการประเมินประสิทธิภาพของโมเดล คือ ประเมินว่าผลลัพท์ที่ได้ออกมานั้นทำให้เราประหลาดใจมากเพียงใด ถ้าทำให้เรารู้สึกประหลาดใจหรือต่างจากที่เราคิดไว้มากเท่าใด ก็เท่ากับว่าค่า perplexity นั้นก็จะสูงตามไปด้วย จึงพูดได้ว่าค่า perplexity และ ความรู้สึกประหลาดใจ มีความสัมพันธ์เป็นสัดส่วนเชิงเส้นต่อกัน (linearly proportional)
 โดยตามทฤษฎีแล้วถ้าค่า k เพิ่มขึ้น ค่า Perplexity ก็จะน้อยลง และถ้าพบว่าค่า Perplexity “ต่ำ” มากเท่าไร ก็หมายความว่าโมเดลนั้นมีประสิทธิภาพดีมากเท่านั้น 
 
@@ -153,11 +153,11 @@ Fine-tuning large language models (LLMs) offers numerous applications, but evalu
     - bigram = เทียบ 2 คำต่อกัน, Trigram = เทียบ 3 คำต่อกัน
     - ค่ามาก = model translation ยิ่งดี
 
-![dolly](/assets/img/edx/llm/edx_llm_m4_BLEU.png)
+![dolly](/assets/img/edx/llm/edx_llm_m4_BLEU.avif)
 - Recall-Oriented Understudy for Gisting Evaluation (ROUGE) for summarization
     - คล้ายกับการคำนวน BLEU Score แต่ของ ROUGE จะเป็นการคำนวน จำนวนคำที่ match / จำนวนคำที่มี
 
-![dolly](/assets/img/edx/llm/edx_llm_m4_ROUGE.png)
+![dolly](/assets/img/edx/llm/edx_llm_m4_ROUGE.avif)
 
 - แต่การวัด Score นั้นไม่ควรวัดเพียงแค่ Data ของเราเองแต่เราควรใช้ Data ของคนอื่นด้วย
 - Standard Question and Answering Dataset SQuAD Dataset คือ dataset ถามตอบที่ใช้กันทั่วไปในการ วัดผลเปรียบเทียบ Models LLM
@@ -187,14 +187,14 @@ Task-specific evaluation metrics are essential for assessing language model perf
     - โดยปกติแล้วจะไม่เริ่มต้นด้วย Dataset แต่จะเริ่มจาก Idea/Problem แล้วสร้าง Application ขึ้นมา ซึ่งถ้าเจาะจงมากก็จะไม่สามารถหา Dataset ตั้งต้นได้
     - รวมถึงการที่เราไม่รู้ว่าเราควรรวบรวม Data หน้าตาแบบไหน เพราะมันไม่มี guide ในการรวบรวม Data
 
-![dolly](/assets/img/edx/llm/edx_llm_m4_guest.png)
+![dolly](/assets/img/edx/llm/edx_llm_m4_guest.avif)
 - คำถาม: ทำไมการวัดผลถึงยาก = ปัญหาต่อมาเลยคือ Metrics ที่ใช้วัดไม่เพียงพอ
     - Metrics ที่ใช้วัด Task ML ตัวไปเช่น Perplexity, BLEU, ROUGE, SQuAD ทำได้ไม่ดีนักเนื่องจาก Chatbot จะตอบคำถามเป็น Freeform Text ทำให้วัดได้ยาก
 - Potential Solution - Best Practices 
     - Lack of data
         - สร้าง test Dataset โดยใช้ LLM เป็นคนช่วย Generate
         - โดยที่เราแบ่ง Document ออกเป็นแต่ละส่วน และโยนแต่ละส่วนเพื่อสร้าง Q&A Pairs
-        - ![dolly](/assets/img/edx/llm/edx_llm_m4_lackdata.png)
+        - ![dolly](/assets/img/edx/llm/edx_llm_m4_lackdata.avif)
         - หรือถ้าเรามี Application ที่รันอยู่ในขนาดนั้นก็ควรเก็บ Input และ Output มาพัฒนาตลอดเวลา
     - Lack of Metrics
         - logging ทุก output ของแต่ละ Process จะช่วยทำให้ตรวจสอบได้ง่าย

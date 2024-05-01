@@ -19,7 +19,7 @@ date : 27-03-2024
     - input
     - output format 
 
-![example_code_prompt](/assets/img/edx/llm/edx_llm_m3_promt.png)
+![example_code_prompt](/assets/img/edx/llm/edx_llm_m3_promt.avif)
 
 ### ChatGPT 3.5
 ```
@@ -33,8 +33,8 @@ The video discusses the importance of well-written prompts in eliciting good res
 - LangChain คือ Tool ที่ช่วยให้ทำงานง่ายขึ้นในการ Chain LLM
 - บางงานเราต้องทำการ evaluation tool for correctness. เช่น Math
 
-![example_chain](/assets/img/edx/llm/edx_llm_m3_chain.png)
-![example_code_chain](/assets/img/edx/llm/edx_llm_m3_chain2.png)
+![example_chain](/assets/img/edx/llm/edx_llm_m3_chain.avif)
+![example_code_chain](/assets/img/edx/llm/edx_llm_m3_chain2.avif)
 ### ChatGPT 3.5
 ```
 The video introduces LLM chains, a concept where multiple large language models (LLMs) are interconnected with various tools, popularized by the LangChain library in 2022. LangChain facilitates the integration of LLMs and tools, enabling diverse applications.
@@ -45,12 +45,12 @@ Additionally, it underscores the importance of well-trained LLMs capable of gene
 ```
 ## 3.Agents
 - Agents are LLM-based systems that execute the ReadsonAction loop.
-    - ![llm_agent](/assets/img/edx/llm/edx_llm_m3_agent.png)
-    - ![llm_agent2](/assets/img/edx/llm/edx_llm_m3_agent3.png)
+    - ![llm_agent](/assets/img/edx/llm/edx_llm_m3_agent.avif)
+    - ![llm_agent2](/assets/img/edx/llm/edx_llm_m3_agent3.avif)
 - เพื่อที่จะแก้ปัญหาตาม Task ใดๆจะต้องมีส่วนประกอบ 2 ส่วนคือ
     - LLM = Reasoning/Decision (Brain)
     - Set of tools ที่จะใช้สำหรับแก้ปัญหา (เช่น search web / save memory)
-    - ![Green=List to do; Red=Action to do; Yellow=Observation](/assets/img/edx/llm/edx_llm_m3_agent2.png)
+    - ![Green=List to do; Red=Action to do; Yellow=Observation](/assets/img/edx/llm/edx_llm_m3_agent2.avif)
 
 - LLM Plugins ส่วนเสริมของตัว LLM หรือก็คือ set of tools ต่างๆ เช่น support text, image, audio, video, ...
 - Auto-GPT เหมือนเป็นการ self prompt ตัวเองทำหน้าที่เหมือนเป็น Agents ที่ไปสั่ง ChatGPT อีกที เช่นสั่งให้หาเมนูอาหารมา แต่แทนที่จะไปหามาแค่ menu แต่เป็นการไปจัดทำมาเป็น ไฟล์ + รูป ใส่เอาไว้ให้เลย พร้อทนำไปใช้
@@ -70,7 +70,7 @@ Additionally, it underscores the importance of well-trained LLMs capable of gene
     - BabyAGI
     - AutoGPT
 
-![Green=List to do; Red=Action to do; Yellow=Observation](/assets/img/edx/llm/edx_llm_m3_agent4.png)
+![Green=List to do; Red=Action to do; Yellow=Observation](/assets/img/edx/llm/edx_llm_m3_agent4.avif)
 
 ### ChatGPT 3.5
 ```

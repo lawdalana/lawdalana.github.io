@@ -155,23 +155,23 @@ Currently, what I do is, I upload images and attachments manually to `/assets/im
 ```
 From Assets/Img
 
-![Alt Text](/assets/img/1-how-to.png "Title Here")
+![Alt Text](/assets/img/1-how-to.avif "Title Here")
 ```
 to embed images. This is not effective, but works. Also, public URLs work
 
 ```
 From URL 
 
-![](https://jekyllrb.com/img/logo-2x.png)
+![](https://jekyllrb.com/img/logo-2x.avif)
 ```
 
 From Assets/Img
 
-![Alt Text](/assets/img/1-how-to.png "Title Here")
+![Alt Text](/assets/img/1-how-to.avif "Title Here")
 
 From URL 
 
-![](https://jekyllrb.com/img/logo-2x.png)
+![](https://jekyllrb.com/img/logo-2x.avif)
 
 
 {:#syntax}

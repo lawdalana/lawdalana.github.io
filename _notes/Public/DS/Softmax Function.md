@@ -16,8 +16,8 @@ Softmax Function หรือ SoftArgMax Function หรือ Normalized Expone
 Cr.Surapong Kanoktipsatharporn
 ```
 
-![Formula](/assets/img/transformer/transformer_4.webp)
-![Example](/assets/img/transformer/transformer_5.webp)
+![Formula](/assets/img/transformer/transformer_4.avif)
+![Example](/assets/img/transformer/transformer_5.avif)
 
 Resource
 - https://www.bualabs.com/archives/1819/what-is-softmax-function-how-to-use-softmax-function-benefit-of-softmax/
