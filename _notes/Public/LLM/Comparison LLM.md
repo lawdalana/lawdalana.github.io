@@ -1,7 +1,7 @@
 ---
 title : Comparison LLM table
 notetype : feed
-date : 01-04-2024
+date : 30-04-2024
 ---
 
 # Comparison Table
@@ -15,7 +15,18 @@ date : 01-04-2024
 ## Cost
 ![Model Cost](/assets/img/edx/llm/comparison_table_2.png)
 
+## GPU (LLama 2)
+
+### Speed
+![GPU Speed](/assets/img/edx/llm/LLM_GPU-Benchmarks01.png)
+
+### Memory
+![GPU Memory](/assets/img/edx/llm/LLM_GPU-Benchmarks02.png)
+
+
 # Reference
 - [llm-leaderboard](https://www.vellum.ai/llm-leaderboard)
 - [The LLM Index](https://sapling.ai/llm/index)
 - [Updated March 2024: Leading LLM](https://mindsdb.com/blog/navigating-the-llm-landscape-a-comparative-analysis-of-leading-large-language-models)
+- [GPU-Benchmarks-on-LLM-Inference](https://github.com/XiongjieDai/GPU-Benchmarks-on-LLM-Inference)
+- [Making AMD GPUs competitive for LLM inference ](https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference)
