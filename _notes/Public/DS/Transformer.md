@@ -1,5 +1,5 @@
 ---
-title : [WIP]Transformer
+title : WIP - Transformer
 notetype : feed
 date : 19-04-2024
 ---

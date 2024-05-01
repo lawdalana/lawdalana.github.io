@@ -21,6 +21,7 @@ Cr.Surapong Kanoktipsatharporn
 ---
 
 # Sigmoid Loss Function
+Tenforflow function
 - tf.nn.sigmoid_cross_entropy_with_logits
 - tf.nn.weighted_cross_entropy_with_logits
 - tf.losses.sigmoid_cross_entropy
