@@ -29,4 +29,3 @@ date : 30-04-2024
 - [The LLM Index](https://sapling.ai/llm/index)
 - [Updated March 2024: Leading LLM](https://mindsdb.com/blog/navigating-the-llm-landscape-a-comparative-analysis-of-leading-large-language-models)
 - [GPU-Benchmarks-on-LLM-Inference](https://github.com/XiongjieDai/GPU-Benchmarks-on-LLM-Inference)
-- [Making AMD GPUs competitive for LLM inference ](https://blog.mlc.ai/2023/08/09/Making-AMD-GPUs-competitive-for-LLM-inference)
