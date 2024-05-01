@@ -4,3 +4,4 @@ pages/.DS_Store
 pages/tags.md
 _notes/.obsidian
 .ipynb_checkpoints
+.ipynb_checkpoints/*
