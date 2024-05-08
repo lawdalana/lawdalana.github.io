@@ -1,5 +1,5 @@
 ---
-title : [WIP]Pointwise vs Pairwise vs Listwise
+title : WIP - Pointwise vs Pairwise vs Listwise
 notetype : feed
 date : 22-04-2024
 ---
