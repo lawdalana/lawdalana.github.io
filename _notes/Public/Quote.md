@@ -1,7 +1,7 @@
 ---
 title : Quote
 notetype : feed
-date : 01-05-2024
+date : 01-06-2024
 ---
 
 ```
@@ -25,3 +25,15 @@ date : 01-05-2024
 ท้ายที่สุดอำนาจของเทพเจ้าแห่งตะวันออกลดลง
 ```
 - Source: Genjitsu Shugi Yuusha no Oukoku Saikenki S02E08
+
+---
+
+```
+Thinking about your problems all the time
+And talking about your problems
+Litterly make the problems grow
+
+No.1 of Symptom of depression is what they call rumination. 
+This pathological obsessing over your pain. That's why stuff like exercise. That's one of the reasons side from chemical reasons. 1 of the reasons that doing anything, you know that running errands is good for your mental health, getting out of your house and accomplishing anything is good for you. But sitting around talking and thinking about your problems, that's a bad habit.
+```
+- Abigail Shrier 

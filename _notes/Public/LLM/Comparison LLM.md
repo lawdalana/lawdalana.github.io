@@ -1,7 +1,7 @@
 ---
 title : Comparison LLM table
 notetype : feed
-date : 30-04-2024
+date : 01-06-2024
 ---
 
 # Comparison Table
@@ -11,6 +11,9 @@ date : 30-04-2024
 
 ## Model Evaluate
 ![Model Comparison](/assets/img/edx/llm/comparison_table_0.avif)
+
+### Latest
+![Compare](/assets/img/Other/LLM/LLM_compare.avif)
 
 ## Cost
 ![Model Cost](/assets/img/edx/llm/comparison_table_2.avif)
