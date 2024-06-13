@@ -36,4 +36,20 @@ Litterly make the problems grow
 No.1 of Symptom of depression is what they call rumination. 
 This pathological obsessing over your pain. That's why stuff like exercise. That's one of the reasons side from chemical reasons. 1 of the reasons that doing anything, you know that running errands is good for your mental health, getting out of your house and accomplishing anything is good for you. But sitting around talking and thinking about your problems, that's a bad habit.
 ```
-- Abigail Shrier 
+- Source: Abigail Shrier 
+
+---
+
+```
+ความถ่อมตนจอมปลอม แย่กว่าการหยิ่งยโส
+```
+- Source: 3 Body Problem SS1 EP7 
+
+```
+Aristotle highly prized the virtues of sincerity and truthfulness. For him, modesty and humility were actually produced by a deficiency of sincerity. He believed that claiming your worth and importance as being less than what is true did not meet the criteria of sincerity and, therefore, was not a virtuous act. In fact, Aristotle wrote that modest and humble behavior was only appropriate for children. The other extreme on the excessive side of sincerity was boastfulness or arrogance. So, instead of being humble and understating your abilities, or being boastful and overstating your abilities, Aristotle would likely suggest that you take the middle path and simply be sincere about yourself.
+
+อริสโตเติลยกย่องคุณธรรมของความจริงใจและความจริงอย่างสูง สำหรับเขา ความสุภาพเรียบร้อยและความอ่อนน้อมถ่อมตนเกิดจากการขาดความจริงใจ เขาเชื่อว่าการอ้างว่าคุณค่าและความสำคัญของคุณน้อยกว่าความเป็นจริงไม่เข้าเกณฑ์ความจริงใจจึงไม่ใช่การกระทำที่มีคุณธรรม อันที่จริง อริสโตเติลเขียนว่าพฤติกรรมที่ถ่อมตัวและถ่อมตัวเหมาะสำหรับเด็กเท่านั้น สุดโต่งอีกอย่างหนึ่งของความจริงใจที่มากเกินไปคือความโอ้อวดหรือความเย่อหยิ่ง ดังนั้น แทนที่จะถ่อมตัวและพูดเกินความสามารถของตัวเอง หรือโอ้อวดและพูดเกินความสามารถ อริสโตเติลน่าจะแนะนำให้คุณเลือกทางสายกลางและเพียงจริงใจกับตัวเอง
+```
+- Source: C. Keith Hansley.
+
+---
