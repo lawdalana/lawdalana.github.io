@@ -1,7 +1,7 @@
 ---
 title : Fintuning LLM with LoRa
 notetype : unfeed
-date : 01-06-2024
+date : 15-06-2024
 ---
 
 # Challenges with Large Language Models - 5

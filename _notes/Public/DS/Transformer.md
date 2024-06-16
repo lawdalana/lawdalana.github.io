@@ -7,7 +7,8 @@ date : 19-04-2024
 Source
 - https://jalammar.github.io/illustrated-transformer/
 - https://www.youtube.com/watch?v=zxQyTK8quyY&ab_channel=StatQuestwithJoshStarmer
-- 
+- https://towardsdatascience.com/transformers-explained-visually-part-2-how-it-works-step-by-step-b49fa4a64f34
+- https://towardsdatascience.com/transformers-explained-visually-part-3-multi-head-attention-deep-dive-1c1ff1024853
 
 # Transformer
 - แบ่งออกเป็น 2 ส่วนหลังๆ คือ Encoders, Decoders
