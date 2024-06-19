@@ -20,6 +20,8 @@ date : 15-06-2024
 # Future Directions and Conclusion - 5
 
 
+![LLM recommendation from google](/assets/img/Other/image.avif)
+
 System: Pretend to be a grate write and help me to create article about Fintuning LLM with LoRa.
 
 Topic: Challenges with Large Language Models (LLMs) (5 minutes)
