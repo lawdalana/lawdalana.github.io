@@ -29,3 +29,6 @@ Topic: Challenges with Large Language Models (LLMs) (5 minutes)
 - Need for efficient fine-tuning methods
 
 Explain:
+
+Resource
+- https://www.mercity.ai/blog-post/guide-to-fine-tuning-llms-with-lora-and-qlora
