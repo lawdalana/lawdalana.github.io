@@ -41,6 +41,10 @@ Resource
 - https://github.com/fshnkarimi/Fine-tuning-an-LLM-using-LoRA/blob/main/FineTuning_LoRA.ipynb
 - https://huggingface.co/docs/peft/task_guides/lora_based_methods
 - https://huggingface.co/docs/peft/v0.11.0/en/package_reference/lora#peft.LoraConfig
+- https://dassum.medium.com/fine-tune-large-language-model-llm-on-a-custom-dataset-with-qlora-fb60abdeba07
+- https://wandb.ai/capecape/alpaca_ft/reports/How-to-Fine-Tune-an-LLM-Part-1-Preparing-a-Dataset-for-Instruction-Tuning--Vmlldzo1NTcxNzE2
+- https://www.superannotate.com/blog/llm-fine-tuning
+
 
 
 
