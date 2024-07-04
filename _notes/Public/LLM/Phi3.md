@@ -52,3 +52,4 @@ Use cases for Microsoft's Phi-3 small language models:
 Reference
 - https://ollama.com/library/phi3
 - https://news.microsoft.com/source/features/ai/the-phi-3-small-language-models-with-big-potential/
+- https://azure.microsoft.com/en-us/blog/introducing-phi-3-redefining-whats-possible-with-slms/
