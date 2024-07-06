@@ -1,7 +1,7 @@
 ---
 title : Gemma2
 notetype : unfeed
-date : 15-06-2024
+date : 05-07-2024
 ---
 
 
