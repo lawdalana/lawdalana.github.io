@@ -1,5 +1,5 @@
 ---
-title : Latency
+title : Latency of memory
 notetype : feed
 date : 26-05-2024
 ---

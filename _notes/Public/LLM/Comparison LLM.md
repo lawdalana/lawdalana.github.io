@@ -15,6 +15,8 @@ date : 01-06-2024
 ### Latest
 ![Compare](/assets/img/Other/LLM/LLM_compare.avif)
 
+![llama31vsgemma2](/assets/img/Other/LLM/llama-3-1-vs-gemma.avif)
+
 ## Cost
 ![Model Cost](/assets/img/edx/llm/comparison_table_2.avif)
 

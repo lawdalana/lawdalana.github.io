@@ -44,7 +44,11 @@ Resource
 - https://dassum.medium.com/fine-tune-large-language-model-llm-on-a-custom-dataset-with-qlora-fb60abdeba07
 - https://wandb.ai/capecape/alpaca_ft/reports/How-to-Fine-Tune-an-LLM-Part-1-Preparing-a-Dataset-for-Instruction-Tuning--Vmlldzo1NTcxNzE2
 - https://www.superannotate.com/blog/llm-fine-tuning
-
-
+- https://humanloop.com/blog/optimizing-llms
+- https://www.turing.com/resources/finetuning-large-language-models#b.-reinforcement-learning-from-human-feedback-(rlhf)
+- https://www.leewayhertz.com/better-output-from-your-large-language-model/
+- https://www.superannotate.com/blog/rlhf-for-llm
+- https://medium.com/@madalina.lupu.d/align-llms-with-reinforcement-learning-from-human-feedback-595d61f160d5
+- https://huggingface.co/docs/trl/main/en/lora_tuning_peft
 
 
