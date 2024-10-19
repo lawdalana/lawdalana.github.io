@@ -1,7 +1,7 @@
 ---
 title : Fintuning LLM with LoRa
 notetype : feed
-date : 05-07-2024
+date : 19-10-2024
 ---
 
 ## *[Fine-Tuning Large Language Models with LORA Slide](https://docs.google.com/presentation/d/1yVhLz403YsCUI3C3mg59-a5OyT2z6hBqP5KcY7z1mJE/edit#slide=id.p)*
