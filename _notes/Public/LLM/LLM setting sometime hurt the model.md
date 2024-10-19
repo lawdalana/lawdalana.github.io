@@ -1,7 +1,7 @@
 ---
-title : WIP - llmops
+title : LLM setting sometime hurt the model
 notetype : feed
-date : 29-05-2024
+date : 19-10-2024
 ---
 
 Source

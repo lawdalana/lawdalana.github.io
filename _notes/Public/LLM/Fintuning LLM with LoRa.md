@@ -1,36 +1,16 @@
 ---
 title : Fintuning LLM with LoRa
-notetype : unfeed
+notetype : feed
 date : 05-07-2024
 ---
 
-# Challenges with Large Language Models - 5
-## 
+## *[Fine-Tuning Large Language Models with LORA Slide](https://docs.google.com/presentation/d/1yVhLz403YsCUI3C3mg59-a5OyT2z6hBqP5KcY7z1mJE/edit#slide=id.p)*
 
-# Understanding Low-Rank Adaptation - 10,15
-## What is LoRa?
-## Concept of low-rank matrix decomposition
-## LoRA as a low-rank adaptation method for LLMs
-## Mathematical formulation of LoRA
-
-# Implementing LoRA for LLM Fine-tuning - 30
-
-# Evaluating LoRA-finetuned LLMs - 10
-
-# Future Directions and Conclusion - 5
-
+## Comparision table Lora & QLora
 
 ![LLM recommendation from google](/assets/img/Other/image.avif)
 
-System: Pretend to be a grate write and help me to create article about Fintuning LLM with LoRa.
-
-Topic: Challenges with Large Language Models (LLMs) (5 minutes)
-- Brief overview of computational and memory constraints
-- Need for efficient fine-tuning methods
-
-Explain:
-
-Resource
+## Resource
 - https://www.mercity.ai/blog-post/guide-to-fine-tuning-llms-with-lora-and-qlora
 - https://medium.com/@raniahossam/comprehensive-guide-to-adapters-lora-qlora-longlora-with-implementation-de003be30352
 - https://cameronrwolfe.substack.com/p/easily-train-a-specialized-llm-peft
