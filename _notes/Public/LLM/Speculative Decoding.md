@@ -8,7 +8,7 @@ date : 19-10-2024
 - Speculative Decoding เป็นวิธีในการช่วยให้ LLM Model Inference ได้เร็วขึ้น 2x - 3x
 - โดยใช้ Model ขนาดเล็กmujใช้ **Tokenizer** ตัวเดียวกันในการเทรนเพื่อมาช่วย Predict
 - Model ตัวใหญ่ = **Target model** / Model ตัวเล็ก = **Draft model**
-- `Draft model ต้องมีปริมาณ parameter น้อยกว่า Target model โดยปกติน้อยกว่า 10 - 30 เท่า`
+- `Draft model ต้องมีปริมาณ parameter น้อยกว่า Target model โดยปกติน้อยกว่า 10 - 50 เท่า`
 - ปกติ Model จะ Predict คำถัดไปแล้วทำซ้ำไปเรื่อยๆทำให้ช้า
 - Draft model จะช่วย predict ไปก่อน 1 - 10 token ล่วงหน้า (เล็กกว่าเร็วกว่า เพราะบางคำเป็นคนที่ Predict ได้ง่ายๆเช่น of, the)
 - Target model จะตรวจผลลัพธ์และแก้ตัวที่ผิดให้
