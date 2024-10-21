@@ -4,7 +4,7 @@ notetype : feed
 date : 19-10-2024
 ---
 
-## TLDR
+## Summary
 - Speculative Decoding เป็นวิธีในการช่วยให้ LLM Model Inference ได้เร็วขึ้น 2x - 3x
 - โดยใช้ Model ขนาดเล็กmujใช้ **Tokenizer** ตัวเดียวกันในการเทรนเพื่อมาช่วย Predict
 - Model ตัวใหญ่ = **Target model** / Model ตัวเล็ก = **Draft model**
