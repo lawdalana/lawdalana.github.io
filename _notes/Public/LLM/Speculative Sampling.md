@@ -13,6 +13,7 @@ date : 23-10-2024
 - `Draft model ต้องมีปริมาณ parameter น้อยกว่า Target model โดยปกติน้อยกว่า 10 - 50 เท่า`
 - ปกติ Model จะ Predict คำถัดไปแล้วทำซ้ำไปเรื่อยๆทำให้ช้า
 - Draft model จะช่วย predict ไปก่อน 1 - 10 token ล่วงหน้า (เล็กกว่าเร็วกว่า เพราะบางคำเป็นคนที่ Predict ได้ง่ายๆเช่น of, the)
+    - วิธีเลือก draft model มาใช้มีหลายวิธีเช่น เพิ่ม multi-head attention เข้าไปใน target model ตอนเทรน, ทำ sequence level distillation, Train draft model with same input, เลือกใช้ model ขนาดเล็กของ model นั้นๆ
 - Target model จะตรวจผลลัพธ์ของ Draft model
 - โดยจะเช็คค่า prob ผ่านสมการ ถ้า Accept ก็จะเช็คตัวถัดไป แต่ถ้า Reject ก็จะหยุดและแก้ token ตัวนั้น
 - หลังจากนั้นก็จะวน Process แบบนี้ไปเรื่อยๆ
@@ -20,7 +21,17 @@ date : 23-10-2024
 - ทำให้ Target model ที่กิน resource มากกว่าจะไม่ต้องรันหลายรอบมากเกินไปทำให้ inference ได้เร็วขึ้น 1.5x - 3x
 ![Speculative_Decoding_Example](/assets/img/Other/LLM/Speculative_Decoding_Example.avif)
 
-## Claude Summary
+### Result
+Sampling Method|Benchmark|Result|Mean Token Time|Speed Up
+:---:|:---:|:---:|:---:|:---:
+ArS (Nucleus)|XSum (ROUGE-2)|0.112|14.1ms/Token |1x
+SpS (Nucleus)|XSum (ROUGE-2)|0.114|7.52ms/Token |1.92x
+ArS (Nucleus)|XSum (ROUGE-2)|0.157|14.1ms/Token |1x
+SpS (Nucleus)|XSum (ROUGE-2)|0.156|7.00ms/Token |2.01x
+ArS (Nucleus)|HumanEval (100 Shot)|45.1% |14.1ms/Token |1x
+SpS (Nucleus)|HumanEval (100 Shot)|47.0%|5.73ms/Token |2.46x
+
+## Claude Summarya
 #### English
 ```
 Speculative Sampling (SpS) is a novel technique for accelerating large language model (LLM) inference without compromising output quality. The method uses a smaller, faster "draft" model to predict multiple tokens in parallel, which are then validated by the larger "target" model. This process leverages the fact that for LLMs, scoring multiple tokens at once takes about the same time as scoring a single token, due to hardware utilization efficiencies.
