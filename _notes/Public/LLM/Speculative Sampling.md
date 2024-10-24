@@ -1,7 +1,7 @@
 ---
-title : Speculative Sampling / Decoding
+title : Speculative Sampling
 notetype : feed
-date : 19-10-2024
+date : 23-10-2024
 ---
 
 ## Summary
