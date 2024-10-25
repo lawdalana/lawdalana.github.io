@@ -18,9 +18,11 @@ date : 23-10-2024
 - โดยจะเช็คค่า prob ผ่านสมการ ถ้า Accept ก็จะเช็คตัวถัดไป แต่ถ้า Reject ก็จะหยุดและแก้ token ตัวนั้น
 - หลังจากนั้นก็จะวน Process แบบนี้ไปเรื่อยๆ
 ![Speculative_Sampling_SpS_Algorithm](/assets/img/Other/LLM/Speculative_Sampling_SpS_Algorithm.avif)
-    - [ทำไมต้องสุ่ม r ~U[0, 1]](https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm)
+    - [ทำไมต้องสุ่ม r ~U[0, 1]](https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm) ([[Metropolis algorithm]])
 - ทำให้ Target model ที่กิน resource มากกว่าจะไม่ต้องรันหลายรอบมากเกินไปทำให้ inference ได้เร็วขึ้น 1.5x - 3x
 ![Speculative_Decoding_Example](/assets/img/Other/LLM/Speculative_Decoding_Example.avif)
+
+---
 
 ### Result
 
@@ -33,7 +35,9 @@ SpS (Nucleus)|XSum (ROUGE-2)|0.156|7.00ms/Token |2.01x
 ArS (Nucleus)|HumanEval (100 Shot)|45.1% |14.1ms/Token |1x
 SpS (Nucleus)|HumanEval (100 Shot)|47.0%|5.73ms/Token |2.46x
 
-## Claude Summarya
+![Speculative_Decoding_wall_time](/assets/img/Other/LLM/Speculative_Decoding_wall_time.avif)
+
+## Claude Summary
 #### English
 ```
 Speculative Sampling (SpS) is a novel technique for accelerating large language model (LLM) inference without compromising output quality. The method uses a smaller, faster "draft" model to predict multiple tokens in parallel, which are then validated by the larger "target" model. This process leverages the fact that for LLMs, scoring multiple tokens at once takes about the same time as scoring a single token, due to hardware utilization efficiencies.
