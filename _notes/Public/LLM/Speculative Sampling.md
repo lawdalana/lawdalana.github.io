@@ -7,7 +7,7 @@ date : 23-10-2024
 ## Summary
 ![Speculative_Decoding_timeline](/assets/img/Other/LLM/Speculative_Decoding_timeline.avif)
 - Speculative Decoding เป็นวิธีในการช่วยให้ LLM Model Inference ได้เร็วขึ้น 2x - 3x
-- โดยใช้ Model ขนาดเล็กmujใช้ **Tokenizer** ตัวเดียวกันในการเทรนเพื่อมาช่วย Predict
+- โดยใช้ Model ขนาดเล็กที่ใช้ **Tokenizer** ตัวเดียวกันในการเทรนเพื่อมาช่วย Predict
 ![Speculative_Sampling_SpS_How_to_work](/assets/img/Other/LLM/Speculative_Sampling_SpS_How_to_work.avif)
 - Model ตัวใหญ่ = **Target model** / Model ตัวเล็ก = **Draft model**
 - `Draft model ต้องมีปริมาณ parameter น้อยกว่า Target model โดยปกติน้อยกว่า 10 - 50 เท่า`
@@ -18,10 +18,12 @@ date : 23-10-2024
 - โดยจะเช็คค่า prob ผ่านสมการ ถ้า Accept ก็จะเช็คตัวถัดไป แต่ถ้า Reject ก็จะหยุดและแก้ token ตัวนั้น
 - หลังจากนั้นก็จะวน Process แบบนี้ไปเรื่อยๆ
 ![Speculative_Sampling_SpS_Algorithm](/assets/img/Other/LLM/Speculative_Sampling_SpS_Algorithm.avif)
+    - [ทำไมต้องสุ่ม r ~U[0, 1]](https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm)
 - ทำให้ Target model ที่กิน resource มากกว่าจะไม่ต้องรันหลายรอบมากเกินไปทำให้ inference ได้เร็วขึ้น 1.5x - 3x
 ![Speculative_Decoding_Example](/assets/img/Other/LLM/Speculative_Decoding_Example.avif)
 
 ### Result
+
 Sampling Method|Benchmark|Result|Mean Token Time|Speed Up
 :---:|:---:|:---:|:---:|:---:
 ArS (Nucleus)|XSum (ROUGE-2)|0.112|14.1ms/Token |1x
