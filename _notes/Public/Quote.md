@@ -1,7 +1,7 @@
 ---
 title : Quote
 notetype : feed
-date : 01-06-2024
+date : 25-10-2024
 ---
 
 ```
@@ -45,11 +45,31 @@ This pathological obsessing over your pain. That's why stuff like exercise. That
 ```
 - Source: 3 Body Problem SS1 EP7 
 
+---
+
 ```
 Aristotle highly prized the virtues of sincerity and truthfulness. For him, modesty and humility were actually produced by a deficiency of sincerity. He believed that claiming your worth and importance as being less than what is true did not meet the criteria of sincerity and, therefore, was not a virtuous act. In fact, Aristotle wrote that modest and humble behavior was only appropriate for children. The other extreme on the excessive side of sincerity was boastfulness or arrogance. So, instead of being humble and understating your abilities, or being boastful and overstating your abilities, Aristotle would likely suggest that you take the middle path and simply be sincere about yourself.
 
 อริสโตเติลยกย่องคุณธรรมของความจริงใจและความจริงอย่างสูง สำหรับเขา ความสุภาพเรียบร้อยและความอ่อนน้อมถ่อมตนเกิดจากการขาดความจริงใจ เขาเชื่อว่าการอ้างว่าคุณค่าและความสำคัญของคุณน้อยกว่าความเป็นจริงไม่เข้าเกณฑ์ความจริงใจจึงไม่ใช่การกระทำที่มีคุณธรรม อันที่จริง อริสโตเติลเขียนว่าพฤติกรรมที่ถ่อมตัวและถ่อมตัวเหมาะสำหรับเด็กเท่านั้น สุดโต่งอีกอย่างหนึ่งของความจริงใจที่มากเกินไปคือความโอ้อวดหรือความเย่อหยิ่ง ดังนั้น แทนที่จะถ่อมตัวและพูดเกินความสามารถของตัวเอง หรือโอ้อวดและพูดเกินความสามารถ อริสโตเติลน่าจะแนะนำให้คุณเลือกทางสายกลางและเพียงจริงใจกับตัวเอง
 ```
 - Source: C. Keith Hansley.
+
+---
+
+```
+Giotto di Bondone จิตรกร ยุคเรเนสซองส์
+ช่วงก่อนยุค Renaissance ถูกเรียกขานกันว่ายุคมืด ช่วงเวลาที่น่าหวาดกลัว
+
+มนุษย์ชาติถูกกลุ่มลุมจากทั้งสงคราวและโรคละบาดและมันกำลังหลงทาง
+
+Giotto ช่วยจุดประกายยุค Renaissance ด้วยงานศิลของเขา
+เขาได้ช่วงสร้างทัศนียภาพแบบสามจุดขึ้นมา
+
+เขาเห็นความสมบูรณ์ และเขามอบสิ่งที่เขาเห็นให้กับโลก 
+มันสร้างความแตกต่าง 
+เป็นครั้งแรกช่วงเวลายาวนาน ที่มนุษย์เงยหน้าขึ้น
+```
+- Source: Star trek - discovery (SS3 EP6)
+- `Giotto di Bondone` ได้รับการยกย่องให้เป็นหนึ่งในผู้มีส่วนสร้างสรรค์ผลงานที่ก่อให้เกิดกระแสใหม่ในสังคมที่นำไปสู่ยุคฟื้นฟูศิลปวิทยาในที่สุด 
 
 ---
