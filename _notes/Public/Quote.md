@@ -73,3 +73,20 @@ Giotto ช่วยจุดประกายยุค Renaissance ด้วย
 - `Giotto di Bondone` ได้รับการยกย่องให้เป็นหนึ่งในผู้มีส่วนสร้างสรรค์ผลงานที่ก่อให้เกิดกระแสใหม่ในสังคมที่นำไปสู่ยุคฟื้นฟูศิลปวิทยาในที่สุด 
 
 ---
+
+```
+ยิ่งอายุมากขึ้น ก็ยิ่งกลัวความตายน้อยลงทุกที
+```
+- Source: Somewhere
+
+---
+
+```
+FEAR has two meanings
+
+- "Forget Everthing and Run"
+- "Face Everything and Rise"
+```
+- Source: Somewhere
+
+---
