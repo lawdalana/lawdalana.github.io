@@ -1,6 +1,6 @@
 ---
 title : Milvus VectorDB
-notetype : feed
+notetype : unfeed
 date : 28-10-2024
 ---
 
