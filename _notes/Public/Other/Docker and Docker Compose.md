@@ -92,34 +92,10 @@ Step
     - `bookworm` =  เป็นชื่อรหัสของ Debian รุ่นใหม่กว่า (ในขณะนี้คือ Debian Bookworm ซึ่งอาจอยู่ในช่วง testing หรือ release ใหม่)
 4. รันคำสั่ง
     ```bash
-    docker build -t exmaple:1.0.0 .
-    docker run -it --rm --name test1 exmaple
+    docker build -t example:1.0.0 .
+    docker run -it --rm example:1.0.0
     ```
 
 ## Docker Compose คืออะไร
 - **Docker Compose** เป็นเครื่องมือสำหรับจัดการ **Multi-Container** ในการพัฒนาแอปพลิเคชันที่ต้องมีหลาย Service ทำงานร่วมกัน เช่น แอปพลิเคชัน python คุยกับฐานข้อมูล MySQL และใช้ Nginx เป็น Proxy
 - ใช้ไฟล์ `docker-compose.yml` ในการกำหนดว่าเราต้องการรันคอนเทนเนอร์อะไรบ้าง แต่ละคอนเทนเนอร์เชื่อมต่อกันอย่างไร และมี Volume หรือ Port mapping อย่างไร
-
----
-
-## ตัวอย่าง Use Case 1: การใช้งาน Docker เบื้องต้น
-
-### 1. ติดตั้ง Docker (บน Linux/Windows/MacOS)
-1. ดาวน์โหลดและติดตั้ง Docker จาก [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)  
-2. ตรวจสอบเวอร์ชัน Docker
-
-```bash
-   docker version
-```
-3. ทดสอบรัน Container ตัวอย่าง
-```bash
-    docker run hello-world
-```
-    - Docker จะดาวน์โหลด Image hello-world จาก Docker Hub (ถ้ายังไม่มีในเครื่อง)
-    - จากนั้นจะรันเป็น Container แล้วโชว์ข้อความ Hello จากคอนเทนเนอร์
-
-### 2. สร้าง Dockerfile สำหรับ Node.js (ตัวอย่างง่าย)
-
-สมมติว่าเรามีไฟล์ชื่อ app.js ที่พิมพ์ “Hello Docker!”
-
-โครงสร้างโฟลเดอร์:
