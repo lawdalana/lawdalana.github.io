@@ -5,7 +5,8 @@ date : 01-02-2025
 ---
 
 
-## Docker คืออะไร
+## Docker คืออะไร 
+![Docker](https://diagrams.mingrammer.com/img/resources/onprem/container/docker.png)
 - **Docker** เป็นแพลตฟอร์มสำหรับการสร้าง จัดการ และรัน **Container** ซึ่งเป็นเหมือนกล่องเล็ก ๆ ที่บรรจุแอปพลิเคชันและ dependencies (เช่น ไลบรารี, ระบบปฏิบัติการขั้นต่ำ ฯลฯ) เอาไว้
 - ข้อดีหลักของการใช้ Container คือทำให้การติดตั้งและจัดการแอปพลิเคชันสะดวกขึ้น เพราะทุกอย่างรวมอยู่ใน Container เดียว ลดปัญหา “เครื่องฉันรันได้ ทำไมเครื่องเธอรันไม่ได้”
 - Docker ใช้ **Docker Engine** ในการรัน Container และใช้ **Dockerfile** สำหรับสร้าง Image
@@ -30,8 +31,8 @@ date : 01-02-2025
 
 ### Exmaple Command
 #### Pre-Require
-- Install Docker Engine ถ้าใช้ Linux
-- Install Docker Desktop, Rancher Desktop ถ้าใช้ Window, Mac
+- Install [Docker Engine](https://docs.docker.com/engine/install/) ถ้าใช้ Linux
+- Install [Docker Desktop](https://docs.docker.com/desktop/), [Rancher Desktop](https://rancherdesktop.io/) ถ้าใช้ Window, Mac
 
 #### Simaple Command
 ```bash
@@ -40,6 +41,10 @@ docker build -t {image_name}:{tag} .        # Build local image
 docker run {image_name}:{tag}               # Run containers
 docker run -p 8080:80 {image_name}:{tag}    # Run containers with mapping port to our host
 
+docker stop my_container                    # Stop container but still have status `stopped`
+docker rm my_container                      # Remove container but have to stop first
+docker rm -f my_container                   # Force remove container
+
 docker ps                                   # List running containers
 docker ps -a                                # List running and stopped containers
 
@@ -47,7 +52,7 @@ docker pull {image_name}:{tag}              # Pull from docker hub
 docker push {image_name}:{tag}              # Psuh image from local to repository
 
 docker images ls                            # List downloaded images
-docker images prune                         # List downloaded images
+docker images prune                         # Remove dangling images ซึ่งคือ Docker images ที่ไม่ได้ถูกใช้งานหรือไม่มี tag
 
 docker exec -it {container} {/bin/bash}     # Shell inside container
 ```
@@ -91,11 +96,46 @@ Step
     - `bullseye` = เป็นชื่อรหัสของ Debian 11 (Bullseye) ซึ่งเป็นระบบปฏิบัติการที่เสถียรและมีแพ็คเกจครบครัน
     - `bookworm` =  เป็นชื่อรหัสของ Debian รุ่นใหม่กว่า (ในขณะนี้คือ Debian Bookworm ซึ่งอาจอยู่ในช่วง testing หรือ release ใหม่)
 4. รันคำสั่ง
-    ```bash
+    ```
     docker build -t example:1.0.0 .
     docker run -it --rm example:1.0.0
     ```
 
 ## Docker Compose คืออะไร
-- **Docker Compose** เป็นเครื่องมือสำหรับจัดการ **Multi-Container** ในการพัฒนาแอปพลิเคชันที่ต้องมีหลาย Service ทำงานร่วมกัน เช่น แอปพลิเคชัน python คุยกับฐานข้อมูล MySQL และใช้ Nginx เป็น Proxy
+- **Docker Compose** เป็นเครื่องมือสำหรับจัดการ **Multi-Container** ในการพัฒนาแอปพลิเคชันที่ต้องมีหลาย Service ทำงานร่วมกัน เช่น แอปพลิเคชัน python คุยกับฐานข้อมูล MySQL หรือ Redis
 - ใช้ไฟล์ `docker-compose.yml` ในการกำหนดว่าเราต้องการรันคอนเทนเนอร์อะไรบ้าง แต่ละคอนเทนเนอร์เชื่อมต่อกันอย่างไร และมี Volume หรือ Port mapping อย่างไร
+
+### Exmaple Command
+#### Pre-Require
+- Install [Docker Engine](https://docs.docker.com/engine/install/) ถ้าใช้ Linux
+- Install [Docker Desktop](https://docs.docker.com/desktop/), [Rancher Desktop](https://rancherdesktop.io/) ถ้าใช้ Window, Mac
+- Install [Docker Compose](https://docs.docker.com/compose/install/) / มี [version stand alone](https://docs.docker.com/compose/install/standalone/) `docker-compose`
+
+#### Simaple Command
+```bash
+docker-compose up                                       # Build local image
+docker-compose up {service_name1} {service_name2} ...   # Start the follow service name container 
+docker-compose up --build                               # Build image but use the old conatainer
+docker-compose up --build --force-recreate              # Build local image
+
+docker-compose --profile db up                          # Start
+
+docker-compose down                                     # Delete container and network
+docker-compose down -v                                  # Delete container, network and volumes
+```
+
+#### Note กรณีที่เจอบ่อย
+```
+FROM python:3.9
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt  # 🔥
+COPY . .  # <-- เพิ่มบรรทัดนี้ทีหลัง
+CMD ["python", "app.py"]
+```
+Command: `docker-compose up --build`
+- ถ้า requirements.txt เปลี่ยน → pip install -r requirements.txt จะทำงานใหม่
+- ถ้า requirements.txt ไม่เปลี่ยน → pip install จะใช้ cache และไม่รันใหม่
+- ถ้าคุณแก้ Dockerfile แต่มันอยู่หลังคำสั่ง pip install → pip install จะใช้ cache และไม่รันใหม่
+- ถ้าต้องการให้ pip install ทำงานใหม่เสมอ → ใช้ rm -rf /root/.cache/pip หรือ BuildKit cache
+
