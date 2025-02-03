@@ -55,6 +55,9 @@ docker images ls                            # List downloaded images
 docker images prune                         # Remove dangling images ซึ่งคือ Docker images ที่ไม่ได้ถูกใช้งานหรือไม่มี tag
 
 docker exec -it {container} {/bin/bash}     # Shell inside container
+
+docker save -o my_image.tar my_image:latest # Save docker image as a file
+docker load -i my_image.tar                 # Load docker image
 ```
 
 [![Container Vs VMs](/assets/img/Other/Docker/dockercheatsheet8.avif)](https://dockerlabs.collabnix.com/docker/cheatsheet/)
