@@ -1,5 +1,5 @@
 ---
-title : [Digest] Can we Retrieve Everything All at Once
+title : DigestPaper - Can we Retrieve Everything All at Once
 notetype : feed
 date : 07-02-2025
 ---
@@ -111,6 +111,13 @@ Structure Alignment เป็นขั้นตอนที่ สอง ใน 
 2. ใช้ Compatibility Score คำนวณว่าข้อมูลสองชุดสามารถเชื่อมโยงกันได้หรือไม่
 3. ใช้ MIP Solver คำนวณและเลือก k ชิ้นของข้อมูลที่ดีที่สุด เพื่อตอบคำถาม
 ```
+
+![MIP](/assets/img/Other/Knowledge/MIP.avif) 
+![MIP_R](/assets/img/Other/Knowledge/MIP_R.avif) 
+![MIP_C](/assets/img/Other/Knowledge/MIP_C.avif) 
+
+
+
 ---
 
 #### Self-Verification and Aggregation: Ensuring Accurate and Reliable Outputs
