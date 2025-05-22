@@ -90,3 +90,12 @@ FEAR has two meanings
 - Source: Somewhere
 
 ---
+
+```
+เงิน 500 - 1000 ล้านเยน แค่มีความโลภก็หาได้
+แต่
+เงิน 5000 - 10000 ล้านเยน ถ้าไม่มีความฝันก็ทำไม่ได้หรอก
+```
+- Source: Bartender : Glass of God (SS1 EP10 - Netflix) -- Bartender: Kami no Glass
+
+---
