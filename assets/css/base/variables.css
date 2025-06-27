@@ -1,0 +1,44 @@
+/* CSS Custom Properties / Variables */
+
+/* Light Theme Variables */
+html, html[data-theme="light"] {
+    --bg-main: #FFFFFF;
+    --bg-sub: #FAFAFC;
+    --color-bis: #b8b4b4;
+    --text-main: #18181C;
+    --text-sub: #5D5D67;
+    --link: #2380ED;
+    --border: #E5E5E5;
+}
+
+/* Dark Theme Variables */
+html[data-theme="dark"] {
+    --bg-main: #18181C;
+    --bg-sub: #262626;
+    --color-bis: #E6E6E6;
+    --text-main: #FAFAFC;
+    --text-sub: #FFFFFF;
+    --link: #6D9EFF;
+    --border: #353535;
+}
+
+/* Automatic Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    html, html[data-theme="dark"] {
+        --bg-main: #18181C;
+        --bg-sub: #262626;
+        --text-main: #FAFAFC;
+        --text-sub: #FFFFFF;
+        --link: #6D9EFF;
+        --border: #353535;
+    }
+
+    html[data-theme="light"] {
+        --bg-main: #FFFFFF;
+        --bg-sub: #FAFAFC;
+        --text-main: #18181C;
+        --text-sub: #5D5D67;
+        --link: #2380ED;
+        --border: #E5E5E5;
+    } 
+}

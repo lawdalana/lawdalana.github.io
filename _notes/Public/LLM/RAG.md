@@ -1,7 +1,10 @@
 ---
-title : RAG (Retrieval-Augmented Generation)
-notetype : feed
-date : 08-02-2025
+title: RAG (Retrieval-Augmented Generation)
+notetype: feed
+date: 2025-02-08
+last_modified: 2025-02-08
+tags: [llm, rag, ai, retrieval, generation]
+status: published
 ---
 
 ## From GPT-4o 

@@ -1,0 +1,25 @@
+{%- comment -%}
+*
+* Highlighting Component
+* Handles [[text::highlight]] syntax for text highlighting
+*
+{%- endcomment -%}
+
+{%- if url == "highlight" -%}
+    {%- if site.preferences.highlighting.enabled -%}
+        {%- assign color = '#DAEDFF' -%}
+        {%- if site.preferences.highlighting.color != nil and site.preferences.highlighting.color != empty and
+            site.preferences.highlighting.color != null -%}
+            {%- assign color = '#' | append: site.preferences.highlighting.color -%}
+        {%- endif -%}
+        {%- assign link_text = '<span style="font-family: inherit; font-weight: inherit; font-style: inherit; font-size: inherit; background-color:' | append: color | append: ';">' | append: title | append: '</span>' -%}
+    {%- endif -%}
+{%- elsif url == "wrap" -%}
+    {%- if site.preferences.wrapping.enabled -%}
+        {%- assign link_text = '<p class="boxit">' | append: title | append: '</p>' -%}
+    {%- endif -%}
+{%- elsif url == "img" -%}
+    {%- if site.preferences.wrapping.enabled -%}
+        {%- assign link_text = '<img src="' | append: title | append: '"/>' -%}
+    {%- endif -%}
+{%- endif -%}

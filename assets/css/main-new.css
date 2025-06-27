@@ -1,0 +1,296 @@
+---
+layout: Stylesheet
+---
+
+/* 
+ * Organized CSS Architecture
+ * Digital Garden Styles
+ */
+
+/* Base - Variables and core styles */
+@import "/assets/css/base/variables.css";
+
+/* Vendors - Third-party CSS (Bulma, KaTeX) */
+@import "/assets/css/main.css";  /* Bulma framework */
+
+/* Components - Reusable UI components */
+@import "/assets/css/components/highlighting.css";
+
+/* Utilities - Helper classes */
+@import "/assets/css/utilities/helpers.css";
+
+/* Custom Styles - Site-specific customizations */
+/* Note: These could be extracted to separate component files if needed */
+
+/* Containers: Body, Container, Box, Main, Header, Content */ 
+html {
+    height: 100%;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding-top: 5%;
+    margin: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin-bottom: 0 !important;
+}
+
+.container {
+    background-color: var(--bg-main);
+}
+
+.section {
+    background-color: var(--bg-main);
+    flex-grow: 1;
+}
+
+.box {
+    background-color: var(--bg-sub);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+}
+
+main {
+    flex: 1;
+}
+
+.content {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: none;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    box-shadow: 0 2px 0 0 var(--border);
+}
+
+.navbar-brand .navbar-item {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.navbar-item {
+    color: var(--text-main);
+}
+
+.navbar-item:hover {
+    background-color: var(--bg-sub);
+    color: var(--text-main);
+}
+
+.navbar-burger {
+    color: var(--text-main);
+}
+
+/* Content Styles */
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    color: var(--text-main);
+}
+
+.content p {
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.content a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.content a:hover {
+    color: var(--link);
+    text-decoration: underline;
+}
+
+/* Links and Interactive Elements */
+a {
+    color: var(--link);
+}
+
+a:hover {
+    color: var(--link);
+}
+
+.button {
+    background-color: var(--bg-sub);
+    border-color: var(--border);
+    color: var(--text-main);
+}
+
+.button:hover {
+    background-color: var(--bg-main);
+    border-color: var(--border);
+    color: var(--text-main);
+}
+
+/* Forms */
+.input {
+    background-color: var(--bg-sub);
+    border-color: var(--border);
+    color: var(--text-main);
+}
+
+.input:focus {
+    border-color: var(--link);
+    box-shadow: 0 0 0 0.125em rgba(35, 128, 237, 0.25);
+}
+
+/* Wiki-style Links */
+.stale-link {
+    color: var(--text-sub);
+    text-decoration: line-through;
+}
+
+.stale-link:hover {
+    color: var(--text-main);
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .right {
+    visibility: hidden;
+    width: 300px;
+    background-color: var(--bg-sub);
+    color: var(--text-main);
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -150px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tooltip:hover .right {
+    visibility: visible;
+}
+
+.tooltip-title {
+    font-weight: bold;
+    color: var(--text-main);
+    font-size: 14px;
+}
+
+.tooltip-excerpt {
+    color: var(--text-sub);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Search */
+.search-results {
+    position: absolute;
+    background-color: var(--bg-sub);
+    border: 1px solid var(--border);
+    border-top: none;
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.search-result-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: var(--bg-main);
+}
+
+/* Code Blocks */
+pre {
+    background-color: var(--bg-sub);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+}
+
+code {
+    background-color: var(--bg-sub);
+    color: var(--text-main);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 10%;
+    }
+    
+    .tooltip .right {
+        width: 250px;
+        margin-left: -125px;
+    }
+}
+
+/* Dark Mode Toggle */
+.navbar-dark-mode__mobile {
+    cursor: pointer;
+}
+
+/* Footer */
+#copyright {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-sub);
+    font-size: 0.9em;
+}
+
+#copyright-notice {
+    margin: 0;
+}
+
+/* Note Cards */
+.note-cards {
+    margin-bottom: 1rem;
+}
+
+.box-feed {
+    background-color: var(--bg-sub);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.box-feed:hover {
+    background-color: var(--bg-main);
+    border-color: var(--link);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.box-feed h4 {
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.box-feed .content p {
+    color: var(--text-sub);
+    font-size: 0.9em;
+}
+
+/* Animation for smooth transitions */
+* {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}

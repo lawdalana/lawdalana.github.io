@@ -1,0 +1,56 @@
+/* Navigation Component Styles */
+
+.navbar {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    box-shadow: 0 2px 0 0 var(--border);
+}
+
+.navbar-brand .navbar-item {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.navbar-item {
+    color: var(--text-main);
+}
+
+.navbar-item:hover {
+    background-color: var(--bg-sub);
+    color: var(--text-main);
+}
+
+.navbar-burger {
+    color: var(--text-main);
+}
+
+.navbar-dark-mode__mobile {
+    cursor: pointer;
+}
+
+/* Back button styles */
+.buttons.for-back-home:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .buttons.for-back-home:not(:last-child) {
+        margin-left: 2rem;
+    } 
+}
+
+.button__page-back {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    background-color: var(--bg-sub);
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.button__page-back:hover {
+    background-color: var(--bg-main);
+    border-color: var(--link);
+    color: var(--link);
+}

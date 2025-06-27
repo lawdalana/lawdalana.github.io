@@ -87,8 +87,8 @@ encoding: utf-8
 theme: null
 plugins:
   - jekyll-feed 
-  - jekyll-sitemap 
   - jekyll-tidy
+  - jekyll-minifier
 
 ## Enable _notes Collection 
 collections:
@@ -113,6 +113,18 @@ kramdown:
   
 sass:
   style: compressed
+  implementation: sassc
+
+# Performance and Minification
+jekyll-minifier:
+  preserve_php: true
+  remove_spaces_inside_tags: true
+  remove_multi_spaces: true
+  remove_comments: true
+  remove_intertag_spaces: true
+  remove_quotes: false
+  compress_css: true
+  compress_javascript: true
 
 defaults:
   - scope:

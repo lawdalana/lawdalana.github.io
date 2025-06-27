@@ -1,7 +1,10 @@
 ---
-title : WIP - Transformer
-notetype : feed
-date : 19-04-2024
+title: WIP - Transformer
+notetype: feed
+date: 2024-04-19
+last_modified: 2024-04-19
+tags: [transformer, attention, deep-learning, nlp, architecture]
+status: draft
 ---
 
 Source

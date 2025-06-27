@@ -1,7 +1,10 @@
 ---
-title : Quote
-notetype : feed
-date : 25-10-2024
+title: Quote
+notetype: reference
+date: 2024-10-25
+last_modified: 2024-10-25
+tags: [quotes, wisdom, philosophy, inspiration]
+status: published
 ---
 
 ```
