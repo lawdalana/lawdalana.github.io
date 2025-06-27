@@ -1,0 +1,209 @@
+/* Notes Component Styles */
+
+/* Note Cards */
+.note-cards {
+    margin-bottom: 1rem;
+}
+
+.box-feed {
+    background-color: var(--bg-sub);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.box-feed:hover {
+    background-color: var(--bg-main);
+    border-color: var(--link);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.box-feed h4 {
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.box-feed .content p {
+    color: var(--text-sub);
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Wiki-style Links */
+.stale-link {
+    color: var(--text-sub);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.stale-link:hover {
+    color: var(--text-main);
+    opacity: 1;
+}
+
+/* Tooltips for Page Previews */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .right {
+    visibility: hidden;
+    width: 300px;
+    background-color: var(--bg-sub);
+    color: var(--text-main);
+    text-align: left;
+    border-radius: 6px;
+    padding: 15px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -150px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tooltip .right.bottom {
+    bottom: auto;
+    top: 150%;
+}
+
+.tooltip:hover .right {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-title {
+    font-weight: bold;
+    color: var(--text-main);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.tooltip-excerpt {
+    color: var(--text-sub);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Note Content Styles */
+.note-page-section {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 2rem 0;
+}
+
+.note-page-section h1 {
+    color: var(--text-main);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.note-page-section h2 {
+    color: var(--text-main);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+.note-page-section h3 {
+    color: var(--text-main);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Sidenotes and Margin Notes */
+.sn-left, .sn-right, .mn-left, .mn-right {
+    background-color: var(--bg-sub);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin: 1rem 0;
+}
+
+.sn-left, .mn-left {
+    margin-right: 2rem;
+}
+
+.sn-right, .mn-right {
+    margin-left: 2rem;
+}
+
+.margin-toggle {
+    display: none;
+}
+
+.sidenote-number {
+    font-weight: bold;
+    color: var(--link);
+}
+
+/* Backlinks */
+.backlinks {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+}
+
+.backlinks h3 {
+    color: var(--text-main);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.backlinks ul {
+    list-style: none;
+    padding: 0;
+}
+
+.backlinks li {
+    margin-bottom: 0.5rem;
+}
+
+.backlinks a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.backlinks a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Notes */
+@media screen and (max-width: 768px) {
+    .tooltip .right {
+        width: 250px;
+        margin-left: -125px;
+    }
+    
+    .note-page-section {
+        padding: 1rem 0;
+    }
+    
+    .note-page-section h1 {
+        font-size: 2rem;
+    }
+    
+    .sn-left, .sn-right, .mn-left, .mn-right {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

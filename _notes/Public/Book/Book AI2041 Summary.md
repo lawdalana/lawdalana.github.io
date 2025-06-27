@@ -1,7 +1,11 @@
 ---
-title : Book - AI2041
-notetype : feed
-date : 15-04-2024
+title: Book - AI2041
+notetype: reference
+date: 2024-04-15
+last_modified: 2024-04-15
+tags: [book, ai, future, technology, sci-fi, summary]
+status: published
+author: Kai-Fu Lee & Chen Qiufan
 ---
 
 # Summary
