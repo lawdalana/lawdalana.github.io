@@ -141,6 +141,7 @@ use Claude Code](https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad88
 ---
 
 ## ตัวอย่าง command
+
 | Command               | Description                                                                                                     |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|
 | `/add-dir`            | Add a new working directory                                                                                     |
@@ -170,4 +171,4 @@ use Claude Code](https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad88
 | `/upgrade`            | Upgrade to Max for higher rate limits and more Opus                                                             |
 | `/vim`                | Toggle between Vim and Normal editing modes                                                                     |
 
-
+---
