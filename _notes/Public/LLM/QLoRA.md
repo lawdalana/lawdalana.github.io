@@ -4,7 +4,7 @@ notetype : feed
 date : 02-08-2025
 ---
 
-## Paper: [](https://arxiv.org/pdf/2305.14314)
+## [QLORA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/pdf/2305.14314)
 
 - การปรับแต่งโมเดลขนาดใหญ่มากๆ นั้น มีค่าใช้จ่ายที่สูงมาก โดยเฉพาะอย่างยิ่งในด้านหน่วยความจำ GPU
 - ปรับแต่งแบบ 16-bit ทั่วไปสำหรับโมเดล LLaMA 65B parameter ต้องใช้หน่วยความจำ GPU มากกว่า 780 GB
@@ -19,7 +19,6 @@ date : 02-08-2025
 **2. Double Quantization (DQ)**
 
 **3. Paged Optimizers**
-
 
 
 ### 1. 4-bit NormalFloat (NF4): เป็นประเภทข้อมูลใหม่ที่เหมาะสมที่สุดตามทฤษฎีข้อมูล (information theoretically optimal) สำหรับน้ำหนักที่กระจายตัวแบบปกติ
