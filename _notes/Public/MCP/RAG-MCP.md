@@ -1,5 +1,5 @@
 ---
-title: Mitigating Prompt Bloat in LLM Tool Selection via Retrieval-Augmented Generation
+title: (RAG-MCP) Mitigating Prompt Bloat in LLM Tool Selection via Retrieval-Augmented Generation
 notetype: feed
 date: 2025-10-04
 last_modified: 2025-10-04
@@ -89,7 +89,3 @@ status: published
   - Focused context filtering
   - Prompt efficiency
   - Balanced generation โทเคนคำตอบมากขึ้นเล็กน้อยแลกกับการตรวจสอบ/ให้เหตุผลที่ดีขึ้น
-
-
-## Useful link
-- [Function Call OpenAI](https://help.openai.com/en/articles/8555517-function-calling-in-the-openai-api)
