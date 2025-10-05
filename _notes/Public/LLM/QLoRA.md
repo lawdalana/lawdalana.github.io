@@ -10,7 +10,7 @@ date : 02-08-2025
 - ปรับแต่งแบบ 16-bit ทั่วไปสำหรับโมเดล LLaMA 65B parameter ต้องใช้หน่วยความจำ GPU มากกว่า 780 GB
 - Quantization ล่าสุดที่สามารถลดการใช้หน่วยความจำของ LLMs ได้ แต่เทคนิคเหล่านี้มักใช้ได้กับการ inference เท่านั้น และ จะล้มเหลวในระหว่างการฝึกฝน (training)
 
-![Parameter-Efficient Fine-Tuning](/assets/img/Other/LLM/applsci-15-03087-g001.png)
+![Parameter-Efficient Fine-Tuning](/assets/img/Other/LLM/applsci-15-03087-g001.avif)
 
 ## 3 Innovation of QLoRA:
 
@@ -156,13 +156,13 @@ c1 32 บิต
 
 การจัดการหน่วยความจำแบบนี้ช่วย ป้องกันไม่ให้เกิดข้อผิดพลาดหน่วยความจำเต็ม (out-of-memory errors) ซึ่งเป็นอุปสรรคสำคัญในการ Fine-tuning โมเดลขนาดใหญ่บน GPU ตัวเดียว ด้วย Paged Optimizers ทำให้สามารถ Fine-tuning โมเดลที่มีพารามิเตอร์จำนวนมาก เช่น โมเดล 33B หรือ 65B พารามิเตอร์ บน GPU ตัวเดียวที่มีหน่วยความจำจำกัดได้ (เช่น GPU ขนาด 24GB หรือ 48GB) ซึ่งหากไม่มีเทคนิคนี้อาจไม่สามารถทำได้
 
-![Parameter-Efficient Fine-Tuning](/assets/img/Other/LLM/qlora_002.jpg)
+![Parameter-Efficient Fine-Tuning](/assets/img/Other/LLM/qlora_002.avif)
 
 ---
 
 ## Summary
 
-![Parameter-Efficient Fine-Tuning](/assets/img/Other/LLM/qlora_001.jpg)
+![Parameter-Efficient Fine-Tuning](/assets/img/Other/LLM/qlora_001.avif)
 
 - QLORA เป็นแนวทางการปรับแต่งที่มีประสิทธิภาพที่ช่วย ลดการใช้หน่วยความจำลงอย่างมาก จนสามารถปรับแต่งโมเดลขนาด 65B parameter บน GPU ขนาด 48GB เพียงตัวเดียวได้ โดยยังคงรักษาประสิทธิภาพการทำงานของ 16-bit finetuning ได้อย่างสมบูรณ์
 - QLORA จะทำการ Backpropagate (การย้อนกลับของเกรเดียนท์) ผ่านโมเดลภาษาที่ถูก Quantized แบบ 4-bit และถูกแช่แข็ง (frozen) เข้าไปใน Low Rank Adapters (LoRA)
