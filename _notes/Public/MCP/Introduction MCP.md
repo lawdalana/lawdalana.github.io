@@ -125,27 +125,27 @@ MCP คืออะไร: โปรโตคอลมาตรฐานที�
 | Category                         | Company/Product               | Key Features or Use Cases                                                          |
 | -------------------------------- | ----------------------------- | ---------------------------------------------------------------------------------- |
 | **AI Models and Frameworks**     | Anthropic (Claude) [2]        | Full MCP support in the desktop version, enabling interaction with external tools. |
-|                                  | OpenAI [39]                   | MCP support in Agent SDK and API for seamless integration.                         |
-|                                  | Baidu Maps [31]               | API integration using MCP to access geolocation services.                          |
-|                                  | Blender MCP [33]              | Enables Blender and Unity 3D model generation via natural language commands.       |
+| **AI Models and Frameworks**     | OpenAI [39]                   | MCP support in Agent SDK and API for seamless integration.                         |
+| **AI Models and Frameworks**     | Baidu Maps [31]               | API integration using MCP to access geolocation services.                          |
+| **AI Models and Frameworks**     | Blender MCP [33]              | Enables Blender and Unity 3D model generation via natural language commands.       |
 | **Developer Tools**              | Replit [43]                   | AI-assisted development environment with MCP tool integration.                     |
-|                                  | Microsoft Copilot Studio [49] | Extends Copilot Studio with MCP-based tool integration.                            |
-|                                  | Sourcegraph Cody [10]         | Implements MCP through OpenCTX for resource integration.                           |
-|                                  | Codeium [9]                   | Adds MCP support for coding assistants to facilitate cross-system tasks.           |
-|                                  | Cursor [12]                   | MCP tool integration in Cursor Composer for seamless code execution.               |
-|                                  | Cline [7]                     | VS Code coding agent that manages MCP tools and servers.                           |
+| **Developer Tools**              | Microsoft Copilot Studio [49] | Extends Copilot Studio with MCP-based tool integration.                            |
+| **Developer Tools**              | Sourcegraph Cody [10]         | Implements MCP through OpenCTX for resource integration.                           |
+| **Developer Tools**              | Codeium [9]                   | Adds MCP support for coding assistants to facilitate cross-system tasks.           |
+| **Developer Tools**              | Cursor [12]                   | MCP tool integration in Cursor Composer for seamless code execution.               |
+| **Developer Tools**              | Cline [7]                     | VS Code coding agent that manages MCP tools and servers.                           |
 | **IDEs/Editors**                 | Zed [60]                      | Provides slash commands and tool integration based on MCP.                         |
-|                                  | JetBrains [24]                | Integrates MCP for IDE-based AI tooling.                                           |
-|                                  | Windsurf Editor [14]          | AI-assisted IDE with MCP tool interaction.                                         |
-|                                  | TheiaAI/TheiaIDE [52]         | Enables MCP server interaction for AI-powered tools.                               |
-|                                  | Emacs MCP [32]                | Enhances AI functionality in Emacs by supporting MCP tool invocation.              |
-|                                  | OpenSumi [40]                 | Supports MCP tools in IDEs and enables seamless AI tool integration.               |
+| **IDEs/Editors**                 | JetBrains [24]                | Integrates MCP for IDE-based AI tooling.                                           |
+| **IDEs/Editors**                 | Windsurf Editor [14]          | AI-assisted IDE with MCP tool interaction.                                         |
+| **IDEs/Editors**                 | TheiaAI/TheiaIDE [52]         | Enables MCP server interaction for AI-powered tools.                               |
+| **IDEs/Editors**                 | Emacs MCP [32]                | Enhances AI functionality in Emacs by supporting MCP tool invocation.              |
+| **IDEs/Editors**                 | OpenSumi [40]                 | Supports MCP tools in IDEs and enables seamless AI tool integration.               |
 | **Cloud Platforms and Services** | Cloudflare [8]                | Provides remote MCP server hosting and OAuth integration.                          |
-|                                  | Block (Square) [47]           | Uses MCP to enhance data processing efficiency for financial platforms.            |
-|                                  | Stripe [48]                   | Exposes payment APIs via MCP for seamless AI integration.                          |
+| **Cloud Platforms and Services** | Block (Square) [47]           | Uses MCP to enhance data processing efficiency for financial platforms.            |
+| **Cloud Platforms and Services** | Stripe [48]                   | Exposes payment APIs via MCP for seamless AI integration.                          |
 | **Web Automation and Data**      | Apify MCP Tester [51]         | Connects to any MCP server using SSE for API testing.                              |
-|                                  | LibreChat [28]                | Extends the current tool ecosystem through MCP integration.                        |
-|                                  | Goose [21]                    | Allows building AI agents with integrated MCP server functionality.                |
+| **Web Automation and Data**      | LibreChat [28]                | Extends the current tool ecosystem through MCP integration.                        |
+| **Web Automation and Data**      | Goose [21]                    | Allows building AI agents with integrated MCP server functionality.                |
 
 
 
