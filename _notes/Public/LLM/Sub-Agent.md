@@ -196,6 +196,30 @@ Claude Code มี subagents ติดมาให้ เช่น:
 
 ---
 
+| เครื่องมือ                                   |                                                                                                      Sub-agent แบบกำหนดได้ |                                              รันหลายเทอร์มินัลพร้อมกัน | หมายเหตุ                                                             |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------: | -------------------------------------------------------------------- |
+| **Claude Code**                              |                                                                                   ✅ มี Subagents ชัดเจน ([Claude Code][1]) |                       ✅ ทำได้ (แนะนำ git worktrees) ([Claude Code][2]) | ตรงโจทย์สุดถ้าต้อง “subagent + หลายเทอร์มินัล”                       |
+| **Goose (Block)**                            |                                                              ✅ มี Subagents และรันได้ทั้ง sequential/parallel ([Block][3]) |                          ✅ เป็น CLI เปิดหลายเทอร์มินัลได้ ([Block][4]) | เป็น open-source agent สายทำงานจริงในเครื่อง                         |
+| **Gemini CLI (Google)**                      | ⚠️ มี “project-level sub-agents” ผ่าน `.gemini/agents/*.toml` + `delegate_to_agent` (ยัง active development) ([GitHub][5]) |                           ✅ เป็น CLI ([Google Cloud Documentation][6]) | ตอนนี้ “มีโครงสร้าง/ฟีเจอร์ย่อย” แต่ประสบการณ์ subagent ยังพัฒนาเร็ว |
+| **Gemini Code Assist (Agent mode)**          |                                           ⚠️ ใน VS Code “agent mode” ขับเคลื่อนโดย Gemini CLI ([Google for Developers][7]) | ✅ (ถ้าใช้ Gemini CLI หลายเทอร์มินัล) ([Google Cloud Documentation][6]) | ใน IDE คือโหมดเอเจนต์ทำงานหลายขั้นตอน ([Google for Developers][8])   |
+| **OpenAI Codex CLI (ที่คุณเรียก GPT Codex)** |                                           ❌ ยังไม่เห็น subagent แบบ built-in; มีคนขอฟีเจอร์ orchestration/multi-agent อยู่ |               ✅ เป็น CLI เปิดหลายเทอร์มินัลได้ (แต่ต้องจัดการชนกันเอง) | เหมาะกับ “หลาย session” มากกว่า “subagent”                           |
+| **Google Antigravity**                       |                              ⚠️ โฟกัส “จัดการหลาย agents/หลาย workspace” ผ่าน manager surface ([Google for Developers][8]) |                                ❌ ไม่ใช่แนว “เปิดหลายเทอร์มินัลรัน CLI” | เป็นแพลตฟอร์ม agent-first มากกว่า CLI                                |
+| **Cursor (Multi-Agents/Parallel)**           |                                                       ⚠️ มี multi-agents รันพร้อมกัน (เช่นใช้ git worktrees) ([Cursor][9]) |                ⚠️ เปิดหลายหน้าต่าง/หลาย repo ได้ แต่ไม่ใช่ CLI-centric | เป็น “หลาย agents” มากกว่า “subagent role-based”                     |
+
+[1]: https://code.claude.com/docs/en/sub-agents "Subagents - Claude Code Docs"
+[2]: https://code.claude.com/docs/en/common-workflows "Common workflows - Claude Code Docs"
+[3]: https://block.github.io/goose/docs/guides/subagents/ "Subagents | goose"
+[4]: https://block.github.io/goose/docs/quickstart/ "Quickstart | goose"
+[5]: https://github.com/google-gemini/gemini-cli/issues/15176 "Feature: First-Run Experience for Project-Level Sub-Agents · Issue #15176 · google-gemini/gemini-cli · GitHub"
+[6]: https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli?utm_source=chatgpt.com "Gemini CLI | Gemini for Google Cloud"
+[7]: https://developers.google.com/gemini-code-assist/docs/agent-mode?utm_source=chatgpt.com "Agent mode overview | Gemini Code Assist"
+[8]: https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer "Use the Gemini Code Assist agent mode  |  Google for Developers"
+[9]: https://cursor.com/changelog/2-0 "New Coding Model and Agent Interface · Cursor"
+
+
+
+---
+
 <!-- ## Bonus: เล่นเป็น “สายพานการทำงาน” (Chaining & Resumable)
 
 ถ้างานใหญ่ คุณสั่งเป็นทอด ๆ ได้ เช่น:
