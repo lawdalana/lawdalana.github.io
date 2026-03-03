@@ -4,7 +4,7 @@ notetype : feed
 date : 03-03-2026
 ---
 
-# [openclaw](https://clawctl.com/)
+# [openclaw](https://openclaw.ai/)
 
 > **"Your Personal Autonomous AI Agent — Local-first, Private, and Agnostic."**
 
