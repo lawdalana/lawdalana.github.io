@@ -1,7 +1,7 @@
 ---
 title : openclaw
 notetype : feed
-date : 04-03-2026
+date : 03-03-2026
 ---
 
 # [openclaw](https://clawctl.com/)
