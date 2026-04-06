@@ -1,6 +1,6 @@
 ---
 title: "Shopee & Lazada Affiliate ประเทศไทย — คู่มือฉบับครบ 2026"
-notetype: private
+notetype : unfeed
 date: 06-04-2026
 last_modified: 06-04-2026
 tags: [affiliate, shopee, lazada, ecommerce, marketing, thailand, passive-income]
