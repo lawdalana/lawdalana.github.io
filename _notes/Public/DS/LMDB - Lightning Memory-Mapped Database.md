@@ -3,7 +3,7 @@ title : LMDB - Lightning Memory-Mapped Database
 notetype : feed
 date : 22-04-2026
 last_modified : 22-04-2026
-tags : [database, lmdb, embedded-database, key-value-store, b-tree, mmap, mvcc, rocksdb]
+tags : [database, lmdb, embedded-database, key-value-store, b-tree, mmap, mvcc, rocksdb, tuning, license]
 status : published
 ---
 
@@ -407,7 +407,133 @@ with env.begin(write=True) as txn:
 
 ---
 
-## 14. Caveats & Best Practices
+
+## 14. Parameter Tuning
+
+LMDB มี parameter แค่ **3 ตัวหลัก** — เทียบกับ RocksDB ที่มี 50+
+
+### map_size — สำคัญที่สุด
+
+```python
+env = lmdb.open('mydb', map_size=1 << 40)  # 1 TB
+```
+
+| | รายละเอียด |
+|---|---|
+| **คืออะไร** | ขนาด virtual memory ที่ mmap จองไว้ (upper bound ของ DB) |
+| **ไม่ได้ใช้ RAM จริง** | เป็น virtual address space เท่านั้น |
+| **เต็มแล้ว** | `mdb_map_full` error → ต้อง close + resize + reopen |
+| **แนะนำ** | ตั้งใหญ่กว่าที่คิดไว้ เช่น `1 << 40` (1 TB) |
+
+```
+Development:   1 << 30   (1 GB)
+Production:    1 << 40   (1 TB)
+Large system:  1 << 43   (8 TB)
+```
+
+### max_readers — จำนวน concurrent readers
+
+```python
+env = lmdb.open('mydb', max_readers=126)  # default
+```
+
+- จำนวน concurrent read transactions สูงสุด (thread-level)
+- LMDB ใช้ shared memory array (`lock.mdb`) เก็บ reader slots
+- Default = 126, แต่ละ slot เล็กมาก → ตั้งเยอะไม่เสียอะไร
+
+```
+Single process:   16-32
+Multi-process:    128 (default)
+High concurrency: 256-1024
+```
+
+### max_dbs — จำนวน named databases
+
+```python
+env = lmdb.open('mydb', max_dbs=5)  # default = 1
+```
+
+- Default = 1 (main DB only) — ต้องตั้งเพิ่มถ้าใช้ `open_db()`
+- **ตั้งตอนสร้างเท่านั้น** — เปลี่ยนทีหลังไม่ได้
+
+```python
+env = lmdb.open('mydb', max_dbs=10)
+users_db = env.open_db(b'users')
+index_db = env.open_db(b'index')
+```
+
+### Environment Flags
+
+| Flag | ทำอะไร | ใช้เมื่อ |
+|---|---|---|
+| `MDB_WRITEMAP` | เขียนตรงผ่าน mmap (เร็วขึ้น) | มั่นใจ app ไม่มี bug |
+| `MDB_MAPASYNC` | Flush async | Balance ระหว่าง speed + safety |
+| `MDB_NOMETASYNC` | ไม่ fsync meta page | Write speed > crash safety |
+| `MDB_NOSYNC` | ไม่ fsync เลย | Batch loading, rebuildable data |
+| `MDB_NOLOCK` | ไม่ใช้ locking | Single-process only |
+| `MDB_RDONLY` | Read-only mode | Read replicas |
+
+### Sync Flags มีผลมากต่อ write throughput
+
+```
+Default (safest):     fsync ทุก commit    → ~5,000 writes/s (SSD)
+MDB_NOMETASYNC:       skip meta fsync      → ~50,000 writes/s
+MDB_NOSYNC+MAPASYNC:  no fsync at all      → ~200,000+ writes/s
+```
+
+### Transaction Flags
+
+| Flag | ทำอะไร |
+|---|---|
+| `MDB_NOOVERWRITE` | Put ไม่เขียนทับ key เดิม |
+| `MDB_APPEND` | Append mode (keys ต้อง sorted) — เร็วมาก |
+| `MDB_APPENDDUP` | Append สำหรับ duplicate keys |
+
+### 99% use cases
+
+```python
+env = lmdb.open('mydb', map_size=1 << 40, max_dbs=5)
+```
+
+---
+
+## 15. License — OpenLDAP Public License (BSD-style)
+
+### ✅ ทำได้
+
+- **ใช้เชิงพาณิชย์** — ฝังใน product ขายได้
+- **ใช้ใน closed-source product** — ไม่ต้องเปิด code
+- **SaaS** — ใช้เป็น backend โดยไม่ต้องเปิด source
+- **แก้ไข source code** — modify + redistribute ได้
+- **Embed ใน hardware** — IoT, embedded devices
+- **Sub-license** — ให้สิทธิ์คนอื่นต่อได้
+
+### ⚠️ เงื่อนไข
+
+- รักษา copyright notice + license text
+- ถ้าแจก source → แสดงว่าใช้ LMDB (attribution)
+- ไม่ใช้ชื่อ "OpenLDAP" โปรโมท product โดยไม่ได้รับอนุญาต
+
+### ❌ ทำไม่ได้
+
+- ลบ/แก้ copyright notice
+- บอกว่า author รับรอง product ของคุณ
+
+### เทียบกับ license อื่น
+
+| | LMDB (OpenLDAP) | Berkeley DB (AGPL) | RocksDB (Apache 2.0) |
+|---|---|---|---|
+| Commercial use | ✅ | ⚠️ ต้องเปิด source | ✅ |
+| Closed source | ✅ | ❌ | ✅ |
+| SaaS โดยไม่เปิด code | ✅ | ❌ | ✅ |
+| ต้องเปิด code ตัวเอง | ❌ | ✅ (AGPL) | ❌ |
+| Patent grant | ❌ | ❌ | ✅ |
+
+> ใจเย็นมาก ใช้ได้แทบทุกที่ ไม่มี trap เหมือน AGPL ของ Berkeley DB
+
+---
+
+## 16. Caveats & Best Practices
 
 - **ตั้ง `map_size` ให้พอ** — ถ้าเต็มจะเขียนไม่ได้ (ต้อง resize = close + reopen)
 - **หลีกเลี่ยง long-lived read transactions** — pages เก่าไม่ free → DB โต
