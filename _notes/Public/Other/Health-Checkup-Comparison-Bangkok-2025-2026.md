@@ -1,0 +1,390 @@
+---
+title: "เปรียบเทียบโปรโมชั่นตรวจสุขภาพ โรงพยาบาลกรุงเทพฯ 2025-2026"
+notetype: feed
+date: 2026-05-09
+last_modified: 2026-05-09
+tags: [health, hospital, bangkok, checkup, comparison, promotion]
+status: published
+---
+
+> รวบรวมโปรโมชั่นตรวจสุขภาพจาก **21 โรงพยาบาล** ในกรุงเทพและปริมณฑล เปรียบเทียบราคา รายการตรวจ และระยะเวลาโปรโมชั่น (อัปเดต 9 พ.ค. 2026)
+
+---
+
+## 📊 ตารางเปรียบเทียบรวม
+
+| โรงพยาบาล | เริ่มต้น (บาท) | กลาง (บาท) | พรีเมียม (บาท) | โปรหมดอายุ | สถานะ |
+|:--|--:|--:|--:|:--|:--|
+| จุฬาลงกรณ์ (รัฐ) | **720** | 1,220 | Add-on | - | ✅ ถูกสุด |
+| พระราม 9 | **3,190** | 11,990-13,900 | 29,900-33,900 | ปัจจุบัน | ✅ ลด 40-62% |
+| วิภาวดี 40th | **2,392** | 20,400-23,400 | - | 31 พ.ค. 2026 | ⚠️ เร่งด่วน |
+| เจ้าพระยา | **3,200** | 5,400-6,600 | 14,000-20,700 | ปัจจุบัน | ✅ |
+| ปิยะเวท | **3,500** | 7,700-10,000 | 24,000-28,000 | ปัจจุบัน | ✅ |
+| สมิติเวช สุขุมวิท | **3,500** | 8,500-13,500 | 30,000-38,000 | 31 พ.ค. 2026 | ⚠️ เร่งด่วน |
+| ไทยนครินทร์ | **3,900** | 11,000-13,500 | 25,000-38,000 | ปัจจุบัน | ✅ |
+| พญาไท 2 AgeWell | **5,700** | 12,500-14,500 | 25,500-27,500 | 31 ม.ค. 2026 | ⚠️ อาจหมด |
+| ธนบุรีเจริญเมือง | **5,600** | Buy 1 Get 1 | 8,900 | ปัจจุบัน | ✅ ลด 50%+ |
+| กรุงเทพ | **5,500** | 13,500 | 35,000 | 31 ธ.ค. 2026 | ✅ |
+| บำรุงราษฎร์ | ~**8,000** | ~15,000-25,000 | ~50,000+ | 31 ธ.ค. 2026 | ✅ |
+| เมดพาร์ค | - | - | Platinum 45-60 ปี | ปัจจุบัน | ✅ |
+| มิชชั่น | ราคาพิเศษ | iHealthy Premium | - | 2026 | ✅ |
+| สมิติเวช ธนบุรี | - | Wellness Center 2026 | - | 2026 | ✅ |
+| เกษมราษฎร์ บางแค | - | Buy 1 Get 1 | - | ปัจจุบัน | ✅ |
+| ศรีการ์ด (Sikarin) | Light | Silver | Gold | ปัจจุบัน | ดู GoWabi |
+
+---
+
+## 1. โรงพยาบาลไทยนครินทร์ — Check-Up Program 2569
+
+**Source:** [thainakarin.co.th](https://thainakarin.co.th/product/check-up-program-tnh/)
+
+![Thai Nakarin Check-Up 2026](/assets/img/Other/HealthCheckup/thainakarin-checkup-2026.jpg)
+
+### ราคาแพ็กเกจ
+
+| Plan | อายุ | เพศ | ราคาโปร (บาท) | ราคาปกติ (บาท) | ลด |
+|:--|--:|:--|--:|--:|--:|
+| Plan 1 | 15-30 | ช/ญ | 3,900 | 5,970 | 35% |
+| Plan 2 | 30+ | ช/ญ | 7,800 | 10,890 | 28% |
+| Plan 3 | 40+ | ชาย | 11,000 | 14,480 | 24% |
+| Plan 3 | 40+ | หญิง | 13,500 | 18,980 | 29% |
+| Plan 4 | 40+ (ECHO/EST) | ชาย | 16,000 | 22,380 | 29% |
+| Plan 4 | 40+ (ECHO/EST) | หญิง | 23,500 | 32,450 | 28% |
+| Plan 5 | 60+ (ECHO/EST) | ชาย | 25,000 | 37,565 | 33% |
+| Plan 5 | 60+ (ECHO/EST) | หญิง | 30,000 | 48,065 | 38% |
+| Cancer Screening | - | ชาย | 12,000 | 16,230 | 26% |
+| Cancer Screening | - | หญิง | 18,000 | 55,645 | 68% |
+
+### รายละเอียดโปรแกรมตรวจ
+
+![Thai Nakarin Detail](/assets/img/Other/HealthCheckup/thainakarin-detail-1.jpg)
+
+> **NCDs Screening พิเศษ:** 1,699 บาท (ตรวจเบาหวาน ความดัน ไขมัน) + สิทธิ์ซื้อวัคซีนราคาพิเศษ
+
+---
+
+## 2. โรงพยาบาลกรุงเทพ — Health Check-up Packages
+
+**Source:** [bangkokhospital.com](https://www.bangkokhospital.com/en/bangkok/package/health-check-up-packages)
+
+![Bangkok Hospital Check-up 2026](/assets/img/Other/HealthCheckup/bangkok-checkup-2026.jpg)
+
+### ราคาแพ็กเกจ (หมดอายุ 31 ธ.ค. 2026)
+
+| แพ็กเกจ | อายุ | ราคาโปร (บาท) | ราคาปกติ (บาท) | ลด |
+|:--|--:|--:|--:|--:|
+| Essence | < 30 | 5,500 | - | - |
+| Superior | 30-40 | 13,500 | 24,655 | 45% |
+| Prestige ชาย | 40-50 | 22,000 | - | - |
+| Prestige หญิง | 40-50 | 23,000 | - | - |
+| Signature ชาย | 50+ | 26,000 | - | - |
+| Signature หญิง | 50+ | 28,000 | - | - |
+| CEO Check-up | - | 35,000+ | - | - |
+| Ultimate | - | 35,000 (51 รายการ) | - | - |
+
+![Bangkok Superior](/assets/img/Other/HealthCheckup/bangkok-superior.jpg)
+
+### Feature เด่น
+- แบ่งตามช่วงอายุ + เพศ แบบละเอียด
+- Ultimate ตรวจ 51 รายการ ครอบคลุมทุกด้าน
+- Health Expo 2026 สาขาราชบุรี **990 บาท** (จาก 2,900)
+
+---
+
+## 3. โรงพยาบาลสมิติเวช สุขุมวิท — Annual Health Check-up
+
+**Source:** [samitivejhospitals.com](https://www.samitivejhospitals.com/package/detail/annual-health-check-up-packages-samitivej-sukhumvit)
+
+> ⚠️ **หมดอายุ 31 พฤษภาคม 2026** — รีบจอง!
+
+| แพ็กเกจ | ราคาโปร (บาท) |
+|:--|--:|
+| Basic ชาย/หญิง | 3,500 |
+| Basic Plus หญิง | 5,500 |
+| Women under 30 | 6,000 |
+| Women 30-40 | 8,500 |
+| Women 40-50 | 13,500 |
+| Women 50+ | 30,000 |
+| Women 50+ Premium | 38,000 |
+
+### Feature เด่น
+- ซื้อผ่าน Shopee / Lazada ได้
+- มีทั้งสาขาสุขุมวิทและศรีนครินทร์
+- Pre-marriage Screening มีให้บริการด้วย
+
+---
+
+## 4. โรงพยาบาลบำรุงราษฎร์ — Health Screening 2026
+
+**Source:** [bumrungrad.com](https://www.bumrungrad.com/en/health-check-up-center-bangkok-thailand-jci-best/check-up-packages)
+
+![Bumrungrad Comparison 2026](/assets/img/Other/HealthCheckup/bumrungrad-checkup-comparison-2026.jpg)
+
+### ราคาแพ็กเกจ (หมดอายุ 31 ธ.ค. 2026)
+
+| แพ็กเกจ | ระดับ | ราคาโดยประมาณ (บาท) |
+|:--|:--|--:|
+| Regular | พื้นฐาน | ~8,000-12,000 |
+| Comprehensive | ครบถ้วน | ~15,000-20,000 |
+| Comprehensive Advance | ขั้นสูง | ~20,000-25,000 |
+| Comprehensive Vitality | + Vitality | ~25,000-30,000 |
+| Executive | ผู้บริหาร | ~30,000-40,000 |
+| Executive Wellness | ผู้บริหาร+ | ~40,000-50,000 |
+| Holistic | องค์รวม | ~50,000+ |
+| Vitality Plus Genes | พันธุกรรม | ~60,000+ |
+
+### Feature เด่น
+- **JCI Accredited** — มาตรฐานสากล
+- ราคารวมค่าแพทย์ ห้ามใช้ส่วนลดเพิ่ม
+- รับบริการได้ 365 วันจากวันซื้อ
+
+---
+
+## 5. โรงพยาบาลพระราม 9 — Health Check Up
+
+**Source:** [pr9shop.praram9.com](https://pr9shop.praram9.com/en/product-category/health-check-up/)
+
+### ราคาแพ็กเกจ — ลดแรงที่สุด 40-62%!
+
+| อายุ | เพศ | ราคาโปร (บาท) | ราคาปกติ (บาท) | ลด |
+|--:|:--|--:|--:|--:|
+| 20+ | ช/ญ | 3,190 | 8,300 | **62%** |
+| 25+ | ช/ญ | 7,990 | 16,100 | **50%** |
+| 30+ | ชาย | 11,990 | 22,170 | **46%** |
+| 30+ | หญิง | 13,900 | 23,150 | **40%** |
+| 40+ | ชาย | 17,900 | 34,850 | **49%** |
+| 40+ | หญิง | 19,900 | 41,150 | **52%** |
+| 50+ | ชาย | 29,900 | 48,700 | **39%** |
+| 50+ | หญิง | 33,900 | 63,000 | **46%** |
+
+![Praram 9 - Age 30+](/assets/img/Other/HealthCheckup/praram9-age30m.jpg)
+![Praram 9 - Age 40+](/assets/img/Other/HealthCheckup/praram9-age40m.jpg)
+
+### Feature เด่น
+- **ส่วนลดเยอะที่สุด** ในบรรดาโรงพยาบาลเอกชน
+- Newsweek World's Best Hospitals 2025 อันดับ 9 ของไทย
+- JCI Accredited
+
+---
+
+## 6. โรงพยาบาลปิยะเวท — Health Check-Up Packages
+
+**Source:** [piyavate.com](https://piyavate.com/en/products-and-promotions/health-care-packages/check-up-packages/)
+
+| แพ็กเกจ | อายุ | เพศ | ราคา (บาท) |
+|:--|--:|:--|--:|
+| Essential | ทุกวัย | ช/ญ | 3,500 |
+| Bronze | < 30 | ชาย | 5,200 |
+| Bronze | < 30 | หญิง | 5,200 |
+| Silver | 30-40 | ชาย | 7,700 |
+| Silver | 30-40 | หญิง | 10,000 |
+| Gold | 40-50 | ชาย | 21,500 |
+| Gold | 40-50 | หญิง | 27,500 |
+| Platinum | 50+ | ชาย | 24,000 |
+| Platinum | 50+ | หญิง | 28,000 |
+
+### Feature เด่น
+- มีตัวเลือก "no H-Test" (ไม่รวมไวรัสตับอักเสบ) ลด ~1,000 บาท
+- Essential ราคาถูกมาก 3,500 บาท
+
+---
+
+## 7. โรงพยาบาลเมดพาร์ค — Platinum Health Checkup
+
+**Source:** [medparkhospital.com](https://www.medparkhospital.com/en-US/online-store/platinum-checkup-program-for-males-and-females)
+
+![MedPark Platinum](/assets/img/Other/HealthCheckup/medpark-platinum-en1.avif)
+
+### Platinum Program (อายุ 45-60)
+
+| แพ็กเกจ | รายการ |
+|:--|--:|
+| Platinum Male (EST) | 45 รายการ |
+| Platinum Female (EST + Thin Prep + HPV + Mammogram) | 48 รายการ |
+
+### Feature เด่น
+- แพทย์เวชศาสตร์ป้องกัน เฉพาะทาง
+- เทคโนโลยีล้ำสมัย
+
+---
+
+## 8. โรงพยาบาลวิภาวดี — 40th Anniversary Package
+
+**Source:** [vibhavadi.com](https://www.vibhavadi.com/en/package)
+
+> ⚠️ **หมดอายุ 31 พฤษภาคม 2026** — รีบจอง!
+
+| แพ็กเกจ | ราคา (บาท) |
+|:--|--:|
+| Health Checkup by Age Group | 2,392 - 12,600 |
+| Personal Health Premium | 20,400 - 23,400 |
+| Coronary Artery Calcium Check | 2,800 |
+| Boosted Immunization | 2,999 - 10,900 |
+
+### Feature เด่น
+- **ถูกที่สุด** เริ่ม 2,392 บาท (เอกชน)
+- มีแพ็กเกจ LGBTQ+ (Alternative Couples)
+- Fast Track Dengue Vaccine 3,700 บาท
+
+---
+
+## 9. โรงพยาบาลธนบุรีเจริญเมือง
+
+**Source:** [thonburibamrungmuang.com](https://www.thonburibamrungmuang.com/en/packages/)
+
+| แพ็กเกจ | ราคาโปร (บาท) | ราคาปกติ (บาท) | ลด |
+|:--|--:|--:|--:|
+| **Buy 1 Get 1 Free** | - | - | 1 ซื้อ 1 ฟรี |
+| Vitality | 5,600 | 11,500 | **51%** |
+| Executive | 8,900 | 18,600 | **52%** |
+
+### Feature เด่น
+- **Buy 1 Get 1 Free** — เหมาะไปเป็นคู่
+- ลด 50%+ ทุกแพ็กเกจ
+- มี Low-Dose CT คัดกรองมะเร็งปอด
+
+---
+
+## 10. โรงพยาบาลเจ้าพระยา — Standard Checkup Program
+
+**Source:** [chaophya.com](https://chaophya.com/package/ตรวจสุขภาพ/)
+
+| แพ็กเกจ | ราคาเหมาจ่าย (บาท) |
+|:--|--:|
+| P1 | 3,200 |
+| P2A / P2B | 4,700 / 5,900 |
+| P3A / P3B | 5,400 / 6,600 |
+| P4A / P4B | 10,900 / 12,800 |
+| P5A / P5B | 13,200 / 15,100 |
+| P6A / P6B | 14,000 / 14,700 |
+| P7A / P7B | 20,000 / 20,700 |
+
+> ราคาเหมาจ่าย สำหรับคนไทยเท่านั้น — 13 แพ็กเกจให้เลือก
+
+---
+
+## 11. โรงพยาบาลพญาไท 2 — AgeWell Expat Program
+
+**Source:** [phyathai.com](https://www.phyathai.com/app/ExpatHealthandWellness/)
+
+> ⚠️ หมดอายุ 31 มกราคม 2026 — **อาจหมดแล้ว** ต้องเช็คอีกครั้ง
+
+| อายุ | เพศ | ราคาโปร (บาท) | ราคาปกติ (บาท) | ลด |
+|--:|:--|--:|--:|--:|
+| 25-34 | ชาย | 5,700 | 17,045 | **70%** |
+| 25-34 | หญิง | 5,700 | 18,730 | **70%** |
+| 35-49 | ชาย | 12,500 | 30,350 | **60%** |
+| 35-49 | หญิง | 14,500 | 35,480 | **60%** |
+| 50-59 | ชาย | 19,500 | 40,164 | **52%** |
+| 50-59 | หญิง | 21,900 | 57,820 | **63%** |
+| 60+ | ชาย | 25,500 | 51,120 | **50%** |
+| 60+ | หญิง | 27,500 | 63,030 | **56%** |
+| Cancer ชาย | - | 6,900 | 17,000 | **59%** |
+| Cancer หญิง | - | 11,900 | 25,640 | **54%** |
+
+### Feature เด่น
+- **ลด 50-70%** — ถูกมากที่สุดในบรรดาเอกชน
+- เหมาะสำหรับ Expat / คนไทยทำงานต่างชาติ
+
+---
+
+## 12. โรงพยาบาลมิชชั่น — iHealthy 2026
+
+**Source:** [mission-hospital.org](https://www.mission-hospital.org/en/patient-rights/118-packages.html)
+
+![Mission iHealthy 2026](/assets/img/Other/HealthCheckup/mission-ihealthy1-2026.jpg)
+![Mission Check-up 2026](/assets/img/Other/HealthCheckup/mission-checkup-2026.jpg)
+
+- iHealthy 1, 2, Premium — ราคาพิเศษ 2026
+- รูปโปรโมชั่นมีรายละเอียดครบ
+
+---
+
+## 13. โรงพยาบาลจุฬาลงกรณ์ — ถูกที่สุด
+
+**Source:** [chulalongkornhospital.go.th](https://kcmh.chulalongkornhospital.go.th/en/annual-health-examination-program-en/)
+
+| แพ็กเกจ | อายุ | ราคา (บาท) |
+|:--|--:|--:|
+| Program 2 | < 35 | **720** |
+| Program 1 | 35+ | **1,220** |
+
+### Add-on รายการเพิ่มเติม
+
+| รายการ | ราคา (บาท) |
+|:--|--:|
+| HbA1C (น้ำตาลสะสม) | 150 |
+| ไวรัสตับอักเสบ B (HBsAg + Anti-HBs + Anti-HBc) | 540 |
+| ไวรัสตับอักเสบ C (Anti-HCV) | 300 |
+| Anti-HIV | 140 |
+| PSA (มะเร็งต่อมลูกหมาก) | 300 |
+| VDRL (ซิฟิลิส) | 100 |
+
+> 🏆 **ถูกที่สุด** — โรงพยาบาลรัฐ สภากาชาดไทย | Program พื้นฐานเริ่ม 720 บาท
+
+---
+
+## 14-21. โรงพยาบาลเพิ่มเติม
+
+| # | โรงพยาบาล | โปรเด่น | หมายเหตุ |
+|--:|:--|:--|:--|
+| 14 | สมิติเวช ธนบุรี | Wellness Center 2026 | JS-rendered |
+| 15 | ศิริราช Solutions | Check-up Center | ติดต่อโดยตรง |
+| 16 | ธรรมศาสตร์ (THAM-C) | Health Check-up Program | ปทุมธานี |
+| 17 | เกษมราษฎร์ บางแค | **Buy 1 Get 1 Free** | จองผ่าน go-hospo.com |
+| 18 | นวมินทร์ 9 | Checkup + ประกันสังคม | มีนบุรี |
+| 19 | ศรีการ์ด (Sikarin) | Light / Silver / Gold | ดู GoWabi |
+| 20 | เซนต์หลุยส์ | Health Check-up Program | ติดต่อโดยตรง |
+| 21 | BNH | Annual Check-up / Anytime 24/7 | JS-rendered |
+
+---
+
+## 🏆 แนะนำตามงบประมาณ
+
+### 💰 งบ 700-3,500 บาท (ประหยัดสุด)
+
+- **จุฬาลงกรณ์** Program 2 — 720 บาท (< 35 ปี) 🏆 ถูกที่สุด
+- **จุฬาลงกรณ์** Program 1 — 1,220 บาท (35+ ปี)
+- **วิภาวดี** 40th — เริ่ม 2,392 บาท
+- **เจ้าพระยา** P1 — 3,200 บาท
+- **พระราม 9** อายุ 20+ — 3,190 บาท (ลด 62%)
+- **ปิยะเวท** Essential — 3,500 บาท
+- **สมิติเวช** Basic — 3,500 บาท
+
+### 💰💰 งบ 5,000-15,000 บาท (คุ้มค่า)
+
+- **ธนบุรี** Vitality — 5,600 บาท (ลด 51%)
+- **พญาไท 2** AgeWell 25-34 — 5,700 บาท (ลด 70%)
+- **ไทยนครินทร์** Plan 2 — 7,800 บาท
+- **ปิยะเวท** Silver — 7,700-10,000 บาท
+- **เจ้าพระยา** P3-P4 — 5,400-12,800 บาท
+- **พระราม 9** อายุ 25-30+ — 7,990-13,900 บาท
+- **กรุงเทพ** Superior — 13,500 บาท (ลด 45%)
+
+### 💰💰💰 งบ 15,000-30,000+ บาท (ครบถ้วน)
+
+- **ธนบุรี** Executive — 8,900 บาท (ลด 52%)
+- **กรุงเทพ** Prestige / Signature — 22,000-28,000 บาท
+- **บำรุงราษฎร์** Comprehensive — 15,000-50,000+ บาท
+- **พญาไท 2** AgeWell 50-60+ — 19,500-27,500 บาท (ลด 50-63%)
+- **สมิติเวช** Women 50+ — 30,000-38,000 บาท
+- **พระราม 9** อายุ 50+ — 29,900-33,900 บาท
+
+### 🔥 โปรโมชั่นพิเศษ
+
+- **ธนบุรี** + **เกษมราษฎร์ บางแค** — **Buy 1 Get 1 Free**
+- **กรุงเทพ** Health Expo 2026 — **990 บาท** (จาก 2,900) สาขาราชบุรี
+
+---
+
+## ⚠️ โปรที่กำลังหมดเร็วๆ นี้
+
+| โรงพยาบาล | หมดอายุ | เหลือ |
+|:--|:--|--:|
+| สมิติเวช (ทุกสาขา) | 31 พ.ค. 2026 | ~22 วัน |
+| วิภาวดี 40th | 31 พ.ค. 2026 | ~22 วัน |
+| พญาไท 2 AgeWell | 31 ม.ค. 2026 | ⚠️ อาจหมดแล้ว |
+
+---
+
+_ข้อมูลจาก Brave Search + Web Scraping | 21 โรงพยาบาล | อัปเดต 9 พ.ค. 2026_
