@@ -1,22 +1,15 @@
 ---
-title: "New Tech Breakthroughs — เทคโนโลยีล้ำสมัย"
-notetype: feed
-date: 2026-05-17
-last_modified: 2026-05-17
-tags:
-  - technology
-  - breakthrough
-  - innovation
-  - new-tech
-status: published
+title : New Tech Breakthroughs - เทคโนโลยีล้ำสมัย
+notetype : feed
+date : 16-05-2026
 ---
 
-# New Tech Breakbreakthroughs — เทคโนโลยีล้ำสมัย
+# New Tech Breakthroughs - เทคโนโลยีล้ำสมัย
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด 2025-2026
 > ครอบคลุม: Energy, Materials, Computing, Biotech, Sensors, Manufacturing, Communication, Robotics, Environment
 >
-> *อัปเดตล่าสุด: 17 พ.ค. 2569 — 298 topics*
+> *อัปเดตล่าสุด: 16 May 2026 - 298 topics*
 
 ## หมวดทั้งหมด
 
