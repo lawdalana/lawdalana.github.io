@@ -1,16 +1,36 @@
 ---
 title : New Tech Breakthroughs
 notetype : feed
-date : 16-05-2026
+date : 17-05-2026
 ---
 
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 16 May 2026*
+> *อัปเดต: 17 May 2026*
 
 
 ## May 2026
+- 📡 **Quantum Radar — Stealth Detection via Entangled Photons** *(17 May 2026)*
+  Quantum radar = เรดาร์ควอนตัมใช้ single-photon entanglement ตรวจจับ stealth aircraft — China เริ่ม mass-produce 4-channel ultra-low-noise detector Anhui 2026, CETC อ้าง 100 km range, multi-wavelength scanning ประหยัดพลังงาน
+  [Source](https://thequantuminsider.com/2025/10/20/chinese-report-stealth-detecting-quantum-radar-enters-mass-production/)
+
+- 🧵 **CO₂-Derived Carbon Fiber — Carbon Capture Meets Supermaterial** *(17 May 2026)*
+  Mars Materials สำเร็จผลิต carbon fiber จาก CO₂ — ทั้งดัก carbon และสร้างวัสดุ aerospace-grade Chiba University: carbon material ใหม่ลดต้นทุน capture, algae→fiber pathway → permanent carbon storage ในถ่านหินเหมืองเก่า
+  [Source](https://energycapitalhtx.com/mars-materials-carbon-fiber-breakthrough)
+
+- ❄️ **Ambient-Pressure Superconductor at 151K — New World Record** *(17 May 2026)*
+  University of Houston ทำลายสถิติ superconductivity ที่ ambient pressure — Tc = 151K (-122°C) ด้วย pressure quench technique ใน HgBa₂Ca₂Cu₃O₈₊δ สูงที่สุดเท่าที่เคยบันทึก (since 1911)
+  [Source](https://www.uh.edu/news-events/stories/2026/march/03102026-ambient-pressure-superconductivity-record.php)
+
+- ⚡ **Cold Atmospheric Plasma Cancer Therapy — Selective Tumor Killing** *(17 May 2026)*
+  Cold plasma (CAP) ฆ่าเซลล์มะเร็งเจาะจงผ่าน RONS — non-invasive, selective, กระตุ้น immunogenic cell death npj Precision Oncology 2026: pancreatic cancer models, DBD + plasma jet devices ผ่าน clinical approval แล้วบางรุ่น
+  [Source](https://www.sciencedirect.com/science/article/pii/S2452199X2500324X)
+
+- 🤖 **Foundation Model Robot Swarms — LLM-Powered Collective Intelligence** *(17 May 2026)*
+  Embedding foundation models ใน swarm control → robot swarms เข้าใจคำสั่งธรรมดา, ปรับตัว real-time Caterpillar CES 2026: autonomous excavators+trucks+dozers, viewpoint paper 2026: FM = autonomy ระดับใหม่
+  [Source](https://sciencex.com/news/2026-05-wont-robot-swarms-gain-startling.html)
+
 
 - 🤖 **3D Printed Construction — Robots That Print Houses** *(16 May 2026)*
   3D printed construction = หุ่นยนต์พิมพ์บ้านด้วยคอนกรีต/วัสดุ → ลดแรงงาน 80%, ขยะ 60% ICON Titan: $20/sqft walls, ขาย robot ให้ builders Charlotte robot: บ้านวันละหลังด้วยขยะ recycl...
