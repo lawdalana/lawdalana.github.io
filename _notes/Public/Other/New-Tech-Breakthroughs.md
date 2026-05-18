@@ -1,16 +1,36 @@
 ---
 title : New Tech Breakthroughs
 notetype : feed
-date : 17-05-2026
+date : 18-05-2026
 ---
 
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 17 May 2026*
+> *อัปเดต: 18 May 2026*
 
 
 ## May 2026
+- 🔋 **Quantum Battery — Superextensive Charging via Super Absorption** *(18 May 2026)*
+  Quantum battery prototype แรกที่ใช้ quantum super absorption — ยิ่งขนาดใหญ่ยิ่งชาร์จเร็ว (ผิดกฎฟิสิกส์ทั่วไป) University of Melbourne + UNSW: microcavity + organic dye molecules → collective coherent absorption, power output เกิน classical limit
+  [Source](https://scitechdaily.com/scientists-just-built-a-quantum-battery-that-charges-almost-instantly/)
+
+- ⚛️ **Floquet Quantum States — Exotic Matter via Magnetic Driving** *(18 May 2026)*
+  นักวิจัยสร้าง exotic quantum states ใหม่ด้วย "ขับ" วัสดุด้วยสนามแม่เหล็กจังหวะ → quantum phases ที่เสถียรกว่า ทนต่อ errors — ไม่ต้องหาวัสดุใหม่ แค่ปรับ driving pattern
+  [Source](https://www.sciencedaily.com/releases/2026/05/260504154014.htm)
+
+- 💧 **Sodium-Ion Battery + Desalination — Energy & Clean Water in One Device** *(18 May 2026)*
+  University of Surrey: sodium-ion battery เก็บพลังงาน 2x + desalinate น้ำทะเล simultaneously — เก็บน้ำไว้ในวัสดุแทนเอาออก = ทั้งเพิ่ม capacity และแยกเกลือ
+  [Source](https://www.sciencedaily.com/releases/2026/02/260218031603.htm)
+
+- 🤖 **MIT Magno-Bots — Magnetic Hydrogel Micro-Robots Smaller Than Sand** *(18 May 2026)*
+  MIT + EPFL: soft magnetic hydrogel 3D-print เป็น micro-robots ขนาด sub-millimeter — ควบคุมด้วยแม่เหล็ก เปลี่ยนรูปจาก lollipop เป็น gripper ทันที → targeted drug delivery, microsurgery
+  [Source](https://news.mit.edu/2026/microscopic-magno-bots-perform-complex-maneuvers-with-magnet-swipe-0428)
+
+- 🧠 **Wetware Computer — 200K Brain Cells on Chip Learn to Play Doom** *(18 May 2026)*
+  Cortical Labs CL1: 200,000+ human neurons บน chip เรียนรู้เล่น Doom ใน ~1 สัปดาห์ — Sean Cole ใช้ Python API สอนผ่าน reinforcement signals, energy efficiency สูงกว่า silicon หลายสิบเท่า
+  [Source](https://www.newscientist.com/article/2517389-human-brain-cells-on-a-chip-learned-to-play-doom-in-a-week/)
+
 - 📡 **Quantum Radar — Stealth Detection via Entangled Photons** *(17 May 2026)*
   Quantum radar = เรดาร์ควอนตัมใช้ single-photon entanglement ตรวจจับ stealth aircraft — China เริ่ม mass-produce 4-channel ultra-low-noise detector Anhui 2026, CETC อ้าง 100 km range, multi-wavelength scanning ประหยัดพลังงาน
   [Source](https://thequantuminsider.com/2025/10/20/chinese-report-stealth-detecting-quantum-radar-enters-mass-production/)
