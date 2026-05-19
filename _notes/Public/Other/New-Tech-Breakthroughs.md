@@ -1,16 +1,27 @@
 ---
 title : New Tech Breakthroughs
 notetype : feed
-date : 18-05-2026
+date : 19-05-2026
 ---
 
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 18 May 2026*
+> *อัปเดต: 19 May 2026*
 
 
 ## May 2026
+- ⚛️ **Quantum Computer Error Correction** *(19 May 2026)*
+  Prototype quantum computers achieving unprecedented error correction rates using surface code techniques with logical qubit stability [Source](https://www.networkworld.com/article/3663515/top-quantum-breakthroughs-of-2025.html)
+- 🔥 **Fusion Reactor Plasma Control** *(19 May 2026)*
+  New plasma confinement systems enabling sustained fusion reactions at lower temperatures with stable magnetic confinement [Source](https://www.fusioncouncil.org/fusion-energy-2025-six-global-trends-to-watch/)
+- 🩸 **Bioprinting Blood Vessels** *(19 May 2026)*
+  Revolutionary bioprinting creating functional blood vessels and human tissue using advanced bio-inks and 3D techniques [Source](https://www.sciencedaily.com/releases/2025/03/250315114811.htm)
+- 💧 **Solid-State Hydrogen Storage** *(19 May 2026)*
+  H2MOF materials enabling safe, dense hydrogen storage at ambient temperatures for clean energy applications [Source](https://www.hydrogentechworld.com/breakthrough-in-solid-state-hydrogen-storage-h2mof-on-hydrogen-tech-world/)
+- 🔋 **Graphene Super Battery** *(19 May 2026)*
+  Graphene-based batteries with 5x capacity and improved safety through nano-structured electrode designs [Source](https://www.sciencedaily.com/releases/2025/01/250120150224.htm)
+
 - 🔋 **Quantum Battery — Superextensive Charging via Super Absorption** *(18 May 2026)*
   Quantum battery prototype แรกที่ใช้ quantum super absorption — ยิ่งขนาดใหญ่ยิ่งชาร์จเร็ว (ผิดกฎฟิสิกส์ทั่วไป) University of Melbourne + UNSW: microcavity + organic dye molecules → collective coherent absorption, power output เกิน classical limit
   [Source](https://scitechdaily.com/scientists-just-built-a-quantum-battery-that-charges-almost-instantly/)
