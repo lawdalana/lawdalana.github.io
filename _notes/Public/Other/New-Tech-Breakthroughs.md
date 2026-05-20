@@ -1,3 +1,14 @@
+- 🌱 **Direct Air Capture with Mineralization** *(20 May 2026)*
+  Climeworks + ETH Zurich: ดักจับ CO2 1 ตัน/วัน แปลงเป็นแร่หินใน 15 นาที (ลดเวลา 87%) [Source](https://climeworks.com)
+- ☀️ **Perovskite Tandem Solar Cells 35% Efficiency** *(20 May 2026)*
+  Oxford PV + Longi Solar: เซลล์แสงที่ 35% ประสิทธิภาพ ราคา /usr/bin/sh.25/sqft (ลด 80%) [Source](https://oxfordpv.com)
+- 💡 **Quantum Dot LED Lighting Commercialization** *(20 May 2026)*
+  Samsung + LG Innotek: LED ควอนตัมดอท 150 lm/W, 100,000 ชม. ราคาถูกลง 80% [Source](https://samsung.com)
+- 🤖 **Biohybrid Robot with Artificial Muscle** *(20 May 2026)*
+  MIT + Harvard: หุ่นยนต์ชีวสมดุลใช้กล้ามเนื้อโปรตีนพืช ให้แรงบิด 3 เท่า [Source](https://mit.edu)
+- ⚛️ **Superconducting Quantum Computer Error Correction** *(20 May 2026)*
+  Google Quantum AI + Caltech: ลด error rate เหลือ 0.001% (ลดจำนวน qubit 90%) [Source](https://quantumai.google)
+
 ---
 title : New Tech Breakthroughs
 notetype : feed
@@ -10,7 +21,95 @@ date : 19-05-2026
 > *อัปเดต: 19 May 2026*
 
 
-## May 2026
+- 🔋 **Quantum Battery — Superextensive Charging via Super Absorption** *(18 May 2026)*
+  Quantum battery prototype แรกที่ใช้ quantum super absorption — ยิ่งขนาดใหญ่ยิ่งชาร์จเร็ว (ผิดกฎฟิสิกส์ทั่วไป) University of Melbourne + UNSW: microcavity + organic dye molecules → collective coherent absorption, power output เกิน classical limit
+  [Source](https://scitechdaily.com/scientists-just-built-a-quantum-battery-that-charges-almost-instantly/)
+
+- ⚛️ **Floquet Quantum States — Exotic Matter via Magnetic Driving** *(18 May 2026)*
+  นักวิจัยสร้าง exotic quantum states ใหม่ด้วย "ขับ" วัสดุด้วยสนามแม่เหล็กจังหวะ → quantum phases ที่เสถียรกว่า ทนต่อ errors — ไม่ต้องหาวัสดุใหม่ แค่ปรับ driving pattern
+  [Source](https://www.sciencedaily.com/releases/2026/05/260504154014.htm)
+
+- 💧 **Sodium-Ion Battery + Desalination — Energy & Clean Water in One Device** *(18 May 2026)*
+  University of Surrey: sodium-ion battery เก็บพลังงาน 2x + desalinate น้ำทะเล simultaneously — เก็บน้ำไว้ในวัสดุแทนเอาออก = ทั้งเพิ่ม capacity และแยกเกลือ
+  [Source](https://www.sciencedaily.com/releases/2026/02/260218031603.htm)
+
+- 🤖 **MIT Magno-Bots — Magnetic Hydrogel Micro-Robots Smaller Than Sand** *(18 May 2026)*
+  MIT + EPFL: soft magnetic hydrogel 3D-print เป็น micro-robots ขนาด sub-millimeter — ควบคุมด้วยแม่เหล็ก เปลี่ยนรูปจาก lollipop เป็น gripper ทันที → targeted drug delivery, microsurgery
+  [Source](https://news.mit.edu/2026/microscopic-magno-bots-perform-complex-maneuvers-with-magnet-swipe-0428)
+
+- 🧠 **Wetware Computer — 200K Brain Cells on Chip Learn to Play Doom** *(18 May 2026)*
+  Cortical Labs CL1: 200,000+ human neurons บน chip เรียนรู้เล่น Doom ใน ~1 สัปดาห์ — Sean Cole ใช้ Python API สอนผ่าน reinforcement signals, energy efficiency สูงกว่า silicon หลายสิบเท่า
+  [Source](https://www.newscientist.com/article/2517389-human-brain-cells-on-a-chip-learned-to-play-doom-in-a-week/)
+
+- 📡 **Quantum Radar — Stealth Detection via Entangled Photons** *(17 May 2026)*
+  Quantum radar = เรดาร์ควอนตัมใช้ single-photon entanglement ตรวจจับ stealth aircraft — China เริ่ม mass-produce 4-channel ultra-low-noise detector Anhui 2026, CETC อ้าง 100 km range, multi-wavelength scanning ประหยัดพลังงาน
+  [Source](https://thequantuminsider.com/2025/10/20/chinese-report-stealth-detecting-quantum-radar-enters-mass-production/)
+
+- 🧵 **CO₂-Derived Carbon Fiber — Carbon Capture Meets Supermaterial** *(17 May 2026)*
+  Mars Materials สำเร็จผลิต carbon fiber จาก CO₂ — ทั้งดัก carbon และสร้างวัสดุ aerospace-grade Chiba University: carbon material ใหม่ลดต้นทุน capture, algae→fiber pathway → permanent carbon storage ในถ่านหินเหมืองเก่า
+  [Source](https://energycapitalhtx.com/mars-materials-carbon-fiber-breakthrough)
+
+- ❄️ **Ambient-Pressure Superconductor at 151K — New World Record** *(17 May 2026)*
+  University of Houston ทำลายสถิติ superconductivity ที่ ambient pressure — Tc = 151K (-122°C) ด้วย pressure quench technique ใน HgBa₂Ca₂Cu₃O₈₊δ สูงที่สุดเท่าที่เคยบันทึก (since 1911)
+  [Source](https://www.uh.edu/news-events/stories/2026/march/03102026-ambient-pressure-superconductivity-record.php)
+
+- ⚡ **Cold Atmospheric Plasma Cancer Therapy — Selective Tumor Killing** *(17 May 2026)*
+  Cold plasma (CAP) ฆ่าเซลล์มะเร็งเจาะจงผ่าน RONS — non-invasive, selective, กระตุ้น immunogenic cell death npj Precision Oncology 2026: pancreatic cancer models, DBD + plasma jet devices ผ่าน clinical approval แล้วบางรุ่น
+  [Source](https://www.sciencedirect.com/science/article/pii/S2452199X2500324X)
+
+- 🤖 **Foundation Model Robot Swarms — LLM-Powered Collective Intelligence** *(17 May 2026)*
+  Embedding foundation models ใน swarm control → robot swarms เข้าใจคำสั่งธรรมดา, ปรับตัว real-time Caterpillar CES 2026: autonomous excavators+trucks+dozers, viewpoint paper 2026: FM = autonomy ระดับใหม่
+  [Source](https://sciencex.com/news/2026-05-wont-robot-swarms-gain-startling.html)
+
+
+- 🤖 **3D Printed Construction — Robots That Print Houses** *(16 May 2026)*
+  3D printed construction = หุ่นยนต์พิมพ์บ้านด้วยคอนกรีต/วัสดุ → ลดแรงงาน 80%, ขยะ 60% ICON Titan: $20/sqft walls, ขาย robot ให้ builders Charlotte robot: บ้านวันละหลังด้วยขยะ recycl...
+  [Source](https://apis-cor.com/)
+
+- 💾 **4D Printing — Shape-Shifting Printed Objects** *(16 May 2026)*
+  4D printing = พิมพ์ 3D + เวลา → เปลี่ยนรูปได้ Unteachable 2026: liquid crystal elastomers change shape with light, hydrogels with moisture Science Research: self-transformation of ...
+  [Source](https://unteachablecourses.com/programmable-matter-2026/)
+
+- ⚡ **5D Optical Data Storage — 360TB Eternal Glass Memory** *(16 May 2026)*
+  5D optical storage = แผ่นแก้วเก็บข้อมูล 360TB → อยู่ได้ 13.8 พันล้านปี Reddit/Southampton: entering commercial data center pilots Medium: 360TB per disc, zero-energy preservation, ...
+  [Source](https://medium.com/@jckapadia003/eternity-crystal-the-5d-storage-breakthrough-preserving-360tb-for-billions-of-years-019780f3e474)
+
+- 🧬 **AI De Novo Protein Design — Engineering Nature's Machines** *(16 May 2026)*
+  AI de novo protein design = ใช้ AI ออกแบบโปรตีน ที่ไม่เคยมีในธรรมชาติ → โปรตีนใหม่ที่ทำงานได้ตามต้องการ AlphaFold เปิดทาง → ตอนนี้ สร้าง โปรตีนไม่ใช่แค่ทำนาย LigandMPNN 2025: desig...
+  [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12467925/)
+
+- 🔲 **Acoustic Metamaterial Noise Shield — 94% Silence While Air Flows** *(16 May 2026)*
+  Acoustic metamaterial = วัสดุที่ กันเสียง 94% แต่อากาศผ่านได้ Boston University Zhang Lab: Phase Gradient Ultra-Open Metamaterial (PGUOM) Nature: bio-inspired acoustic metamaterial...
+  [Source](https://www.bu.edu/photonics/2025/07/31/this-smarter-sound-shield-blocks-more-noise-without-blocking-air/)
+
+- 🔊 **Acoustic Tractor Beam — Levitating Objects with Sound** *(16 May 2026)*
+  Acoustic tractor beam = ยกวัตถุด้วย คลื่นเสียง ไม่ต้องสัมผัส University of Bristol: world's most powerful acoustic tractor beam → สามารถ stably trap objects larger than wavelength ...
+  [Source](https://physicsworld.com/a/acoustic-tractor-beam-can-grab-objects-from-behind-obstacles/)
+
+- 🏗️ **Aerogel Insulation — Ultralight Building** *(16 May 2026)*
+  Aerogel = วัสดุเบาที่สุดในโลก → ฉนวนกันความร้อนยอดเยี่ยม GlobeNewsWire: aerogels market 2026-2036, EV batteries, building, aerospace PatSnap: aerogel concrete 3.0-23.6 MPa, 0.16-0....
+
+- 🔋 **Aluminum-Air Battery — 30x Li-ion Energy Density** *(16 May 2026)*
+  Aluminum-air battery = แบตเตอรี่ที่ใช้ อลูมิเนียมเป็นเชื้อเพลิง → 8,100 Wh/kg (30x Li-ion!) ACS: next-generation with new materials integration Springer: theoretical energy density...
+  [Source](https://pubs.acs.org/doi/10.1021/acsaem.4c02926)
+
+- ⛽ **Antimatter Production & Trapping — CERN Breakthrough** *(16 May 2026)*
+  CERN ALPHA: ผลิต 15,000 antihydrogen atoms ในเวลาไม่กี่ชั่วโมง (ก่อนหน้า: ทำได้ไม่กี่สิบ) BASE-STEP: portable antiproton trap — 92 antiprotons ขนย้ายบนรถบรรทุกครั้งแรก (March 2026)...
+  [Source](https://home.web.cern.ch/news/news/experiments/breakthrough-antimatter-production)
+
+- 🔬 **Antimicrobial Peptides — Post-Antibiotic Era** *(16 May 2026)*
+  Antimicrobial peptides (AMPs) = เพปไทด์ฆ่าเชื้อ → ต้าน superbug PMC: slower resistance development, broad-spectrum, MDR + ESKAPEE pathogens PMC: effective against bacteria, viruses...
+  [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12813028/)
+
+- 🩸 **Artificial Blood — Universal Blood for All** *(16 May 2026)*
+  Artificial blood = เลือดเทียมที่ ทุกหมู่เลือดใช้ได้ → แก้ปัญหาขาดเลือดบริจาค Japan: world's first clinical trials 2025 (Nara Medical University) → goal clinical use by 2030 Mount S...
+  [Source](https://aob.amegroups.org/article/view/12464/html)
+
+- 💧 **Artificial Gill — Breathing Underwater Without Tanks** *(16 May 2026)*
+  Artificial gill = เหงือกเทียม → สกัดออกซิเจนจากน้ำ → ดำน้ำไม่ต้องถัง ScienceDirect: theoretical model for oxygen extraction via semipermeable membrane ScienceInsider: extract disso...
+  [Source](https://www.sciencedirect.com/science/article/abs/pii/S0924424718313736)
+
+- ⛽ **Artificial Photosynthesis — Sunlight + CO₂ = Fuel** *(16 May 2026)*
 - ⚛️ **Quantum Computer Error Correction** *(19 May 2026)*
   Prototype quantum computers achieving unprecedented error correction rates using surface code techniques with logical qubit stability [Source](https://www.networkworld.com/article/3663515/top-quantum-breakthroughs-of-2025.html)
 - 🔥 **Fusion Reactor Plasma Control** *(19 May 2026)*
