@@ -1,3 +1,17 @@
+---
+title: New Tech Breakthroughs
+notetype: feed
+date: 2026-05-21
+last_modified: 2026-05-21
+tags: [technology, breakthroughs, research, innovation]
+status: published
+---
+
+# New Tech Breakthroughs
+
+> รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
+> *อัปเดต: 21 May 2026*
+
 - 🌟 **Room Temperature Quantum Computing** *(21 May 2026)*
   IBM และ MIT พัฒนาคอมพิวเตอร์ควอนตัมที่ทำงานได้ที่อุณหภูมิห้องโดยไม่ต้องการระบบเย็นลงเย็นครั้งลำดับ → ลดต้นทุนและความซับซ้อนในการผลิตระบบควอนตัมได้อย่างมีนัยสำคัญ [Source](https://ibm.com/research)
 
@@ -13,39 +27,16 @@
 - 🌿 **Bioluminescent Lighting Systems** *(21 May 2026)*
   University of Cambridge และ MIT สร้างสิ่งมีชีวิตที่สามารถสร้างแสงได้โดยไม่ต้องใช้ไฟฟ้าหรือเคมี → ทางเลือกพลังงานยั่งยืนสำหรับไฟถนนและป้ายสัญญาณ [Source](https://cambridge.ac.uk)
 
----
-title : New Tech Breakthroughs
-notetype : feed
-date : 21-05-2026
----
-
-# New Tech Breakthroughs
-
-> รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 21 May 2026*
-
 - 🌱 **Direct Air Capture with Mineralization** *(20 May 2026)*
   Climeworks + ETH Zurich: ดักจับ CO2 1 ตัน/วัน แปลงเป็นแร่หินใน 15 นาที (ลดเวลา 87%) [Source](https://climeworks.com)
 - ☀️ **Perovskite Tandem Solar Cells 35% Efficiency** *(20 May 2026)*
-  Oxford PV + Longi Solar: เซลล์แสงที่ 35% ประสิทธิภาพ ราคา /usr/bin/sh.25/sqft (ลด 80%) [Source](https://oxfordpv.com)
+  Oxford PV + Longi Solar: เซลล์แสงที่ 35% ประสิทธิภาพ ราคา $0.25/sqft (ลด 80%) [Source](https://oxfordpv.com)
 - 💡 **Quantum Dot LED Lighting Commercialization** *(20 May 2026)*
   Samsung + LG Innotek: LED ควอนตัมดอท 150 lm/W, 100,000 ชม. ราคาถูกลง 80% [Source](https://samsung.com)
 - 🤖 **Biohybrid Robot with Artificial Muscle** *(20 May 2026)*
   MIT + Harvard: หุ่นยนต์ชีวสมดุลใช้กล้ามเนื้อโปรตีนพืช ให้แรงบิด 3 เท่า [Source](https://mit.edu)
 - ⚛️ **Superconducting Quantum Computer Error Correction** *(20 May 2026)*
   Google Quantum AI + Caltech: ลด error rate เหลือ 0.001% (ลดจำนวน qubit 90%) [Source](https://quantumai.google)
-
----
-title : New Tech Breakthroughs
-notetype : feed
-date : 19-05-2026
----
-
-# New Tech Breakthroughs
-
-> รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 19 May 2026*
-
 
 - 🔋 **Quantum Battery — Superextensive Charging via Super Absorption** *(18 May 2026)*
   Quantum battery prototype แรกที่ใช้ quantum super absorption — ยิ่งขนาดใหญ่ยิ่งชาร์จเร็ว (ผิดกฎฟิสิกส์ทั่วไป) University of Melbourne + UNSW: microcavity + organic dye molecules → collective coherent absorption, power output เกิน classical limit
@@ -86,7 +77,6 @@ date : 19-05-2026
 - 🤖 **Foundation Model Robot Swarms — LLM-Powered Collective Intelligence** *(17 May 2026)*
   Embedding foundation models ใน swarm control → robot swarms เข้าใจคำสั่งธรรมดา, ปรับตัว real-time Caterpillar CES 2026: autonomous excavators+trucks+dozers, viewpoint paper 2026: FM = autonomy ระดับใหม่
   [Source](https://sciencex.com/news/2026-05-wont-robot-swarms-gain-startling.html)
-
 
 - 🤖 **3D Printed Construction — Robots That Print Houses** *(16 May 2026)*
   3D printed construction = หุ่นยนต์พิมพ์บ้านด้วยคอนกรีต/วัสดุ → ลดแรงงาน 80%, ขยะ 60% ICON Titan: $20/sqft walls, ขาย robot ให้ builders Charlotte robot: บ้านวันละหลังด้วยขยะ recycl...
@@ -186,7 +176,6 @@ date : 19-05-2026
 - 🤖 **Foundation Model Robot Swarms — LLM-Powered Collective Intelligence** *(17 May 2026)*
   Embedding foundation models ใน swarm control → robot swarms เข้าใจคำสั่งธรรมดา, ปรับตัว real-time Caterpillar CES 2026: autonomous excavators+trucks+dozers, viewpoint paper 2026: FM = autonomy ระดับใหม่
   [Source](https://sciencex.com/news/2026-05-wont-robot-swarms-gain-startling.html)
-
 
 - 🤖 **3D Printed Construction — Robots That Print Houses** *(16 May 2026)*
   3D printed construction = หุ่นยนต์พิมพ์บ้านด้วยคอนกรีต/วัสดุ → ลดแรงงาน 80%, ขยะ 60% ICON Titan: $20/sqft walls, ขาย robot ให้ builders Charlotte robot: บ้านวันละหลังด้วยขยะ recycl...
@@ -960,7 +949,6 @@ date : 19-05-2026
   Quantum repeater = ตัวขยายสัญญาณควอนตัม สำหรับ quantum internet ระยะไกล USTC (China): 10km fiber entanglement, 550ms memory lifetime Nature 2026: long-lived trapped-ion entanglemen...
   [Source](https://www.nature.com/articles/s41586-026-10177-4)
 
-
 ## April 2026
 
 - ⚡ **Superconducting Power Grid — Lossless Electricity Transmission** *(04 Apr 2026)*
@@ -991,7 +979,6 @@ date : 19-05-2026
   PEC water splitting = แสงอาทิตย์ → แยกน้ำ → ไฮโดรเจน โดยตรง (ไม่ผ่าน PV + electrolyzer) Nature: solar-to-hydrogen efficiency >9% with pure water + concentrated sunlight + InGaN pho...
   [Source](https://www.nature.com/articles/s41586-022-05399-1)
 
-
 ## March 2026
 
 - 🔮 **Quantum Navigation — GPS Without Satellites** *(28 Mar 2026)*
@@ -1001,7 +988,6 @@ date : 19-05-2026
 - 🔬 **Percepta — Computer Inside a Transformer** *(16 Mar 2026)*
   Percepta (startup) สร้าง code-to-weights compiler ที่ compile WebAssembly interpreter ลงใน transformer weights โดยตรง — ไม่ใช่ prompting, ไม่ใช่ tool call, โปรแกรมอยู่ใน weights. E...
   [Source](https://www.percepta.ai/blog/can-llms-be-computers)
-
 
 ## January 2026
 
@@ -1013,13 +999,11 @@ date : 19-05-2026
   Metamaterial cloaking = วัสดุพรางตัว → ซ่อนจากแสง/เสียง/ความร้อน Wikipedia: metamaterials manipulate light paths → invisibility Nature: metasurface cloaks with significantly reduce...
   [Source](https://www.nature.com/articles/s41377-018-0052-7)
 
-
 ## December 2025
 
 - ⚡ **Direct Air Capture (DAC) Scale-Up — Climeworks Leading** *(10 Dec 2025)*
   DAC = ดูด CO₂ จากอากาศโดยตรง Climeworks: opened world's largest DAC innovation center (Dec 2025) Target: $250-350/tonne by 2030 New technology: halves energy use ETH Zürich project...
   [Source](https://climeworks.com/press-release/climeworks-launches-the-largest-dac-innovation-center)
-
 
 ## November 2025
 
@@ -1035,20 +1019,17 @@ date : 19-05-2026
   Microplastic degrading enzyme = เอนไซม์กินไมโครพลาสติก ScienceDaily: KAUST discovers molecular signature for efficient plastic-breaking enzymes → found in 80% of ocean samples Scie...
   [Source](https://www.sciencedaily.com/releases/2025/11/251104013023.htm)
 
-
 ## October 2025
 
 - 🚀 **Space Debris Removal — Cleaning Up Orbit** *(05 Oct 2025)*
   Space debris = 36,000+ tracked objects ขนาด >10cm ใน orbit → เสี่ยง Kessler Syndrome (chain reaction collisions) ClearSpace-1 (ESA) = first active debris removal mission Astroscale...
   [Source](https://www.astroscale.com/en/missions/elsa-d)
 
-
 ## July 2025
 
 - 🧬 **CRISPR Gene Drive Mosquitoes — Eradicating Malaria** *(23 Jul 2025)*
   Gene drive = CRISPR technique ที่ บังคับยีนกระจายทั่วประชากร (ไม่ใช่ 50/50 แต่ ~100%) UCSD + Johns Hopkins: "stealth genetic switch" เปลี่ยนโมเลกุลเดียวในยุง → ยุงไม่ส่งมาลาเรีย PM...
   [Source](https://www.science.org/content/article/controversial-gene-drive-strategy-could-make-mosquitoes-hostile-to-malaria-parasites)
-
 
 ## June 2025
 
@@ -1070,7 +1051,6 @@ date : 19-05-2026
 - 🔮 **Wavelength Tunable Laser** *(01 Jun 2025)*
   Tunable laser = เลเซอร์ปรับความยาวคลื่น → LiDAR + spectroscopy Optica: Chilas ATLAS/COMET/POLARIS, sensing, quantum, OCT, LiDAR, telecom DataInsights: $14.13B market 2025, 8.7% CAG...
 
-
 ## May 2025
 
 - 💉 **Universal Flu Vaccine — One Shot for All Strains** *(22 May 2025)*
@@ -1081,7 +1061,6 @@ date : 19-05-2026
   Organ-on-chip = ชิปไมโครอะนาล็อกอวัยวะมนุษย์ ทดสอบยาแทนสัตว์ Wyss Institute: microfluidic devices lined with living human cells FDA (April 2025): roadmap to reduce/replace animal t...
   [Source](https://wyss.harvard.edu/technology/human-organs-on-chips/)
 
-
 ## April 2025
 
 - 💧 **Magnetohydrodynamic (MHD) Drive — Silent Propulsion** *(02 Apr 2025)*
@@ -1091,7 +1070,6 @@ date : 19-05-2026
 - 💡 **Turing Machine Evaluation for LLMs** *(01 Apr 2025)*
   ทำไมต้อง evaluate LLM ด้วย Turing machine? เพราะ benchmark ปัจจุบัน (MMLU, GSM8K) วัด knowledge ไม่ใช่ computation ability TMBench = benchmark ใหม่ที่ให้ LLM simulate Turing machin...
   [Source](https://arxiv.org/abs/2504.20771)
-
 
 ## January 2025
 
@@ -1300,13 +1278,11 @@ date : 19-05-2026
 - 🔋 **Zinc-Air Rechargeable Battery** *(01 Jan 2025)*
   Zinc-air battery = แบตสังกะสี-อากาศ → non-flammable + ถูก CleanTechnica: e-Zinc long-duration water-based non-flammable → commercializing The Independent: zinc-air huge potential f...
 
-
 ## December 2024
 
 - 🧬 **Latent Chain-of-Thought — Reasoning Beyond Language** *(01 Dec 2024)*
   Latent CoT = ให้ LLM "คิด" ใน continuous vector space แทนที่จะ generate text thinking tokens — ประหยัด tokens, เร็วกว่า, จับ uncertainty + nuance ได้ดีกว่า Coconut (Meta) ใช้ conti...
   [Source](https://arxiv.org/abs/2412.06769)
-
 
 ## October 2024
 
@@ -1314,12 +1290,10 @@ date : 19-05-2026
   Solar desalination = แยกน้ำจืดจากน้ำทะเลด้วยความร้อนจากแสงอาทิตย์ ไม่ต้องใช้ไฟฟ้าเลย UNIST (Korea): 2025-2026 breakthrough technology พัฒนา high-performance solar evaporator MIT: n...
   [Source](https://www.sciencedaily.com/releases/2024/10/241008103809.htm)
 
-
 ## June 2024
 
 - 🧠 **Photonic Neural Network Accelerator** *(01 Jun 2024)*
   Photonic NN = แสงคำนวณ AI → sub-nanosecond + near-zero heat Lightmatter: validates computational robustness of photonic processing Wiley Adv Mat: integrated neuromorphic photonic c...
-
 
 ## February 2024
 
@@ -1327,17 +1301,14 @@ date : 19-05-2026
   Memory prosthesis = ชิปสมองคืนความจำ → hippocampus implant ScienceDaily/Wake Forest: electronic prosthetic influences firing patterns in hippocampus → helps humans restore memory P...
   [Source](https://www.sciencedaily.com/releases/2024/02/240213130407.htm)
 
-
 ## February 2023
 
 - ⛽ **Direct Seawater-to-Hydrogen — No Desalination Needed** *(23 Feb 2023)*
   Direct seawater electrolysis = แยกไฮโดรเจนจากน้ำทะเลโดยไม่ต้องกรองเกลือ RMIT: skip desalination entirely → lower cost + energy Brunel University: electrodes extract hydrogen direct...
   [Source](https://www.sciencedaily.com/releases/2023/02/230214154047.htm)
 
-
 ## December 2021
 
 - 🔬 **Scratchpad Computation — Show Your Work** *(01 Dec 2021)*
   Scratchpad = ให้ transformer เขียน intermediate computation steps ลงพื้นที่พิเศษก่อนตอบ — ทำให้ multi-step computation (long addition, program execution) ได้ดีขึ้นมาก Google Resear...
   [Source](https://arxiv.org/abs/2112.00114)
-
