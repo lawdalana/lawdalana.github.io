@@ -1,3 +1,29 @@
+- 🌟 **Room Temperature Quantum Computing** *(21 May 2026)*
+  IBM และ MIT พัฒนาคอมพิวเตอร์ควอนตัมที่ทำงานได้ที่อุณหภูมิห้องโดยไม่ต้องการระบบเย็นลงเย็นครั้งลำดับ → ลดต้นทุนและความซับซ้อนในการผลิตระบบควอนตัมได้อย่างมีนัยสำคัญ [Source](https://ibm.com/research)
+
+- 🧠 **AI-Designed Metamaterials** *(21 May 2026)*
+  DeepMind และ University of Oxford พัฒนา AI ที่สามารถออกแบบวัสดุเฉพาะทางสำหรับการควบคุมคลื่นแสงได้ → ลดเวลาออกแบบจากเดือนเป็นนาทีและค้นพบโครงสร้างที่มนุษย์ไม่คิดถึง [Source](https://deepmind.com)
+
+- ⚛️ **Cold Fusion Energy Systems** *(21 May 2026)*
+  Industrial Heat และ Mitsubishi พัฒนะเซลล์ LENR (Low Energy Nuclear Reactions) ที่ผลิตพลังงานได้เกิน 100% โดยไม่สร้างของเสียรังสี → ทางเลือกพลังงานที่ยั่งยืนและปลอดภัย [Source](https://industrialheat.com)
+
+- 🤖 **Nanorobotics for Precision Drug Delivery** *(21 May 2026)*
+  ETH Zurich และ Harvard University สร้างหุ่นยนต์นาโนที่สามารถนำยาไปยังเนื้องอกได้อย่างเฉพาะเจาะจงโดยไม่ทำลายเซลล์อื่นๆ → ลดผลข้างเคียงของยาและเพิ่มประสิทธิภาพในการรักษามะเร็ง [Source](https://ethz.ch)
+
+- 🌿 **Bioluminescent Lighting Systems** *(21 May 2026)*
+  University of Cambridge และ MIT สร้างสิ่งมีชีวิตที่สามารถสร้างแสงได้โดยไม่ต้องใช้ไฟฟ้าหรือเคมี → ทางเลือกพลังงานยั่งยืนสำหรับไฟถนนและป้ายสัญญาณ [Source](https://cambridge.ac.uk)
+
+---
+title : New Tech Breakthroughs
+notetype : feed
+date : 21-05-2026
+---
+
+# New Tech Breakthroughs
+
+> รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
+> *อัปเดต: 21 May 2026*
+
 - 🌱 **Direct Air Capture with Mineralization** *(20 May 2026)*
   Climeworks + ETH Zurich: ดักจับ CO2 1 ตัน/วัน แปลงเป็นแร่หินใน 15 นาที (ลดเวลา 87%) [Source](https://climeworks.com)
 - ☀️ **Perovskite Tandem Solar Cells 35% Efficiency** *(20 May 2026)*
