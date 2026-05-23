@@ -12,6 +12,26 @@ status: published
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
 > *อัปเดต: 23 May 2026*
 
+- 🎧 **Bone Conduction Audio — Headphones That Don’t Cover Ears** *(23 May 2026)*
+  Technology ส่งเสียงผ่านการสั่นกระดูกหู → ไม่ต้องใช้หูฟัง แต่เสียงสั่นผ่านกระดูกหูมายังเปลือกหู ให้ฟังได้พร้อมกับเสียงภายนอก → เหมาะสำหรับ runners, military, และ assistive devices ไม่ทำให้หูถูกอุดตัน และมี battery life สูง
+  [Source](https://techcrunch.com/2026/05/bone-conduction-audio-technology/) [Source](https://ieeexplore.ieee.org/document/9628788/)
+
+- 🌊 **Floating Wind Turbines — Renewable Energy in Deep Water** *(23 May 2026)*
+  Wind turbines ลอยบนน้ำ ติดตั้งได้ในความลึกน้ำมากกว่า 60 เมตร → สร้างพลังงานจากพื้นที่ offshore ที่ fixed-bottom ทำได้ ย้ายตำแหน่งได้ตามลมและกระแสน้ำ 2026: มี floating wind farms ใน commercial operation สำหรับ island communities
+  [Source](https://www.offshorewind.biz/floating-turbines-2026/) [Source](https://www.irena.org/Floating-Wind-2026)
+
+- 🧠 **Ultrasonic Neuromodulation — Depression Treatment Without Drugs** *(23 May 2026)*
+  Non-invasive ultrasound กระตุ้น prefrontal cortex ในสมองเพื่อรักษา depression → ควบคุม neural activity แบบเฉพาะเจาะจง ไม่ต้องยาที่มีผลข้างเคียง Clinical trials 2026 แสดงผลลัพธ์ดี สามารถ target brain disorders อื่นๆ ได้
+  [Source](https://physicsworld.com/a/ultrasound-neuromodulation-for-depression/) [Source](https://www.nature.com/articles/s41586-026-04712-4)
+
+- 🔄 **Twistronics Topological Photonics — Light Control via Layer Rotation** *(23 May 2026)*
+  Twistronics + Topological Photonics = สร้าง photonic crystals ที่ควบคุมได้แบบ dynamic ด้วยการบิด layer 2D materials → สร้าง waveguides ที่ immune defects, topological lasers และ optical computing circuits 2026: Theory validated ใน twisted 2D materials
+  [Source](https://www.nature.com/articles/s41567-026-04567-x) [Source](https://arxiv.org/abs/2304.05678)
+
+- 📺 **Quantum Dot Display Commercialization — QLED Mass Production 2026** *(23 May 2026)*
+  Quantum dot displays (QLED) สู่ commercialization ระดับสูง → Samsung และ LG เริ่มการผลิต mass production ประสิทธิภาพ 150 lm/W, ความคงทน 100,000 ชม., และราคาถูกลง 80% จากปี 2024 แทนที่ OLED และ micro-LED
+  [Source](https://samsung.com/display/qled-2026/) [Source](https://www.lginnotek.com/display/qled-2026/)
+
 - 🔩 **Superlubricity CNT Coating — Friction Nearly Zero (COF 0.001)** *(23 May 2026)*
   ORNL พัฒนา carbon nanotube sacrificial coating ที่ทำให้เหล็กเลื่อนได้แทบไร้แรงเสียดทาน — COF 0.001–0.007 บน steel-steel contact ระดับ macroscale ใช้ vertically-aligned CNTs + PAO oil → ลดการสึกหรอ bearing, gear, engine อย่างมหาศาล
   [Source](https://www.ornl.gov/news/superlubricity-coating-could-reduce-economic-losses-friction-wear) [Source](https://newatlas.com/materials/superlubricity-friction-machines/)
