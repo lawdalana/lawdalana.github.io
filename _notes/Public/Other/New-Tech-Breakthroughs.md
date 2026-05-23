@@ -2,7 +2,7 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: 2026-05-21
+last_modified: 2026-05-23
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
@@ -10,7 +10,27 @@ status: published
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 21 May 2026*
+> *อัปเดต: 23 May 2026*
+
+- 🔩 **Superlubricity CNT Coating — Friction Nearly Zero (COF 0.001)** *(23 May 2026)*
+  ORNL พัฒนา carbon nanotube sacrificial coating ที่ทำให้เหล็กเลื่อนได้แทบไร้แรงเสียดทาน — COF 0.001–0.007 บน steel-steel contact ระดับ macroscale ใช้ vertically-aligned CNTs + PAO oil → ลดการสึกหรอ bearing, gear, engine อย่างมหาศาล
+  [Source](https://www.ornl.gov/news/superlubricity-coating-could-reduce-economic-losses-friction-wear) [Source](https://newatlas.com/materials/superlubricity-friction-machines/)
+
+- 🧲 **Skyrmion Racetrack Memory — Non-Volatile Beyond DRAM** *(23 May 2026)*
+  Skyrmion racetrack memory ใช้ magnetic skyrmions ขนาดนาโนเคลื่อนที่ตาม nanowire → เก็บข้อมูล non-volatile ความหนาแน่นสูงกว่า DRAM ใช้พลังงานต่ำ → แทนที่ SRAM/DRAM ใน cache และ embedded devices
+  [Source](https://pubs.acs.org/doi/10.1021/acs.nanolett.3c02978) [Source](https://journals.aps.org/prb/abstract/10.1103/73z4-ymkp)
+
+- ⏰ **Moiré Time Crystal — Superfluids from Temporal Dimensions** *(23 May 2026)*
+  นักวิจัยเสนอ "moiré time crystal" — สร้าง superfluid phase จากการผสม period ของ laser pulse ใน "time dimension" ไม่ใช่ spatial twist → ควบคุม quantum properties โดยไม่เปลี่ยน hardware Physical Review Letters 2026
+  [Source](https://phys.org/news/2026-02-superfluids-emerge-2d-moir-crystal.html) [Source](https://arxiv.org/abs/2504.07782)
+
+- 🔮 **Perovskite Moiré Superlattice — Twistronics Beyond van der Waals** *(23 May 2026)*
+  Perovskite halide สร้าง moiré superlattice ผ่าน ionic interactions (ไม่ใช่ van der Waals) → moiré potential ลึกกว่า TMDs → ใช้สำหรับ laser beam steering, quantum light sources, optoelectronics รุ่นใหม่
+  [Source](https://onlinelibrary.wiley.com/doi/full/10.1002/sstr.202500770) [Source](https://www.science.org/doi/10.1126/sciadv.adz8028)
+
+- 🔊 **Phononic Crystal for Quantum Computing — Sound Controls Qubits** *(23 May 2026)*
+  Genetic algorithm ออกแบบ phononic crystal nanostructures → ควบคุม acoustic wave ใน nanoscale เพื่อ isolate qubits จาก vibration noise และ support quantum communication → University of Tokyo validated ผ่าน experiments
+  [Source](https://scitechdaily.com/sound-science-how-phononic-crystals-are-shaping-quantum-computing/) [Source](https://sciencedaily.com/releases/2024/07/240703131750.htm)
 
 
 - 🌟 **Quantum Room Temperature Processor** *(22 May 2026)*
