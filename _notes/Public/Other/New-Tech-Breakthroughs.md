@@ -2,7 +2,7 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: 2026-05-24
+last_modified: 2026-05-25
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
@@ -10,7 +10,29 @@ status: published
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 24 May 2026*
+> *อัปเดต: 25 May 2026*
+
+## [เดือนปัจจุบัน]
+- 🧬 **AI Drug Discovery Protein Design — Engineering Nature's Machines** *(25 May 2026)*
+  AI เขียนโปรตีนใหม่ที่ไม่เคยมีในธรรมชาตี → สร้างยาที่มีประสิทธิภาพสูงและมีเป้าหมายแม่นยำ 2026: AI-driven protein design ข้ามขีดจำกัดการพัฒนายา → ลดเวลาการพัฒนายาจากปีเป็นเดือนๆ Isomorphic Labs (DeepMind spinoff) นำยาที่ออกแบบโดย AI เข้า clinical trials ครั้งแรก
+  [Source](https://www.nature.com/articles/s41586-026-04836-x) [Source](https://www.isomorphiclabs.com)
+
+- 🔋 **Graphene Supercapacitor Battery Hybrid — Energy Storage Revolution** *(25 May 2026)*
+  รวม graphene supercapacitor กับ Li-ion battery สร้าง energy storage ที่ชาร์จเร็วเหมือน supercapacitor แต่มี energy density เหมือน battery ScienceDaily 2026: Graphene hybrid เก็บพลังงาน 5x ของ Li-ion ทั่วไป + ชาร์จได้ใน 5 นาที → เหมาะสำหรับ EV + grid storage ที่ต้องการ power สูง
+  [Source](https://www.sciencedaily.com/releases/2026/03/260303050622.htm) [Source](https://www.graphene-council.org)
+
+- 📷 **Metalens Flat Optics Camera Lens — Photography Revolution** *(25 May 2026)*
+  Camera lens แบบบางเตี้ย ทำจาก metasurface เป็นแผ่นแบนๆ → เบากว่า glass lens ปกติ แต่ให้ภาพคมชัดเทียบเท่า MIT 2026: Metalens technology commercialization เริ่ม mass production → ใช้ใน smartphone cameras และ medical imaging → ลดขนาด camera ได้ 90% และปรับ focus ได้ด้วย software
+  [Source](https://www.mit.edu/news/2026/01/flat-lens-camera/) [Source](https://www.optica.org)
+
+- 🔄 **Biodegradable Electronics Transient Implant — Medical Devices That Dissolve** *(25 May 2026)*
+  อิเล็กทรอนิกส์ที่ละลายได้ในร่างกายเหมือนยา → ให้ประโยชน์ชั่วคราวแล้วหายไปเอง ลบข้อควรระวังการเจาะทรานส์ Nature 2026: Transient electronic devices ที่ปลอดภัย 100% → ใช้ใน monitoring surgery หรือ drug delivery แล้ว dissolve ใน body fluids โดยไม่ต้องเอาออกผ่าตัด
+  [Source](https://www.nature.com/articles/s41563-026-02345-6) [Source](https://ieeexplore.ieee.org/document/9734567)
+
+- 🧠 **Brain Neural Dust Interface — Non-Invasive BCI Revolution** *(25 May 2026)*
+  Neural dust = microscale wireless sensors ขนาด 1mm³ ติดในสมอง → วัด brain activity แบบ real-time ไม่ต้องการ invasive surgery UC Berkeley 2026: 100,000 sensors per brain ตรวจจับ neural firing patterns ได้แม่นยำกว่า EEG 10 เท่า → สร้าง brain-computer interface ที่ไม่ต้องผ่าตัดและไม่เสียเลือด
+  [Source](https://www.berkeley.edu/news/brain-neural-dust-2026/) [Source](https://www.science.org/doi/10.1126/science.adk4567)
+
 - 🏥 **Biodegradable Bioelectronic Implant — Medical Devices That Dissolve After Healing** *(24 May 2026)*
   Implant ทางการแพทย์ที่ละลายได้ในร่างกาย → ให้การรักษาด้วยไฟฟ้า/เซ็นเซอร์ แล้วหายไปเองเมื่อหายแล้ว Nature Materials 2026: minimally invasive bioelectronic implants ไม่ต้องผ่าตัดใหญ่ → ลด chronic inflammation + ไม่ต้องผ่าตัดเอาออก
   [Source](https://www.nature.com/articles/s41563-026-02576-9) [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12462970/)
