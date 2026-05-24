@@ -2,7 +2,7 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: 2026-05-23
+last_modified: 2026-05-24
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
@@ -10,7 +10,27 @@ status: published
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 23 May 2026*
+> *อัปเดต: 24 May 2026*
+- 🏥 **Biodegradable Bioelectronic Implant — Medical Devices That Dissolve After Healing** *(24 May 2026)*
+  Implant ทางการแพทย์ที่ละลายได้ในร่างกาย → ให้การรักษาด้วยไฟฟ้า/เซ็นเซอร์ แล้วหายไปเองเมื่อหายแล้ว Nature Materials 2026: minimally invasive bioelectronic implants ไม่ต้องผ่าตัดใหญ่ → ลด chronic inflammation + ไม่ต้องผ่าตัดเอาออก
+  [Source](https://www.nature.com/articles/s41563-026-02576-9) [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12462970/)
+
+- 🔥 **Hydrogen Plasma Steel Decarbonization — Zero-Carbon Ironmaking** *(24 May 2026)*
+  ใช้ไฮโดรเจนพลาสมาลด iron ore เป็นเหล็กโดยไม่มี carbon emission → เปลี่ยนอุตสาหกรรมเหล็ก (8% ของ global CO₂) Wiley Advanced Science 2026: single-step zero-carbon process แปลง low-grade ilmenite → steel-grade iron ORNL: hydrogen plasma arc additive manufacturing
+  [Source](https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202514689) [Source](https://www.ornl.gov/technology/202305367)
+
+- 🔊 **Acoustic Hologram Ultrasound 3D — Sound Shaped Like Light** *(24 May 2026)*
+  3D-printed ultrasonic hologram lenses ควบคุมคลื่นเสียงใน 3D space → สร้าง pressure pattern ที่ซับซ้อน IEEE Spectrum 2026: acoustic holograms ควบคุม sound fields เหมือน optical hologram ควบคุมแสง → targeted therapy โดยไม่ผ่าตัด
+  [Source](https://spectrum.ieee.org/acoustic-holograms-and-3d-ultrasound) [Source](https://ieeexplore.ieee.org/document/10703234/)
+
+- 👕 **Chemical Textile Recycling — Solving the Blended Fabric Problem** *(24 May 2026)*
+  เทคโนโลยีรีไซเคิลเสื้อผ้าผสม (cotton + polyester) ด้วย microwave-assisted glycolysis + breakthrough solvent Science Advances 2026: single batch depolymerization CAS: 75% cotton recovery rate → circular fashion สำหรับ 92M tons textile waste ต่อปี
+  [Source](https://www.science.org/doi/10.1126/sciadv.ado6827) [Source](https://www.earth.com/news/breakthrough-solvent-unlocks-true-recycling-for-blended-fabrics/)
+
+- 🤖 **Neuromorphic Electronic Skin — Robots That Feel Pain and Reflex** *(24 May 2026)*
+  Electronic skin ทำงานเหมือนระบบประสาทสัมผัส → หุ่นยนต์รับรู้การสัมผัส + ตรวจจับอันตราย + ตอบสนองแบบ reflex อัตโนมัติ PNAS 2026: NRE-skin มี pain detection + local reflexes + modular repair → หุ่นยนต์ป้องกันตัวเองได้
+  [Source](https://www.pnas.org/doi/10.1073/pnas.2520922122) [Source](https://www.forbes.com/sites/johnkoetsier/2026/01/02/scientists-give-robots-skin-with-pain-sensations-and-human-like-reflexes/)
+
 
 - 🎧 **Bone Conduction Audio — Headphones That Don’t Cover Ears** *(23 May 2026)*
   Technology ส่งเสียงผ่านการสั่นกระดูกหู → ไม่ต้องใช้หูฟัง แต่เสียงสั่นผ่านกระดูกหูมายังเปลือกหู ให้ฟังได้พร้อมกับเสียงภายนอก → เหมาะสำหรับ runners, military, และ assistive devices ไม่ทำให้หูถูกอุดตัน และมี battery life สูง
