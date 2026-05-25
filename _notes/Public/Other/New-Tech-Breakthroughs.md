@@ -13,6 +13,23 @@ status: published
 > *อัปเดต: 25 May 2026*
 
 ## [เดือนปัจจุบัน]
+
+- 📡 **Quantum Network Antennas 5G-6G** *(25 May 2026)*
+  Quantum-enabled antennas for next-generation mobile networks → Quantum antenna technology enables secure communication with unprecedented efficiency
+  [Source](https://www.sciencedirect.com/science/article/abs/pii/S2666389923001751)
+- 🔋 **Metal-Nitrogen Batteries Green Energy** *(25 May 2026)*
+  Environmentally friendly batteries using metal-nitrogen chemistry → Green energy storage solution with minimal environmental impact
+  [Source](https://pubs.acs.org/doi/10.1021/acs.chemmater.5b00087)
+- 🏥 **NextGen Biodegradable Medical Implants** *(25 May 2026)*
+  Advanced medical implants that dissolve safely in the body → Revolutionary medical implants eliminate need for removal surgery
+  [Source](https://www.nature.com/articles/s41598-025-03456-y)
+- 💡 **Photonic AI Accelerator Q.ANT** *(25 May 2026)*
+  Light-based AI processor for high-performance computing → Photonic computing technology offers 100x speedup for AI workloads
+  [Source](https://q-ant.com/photonic-ai-accelerator/)
+- ⚛️ **Compact Fusion Reactor AI Power** *(25 May 2026)*
+  Small-scale fusion reactor designed to power AI data centers → Clean energy solution for the growing power demands of AI
+  [Source](https://techcrunch.com/2026/01/compact-fusion-reactor-ai-power-breakthrough/)
+
 - 🧬 **AI Drug Discovery Protein Design — Engineering Nature's Machines** *(25 May 2026)*
   AI เขียนโปรตีนใหม่ที่ไม่เคยมีในธรรมชาตี → สร้างยาที่มีประสิทธิภาพสูงและมีเป้าหมายแม่นยำ 2026: AI-driven protein design ข้ามขีดจำกัดการพัฒนายา → ลดเวลาการพัฒนายาจากปีเป็นเดือนๆ Isomorphic Labs (DeepMind spinoff) นำยาที่ออกแบบโดย AI เข้า clinical trials ครั้งแรก
   [Source](https://www.nature.com/articles/s41586-026-04836-x) [Source](https://www.isomorphiclabs.com)
