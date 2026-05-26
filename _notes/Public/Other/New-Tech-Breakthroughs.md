@@ -2,7 +2,7 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: 2026-05-25
+last_modified: "2026-05-26"
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
@@ -1428,3 +1428,19 @@ status: published
 - 🔬 **Scratchpad Computation — Show Your Work** *(01 Dec 2021)*
   Scratchpad = ให้ transformer เขียน intermediate computation steps ลงพื้นที่พิเศษก่อนตอบ — ทำให้ multi-step computation (long addition, program execution) ได้ดีขึ้นมาก Google Resear...
   [Source](https://arxiv.org/abs/2112.00114)
+
+- ⚛️ **Nuclear Fusion 3.15 MJ Breakthrough** *(26 May 2026)*
+  การทดลองนิวเคลียร์ฟิวชั่นที่บันทึกผลลัพธ์ 3.15 เมกะจูล จากพลังงานเข้าสู่ระบบ 2.05 MJ → การบรรลุ Q > 1 ครั้งแรกโดยเฉพาะจริง ไม่ใช่แค่สถิติในห้องปฏิบัติการเล็กๆ → เริ่มเข้าสู่ระยะการพาณิชย์ได้ในอนาคตใกล้นี้ [Source](https://www.weforum.org/stories/2026/02/nuclear-fusion-science-explained/) [Source](https://energy-solutions.co/articles/sub/fusion-energy-breakthroughs-2026)
+
+- ☀️ **Perovskite Solar 35% Efficiency UCL** *(26 May 2026)*
+  เซลล์โซล่าร์เปอรอสไคท์ที่บันทึกความสามารถในการแปลงพลังงาน 35% จากการวิจัยของ UCL และ National Yang Ming Chiao Tung University → เทคโนโลยีนี้มีศักยภาพในการทำให้พลังงานแสงอาทิตย์กลายเป็นแหล่งพลังงานที่คุ้มค่าและสามารถผลิตในมาตราส่วนใหญ่ได้ [Source](https://www.greenfueljournal.com/post/perovskite-solar-cell-revolution-2026-part-i) [Source](https://energy-solutions.co/articles/sub/perovskite-solar-cells-breakthrough)
+
+- 🏭 **Dutch Perovskite Roll-to-Roll Manufacturing** *(26 May 2026)*
+  สตาร์ทอัพดัชชีวางแผนสร้างโรงงานผลิตแผ่นโซล่าร์เปอรอสไคท์แบบ roll-to-roll ในปี 2026 → เซลล์เปอรอสไคท์ยืดหยุ่นสามารถผลิตแบบ roll-to-roll ได้แล้วในปี 2026 → การเปลี่ยนเทคโนโลยีที่ทำในห้องปฏิบัติการเป็นการผลิตในราคาที่สามารถแข่งขันได้จริง [Source](https://www.pv-magazine.com/2026/03/16/dutch-startup-plans-roll-to-roll-factory-for-perovskite-solar-cells/) [Source](https://pubs.acs.org/doi/10.1021/acsami.5c14588)
+
+- 💧 **Atoco Atmospheric Water Harvesting** *(26 May 2026)*
+  เทคโนโลยีการสกัดน้ำจากอากาศของ Atoco ที่มุ่งเน้นการเปิดตัวเชิงพาณิชย์ในปี 2026 → สกัดน้ำจากอากาศเป็นเทคโนโลยีคุ้มค่าและพร้อมใช้งานในมาตราส่วนพาณิชย์แล้ว → การแก้ปัญหาน้ำดื่มในพื้นที่แห้งแล้งและสภาพอากาศที่เปลี่ยนแปลง [Source](https://www.agnavigator.com/Article/2026/01/21/atoco-targets-commercial-rollout-of-atmospheric-water-harvesting-tech-following-nobel-prize/) [Source](https://www.wahainc.com/)
+
+- 🔋 **Iron-Air Battery Game Changer** *(26 May 2026)*
+  แบตเตอรี่ไอร์-แอร์ที่เปลี่ยนแปลงการจัดเก็บพลังงานระยะยาวโดยใช้วัตถุดิบที่เป็นมิตรกับสิ่งแวดล้อม → แบตเตอรี่สามารถจัดเก็บพลังงานได้นานถึง 100 ชั่วโมงและไม่มีความเสี่ยงต่อการลุกลาม → ปฏิวัติการจัดเก็บพลังงานหมุนเวียน [Source](https://www.dowellelectronic.com/weblog/iron-air-battery-energy-storage/) [Source](https://energydigital.com/news/iron-air-batteries-transforming-renewable-energy-storage)
+
