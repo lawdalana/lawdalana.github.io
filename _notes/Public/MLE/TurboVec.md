@@ -1,8 +1,10 @@
 ---
-title : TurboVec — Vector Index บน TurboQuant
-notetype : feed
-date : 26-05-2026
-tags : [vector-search, quantization, turboquant, FAISS, RAG, rust, python]
+title: TurboVec — Vector Index บน TurboQuant
+notetype: feed
+date: 2026-05-26
+last_modified: 2026-05-26
+tags: [vector-search, quantization, turboquant, FAISS, RAG, rust, python]
+status: published
 ---
 
 # [TurboVec](https://github.com/RyanCodrai/turbovec) — Vector Index บน Google's TurboQuant
