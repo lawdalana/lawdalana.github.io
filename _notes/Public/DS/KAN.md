@@ -145,4 +145,5 @@ $$ N_{i,p}(t) = \frac{t - t_i}{t_{i+p} - t_i} N_{i,p-1}(t) + \frac{t_{i+p+1} - t
 ## 🔗 References
 
 - [pykan (Official)](https://github.com/KindXiaoming/pykan/tree/master) — Official KAN implementation by Ziming Liu (MIT)
-- [awesome-kan](https://github.com/mintisan/awesome-kan) — Comprehensive collection of KAN-related resources (libraries, projects, tutorials, papers) ⭐ 3.2k
+- [awesome-kan](https://github.com/mintisan/awesome-kan)
+- [Kan by lawdalana](https://github.com/lawdalana/Kan) — Our KAN exploration - [awesome-kan](https://github.com/mintisan/awesome-kan) experiments — Comprehensive collection of KAN-related resources (libraries, projects, tutorials, papers) ⭐ 3.2k
