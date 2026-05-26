@@ -298,3 +298,4 @@ Random rotation ทำให้ coordinates independent → scalar quantizer แ
 - [RaBitQ (arXiv:2405.12497)](https://arxiv.org/abs/2405.12497) — Source ของ length-renormalization technique (SIGMOD 2024)
 - [FAISS FastScan](https://github.com/facebookresearch/faiss/wiki/Fast-accumulation-of-PQ-and-AQ-codes-(FastScan)) — SIMD kernel reference
 - [turboquant-py](https://pypi.org/project/turboquant-py/) — Community reference implementation
+
