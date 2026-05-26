@@ -140,3 +140,8 @@ $$ N_{i,p}(t) = \frac{t - t_i}{t_{i+p} - t_i} N_{i,p-1}(t) + \frac{t_{i+p+1} - t
 
 🔥 **บทวิเคราะห์ทิ้งท้าย:**
 สถาปัตยกรรม KAN เปรียบเสมือนปฐมบทของ *"Language Model for Science"* ที่ใช้ภาษาสมการคณิตศาสตร์มาเป็นตัวกลางสื่อสารระหว่างแพทเทิร์นของข้อมูลกับมนุษย์ แม้จะยังทำงานช้ากว่าในเชิงวิศวกรรมการรัน Batch บน GPU แต่ศักยภาพในการเป็นสะพานทอดผ่านความซับซ้อนไปสู่วิธีคิดโปร่งใสสไตล์ "Glass Box" ทำให้ KAN ได้กลายเป็นเข็มทิศเล่มใหม่ที่โลก AI ไม่มีวันหันหลังกลับไปมองแบบเดิมอีกแน่นอน
+---
+
+## 🔗 References
+
+- [awesome-kan](https://github.com/mintisan/awesome-kan) — Comprehensive collection of KAN-related resources (libraries, projects, tutorials, papers) ⭐ 3.2k
