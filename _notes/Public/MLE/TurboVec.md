@@ -1,5 +1,5 @@
 ---
-title: TurboVec — Vector Index บน TurboQuant
+title: "TurboVec — Vector Index บน TurboQuant"
 notetype: feed
 date: 2026-05-26
 last_modified: 2026-05-26
