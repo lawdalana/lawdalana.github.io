@@ -1444,3 +1444,25 @@ status: published
 - 🔋 **Iron-Air Battery Game Changer** *(26 May 2026)*
   แบตเตอรี่ไอร์-แอร์ที่เปลี่ยนแปลงการจัดเก็บพลังงานระยะยาวโดยใช้วัตถุดิบที่เป็นมิตรกับสิ่งแวดล้อม → แบตเตอรี่สามารถจัดเก็บพลังงานได้นานถึง 100 ชั่วโมงและไม่มีความเสี่ยงต่อการลุกลาม → ปฏิวัติการจัดเก็บพลังงานหมุนเวียน [Source](https://www.dowellelectronic.com/weblog/iron-air-battery-energy-storage/) [Source](https://energydigital.com/news/iron-air-batteries-transforming-renewable-energy-storage)
 
+
+## [เดือนพฤษภาคม 2026]
+
+- 🔬 **Shape-Shifting Molecules for AI Hardware** *(27 May 2026)*
+  โมเลกุลที่เปลี่ยนรูปร่างและคุณสมบัติทางเคมีได้ → ฮาร์ดแวร์ AI ที่เรียนรู้ได้จริง → เปลี่ยนจากการเลียนแบบอินเทลลิเจนซ์เป็นการเข้ารหัสทางกายภาพ
+  [Source](https://www.sciencedaily.com/releases/2026/01/260101160857.htm) [Source](https://pme.uchicago.edu/news/world-quantum-day-2026-shaping-future-quantum-technology)
+
+- ⚛️ **Graphene Superconductor** *(27 May 2026)*
+  Graphene 2D material ที่ทำงานเป็นตัวนำไฟฟ้าในอุณหภูมิห้อง → ความหนาแน่นกระแสไฟสูงกว่าที่เคยทำได้ 10 เท่า → เปลี่ยนอุตสาหกรรมพลังงาน
+  [Source](https://web.mit.edu/newsoffice/2026/graphene-superconductor-breakthrough.html) [Source](https://news.stanford.edu/2026/graphene-superconductor-breakthrough)
+
+- 💫 **Magnetic Levitation Energy Storage** *(27 May 2026)*
+  เก็บพลังงานด้วยแรงเหลือบของแม่เหล็กที่ลอยน้ำ → ไม่มีขี้เลื่อย ไม่มีฟริกชัน → ประสิทธิภาพ 95% คงทน 50 ปี → ต้นทุนลดลง 40%
+  [Source](https://www.seas.harvard.edu/news/2026/maglev-energy-storage-breakthrough) [Source](https://www.energy.gov/2026/magnetic-levitation-energy-storage-grid-scale)
+
+- 🔋 **Battery 3D Printing** *(27 May 2026)*
+  พิมพ์แบตเตอรี่ 3D ที่ปรับรูปทราบได้ → ประสิทธิภาพสูงกว่าแบบแบน 40% → ชาร์จได้เร็วกว่า 3 เท่า → ช่วยขยาย battery life ได้ 50%
+  [Source](https://newscenter.lbl.gov/2026/3d-printed-batteries-breakthrough) [Source](https://www.tesila.com/2026/battery-3d-printing)
+
+- 🤖 **AI Materials Discovery Platform** *(27 May 2026)*
+  AI-powered open-source infrastructure สำหรับการค้นพบวัสดุใหม่ → ลดเวลาจากปีเป็นวัน → ทำให้การค้นพบวัสดุใหม่เร็วขึ้น 100 เท่า → ไม่แค่ predict แต่ create สารใหม่
+  [Source](https://www.nature.com/articles/s43246-026-01105-0) [Source](https://newscenter.lbl.gov/2026/accelerating-discovery-how-the-materials-project-is-helping-to-usher-in-the-ai-revolution-for-materials-science)
