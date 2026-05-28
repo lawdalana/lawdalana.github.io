@@ -81,6 +81,7 @@
     <![endif]-->
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
 </head>
 
 <body>
@@ -183,6 +184,18 @@
                 {%- include FeedContent.html -%}
                 {%- include Feed.html -%}
                 {%- include Footer.html -%}
+            </div>
+            {%- endif -%}
+
+
+            <!--- CASE 6 : Obsidian Graph page -->
+
+            {%- if page.permalink == "/obsidian" -%}
+            <div class="column is-four-fifths">
+                <main>
+                    {%- include ObsidianGraph.html -%}
+                    {%- include Footer.html -%}
+                </main>
             </div>
             {%- endif -%}
 

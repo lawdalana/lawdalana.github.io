@@ -1,0 +1,317 @@
+{%- comment -%}
+Obsidian-style force-directed graph for all notes.
+Uses D3.js to render interactive graph from Jekyll note data.
+{%- endcomment -%}
+
+<style>
+.obs-graph-container {
+  width: 100%;
+  height: calc(100vh - 120px);
+  min-height: 500px;
+  position: relative;
+  background: var(--bg, #1a1a2e);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.obs-graph-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.obs-graph-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.obs-graph-controls button {
+  background: var(--bg, #1a1a2e);
+  color: var(--text-main, #e0e0e0);
+  border: 1px solid var(--border-color, #333);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.obs-graph-controls button:hover {
+  opacity: 1;
+}
+
+.obs-tooltip {
+  position: absolute;
+  background: var(--bg, #1a1a2e);
+  border: 1px solid var(--border-color, #444);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-main, #e0e0e0);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  max-width: 280px;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.obs-tooltip.visible {
+  opacity: 1;
+}
+
+.obs-legend {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--bg, #1a1a2e);
+  border: 1px solid var(--border-color, #333);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--text-main, #ccc);
+  z-index: 10;
+}
+
+.obs-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.obs-legend-item:last-child { margin-bottom: 0; }
+
+.obs-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.obs-stats {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 12px;
+  color: var(--text-main, #888);
+  z-index: 10;
+}
+</style>
+
+<div class="obs-graph-container" id="obs-graph">
+  <div class="obs-stats" id="obs-stats"></div>
+  <div class="obs-legend" id="obs-legend"></div>
+  <svg id="obs-graph-svg"></svg>
+  <div class="obs-tooltip" id="obs-tooltip"></div>
+  <div class="obs-graph-controls">
+    <button onclick="obsGraphZoom(1.3)" title="Zoom In">＋</button>
+    <button onclick="obsGraphZoom(0.7)" title="Zoom Out">－</button>
+    <button onclick="obsGraphReset()" title="Reset">⟳</button>
+  </div>
+</div>
+
+<script type="text/javascript">
+(function() {
+  // --- Data from Jekyll ---
+  const nodes = [
+    {%- for note in site.notes -%}
+    {
+      id: "{{ note.url | slugify }}",
+      title: {{ note.title | jsonify }},
+      url: "{{ site.url }}{{ note.url }}",
+      tags: [{% for tag in note.tags %}{{ tag | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}],
+      group: "{{ note.dir | remove: '/_notes' | remove_first: '/' | default: 'root' }}",
+      notetype: "{{ note.notetype }}",
+      excerpt: {{ note.content | strip_html | strip | remove: "[[" | remove: "]]" | escape | truncate: 150 | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ];
+
+  // --- Build edges from [[wikilinks]] ---
+  const titleToId = {};
+  nodes.forEach(n => { titleToId[n.title.toLowerCase()] = n.id; });
+
+  const edges = [];
+  {%- for note in site.notes -%}
+  {%- assign note_content = note.content -%}
+  {%- assign note_id = note.url | slugify -%}
+  {%- for other in site.notes -%}
+  {%- if other.url != note.url -%}
+  {%- assign wiki_link = '[[' | append: other.title | append: ']]' -%}
+  {%- if note_content contains wiki_link -%}
+  edges.push({ source: "{{ note_id }}", target: "{{ other.url | slugify }}" });
+  {%- endif -%}
+  {%- endif -%}
+  {%- endfor -%}
+  {%- endfor -%}
+
+  // --- Color palette by group ---
+  const groupColors = {
+    'Public/DS': '#7c6ef6',
+    'Public/LLM': '#e74c3c',
+    'Public/MLE': '#2ecc71',
+    'Public/RecSys': '#f39c12',
+    'Public/Book': '#1abc9c',
+    'Public/Learning': '#e67e22',
+    'Public/Other': '#3498db',
+    'Private': '#95a5a6',
+    'root': '#95a5a6'
+  };
+
+  function getColor(group) {
+    for (const key in groupColors) {
+      if (group.includes(key) || key.includes(group)) return groupColors[key];
+    }
+    return '#6c7a89';
+  }
+
+  // --- Stats & Legend ---
+  const groupCounts = {};
+  nodes.forEach(n => {
+    const g = Object.keys(groupColors).find(k => n.group.includes(k)) || 'Other';
+    groupCounts[g] = (groupCounts[g] || 0) + 1;
+  });
+
+  document.getElementById('obs-stats').textContent = `${nodes.length} notes · ${edges.length} links`;
+
+  const legendEl = document.getElementById('obs-legend');
+  legendEl.innerHTML = Object.entries(groupCounts).map(([g, c]) =>
+    `<div class="obs-legend-item"><span class="obs-legend-dot" style="background:${groupColors[g] || '#6c7a89'}"></span>${g} (${c})</div>`
+  ).join('');
+
+  // --- D3 Force Graph ---
+  const container = document.getElementById('obs-graph');
+  const svg = d3.select('#obs-graph-svg');
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+
+  svg.attr('viewBox', [0, 0, width, height]);
+
+  const g = svg.append('g');
+
+  // Zoom
+  const zoom = d3.zoom()
+    .scaleExtent([0.1, 4])
+    .on('zoom', (event) => g.attr('transform', event.transform));
+  svg.call(zoom);
+
+  window.obsGraphZoom = function(factor) {
+    svg.transition().duration(300).call(zoom.scaleBy, factor);
+  };
+  window.obsGraphReset = function() {
+    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+  };
+
+  // Simulation
+  const simulation = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(edges).id(d => d.id).distance(60))
+    .force('charge', d3.forceManyBody().strength(-120))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(8));
+
+  // Links
+  const link = g.append('g')
+    .selectAll('line')
+    .data(edges)
+    .join('line')
+    .attr('stroke', 'rgba(150,150,150,0.15)')
+    .attr('stroke-width', 1);
+
+  // Nodes
+  const node = g.append('g')
+    .selectAll('circle')
+    .data(nodes)
+    .join('circle')
+    .attr('r', d => {
+      const linkCount = edges.filter(e => e.source.id === d.id || e.target.id === d.id).length;
+      return Math.max(3, Math.min(10, 3 + linkCount * 0.8));
+    })
+    .attr('fill', d => getColor(d.group))
+    .attr('opacity', 0.85)
+    .attr('cursor', 'pointer')
+    .on('click', (event, d) => window.open(d.url, '_blank'))
+    .call(d3.drag()
+      .on('start', dragstarted)
+      .on('drag', dragged)
+      .on('end', dragended));
+
+  // Tooltip
+  const tooltip = document.getElementById('obs-tooltip');
+
+  node.on('mouseover', (event, d) => {
+    const linkCount = edges.filter(e => (e.source.id || e.source) === d.id || (e.target.id || e.target) === d.id).length;
+    tooltip.innerHTML = `<strong>${d.title}</strong><br><span style="opacity:0.7">${d.group} · ${linkCount} links</span><br><span style="opacity:0.5;font-size:11px">${d.excerpt}</span>`;
+    tooltip.classList.add('visible');
+  })
+  .on('mousemove', (event) => {
+    const rect = container.getBoundingClientRect();
+    tooltip.style.left = (event.clientX - rect.left + 12) + 'px';
+    tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
+  })
+  .on('mouseout', () => {
+    tooltip.classList.remove('visible');
+  });
+
+  // Highlight on hover
+  node.on('mouseenter', (event, d) => {
+    const connected = new Set();
+    edges.forEach(e => {
+      const sid = e.source.id || e.source;
+      const tid = e.target.id || e.target;
+      if (sid === d.id) connected.add(tid);
+      if (tid === d.id) connected.add(sid);
+    });
+    connected.add(d.id);
+
+    node.attr('opacity', n => connected.has(n.id) ? 1 : 0.15);
+    link.attr('stroke', l => {
+      const sid = l.source.id || l.source;
+      const tid = l.target.id || l.target;
+      return (sid === d.id || tid === d.id) ? 'rgba(200,200,255,0.5)' : 'rgba(150,150,150,0.05)';
+    }).attr('stroke-width', l => {
+      const sid = l.source.id || l.source;
+      const tid = l.target.id || l.target;
+      return (sid === d.id || tid === d.id) ? 1.5 : 0.5;
+    });
+  })
+  .on('mouseleave', () => {
+    node.attr('opacity', 0.85);
+    link.attr('stroke', 'rgba(150,150,150,0.15)').attr('stroke-width', 1);
+  });
+
+  simulation.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+
+    node
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y);
+  });
+
+  function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+
+  function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+})();
+</script>
