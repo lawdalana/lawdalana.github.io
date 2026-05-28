@@ -1466,23 +1466,3 @@ status: published
 - 🤖 **AI Materials Discovery Platform** *(27 May 2026)*
   AI-powered open-source infrastructure สำหรับการค้นพบวัสดุใหม่ → ลดเวลาจากปีเป็นวัน → ทำให้การค้นพบวัสดุใหม่เร็วขึ้น 100 เท่า → ไม่แค่ predict แต่ create สารใหม่
   [Source](https://www.nature.com/articles/s43246-026-01105-0) [Source](https://newscenter.lbl.gov/2026/accelerating-discovery-how-the-materials-project-is-helping-to-usher-in-the-ai-revolution-for-materials-science)
-
-- 🧠 **Neurorobotics Brain-Machine Interface** *(28 May 2026)*
-  Wireless neural dust sensors (1mm³) ที่ติดตาม brain activity แบบ real-time โดยไม่ต้องผ่าตัด → 100,000 sensors per brain ความแม่นยำ 10x สูงกว่า EEG → การรักษาทางประสาทและ cognitive enhancement
-  [Source](https://www.nature.com/articles/s41565-026-02345-6) [Source](https://www.berkeley.edu/news/brain-neural-dust-2026/)
-
-- ⚛️ **Twistronics Superconductors** *(28 May 2026)*
-  Twisted bilayer graphene ที่มี superconductivity ที่ 77K ด้วย twist angle 0.1° precision → electron-phonon coupling enhanced → quantum computing applications ที่ทำงานได้ที่อุณหภูมิสูงขึ้น
-  [Source](https://www.science.org/doi/10.1126/sciadv.adz8028) [Source](https://arxiv.org/abs/2304.05678)
-
-- 📡 **Quantum Network Antennas** *(28 May 2026)*
-  Quantum-enabled antennas ที่ใช้ quantum entanglement สร้าง secure communication → 100x ประสิทธิภาพสูงกว่า traditional antennas → ทำงานที่อุณหภูมิห้อง และ process multiple frequency channels พร้อมกัน
-  [Source](https://ieeexplore.ieee.org/document/10703234/) [Source](https://www.sciencedirect.com/science/article/abs/pii/S2666389923001751)
-
-- 🔊 **Phononic Crystal Quantum Computing** *(28 May 2026)*
-  Sound-controlled quantum computing โดยใช้ phononic crystals ควบคุม acoustic waves ที่ nanoscale → 99.9% noise isolation for qubits → fault-tolerant quantum computing through acoustic shielding
-  [Source](https://www.nature.com/articles/s41567-026-04567-x) [Source](https://sciencedaily.com/releases/2024/07/240703131750.htm)
-
-- 🔩 **Superlubricity Coating** *(28 May 2026)*
-  Vertically aligned carbon nanotube coating ลด friction coefficient เหลือ 0.001-0.007 บน steel-steel contact → self-replenishing lubricating layer ด้วย PAO oil → industrial machinery และ automotive applications
-  [Source](https://www.nature.com/articles/s41563-026-02576-9) [Source](https://newatlas.com/materials/superlubricity-friction-machines/)
