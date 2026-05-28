@@ -1,317 +1,231 @@
 {%- comment -%}
-Obsidian-style force-directed graph for all notes.
-Uses D3.js to render interactive graph from Jekyll note data.
+Obsidian-style force-directed graph. Data generated at build time by Jekyll.
 {%- endcomment -%}
 
 <style>
-.obs-graph-container {
+#obs-graph {
   width: 100%;
-  height: calc(100vh - 120px);
-  min-height: 500px;
+  height: calc(100vh - 140px);
+  min-height: 420px;
   position: relative;
-  background: var(--bg, #1a1a2e);
+  background: #1a1b26;
   border-radius: 8px;
   overflow: hidden;
+  margin-top: 8px;
 }
-
-.obs-graph-container svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+#obs-graph svg { width: 100%; height: 100%; display: block; }
+#obs-graph .obs-info {
+  position: absolute; top: 12px; left: 12px;
+  font: 12px/1.4 sans-serif; color: #7982a9; z-index: 10;
 }
-
-.obs-graph-controls {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  display: flex;
-  gap: 8px;
-  z-index: 10;
+#obs-graph .obs-legend {
+  position: absolute; top: 12px; right: 12px;
+  background: rgba(26,27,38,0.9); border: 1px solid #333; border-radius: 6px;
+  padding: 8px 12px; font: 11px/1.6 sans-serif; color: #bbb; z-index: 10;
 }
-
-.obs-graph-controls button {
-  background: var(--bg, #1a1a2e);
-  color: var(--text-main, #e0e0e0);
-  border: 1px solid var(--border-color, #333);
-  border-radius: 6px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 13px;
-  opacity: 0.85;
-  transition: opacity 0.2s;
+#obs-graph .obs-legend span { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+#obs-graph .obs-tip {
+  position: absolute; background: rgba(26,27,38,0.95); border: 1px solid #444;
+  border-radius: 6px; padding: 8px 12px; font: 12px/1.4 sans-serif; color: #ddd;
+  pointer-events: none; opacity: 0; max-width: 260px; z-index: 20;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: opacity .15s;
 }
-
-.obs-graph-controls button:hover {
-  opacity: 1;
+#obs-graph .obs-tip.show { opacity: 1; }
+#obs-graph .obs-ctrl {
+  position: absolute; bottom: 12px; left: 12px; display: flex; gap: 6px; z-index: 10;
 }
-
-.obs-tooltip {
-  position: absolute;
-  background: var(--bg, #1a1a2e);
-  border: 1px solid var(--border-color, #444);
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-size: 13px;
-  color: var(--text-main, #e0e0e0);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s;
-  max-width: 280px;
-  z-index: 20;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+#obs-graph .obs-ctrl button {
+  background: rgba(26,27,38,0.85); color: #bbb; border: 1px solid #444;
+  border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 14px;
 }
-
-.obs-tooltip.visible {
-  opacity: 1;
-}
-
-.obs-legend {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: var(--bg, #1a1a2e);
-  border: 1px solid var(--border-color, #333);
-  border-radius: 6px;
-  padding: 10px 14px;
-  font-size: 12px;
-  color: var(--text-main, #ccc);
-  z-index: 10;
-}
-
-.obs-legend-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-
-.obs-legend-item:last-child { margin-bottom: 0; }
-
-.obs-legend-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.obs-stats {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  font-size: 12px;
-  color: var(--text-main, #888);
-  z-index: 10;
-}
+#obs-graph .obs-ctrl button:hover { color: #fff; }
 </style>
 
-<div class="obs-graph-container" id="obs-graph">
-  <div class="obs-stats" id="obs-stats"></div>
+<div id="obs-graph">
+  <div class="obs-info" id="obs-info"></div>
   <div class="obs-legend" id="obs-legend"></div>
-  <svg id="obs-graph-svg"></svg>
-  <div class="obs-tooltip" id="obs-tooltip"></div>
-  <div class="obs-graph-controls">
-    <button onclick="obsGraphZoom(1.3)" title="Zoom In">＋</button>
-    <button onclick="obsGraphZoom(0.7)" title="Zoom Out">－</button>
-    <button onclick="obsGraphReset()" title="Reset">⟳</button>
+  <svg id="obs-svg"></svg>
+  <div class="obs-tip" id="obs-tip"></div>
+  <div class="obs-ctrl">
+    <button id="btn-zin">&#xff0b;</button>
+    <button id="btn-zout">&#xff0d;</button>
+    <button id="btn-reset">&#x27f3;</button>
   </div>
 </div>
 
-<script type="text/javascript">
-(function() {
-  // --- Data from Jekyll ---
-  const nodes = [
-    {%- for note in site.notes -%}
+<script id="obs-graph-data" type="application/json">
+{
+  "nodes": [
+    {%- for n in site.notes -%}
     {
-      id: "{{ note.url | slugify }}",
-      title: {{ note.title | jsonify }},
-      url: "{{ site.url }}{{ note.url }}",
-      tags: [{% for tag in note.tags %}{{ tag | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}],
-      group: "{{ note.dir | remove: '/_notes' | remove_first: '/' | default: 'root' }}",
-      notetype: "{{ note.notetype }}",
-      excerpt: {{ note.content | strip_html | strip | remove: "[[" | remove: "]]" | escape | truncate: 150 | jsonify }}
+      "id": {{ n.url | jsonify }},
+      "title": {{ n.title | jsonify }},
+      "url": "{{ site.url }}{{ n.url }}",
+      "tags": [{% for t in n.tags %}{{ t | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}],
+      "group": {{ n.dir | replace: "_notes/", "" | jsonify }},
+      "excerpt": {{ n.content | strip_html | strip | remove: "[[" | remove: "]]" | truncate: 120 | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
-  ];
+  ]
+}
+</script>
 
-  // --- Build edges from [[wikilinks]] ---
-  const titleToId = {};
-  nodes.forEach(n => { titleToId[n.title.toLowerCase()] = n.id; });
+<script>
+// Load D3 then init
+(function(){
+  var s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js';
+  s.onload = initGraph;
+  s.onerror = function(){ document.getElementById('obs-info').textContent = 'Failed to load D3.js'; };
+  document.head.appendChild(s);
 
-  const edges = [];
-  {%- for note in site.notes -%}
-  {%- assign note_content = note.content -%}
-  {%- assign note_id = note.url | slugify -%}
-  {%- for other in site.notes -%}
-  {%- if other.url != note.url -%}
-  {%- assign wiki_link = '[[' | append: other.title | append: ']]' -%}
-  {%- if note_content contains wiki_link -%}
-  edges.push({ source: "{{ note_id }}", target: "{{ other.url | slugify }}" });
-  {%- endif -%}
-  {%- endif -%}
-  {%- endfor -%}
-  {%- endfor -%}
-
-  // --- Color palette by group ---
-  const groupColors = {
-    'Public/DS': '#7c6ef6',
-    'Public/LLM': '#e74c3c',
-    'Public/MLE': '#2ecc71',
-    'Public/RecSys': '#f39c12',
-    'Public/Book': '#1abc9c',
-    'Public/Learning': '#e67e22',
-    'Public/Other': '#3498db',
-    'Private': '#95a5a6',
-    'root': '#95a5a6'
-  };
-
-  function getColor(group) {
-    for (const key in groupColors) {
-      if (group.includes(key) || key.includes(group)) return groupColors[key];
+  function initGraph() {
+    var raw = document.getElementById('obs-graph-data');
+    if (!raw) return;
+    var data = JSON.parse(raw.textContent);
+    var nodes = data.nodes;
+    if (!nodes || !nodes.length) {
+      document.getElementById('obs-info').textContent = 'No notes found';
+      return;
     }
-    return '#6c7a89';
-  }
 
-  // --- Stats & Legend ---
-  const groupCounts = {};
-  nodes.forEach(n => {
-    const g = Object.keys(groupColors).find(k => n.group.includes(k)) || 'Other';
-    groupCounts[g] = (groupCounts[g] || 0) + 1;
-  });
+    // Build edges from wikilinks in note content
+    var titleMap = {};
+    nodes.forEach(function(n){ titleMap[n.title] = n.id; });
+    var edges = [];
+    {%- for note in site.notes -%}
+    {%- assign src_id = note.url -%}
+    {%- for other in site.notes -%}
+    {%- if other.url != note.url -%}
+    {%- assign wl = '[[' | append: other.title | append: ']]' -%}
+    {%- if note.content contains wl -%}
+    edges.push({source:{{ src_id | jsonify }},target:{{ other.url | jsonify }}});
+    {%- endif -%}
+    {%- endif -%}
+    {%- endfor -%}
+    {%- endfor -%}
 
-  document.getElementById('obs-stats').textContent = `${nodes.length} notes · ${edges.length} links`;
+    // Colors
+    var gc = {
+      'Public/DS':'#7c6ef6','Public/LLM':'#e74c3c','Public/MLE':'#2ecc71',
+      'Public/RecSys':'#f39c12','Public/Book':'#1abc9c','Public/Learning':'#e67e22',
+      'Public/Other':'#3498db','Private':'#95a5a6'
+    };
+    function col(grp) {
+      for (var k in gc) { if (grp.indexOf(k) >= 0) return gc[k]; }
+      return '#6c7a89';
+    }
 
-  const legendEl = document.getElementById('obs-legend');
-  legendEl.innerHTML = Object.entries(groupCounts).map(([g, c]) =>
-    `<div class="obs-legend-item"><span class="obs-legend-dot" style="background:${groupColors[g] || '#6c7a89'}"></span>${g} (${c})</div>`
-  ).join('');
+    // Degree map for sizing
+    var deg = {};
+    nodes.forEach(function(n){ deg[n.id] = 0; });
+    edges.forEach(function(e){ deg[e.source] = (deg[e.source]||0)+1; deg[e.target] = (deg[e.target]||0)+1; });
 
-  // --- D3 Force Graph ---
-  const container = document.getElementById('obs-graph');
-  const svg = d3.select('#obs-graph-svg');
-  const width = container.clientWidth;
-  const height = container.clientHeight;
+    // Stats & legend
+    var gcounts = {};
+    nodes.forEach(function(n){
+      var g = 'Other';
+      for (var k in gc) { if (n.group.indexOf(k) >= 0) { g = k; break; } }
+      gcounts[g] = (gcounts[g]||0)+1;
+    });
+    document.getElementById('obs-info').textContent = nodes.length + ' notes \u00b7 ' + edges.length + ' links';
+    var lhtml = '';
+    for (var g in gcounts) {
+      lhtml += '<div><span style="background:'+gc[g]+'"></span>'+g+' ('+gcounts[g]+')</div>';
+    }
+    document.getElementById('obs-legend').innerHTML = lhtml;
 
-  svg.attr('viewBox', [0, 0, width, height]);
+    // SVG setup
+    var el = document.getElementById('obs-graph');
+    var W = el.clientWidth || 800;
+    var H = el.clientHeight || 500;
+    var svg = d3.select('#obs-svg').attr('viewBox', [0,0,W,H]);
+    var g = svg.append('g');
 
-  const g = svg.append('g');
+    // Zoom
+    var zm = d3.zoom().scaleExtent([0.15,4]).on('zoom', function(ev){ g.attr('transform', ev.transform); });
+    svg.call(zm);
+    document.getElementById('btn-zin').onclick = function(){ svg.transition().duration(300).call(zm.scaleBy,1.4); };
+    document.getElementById('btn-zout').onclick = function(){ svg.transition().duration(300).call(zm.scaleBy,0.7); };
+    document.getElementById('btn-reset').onclick = function(){ svg.transition().duration(500).call(zm.transform, d3.zoomIdentity); };
 
-  // Zoom
-  const zoom = d3.zoom()
-    .scaleExtent([0.1, 4])
-    .on('zoom', (event) => g.attr('transform', event.transform));
-  svg.call(zoom);
+    // Simulation
+    var sim = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(edges).id(function(d){return d.id;}).distance(50))
+      .force('charge', d3.forceManyBody().strength(-100))
+      .force('center', d3.forceCenter(W/2, H/2))
+      .force('collision', d3.forceCollide().radius(function(d){ return 4 + (deg[d.id]||0)*0.5; }));
 
-  window.obsGraphZoom = function(factor) {
-    svg.transition().duration(300).call(zoom.scaleBy, factor);
-  };
-  window.obsGraphReset = function() {
-    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
-  };
+    var link = g.append('g').selectAll('line').data(edges).join('line')
+      .attr('stroke','rgba(140,150,180,0.12)').attr('stroke-width',1);
 
-  // Simulation
-  const simulation = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(edges).id(d => d.id).distance(60))
-    .force('charge', d3.forceManyBody().strength(-120))
-    .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(8));
+    var node = g.append('g').selectAll('circle').data(nodes).join('circle')
+      .attr('r', function(d){ return Math.max(3, Math.min(10, 3 + (deg[d.id]||0)*0.7)); })
+      .attr('fill', function(d){ return col(d.group); })
+      .attr('opacity',0.85)
+      .attr('cursor','pointer')
+      .on('click', function(ev,d){ window.location.href = d.url; })
+      .call(d3.drag()
+        .on('start', function(ev,d){ if(!ev.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+        .on('drag', function(ev,d){ d.fx=ev.x; d.fy=ev.y; })
+        .on('end', function(ev,d){ if(!ev.active) sim.alphaTarget(0); d.fx=null; d.fy=null; })
+      );
 
-  // Links
-  const link = g.append('g')
-    .selectAll('line')
-    .data(edges)
-    .join('line')
-    .attr('stroke', 'rgba(150,150,150,0.15)')
-    .attr('stroke-width', 1);
+    // Tooltip
+    var tip = document.getElementById('obs-tip');
+    function showTip(ev, d) {
+      var lc = deg[d.id] || 0;
+      tip.innerHTML = '<b>' + d.title + '</b><br><span style="opacity:.6">' + d.group + ' \u00b7 ' + lc + ' links</span>';
+      tip.classList.add('show');
+      var r = el.getBoundingClientRect();
+      tip.style.left = (ev.clientX - r.left + 14) + 'px';
+      tip.style.top = (ev.clientY - r.top - 8) + 'px';
+    }
+    function moveTip(ev) {
+      var r = el.getBoundingClientRect();
+      tip.style.left = (ev.clientX - r.left + 14) + 'px';
+      tip.style.top = (ev.clientY - r.top - 8) + 'px';
+    }
+    function hideTip() { tip.classList.remove('show'); }
 
-  // Nodes
-  const node = g.append('g')
-    .selectAll('circle')
-    .data(nodes)
-    .join('circle')
-    .attr('r', d => {
-      const linkCount = edges.filter(e => e.source.id === d.id || e.target.id === d.id).length;
-      return Math.max(3, Math.min(10, 3 + linkCount * 0.8));
+    node.on('mouseenter', function(ev, d) {
+      showTip(ev, d);
+      var conn = new Set(); conn.add(d.id);
+      edges.forEach(function(e){
+        var s = e.source.id || e.source, t = e.target.id || e.target;
+        if (s === d.id) conn.add(t);
+        if (t === d.id) conn.add(s);
+      });
+      node.attr('opacity', function(n){ return conn.has(n.id) ? 1 : 0.12; });
+      link.attr('stroke', function(l){
+        var s = l.source.id||l.source, t = l.target.id||l.target;
+        return (s===d.id||t===d.id) ? 'rgba(180,190,255,0.45)' : 'rgba(140,150,180,0.04)';
+      }).attr('stroke-width', function(l){
+        var s = l.source.id||l.source, t = l.target.id||l.target;
+        return (s===d.id||t===d.id) ? 1.5 : 0.5;
+      });
     })
-    .attr('fill', d => getColor(d.group))
-    .attr('opacity', 0.85)
-    .attr('cursor', 'pointer')
-    .on('click', (event, d) => window.open(d.url, '_blank'))
-    .call(d3.drag()
-      .on('start', dragstarted)
-      .on('drag', dragged)
-      .on('end', dragended));
-
-  // Tooltip
-  const tooltip = document.getElementById('obs-tooltip');
-
-  node.on('mouseover', (event, d) => {
-    const linkCount = edges.filter(e => (e.source.id || e.source) === d.id || (e.target.id || e.target) === d.id).length;
-    tooltip.innerHTML = `<strong>${d.title}</strong><br><span style="opacity:0.7">${d.group} · ${linkCount} links</span><br><span style="opacity:0.5;font-size:11px">${d.excerpt}</span>`;
-    tooltip.classList.add('visible');
-  })
-  .on('mousemove', (event) => {
-    const rect = container.getBoundingClientRect();
-    tooltip.style.left = (event.clientX - rect.left + 12) + 'px';
-    tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
-  })
-  .on('mouseout', () => {
-    tooltip.classList.remove('visible');
-  });
-
-  // Highlight on hover
-  node.on('mouseenter', (event, d) => {
-    const connected = new Set();
-    edges.forEach(e => {
-      const sid = e.source.id || e.source;
-      const tid = e.target.id || e.target;
-      if (sid === d.id) connected.add(tid);
-      if (tid === d.id) connected.add(sid);
+    .on('mousemove', moveTip)
+    .on('mouseleave', function() {
+      hideTip();
+      node.attr('opacity', 0.85);
+      link.attr('stroke','rgba(140,150,180,0.12)').attr('stroke-width',1);
     });
-    connected.add(d.id);
 
-    node.attr('opacity', n => connected.has(n.id) ? 1 : 0.15);
-    link.attr('stroke', l => {
-      const sid = l.source.id || l.source;
-      const tid = l.target.id || l.target;
-      return (sid === d.id || tid === d.id) ? 'rgba(200,200,255,0.5)' : 'rgba(150,150,150,0.05)';
-    }).attr('stroke-width', l => {
-      const sid = l.source.id || l.source;
-      const tid = l.target.id || l.target;
-      return (sid === d.id || tid === d.id) ? 1.5 : 0.5;
+    sim.on('tick', function() {
+      link.attr('x1',function(d){return d.source.x;}).attr('y1',function(d){return d.source.y;})
+          .attr('x2',function(d){return d.target.x;}).attr('y2',function(d){return d.target.y;});
+      node.attr('cx',function(d){return d.x;}).attr('cy',function(d){return d.y;});
     });
-  })
-  .on('mouseleave', () => {
-    node.attr('opacity', 0.85);
-    link.attr('stroke', 'rgba(150,150,150,0.15)').attr('stroke-width', 1);
-  });
 
-  simulation.on('tick', () => {
-    link
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y);
-
-    node
-      .attr('cx', d => d.x)
-      .attr('cy', d => d.y);
-  });
-
-  function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
-
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
-
-  function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
+    // Resize handler
+    window.addEventListener('resize', function(){
+      W = el.clientWidth || 800;
+      H = el.clientHeight || 500;
+      svg.attr('viewBox',[0,0,W,H]);
+      sim.force('center', d3.forceCenter(W/2, H/2));
+      sim.alpha(0.3).restart();
+    });
   }
 })();
 </script>
