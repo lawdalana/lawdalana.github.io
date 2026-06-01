@@ -138,7 +138,9 @@ Glass → Microscope → CNN Decode → FEC → Decrypt → Decompress → Data 
 
 ### 1. Accelerated Aging Test (Arrhenius Equation)
 
+{% raw %}
 $$k = A \times e^{-E_a / RT}$$
+{% endraw %}
 
 - อบแก้วที่ **200-400°C** → วัดอัตราเสื่อมของ voxels
 - Extrapolate กลับที่ 25°C → อายุขัย **> 10,000 ปี**
