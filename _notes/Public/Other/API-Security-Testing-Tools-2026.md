@@ -1,8 +1,8 @@
 ---
 title: "API Security Testing Tools Guide 2026"
 notetype: feed
-date: 05-30-2026
-last_modified: 05-30-2026
+date: 2026-05-30
+last_modified: 2026-05-30
 tags: [security, api, owasp, testing, devsecops, pentesting, tools]
 status: published
 ---
