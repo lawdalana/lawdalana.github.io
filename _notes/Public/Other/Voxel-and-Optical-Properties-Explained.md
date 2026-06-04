@@ -2,7 +2,7 @@
 title: "Voxel และสมบัติทางแสง: อธิบายให้เข้าใจง่าย"
 notetype: feed
 date: 2026-06-02
-last_modified: 2026-06-04
+last_modified: 2026-06-05
 tags: [glass-storage, voxel, optical-properties, polarization, retardance, refractive-index, femtosecond-laser, nanograting, birefringence, tutorial]
 status: published
 ---
@@ -311,6 +311,204 @@ Nanograting หนาแน่น (retardance สูง):     Nanograting เบ
 **ใช้ใน:** Phase Voxels → Borosilicate/Pyrex (Project Silica Gen 2)
 
 > **Phase Voxels vs Birefringent Voxels:** Phase voxels เปลี่ยน refractive index แบบเท่ากันทุกทิศ (isotropic) → เก็บ levels ได้น้อยกว่า แต่ทำงานกับแก้วที่ถูกกว่า (Pyrex) ได้
+
+### ขีดจำกัด: Refractive Index เปลี่ยนได้มากแค่ไหน?
+
+> **คำถาม:** ถ้ายิ่งเปลี่ยน n ได้มาก → แบ่ง level ได้เยอะ → เก็บ bits ได้เยอะ แล้วทำไมไม่ทำให้ n เป็น 5.0 หรือ 1.0?
+
+**คำตอบสั้น:** Femtosecond laser เปลี่ยน refractive index ในแก้วได้ **น้อยมาก** — เปลี่ยนได้แค่ ~0.001 ถึง ~0.05 เท่านั้น ไม่สามารถเปลี่ยนจาก 1.5 เป็น 5.0 ได้
+
+#### ค่า Δn (การเปลี่ยนแปลง refractive index) ที่เป็นไปได้จริง
+
+| พารามิเตอร์ | ค่าที่เป็นไปได้ | หมายเหตุ |
+|:-----------|:----------------|:---------|
+| Fused Silica ธรรมชาติ (n) | 1.450 | ค่าเริ่มต้น |
+| Borosilicate/Pyrex ธรรมชาติ (n) | 1.517 | ค่าเริ่มต้น |
+| **Δn จาก femtosecond laser (Phase Voxel)** | **~0.001 - 0.01** | เปลี่ยนนิดเดียว — isotropic |
+| **Δn จาก femtosecond laser (Birefringent)** | **~0.01 - 0.05** | มากกว่าเพราะ nanograting สร้าง anisotropy |
+| Δn สูงสุดที่เคยทำได้ (Type I) | ~0.005 - 0.02 | พลังงานต่ำ, ไม่ทำลายแก้ว |
+| Δn สูงสุดที่เคยทำได้ (Type II) | ~0.01 - 0.05 | พลังงานสูง, สร้าง nanograting |
+
+```
+Refractive Index Scale (ค่า n):
+
+0    1.0        1.5                 2.4      5.0
+|    |          |                   |        |
+|  อากาศ    แก้วธรรมชาติ         เพชร    ???
+|            ↓
+|     เลเซอร์เปลี่ยนได้แค่นี้
+|     ◀━━━━━▶
+|     ±0.001~0.05
+|     
+|     → 1.450 → 1.455 (phase voxel, isotropic)
+|     → 1.450 → 1.470 (birefringent, anisotropic)
+|     
+|     ❌ ทำ 1.450 → 5.0 ไม่ได้!
+|     ❌ ทำ 1.450 → 1.0 ไม่ได้!
+```
+
+#### ทำไมเปลี่ยนได้น้อยขนาดนี้?
+
+**1. เลเซอร์ไม่ได้ "เปลี่ยนวัสดุ" — เลเซอร์ "ดัดแปลงโครงสร้าง"**
+
+Femtosecond laser ไม่ได้เปลี่ยน SiO₂ เป็นวัสดุอื่น (เช่น เปลี่ยนเป็นเพชร n=2.4 หรือน้ำ n=1.33) — แต่เปลี่ยน **ความหนาแน่น** และ **การเรียงตัว** ของอะตอม SiO₂ เดิม:
+
+```
+แก้วเดิม:                          หลังเลเซอร์:
+  ○ ○ ○ ○ ○                           ○ ● ○ ○ ○
+  ○ ○ ○ ○ ○    เลเซอร์ยิง →          ● ● ○ ○ ○    ← บางจุดหนาแน่นขึ้น
+  ○ ○ ○ ○ ○                           ○ ● ○ ○ ○       แต่ยังเป็น SiO₂ เดิม!
+  ○ ○ ○ ○ ○                           ○ ○ ○ ○ ○
+  
+  n = 1.450 เท่ากันทุกจุด            n เปลี่ยนไป ±0.001~0.05
+  (amorphous glass)                   (แต่ยังเป็นแก้ว SiO₂)
+```
+
+**2. ขีดจำกัดทางกายภาพ**
+
+| ข้อจำกัด | คำอธิบาย |
+|:--------|:---------|
+| **วัสดุคือ SiO₂** | ไม่ว่าจะยิงเลเซอร์แรงแค่ไหน แก้วก็ยังเป็น SiO₂ → n อยู่ในช่วง 1.4-1.5 เท่านั้น |
+| **Phase transition** | ถ้าเลเซอร์แรงเกินไป → แก้ว **แตก/ระเบิด** เป็น nanovoid → ไม่ใช่การเปลี่ยน n แล้ว แต่เป็นการทำลาย |
+| **Absorption limit** | พลังงานเลเซอร์ที่สูงเกินไปจะทำให้แก้วดูดกลืนแสง (เปลี่ยนเป็นความร้อน) → ละลาย/แตก |
+| **Thermal damage** | อุณหภูมิสูงเกิน → เปลี่ยนโครงสร้างแบบกลับไม่ได้ → เสียข้อมูล |
+
+**3. ทำไมไม่ใช้วัสดุที่ n เปลี่ยนได้มากกว่า?**
+
+| วัสดุ | n ธรรมชาติ | Δn ที่เลเซอร์ทำได้ | ปัญหา |
+|:------|:----------|:------------------|:------|
+| Fused Silica | 1.450 | 0.001-0.05 | แพง แต่เสถียรสูงสุด |
+| Borosilicate (Pyrex) | 1.517 | 0.001-0.02 | ถูก แต่ Δn น้อยกว่า |
+| Chalcogenide glass | 2.4-3.0 | 0.01-0.1 | n สูงอยู่แล้ว แต่ **ไม่เสถียร** ต้องใช้ไฟรักษา, เสื่อมเร็ว |
+| Lithium Niobate (LiNbO₃) | 2.2-2.3 | 0.001-0.01 | ใช้ใน photonic แต่ **แพงมาก** และเปราะบาง |
+| น้ำ | 1.33 | — | ระเหย! ❌ |
+
+> 💡 **สรุป:** ปัญหาไม่ใช่แค่ "ทำ n ให้ห่างจากธรรมชาติมากได้ไหม" แต่เป็น **trade-off** — วัสดุที่ n เปลี่ยนได้มาก (chalcogenide, LiNbO₃) มัก **ไม่เสถียร** หรือ **แพง** → Glass Storage เลือก Fused Silica/Borosilicate เพราะ **เสถียร 10,000+ ปี** แม้ Δn จะน้อย
+
+#### แล้ว Phase Voxel ทำ level ได้กี่ level?
+
+ด้วย Δn ที่เปลี่ยนได้แค่ ~0.01-0.02 ใน Borosilicate:
+
+```
+n เริ่มต้น:  1.517
+n สูงสุด:    1.537  (เปลี่ยน +0.02)
+n ต่ำสุด:    1.507  (เปลี่ยน -0.01)
+
+ช่วงที่ใช้ได้:  1.507 → 1.537 = 0.030
+
+ถ้า detector แยกได้ละเอียด 0.001:
+  → 0.030 / 0.001 = 30 levels
+  → log₂(30) ≈ 4.9 bits/voxel
+
+ถ้า detector แยกได้แค่ 0.005:
+  → 0.030 / 0.005 = 6 levels
+  → log₂(6) ≈ 2.6 bits/voxel
+```
+
+> **นี่คือเหตุผลที่ Phase Voxels เก็บ bits ได้น้อยกว่า Birefringent Voxels** — ช่วง Δn แคบ + detector มีขีดจำกัด → แบ่ง level ได้น้อย → bits น้อยกว่า
+
+---
+
+### Nanograting คือ "กลไก" ที่ทำให้ Polarization + Retardance ทำงาน
+
+> **คำถาม:** Nanograting คือการทำ Polarization และ Retardance ใช่ไหม?
+
+**ถูกต้อง!** Nanograting เป็น **โครงสร้างทางกายภาพ** ที่ทำให้เกิดทั้ง polarization encoding และ retardance encoding:
+
+```
+Femtosecond Laser ยิงใน Fused Silica
+         ↓
+   สร้าง Nanograting (โครงสร้างแผ่นนาโน)
+         ↓
+   ┌─────────────────────────────────────┐
+   │  Nanograting ให้ 2 สมบัติพร้อมกัน:    │
+   │                                     │
+   │  1. ทิศทาง (orientation)             │
+   │     → ทำให้เกิด Polarization Change  │
+   │     → "มุม" ที่แสงถูกหมุน            │
+   │                                     │
+   │  2. ความหนาแน่น (density/contrast)  │
+   │     → ทำให้เกิด Retardance           │
+   │     → "แรง" ที่แสงถูกหน่วง           │
+   └─────────────────────────────────────┘
+         ↓
+   Birefringent Voxel = เก็บได้ 2 มิติ
+   (polarization angle + retardance level)
+```
+
+**เปรียบเทียบให้เห็นภาพ:**
+
+Nanograting เหมือน **แผ่นฟิลเตอร์** ที่ทั้ง "หมุน" แสง (polarization) และ "หน่วง" แสง (retardance) ไปพร้อมกัน:
+
+```
+แสงเข้า →  [Nanograting]  → แสงออก
+                │
+                ├─ หมุนแสงไปมุม θ     = Polarization angle (มิติ 1)
+                └─ หน่วงแสงด้วยปริมาณ δ = Retardance (มิติ 2)
+                
+ทั้ง 2 อย่างเกิดจาก nanograting ชุดเดียวกัน
+แต่ควบคุมแยกกันด้วยพารามิเตอร์เลเซอร์ต่างกัน:
+  • มุม θ → ควบคุมด้วย polarization ของเลเซอร์ (ทิศทาง)
+  • ปริมาณ δ → ควบคุมด้วย intensity ของเลเซอร์ (พลังงาน)
+```
+
+> 💡 **สรุป:** Nanograting ≠ เทคนิคเก็บข้อมูลโดยตรง แต่เป็น **โครงสร้างทางกายภาพ** ที่ทำให้เกิด birefringence → ซึ่งเป็นพื้นฐานให้ทั้ง polarization encoding และ retardance encoding
+
+---
+
+### Pyrex (Borosilicate) ทำได้แค่ Refractive Index — ทำไม?
+
+> **คำถาม:** ทำไม Pyrex ถึงทำได้แค่ Refractive Index (Phase Voxel) ไม่ได้ทำ Nanograting แบบ Fused Silica?
+
+**เพราะ Nanograting เกิดได้ดีเฉพาะใน Fused Silica!**
+
+```
+Fused Silica (SiO₂ บริสุทธิ์):
+  ✓ โครงสร้าง amorphous สมบูรณ์ (ไม่มี impurities)
+  ✓ Femtosecond laser → ทำให้เกิด self-organized nanograting ได้
+  ✓ Nanograting → birefringence → polarization + retardance → 2 มิติ
+  ✓ ผล: Birefringent Voxel, เก็บได้ ~6.6 bits/voxel
+
+Borosilicate / Pyrex (SiO₂ + B₂O₃ + Na₂O + Al₂O₃):
+  ✗ มีสิ่งเจือปนหลายชนิด (B, Na, Al)
+  ✗ Femtosecond laser → nanograting เกิดไม่เป็นระเบียบ/ไม่เกิดเลย
+  ✗ แต่! เลเซอร์ยังเปลี่ยนความหนาแน่น (refractive index) ได้ปกติ
+  ✓ ผล: Phase Voxel (isotropic Δn), เก็บได้น้อยกว่า แต่ใช้แก้วถูกกว่า
+```
+
+**เหตุผลทางเคมี:**
+
+| ปัจจัย | Fused Silica | Borosilicate |
+|:------|:------------|:-------------|
+| ส่วนประกอบ | SiO₂ บริสุทธิ์ >99.9% | SiO₂ (~80%) + B₂O₃ + Na₂O + Al₂O₃ |
+| โครงสร้าง | Amorphous network สม่ำเสมอ | Network มีจุดขาด (network modifiers) |
+| Nanograting formation | ✓ Self-organize เป็นระเบียบดีมาก | ✗ สิ่งเจือปนรบกวนการจัดเรียง |
+| Δn (isotropic) | ~0.001-0.05 | ~0.001-0.02 |
+| Δn (anisotropic/birefringent) | ~0.01-0.1 (ผ่าน nanograting) | แทบไม่เกิด |
+
+> 💡 **เหมือนการสร้างบ้าน:** Fused Silica = ที่ดินเรียบๆ ว่างเปล่า → สร้างอะไรก็ได้ตามแปลน (nanograting เรียบร้อย). Borosilicate = ที่ดินที่มีต้นไม้/หินปนอยู่ → สร้างบ้านเรียบง่ายได้ (phase change) แต่สร้างโครงสร้างซับซ้อนไม่ได้ (nanograting ไม่เป็นระเบียบ)
+
+**Trade-off สรุป:**
+
+```
+Fused Silica:
+  แพง + เก็บได้เยอะ (4.84 TB/แผ่น)
+  ↕
+  Nanograting → Polarization + Retardance → ~6.6 bits/voxel
+  ↕
+  ต้องใช้แก้วบริสุทธิ์พิเศษ
+
+Borosilicate (Pyrex):
+  ถูก + เก็บได้น้อยกว่า (2.02 TB/แผ่น)
+  ↕
+  Phase Change เท่านั้น → Isotropic Δn → ~2-5 bits/voxel
+  ↕
+  แก้วที่หาซื้อได้ทั่วไป (Pyrex!)
+```
+
+---
+
+**ข้อสำคัญ:** Phase Voxels ใน Borosilicate เป็น **นวัตกรรมใหม่ของ Project Silica Gen 2** (Nature 2026) — ก่อนหน้านี้เข้าใจว่าต้องใช้ Fused Silica เท่านั้น แต่ทีม Microsoft พบว่าสามารถใช้ Pyrex + Phase Voxel ได้ แม้ความจุจะต่ำกว่า แต่ต้นทุนต่อ TB ถูกกว่ามาก
 
 ---
 
