@@ -2,7 +2,7 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: "2026-05-26"
+last_modified: "2026-06-04"
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
@@ -10,9 +10,24 @@ status: published
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 25 May 2026*
+> *อัปเดต: 4 June 2026*
 
 ## [เดือนปัจจุบัน]
+- 🌡️ **Phonon Polariton Nanoscale Thermal Management** *(4 June 2026)*
+  Phonon polaritons ควบคุมการถ่ายเทความร้อนระดับนาโน → thermal management รุ่นใหม่สำหรับ sub-10nm chips (Francoeur, arXiv May 2026)
+  [Source](https://arxiv.org/abs/2605.24030) [Source](https://pubs.acs.org/doi/10.1021/acsphotonics.4c01622)
+- ⚗️ **Single-Atom Indium Catalyst CO₂→Methanol** *(4 June 2026)*
+  ETH Zurich: isolated indium atoms บน hafnia แปลง CO₂ เป็น methanol ได้ดีกว่า nanoparticles หลายสิบเท่า → carbon-negative chemical industry
+  [Source](https://www.nature.com/articles/s41565-026-02160-x) [Source](https://www.sciencedaily.com/releases/2026/03/260319044703.htm)
+- 🧲 **Antiferromagnetic Memory Ultrafast Spintronics** *(4 June 2026)*
+  Chinese Academy of Sciences: asymmetric spin torque ควบคุม antiferromagnetic memory แบบ deterministic → ultrafast memory เร็วกว่า RAM 1000x, เข้ากันได้กับ CMOS
+  [Source](https://phys.org/news/2026-03-asymmetric-torque-deterministic-antiferromagnetic-memory.html) [Source](https://english.cas.cn/newsroom/research-news/202603/t20260304_1151446.shtml)
+- 🌱 **Electrochemical Ammonia Green Fertilizer** *(4 June 2026)*
+  Li-mediated electrochemical N₂→NH₃ ที่ ambient conditions → ทดแทน Haber-Bosch (กิน 1-2% global energy) → green fertilizer ไม่ต้อง natural gas
+  [Source](https://www.nature.com/articles/s41570-025-00709-3) [Source](https://www.science.org/doi/10.1126/science.abl4300)
+- 🪟 **Thermoelectric Transparent Window Energy Harvesting** *(4 June 2026)*
+  กระจกโปร่งใสผลิตไฟฟ้าจากความต่างอุณหภูมิ → AZO+CuI thin films ผลิตไฟฟ้าจาก 22.5°C gradient, ให้แสงผ่าน + ลด cooling load
+  [Source](https://www.nature.com/articles/s44172-024-00291-4) [Source](https://communities.springernature.com/posts/transforming-energy-efficiency-power-generating-semi-transparent-windows)
 
 - 📡 **Quantum Network Antennas 5G-6G** *(25 May 2026)*
   Quantum-enabled antennas for next-generation mobile networks → Quantum antenna technology enables secure communication with unprecedented efficiency
