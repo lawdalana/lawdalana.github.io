@@ -2,7 +2,7 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: "2026-06-04"
+last_modified: "2026-06-05"
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
@@ -10,9 +10,25 @@ status: published
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 4 June 2026*
+> *อัปเดต: 5 June 2026*
 
 ## [เดือนปัจจุบัน]
+- ☢️ **Muon-Catalyzed Fusion Breakthrough** *(5 June 2026)*
+  Muon แทน electron → fusion ที่ room temperature ไม่ต้อง plasma; arXiv May 2026 เสนอ pathway แก้ alpha-sticking + ARPA-E funded; 2+ companies กำลัง pursue
+  [Source](https://arxiv.org/abs/2605.26432) [Source](https://phys.org/news/2026-04-muonic-molecules-critical-muon-catalyzed.html)
+- ❄️ **Ionocaloric Refrigeration Cycle** *(5 June 2026)*
+  Salt dissolution/precipitation drive phase transition → cooling cycle ใหม่ zero GWP zero ozone depletion; Berkeley Lab/UC Berkeley prototype underway, efficiency เทียบ/เกิน vapor compression
+  [Source](https://www.science.org/doi/10.1126/science.ade1696) [Source](https://www.asme.org/topics-resources/content/new-refrigeration-method-relies-on-ionocaloric-cooling)
+- 💎 **Valleytronics 2D Material Computing** *(5 June 2026)*
+  ใช้ "valley" degree of freedom ใน 2D semiconductors (MoS₂, WSe₂) เก็บ/ประมวลผลข้อมูล → beyond-CMOS computing ไม่มี Joule heating; MIT + LBL advances 2026
+  [Source](https://pubs.acs.org/doi/10.1021/acs.nanolett.2c03947) [Source](https://spectrum.ieee.org/2d-material-could-lead-the-way-to-valleytronics)
+- ⚡ **Exciton-Polariton Transistor — Optical Computing at Room Temperature** *(5 June 2026)*
+  Half-light half-matter quasiparticle สร้าง all-optical transistor: picosecond switching บน silicon at room temp (Nature Light Sci Appl 2026) → path to optical computer จริง
+  [Source](https://www.nature.com/articles/s41377-025-02050-2) [Source](https://www.nature.com/articles/ncomms2734)
+- ☀️ **Hot Carrier Solar Cell — 130% Quantum Yield** *(5 June 2026)*
+  Singlet fission + Mo complex → 1 photon สร้าง 1.3 electrons (quantum yield 130%) → ทะลุ Shockley-Queisser 33% limit → next-gen solar panels เป้า 40%+ efficiency
+  [Source](https://www.sciencedaily.com/releases/2026/03/260328024517.htm) [Source](https://scitechdaily.com/scientists-just-broke-the-solar-power-limit-everyone-thought-was-absolute/)
+
 - 🌡️ **Phonon Polariton Nanoscale Thermal Management** *(4 June 2026)*
   Phonon polaritons ควบคุมการถ่ายเทความร้อนระดับนาโน → thermal management รุ่นใหม่สำหรับ sub-10nm chips (Francoeur, arXiv May 2026)
   [Source](https://arxiv.org/abs/2605.24030) [Source](https://pubs.acs.org/doi/10.1021/acsphotonics.4c01622)
