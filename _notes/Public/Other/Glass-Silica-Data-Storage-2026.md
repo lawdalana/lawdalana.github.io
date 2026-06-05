@@ -513,19 +513,29 @@ Glass Archival Lifecycle (เขียนครั้งเดียว):
 
 ## Sources
 
-- Microsoft Research Blog: "Project Silica's advances in glass storage technology" (Feb 2026)
-- Nature: "Laser writing in glass for dense, fast and efficient archival data storage" (Feb 2026)
-- Nature Sustainability: "Sustainable glass-based data storage" (2026)
-- Ars Technica: "Microsoft's new 10,000-year data storage medium: glass" (Feb 2026)
-- Tom's Hardware: "Project Silica write-once storage" (Feb 2026)
-- Blocks & Files: "Project Silica finds cheaper glass, boosts write speeds but trims capacity" (Feb 2026)
-- The Register: "Microsoft's latest storage tech encodes data into Pyrex" (Feb 2026)
-- IEEE Spectrum: "Laser-Written Glass Could Store Data for Millennia" (2026)
-- C&EN: "Glass data storage solution could last millennia" (Feb 2026)
-- StorageNewsletter: "Project Silica's Advances in Glass Data Storage Technology" (Feb 2026)
-- ACM: "Project Silica: Towards Sustainable Cloud Archival Storage in Glass" (2024)
-- 5D Memory Crystal / SPhotonix: 5dmemorycrystal.com
-- University of Southampton: "Human genome stored on everlasting memory crystal" (Sep 2024)
-- CNN: "Scientists store entire human genome on memory crystal" (Sep 2024)
-- Arch Mission Foundation: archmission.org/5d-optical-memory
+### Academic Papers
+
+- **Nature (Feb 2026):** ["Laser writing in glass for dense, fast and efficient archival data storage"](https://www.nature.com/articles/s41586-025-10042-w) — Paper หลักของ Project Silica Gen 2
+- **ACM (2024):** ["Project Silica: Towards Sustainable Cloud Archival Storage in Glass"](https://dl.acm.org/doi/10.1145/3708996) — Paper เต็มเรื่อง architecture + FEC + CNN decoder
+
+### Microsoft & Industry
+
+- **Microsoft Research Blog (Feb 2026):** ["Project Silica's advances in glass storage technology"](https://www.microsoft.com/en-us/research/blog/project-silicas-advances-in-glass-storage-technology/) — Official blog post จาก Microsoft Research
+
+### Tech News Coverage
+
+- **Ars Technica (Feb 2026):** ["Microsoft's new 10,000-year data storage medium: glass"](https://arstechnica.com/science/2026/02/microsofts-new-10000-year-data-storage-medium-glass/) — สรุปเชิงลึกพร้อมภาพประกอบ
+- **Tom's Hardware (Feb 2026):** ["Project Silica write-once storage"](https://www.tomshardware.com/pc-components/storage/project-silica) — เปรียบเทียบเทคโนโลยี
+- **The Register (Feb 2026):** ["Microsoft's latest storage tech encodes data into Pyrex"](https://www.theregister.com/on-prem/2026/02/19/microsofts-latest-storage-tech-encodes-data-into-pyrex/4868805) — เน้น Borosilicate/Pyrex angle
+- **Blocks & Files (Feb 2026):** ["Project Silica finds cheaper glass, boosts write speeds but trims capacity"](https://www.blocksandfiles.com/data-protection/2026/02/19/microsoft-project-silica-finds-cheaper-glass-boosts-write-speeds-but-trims-capacity/4091610) — เปรียบเทียบ Fused Silica vs Borosilicate
+
+### 5D Optical Storage & SPhotonix
+
+- **5D Memory Crystal / SPhotonix:** [5dmemorycrystal.com](https://www.5dmemorycrystal.com) | [FAQ](https://www.5dmemorycrystal.com/faq) — เว็บไซต์ทางการ
+- **University of Southampton (Sep 2024):** ["Human genome stored on everlasting memory crystal"](https://www.southampton.ac.uk/news/2024/09/human-genome-stored-on-everlasting-memory-crystal-.page) — เก็บ human genome ลง 5D crystal
+- **Arch Mission Foundation:** ["5D Optical Memory"](https://www.archmission.org/5d-optical-memory) — ส่ง 5D crystal ขึ้น SpaceX Falcon Heavy
+
+### อ่านเพิ่ม
+
 - [[DNA-Data-Storage-Deep-Research-2026]] — เปรียบเทียบกับ DNA storage
+- [[Voxel-and-Optical-Properties-Explained]] — อธิบาย voxel, polarization, retardance, refractive index
