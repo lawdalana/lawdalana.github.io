@@ -2,7 +2,7 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: "2026-06-05"
+last_modified: "2026-06-06"
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
@@ -10,9 +10,25 @@ status: published
 # New Tech Breakthroughs
 
 > รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
-> *อัปเดต: 5 June 2026*
+> *อัปเดต: 6 June 2026*
 
 ## [เดือนปัจจุบัน]
+- 🚀 **Plasma Wakefield Accelerator Commercial** *(6 June 2026)*
+  Laser-plasma wakefield accelerator ตัวแรกที่ commercialize จริง — TAU Systems (Texas) เปิดให้บริการ 2026; field gradient 1000x conventional → tabletop particle accelerator เป็นจริง
+  [Source](https://spectrum.ieee.org/plasma-wakefield-acceleration) [Source](https://cerncourier.com/a/taking-plasma-accelerators-to-market/)
+- 🔮 **Topological Photonic Crystal Fiber** *(6 June 2026)*
+  University of Bath + Cambridge: twisted optical fiber ใช้ topological protection → light เดินรอบ defects ไม่สะท้อน; Nature Photonics 2026, scalable ด้วย standard manufacturing
+  [Source](https://www.nature.com/articles/s41566-026-01848-9) [Source](https://www.science.org/doi/10.1126/sciadv.ady1476)
+- ⚡ **Direct Lithium Extraction Geothermal Brine** *(6 June 2026)*
+  Electrochemical DLE จาก Salton Sea geothermal brine → battery-grade LiOH (>99.5%) single process; Nature Communications 2025 — ทดแทน evaporation ponds
+  [Source](https://www.nature.com/articles/s41467-025-56071-x) [Source](https://discoveryalert.com.au/lithium-recovery-innovation-2026-geothermal-extraction/)
+- 👓 **Achromatic Metasurface Waveguide AR Display** *(6 June 2026)*
+  Single-layer achromatic metasurface แก้ chromatic aberration ใน AR waveguide → FOV >45° full-color; Nature Light: Science & Applications 2025
+  [Source](https://www.nature.com/articles/s41377-025-01761-w) [Source](https://www.eurekalert.org/news-releases/1083668)
+- 🧱 **Enzymatic Structural Material (ESM)** *(6 June 2026)*
+  Carbonic anhydrase enzyme เปลี่ยน CO2 → solid calcium carbonate → วัสดุก่อสร้างทดแทน concrete; self-healing + carbon-negative, Matter journal 2026
+  [Source](https://www.sciencedaily.com/releases/2026/01/260121034148.htm) [Source](https://cen.acs.org/materials/Enzymes-power-carbon-sucking-alternative/100/i6)
+
 - ☢️ **Muon-Catalyzed Fusion Breakthrough** *(5 June 2026)*
   Muon แทน electron → fusion ที่ room temperature ไม่ต้อง plasma; arXiv May 2026 เสนอ pathway แก้ alpha-sticking + ARPA-E funded; 2+ companies กำลัง pursue
   [Source](https://arxiv.org/abs/2605.26432) [Source](https://phys.org/news/2026-04-muonic-molecules-critical-muon-catalyzed.html)
