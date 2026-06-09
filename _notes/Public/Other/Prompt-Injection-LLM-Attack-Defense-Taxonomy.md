@@ -23,7 +23,7 @@ Prompt injection ไม่ใช่แค่ "ผู้ใช้พิมพ์�
 
 ## ⚡ TL;DR — Attack & Defense at a Glance
 
-### Attack Summary (9 Families, 56 Sub-types)
+### Attack Summary (9 Families, 56+40 = 96 Sub-types)
 
 | Family | Sub-types | ASR Range | อันตรายสุด |
 |--------|-----------|-----------|------------|
@@ -37,7 +37,7 @@ Prompt injection ไม่ใช่แค่ "ผู้ใช้พิมพ์�
 | **A8. Encoding/Obfuscation** | 4 | varies | Bypass text-centric filters |
 | **A9. Multi-agent/Supply Chain** | 9 | varies | Alignment poisoning, Agent-to-agent infection |
 
-### Defense Summary (6 Families, 42 Sub-types)
+### Defense Summary (6 Families, 42+25 = 67 Sub-types)
 
 | Family | Sub-types | Best ASR Achieved | แข็งแกร่งสุด |
 |--------|-----------|-------------------|-------------|
@@ -51,6 +51,102 @@ Prompt injection ไม่ใช่แค่ "ผู้ใช้พิมพ์�
 > ⚠️ **ASR จากต่าง benchmark ไม่สามารถเทียบกันตรงๆ ได้** — ค่าเหล่านี้เป็น reported range จากแต่ละ paper
 
 ## Attack Taxonomy
+
+## Exhaustive Paper-by-Paper Sub-types (#101–#200)
+
+> ทุก sub-type ที่ extract จาก paper #101–#200 โดยใช้หมายเลข paper อ้างอิง
+
+### Attack Sub-types (40 entries)
+
+| Paper | Family | Description | ASR/Result |
+|-------|--------|-------------|------------|
+| 101-1 | **A6** | PISmith: RL-based red teaming — GRPO with reward shaping to optimize injected prompts in black-box | ASR@10=1.0, ASR@1=0.87 |
+| 104-1 | **A2** | LLMail-Inject: realistic adaptive prompt injection challenge dataset for email systems | — |
+| 102-1 | **A5/A3** | EVA: evolving indirect PI against GUI agents — uses visual attention feedback to evolve payload | static 48% → >80% |
+| 103-1 | **A5/A3** | AEIA-MN: active environmental injection against multimodal mobile agents | max 93% ASR |
+| 109-1 | **A5/A3** | AgentTypo: adaptive typographic PI against black-box multimodal agents | — |
+| 131-1 | **A3** | Protocol exploit: from prompt injection to protocol-level exploits in LLM agent workflows | — |
+| 132-1 | **A3** | MCP threat landscape: comprehensive security threat analysis of Model Context Protocol | — |
+| 133-1 | **A3** | Third-party plugin injection: prompt injection risks in AI chatbot plugins | — |
+| 121-1 | **A4** | Practical poisoning: practical poisoning attacks against RAG in realistic settings | 0.85–0.97 ASR |
+| 122-1 | **A4** | DeRAG: black-box adversarial attacks on multiple RAG applications via prompt optimization | — |
+| 124-1 | **A4** | NeuroGenPoisoning: neuron-guided attacks on RAG via genetic optimization of external knowledge | — |
+| 128-1 | **A4** | RAG-targeted adversarial attack on LLM-based threat detection/mitigation framework | — |
+| 108-1 | **A5** | Multimodal PI survey: risks and defenses for modern multimodal LLMs | — |
+| 112-1 | **A5** | Visual modality jailbreak: 4 attacks exploiting VLM vision component (symbol sequences, harmful text, etc.) | — |
+| 113-1 | **A5** | Typographic visual prompt injection in cross-modality generation models (VLP + I2I) | — |
+| 116-1 | **A5** | Visual adversarial examples jailbreak aligned LLMs via image perturbation | — |
+| 117-1 | **A5** | Text-to-Image model jailbreak via LLM-generated prompts | — |
+| 118-1 | **A5** | Visual contextual attack: image-driven context injection to jailbreak MLLMs | — |
+| 135-1 | **A7/A9** | PromptWare: jailbroken GenAI model flips from serving app to attacking it — new attack class | — |
+| 136-1 | **A7/A9** | PromptWare via invitation: maliciously engineered prompts manipulate LLM-powered assistants in production | — |
+| 142-1 | **A6** | PAIR (20 queries): jailbreaking black-box LLMs in ~20 queries via iterative attack refinement | — |
+| 144-1 | **A7** | In-the-wild jailbreak characterization: taxonomy of real jailbreak prompts collected from forums/communities | — |
+| 148-1 | **A7** | SequentialBreak: embedding jailbreak prompts into sequential prompt chains | — |
+| 149-1 | **A6/A7** | Jailbreak scaling laws: adversarial PI amplifies ASR from polynomial to exponential growth | — |
+| 150-1 | **A7** | Wolf in Sheep's Clothing: generalized nested jailbreak prompts — multi-layer nesting | — |
+| 153-1 | **A7** | Multilingual jailbreak: non-English languages bypass safety alignment more easily | — |
+| 169-1 | **A7** | Stealthy jailbreak via benign data mirroring: camouflages harmful intent behind benign-looking content | — |
+| 171-1 | **A7** | Camouflaged jailbreaks: benchmarking disguised attacks that bypass detection | — |
+| 173-1 | **A7** | Multilingual jailbreak on closed-source LLMs: cross-language prompt variation | — |
+| 177-1 | **A6** | Robust jailbreak prompt generation: one model transfer to all — cross-model transfer | — |
+| 178-1 | **A6** | GPTFUZZER: auto-generated jailbreak prompts via genetic fuzzing | top-1/top-5 99/100% |
+| 179-1 | **A6** | AutoDAN (stealthy): generating stealthy jailbreak prompts via genetic algorithm | — |
+| 180-1 | **A6** | AutoDAN (gradient): interpretable gradient-based adversarial attacks on LLMs | — |
+| 182-1 | **A7** | Multi-round jailbreak: iterative multi-turn attack that progressively erodes refusal | — |
+| 183-1 | **A6** | ForgeDAN: evolutionary framework for jailbreaking — population-based optimization | 98.46% Gemma-2, 87.12% Qwen |
+| 184-1 | **A6** | AutoDAN-Turbo: lifelong agent for strategy self-exploration to jailbreak LLMs — discovers strategies autonomously | — |
+| 198-1 | **A6** | MasterKey: automated jailbreaking across multiple LLM chatbots — time-based analysis | — |
+| 200-1 | **A6** | Compliance-direction initialization: extract compliance directions from activation space for better attack init | — |
+| 129-1 | **A9** | Generative AI in cybersecurity: comprehensive review of LLM vulnerabilities in security applications | — |
+| 130-1 | **A9** | Real-world LLM security: security concerns in real-world LLM-based systems | — |
+
+### Defense Sub-types (25 entries)
+
+| Paper | Family | Description | ASR/Result |
+|-------|--------|-------------|------------|
+| 105-1 | **D2** | PIShield: detecting PI attacks via intrinsic LLM features (attention patterns, hidden states) | — |
+| 107-1 | **D2** | Protect: robust guardrailing stack for trustworthy enterprise LLM systems | — |
+| 123-1 | **D4** | ControlNet: firewall for RAG-based LLM systems — monitors retrieval flow | AUROC 0.974 |
+| 134-1 | **D5** | Jatmo: task-specific fine-tuning as PI defense — narrow model less susceptible to injection | best attacks <0.5% |
+| 138-1 | **D5** | Securing LLMs from PI: evaluation of JATMO and other defense approaches | — |
+| 139-1 | **D5** | Adaptive defense eval: 20K+ attacks vs 9 defenses — every defense that hides prompts can be broken | — |
+| 140-1 | **D5** | Innovative defenses beyond benchmark: novel defense approaches against PI | — |
+| 155-1 | **D5** | Few-shot defense: how few-shot demonstrations affect prompt-based jailbreak defenses | — |
+| 157-1 | **D5** | Adversarial tuning: defending against jailbreak via adversarial fine-tuning | — |
+| 158-1 | **D5** | Short-length adversarial training: short adversarial examples help defend against long jailbreak attacks | — |
+| 162-1 | **D6** | GuardNet: graph-attention filtering for jailbreak defense — token-level detection | F1 94.8/98.9% |
+| 163-1 | **D6** | Round-trip translation defense: translate to another language and back to neutralize injection | — |
+| 165-1 | **D5** | Semantic smoothing: defending LLMs against jailbreak via semantic-level smoothing | — |
+| 166-1 | **D5** | LLM self-defense: LLMs can defend themselves against jailbreaking via self-checking | — |
+| 167-1 | **D6** | BaThe: defense against jailbreak in MLLMs by treating harmful instruction as backdoor trigger | — |
+| 172-1 | **D5** | Multi-level defense: prompt-level, system-level, and training-time taxonomy of jailbreak defenses | — |
+| 174-1 | **D5** | In-context adversarial game: defending jailbreak prompts via in-context adversarial training | — |
+| 175-1 | **D6** | Causal perspective: causal analysis framework for enhancing both attack and defense | — |
+| 176-1 | **D5** | Jailbreak Antidote: runtime safety-utility balance via sparse representation adjustment | — |
+| 181-1 | **D2** | Gradient Cuff: detecting jailbreak attacks by exploring refusal loss landscapes | — |
+| 192-1 | **D5** | RLHF alignment base: training helpful and harmless assistant with RLHF | — |
+| 193-1 | **D5** | Constitutional AI: harmlessness from AI feedback — self-improving alignment | — |
+| 199-1 | **D5** | Mitigating many-shot jailbreaking: defense against long-context attacks | — |
+| 126-1 | **D4** | Secure RAG: defense framework against RAG poisoning attacks | — |
+| 156-1 | **D6** | Red teaming evaluation: systematic evaluation of PI and jailbreak vulnerabilities across LLMs | — |
+
+### Surveys & Benchmarks (12 entries)
+
+| Paper | Type | Description |
+|-------|------|-------------|
+| 137-1 | **Survey** | SLR on LLM defenses: systematic literature review on PI and jailbreak defenses |
+| 141-1 | **Survey** | Survey of attacks on LLMs: comprehensive taxonomy of all LLM attack vectors |
+| 146-1 | **Survey** | Jailbreak survey: jailbreak attacks and defenses against LLMs — broad survey |
+| 152-1 | **Survey** | Jailbreaking and mitigation survey: vulnerabilities and mitigation strategies |
+| 161-1 | **Survey** | Cross-language generalization: do jailbreak/defense methods generalize across languages? |
+| 186-1 | **Benchmark** | HarmBench: standardized evaluation framework for automated red teaming |
+| 187-1 | **Benchmark** | JailbreakBench: open robustness benchmark — standardized jailbreak evaluation |
+| 188-1 | **Benchmark** | StrongREJECT: identifies empty/exaggerated jailbreak claims — evaluation discipline |
+| 189-1 | **Benchmark** | XSTest: test suite for exaggerated safety behaviors / over-refusal |
+| 190-1 | **Red Team** | Red teaming at scale: methods, scaling behaviors, and lessons learned |
+| 191-1 | **Eval** | Model-written evaluations: discovering LM behaviors with automated eval generation |
+| 194-1 | **Red Team** | Red teaming LMs with LMs: using language models to red team other language models |
 
 ### 🔴 A1. Direct Prompt Injection
 
