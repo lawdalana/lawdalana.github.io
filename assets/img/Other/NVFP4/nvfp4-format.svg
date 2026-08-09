@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">โครงสร้าง NVFP4 และงบการจัดเก็บต่อค่า</title>
+  <desc id="desc">แผนภาพแสดงข้อมูล E2M1 สิบหกค่า ใช้สเกล E4M3 หนึ่งค่า และสเกล FP32 ระดับเทนเซอร์ พร้อมสูตรถอดรหัสและการคำนวณ 4.5 บิตต่อค่า</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08111d"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="fp4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16a34a"/>
+      <stop offset="1" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="fp8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06b6d4"/>
+      <stop offset="1" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="fp32" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#b45309"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .sans { font-family: Inter, "Noto Sans Thai", system-ui, sans-serif; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .muted { fill: #94a3b8; }
+      .small { font-size: 20px; }
+      .label { font-size: 24px; font-weight: 700; }
+      .cell { fill: url(#fp4); stroke: #4ade80; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" rx="26" fill="url(#bg)"/>
+  <path d="M0 725 C260 650 390 835 660 755 S1110 640 1600 760 L1600 900 L0 900 Z" fill="#0f766e" opacity="0.08"/>
+
+  <text x="72" y="72" class="sans" font-size="39" font-weight="800" fill="#f8fafc">NVFP4 = E2M1 payload + two-level scaling</text>
+  <text x="72" y="108" class="sans muted" font-size="21">แผนภาพต้นฉบับโดย lawdalana · แสดง representation แบบ block 1×16</text>
+
+  <g filter="url(#shadow)">
+    <rect x="66" y="160" width="238" height="392" rx="22" fill="#111c2d" stroke="#334155" stroke-width="2"/>
+    <text x="96" y="207" class="sans label" fill="#f8fafc">Tensor X</text>
+    <text x="96" y="241" class="sans small muted">BF16 / FP16 / FP32</text>
+    <g class="mono" font-size="19" fill="#cbd5e1">
+      <text x="96" y="300">x₀   +0.18</text>
+      <text x="96" y="338">x₁   −1.42</text>
+      <text x="96" y="376">x₂   +4.91</text>
+      <text x="96" y="414">⋮</text>
+      <text x="96" y="452">x₁₅  −0.07</text>
+    </g>
+    <rect x="92" y="490" width="186" height="40" rx="10" fill="#1e293b"/>
+    <text x="185" y="516" class="sans" text-anchor="middle" font-size="18" fill="#cbd5e1">แบ่งทุก 16 ค่า</text>
+  </g>
+
+  <path d="M320 355 H376" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="388" y="144" width="462" height="448" rx="24" fill="#101b2a" stroke="#22c55e" stroke-width="2"/>
+    <text x="420" y="191" class="sans label" fill="#dcfce7">FP4 E2M1 micro-block</text>
+    <text x="420" y="224" class="sans small muted">q₀ … q₁₅ · ค่า raw สูงสุด ±6</text>
+
+    <g class="mono" font-size="18" text-anchor="middle" fill="#f0fdf4">
+      <g transform="translate(420 256)">
+        <rect class="cell" x="0" y="0" width="88" height="58" rx="9"/><text x="44" y="36">q₀</text>
+        <rect class="cell" x="100" y="0" width="88" height="58" rx="9"/><text x="144" y="36">q₁</text>
+        <rect class="cell" x="200" y="0" width="88" height="58" rx="9"/><text x="244" y="36">q₂</text>
+        <rect class="cell" x="300" y="0" width="88" height="58" rx="9"/><text x="344" y="36">q₃</text>
+
+        <rect class="cell" x="0" y="70" width="88" height="58" rx="9"/><text x="44" y="106">q₄</text>
+        <rect class="cell" x="100" y="70" width="88" height="58" rx="9"/><text x="144" y="106">q₅</text>
+        <rect class="cell" x="200" y="70" width="88" height="58" rx="9"/><text x="244" y="106">q₆</text>
+        <rect class="cell" x="300" y="70" width="88" height="58" rx="9"/><text x="344" y="106">q₇</text>
+
+        <rect class="cell" x="0" y="140" width="88" height="58" rx="9"/><text x="44" y="176">q₈</text>
+        <rect class="cell" x="100" y="140" width="88" height="58" rx="9"/><text x="144" y="176">q₉</text>
+        <rect class="cell" x="200" y="140" width="88" height="58" rx="9"/><text x="244" y="176">q₁₀</text>
+        <rect class="cell" x="300" y="140" width="88" height="58" rx="9"/><text x="344" y="176">q₁₁</text>
+
+        <rect class="cell" x="0" y="210" width="88" height="58" rx="9"/><text x="44" y="246">q₁₂</text>
+        <rect class="cell" x="100" y="210" width="88" height="58" rx="9"/><text x="144" y="246">q₁₃</text>
+        <rect class="cell" x="200" y="210" width="88" height="58" rx="9"/><text x="244" y="246">q₁₄</text>
+        <rect class="cell" x="300" y="210" width="88" height="58" rx="9"/><text x="344" y="246">q₁₅</text>
+      </g>
+    </g>
+    <text x="619" y="558" class="sans" text-anchor="middle" font-size="22" font-weight="700" fill="#86efac">16 × 4 = 64 bits</text>
+  </g>
+
+  <path d="M866 324 H922" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="936" y="158" width="272" height="164" rx="22" fill="url(#fp8)" stroke="#67e8f9" stroke-width="2"/>
+    <text x="1072" y="205" class="sans" text-anchor="middle" font-size="25" font-weight="800" fill="#ecfeff">Block scale sᵦ</text>
+    <text x="1072" y="246" class="mono" text-anchor="middle" font-size="23" fill="#cffafe">FP8 E4M3</text>
+    <text x="1072" y="284" class="sans" text-anchor="middle" font-size="20" fill="#cffafe">8 bits / 16 values</text>
+
+    <rect x="936" y="360" width="272" height="164" rx="22" fill="url(#fp32)" stroke="#fcd34d" stroke-width="2"/>
+    <text x="1072" y="407" class="sans" text-anchor="middle" font-size="25" font-weight="800" fill="#fffbeb">Global scale S</text>
+    <text x="1072" y="448" class="mono" text-anchor="middle" font-size="23" fill="#fef3c7">FP32</text>
+    <text x="1072" y="486" class="sans" text-anchor="middle" font-size="20" fill="#fef3c7">32 bits / tensor</text>
+  </g>
+
+  <path d="M1224 242 H1264" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1224 442 H1264" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="1274" y="200" width="270" height="290" rx="24" fill="#111c2d" stroke="#64748b" stroke-width="2"/>
+    <text x="1409" y="250" class="sans label" text-anchor="middle" fill="#f8fafc">Reconstruct</text>
+    <text x="1409" y="322" class="mono" text-anchor="middle" font-size="23" fill="#e2e8f0">x̂ᵢ = qᵢ × sᵦ × S</text>
+    <line x1="1312" y1="354" x2="1506" y2="354" stroke="#334155" stroke-width="2"/>
+    <text x="1409" y="397" class="sans" text-anchor="middle" font-size="20" fill="#cbd5e1">คำนวณสะสมผล</text>
+    <text x="1409" y="431" class="sans" text-anchor="middle" font-size="20" fill="#cbd5e1">ด้วย precision ที่สูงกว่า</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="66" y="640" width="1478" height="184" rx="24" fill="#0c1727" stroke="#334155" stroke-width="2"/>
+    <text x="100" y="690" class="sans label" fill="#f8fafc">งบจัดเก็บสำหรับ block 1×16</text>
+    <text x="100" y="741" class="mono" font-size="27" fill="#86efac">64-bit payload + 8-bit block scale = 72 bits</text>
+    <text x="100" y="789" class="mono" font-size="27" fill="#f8fafc">72 / 16 = 4.5 bits/value  +  32/N bits global-scale overhead</text>
+
+    <line x1="1010" y1="674" x2="1010" y2="798" stroke="#334155" stroke-width="2"/>
+    <text x="1045" y="706" class="sans" font-size="21" font-weight="700" fill="#67e8f9">ข้อควรจำ</text>
+    <text x="1045" y="744" class="sans" font-size="19" fill="#cbd5e1">4.5 บิตคือ representation math</text>
+    <text x="1045" y="778" class="sans" font-size="19" fill="#cbd5e1">ไม่ใช่คำรับประกัน VRAM หรือ speedup ทั้งระบบ</text>
+  </g>
+
+  <text x="1536" y="866" class="sans" text-anchor="end" font-size="17" fill="#64748b">lawdalana · original diagram · 2026</text>
+</svg>
