@@ -1,6 +1,6 @@
 ---
 title: "ถอดรหัส AI Agent บุกรุก Hugging Face: Technical Timeline และบทเรียนเชิงสถาปัตยกรรม"
-notetype: reference
+notetype: feed
 date: 2026-08-09
 last_modified: 2026-08-09
 tags: [AI-Agent, cybersecurity, Hugging-Face, Kubernetes, incident-response, C2, supply-chain, sandbox, LLM-security]
