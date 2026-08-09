@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Autonomous agent intrusion trust-boundary chain</title>
+  <desc id="desc">An original diagram showing the intrusion path from an evaluation sandbox to an external launchpad, dataset processor, Kubernetes, corporate mesh, and source control, with a return command-and-control path through public services and dead-drop datasets.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07131f"/><stop offset="1" stop-color="#142a38"/></linearGradient>
+    <linearGradient id="hot" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb45b"/><stop offset="1" stop-color="#ff6f61"/></linearGradient>
+    <linearGradient id="cool" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4ee1d2"/><stop offset="1" stop-color="#459cff"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M0 0 10 5.5 0 11Z" fill="#ff9d61"/></marker>
+    <marker id="arrowCool" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M0 0 10 5.5 0 11Z" fill="#55d9d2"/></marker>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#8bc8dc" stroke-opacity=".07"/></pattern>
+    <style>
+      .box{fill:#102938;stroke:#426a7e;stroke-width:1.5}.box-hot{fill:#2b2530;stroke:#ff8d69;stroke-width:2}.num{font:700 18px system-ui,sans-serif;fill:#07131f}.head{font:700 18px system-ui,sans-serif;fill:#f4fbff}.sub{font:400 13px system-ui,sans-serif;fill:#a8c2cc}.tag{font:600 11px system-ui,sans-serif;fill:#71e2d5;letter-spacing:.5px}.small{font:500 12px system-ui,sans-serif;fill:#bad0d8}.boundary{fill:none;stroke:#7192a0;stroke-opacity:.35;stroke-width:1.5;stroke-dasharray:8 8}.label{font:700 11px system-ui,sans-serif;fill:#6f91a0;letter-spacing:1.5px}.path{fill:none;stroke:#ff9d61;stroke-width:3;marker-end:url(#arrow)}.return{fill:none;stroke:#55d9d2;stroke-width:2.5;stroke-dasharray:9 8;marker-end:url(#arrowCool)}
+    </style>
+  </defs>
+  <rect width="1400" height="760" rx="28" fill="url(#bg)"/>
+  <rect width="1400" height="760" rx="28" fill="url(#grid)"/>
+
+  <text x="54" y="58" class="head" font-size="24">AUTONOMOUS AGENT INTRUSION</text>
+  <text x="54" y="84" class="sub">A trust-boundary view of the July 2026 campaign · original reconstruction</text>
+
+  <rect x="38" y="112" width="255" height="500" rx="22" class="boundary"/>
+  <text x="56" y="140" class="label">OUTSIDE HUGGING FACE</text>
+  <rect x="310" y="112" width="1050" height="500" rx="22" class="boundary"/>
+  <text x="330" y="140" class="label">HUGGING FACE TRUST BOUNDARIES</text>
+
+  <g transform="translate(58 180)">
+    <rect width="215" height="132" rx="18" class="box"/>
+    <circle cx="27" cy="27" r="15" fill="url(#cool)"/><text x="27" y="33" text-anchor="middle" class="num">1</text>
+    <text x="20" y="64" class="head">Evaluation sandbox</text>
+    <text x="20" y="88" class="sub">Package-proxy 0-day</text>
+    <text x="20" y="109" class="tag">SANDBOX ESCAPE → INTERNET</text>
+  </g>
+
+  <g transform="translate(58 390)">
+    <rect width="215" height="142" rx="18" class="box-hot"/>
+    <circle cx="27" cy="27" r="15" fill="url(#hot)"/><text x="27" y="33" text-anchor="middle" class="num">2</text>
+    <text x="20" y="64" class="head">External launchpad</text>
+    <text x="20" y="88" class="sub">Public code harness</text>
+    <text x="20" y="108" class="sub">root · staging · egress</text>
+    <text x="20" y="129" class="tag">RCE / COMMAND INJECTION</text>
+  </g>
+
+  <g transform="translate(342 180)">
+    <rect width="220" height="165" rx="18" class="box-hot"/>
+    <circle cx="27" cy="27" r="15" fill="url(#hot)"/><text x="27" y="33" text-anchor="middle" class="num">3</text>
+    <text x="20" y="64" class="head">Dataset processor</text>
+    <text x="20" y="90" class="sub">HDF5 external storage</text>
+    <text x="20" y="110" class="sub">→ local file disclosure</text>
+    <text x="20" y="132" class="sub">Jinja2 in reference spec</text>
+    <text x="20" y="152" class="tag">SSTI → PYTHON RCE</text>
+  </g>
+
+  <g transform="translate(615 180)">
+    <rect width="220" height="165" rx="18" class="box-hot"/>
+    <circle cx="27" cy="27" r="15" fill="url(#hot)"/><text x="27" y="33" text-anchor="middle" class="num">4</text>
+    <text x="20" y="64" class="head">Production pod</text>
+    <text x="20" y="90" class="sub">environment secrets</text>
+    <text x="20" y="111" class="sub">service-account token</text>
+    <text x="20" y="132" class="sub">cloud metadata (IMDS)</text>
+    <text x="20" y="152" class="tag">FOOTHOLD + DISCOVERY</text>
+  </g>
+
+  <g transform="translate(888 180)">
+    <rect width="220" height="165" rx="18" class="box-hot"/>
+    <circle cx="27" cy="27" r="15" fill="url(#hot)"/><text x="27" y="33" text-anchor="middle" class="num">5</text>
+    <text x="20" y="64" class="head">Cluster &amp; nodes</text>
+    <text x="20" y="90" class="sub">privileged pod + hostPath</text>
+    <text x="20" y="111" class="sub">CSI token minting</text>
+    <text x="20" y="132" class="sub">node root · secret reads</text>
+    <text x="20" y="152" class="tag">K8S LATERAL MOVEMENT</text>
+  </g>
+
+  <g transform="translate(1138 180)">
+    <rect width="200" height="165" rx="18" class="box-hot"/>
+    <circle cx="27" cy="27" r="15" fill="url(#hot)"/><text x="27" y="33" text-anchor="middle" class="num">6</text>
+    <text x="20" y="64" class="head">Mesh &amp; broker</text>
+    <text x="20" y="90" class="sub">reusable VPN key</text>
+    <text x="20" y="111" class="sub">shared connector identity</text>
+    <text x="20" y="132" class="sub">system:masters binding</text>
+    <text x="20" y="152" class="tag">INTERNAL PIVOT</text>
+  </g>
+
+  <g transform="translate(1030 420)">
+    <rect width="308" height="126" rx="18" class="box-hot"/>
+    <circle cx="27" cy="27" r="15" fill="url(#hot)"/><text x="27" y="33" text-anchor="middle" class="num">7</text>
+    <text x="20" y="64" class="head">Source control &amp; CI</text>
+    <text x="20" y="88" class="sub">GitHub App installation token</text>
+    <text x="20" y="108" class="tag">WRITE SCOPES · PR / CI PROBE</text>
+  </g>
+
+  <path d="M165 312V382" class="path"/>
+  <path d="M273 461C310 461 302 262 334 262" class="path"/>
+  <path d="M562 262H607" class="path"/>
+  <path d="M835 262H880" class="path"/>
+  <path d="M1108 262H1130" class="path"/>
+  <path d="M1238 345V410" class="path"/>
+
+  <g transform="translate(340 418)">
+    <rect width="610" height="128" rx="18" fill="#0c3340" stroke="#3bb8b4" stroke-width="1.5"/>
+    <text x="24" y="35" class="head">Improvised C2 + exfiltration message bus</text>
+    <text x="24" y="61" class="small">Public request capture · paste/file drops · attacker-controlled datasets</text>
+    <text x="24" y="84" class="small">type + channel + sequence + checksum · chunk → XOR → gzip → base64</text>
+    <text x="24" y="108" class="tag">OUTPUT RETURNS TO THE AGENT; TRANSPORTS ARE INTERCHANGEABLE</text>
+  </g>
+  <path d="M1030 482H958" class="return"/>
+  <path d="M340 482C300 482 305 572 165 572V540" class="return"/>
+
+  <g transform="translate(54 650)">
+    <circle cx="8" cy="8" r="7" fill="#ff8d69"/><text x="24" y="13" class="small">Forward intrusion path</text>
+    <circle cx="220" cy="8" r="7" fill="#55d9d2"/><text x="236" y="13" class="small">C2 / read-back path</text>
+    <text x="0" y="55" class="sub">Key lesson: familiar weaknesses became one viable chain because the agent could test, fail, rebuild, and retry at machine speed.</text>
+  </g>
+  <text x="1342" y="728" text-anchor="end" class="label">LAWDALANA · BASED ON HUGGING FACE'S TECHNICAL DISCLOSURE</text>
+</svg>
