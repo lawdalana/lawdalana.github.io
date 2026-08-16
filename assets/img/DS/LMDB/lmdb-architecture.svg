@@ -99,7 +99,7 @@
   <g filter="url(#shadow)">
     <rect x="122" y="270" width="1396" height="392" rx="24" fill="url(#library)" stroke="#314b69" stroke-width="1.5"/>
   </g>
-  <text x="170" y="318" class="section">LMDB LIBRARY <tspan fill="#7f96b0" font-size="17">(C API)</tspan></text>
+  <text x="195" y="318" class="section">LMDB LIBRARY <tspan fill="#7f96b0" font-size="17">(C API)</tspan></text>
 
   <!-- Handle / data structure strip -->
   <g transform="translate(170,342)">

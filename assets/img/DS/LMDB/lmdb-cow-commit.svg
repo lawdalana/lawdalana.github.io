@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+  <title id="title">LMDB copy-on-write commit workflow</title>
+  <desc id="desc">One serialized writer starts from transaction 42, copies and modifies leaf P5 into new page P9, copies affected ancestors to a new root R43, writes and synchronizes dirty pages according to durability mode, then publishes transaction 43 through the alternate meta page. Old pages remain unchanged for older readers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset=".55" stop-color="#0a1629"/><stop offset="1" stop-color="#111a31"/></linearGradient>
+    <linearGradient id="old" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12334d"/><stop offset="1" stop-color="#101e32"/></linearGradient>
+    <linearGradient id="new" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d2c1c"/><stop offset="1" stop-color="#25202d"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#7dd3fc" stroke-opacity=".045"/></pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000814" flood-opacity=".42"/></filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="24"/></filter>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#38bdf8"/></marker>
+    <marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#f59e0b"/></marker>
+    <marker id="green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#34d399"/></marker>
+    <marker id="neutral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#94a3b8"/></marker>
+    <style>text{font-family:Inter,"Noto Sans Thai","Segoe UI",Arial,sans-serif}.title{font-size:44px;font-weight:800;letter-spacing:1.4px;fill:#f8fafc}.subtitle{font-size:20px;fill:#9fb1c8}.eyebrow{font-size:14px;font-weight:850;letter-spacing:2px;fill:#71869f}.section{font-size:23px;font-weight:850;fill:#f1f5f9}.nodeTitle{font-size:19px;font-weight:800;fill:#f2f8ff}.nodeSub{font-size:14px;fill:#adbed1}.label{font-size:17px;font-weight:750;fill:#e5f3ff}.small{font-size:14px;font-weight:550;fill:#9fb2c8}.tiny{font-size:13px;font-weight:650;fill:#91a6bd}.stepNum{font-size:15px;font-weight:850;fill:#fcd34d}.stepTitle{font-size:17px;font-weight:800;fill:#f8fafc}.stepSub{font-size:13px;fill:#aebfd1}.code{font-size:14px;font-weight:750;font-family:"SFMono-Regular",Consolas,monospace;fill:#bae6fd}</style>
+  </defs>
+  <rect width="1600" height="1050" fill="url(#bg)"/><rect width="1600" height="1050" fill="url(#grid)"/><circle cx="1450" cy="100" r="180" fill="#f59e0b" opacity=".06" filter="url(#glow)"/><circle cx="100" cy="920" r="190" fill="#0ea5e9" opacity=".05" filter="url(#glow)"/>
+  <g transform="translate(82 58)"><rect y="4" width="9" height="58" rx="4.5" fill="#f59e0b"/><text x="28" y="42" class="title">LMDB COPY-ON-WRITE COMMIT</text><text x="29" y="74" class="subtitle">Build a new tree path • preserve the old snapshot • publish through the alternate meta page</text></g>
+  <g transform="translate(1222 57)"><rect width="295" height="44" rx="22" fill="#35271b" stroke="#8a5d2a"/><circle cx="24" cy="22" r="6" fill="#f59e0b"/><text x="43" y="28" class="small" fill="#fde6b5">ONE ACTIVE WRITER</text></g>
+
+  <text x="82" y="157" class="eyebrow">TREE VERSION CHANGE</text>
+  <g transform="translate(82 180)" filter="url(#shadow)"><rect width="430" height="448" rx="24" fill="url(#old)" stroke="#2d6f95" stroke-width="1.6"/><rect x="24" y="22" width="216" height="40" rx="20" fill="#0c4a6e"/><text x="132" y="49" text-anchor="middle" class="section" fill="#7dd3fc">OLD SNAPSHOT · 42</text><text x="24" y="88" class="small">Still visible to readers that began before commit</text>
+    <g transform="translate(149 112)"><rect width="132" height="76" rx="15" fill="#164e75" stroke="#60a5fa"/><text x="66" y="31" text-anchor="middle" class="nodeTitle">ROOT R42</text><text x="66" y="56" text-anchor="middle" class="nodeSub">branch page</text></g>
+    <path d="M215 188V224M215 224H109V250M215 224H321V250" fill="none" stroke="#38bdf8" stroke-width="3"/>
+    <g transform="translate(43 250)"><rect width="132" height="76" rx="15" fill="#16516f" stroke="#67e8f9"/><text x="66" y="31" text-anchor="middle" class="nodeTitle">LEAF P5</text><text x="66" y="56" text-anchor="middle" class="nodeSub">key 20 · old value</text></g>
+    <g transform="translate(255 250)"><rect width="132" height="76" rx="15" fill="#16516f" stroke="#67e8f9"/><text x="66" y="31" text-anchor="middle" class="nodeTitle">LEAF P6</text><text x="66" y="56" text-anchor="middle" class="nodeSub">unchanged</text></g>
+    <rect x="24" y="356" width="382" height="62" rx="15" fill="#102a3d" stroke="#285d78"/><circle cx="50" cy="387" r="7" fill="#38bdf8"/><text x="69" y="382" class="small" fill="#d8f1fb">No active old page is overwritten.</text><text x="69" y="405" class="tiny">R42 and P5 remain immutable for snapshot 42.</text>
+  </g>
+
+  <path d="M512 390H572" stroke="#f59e0b" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#orange)"/><text x="542" y="369" text-anchor="middle" class="tiny" fill="#f5c76f">COW</text>
+
+  <g transform="translate(584 180)" filter="url(#shadow)"><rect width="500" height="448" rx="24" fill="url(#new)" stroke="#a16a2d" stroke-width="1.6"/><rect x="24" y="22" width="236" height="40" rx="20" fill="#713f12"/><text x="142" y="49" text-anchor="middle" class="section" fill="#fcd34d">WRITER WORKSPACE · 43</text><text x="24" y="88" class="small">Only the touched path and split-related pages are replaced</text>
+    <g transform="translate(184 112)"><rect width="132" height="76" rx="15" fill="#75431e" stroke="#f59e0b"/><text x="66" y="31" text-anchor="middle" class="nodeTitle">ROOT R43</text><text x="66" y="56" text-anchor="middle" class="nodeSub">new root page</text></g>
+    <path d="M250 188V224M250 224H129V250M250 224H371V250" fill="none" stroke="#f59e0b" stroke-width="3"/>
+    <g transform="translate(63 250)"><rect width="132" height="76" rx="15" fill="#805021" stroke="#fbbf24"/><text x="66" y="31" text-anchor="middle" class="nodeTitle">LEAF P9</text><text x="66" y="56" text-anchor="middle" class="nodeSub">key 20 · new value</text></g>
+    <g transform="translate(305 250)"><rect width="132" height="76" rx="15" fill="#173c50" stroke="#5ba6be"/><text x="66" y="31" text-anchor="middle" class="nodeTitle">LEAF P6</text><text x="66" y="56" text-anchor="middle" class="nodeSub">shared unchanged</text></g>
+    <path d="M68 289H22V210H-44" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6 6" marker-end="url(#orange)"/>
+    <rect x="24" y="356" width="452" height="62" rx="15" fill="#32271f" stroke="#7c582f"/><circle cx="50" cy="387" r="7" fill="#f59e0b"/><text x="69" y="382" class="small" fill="#fde8b8">Splits may allocate extra leaf/branch pages.</text><text x="69" y="405" class="tiny">Untouched subtrees can remain referenced by the new root.</text>
+  </g>
+
+  <path d="M1084 390H1144" stroke="#34d399" stroke-width="4" marker-end="url(#green)"/><text x="1114" y="369" text-anchor="middle" class="tiny" fill="#86efac">PUBLISH</text>
+
+  <g transform="translate(1156 180)" filter="url(#shadow)"><rect width="362" height="448" rx="24" fill="#10242f" stroke="#34836b" stroke-width="1.6"/><rect x="24" y="22" width="198" height="40" rx="20" fill="#145c4a"/><text x="123" y="49" text-anchor="middle" class="section" fill="#99f6e4">COMMITTED · 43</text><text x="24" y="88" class="small">Two fixed meta pages alternate</text>
+    <g transform="translate(24 113)"><rect width="314" height="116" rx="17" fill="#142b40" stroke="#397596"/><text x="22" y="35" class="nodeTitle">META A · page 0</text><text x="22" y="65" class="code">txnid 42 · root R42</text><rect x="218" y="22" width="72" height="30" rx="15" fill="#163b52"/><text x="254" y="42" text-anchor="middle" class="tiny">OLDER</text><text x="22" y="92" class="nodeSub">previous valid snapshot</text></g>
+    <path d="M181 239V265" stroke="#34d399" stroke-width="3" marker-end="url(#green)"/>
+    <g transform="translate(24 277)"><rect width="314" height="116" rx="17" fill="#143a34" stroke="#34d399" stroke-width="2"/><text x="22" y="35" class="nodeTitle">META B · page 1</text><text x="22" y="65" class="code" fill="#a7f3d0">txnid 43 · root R43</text><rect x="206" y="22" width="84" height="30" rx="15" fill="#145c4a"/><text x="248" y="42" text-anchor="middle" class="tiny" fill="#a7f3d0">LATEST</text><text x="22" y="92" class="nodeSub">new readers choose this snapshot</text></g>
+    <text x="181" y="426" text-anchor="middle" class="tiny" fill="#9de8d0">Next commit targets the alternate meta again.</text>
+  </g>
+
+  <text x="82" y="681" class="eyebrow">COMMIT PIPELINE</text>
+  <g transform="translate(82 704)" filter="url(#shadow)">
+    <rect width="1436" height="188" rx="22" fill="#0d1b2e" stroke="#344b64" stroke-width="1.5"/>
+    <g transform="translate(24 28)"><rect width="200" height="124" rx="16" fill="#28221f" stroke="#805a31"/><rect x="16" y="15" width="34" height="28" rx="9" fill="#713f12"/><text x="33" y="34" text-anchor="middle" class="stepNum">1</text><text x="16" y="68" class="stepTitle">Acquire writer lock</text><text x="16" y="94" class="stepSub">Start from latest root</text><text x="16" y="114" class="stepSub">and oldest reader state</text></g>
+    <path d="M230 90H252" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#orange)"/>
+    <g transform="translate(260 28)"><rect width="200" height="124" rx="16" fill="#28221f" stroke="#805a31"/><rect x="16" y="15" width="34" height="28" rx="9" fill="#713f12"/><text x="33" y="34" text-anchor="middle" class="stepNum">2</text><text x="16" y="68" class="stepTitle">Allocate pages</text><text x="16" y="94" class="stepSub">Reuse only safe IDs</text><text x="16" y="114" class="stepSub">or extend high-water mark</text></g>
+    <path d="M466 90H488" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#orange)"/>
+    <g transform="translate(496 28)"><rect width="200" height="124" rx="16" fill="#28221f" stroke="#805a31"/><rect x="16" y="15" width="34" height="28" rx="9" fill="#713f12"/><text x="33" y="34" text-anchor="middle" class="stepNum">3</text><text x="16" y="68" class="stepTitle">Copy + modify</text><text x="16" y="94" class="stepSub">Leaf, splits and</text><text x="16" y="114" class="stepSub">affected ancestor path</text></g>
+    <path d="M702 90H724" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#orange)"/>
+    <g transform="translate(732 28)"><rect width="200" height="124" rx="16" fill="#28221f" stroke="#805a31"/><rect x="16" y="15" width="34" height="28" rx="9" fill="#713f12"/><text x="33" y="34" text-anchor="middle" class="stepNum">4</text><text x="16" y="68" class="stepTitle">Write dirty pages</text><text x="16" y="94" class="stepSub">Persist new page</text><text x="16" y="114" class="stepSub">contents to data.mdb</text></g>
+    <path d="M938 90H960" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#orange)"/>
+    <g transform="translate(968 28)"><rect width="200" height="124" rx="16" fill="#28221f" stroke="#805a31"/><rect x="16" y="15" width="34" height="28" rx="9" fill="#713f12"/><text x="33" y="34" text-anchor="middle" class="stepNum">5</text><text x="16" y="68" class="stepTitle">Synchronize</text><text x="16" y="94" class="stepSub">Exact guarantee follows</text><text x="16" y="114" class="stepSub">the durability flags</text></g>
+    <path d="M1174 90H1196" stroke="#34d399" stroke-width="2.5" marker-end="url(#green)"/>
+    <g transform="translate(1204 28)"><rect width="208" height="124" rx="16" fill="#1d322a" stroke="#3b8b60"/><rect x="16" y="15" width="34" height="28" rx="9" fill="#145c4a"/><text x="33" y="34" text-anchor="middle" class="stepNum" fill="#a7f3d0">6</text><text x="16" y="68" class="stepTitle">Publish + unlock</text><text x="16" y="94" class="stepSub">Alternate meta makes</text><text x="16" y="114" class="stepSub">the new root visible</text></g>
+  </g>
+
+  <g transform="translate(82 920)"><rect width="700" height="82" rx="18" fill="#122838" stroke="#2e657e"/><circle cx="32" cy="41" r="9" fill="#38bdf8"/><text x="54" y="35" class="label">NO WAL REPLAY</text><text x="54" y="60" class="small">Open selects a valid committed meta snapshot.</text></g>
+  <g transform="translate(818 920)"><rect width="700" height="82" rx="18" fill="#33251e" stroke="#895d2f"/><circle cx="32" cy="41" r="9" fill="#f59e0b"/><text x="54" y="35" class="label">DURABILITY IS CONFIGURABLE</text><text x="54" y="60" class="small">NOSYNC / NOMETASYNC / MAPASYNC weaken crash guarantees.</text></g>
+  <text x="800" y="1033" text-anchor="middle" class="tiny">COW preserves logical snapshots; synchronization policy determines what survives a system or power failure.</text>
+</svg>

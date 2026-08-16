@@ -107,7 +107,7 @@
     <rect x="82" y="392" width="1436" height="472" rx="24" fill="url(#dataCard)" stroke="#31516e" stroke-width="1.5"/>
   </g>
   <text x="122" y="434" class="section">Page-addressed file</text>
-  <text x="346" y="434" class="note">page size is recorded in metadata; commonly 4 KiB</text>
+  <text x="375" y="434" class="note">page size is recorded in metadata; commonly 4 KiB</text>
   <rect x="1160" y="410" width="316" height="36" rx="18" fill="#12273c" stroke="#2b4862"/>
   <text x="1318" y="433" text-anchor="middle" class="note">page number → mapped address</text>
 
@@ -225,7 +225,7 @@
   <path d="M624 696 C660 696 660 536 714 536" fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrowBlue)"/>
   <text x="667" y="597" text-anchor="middle" class="pageSub" fill="#7dd3fc" transform="rotate(-76 667 597)">Main root</text>
   <path d="M624 736 C700 736 790 692 1020 692" fill="none" stroke="#34d399" stroke-width="3" marker-end="url(#arrowGreen)"/>
-  <text x="738" y="725" text-anchor="middle" class="pageSub" fill="#6ee7b7">FreeDB root</text>
+  <text x="700" y="818" text-anchor="middle" class="pageSub" fill="#6ee7b7">FreeDB root</text>
 
   <!-- lock.mdb expansion -->
   <text x="84" y="918" class="eyebrow">LOCK.MDB EXPANDED</text>

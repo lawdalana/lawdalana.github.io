@@ -1228,6 +1228,13 @@ a.box-feed:active {
   .content table tbody tr:last-child th {
     border-bottom-width: 0; }
 
+@media screen and (max-width: 768px) {
+  .content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; } }
+
 .content .tabs li + li {
   margin-top: 0; }
 
