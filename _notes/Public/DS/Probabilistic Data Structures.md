@@ -1,7 +1,7 @@
 ---
 title: Probabilistic Data Structures
 notetype: feed
-date: 2026-05-05
+date: 2026-08-16
 last_modified: 2026-08-16
 tags: [data-structures, probabilistic, bloom-filter, hyperloglog, count-min-sketch, minhash, space-saving, ddsketch, streaming, big-data]
 status: published

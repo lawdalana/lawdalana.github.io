@@ -1,7 +1,7 @@
 ---
 title: "LMDB - Lightning Memory-Mapped Database"
 notetype: feed
-date: 2026-04-22
+date: 2026-08-16
 last_modified: 2026-08-16
 tags: [database, lmdb, embedded-database, key-value-store, b-tree, mmap, mvcc, rocksdb, tuning, license]
 status: published
