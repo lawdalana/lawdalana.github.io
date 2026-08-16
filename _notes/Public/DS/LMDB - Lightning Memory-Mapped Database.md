@@ -1,10 +1,10 @@
 ---
-title : LMDB - Lightning Memory-Mapped Database
-notetype : feed
-date : 22-04-2026
-last_modified : 22-04-2026
-tags : [database, lmdb, embedded-database, key-value-store, b-tree, mmap, mvcc, rocksdb, tuning, license]
-status : published
+title: "LMDB - Lightning Memory-Mapped Database"
+notetype: feed
+date: 2026-04-22
+last_modified: 2026-08-16
+tags: [database, lmdb, embedded-database, key-value-store, b-tree, mmap, mvcc, rocksdb, tuning, license]
+status: published
 ---
 
 # LMDB (Lightning Memory-Mapped Database)
@@ -17,29 +17,9 @@ LMDB คือ embedded transactional key-value database เขียนด้�
 
 ## สถาปัตยกรรมภาพรวม
 
-```
-┌─────────────────────────────────────────────┐
-│              Application                      │
-├─────────────────────────────────────────────┤
-│          LMDB Library (C API)                │
-│  ┌─────────────┐  ┌──────────────────────┐  │
-│  │ B+ Tree      │  │ Free Page Tracker    │  │
-│  │ (data)       │  │ (B+ tree of freed    │  │
-│  │              │  │  pages)              │  │
-│  └──────┬───────┘  └──────────┬───────────┘  │
-│         │   Copy-on-Write     │              │
-├─────────┴────────────────────┴───────────────┤
-│          Memory Map (mmap)                    │
-│   ┌─────────────────────────────────────┐    │
-│   │  Single File: data.mdb              │    │
-│   │  [Meta0][Meta1][Data Pages...]       │    │
-│   └─────────────────────────────────────┘    │
-├──────────────────────────────────────────────┤
-│          OS Page Cache (auto-managed)         │
-├──────────────────────────────────────────────┤
-│          Disk / SSD                           │
-└──────────────────────────────────────────────┘
-```
+![LMDB architecture: read path, write path, mmap, data.mdb และ lock.mdb](/assets/img/DS/LMDB/lmdb-architecture.svg)
+
+*เส้นสีฟ้าแสดง read path แบบ lock-free snapshot; เส้นสีส้มแสดง write path ที่มี writer เดียว, ทำ copy-on-write และ publish meta page ตอน commit*
 
 ไฟล์บน disk มีแค่ 2 ไฟล์:
 - `data.mdb` — ไฟล์เดียวเก็บทุกอย่าง (metadata + B+ tree data + free pages)
@@ -52,7 +32,10 @@ LMDB คือ embedded transactional key-value database เขียนด้�
 LMDB เริ่มต้นด้วยการ `mmap()` ไฟล์ data.mdb เข้า virtual memory:
 
 ```c
-void *map = mmap(NULL, map_size, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
+// ค่าปกติเป็น read-only map; MDB_WRITEMAP จึงเพิ่มสิทธิ์เขียน
+int prot = PROT_READ;
+if (flags & MDB_WRITEMAP) prot |= PROT_WRITE;
+void *map = mmap(NULL, map_size, prot, MAP_SHARED, fd, 0);
 ```
 
 **สิ่งที่เกิดขึ้น:**
@@ -70,21 +53,19 @@ void *map = mmap(NULL, map_size, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
 
 ## 2. โครงสร้างไฟล์ (On-Disk Layout)
 
-```
-┌──────────┬──────────┬──────────┬──────────┬─────────┐
-│ Meta pg0 │ Meta pg1 │ Free DB  │ Main DB  │ ...     │
-│ (4KB)    │ (4KB)    │ (B+tree) │ (B+tree) │ Free    │
-│          │          │          │          │ Pages   │
-└──────────┴──────────┴──────────┴──────────┴─────────┘
-```
+![LMDB on-disk layout: meta pages และ mixed page pool](/assets/img/DS/LMDB/lmdb-on-disk-layout.svg)
+
+> **จุดสำคัญ:** มีเพียง page 0 และ page 1 ที่เป็นตำแหน่งคงที่สำหรับ meta pages ส่วน pages ตั้งแต่หมายเลข 2 เป็นต้นไปเป็น **mixed page pool** — Main DB, named DBs, FreeDB, overflow pages และ page ที่นำกลับมาใช้ใหม่ไม่ได้เรียงเป็น section ต่อกันตายตัว
 
 | Section | หน้าที่ |
 |---|---|
-| **Meta pg0/pg1** | สลับกันเก็บ root pointer + transaction ID (atomic commit) |
-| **Free DB** | B+ tree เก็บรายการ pages ที่ว่าง (ถูกลบ/เก่า) |
-| **Main DB** | B+ tree หลักเก็บ key-value pairs ของ user |
+| **Meta page 0/1 (fixed)** | เก็บ transaction ID, map/page size และ root ของ Main DB กับ FreeDB; สลับกันตอน commit |
+| **Pages ≥ 2 (mixed pool)** | เป็น branch, leaf, overflow หรือ page ที่รอนำกลับมาใช้ใหม่ โดยชนิดของ page กระจายปะปนกันได้ |
+| **FreeDB (logical B+ tree)** | เก็บ transaction ID และรายการ page IDs ที่ว่าง/นำกลับมาใช้ได้; ตัว tree เองก็อยู่ใน mixed pool |
+| **Main/named DBs (logical B+ trees)** | เก็บ key-value pairs ของผู้ใช้; root ถูกอ้างจาก meta page หรือ record ของ named DB |
+| **lock.mdb (ไฟล์แยก)** | เก็บ shared synchronization state และ reader slots; ไม่ใช่ user data |
 
-Meta pages สลับกัน (ping-pong) → commit = write meta page เดียว = atomic operation
+Meta pages สลับกันแบบ ping-pong: หลังเขียน data pages แล้ว commit จะ publish root ชุดใหม่ลง meta page อีกฝั่ง และตอนเปิด environment จะเลือก meta page ที่ valid และมี transaction ID ล่าสุด
 
 ---
 

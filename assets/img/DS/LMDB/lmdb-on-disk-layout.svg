@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">LMDB on-disk layout</title>
+  <desc id="desc">An LMDB environment normally contains data.mdb and lock.mdb. In data.mdb, pages zero and one are fixed alternating meta pages. Pages two and above form a mixed page pool containing the main database, named databases, the FreeDB, overflow pages and reusable pages. These are not fixed contiguous sections. lock.mdb contains shared synchronization state and reader transaction slots.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0a1527"/>
+      <stop offset="1" stop-color="#111a30"/>
+    </linearGradient>
+    <linearGradient id="dataCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102238"/>
+      <stop offset="1" stop-color="#0c192c"/>
+    </linearGradient>
+    <linearGradient id="pool" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1929"/>
+      <stop offset="1" stop-color="#101d31"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000814" flood-opacity="0.4"/>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#7dd3fc" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <pattern id="reuseHatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#202b3a"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#64748b" stroke-opacity="0.45" stroke-width="3"/>
+    </pattern>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrowNeutral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      text { font-family: Inter, "Noto Sans Thai", "Segoe UI", Arial, sans-serif; }
+      .title { font-size: 44px; font-weight: 800; letter-spacing: 1.5px; fill: #f8fafc; }
+      .subtitle { font-size: 20px; font-weight: 450; fill: #9fb1c8; }
+      .section { font-size: 25px; font-weight: 800; fill: #f1f5f9; }
+      .eyebrow { font-size: 14px; font-weight: 850; letter-spacing: 2px; fill: #71869f; }
+      .fileTitle { font-size: 25px; font-weight: 800; fill: #f8fafc; }
+      .fileSub { font-size: 16px; font-weight: 500; fill: #a9bbcf; }
+      .metaTitle { font-size: 21px; font-weight: 800; fill: #eef7ff; }
+      .metaField { font-size: 15px; font-weight: 600; fill: #b8c9db; }
+      .metaValue { font-size: 15px; font-weight: 750; fill: #e5f3ff; }
+      .pageNum { font-size: 13px; font-weight: 800; fill: #90a4bb; }
+      .pageTitle { font-size: 16px; font-weight: 800; fill: #f4f8fc; }
+      .pageSub { font-size: 13px; font-weight: 550; fill: #c2d0de; }
+      .note { font-size: 15px; font-weight: 600; fill: #9cb0c7; }
+      .legend { font-size: 14px; font-weight: 650; fill: #b7c6d7; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1100" fill="url(#bg)"/>
+  <rect width="1600" height="1100" fill="url(#grid)"/>
+  <circle cx="1460" cy="120" r="180" fill="#0ea5e9" opacity="0.07" filter="url(#softGlow)"/>
+  <circle cx="120" cy="980" r="190" fill="#10b981" opacity="0.05" filter="url(#softGlow)"/>
+
+  <!-- Header -->
+  <g transform="translate(82,58)">
+    <rect x="0" y="4" width="9" height="58" rx="4.5" fill="#34d399"/>
+    <text x="28" y="42" class="title">LMDB ON-DISK LAYOUT</text>
+    <text x="29" y="74" class="subtitle">Two fixed meta pages + one mixed pool of ordinary database pages</text>
+  </g>
+  <g transform="translate(1125,56)">
+    <rect width="390" height="46" rx="23" fill="#14263a" stroke="#2d4a63"/>
+    <circle cx="24" cy="23" r="6" fill="#f59e0b"/>
+    <text x="43" y="29" class="note" fill="#c6d5e4">NOT a sequence of fixed DB sections</text>
+  </g>
+
+  <!-- Environment directory -->
+  <text x="84" y="155" class="eyebrow">ENVIRONMENT DIRECTORY</text>
+  <g filter="url(#shadow)">
+    <rect x="82" y="174" width="1436" height="132" rx="22" fill="#0d1b2e" stroke="#304960" stroke-width="1.5"/>
+  </g>
+  <g transform="translate(118,197)">
+    <rect width="920" height="86" rx="17" fill="#10283e" stroke="#2e779f" stroke-width="1.5"/>
+    <rect x="20" y="17" width="58" height="52" rx="11" fill="#0c4a6e"/>
+    <path d="M33 29h32M33 40h32M33 51h32M33 62h23" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="38" class="fileTitle">data.mdb</text>
+    <text x="100" y="64" class="fileSub">Persistent ACID database: meta pages, B+ tree pages, overflow pages and free-space records</text>
+    <rect x="780" y="22" width="116" height="42" rx="12" fill="#10344c" stroke="#286f96"/>
+    <text x="838" y="48" text-anchor="middle" class="legend" fill="#8bdcf8">mmap target</text>
+  </g>
+  <g transform="translate(1070,197)">
+    <rect width="412" height="86" rx="17" fill="#1b1d38" stroke="#6e5caf" stroke-width="1.5"/>
+    <rect x="20" y="17" width="58" height="52" rx="11" fill="#352b64"/>
+    <circle cx="37" cy="43" r="6" fill="#c4b5fd"/>
+    <circle cx="49" cy="43" r="6" fill="#a78bfa"/>
+    <circle cx="61" cy="43" r="6" fill="#8b5cf6"/>
+    <text x="100" y="38" class="fileTitle">lock.mdb</text>
+    <text x="100" y="64" class="fileSub">Coordination state; not user data</text>
+  </g>
+
+  <path d="M578 307 V344" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowNeutral)"/>
+  <path d="M1276 307 V890" stroke="#8b5cf6" stroke-width="2.5" stroke-dasharray="8 8" marker-end="url(#arrowNeutral)"/>
+
+  <!-- data.mdb expansion -->
+  <text x="84" y="373" class="eyebrow">DATA.MDB EXPANDED</text>
+  <g filter="url(#shadow)">
+    <rect x="82" y="392" width="1436" height="472" rx="24" fill="url(#dataCard)" stroke="#31516e" stroke-width="1.5"/>
+  </g>
+  <text x="122" y="434" class="section">Page-addressed file</text>
+  <text x="346" y="434" class="note">page size is recorded in metadata; commonly 4 KiB</text>
+  <rect x="1160" y="410" width="316" height="36" rx="18" fill="#12273c" stroke="#2b4862"/>
+  <text x="1318" y="433" text-anchor="middle" class="note">page number → mapped address</text>
+
+  <!-- Meta page 0 -->
+  <g transform="translate(122,466)">
+    <rect width="250" height="322" rx="18" fill="#14283f" stroke="#3b7598" stroke-width="1.5"/>
+    <rect width="250" height="54" rx="18" fill="#164463"/>
+    <rect y="36" width="250" height="18" fill="#164463"/>
+    <text x="22" y="34" class="metaTitle">PAGE 0 · META A</text>
+    <g transform="translate(20,70)">
+      <text y="0" class="metaField">magic / version</text>
+      <text x="210" y="0" text-anchor="end" class="metaValue">format</text>
+      <line x1="0" y1="14" x2="210" y2="14" stroke="#2d455f"/>
+      <text y="40" class="metaField">page + map</text>
+      <text x="210" y="40" text-anchor="end" class="metaValue">psize · mapsize</text>
+      <line x1="0" y1="54" x2="210" y2="54" stroke="#2d455f"/>
+      <text y="80" class="metaField">last used page</text>
+      <text x="210" y="80" text-anchor="end" class="metaValue">last_pgno</text>
+      <line x1="0" y1="94" x2="210" y2="94" stroke="#2d455f"/>
+      <text y="120" class="metaField">transaction</text>
+      <text x="210" y="120" text-anchor="end" class="metaValue">txnid N</text>
+      <line x1="0" y1="134" x2="210" y2="134" stroke="#2d455f"/>
+      <text y="160" class="metaField">Main DB root</text>
+      <text x="210" y="160" text-anchor="end" class="metaValue" fill="#7dd3fc">pgno</text>
+      <line x1="0" y1="174" x2="210" y2="174" stroke="#2d455f"/>
+      <text y="200" class="metaField">FreeDB root</text>
+      <text x="210" y="200" text-anchor="end" class="metaValue" fill="#6ee7b7">pgno</text>
+    </g>
+    <text x="125" y="298" text-anchor="middle" class="pageSub">fixed location</text>
+  </g>
+
+  <!-- Meta page 1 -->
+  <g transform="translate(394,466)">
+    <rect width="250" height="322" rx="18" fill="#153146" stroke="#42b3a1" stroke-width="2"/>
+    <rect width="250" height="54" rx="18" fill="#126358"/>
+    <rect y="36" width="250" height="18" fill="#126358"/>
+    <text x="22" y="34" class="metaTitle">PAGE 1 · META B</text>
+    <g transform="translate(20,70)">
+      <text y="0" class="metaField">magic / version</text>
+      <text x="210" y="0" text-anchor="end" class="metaValue">format</text>
+      <line x1="0" y1="14" x2="210" y2="14" stroke="#31556a"/>
+      <text y="40" class="metaField">page + map</text>
+      <text x="210" y="40" text-anchor="end" class="metaValue">psize · mapsize</text>
+      <line x1="0" y1="54" x2="210" y2="54" stroke="#31556a"/>
+      <text y="80" class="metaField">last used page</text>
+      <text x="210" y="80" text-anchor="end" class="metaValue">last_pgno</text>
+      <line x1="0" y1="94" x2="210" y2="94" stroke="#31556a"/>
+      <text y="120" class="metaField">transaction</text>
+      <text x="210" y="120" text-anchor="end" class="metaValue" fill="#86efac">txnid N+1</text>
+      <line x1="0" y1="134" x2="210" y2="134" stroke="#31556a"/>
+      <text y="160" class="metaField">Main DB root</text>
+      <text x="210" y="160" text-anchor="end" class="metaValue" fill="#7dd3fc">pgno</text>
+      <line x1="0" y1="174" x2="210" y2="174" stroke="#31556a"/>
+      <text y="200" class="metaField">FreeDB root</text>
+      <text x="210" y="200" text-anchor="end" class="metaValue" fill="#6ee7b7">pgno</text>
+    </g>
+    <rect x="59" y="281" width="132" height="28" rx="14" fill="#0f513f"/>
+    <text x="125" y="300" text-anchor="middle" class="pageSub" fill="#99f6e4">latest valid txn</text>
+  </g>
+
+  <!-- Ping-pong indicator -->
+  <path d="M326 804 C360 836 408 836 442 804" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6 6" marker-end="url(#arrowNeutral)"/>
+  <text x="384" y="847" text-anchor="middle" class="note" fill="#f4c66e">commit alternates meta page</text>
+
+  <!-- Mixed page pool -->
+  <g transform="translate(684,466)">
+    <rect width="792" height="322" rx="18" fill="url(#pool)" stroke="#3a536d" stroke-width="1.5"/>
+    <text x="22" y="34" class="metaTitle">PAGES 2 … last_pgno · MIXED PAGE POOL</text>
+    <text x="770" y="34" text-anchor="end" class="pageSub">physical order is incidental</text>
+
+    <!-- row 1 -->
+    <g transform="translate(20,58)">
+      <rect width="138" height="72" rx="11" fill="#164e75" stroke="#38bdf8"/>
+      <text x="10" y="18" class="pageNum">p2</text><text x="69" y="35" text-anchor="middle" class="pageTitle">Branch</text><text x="69" y="57" text-anchor="middle" class="pageSub">Main DB</text>
+      <rect x="153" width="138" height="72" rx="11" fill="#0e7490" stroke="#67e8f9"/>
+      <text x="163" y="18" class="pageNum">p3</text><text x="222" y="35" text-anchor="middle" class="pageTitle">Leaf</text><text x="222" y="57" text-anchor="middle" class="pageSub">Main DB</text>
+      <rect x="306" width="138" height="72" rx="11" fill="#573b8a" stroke="#c4b5fd"/>
+      <text x="316" y="18" class="pageNum">p4</text><text x="375" y="35" text-anchor="middle" class="pageTitle">Overflow</text><text x="375" y="57" text-anchor="middle" class="pageSub">large value</text>
+      <rect x="459" width="138" height="72" rx="11" fill="#14624d" stroke="#6ee7b7"/>
+      <text x="469" y="18" class="pageNum">p5</text><text x="528" y="35" text-anchor="middle" class="pageTitle">Branch</text><text x="528" y="57" text-anchor="middle" class="pageSub">FreeDB</text>
+      <rect x="612" width="138" height="72" rx="11" fill="url(#reuseHatch)" stroke="#718096"/>
+      <text x="622" y="18" class="pageNum">p6</text><text x="681" y="35" text-anchor="middle" class="pageTitle">Reusable</text><text x="681" y="57" text-anchor="middle" class="pageSub">ID in FreeDB</text>
+    </g>
+
+    <!-- row 2 -->
+    <g transform="translate(20,142)">
+      <rect width="138" height="72" rx="11" fill="#1f5f88" stroke="#60a5fa"/>
+      <text x="10" y="18" class="pageNum">p7</text><text x="69" y="35" text-anchor="middle" class="pageTitle">Leaf</text><text x="69" y="57" text-anchor="middle" class="pageSub">named DB</text>
+      <rect x="153" width="138" height="72" rx="11" fill="#0e7490" stroke="#67e8f9"/>
+      <text x="163" y="18" class="pageNum">p8</text><text x="222" y="35" text-anchor="middle" class="pageTitle">Leaf</text><text x="222" y="57" text-anchor="middle" class="pageSub">Main DB</text>
+      <rect x="306" width="138" height="72" rx="11" fill="#13715a" stroke="#6ee7b7"/>
+      <text x="316" y="18" class="pageNum">p9</text><text x="375" y="35" text-anchor="middle" class="pageTitle">Leaf</text><text x="375" y="57" text-anchor="middle" class="pageSub">FreeDB records</text>
+      <rect x="459" width="138" height="72" rx="11" fill="#573b8a" stroke="#c4b5fd"/>
+      <text x="469" y="18" class="pageNum">p10</text><text x="528" y="35" text-anchor="middle" class="pageTitle">Overflow</text><text x="528" y="57" text-anchor="middle" class="pageSub">contiguous run</text>
+      <rect x="612" width="138" height="72" rx="11" fill="#164e75" stroke="#38bdf8"/>
+      <text x="622" y="18" class="pageNum">p11</text><text x="681" y="35" text-anchor="middle" class="pageTitle">Branch</text><text x="681" y="57" text-anchor="middle" class="pageSub">Main DB</text>
+    </g>
+
+    <!-- row 3 -->
+    <g transform="translate(20,226)">
+      <rect width="138" height="72" rx="11" fill="url(#reuseHatch)" stroke="#718096"/>
+      <text x="10" y="18" class="pageNum">p12</text><text x="69" y="35" text-anchor="middle" class="pageTitle">Reusable</text><text x="69" y="57" text-anchor="middle" class="pageSub">old snapshot</text>
+      <rect x="153" width="138" height="72" rx="11" fill="#0e7490" stroke="#67e8f9"/>
+      <text x="163" y="18" class="pageNum">p13</text><text x="222" y="35" text-anchor="middle" class="pageTitle">Leaf</text><text x="222" y="57" text-anchor="middle" class="pageSub">Main DB</text>
+      <rect x="306" width="138" height="72" rx="11" fill="#13715a" stroke="#6ee7b7"/>
+      <text x="316" y="18" class="pageNum">p14</text><text x="375" y="35" text-anchor="middle" class="pageTitle">Leaf</text><text x="375" y="57" text-anchor="middle" class="pageSub">FreeDB records</text>
+      <rect x="459" width="138" height="72" rx="11" fill="#0e7490" stroke="#67e8f9"/>
+      <text x="469" y="18" class="pageNum">p15</text><text x="528" y="35" text-anchor="middle" class="pageTitle">Leaf</text><text x="528" y="57" text-anchor="middle" class="pageSub">Main DB</text>
+      <rect x="612" width="138" height="72" rx="11" fill="#1f5f88" stroke="#60a5fa"/>
+      <text x="622" y="18" class="pageNum">p16</text><text x="681" y="35" text-anchor="middle" class="pageTitle">Leaf</text><text x="681" y="57" text-anchor="middle" class="pageSub">named DB</text>
+    </g>
+  </g>
+
+  <!-- Root pointers into pool -->
+  <path d="M624 696 C660 696 660 536 714 536" fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <text x="667" y="597" text-anchor="middle" class="pageSub" fill="#7dd3fc" transform="rotate(-76 667 597)">Main root</text>
+  <path d="M624 736 C700 736 790 692 1020 692" fill="none" stroke="#34d399" stroke-width="3" marker-end="url(#arrowGreen)"/>
+  <text x="738" y="725" text-anchor="middle" class="pageSub" fill="#6ee7b7">FreeDB root</text>
+
+  <!-- lock.mdb expansion -->
+  <text x="84" y="918" class="eyebrow">LOCK.MDB EXPANDED</text>
+  <g filter="url(#shadow)">
+    <rect x="82" y="936" width="1436" height="112" rx="22" fill="#171b35" stroke="#6c5ca8" stroke-width="1.5"/>
+  </g>
+  <g transform="translate(112,957)">
+    <rect width="350" height="70" rx="14" fill="#292649" stroke="#62579a"/>
+    <text x="20" y="28" class="metaTitle">Lock header</text>
+    <text x="20" y="52" class="pageSub">format + environment state</text>
+    <rect x="370" width="470" height="70" rx="14" fill="#292649" stroke="#62579a"/>
+    <text x="390" y="28" class="metaTitle">Shared synchronization</text>
+    <text x="390" y="52" class="pageSub">writer lock + reader-table coordination (platform dependent)</text>
+    <rect x="860" width="514" height="70" rx="14" fill="#292649" stroke="#62579a"/>
+    <text x="880" y="28" class="metaTitle">Reader table</text>
+    <text x="880" y="52" class="pageSub">slots record PID / thread + active transaction ID</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(294,1072)">
+    <rect width="16" height="16" rx="4" fill="#0e7490" stroke="#67e8f9"/><text x="26" y="13" class="legend">Main / named B+ tree</text>
+    <rect x="232" width="16" height="16" rx="4" fill="#13715a" stroke="#6ee7b7"/><text x="258" y="13" class="legend">FreeDB B+ tree</text>
+    <rect x="444" width="16" height="16" rx="4" fill="#573b8a" stroke="#c4b5fd"/><text x="470" y="13" class="legend">Overflow</text>
+    <rect x="588" width="16" height="16" rx="4" fill="url(#reuseHatch)" stroke="#718096"/><text x="614" y="13" class="legend">Reusable page ID</text>
+    <text x="806" y="13" class="legend" fill="#7f93aa">•  sample page order only</text>
+  </g>
+</svg>
