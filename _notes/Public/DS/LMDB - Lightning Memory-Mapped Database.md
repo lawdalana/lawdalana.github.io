@@ -213,14 +213,33 @@ mdb_copy -c /path/to/source-env /path/to/compact-copy
 - รันบน `tmpfs` เพื่อลดผลของ storage I/O
 - write แบบ asynchronous; ฝั่ง LMDB ใช้ `MDB_NOSYNC` และ benchmark รุ่นนี้เปิด `MDB_WRITEMAP`
 
-| Workload | LMDB | LevelDB | SQLite3 | หน่วยที่ source รายงาน |
-|---|---:|---:|---:|---|
-| Sequential read | 14,705,882 | 4,587,156 | 313,283 | ops/sec |
-| Random read | 751,315 | 174,246 | 82,994 | ops/sec |
-| Sequential write | 461,255 | 498,753 | 56,693 | ops/sec |
-| Random write | 240,154 | 317,662 | 42,199 | ops/sec |
-| Batch sequential write | 2,481,390 | 677,048 | 109,302 | entries/sec |
-| Batch random write | 294,898 | 432,152 | 58,432 | entries/sec |
+| Workload | LMDB | RocksDB | LevelDB | SQLite3 | หน่วยที่ source รายงาน |
+|---|---:|---:|---:|---:|---|
+| Sequential read | 14,705,882 | —¹ | 4,587,156 | 313,283 | ops/sec |
+| Random read | 751,315 | —¹ | 174,246 | 82,994 | ops/sec |
+| Sequential write | 461,255 | —¹ | 498,753 | 56,693 | ops/sec |
+| Random write | 240,154 | —¹ | 317,662 | 42,199 | ops/sec |
+| Batch sequential write | 2,481,390 | —¹ | 677,048 | 109,302 | entries/sec |
+| Batch random write | 294,898 | —¹ | 432,152 | 58,432 | entries/sec |
+
+> ¹ รายงานปี 2012 ไม่ได้ทดสอบ RocksDB จึงไม่ควรนำตัวเลขจาก benchmark คนละปีและคนละ workload มาเสียบในช่องเดียวกัน ตารางถัดไปเป็นการเปรียบเทียบ LMDB กับ RocksDB ที่รันอยู่ใน test เดียวกัน
+
+### LMDB vs RocksDB ใน benchmark เดียวกัน (2014)
+
+[Symas In-Memory Microbenchmark (มิถุนายน 2014)](http://www.lmdb.tech/bench/inmem/) มี RocksDB อยู่ในการทดสอบเดียวกับ LMDB โดยใช้ key 16 bytes, value 100 bytes, ปิด compression, สุ่มอ่านและ update records เดิม พร้อม reader หลาย threads และ writer หนึ่งตัว ข้อมูลอยู่บน `tmpfs` และมีขนาดพอดีกับ RAM
+
+| Concurrent workload | LMDB | RocksDB | หน่วยที่ source รายงาน |
+|---|---:|---:|---|
+| 20M records, 4 reader threads | **1,449,709** | **91,544** | reads/sec รวมทุก readers |
+| 20M records, 1 writer | **10,224** | **10,233** | writes/sec — จำกัดเพดานไว้ที่ 10,240 |
+| 100M records, 16 reader threads | **2,486,800** | **129,397** | reads/sec รวมทุก readers |
+| 100M records, 1 writer | **10,230** | **10,232** | writes/sec — จำกัดเพดานไว้ที่ 10,240 |
+
+ข้อควรระวังในการอ่านตาราง RocksDB:
+
+- writer ถูก rate-limit ไว้ไม่เกินประมาณ 10,240 writes/sec ดังนั้นแถว write บอกเพียงว่าแต่ละ engine รักษาอัตราที่กำหนดไว้ได้หรือไม่ **ไม่ได้วัด write throughput สูงสุด**
+- `writes/sec` ในรายงานนี้ไม่ควรถูกเรียกเป็น durable `transactions/sec` ข้าม engine เพราะ transaction boundary, WAL/sync และ durability configuration ไม่ได้มีความหมายเหมือนกัน
+- นี่คือ historical benchmark ที่ Symas เผยแพร่ในปี 2014 ด้วย LMDB/RocksDB เวอร์ชันและ hardware ในยุคนั้น ไม่ใช่ผลรับประกันของเวอร์ชันปัจจุบัน
 
 ### แปลงเป็น Transactions / sec อย่างถูกต้อง
 
@@ -485,6 +504,7 @@ LMDB แจกภายใต้ OpenLDAP Public License 2.8 ซึ่งเป�
 - [Symas LMDB benchmark index](http://www.lmdb.tech/bench/)
 - [Symas Database Microbenchmarks (2012)](http://www.lmdb.tech/bench/microbench/)
 - [LMDB benchmark source (`db_bench_mdb.cc`)](http://www.lmdb.tech/bench/microbench/db_bench_mdb.cc)
+- [Symas In-Memory Microbenchmark with RocksDB (2014)](http://www.lmdb.tech/bench/inmem/)
 - [Official LMDB API header (`lmdb.h`)](https://raw.githubusercontent.com/LMDB/lmdb/mdb.master/libraries/liblmdb/lmdb.h)
 - [Official LMDB implementation (`mdb.c`)](https://raw.githubusercontent.com/LMDB/lmdb/mdb.master/libraries/liblmdb/mdb.c)
 - [Official LMDB introduction](https://raw.githubusercontent.com/LMDB/lmdb/mdb.master/libraries/liblmdb/intro.doc)
