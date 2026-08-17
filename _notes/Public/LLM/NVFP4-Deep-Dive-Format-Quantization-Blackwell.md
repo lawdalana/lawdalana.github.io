@@ -9,7 +9,7 @@ status: published
 
 # NVFP4 ฉบับเจาะลึก
 
-![ภาพประกอบการบีบอัด tensor เป็น NVFP4](/assets/img/Other/NVFP4/nvfp4-hero.webp)
+![ภาพประกอบการบีบอัด tensor เป็น NVFP4](/assets/img/Other/NVFP4/nvfp4-hero.avif)
 
 *ภาพปกสร้างใหม่สำหรับบทความนี้ ไม่ได้คัดลอก artwork หรือกราฟ benchmark ของ NVIDIA*
 

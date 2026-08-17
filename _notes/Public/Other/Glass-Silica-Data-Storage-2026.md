@@ -9,7 +9,7 @@ status: published
 
 # Glass/Silica Data Storage: เก็บข้อมูล 10,000+ ปีในแก้ว
 
-![Microsoft Project Silica — แผ่นแก้วเก็บข้อมูลด้วย femtosecond laser](/assets/img/Other/GlassStorage/ms-project-silica-hero.jpg)
+![Microsoft Project Silica — แผ่นแก้วเก็บข้อมูลด้วย femtosecond laser](/assets/img/Other/GlassStorage/ms-project-silica-hero.avif)
 
 > Deep Research เรื่อง Glass/Silica Data Storage — เทคโนโลยีเก็บข้อมูลถาวรบนแก้วด้วย femtosecond laser สร้าง voxel ระดับนาโน อายุขัย 10,000+ ปี (Microsoft Project Silica) ถึง 10²⁰ ปี (5D Optical Storage) ไม่ต้องใช้ไฟเวลาไม่อ่าน (อัปเดต 2 มิ.ย. 2026, Nature 2026 + SPhotonix commercialization)
 
@@ -21,7 +21,7 @@ status: published
 
 ถ้า SSD เก็บด้วย electric charge, HDD เก็บด้วย magnetic field — Glass Storage เก็บด้วย **โครงสร้างทางกายภาพในแก้ว** ที่ไม่เสื่อม
 
-![Ars Technica — แผ่นแก้ว Project Silica ขนาด 75mm สำหรับเก็บข้อมูล](/assets/img/Other/GlassStorage/ars-technica-figure2.jpg)
+![Ars Technica — แผ่นแก้ว Project Silica ขนาด 75mm สำหรับเก็บข้อมูล](/assets/img/Other/GlassStorage/ars-technica-figure2.avif)
 
 ### Voxel คืออะไร? (สรุปสั้น)
 
@@ -62,7 +62,7 @@ status: published
 | Paper | Nature (Feb 2026) | Optica Express (2013-2024) |
 | Startup | Microsoft internal | SPhotonix (spinoff 2024, Southampton) |
 
-![Blocks & Files — Project Silica glass storage แผ่น Borosilicate (Pyrex)](/assets/img/Other/GlassStorage/blocksandfiles-silica.jpg)
+![Blocks & Files — Project Silica glass storage แผ่น Borosilicate (Pyrex)](/assets/img/Other/GlassStorage/blocksandfiles-silica.avif)
 
 ---
 
@@ -75,7 +75,7 @@ Glass → Microscope → CNN Decode → FEC → Decrypt → Decompress → Data 
 
 ### ขั้นตอนเขียน (Write)
 
-![Nature Fig.1 — Voxel ในแก้วเห็นภายใต้กล้องจุลทรรศน์ แสดง nanograting structures](/assets/img/Other/GlassStorage/nature-fig1-voxel.png)
+![Nature Fig.1 — Voxel ในแก้วเห็นภายใต้กล้องจุลทรรศน์ แสดง nanograting structures](/assets/img/Other/GlassStorage/nature-fig1-voxel.avif)
 
 **1. Data Preparation**
 - **Compression** — บีบอัดข้อมูล
@@ -219,7 +219,7 @@ Phase Voxels (Borosilicate):
 
 ## End-to-End Process: 5D Optical Storage
 
-![5D Memory Crystal — ตัวอย่าง crystal ที่เก็บข้อมูลถาวร (SPhotonix / University of Southampton)](/assets/img/Other/GlassStorage/5d-crystal-space.jpg)
+![5D Memory Crystal — ตัวอย่าง crystal ที่เก็บข้อมูลถาวร (SPhotonix / University of Southampton)](/assets/img/Other/GlassStorage/5d-crystal-space.avif)
 
 ### "5 Dimensions" คืออะไร?
 
@@ -350,7 +350,7 @@ SPhotonix เป็น **spinoff จาก University of Southampton** (ก่�
 
 ## Sustainability: ทำไม Glass Storage ถึงสำคัญสำหรับโลก
 
-![StorageNewsletter — รายละเอียดผิวแก้ว Project Silica ภายใต้กล้องจุลทรรศน์](/assets/img/Other/GlassStorage/storage-newsletter-glass-detail.jpg)
+![StorageNewsletter — รายละเอียดผิวแก้ว Project Silica ภายใต้กล้องจุลทรรศน์](/assets/img/Other/GlassStorage/storage-newsletter-glass-detail.avif)
 
 ### ปัญหา Archival Storage ปัจจุบัน
 
@@ -429,7 +429,7 @@ Glass Archival Lifecycle (เขียนครั้งเดียว):
 
 ### ที่ผ่านมา
 
-![Boucheron × 5D Memory Crystal — แหวนเพชรฝัง 5D memory crystal เก็บข้อมูลถาวร (2024)](/assets/img/Other/GlassStorage/5d-crystal-boucheron.png)
+![Boucheron × 5D Memory Crystal — แหวนเพชรฝัง 5D memory crystal เก็บข้อมูลถาวร (2024)](/assets/img/Other/GlassStorage/5d-crystal-boucheron.avif)
 
 - **2016** — เก็บ Universal Declaration of Human Rights, Bible ลง 5D crystal
 - **2018** — Arch Mission Foundation ส่ง 5D crystal (Isaac Asimov Foundation Trilogy) ขึ้น SpaceX Falcon Heavy → โคจรรอบดวงอาทิตย์ 30 ล้านปี

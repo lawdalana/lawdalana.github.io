@@ -9,7 +9,7 @@ status: published
 
 # ถอดรหัส AI Agent บุกรุก Hugging Face
 
-![ภาพประกอบ AI agent เคลื่อนผ่าน trust boundaries](/assets/img/Other/AgentIntrusion/agent-intrusion-hero.webp)
+![ภาพประกอบ AI agent เคลื่อนผ่าน trust boundaries](/assets/img/Other/AgentIntrusion/agent-intrusion-hero.avif)
 
 > **หมายเหตุบรรณาธิการ:** บทความนี้เป็นฉบับแปลและเรียบเรียงเชิงเทคนิคจากรายงานของ Hugging Face เรื่อง [*Anatomy of a Frontier Lab Agent Intrusion*](https://huggingface.co/blog/agent-intrusion-technical-timeline) ไม่ใช่คำแปลอย่างเป็นทางการหรือคำแปลทุกประโยค เนื้อหาแยกให้ชัดระหว่าง **ข้อเท็จจริงตามรายงานต้นฉบับ** กับ **ข้อวิเคราะห์และข้อเสนอเชิงป้องกันของผู้เรียบเรียง** ตัวอย่างการโจมตีถูกย่อและทำให้ไม่พร้อมนำไปรัน เพื่อเน้นการป้องกันและ Incident Response
 

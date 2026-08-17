@@ -38,7 +38,7 @@ status: published
 
 **Source:** [thainakarin.co.th](https://thainakarin.co.th/product/check-up-program-tnh/)
 
-![Thai Nakarin Check-Up 2026](/assets/img/Other/HealthCheckup/thainakarin-checkup-2026.jpg)
+![Thai Nakarin Check-Up 2026](/assets/img/Other/HealthCheckup/thainakarin-checkup-2026.avif)
 
 ### ราคาแพ็กเกจ
 
@@ -57,7 +57,7 @@ status: published
 
 ### รายละเอียดโปรแกรมตรวจ
 
-![Thai Nakarin Detail](/assets/img/Other/HealthCheckup/thainakarin-detail-1.jpg)
+![Thai Nakarin Detail](/assets/img/Other/HealthCheckup/thainakarin-detail-1.avif)
 
 > **NCDs Screening พิเศษ:** 1,699 บาท (ตรวจเบาหวาน ความดัน ไขมัน) + สิทธิ์ซื้อวัคซีนราคาพิเศษ
 
@@ -67,7 +67,7 @@ status: published
 
 **Source:** [bangkokhospital.com](https://www.bangkokhospital.com/en/bangkok/package/health-check-up-packages)
 
-![Bangkok Hospital Check-up 2026](/assets/img/Other/HealthCheckup/bangkok-checkup-2026.jpg)
+![Bangkok Hospital Check-up 2026](/assets/img/Other/HealthCheckup/bangkok-checkup-2026.avif)
 
 ### ราคาแพ็กเกจ (หมดอายุ 31 ธ.ค. 2026)
 
@@ -82,7 +82,7 @@ status: published
 | CEO Check-up | - | 35,000+ | - | - |
 | Ultimate | - | 35,000 (51 รายการ) | - | - |
 
-![Bangkok Superior](/assets/img/Other/HealthCheckup/bangkok-superior.jpg)
+![Bangkok Superior](/assets/img/Other/HealthCheckup/bangkok-superior.avif)
 
 ### Feature เด่น
 - แบ่งตามช่วงอายุ + เพศ แบบละเอียด
@@ -118,7 +118,7 @@ status: published
 
 **Source:** [bumrungrad.com](https://www.bumrungrad.com/en/health-check-up-center-bangkok-thailand-jci-best/check-up-packages)
 
-![Bumrungrad Comparison 2026](/assets/img/Other/HealthCheckup/bumrungrad-checkup-comparison-2026.jpg)
+![Bumrungrad Comparison 2026](/assets/img/Other/HealthCheckup/bumrungrad-checkup-comparison-2026.avif)
 
 ### ราคาแพ็กเกจ (หมดอายุ 31 ธ.ค. 2026)
 
@@ -157,8 +157,8 @@ status: published
 | 50+ | ชาย | 29,900 | 48,700 | **39%** |
 | 50+ | หญิง | 33,900 | 63,000 | **46%** |
 
-![Praram 9 - Age 30+](/assets/img/Other/HealthCheckup/praram9-age30m.jpg)
-![Praram 9 - Age 40+](/assets/img/Other/HealthCheckup/praram9-age40m.jpg)
+![Praram 9 - Age 30+](/assets/img/Other/HealthCheckup/praram9-age30m.avif)
+![Praram 9 - Age 40+](/assets/img/Other/HealthCheckup/praram9-age40m.avif)
 
 ### Feature เด่น
 - **ส่วนลดเยอะที่สุด** ในบรรดาโรงพยาบาลเอกชน
@@ -292,8 +292,8 @@ status: published
 
 **Source:** [mission-hospital.org](https://www.mission-hospital.org/en/patient-rights/118-packages.html)
 
-![Mission iHealthy 2026](/assets/img/Other/HealthCheckup/mission-ihealthy1-2026.jpg)
-![Mission Check-up 2026](/assets/img/Other/HealthCheckup/mission-checkup-2026.jpg)
+![Mission iHealthy 2026](/assets/img/Other/HealthCheckup/mission-ihealthy1-2026.avif)
+![Mission Check-up 2026](/assets/img/Other/HealthCheckup/mission-checkup-2026.avif)
 
 - iHealthy 1, 2, Premium — ราคาพิเศษ 2026
 - รูปโปรโมชั่นมีรายละเอียดครบ
