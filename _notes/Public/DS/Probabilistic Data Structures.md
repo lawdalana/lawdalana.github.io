@@ -2,7 +2,7 @@
 title: Probabilistic Data Structures
 notetype: feed
 date: 2026-08-16
-last_modified: 2026-08-16
+last_modified: 2026-08-17
 tags: [data-structures, probabilistic, bloom-filter, hyperloglog, count-min-sketch, minhash, space-saving, ddsketch, streaming, big-data]
 status: published
 ---
@@ -515,6 +515,46 @@ $$\gamma = \frac{1+0.10}{1-0.10} = \frac{1.10}{0.90} \approx 1.2222$$
 
 ถ้าใช้ nearest-rank แบบ exact จะได้ `p50=64 ms`, `p95=210 ms`, `p99=860 ms` ส่วน DDSketch จะคืนค่าจาก bucket ใกล้ค่าดังกล่าวภายใต้ relative-value error ที่ตั้งไว้
 
+### สมการหาจำนวน buckets
+
+สำหรับค่าบวกในช่วงที่ต้องการรองรับตั้งแต่ `v_min` ถึง `v_max` ให้หาหมายเลข bucket ของปลายช่วงก่อน:
+
+$$k_{\min} = \left\lceil\log_{\gamma}(v_{\min})\right\rceil, \qquad
+k_{\max} = \left\lceil\log_{\gamma}(v_{\max})\right\rceil$$
+
+จำนวนตำแหน่ง bucket ที่ครอบคลุมช่วงทั้งหมดแบบนับหัวและท้ายจึงเป็น
+
+$$B = k_{\max} - k_{\min} + 1$$
+
+หรือเขียนแทน `k` ลงไปได้โดยตรง:
+
+$$B =
+\left\lceil\frac{\ln(v_{\max})}{\ln(\gamma)}\right\rceil
+- \left\lceil\frac{\ln(v_{\min})}{\ln(\gamma)}\right\rceil
++ 1$$
+
+ถ้าต้องการกะขนาดอย่างรวดเร็ว ให้ดู dynamic range `R = v_max/v_min`:
+
+$$B \;\text{โตประมาณ}\;
+\frac{\ln(R)}{\ln(\gamma)}
+= \frac{\ln(v_{\max}/v_{\min})}{\ln(\gamma)}$$
+
+และเมื่อ `α` มีค่าน้อย จะมี `ln(γ) ≈ 2α` จึงเห็น trade-off ได้ง่ายขึ้นว่า
+
+$$B \approx \frac{\ln(v_{\max}/v_{\min})}{2\alpha}$$
+
+**ลองกับตัวอย่างด้านบน:** `α = 0.10`, `γ ≈ 1.2222`, `v_min = 10` และ `v_max = 100`
+
+$$k_{\min} = \left\lceil\frac{\ln 10}{\ln 1.2222}\right\rceil = 12$$
+
+$$k_{\max} = \left\lceil\frac{\ln 100}{\ln 1.2222}\right\rceil = 23$$
+
+$$B = 23 - 12 + 1 = 12\text{ bucket positions}$$
+
+ตารางตัวอย่างมี bucket ที่ count ไม่เป็นศูนย์เพียง 5 ช่อง แต่ช่วงตั้งแต่ index 12 ถึง 23 มีทั้งหมด 12 ตำแหน่ง ความต่างนี้สำคัญเพราะ sparse store อาจเก็บเฉพาะช่องที่มีข้อมูล ขณะที่ dense store อาจจองพื้นที่ตาม index span
+
+สำหรับค่าติดลบ DDSketch แยกเก็บ bucket ตามขนาดสัมบูรณ์อีกฝั่งหนึ่ง ส่วนค่าที่ใกล้ศูนย์เก็บใน `zero_count` ดังนั้นหากข้อมูลมีทั้งสองเครื่องหมาย ต้องคำนวณช่วง bucket ของฝั่งบวกและลบแยกกัน
+
 หน่วยความจำของ DDSketch ไม่ใช่ตัวเลขคงที่ เพราะขึ้นกับ
 
 - ค่า `α`
@@ -522,7 +562,7 @@ $$\gamma = \frac{1+0.10}{1-0.10} = \frac{1.10}{0.90} \approx 1.2222$$
 - รูปแบบการเก็บ bucket
 - นโยบาย collapse เมื่อจำกัดจำนวน bins
 
-Datadog ยกตัวอย่าง configuration เฉพาะที่ relative accuracy `2%` สำหรับช่วง `1 ms` ถึง `1 minute` ซึ่งใช้ 275 buckets หรือประมาณ `2 KB` เมื่อ counter ละ 64 bits ตัวเลขนี้เป็นตัวอย่างตามช่วงและ implementation ไม่ใช่ขนาดสากลของ DDSketch
+Datadog ยกตัวอย่าง configuration เฉพาะที่ relative accuracy `2%` สำหรับช่วง `1 ms` ถึง `1 minute` ซึ่งใช้ประมาณ 275 buckets หรือประมาณ `2 KB` เมื่อ counter ละ 64 bits ตัวเลขนี้เป็นตัวอย่างตามช่วง, การปัดขอบเขต และ implementation ไม่ใช่ขนาดสากลของ DDSketch
 
 อ่านต่อ: [[DDSketch]]
 
