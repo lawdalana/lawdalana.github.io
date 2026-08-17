@@ -2,7 +2,7 @@
 title: "LMDB - Lightning Memory-Mapped Database"
 notetype: feed
 date: 2026-08-16
-last_modified: 2026-08-16
+last_modified: 2026-08-17
 tags: [database, lmdb, embedded-database, key-value-store, b-tree, mmap, mvcc, rocksdb, tuning, license]
 status: published
 ---
@@ -198,9 +198,69 @@ mdb_copy -c /path/to/source-env /path/to/compact-copy
 
 ---
 
-## 8. Performance: สิ่งที่ควรวัดแทนการจำ benchmark
+## 8. Performance และ Transactions / sec
 
-ประสิทธิภาพของ storage engine เปลี่ยนมากตาม workload จึงไม่ควรใช้ตัวเลข ops/s จากเครื่องอื่นเป็นคำตอบสุดท้าย จุดแข็งเชิงสถาปัตยกรรมของ LMDB คือ read path สั้น, ไม่มี cache copy ชั้นที่สอง, ordered scan และไม่มี background compaction มาแย่ง I/O ส่วนข้อจำกัดหลักคือ writer serialization, COW/page splits, commit sync และ file growth เมื่อ readers ค้าง
+ตัวเลข throughput เคยถูกเอาออกตอนปรับบทความรอบก่อน เพราะตารางเดิมไม่ได้ระบุ source, hardware, transaction size และ durability mode ทำให้ดูเหมือนเป็นค่าที่ LMDB ทำได้เสมอ รอบนี้นำกลับมาโดยใช้ผลทดสอบที่ตรวจสอบย้อนกลับได้ พร้อมแยก `ops/sec`, `entries/sec` และ `transactions/sec` ให้ชัดเจน
+
+ประสิทธิภาพของ storage engine เปลี่ยนมากตาม workload จึงไม่ควรใช้ตัวเลขจากเครื่องอื่นเป็นคำตอบสุดท้าย จุดแข็งเชิงสถาปัตยกรรมของ LMDB คือ read path สั้น, ไม่มี cache copy ชั้นที่สอง, ordered scan และไม่มี background compaction มาแย่ง I/O ส่วนข้อจำกัดหลักคือ writer serialization, COW/page splits, commit sync และ file growth เมื่อ readers ค้าง
+
+### Historical benchmark ที่ตรวจสอบที่มาได้
+
+ตารางต่อไปนี้มาจาก [Symas Database Microbenchmarks (กันยายน 2012)](http://www.lmdb.tech/bench/microbench/) จึงควรอ่านเป็น **ข้อมูลย้อนหลังเพื่ออธิบายพฤติกรรม** ไม่ใช่คำรับรอง performance บนเครื่องปัจจุบัน เงื่อนไข baseline คือ:
+
+- Dell Precision M4400, Core 2 Extreme Q9300 2.53 GHz, RAM 8 GB และ Ubuntu 12.04/kernel 3.5
+- key 16 bytes, value 100 bytes และรายงานค่ามัธยฐานจาก 3 รอบ
+- รันบน `tmpfs` เพื่อลดผลของ storage I/O
+- write แบบ asynchronous; ฝั่ง LMDB ใช้ `MDB_NOSYNC` และ benchmark รุ่นนี้เปิด `MDB_WRITEMAP`
+
+| Workload | LMDB | LevelDB | SQLite3 | หน่วยที่ source รายงาน |
+|---|---:|---:|---:|---|
+| Sequential read | 14,705,882 | 4,587,156 | 313,283 | ops/sec |
+| Random read | 751,315 | 174,246 | 82,994 | ops/sec |
+| Sequential write | 461,255 | 498,753 | 56,693 | ops/sec |
+| Random write | 240,154 | 317,662 | 42,199 | ops/sec |
+| Batch sequential write | 2,481,390 | 677,048 | 109,302 | entries/sec |
+| Batch random write | 294,898 | 432,152 | 58,432 | entries/sec |
+
+### แปลงเป็น Transactions / sec อย่างถูกต้อง
+
+[source code ของ benchmark ฝั่ง LMDB](http://www.lmdb.tech/bench/microbench/db_bench_mdb.cc) ทำให้ตีความตัวเลขได้ดังนี้:
+
+- **Read:** benchmark เปิด read transaction หนึ่งตัวแล้วอ่านหลาย records ดังนั้น `read ops/sec` ในตาราง **ไม่ใช่** `read transactions/sec`
+- **Single write:** เปิดและ commit write transaction ใหม่ทุก 1 record ดังนั้น `write ops/sec` เท่ากับ `write transactions/sec` สำหรับ test นี้
+- **Batch write:** หนึ่ง transaction มี 1,000 records ดังนั้นต้องหาร `entries/sec` ด้วย 1,000
+
+| LMDB workload | Records / transaction | Throughput ที่รายงาน | Transactions / sec |
+|---|---:|---:|---:|
+| Sequential write, async `MDB_NOSYNC` | 1 | 461,255 ops/sec | **461,255 tx/sec** |
+| Random write, async `MDB_NOSYNC` | 1 | 240,154 ops/sec | **240,154 tx/sec** |
+| Batch sequential write, async `MDB_NOSYNC` | 1,000 | 2,481,390 entries/sec | **2,481.390 tx/sec** |
+| Batch random write, async `MDB_NOSYNC` | 1,000 | 294,898 entries/sec | **294.898 tx/sec** |
+
+ตัวอย่างการคำนวณ batch:
+
+```text
+Sequential: 2,481,390 entries/sec ÷ 1,000 entries/transaction
+          = 2,481.390 transactions/sec
+
+Random:      294,898 entries/sec ÷ 1,000 entries/transaction
+          =   294.898 transactions/sec
+```
+
+จะเห็นว่า `entries/sec` สูงขึ้นจากการ batch แต่ `transactions/sec` ไม่ได้สูงตาม เพราะหนึ่ง transaction ทำงานมากขึ้น ตัวเลขสองหน่วยนี้ตอบคนละคำถาม
+
+### Durable commit rate บน SSD ใน benchmark เดียวกัน
+
+เมื่อทดสอบ single-record transactions บน Crucial M4 SSD 512 GB กับ reiserfs โดยเปิด synchronous durability ผลของ LMDB เป็นดังนี้ ตัวเลขนี้ใช้หนึ่ง record ต่อหนึ่ง transaction จึงอ่าน `ops/sec` เป็น `transactions/sec` ได้สำหรับ test นี้:
+
+| Mode | Sequential write | Random write |
+|---|---:|---:|
+| Default full sync | **149 tx/sec** | **148 tx/sec** |
+| `MDB_NOMETASYNC` | **328 tx/sec** | **322 tx/sec** |
+
+ความต่างจากตัวเลข `MDB_NOSYNC` บน `tmpfs` แสดงให้เห็นว่า latency ของ durable sync และ storage มีผลต่อ commit rate มากเพียงใด และเป็นเหตุผลว่าทำไมตัวเลข Transaction / Sec ที่ไม่ระบุ durability mode จึงเทียบกันไม่ได้
+
+> ตัวเลขทั้งหมดข้างบนเป็น historical microbenchmark จากปี 2012 บน software/hardware รุ่นเก่า ไม่ควรใช้ capacity planning โดยตรง ให้ใช้เพื่อเข้าใจหน่วยและ trade-off แล้ว benchmark ซ้ำบน workload, transaction size, filesystem, storage และ flags ที่จะใช้จริง
 
 ### Benchmark workflow ที่เทียบได้จริง
 
@@ -422,6 +482,9 @@ LMDB แจกภายใต้ OpenLDAP Public License 2.8 ซึ่งเป�
 
 ## References
 
+- [Symas LMDB benchmark index](http://www.lmdb.tech/bench/)
+- [Symas Database Microbenchmarks (2012)](http://www.lmdb.tech/bench/microbench/)
+- [LMDB benchmark source (`db_bench_mdb.cc`)](http://www.lmdb.tech/bench/microbench/db_bench_mdb.cc)
 - [Official LMDB API header (`lmdb.h`)](https://raw.githubusercontent.com/LMDB/lmdb/mdb.master/libraries/liblmdb/lmdb.h)
 - [Official LMDB implementation (`mdb.c`)](https://raw.githubusercontent.com/LMDB/lmdb/mdb.master/libraries/liblmdb/mdb.c)
 - [Official LMDB introduction](https://raw.githubusercontent.com/LMDB/lmdb/mdb.master/libraries/liblmdb/intro.doc)
