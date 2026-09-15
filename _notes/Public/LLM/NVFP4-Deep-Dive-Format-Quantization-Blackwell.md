@@ -2,7 +2,7 @@
 title: "NVFP4 ฉบับเจาะลึก: 4 บิตแบบ NVIDIA ทำงานอย่างไร เร็วแค่ไหน และควรใช้เมื่อใด"
 notetype: feed
 date: 2026-08-09
-last_modified: 2026-08-09
+last_modified: 2026-09-16
 tags: [NVFP4, FP4, quantization, NVIDIA, Blackwell, TensorRT-LLM, vLLM, LLM-inference, low-precision]
 status: published
 ---
@@ -11,22 +11,22 @@ status: published
 
 ![ภาพประกอบการบีบอัด tensor เป็น NVFP4](/assets/img/Other/NVFP4/nvfp4-hero.avif)
 
-*ภาพปกสร้างใหม่สำหรับบทความนี้ ไม่ได้คัดลอก artwork หรือกราฟ benchmark ของ NVIDIA*
+*ภาพปกสร้างขึ้นใหม่สำหรับบทความนี้ ไม่ได้คัดลอกภาพประกอบหรือกราฟ benchmark ของ NVIDIA*
 
-> **หมายเหตุบรรณาธิการ:** บทความนี้ค้นคว้าจาก [*Introducing NVFP4 for Efficient and Accurate Low-Precision Inference*](https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/) ของ NVIDIA แล้วตรวจไขว้กับ OCP MX specification, CUDA/CUTLASS, Transformer Engine, Model Optimizer, TensorRT-LLM, vLLM, model cards และงานวิจัยที่ออกภายหลัง ข้อมูล software/hardware เป็น snapshot ณ **9 สิงหาคม 2026** ตัวเลขจาก NVIDIA จะระบุว่าเป็น **ผลที่ NVIDIA รายงาน** ส่วนข้ออนุมานจะติดป้ายว่า **บทวิเคราะห์**
+> **หมายเหตุบรรณาธิการ:** บทความนี้ค้นคว้าจาก [*Introducing NVFP4 for Efficient and Accurate Low-Precision Inference*](https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/) ของ NVIDIA แล้วตรวจสอบเทียบกับ OCP MX specification, CUDA/CUTLASS, Transformer Engine, Model Optimizer, TensorRT-LLM, vLLM, model cards และงานวิจัยที่ออกภายหลัง ข้อมูล software/hardware อ้างอิงสถานะ ณ **9 สิงหาคม 2026** ตัวเลขจาก NVIDIA จะระบุว่าเป็น **ผลที่ NVIDIA รายงาน** ส่วนข้ออนุมานจะระบุว่าเป็น **บทวิเคราะห์**
 
 ## TL;DR
 
-1. **NVFP4 ไม่ใช่เพียง “float 4 บิต”** แต่เป็น representation/recipe แบบ hierarchical block scaling: ค่าแต่ละตัวใช้ **FP4 E2M1**, ทุก 16 ค่าแชร์ **FP8 E4M3 scale** และทั้ง tensor มี **FP32 global scale** อีกชั้น
+1. **NVFP4 ไม่ใช่เพียง “float 4 บิต”** แต่กำหนดทั้งรูปแบบการแทนค่าและวิธี scale เป็นลำดับชั้น (hierarchical block scaling): ค่าแต่ละตัวใช้ **FP4 E2M1** ทุก 16 ค่าใช้ **FP8 E4M3 scale** ร่วมกัน และทั้ง tensor มี **FP32 global scale** อีกชั้น
 2. E2M1 เก็บค่า raw ได้เพียง `{0, ±0.5, ±1, ±1.5, ±2, ±3, ±4, ±6}` แต่ scale ทั้งสองชั้นทำให้ tensor จริงไม่ได้ถูกจำกัดอยู่ที่ช่วง ±6
-3. สำหรับ tensor ใหญ่ ค่าใช้พื้นที่เชิงรูปแบบประมาณ `4 + 8/16 = 4.5` บิตต่อ element และมี overhead อีก `32/N` บิตจาก global scale จึงได้อัตราส่วนเชิงอุดมคติราว **3.56× เทียบ BF16/FP16** หรือ **1.78× เทียบ FP8**
+3. สำหรับ tensor ขนาดใหญ่ รูปแบบนี้ใช้พื้นที่ประมาณ `4 + 8/16 = 4.5` บิตต่อ element และมี overhead อีก `32/N` บิตจาก global scale จึงได้อัตราส่วนเชิงอุดมคติราว **3.56× เทียบ BF16/FP16** หรือ **1.78× เทียบ FP8**
 4. **ตัวเลข 3.56×/1.78× ไม่ใช่คำรับประกัน VRAM ทั้งระบบ** เพราะโมเดลยังมี layer ที่ไม่ quantize, KV cache, activation, workspace, padding, metadata และ allocator overhead
-5. NVFP4 ต่างจาก **MXFP4** ตรง block เล็กกว่า—16 แทน 32—ใช้ E4M3 scale ที่มี fractional precision แทน UE8M0 power-of-two scale และเพิ่ม FP32 tensor scale
-6. Native FP4 Tensor Core acceleration ผูกกับ **NVIDIA Blackwell** และ kernel ของ runtime ที่รองรับ การเปิด checkpoint บน Hopper/Ampere ด้วย fallback หรือ emulation ไม่เท่ากับได้ W4A4 FP4 throughput
+5. NVFP4 ต่างจาก **MXFP4** ตรงที่ใช้ block เล็กกว่า คือ 16 แทน 32 ค่า ใช้ E4M3 scale ที่มีความละเอียดในส่วนเศษแทน UE8M0 scale ที่เป็นกำลังของสอง และเพิ่ม FP32 tensor scale
+6. การเร่ง FP4 ด้วย Tensor Core โดยตรงต้องใช้ **NVIDIA Blackwell** และ kernel ของ runtime ที่รองรับ การเปิด checkpoint บน Hopper/Ampere ด้วย fallback หรือ emulation ไม่ได้หมายความว่าจะได้ throughput แบบ W4A4 FP4
 7. คำว่า NVFP4 checkpoint อาจหมายถึง **W4A4**, **W4A16**, mixed precision หรือเพิ่ม **NVFP4 KV cache** ก็ได้ ต้องอ่าน quantization metadata ไม่ใช่ดูชื่อไฟล์อย่างเดียว
-8. NVFP4 เป็น **lossy quantization** Accuracy ขึ้นกับ model, layer coverage, calibration, algorithm, dataset และ metric โมเดลใหญ่บางตัว PTQ ได้ดี แต่โมเดลเล็กหรือ reasoning/RL-sensitive อาจต้อง mixed precision, 4/6, AWQ, QAT หรือ QAD
+8. NVFP4 เป็น **quantization ที่สูญเสียข้อมูลบางส่วน (lossy quantization)** ความแม่นยำขึ้นกับโมเดล layer ที่เลือก quantize, calibration, algorithm, dataset และ metric โมเดลใหญ่บางตัวทำ PTQ ได้ดี แต่โมเดลเล็กหรือโมเดลที่ความสามารถด้าน reasoning/RL ไวต่อการ quantize อาจต้องใช้ mixed precision, 4/6, AWQ, QAT หรือ QAD
 9. NVIDIA รายงาน DeepSeek-R1-0528 NVFP4 ใกล้ FP8 ใน benchmark ที่เลือก แต่แต่ละ metric ขยับทั้งบวกและลบ จึงไม่ควรสรุปว่า quantization “ทำให้ฉลาดขึ้น”
-10. ใช้ NVFP4 เมื่อมี Blackwell, model weights/bandwidth เป็นคอขวด, runtime รองรับ recipe นั้นจริง และ evaluation ผ่าน SLO ทั้งคุณภาพ–latency–throughput–memory หากเงื่อนไขใดไม่ครบ FP8, BF16 หรือ W4A16 อาจเป็นตัวเลือกที่เสี่ยงน้อยกว่า
+10. ใช้ NVFP4 เมื่อมี Blackwell โดยมีการเก็บหรือรับส่ง model weights เป็นคอขวด runtime รองรับ recipe นั้นจริง และผลประเมินผ่าน SLO ทั้งด้านคุณภาพ latency, throughput และ memory หากเงื่อนไขใดไม่ครบ FP8, BF16 หรือ W4A16 อาจเป็นตัวเลือกที่เสี่ยงน้อยกว่า
 
 ---
 
@@ -41,7 +41,7 @@ status: published
 | ต่างจาก FP4 ทั่วไปอย่างไร? | “FP4” บอก codebook อย่างเดียว ส่วน NVFP4 กำหนด block/global scaling เพิ่ม |
 | ต่างจาก MXFP4 อย่างไร? | NVFP4: 16 + E4M3 + FP32 global; MXFP4: 32 + UE8M0 power-of-two |
 | ต่างจาก INT4 อย่างไร? | codebook เป็น floating แทน integer; INT4 ยังมีหลายสูตร scale/zero-point/group size จึงเทียบจากชื่ออย่างเดียวไม่ได้ |
-| ลด weight memory เท่าไร? | เชิงอุดมคติ ~3.56× จาก 16 บิต หรือ ~1.78× จาก 8 บิต; actual มักต่ำกว่า |
+| ลด weight memory เท่าไร? | เชิงอุดมคติ ~3.56× จาก 16 บิต หรือ ~1.78× จาก 8 บิต; อัตราการลดจริงมักต่ำกว่า |
 | ลด VRAM ทั้งระบบเท่ากันไหม? | ไม่ เพราะ KV cache, activation, workspace และ layer ที่คง precision เดิมยังอยู่ |
 | เร็วขึ้นกี่เท่า? | ไม่มีค่าตายตัว; peak Tensor Core, kernel speed และ serving TPS/latency เป็นคนละตัวเลข |
 | GPU ไหนได้ native acceleration? | Blackwell ตาม support matrix ของ runtime; product/SM และ mode ต้องตรวจเป็นรายกรณี |
@@ -66,9 +66,9 @@ status: published
 7. **Kernel/runtime** — TensorRT-LLM, CUTLASS, vLLM, SGLang หรือ Transformer Engine
 8. **Hardware** — Tensor Core generation, compute capability, memory system และ interconnect
 
-ดังนั้นประโยคว่า “โมเดลนี้เป็น NVFP4” ยังตอบไม่ได้ว่า activation และ KV cache เป็น 4 บิตหรือไม่, layer ใดถูกยกเว้น, ใช้ native kernel หรือ fallback และ benchmark จะเร็วขึ้นเท่าไร
+ดังนั้น ประโยคว่า “โมเดลนี้เป็น NVFP4” ยังบอกไม่ได้ว่า activation และ KV cache เป็น 4 บิตหรือไม่ ยกเว้น layer ใดไว้ ใช้ native kernel หรือ fallback และผล benchmark จะเร็วขึ้นเท่าไร
 
-> **บทวิเคราะห์:** ให้มอง NVFP4 เป็น **numerical contract ระหว่าง checkpoint, quantization metadata, kernel และ hardware** มากกว่าจะเป็น file extension หรือชื่อ dtype เดี่ยว ๆ
+> **บทวิเคราะห์:** ให้มอง NVFP4 เป็น **ข้อตกลงเรื่องการแทนค่าและการคำนวณระหว่าง checkpoint, quantization metadata, kernel และ hardware** มากกว่าจะเป็นเพียงนามสกุลไฟล์หรือชื่อ dtype
 
 ---
 
@@ -85,7 +85,7 @@ S | EE | M
 - `EE` คือ exponent 2 บิต
 - `M` คือ mantissa 1 บิต
 
-ชุด magnitude ฝั่งบวกมีเพียง
+ค่าขนาด (magnitude) ที่แทนได้มีเพียง
 
 | บิต magnitude | ค่า |
 |---|---:|
@@ -102,12 +102,12 @@ S | EE | M
 
 ### สิ่งที่ E2M1 ไม่มี
 
-- ไม่มีความละเอียดพอเก็บค่าจริงทุกค่า เช่น 1.1 ต้องถูกปัดไปยัง grid ที่ใกล้กว่า
+- ไม่มีความละเอียดพอเก็บค่าจริงทุกค่า เช่น 1.1 ต้องปัดไปยังค่าที่ใกล้ที่สุดในชุดค่าที่รองรับ
 - ไม่มี raw magnitude เกิน 6
 - finite E2M1 type นี้ไม่ได้กัน encoding ไว้ให้ NaN/Infinity เหมือน floating-point ขนาดใหญ่
 - ระยะห่างระหว่างค่ากว้างขึ้นเมื่อ magnitude สูงขึ้น
 
-แต่ประโยค “ช่วง NVFP4 คือ −6 ถึง 6” ยังไม่ครบ เพราะ ±6 เป็นช่วงของ **payload ก่อนคูณ scale** ค่า reconstruction จริงอาจใหญ่หรือเล็กกว่านั้นมาก
+แต่ประโยค “ช่วง NVFP4 คือ −6 ถึง 6” ยังอธิบายไม่ครบ เพราะ ±6 เป็นช่วงของ **payload ก่อนคูณ scale** ค่าที่ได้หลังถอดรหัสกลับอาจใหญ่หรือเล็กกว่านั้นมาก
 
 ---
 
@@ -147,9 +147,9 @@ q_i = round_E2M1(x_i / (S × s_b))
 
 ### ทำไมต้องมี global FP32 scale
 
-E4M3 มี fractional precision ดีกว่า UE8M0 แต่มี exponent range แคบกว่า การ normalize tensor ด้วย `S` ก่อน ทำให้ block scales กระจายอยู่ในช่วงที่ E4M3 แทนได้ จากนั้น `s_b` ปรับ dynamic range ราย block อีกครั้ง
+E4M3 แทนค่าในส่วนเศษได้ละเอียดกว่า UE8M0 แต่มีช่วง exponent แคบกว่า การ normalize tensor ด้วย `S` ก่อนทำให้ block scales อยู่ในช่วงที่ E4M3 แทนได้ จากนั้น `s_b` จึงปรับ dynamic range ของแต่ละ block อีกครั้ง
 
-ลำดับความคิดคือ
+ลำดับการปรับ scale คือ
 
 ```text
 ช่วงทั้ง tensor  ──FP32 global scale──►  ช่วงที่ E4M3 รับได้
@@ -159,9 +159,9 @@ E4M3 มี fractional precision ดีกว่า UE8M0 แต่มี expone
 
 ### ทำไม block 16 ช่วย accuracy
 
-ถ้า 32 ค่าที่มี distribution ต่างกันมากต้องแชร์ scale เดียว ค่า outlier หนึ่งตัวอาจบังคับให้ค่าขนาดเล็กจำนวนมากเข้าใกล้ศูนย์ เมื่อแบ่งเป็น 16 ค่า scale จะปรับตาม local range ได้ละเอียดขึ้น แต่ต้องแลกกับ scale metadata มากขึ้น
+ถ้า 32 ค่าที่มีการกระจายต่างกันมากต้องใช้ scale เดียวกัน ค่า outlier เพียงตัวเดียวอาจทำให้ค่าขนาดเล็กจำนวนมากถูกปรับจนเข้าใกล้ศูนย์ เมื่อแบ่งเป็นกลุ่มละ 16 ค่า scale จะปรับตามช่วงค่าภายในกลุ่มได้ละเอียดขึ้น แต่ต้องเก็บ scale metadata มากขึ้น
 
-นี่คือ trade-off หลักของ microscaling: **block เล็ก → local fidelity ดีขึ้น แต่ overhead/complexity สูงขึ้น**
+นี่คือข้อแลกเปลี่ยนหลักของ microscaling: **block เล็กลง → รักษาค่าภายในกลุ่มได้แม่นยำขึ้น แต่มี overhead และความซับซ้อนเพิ่มขึ้น**
 
 ---
 
@@ -205,7 +205,7 @@ effective_bits = 4 + 8/16 + 32/N
 | 405B | 810 GB | 405 GB | 227.813 GB |
 | 671B | 1,342 GB | 671 GB | 377.438 GB |
 
-> **บทวิเคราะห์:** ตารางนี้ใช้วาง capacity คร่าว ๆ เท่านั้น ไม่ควรใช้ตัดสินว่าโมเดล “พอดี GPU” เพราะ checkpoint จริงมี tensor ที่ไม่ quantize, padding/sharding, tokenizer/config และตอนรันยังมี KV cache, activation, CUDA graph, communication buffer และ workspace
+> **บทวิเคราะห์:** ตารางนี้ใช้ประเมินพื้นที่ที่ต้องการคร่าว ๆ เท่านั้น ไม่ควรใช้ตัดสินว่าโมเดล “ใส่ใน GPU ได้พอดี” เพราะ checkpoint จริงมี tensor ที่ไม่ quantize, padding/sharding, tokenizer/config และตอนรันยังมี KV cache, activation, CUDA graph, communication buffer และ workspace
 
 ---
 
@@ -235,9 +235,9 @@ NVFP4 เปลี่ยนเป็น
 - shared `E4M3` scale 8 บิต ซึ่งปรับได้ระหว่าง power-of-two steps
 - FP32 scale ระดับ tensor เพื่อชดเชย exponent range ของ E4M3
 
-จึงใช้ metadata มากกว่าเล็กน้อย—4.5 เทียบ 4.25 บิต/ค่าในกรณี 1D—เพื่อแลกกับ quantization fidelity
+จึงใช้พื้นที่รวม metadata มากกว่าเล็กน้อย คือ 4.5 เทียบ 4.25 บิต/ค่าในกรณี 1D เพื่อแลกกับการรักษาค่าได้แม่นยำขึ้นหลัง quantize
 
-งาน [*Pretraining Large Language Models with NVFP4*](https://arxiv.org/abs/2509.25149) ของ NVIDIA รายงานในการทดลอง 8B/1T tokens ว่า MXFP4 ต้องใช้ token เพิ่ม 36% จึง match loss ของ NVFP4 ใน setup นั้น นี่เป็นผลเฉพาะ architecture/recipe/dataset ที่ทดลอง ไม่ใช่กฎสากลว่า NVFP4 ดีกว่า MXFP4 ทุก workload
+งาน [*Pretraining Large Language Models with NVFP4*](https://arxiv.org/abs/2509.25149) ของ NVIDIA รายงานในการทดลอง 8B/1T tokens ว่า MXFP4 ต้องใช้ token เพิ่ม 36% จึงได้ loss เท่ากับ NVFP4 ในการทดลองนั้น ผลนี้จำกัดอยู่ที่ architecture/recipe/dataset ที่ทดลอง ไม่ใช่กฎว่า NVFP4 ดีกว่า MXFP4 ในทุก workload
 
 ### NVFP4 vs INT4
 
@@ -249,7 +249,7 @@ NVFP4 เปลี่ยนเป็น
 - per-channel weight-only W4A16
 - W4A8 หรือ W4A4 ด้วย activation recipe คนละแบบ
 
-E2M1 มีระดับไม่สม่ำเสมอและมี dynamic range เชิง floating มากกว่า codebook integer ที่ spacing คงที่ แต่ INT4 ที่มี group size เล็ก, optimized clipping หรือ AWQ/GPTQ ก็อาจรักษา accuracy ได้ดีมาก การเปรียบเทียบที่ยุติธรรมต้อง fix **effective bits, quantized coverage, calibration, kernel, hardware และ benchmark**
+E2M1 มีระยะห่างระหว่างค่าไม่สม่ำเสมอ และมี dynamic range แบบ floating point ที่กว้างกว่า codebook ของจำนวนเต็มที่มีระยะห่างคงที่ แต่ INT4 ที่ใช้ group size เล็ก ปรับ clipping ให้เหมาะสม หรือใช้ AWQ/GPTQ ก็อาจรักษาความแม่นยำได้ดีมาก การเปรียบเทียบที่ยุติธรรมต้องกำหนด **effective bits, quantized coverage, calibration, kernel, hardware และ benchmark** ให้ตรงกัน
 
 ### NVFP4 vs NF4
 
@@ -281,7 +281,7 @@ vLLM แยก backend ใน code ระหว่าง native CUTLASS/FlashInf
 
 ### CPU หรือ GPU ค่ายอื่น
 
-ตัว checkpoint และ metadata อาจถูกอ่าน แปลง หรือจำลองได้ แต่ไม่ได้มี native NVIDIA FP4 Tensor Core semantics โดยอัตโนมัติ Portability จึงต่ำกว่า format/open kernel ที่มี backend ข้าม vendor มากกว่า
+CPU หรือ GPU ค่ายอื่นอาจอ่าน แปลง หรือจำลอง checkpoint และ metadata ได้ แต่ไม่ได้หมายความว่าจะคำนวณด้วย NVIDIA FP4 Tensor Core โดยตรง จึงย้ายไปใช้ข้ามระบบได้จำกัดกว่ารูปแบบหรือ open kernel ที่มี backend รองรับหลายผู้ผลิต
 
 ### Shape และ layout constraints
 
@@ -294,7 +294,7 @@ native kernels มักมีข้อกำหนดด้าน
 - tensor-parallel sharding และ MoE expert layout
 - supported output/accumulator dtype
 
-Padding ทำให้ actual checkpoint/VRAM มากกว่าสูตร ideal โดยเฉพาะ tensor เล็กหรือ shape แปลก
+Padding ทำให้ checkpoint และ VRAM ที่ใช้จริงมีขนาดมากกว่าที่คำนวณจากสูตรเชิงอุดมคติ โดยเฉพาะ tensor ขนาดเล็กหรือ shape ที่ไม่ตรงกับข้อกำหนดของ kernel
 
 ---
 
@@ -302,14 +302,14 @@ Padding ทำให้ actual checkpoint/VRAM มากกว่าสูตร
 
 ### 7.1 Weight capacity
 
-ส่วนที่ได้ประโยชน์ตรงที่สุดคือ quantized weights และ scales โมเดลใหญ่ขึ้นสามารถอยู่บน GPU จำนวนลดลงหรือเหลือพื้นที่ให้ batch/KV cache มากขึ้น แต่ประโยชน์จริงขึ้นกับสัดส่วน layer ที่ quantize
+ส่วนที่ได้ประโยชน์โดยตรงที่สุดคือ quantized weights และ scales ทำให้ใช้ GPU น้อยลงเพื่อเก็บโมเดลขนาดใหญ่ หรือเหลือพื้นที่สำหรับ batch/KV cache มากขึ้น แต่ประโยชน์จริงขึ้นกับสัดส่วน layer ที่ quantize
 
 ตัวอย่าง model card ของ NVIDIA
 
 - [Llama-3.1-405B-Instruct-NVFP4](https://huggingface.co/nvidia/Llama-3.1-405B-Instruct-NVFP4) ระบุว่า quantize weights/activations เฉพาะ linear operators ใน Transformer blocks และรายงาน disk/GPU memory ลดประมาณ **3.5× จาก BF16**
 - [DeepSeek-R1-0528-NVFP4](https://huggingface.co/nvidia/DeepSeek-R1-0528-NVFP4) เริ่มจาก FP8 และรายงาน actual reduction ประมาณ **1.6×** ไม่ใช่ 1.78× ideal
 
-ความต่างนี้เป็นตัวอย่างว่าชื่อ “FP4” ไม่ได้หมายความว่าทุก byte ในระบบถูกหารสอง
+ความต่างนี้แสดงให้เห็นว่าชื่อ “FP4” ไม่ได้หมายความว่าข้อมูลทุกส่วนในระบบจะใช้พื้นที่ลดลงครึ่งหนึ่ง
 
 ### 7.2 Memory bandwidth
 
@@ -381,7 +381,7 @@ model card ระบุ TensorRT-LLM บน B200 และเปรียบเ�
 | MATH-500 | 98.0 | 98.1 | +0.1 |
 | AIME 2024 | 89.0 | 91.3 | +2.3 |
 
-ข้อสรุปที่ปลอดภัยคือ **checkpoint นี้รักษาคะแนนใกล้ FP8 ใน evaluation ที่รายงาน** ไม่ใช่ “NVFP4 เพิ่ม reasoning 2.3 คะแนน” เพราะ benchmark finite-set, prompting, sampling, evaluation harness และ noise ทำให้ metric บางตัวสูงขึ้นได้
+ข้อสรุปที่หลักฐานรองรับคือ **checkpoint นี้รักษาคะแนนไว้ใกล้ FP8 ในการประเมินที่รายงาน** ยังสรุปไม่ได้ว่า “NVFP4 เพิ่ม reasoning 2.3 คะแนน” เพราะชุดทดสอบที่มีจำนวนตัวอย่างจำกัด วิธีเขียน prompt, sampling, evaluation harness และความผันผวนในการวัดอาจทำให้บาง metric สูงขึ้นได้
 
 ### Llama-3.1-405B: ผลที่ NVIDIA รายงาน
 
@@ -392,11 +392,11 @@ model card ระบุ TensorRT-LLM บน B200 และเปรียบเ�
 | ARC Challenge | 96.9 | 96.6 | −0.3 |
 | IFEval | 88.6 | 89.5 | +0.9 |
 
-อีกครั้ง คะแนนที่ขยับบวกหนึ่ง metric ไม่ได้พิสูจน์ว่า quantization ไม่มีผลหรือช่วยทุก task
+คะแนนที่สูงขึ้นใน metric หนึ่งไม่ได้พิสูจน์ว่า quantization ไม่มีผลหรือช่วยได้ในทุกงาน
 
 ### โมเดลใหญ่กับโมเดลเล็ก
 
-งาน [QAD ของ NVIDIA](https://arxiv.org/abs/2601.20088) รายงานว่า large models หลายตัว robust ต่อ NVFP4 PTQ มากกว่า small/sensitive models ตัวอย่าง Llama Nemotron Super V1 ในรายงานนั้นลดจาก BF16 46.0 เป็น PTQ 32.3 บน AIME25 ก่อน QAD กู้กลับเป็น 45.6 แสดงว่า “ใกล้ lossless” ไม่ใช่คุณสมบัติอัตโนมัติของ format
+งาน [QAD ของ NVIDIA](https://arxiv.org/abs/2601.20088) รายงานว่าโมเดลขนาดใหญ่หลายตัวทนต่อความคลาดเคลื่อนจาก NVFP4 PTQ ได้ดีกว่าโมเดลขนาดเล็กหรือโมเดลที่ไวต่อการ quantize ตัวอย่างเช่น Llama Nemotron Super V1 มีคะแนน AIME25 ลดจาก BF16 46.0 เป็น PTQ 32.3 ก่อนใช้ QAD กู้กลับเป็น 45.6 จึงเห็นได้ว่าคุณภาพที่ “ใกล้ lossless” ไม่ได้เกิดขึ้นโดยอัตโนมัติจากการใช้รูปแบบนี้
 
 ### Algorithm หลัง AbsMax
 
@@ -407,7 +407,7 @@ model card ระบุ TensorRT-LLM บน B200 และเปรียบเ�
 - **QAT:** fine-tune ผ่าน fake-quantized forward
 - **QAD:** match distribution ของ high-precision teacher ด้วย KL divergence
 
-งาน [ScaleSweep](https://arxiv.org/abs/2606.07618) รายงาน performance recovery ระดับประมาณ 93–95% ในหลายกรณีของ setting ที่ quantize weights, activations, KV และ query states อย่าง aggressive สิ่งนี้ตอกย้ำว่าการ quantize coverage เพิ่มไม่ใช่ free lunch
+งาน [ScaleSweep](https://arxiv.org/abs/2606.07618) รายงานการกู้ประสิทธิภาพกลับมาได้ประมาณ 93–95% ในหลายกรณีที่ลด precision ของ weights, activations, KV และ query states อย่างมาก ผลนี้แสดงว่าการ quantize ให้ครอบคลุมส่วนต่าง ๆ มากขึ้นมีต้นทุนด้านคุณภาพที่ต้องพิจารณา
 
 ---
 
@@ -415,18 +415,18 @@ model card ระบุ TensorRT-LLM บน B200 และเปรียบเ�
 
 ### Workflow ที่ควรใช้
 
-1. **กำหนด baseline** — checkpoint, tokenizer, prompt template และ evaluation harness ต้อง freeze
+1. **กำหนด baseline** — ใช้ checkpoint, tokenizer, prompt template และ evaluation harness ชุดเดิมตลอดการเปรียบเทียบ
 2. **เลือก target recipe** — W4A4, W4A16, mixed, KV FP8/NVFP4 หรือ selective layers
-3. **ตรวจ deployability ก่อน quantize** — GPU, runtime, architecture และ shape ต้องรองรับ
+3. **ตรวจว่ารันได้จริงก่อน quantize** — GPU, runtime, architecture และ shape ต้องรองรับ
 4. **เตรียม calibration set** — เป็นตัวแทน distribution จริง ไม่ใช่เพียงข้อความทั่วไปถ้า production เป็น code/math/ภาษาไทย
 5. **รัน calibration/algorithm** — max, 4/6, AWQ, MSE, GPTQ หรือ AutoQuantize
 6. **export metadata ครบ** — scale dtype, block size, axis, excluded layers และ checkpoint format
 7. **offline evaluation** — benchmark หลาย domain + regression prompts + perplexity/logit divergence
 8. **performance benchmark** — hardware/runtime เดียวกัน, ISL/OSL/concurrency เดียวกัน
 9. **canary/A-B** — ตรวจ product KPI, tail latency, refusal/safety และ rare failures
-10. **เก็บ BF16/FP8 rollback** — ห้าม replace baseline จน production validation จบ
+10. **เก็บ BF16/FP8 ไว้สำหรับย้อนกลับ** — อย่าแทนที่ baseline จนกว่าจะตรวจสอบใน production เสร็จ
 
-NVIDIA PTQ tutorial ยก **128–512 samples** เป็นช่วงเริ่มต้นที่พบบ่อย แต่ไม่ใช่ sample-size guarantee สำหรับทุก domain
+NVIDIA PTQ tutorial ยก **128–512 samples** เป็นจำนวนตัวอย่างเริ่มต้นที่ใช้กันบ่อย แต่ไม่ได้รับประกันว่าจะเพียงพอสำหรับทุก domain
 
 ### ตัวอย่าง API ระดับแนวคิด
 
@@ -441,7 +441,7 @@ model = mtq.quantize(
 )
 ```
 
-จากนั้น export เป็น quantized Hugging Face checkpoint ด้วย Model Optimizer API และเปิดด้วย runtime ที่รองรับ metadata นั้น ตัวอย่างนี้ตั้งใจแสดง flow ไม่ได้ pin version/environment; ให้ยึด [Model Optimizer guide](https://nvidia.github.io/Model-Optimizer/guides/1_quantization.html) ปัจจุบันเป็นหลัก
+จากนั้น export เป็น quantized Hugging Face checkpoint ด้วย Model Optimizer API แล้วเปิดด้วย runtime ที่รองรับ metadata นั้น ตัวอย่างนี้แสดงเพียงลำดับการทำงาน โดยไม่ได้ระบุ version หรือ environment ที่แน่นอน ให้ยึด [Model Optimizer guide](https://nvidia.github.io/Model-Optimizer/guides/1_quantization.html) ปัจจุบันเป็นหลัก
 
 ### W4A4 กับ W4A16 เลือกอะไร
 
@@ -458,19 +458,19 @@ model = mtq.quantize(
 
 ### Quantization-Aware Training — QAT
 
-QAT ทำ fake quantization ใน forward เพื่อให้ weights ปรับตัวเข้ากับ grid แต่ gradient/optimizer ยัง precision สูง จุดประสงค์คือกู้ inference accuracy หลังมี pretrained model แล้ว
+QAT ทำ fake quantization ใน forward เพื่อให้ weights ปรับตัวเข้ากับชุดค่าที่ quantization รองรับ ขณะที่ gradient/optimizer ยังใช้ precision สูง จุดประสงค์คือกู้ความแม่นยำตอน inference ของโมเดลที่ผ่าน pretraining แล้ว
 
-ข้อจำกัดคือถ้าโมเดลผ่าน SFT, RL และ model merge หลายขั้น การ fine-tune ด้วย task loss อีกครั้งอาจเปลี่ยน behavior ที่ post-training เดิมสร้างไว้
+ข้อจำกัดคือ ถ้าโมเดลผ่าน SFT, RL และ model merge มาหลายขั้น การ fine-tune ด้วย task loss อีกครั้งอาจเปลี่ยนพฤติกรรมที่ได้จาก post-training เดิม
 
 ### Quantization-Aware Distillation — QAD
 
-QAD ใช้ high-precision model เป็น teacher และ minimize KL divergence ระหว่าง teacher/student distributions แทนการเรียน label อย่างเดียว รายงาน NVIDIA ปี 2026 พบว่า QAD stable กว่า QAT ใน RL-heavy/SFT-heavy models หลายตัวที่ทดลอง
+QAD ใช้โมเดล precision สูงเป็น teacher และฝึกให้ KL divergence ระหว่างการแจกแจงผลลัพธ์ของ teacher กับ student ต่ำที่สุด แทนการเรียนจาก label อย่างเดียว รายงาน NVIDIA ปี 2026 พบว่า QAD ให้ผลเสถียรกว่า QAT ในโมเดลหลายตัวที่ผ่าน RL/SFT มาเป็นหลัก
 
 ต้นทุนที่เพิ่มคือ
 
 - ต้องเก็บ/รัน teacher
 - มี training compute และ data pipeline
-- near-BF16 ใน paper ไม่ใช่ guarantee ข้าม architecture/domain
+- ผลที่ใกล้ BF16 ในงานวิจัยไม่ได้รับประกันว่าจะได้เหมือนกันใน architecture/domain อื่น
 
 ### Native quantized pretraining
 
@@ -482,7 +482,7 @@ QAD ใช้ high-precision model เป็น teacher และ minimize KL di
 
 แต่ยังคง master weights, optimizer states และ accumulation บางส่วนใน FP32/BF16
 
-งาน NVIDIA ฝึก hybrid Mamba–Transformer 12B บน 10T tokens และรายงาน MMLU-Pro 62.58% เทียบ FP8 62.62% โดย evaluation ทำใน BF16 อย่างไรก็ตาม paper ระบุชัดว่าเน้น numerical methodology มากกว่า runtime/system efficiency
+งานของ NVIDIA ฝึก hybrid Mamba–Transformer 12B บน 10T tokens และรายงาน MMLU-Pro 62.58% เทียบกับ FP8 ที่ 62.62% โดยประเมินผลใน BF16 อย่างไรก็ตาม งานวิจัยระบุชัดว่าเน้นวิธีการคำนวณเชิงตัวเลขมากกว่าประสิทธิภาพของ runtime หรือระบบ
 
 ### Recipe ที่ทำให้ training อยู่รอด
 
@@ -493,7 +493,7 @@ Transformer Engine ใช้เทคนิคเพิ่มจาก format �
 3. **Random Hadamard Transform:** กระจาย outlier สำหรับ inputs ของ Wgrad
 4. **stochastic rounding เฉพาะ gradients:** ลด bias; weights/activations ใช้ round-to-nearest-even
 
-> **จุดสำคัญ:** เทคนิคเหล่านี้เป็น **training recipe** ไม่ใช่เงื่อนไขบังคับของ PTQ inference ทั่วไป และ 2D weight scaling มี metadata/layout economics ต่างจากสูตร 4.5 บิตของ block 1×16
+> **จุดสำคัญ:** เทคนิคเหล่านี้เป็น **training recipe** ไม่ใช่เงื่อนไขบังคับของ PTQ inference ทั่วไป และ 2D weight scaling มีต้นทุนการเก็บ metadata และจัด layout ต่างจากสูตร 4.5 บิตของ block 1×16
 
 ---
 
@@ -510,7 +510,7 @@ Transformer Engine ใช้เทคนิคเพิ่มจาก format �
 | SGLang | serving/online quantization paths | architecture/kernel/version-specific support |
 | Hugging Face checkpoints | distribution ของ quantized weights/metadata | model card, license, source precision, quant config |
 
-Model Optimizer ปัจจุบันมี config มากกว่า `NVFP4_DEFAULT_CFG` เช่น W4A16, KV NVFP4, affine KV, 4/6, AWQ, MSE scale sweep และ mixed MHA recipes นั่นทำให้บทความหรือ benchmark ที่เขียนเพียง “NVFP4” โดยไม่บอก config ย้อนทำซ้ำได้ยาก
+Model Optimizer ปัจจุบันมี config นอกเหนือจาก `NVFP4_DEFAULT_CFG` เช่น W4A16, KV NVFP4, affine KV, 4/6, AWQ, MSE scale sweep และ mixed MHA recipes ดังนั้น บทความหรือ benchmark ที่เขียนเพียง “NVFP4” โดยไม่ระบุ config จึงนำไปทำซ้ำได้ยาก
 
 NVIDIA มี [Inference Optimized Checkpoints collection](https://huggingface.co/collections/nvidia/model-optimizer-66aa84f7966b3150262481a4) ครอบคลุม Llama, DeepSeek, Qwen, Nemotron, VLM และ diffusion models แต่ทุก model card มี license, runtime และ hardware requirement ของตนเอง
 
@@ -533,7 +533,7 @@ NVIDIA มี [Inference Optimized Checkpoints collection](https://huggingface.c
 [ ] backend เลือก native FP4 kernel หรือ fallback?
 ```
 
-ชื่อ repository ที่ลงท้าย `-FP4` อาจ redirect หรืออธิบายเป็น `-NVFP4` แต่ metadata ภายในคือหลักฐานที่สำคัญกว่า naming
+ชื่อ repository ที่ลงท้าย `-FP4` อาจ redirect ไปยัง `-NVFP4` หรือระบุชื่อนี้ในคำอธิบาย แต่ metadata ภายในเป็นหลักฐานที่สำคัญกว่าชื่อ
 
 ---
 
@@ -583,12 +583,12 @@ host/offload memory
 1. **Accuracy ไม่แน่นอน:** distribution และ sensitive layer ต่างกันระหว่างโมเดล
 2. **Hardware coupling:** native benefit ผูกกับ Blackwell และ runtime kernel ที่รองรับ
 3. **Recipe fragmentation:** NVFP4 ชื่อเดียวครอบคลุม W4A4/W4A16/KV/mixed หลายแบบ
-4. **Padding/layout overhead:** 4.5 บิตเป็น asymptotic math ไม่ใช่ทุก tensor จริง
+4. **Padding/layout overhead:** 4.5 บิตเป็นค่าที่ได้เมื่อ tensor มีขนาดใหญ่มาก ไม่ใช่พื้นที่ที่ทุก tensor ใช้จริง
 5. **Unquantized islands:** attention, norm, embedding, router, head หรือท้าย network อาจยัง precision สูง
 6. **KV-cache bottleneck:** weight-only quantization ไม่แก้ long-context memory ทั้งหมด
 7. **Fallback ambiguity:** framework อาจรันได้แต่ไม่ใช่ native W4A4
 8. **Calibration bias:** calibration data ที่ไม่ตรง production ทำให้ activation range ผิด
-9. **Rare capability loss:** aggregate benchmark ใกล้เดิมแต่ tool use, code corner case หรือ multilingual อาจถดถอย
+9. **Rare capability loss:** คะแนน benchmark รวมอาจใกล้เดิม แต่การใช้ tool กรณีโค้ดที่พบไม่บ่อย หรือความสามารถหลายภาษาอาจลดลง
 10. **Quantization cost:** AWQ/GPTQ/AutoQuantize/QAT/QAD ใช้เวลาและ compute ไม่เท่ากัน
 11. **Version churn:** checkpoint schema, kernels และ support matrix เปลี่ยนเร็ว
 12. **Peak vs product:** Tensor Core peak, kernel microbenchmark และ serving throughput เทียบกันตรง ๆ ไม่ได้
@@ -602,25 +602,25 @@ host/offload memory
 ### เหมาะมากเมื่อ
 
 - มี Blackwell ที่ runtime รองรับ native NVFP4
-- model weights กิน VRAM จนต้องลด GPU count หรืออยากเพิ่ม batch/KV capacity
+- ต้องการลดจำนวน GPU ที่ใช้เก็บ model weights หรือเพิ่มพื้นที่ให้ batch/KV cache
 - decode/serving เป็น memory-bandwidth-sensitive
 - มี representative calibration/evaluation data
-- ยอมใช้ mixed precision หรือ recovery method ถ้า layer บางส่วน sensitive
-- ทีมวัดคุณภาพและ SLO แบบ reproducible ได้
+- ยอมใช้ mixed precision หรือวิธีกู้คุณภาพ หากบาง layer ไวต่อการ quantize
+- ทีมวัดคุณภาพและ SLO ซ้ำภายใต้เงื่อนไขเดิมได้
 
 ### พิจารณา W4A16 เมื่อ
 
 - ต้องการลด weight memory เป็นหลัก
 - activation quantization ทำ accuracy ตก
 - hardware/backend ยังไม่มี native W4A4 ที่เหมาะ
-- portability สำคัญกว่าค่าสูงสุดบน Blackwell
+- การย้ายไปใช้ข้ามระบบสำคัญกว่าประสิทธิภาพสูงสุดบน Blackwell
 
 ### เลือก FP8/BF16 ก่อนเมื่อ
 
 - accuracy margin แคบมากหรือเป็น safety-critical
 - deployment อยู่บน Hopper/Ampere เป็นหลัก
 - model/operator coverage ของ FP4 ต่ำ
-- calibration/training budget ไม่มี
+- ไม่มีงบสำหรับ calibration/training
 - workload เล็กจน conversion/launch overhead กลบประโยชน์
 - ต้องข้าม vendor/runtime หลายแบบ
 
@@ -646,11 +646,11 @@ host/offload memory
 
 ### NV ใน NVFP4 ย่อมาจาก NVIDIA ใช่ไหม
 
-ชื่อสื่อถึง format ของ NVIDIA อย่างชัดเจน แต่เอกสารหลักที่ตรวจไม่ได้ให้นิยามทางการว่าอักษร `NV` ต้องขยายเป็นคำใด จึงควรเรียกชื่อเต็มว่า “NVFP4” มากกว่าแต่ง expansion เอง
+ชื่อสื่อถึงรูปแบบของ NVIDIA อย่างชัดเจน แต่เอกสารหลักที่ตรวจไม่ได้ให้นิยามทางการว่าอักษร `NV` ย่อมาจากคำใด จึงควรใช้ชื่อ “NVFP4” ตามเอกสาร
 
 ### NVFP4 คือ dtype 4 บิตตัวเดียวหรือไม่
 
-ไม่ครบถ้าพูดเช่นนั้น Payload เป็น E2M1 4 บิต แต่ representation ใช้ E4M3/16 และ FP32/tensor scales รวมทั้ง layout/metadata
+คำอธิบายนั้นยังไม่ครบ Payload เป็น E2M1 4 บิต แต่รูปแบบการแทนค่ายังใช้ E4M3/16 และ FP32/tensor scales รวมทั้ง layout/metadata
 
 ### เก็บค่าเกิน 6 ได้ไหม
 
@@ -670,11 +670,11 @@ finite E2M1 payload ใช้ bit patterns กับ signed finite values/zero �
 
 ### ลด VRAM 3.5× แน่นอนไหม
 
-เฉพาะกรณี ideal weight payload จาก 16 บิตเข้าใกล้ 3.56× Actual model card บางตัวรายงานราว 3.5× แต่ total serving VRAM อาจน้อยกว่านั้นมาก
+อัตราการลดพื้นที่เฉพาะ weight payload จาก 16 บิตเข้าใกล้ 3.56× ได้ในกรณีเชิงอุดมคติ Model card บางตัวรายงานผลจริงราว 3.5× แต่อัตราการลด VRAM ทั้งระบบขณะให้บริการอาจต่ำกว่านั้นมาก
 
 ### จาก FP8 ต้องลดได้ 1.8× เสมอไหม
 
-ไม่ 1.78× เป็น ideal representation ratio DeepSeek model card รายงาน actual disk/GPU memory ราว 1.6×
+ไม่เสมอไป 1.78× เป็นอัตราส่วนเชิงอุดมคติของรูปแบบการแทนค่า ส่วน DeepSeek model card รายงานอัตราการลดพื้นที่ disk/GPU memory จริงราว 1.6×
 
 ### ทำให้ latency เร็ว 2× ไหม
 
@@ -690,7 +690,7 @@ TensorRT-LLM ระบุ SM120 support บางส่วน แต่ architec
 
 ### KV cache เป็น NVFP4 ด้วยหรือไม่
 
-ไม่โดย default ต้องเลือก KV recipe และ kernel รองรับ แถม quality risk แยกจาก weights/activations
+ไม่ได้เป็นเช่นนั้นโดยค่าเริ่มต้น ต้องเลือก KV recipe และ kernel ที่รองรับ และพิจารณาความเสี่ยงด้านคุณภาพแยกจาก weights/activations
 
 ### จำเป็นต้องมี calibration data หรือไม่
 
@@ -717,7 +717,7 @@ E2M1/MX microscaling มีฐานจาก OCP แต่ two-level NVFP4 reci
 
 ### checkpoint NVFP4 ใช้ข้าม TensorRT-LLM, vLLM และ SGLang ได้เลยไหม
 
-ไม่เสมอ ต้องตรงทั้ง schema, architecture, scale layout, quantized coverage และ runtime version บาง engine รองรับเฉพาะ subset หรือ convert metadata
+ไม่เสมอไป ต้องตรงกันทั้ง schema, architecture, scale layout, quantized coverage และ runtime version บาง engine รองรับเพียงบางส่วนหรือต้องแปลง metadata ก่อน
 
 ### ควรเริ่ม benchmark จากอะไร
 
@@ -725,7 +725,7 @@ E2M1/MX microscaling มีฐานจาก OCP แต่ two-level NVFP4 reci
 
 ### สรุปว่า NVFP4 คุ้มไหม
 
-คุ้มมากเมื่อ native Blackwell path และ workload ตรงกับคอขวด แต่ไม่ใช่ drop-in universal replacement ความคุ้มต้องพิสูจน์ด้วย **quality-adjusted throughput/cost** ของระบบจริง
+คุ้มเมื่อมี native Blackwell path และ NVFP4 ช่วยลดคอขวดของ workload นั้นได้ แต่ยังใช้แทนรูปแบบเดิมทันทีในทุกระบบไม่ได้ ต้องพิสูจน์ความคุ้มค่าด้วย **throughput และต้นทุนที่วัดภายใต้เกณฑ์คุณภาพเดียวกัน** ในระบบจริง
 
 ---
 
@@ -743,13 +743,13 @@ E2M1/MX microscaling มีฐานจาก OCP แต่ two-level NVFP4 reci
 ### ผลจากงานวิจัยที่ออกภายหลัง
 
 - 4/6, scale sweep, QAD และ sensitivity-aware methods ช่วยลด error ในบาง setup
-- PTQ อาจตกแรงบน small/sensitive หรือ complex post-trained models
+- PTQ อาจทำให้คุณภาพลดลงมากในโมเดลขนาดเล็ก โมเดลที่ไวต่อการ quantize หรือโมเดลที่ผ่าน post-training ซับซ้อน
 - technique จาก INT4 เช่น rotation ไม่ได้รับประกันว่าจะช่วย NVFP4
 
 ### บทวิเคราะห์ของผู้เรียบเรียง
 
-- NVFP4 ควรถูกมองเป็น numerical contract ทั้ง stack
-- ideal bits ratio ไม่ควรถูกใช้แทน total VRAM หรือ latency
+- ควรมอง NVFP4 เป็นข้อตกลงเรื่องการแทนค่าและการคำนวณที่ทุกส่วนในระบบต้องรองรับตรงกัน
+- ไม่ควรใช้อัตราส่วนบิตเชิงอุดมคติแทนผลการวัด VRAM ทั้งระบบหรือ latency
 - W4A4 และ KV quantization ควร rollout แยกกัน
 - การตัดสินใจควรใช้ quality-adjusted cost/throughput ไม่ใช่ peak TOPS หรือ benchmark เดี่ยว
 

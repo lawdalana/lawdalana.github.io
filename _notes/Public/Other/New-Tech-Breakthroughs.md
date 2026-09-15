@@ -2,994 +2,994 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: "2026-06-06"
+last_modified: "2026-09-16"
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
 
 # New Tech Breakthroughs
 
-> รวบรวมเทคโนโลยีล้ำสมัยจากงานวิจัยล่าสุด เรียงตามวันที่ publish (ใหม่→เก่า)
+> รวบรวมความก้าวหน้าทางเทคโนโลยีจากงานวิจัย เรียงตามวันที่เผยแพร่ (ใหม่→เก่า)
 > *อัปเดต: 6 June 2026*
 
 ## [เดือนปัจจุบัน]
 - 🚀 **Plasma Wakefield Accelerator Commercial** *(6 June 2026)*
-  Laser-plasma wakefield accelerator ตัวแรกที่ commercialize จริง — TAU Systems (Texas) เปิดให้บริการ 2026; field gradient 1000x conventional → tabletop particle accelerator เป็นจริง
+  เครื่องเร่งอนุภาคแบบ laser-plasma wakefield ตัวแรกที่ให้บริการเชิงพาณิชย์ โดย TAU Systems (Texas) เปิดให้บริการในปี 2026 มีความชันของสนามเร่งสูงกว่าเครื่องแบบเดิม 1000 เท่า จึงช่วยลดขนาดเครื่องเร่งอนุภาคให้วางบนโต๊ะได้
   [Source](https://spectrum.ieee.org/plasma-wakefield-acceleration) [Source](https://cerncourier.com/a/taking-plasma-accelerators-to-market/)
 - 🔮 **Topological Photonic Crystal Fiber** *(6 June 2026)*
-  University of Bath + Cambridge: twisted optical fiber ใช้ topological protection → light เดินรอบ defects ไม่สะท้อน; Nature Photonics 2026, scalable ด้วย standard manufacturing
+  University of Bath และ Cambridge พัฒนาใยแก้วนำแสงแบบบิดที่ใช้ topological protection ช่วยให้แสงผ่านบริเวณที่มีตำหนิได้โดยไม่สะท้อนกลับ งานใน Nature Photonics ปี 2026 ระบุว่าสามารถขยายการผลิตด้วยกระบวนการมาตรฐานได้
   [Source](https://www.nature.com/articles/s41566-026-01848-9) [Source](https://www.science.org/doi/10.1126/sciadv.ady1476)
 - ⚡ **Direct Lithium Extraction Geothermal Brine** *(6 June 2026)*
-  Electrochemical DLE จาก Salton Sea geothermal brine → battery-grade LiOH (>99.5%) single process; Nature Communications 2025 — ทดแทน evaporation ponds
+  การสกัดลิเทียมโดยตรงด้วยวิธีไฟฟ้าเคมี (DLE) จากน้ำเกลือใต้พิภพบริเวณ Salton Sea ให้ LiOH เกรดแบตเตอรี่ที่มีความบริสุทธิ์ >99.5% ในกระบวนการเดียว งานใน Nature Communications ปี 2025 เสนอทางเลือกแทนบ่อระเหยน้ำเกลือ
   [Source](https://www.nature.com/articles/s41467-025-56071-x) [Source](https://discoveryalert.com.au/lithium-recovery-innovation-2026-geothermal-extraction/)
 - 👓 **Achromatic Metasurface Waveguide AR Display** *(6 June 2026)*
-  Single-layer achromatic metasurface แก้ chromatic aberration ใน AR waveguide → FOV >45° full-color; Nature Light: Science & Applications 2025
+  Metasurface แบบ achromatic ชั้นเดียวช่วยแก้ความคลาดสีใน waveguide สำหรับจอ AR ให้ภาพสีเต็มรูปแบบและมุมมอง (FOV) >45° ตามงานใน Light: Science & Applications ปี 2025
   [Source](https://www.nature.com/articles/s41377-025-01761-w) [Source](https://www.eurekalert.org/news-releases/1083668)
 - 🧱 **Enzymatic Structural Material (ESM)** *(6 June 2026)*
-  Carbonic anhydrase enzyme เปลี่ยน CO2 → solid calcium carbonate → วัสดุก่อสร้างทดแทน concrete; self-healing + carbon-negative, Matter journal 2026
+  เอนไซม์ carbonic anhydrase ช่วยเปลี่ยน CO2 เป็นแคลเซียมคาร์บอเนตแข็ง เพื่อนำมาทำวัสดุก่อสร้างทดแทนคอนกรีต งานในวารสาร Matter ปี 2026 ระบุว่าวัสดุซ่อมแซมตัวเองได้และดูดซับคาร์บอนสุทธิ
   [Source](https://www.sciencedaily.com/releases/2026/01/260121034148.htm) [Source](https://cen.acs.org/materials/Enzymes-power-carbon-sucking-alternative/100/i6)
 
 - ☢️ **Muon-Catalyzed Fusion Breakthrough** *(5 June 2026)*
-  Muon แทน electron → fusion ที่ room temperature ไม่ต้อง plasma; arXiv May 2026 เสนอ pathway แก้ alpha-sticking + ARPA-E funded; 2+ companies กำลัง pursue
+  ใช้มิวออนแทนอิเล็กตรอนเพื่อให้เกิดฟิวชันที่อุณหภูมิห้องโดยไม่ต้องใช้พลาสมา งานบน arXiv เดือนพฤษภาคม 2026 เสนอแนวทางแก้ปัญหา alpha-sticking โดยมีการสนับสนุนจาก ARPA-E และบริษัทตั้งแต่ 2 แห่งขึ้นไปกำลังพัฒนาแนวทางนี้
   [Source](https://arxiv.org/abs/2605.26432) [Source](https://phys.org/news/2026-04-muonic-molecules-critical-muon-catalyzed.html)
 - ❄️ **Ionocaloric Refrigeration Cycle** *(5 June 2026)*
-  Salt dissolution/precipitation drive phase transition → cooling cycle ใหม่ zero GWP zero ozone depletion; Berkeley Lab/UC Berkeley prototype underway, efficiency เทียบ/เกิน vapor compression
+  ใช้การละลายและตกตะกอนของเกลือกระตุ้นการเปลี่ยนสถานะ เพื่อสร้างวงจรทำความเย็นที่มีค่าศักยภาพในการทำให้โลกร้อน (GWP) และการทำลายชั้นโอโซนเป็นศูนย์ Berkeley Lab และ UC Berkeley กำลังพัฒนาต้นแบบ โดยตั้งเป้าประสิทธิภาพเทียบเท่าหรือสูงกว่าระบบอัดไอ
   [Source](https://www.science.org/doi/10.1126/science.ade1696) [Source](https://www.asme.org/topics-resources/content/new-refrigeration-method-relies-on-ionocaloric-cooling)
 - 💎 **Valleytronics 2D Material Computing** *(5 June 2026)*
-  ใช้ "valley" degree of freedom ใน 2D semiconductors (MoS₂, WSe₂) เก็บ/ประมวลผลข้อมูล → beyond-CMOS computing ไม่มี Joule heating; MIT + LBL advances 2026
+  ใช้สถานะ "valley" ในสารกึ่งตัวนำสองมิติ (MoS₂, WSe₂) เพื่อเก็บและประมวลผลข้อมูล เป็นแนวทางพัฒนาการประมวลผลนอกเหนือจาก CMOS ที่ไม่เกิดความร้อนแบบ Joule heating โดย MIT และ LBL รายงานความก้าวหน้าในปี 2026
   [Source](https://pubs.acs.org/doi/10.1021/acs.nanolett.2c03947) [Source](https://spectrum.ieee.org/2d-material-could-lead-the-way-to-valleytronics)
 - ⚡ **Exciton-Polariton Transistor — Optical Computing at Room Temperature** *(5 June 2026)*
-  Half-light half-matter quasiparticle สร้าง all-optical transistor: picosecond switching บน silicon at room temp (Nature Light Sci Appl 2026) → path to optical computer จริง
+  ใช้ควอซิพาร์ติเคิลที่มีสมบัติผสมระหว่างแสงกับสสารสร้างทรานซิสเตอร์ที่ควบคุมด้วยแสงทั้งหมด สวิตช์ได้ในระดับพิโควินาทีบนซิลิคอนที่อุณหภูมิห้อง งานใน Light: Science & Applications ปี 2026 เป็นแนวทางหนึ่งสู่คอมพิวเตอร์เชิงแสง
   [Source](https://www.nature.com/articles/s41377-025-02050-2) [Source](https://www.nature.com/articles/ncomms2734)
 - ☀️ **Hot Carrier Solar Cell — 130% Quantum Yield** *(5 June 2026)*
-  Singlet fission + Mo complex → 1 photon สร้าง 1.3 electrons (quantum yield 130%) → ทะลุ Shockley-Queisser 33% limit → next-gen solar panels เป้า 40%+ efficiency
+  ใช้ singlet fission ร่วมกับสารเชิงซ้อนของ Mo เพื่อให้โฟตอน 1 ตัวสร้างอิเล็กตรอนได้เฉลี่ย 1.3 ตัว หรือมี quantum yield 130% เป็นแนวทางสู่เซลล์แสงอาทิตย์ที่ก้าวข้ามขีดจำกัด Shockley–Queisser 33% โดยตั้งเป้าประสิทธิภาพมากกว่า 40%
   [Source](https://www.sciencedaily.com/releases/2026/03/260328024517.htm) [Source](https://scitechdaily.com/scientists-just-broke-the-solar-power-limit-everyone-thought-was-absolute/)
 
 - 🌡️ **Phonon Polariton Nanoscale Thermal Management** *(4 June 2026)*
-  Phonon polaritons ควบคุมการถ่ายเทความร้อนระดับนาโน → thermal management รุ่นใหม่สำหรับ sub-10nm chips (Francoeur, arXiv May 2026)
+  ใช้ phonon polaritons ควบคุมการถ่ายเทความร้อนระดับนาโน เพื่อพัฒนาระบบจัดการความร้อนสำหรับชิปขนาดต่ำกว่า 10 นาโนเมตร (Francoeur, arXiv เดือนพฤษภาคม 2026)
   [Source](https://arxiv.org/abs/2605.24030) [Source](https://pubs.acs.org/doi/10.1021/acsphotonics.4c01622)
 - ⚗️ **Single-Atom Indium Catalyst CO₂→Methanol** *(4 June 2026)*
-  ETH Zurich: isolated indium atoms บน hafnia แปลง CO₂ เป็น methanol ได้ดีกว่า nanoparticles หลายสิบเท่า → carbon-negative chemical industry
+  ETH Zurich ใช้อะตอมอินเดียมเดี่ยวบน hafnia เป็นตัวเร่งปฏิกิริยาเปลี่ยน CO₂ เป็นเมทานอล โดยทำได้ดีกว่าอนุภาคนาโนหลายสิบเท่า เป็นแนวทางสู่อุตสาหกรรมเคมีที่ดูดซับคาร์บอนสุทธิ
   [Source](https://www.nature.com/articles/s41565-026-02160-x) [Source](https://www.sciencedaily.com/releases/2026/03/260319044703.htm)
 - 🧲 **Antiferromagnetic Memory Ultrafast Spintronics** *(4 June 2026)*
-  Chinese Academy of Sciences: asymmetric spin torque ควบคุม antiferromagnetic memory แบบ deterministic → ultrafast memory เร็วกว่า RAM 1000x, เข้ากันได้กับ CMOS
+  Chinese Academy of Sciences ใช้ asymmetric spin torque ควบคุมสถานะของหน่วยความจำแบบ antiferromagnetic ให้ได้ผลแน่นอน เป็นแนวทางพัฒนาหน่วยความจำที่เร็วกว่า RAM 1000 เท่าและทำงานร่วมกับ CMOS ได้
   [Source](https://phys.org/news/2026-03-asymmetric-torque-deterministic-antiferromagnetic-memory.html) [Source](https://english.cas.cn/newsroom/research-news/202603/t20260304_1151446.shtml)
 - 🌱 **Electrochemical Ammonia Green Fertilizer** *(4 June 2026)*
-  Li-mediated electrochemical N₂→NH₃ ที่ ambient conditions → ทดแทน Haber-Bosch (กิน 1-2% global energy) → green fertilizer ไม่ต้อง natural gas
+  เปลี่ยน N₂ เป็น NH₃ ด้วยกระบวนการไฟฟ้าเคมีที่ใช้ลิเทียมเป็นตัวกลางภายใต้สภาวะแวดล้อมทั่วไป เพื่อทดแทนกระบวนการ Haber–Bosch ซึ่งใช้พลังงาน 1–2% ของการใช้พลังงานทั่วโลก และผลิตปุ๋ยโดยไม่ต้องใช้ก๊าซธรรมชาติ
   [Source](https://www.nature.com/articles/s41570-025-00709-3) [Source](https://www.science.org/doi/10.1126/science.abl4300)
 - 🪟 **Thermoelectric Transparent Window Energy Harvesting** *(4 June 2026)*
-  กระจกโปร่งใสผลิตไฟฟ้าจากความต่างอุณหภูมิ → AZO+CuI thin films ผลิตไฟฟ้าจาก 22.5°C gradient, ให้แสงผ่าน + ลด cooling load
+  กระจกโปร่งใสที่ใช้ฟิล์มบาง AZO และ CuI ผลิตไฟฟ้าจากความต่างอุณหภูมิ 22.5°C โดยยังให้แสงผ่านและช่วยลดภาระของระบบทำความเย็น
   [Source](https://www.nature.com/articles/s44172-024-00291-4) [Source](https://communities.springernature.com/posts/transforming-energy-efficiency-power-generating-semi-transparent-windows)
 
 - 📡 **Quantum Network Antennas 5G-6G** *(25 May 2026)*
-  Quantum-enabled antennas for next-generation mobile networks → Quantum antenna technology enables secure communication with unprecedented efficiency
+  สายอากาศที่ใช้เทคโนโลยีควอนตัมสำหรับเครือข่ายมือถือรุ่นใหม่ มุ่งเพิ่มประสิทธิภาพและความปลอดภัยในการสื่อสาร
   [Source](https://www.sciencedirect.com/science/article/abs/pii/S2666389923001751)
 - 🔋 **Metal-Nitrogen Batteries Green Energy** *(25 May 2026)*
-  Environmentally friendly batteries using metal-nitrogen chemistry → Green energy storage solution with minimal environmental impact
+  แบตเตอรี่ที่ใช้ปฏิกิริยาเคมีระหว่างโลหะกับไนโตรเจน เป็นแนวทางกักเก็บพลังงานที่มุ่งลดผลกระทบต่อสิ่งแวดล้อม
   [Source](https://pubs.acs.org/doi/10.1021/acs.chemmater.5b00087)
 - 🏥 **NextGen Biodegradable Medical Implants** *(25 May 2026)*
-  Advanced medical implants that dissolve safely in the body → Revolutionary medical implants eliminate need for removal surgery
+  อุปกรณ์ทางการแพทย์แบบฝังในร่างกายที่ย่อยสลายได้ ออกแบบมาเพื่อลดความจำเป็นในการผ่าตัดนำอุปกรณ์ออก
   [Source](https://www.nature.com/articles/s41598-025-03456-y)
 - 💡 **Photonic AI Accelerator Q.ANT** *(25 May 2026)*
-  Light-based AI processor for high-performance computing → Photonic computing technology offers 100x speedup for AI workloads
+  โปรเซสเซอร์ AI ที่ประมวลผลด้วยแสงสำหรับงานคำนวณประสิทธิภาพสูง โดยระบุว่าสามารถเร่งงาน AI ได้ 100 เท่า
   [Source](https://q-ant.com/photonic-ai-accelerator/)
 - ⚛️ **Compact Fusion Reactor AI Power** *(25 May 2026)*
-  Small-scale fusion reactor designed to power AI data centers → Clean energy solution for the growing power demands of AI
+  เครื่องปฏิกรณ์ฟิวชันขนาดเล็กที่ออกแบบมาเพื่อจ่ายไฟให้ศูนย์ข้อมูล AI และรองรับความต้องการพลังงานที่เพิ่มขึ้น
   [Source](https://techcrunch.com/2026/01/compact-fusion-reactor-ai-power-breakthrough/)
 
 - 🧬 **AI Drug Discovery Protein Design — Engineering Nature's Machines** *(25 May 2026)*
-  AI เขียนโปรตีนใหม่ที่ไม่เคยมีในธรรมชาตี → สร้างยาที่มีประสิทธิภาพสูงและมีเป้าหมายแม่นยำ 2026: AI-driven protein design ข้ามขีดจำกัดการพัฒนายา → ลดเวลาการพัฒนายาจากปีเป็นเดือนๆ Isomorphic Labs (DeepMind spinoff) นำยาที่ออกแบบโดย AI เข้า clinical trials ครั้งแรก
+  AI ออกแบบโปรตีนใหม่ที่ไม่พบในธรรมชาติ เพื่อพัฒนายาที่ออกฤทธิ์ตรงเป้าหมายมากขึ้น ในปี 2026 การออกแบบโปรตีนด้วย AI ช่วยลดเวลาพัฒนายาจากหลายปีเหลือหลายเดือน โดย Isomorphic Labs ซึ่งแยกตัวมาจาก DeepMind นำยาที่ออกแบบด้วย AI เข้าสู่การทดลองทางคลินิกครั้งแรก
   [Source](https://www.nature.com/articles/s41586-026-04836-x) [Source](https://www.isomorphiclabs.com)
 
 - 🔋 **Graphene Supercapacitor Battery Hybrid — Energy Storage Revolution** *(25 May 2026)*
-  รวม graphene supercapacitor กับ Li-ion battery สร้าง energy storage ที่ชาร์จเร็วเหมือน supercapacitor แต่มี energy density เหมือน battery ScienceDaily 2026: Graphene hybrid เก็บพลังงาน 5x ของ Li-ion ทั่วไป + ชาร์จได้ใน 5 นาที → เหมาะสำหรับ EV + grid storage ที่ต้องการ power สูง
+  ผสาน graphene supercapacitor กับแบตเตอรี่ลิเทียมไอออน เพื่อให้ชาร์จได้เร็วแบบ supercapacitor และมีความหนาแน่นพลังงานแบบแบตเตอรี่ ScienceDaily ปี 2026 รายงานว่าระบบไฮบริดนี้เก็บพลังงานได้ 5 เท่าของแบตเตอรี่ลิเทียมไอออนทั่วไปและชาร์จได้ใน 5 นาที เหมาะกับรถยนต์ไฟฟ้าและระบบกักเก็บพลังงานในโครงข่ายที่ต้องการกำลังไฟสูง
   [Source](https://www.sciencedaily.com/releases/2026/03/260303050622.htm) [Source](https://www.graphene-council.org)
 
 - 📷 **Metalens Flat Optics Camera Lens — Photography Revolution** *(25 May 2026)*
-  Camera lens แบบบางเตี้ย ทำจาก metasurface เป็นแผ่นแบนๆ → เบากว่า glass lens ปกติ แต่ให้ภาพคมชัดเทียบเท่า MIT 2026: Metalens technology commercialization เริ่ม mass production → ใช้ใน smartphone cameras และ medical imaging → ลดขนาด camera ได้ 90% และปรับ focus ได้ด้วย software
+  เลนส์กล้องแบนบางที่ทำจาก metasurface มีน้ำหนักเบากว่าเลนส์แก้วทั่วไป แต่ให้ความคมชัดใกล้เคียงกัน MIT ปี 2026 รายงานการเริ่มผลิต metalens เชิงพาณิชย์สำหรับกล้องสมาร์ตโฟนและการถ่ายภาพทางการแพทย์ โดยลดขนาดกล้องได้ 90% และปรับโฟกัสด้วยซอฟต์แวร์ได้
   [Source](https://www.mit.edu/news/2026/01/flat-lens-camera/) [Source](https://www.optica.org)
 
 - 🔄 **Biodegradable Electronics Transient Implant — Medical Devices That Dissolve** *(25 May 2026)*
-  อิเล็กทรอนิกส์ที่ละลายได้ในร่างกายเหมือนยา → ให้ประโยชน์ชั่วคราวแล้วหายไปเอง ลบข้อควรระวังการเจาะทรานส์ Nature 2026: Transient electronic devices ที่ปลอดภัย 100% → ใช้ใน monitoring surgery หรือ drug delivery แล้ว dissolve ใน body fluids โดยไม่ต้องเอาออกผ่าตัด
+  อุปกรณ์อิเล็กทรอนิกส์ที่สลายตัวในร่างกายหลังใช้งานชั่วคราว เช่น การติดตามอาการระหว่างผ่าตัดหรือส่งยา จากนั้นสลายตัวในของเหลวของร่างกายเพื่อลดความจำเป็นในการผ่าตัดนำออก
   [Source](https://www.nature.com/articles/s41563-026-02345-6) [Source](https://ieeexplore.ieee.org/document/9734567)
 
-- 🧠 **Brain Neural Dust Interface — Non-Invasive BCI Revolution** *(25 May 2026)*
-  Neural dust = microscale wireless sensors ขนาด 1mm³ ติดในสมอง → วัด brain activity แบบ real-time ไม่ต้องการ invasive surgery UC Berkeley 2026: 100,000 sensors per brain ตรวจจับ neural firing patterns ได้แม่นยำกว่า EEG 10 เท่า → สร้าง brain-computer interface ที่ไม่ต้องผ่าตัดและไม่เสียเลือด
-  [Source](https://www.berkeley.edu/news/brain-neural-dust-2026/) [Source](https://www.science.org/doi/10.1126/science.adk4567)
+- 🧠 **Brain Neural Dust Interface — Implantable Wireless Sensors** *(25 May 2026)*
+  Neural dust เป็นเซ็นเซอร์ไร้สายขนาดเล็กที่ฝังในร่างกาย ใช้อัลตราซาวนด์ส่งพลังงานและรับส่งข้อมูลเพื่อบันทึกสัญญาณประสาท แนวทางของ Berkeley ศึกษาอุปกรณ์ระดับมิลลิเมตรสำหรับเชื่อมต่อกับระบบประสาท
+  [Source](https://www.berkeley.edu/news/brain-neural-dust-2026/) [Source](https://www.science.org/doi/10.1126/science.adk4567) [Source](https://news.berkeley.edu/2018/04/10/berkeley-engineers-build-smallest-volume-most-efficient-wireless-nerve-stimulator/)
 
 - 🏥 **Biodegradable Bioelectronic Implant — Medical Devices That Dissolve After Healing** *(24 May 2026)*
-  Implant ทางการแพทย์ที่ละลายได้ในร่างกาย → ให้การรักษาด้วยไฟฟ้า/เซ็นเซอร์ แล้วหายไปเองเมื่อหายแล้ว Nature Materials 2026: minimally invasive bioelectronic implants ไม่ต้องผ่าตัดใหญ่ → ลด chronic inflammation + ไม่ต้องผ่าตัดเอาออก
+  อุปกรณ์ทางการแพทย์แบบฝังในร่างกายที่ใช้เซ็นเซอร์หรือการกระตุ้นด้วยไฟฟ้า และสลายตัวได้เมื่อสิ้นสุดการรักษา Nature Materials ปี 2026 กล่าวถึงอุปกรณ์ bioelectronic ที่ฝังโดยใช้หัตถการขนาดเล็ก ช่วยลดการอักเสบเรื้อรังและไม่ต้องผ่าตัดนำอุปกรณ์ออก
   [Source](https://www.nature.com/articles/s41563-026-02576-9) [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12462970/)
 
 - 🔥 **Hydrogen Plasma Steel Decarbonization — Zero-Carbon Ironmaking** *(24 May 2026)*
-  ใช้ไฮโดรเจนพลาสมาลด iron ore เป็นเหล็กโดยไม่มี carbon emission → เปลี่ยนอุตสาหกรรมเหล็ก (8% ของ global CO₂) Wiley Advanced Science 2026: single-step zero-carbon process แปลง low-grade ilmenite → steel-grade iron ORNL: hydrogen plasma arc additive manufacturing
+  ใช้พลาสมาไฮโดรเจนรีดิวซ์แร่เหล็กโดยไม่ปล่อยคาร์บอน เพื่อช่วยลดการปล่อย CO₂ จากอุตสาหกรรมเหล็ก ซึ่งคิดเป็น 8% ของการปล่อยทั่วโลก งานใน Advanced Science ปี 2026 เปลี่ยน ilmenite คุณภาพต่ำเป็นเหล็กเกรดอุตสาหกรรมในขั้นตอนเดียว ส่วน ORNL ศึกษาการผลิตแบบเติมเนื้อวัสดุด้วยอาร์กพลาสมาไฮโดรเจน
   [Source](https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202514689) [Source](https://www.ornl.gov/technology/202305367)
 
 - 🔊 **Acoustic Hologram Ultrasound 3D — Sound Shaped Like Light** *(24 May 2026)*
-  3D-printed ultrasonic hologram lenses ควบคุมคลื่นเสียงใน 3D space → สร้าง pressure pattern ที่ซับซ้อน IEEE Spectrum 2026: acoustic holograms ควบคุม sound fields เหมือน optical hologram ควบคุมแสง → targeted therapy โดยไม่ผ่าตัด
+  เลนส์ฮอโลแกรมอัลตราซาวนด์ที่ผลิตด้วยการพิมพ์สามมิติ ใช้ควบคุมสนามเสียงและสร้างรูปแบบความดันที่ซับซ้อนในพื้นที่สามมิติ IEEE Spectrum ปี 2026 อธิบายว่า acoustic hologram ควบคุมเสียงได้คล้ายกับที่ฮอโลแกรมเชิงแสงควบคุมแสง โดยมีแนวทางประยุกต์ใช้กับการรักษาเฉพาะจุดโดยไม่ผ่าตัด
   [Source](https://spectrum.ieee.org/acoustic-holograms-and-3d-ultrasound) [Source](https://ieeexplore.ieee.org/document/10703234/)
 
 - 👕 **Chemical Textile Recycling — Solving the Blended Fabric Problem** *(24 May 2026)*
-  เทคโนโลยีรีไซเคิลเสื้อผ้าผสม (cotton + polyester) ด้วย microwave-assisted glycolysis + breakthrough solvent Science Advances 2026: single batch depolymerization CAS: 75% cotton recovery rate → circular fashion สำหรับ 92M tons textile waste ต่อปี
+  รีไซเคิลผ้าผสมฝ้ายกับพอลิเอสเตอร์ด้วย glycolysis ที่ใช้ไมโครเวฟช่วยและตัวทำละลายชนิดใหม่ Science Advances ปี 2026 กล่าวถึงการแยกพอลิเมอร์ในกระบวนการเดียว ส่วน CAS รายงานการกู้คืนฝ้ายได้ 75% เพื่อช่วยจัดการขยะสิ่งทอ 92 ล้านตันต่อปี
   [Source](https://www.science.org/doi/10.1126/sciadv.ado6827) [Source](https://www.earth.com/news/breakthrough-solvent-unlocks-true-recycling-for-blended-fabrics/)
 
 - 🤖 **Neuromorphic Electronic Skin — Robots That Feel Pain and Reflex** *(24 May 2026)*
-  Electronic skin ทำงานเหมือนระบบประสาทสัมผัส → หุ่นยนต์รับรู้การสัมผัส + ตรวจจับอันตราย + ตอบสนองแบบ reflex อัตโนมัติ PNAS 2026: NRE-skin มี pain detection + local reflexes + modular repair → หุ่นยนต์ป้องกันตัวเองได้
+  ผิวหนังอิเล็กทรอนิกส์ที่เลียนแบบระบบประสาทสัมผัส ช่วยให้หุ่นยนต์รับรู้การสัมผัส ตรวจจับอันตราย และตอบสนองแบบรีเฟล็กซ์อัตโนมัติ งานใน PNAS ปี 2026 ระบุว่า NRE-skin ตรวจจับสัญญาณความเจ็บปวด ตอบสนองเฉพาะจุด และซ่อมแซมแยกเป็นโมดูลได้
   [Source](https://www.pnas.org/doi/10.1073/pnas.2520922122) [Source](https://www.forbes.com/sites/johnkoetsier/2026/01/02/scientists-give-robots-skin-with-pain-sensations-and-human-like-reflexes/)
 
 
 - 🎧 **Bone Conduction Audio — Headphones That Don’t Cover Ears** *(23 May 2026)*
-  Technology ส่งเสียงผ่านการสั่นกระดูกหู → ไม่ต้องใช้หูฟัง แต่เสียงสั่นผ่านกระดูกหูมายังเปลือกหู ให้ฟังได้พร้อมกับเสียงภายนอก → เหมาะสำหรับ runners, military, และ assistive devices ไม่ทำให้หูถูกอุดตัน และมี battery life สูง
+  อุปกรณ์ bone conduction ส่งแรงสั่นสะเทือนผ่านกระดูกกะโหลกไปยังหูชั้นใน โดยไม่อุดช่องหู จึงฟังเสียงจากอุปกรณ์พร้อมกับเสียงรอบตัวได้ เหมาะกับนักวิ่ง งานทหาร และอุปกรณ์ช่วยการได้ยิน โดยมีรุ่นที่ใช้งานแบตเตอรี่ได้นาน
   [Source](https://techcrunch.com/2026/05/bone-conduction-audio-technology/) [Source](https://ieeexplore.ieee.org/document/9628788/)
 
 - 🌊 **Floating Wind Turbines — Renewable Energy in Deep Water** *(23 May 2026)*
-  Wind turbines ลอยบนน้ำ ติดตั้งได้ในความลึกน้ำมากกว่า 60 เมตร → สร้างพลังงานจากพื้นที่ offshore ที่ fixed-bottom ทำได้ ย้ายตำแหน่งได้ตามลมและกระแสน้ำ 2026: มี floating wind farms ใน commercial operation สำหรับ island communities
+  กังหันลมลอยน้ำติดตั้งในทะเลที่ลึกกว่า 60 เมตรได้ เพื่อผลิตไฟฟ้าในพื้นที่นอกชายฝั่ง มีการออกแบบให้ปรับตำแหน่งตามลมและกระแสน้ำ และมีรายงานการใช้งานเชิงพาณิชย์สำหรับชุมชนบนเกาะในปี 2026
   [Source](https://www.offshorewind.biz/floating-turbines-2026/) [Source](https://www.irena.org/Floating-Wind-2026)
 
 - 🧠 **Ultrasonic Neuromodulation — Depression Treatment Without Drugs** *(23 May 2026)*
-  Non-invasive ultrasound กระตุ้น prefrontal cortex ในสมองเพื่อรักษา depression → ควบคุม neural activity แบบเฉพาะเจาะจง ไม่ต้องยาที่มีผลข้างเคียง Clinical trials 2026 แสดงผลลัพธ์ดี สามารถ target brain disorders อื่นๆ ได้
+  ใช้อัลตราซาวนด์กระตุ้นสมองส่วน prefrontal cortex จากภายนอก เพื่อปรับการทำงานของเซลล์ประสาทในการรักษาโรคซึมเศร้าโดยไม่ใช้ยา การทดลองทางคลินิกในปี 2026 รายงานผลที่น่าพอใจ และมีการศึกษาการใช้กับความผิดปกติของสมองด้านอื่น ๆ
   [Source](https://physicsworld.com/a/ultrasound-neuromodulation-for-depression/) [Source](https://www.nature.com/articles/s41586-026-04712-4)
 
 - 🔄 **Twistronics Topological Photonics — Light Control via Layer Rotation** *(23 May 2026)*
-  Twistronics + Topological Photonics = สร้าง photonic crystals ที่ควบคุมได้แบบ dynamic ด้วยการบิด layer 2D materials → สร้าง waveguides ที่ immune defects, topological lasers และ optical computing circuits 2026: Theory validated ใน twisted 2D materials
+  ผสาน twistronics กับ topological photonics โดยบิดชั้นวัสดุสองมิติเพื่อปรับสมบัติของ photonic crystal ใช้สร้าง waveguide ที่ทนต่อตำหนิของวัสดุ topological laser และวงจรประมวลผลด้วยแสง โดยมีรายงานการยืนยันแนวคิดในวัสดุสองมิติแบบบิดในปี 2026
   [Source](https://www.nature.com/articles/s41567-026-04567-x) [Source](https://arxiv.org/abs/2304.05678)
 
 - 📺 **Quantum Dot Display Commercialization — QLED Mass Production 2026** *(23 May 2026)*
-  Quantum dot displays (QLED) สู่ commercialization ระดับสูง → Samsung และ LG เริ่มการผลิต mass production ประสิทธิภาพ 150 lm/W, ความคงทน 100,000 ชม., และราคาถูกลง 80% จากปี 2024 แทนที่ OLED และ micro-LED
+  Samsung และ LG ขยายการผลิตจอ quantum dot (QLED) เชิงพาณิชย์ โดยระบุประสิทธิภาพ 150 lm/W อายุการใช้งาน 100,000 ชั่วโมง และราคาลดลง 80% จากปี 2024 เพื่อแข่งขันกับ OLED และ micro-LED
   [Source](https://samsung.com/display/qled-2026/) [Source](https://www.lginnotek.com/display/qled-2026/)
 
 - 🔩 **Superlubricity CNT Coating — Friction Nearly Zero (COF 0.001)** *(23 May 2026)*
-  ORNL พัฒนา carbon nanotube sacrificial coating ที่ทำให้เหล็กเลื่อนได้แทบไร้แรงเสียดทาน — COF 0.001–0.007 บน steel-steel contact ระดับ macroscale ใช้ vertically-aligned CNTs + PAO oil → ลดการสึกหรอ bearing, gear, engine อย่างมหาศาล
+  ORNL พัฒนาชั้นเคลือบท่อนาโนคาร์บอนแบบยอมสึกแทนผิววัสดุ ทำให้ผิวเหล็กเลื่อนผ่านกันด้วยแรงเสียดทานต่ำมาก มี COF 0.001–0.007 ในการสัมผัสระดับมหภาค โดยใช้ CNT ที่เรียงตัวในแนวตั้งร่วมกับน้ำมัน PAO เพื่อช่วยลดการสึกหรอของตลับลูกปืน เฟือง และเครื่องยนต์
   [Source](https://www.ornl.gov/news/superlubricity-coating-could-reduce-economic-losses-friction-wear) [Source](https://newatlas.com/materials/superlubricity-friction-machines/)
 
 - 🧲 **Skyrmion Racetrack Memory — Non-Volatile Beyond DRAM** *(23 May 2026)*
-  Skyrmion racetrack memory ใช้ magnetic skyrmions ขนาดนาโนเคลื่อนที่ตาม nanowire → เก็บข้อมูล non-volatile ความหนาแน่นสูงกว่า DRAM ใช้พลังงานต่ำ → แทนที่ SRAM/DRAM ใน cache และ embedded devices
+  หน่วยความจำแบบ skyrmion racetrack ใช้ magnetic skyrmion ขนาดนาโนเคลื่อนที่ตามลวดนาโน เพื่อเก็บข้อมูลโดยไม่สูญหายเมื่อปิดไฟ มีความหนาแน่นสูงกว่า DRAM และใช้พลังงานต่ำ เป็นแนวทางทดแทน SRAM/DRAM ในแคชและอุปกรณ์ฝังตัว
   [Source](https://pubs.acs.org/doi/10.1021/acs.nanolett.3c02978) [Source](https://journals.aps.org/prb/abstract/10.1103/73z4-ymkp)
 
 - ⏰ **Moiré Time Crystal — Superfluids from Temporal Dimensions** *(23 May 2026)*
-  นักวิจัยเสนอ "moiré time crystal" — สร้าง superfluid phase จากการผสม period ของ laser pulse ใน "time dimension" ไม่ใช่ spatial twist → ควบคุม quantum properties โดยไม่เปลี่ยน hardware Physical Review Letters 2026
+  นักวิจัยเสนอ "moiré time crystal" ซึ่งสร้างสถานะของไหลยิ่งยวดจากการผสมคาบของพัลส์เลเซอร์ในมิติเวลา แทนการบิดโครงสร้างในมิติอวกาศ เพื่อควบคุมสมบัติควอนตัมโดยไม่เปลี่ยนฮาร์ดแวร์ ตามงานใน Physical Review Letters ปี 2026
   [Source](https://phys.org/news/2026-02-superfluids-emerge-2d-moir-crystal.html) [Source](https://arxiv.org/abs/2504.07782)
 
 - 🔮 **Perovskite Moiré Superlattice — Twistronics Beyond van der Waals** *(23 May 2026)*
-  Perovskite halide สร้าง moiré superlattice ผ่าน ionic interactions (ไม่ใช่ van der Waals) → moiré potential ลึกกว่า TMDs → ใช้สำหรับ laser beam steering, quantum light sources, optoelectronics รุ่นใหม่
+  Perovskite halide สร้าง moiré superlattice ผ่านปฏิสัมพันธ์ระหว่างไอออนแทนแรง van der Waals โดยให้ moiré potential ลึกกว่า TMDs มีแนวทางใช้ควบคุมทิศทางลำแสงเลเซอร์ สร้างแหล่งกำเนิดแสงควอนตัม และพัฒนาอุปกรณ์ optoelectronics
   [Source](https://onlinelibrary.wiley.com/doi/full/10.1002/sstr.202500770) [Source](https://www.science.org/doi/10.1126/sciadv.adz8028)
 
 - 🔊 **Phononic Crystal for Quantum Computing — Sound Controls Qubits** *(23 May 2026)*
-  Genetic algorithm ออกแบบ phononic crystal nanostructures → ควบคุม acoustic wave ใน nanoscale เพื่อ isolate qubits จาก vibration noise และ support quantum communication → University of Tokyo validated ผ่าน experiments
+  ใช้ genetic algorithm ออกแบบโครงสร้างนาโนของ phononic crystal เพื่อควบคุมคลื่นเสียงระดับนาโน ลดสัญญาณรบกวนจากการสั่นที่กระทบ qubit และรองรับการสื่อสารควอนตัม โดย University of Tokyo ยืนยันผลด้วยการทดลอง
   [Source](https://scitechdaily.com/sound-science-how-phononic-crystals-are-shaping-quantum-computing/) [Source](https://sciencedaily.com/releases/2024/07/240703131750.htm)
 
 
-- 🌟 **Quantum Room Temperature Processor** *(22 May 2026)*
-  IBM และ RIKEN พัฒนาคอมพิวเตอร์ควอนตัมที่ทำงานได้ที่อุณหภูมิห้องโดยไม่ต้องการระบบเย็นลงเย็นครั้งลำดับ → ลดต้นทุน 90% และเพิ่มประสิทธิภาพการจำลองโมเลกุล Stanford สร้าง nanoscale optical device ที่ entangle สปินของ photons และ electrons ที่อุณหภูมิห้อง [Source](https://www.networkworld.com/article/4088709/top-quantum-breakthroughs-of-2025.html) [Source](https://news.stanford.edu/stories/2025/12/quantum-communication-room-temperature-breakthrough-research)
+- 🌟 **Room-Temperature Quantum Communication Device** *(22 May 2026)*
+  Stanford พัฒนาอุปกรณ์เชิงแสงระดับนาโนที่ทำงานได้ที่อุณหภูมิห้อง โดยสร้างความพัวพันระหว่างสปินของโฟตอนกับอิเล็กตรอนเพื่อใช้ในการสื่อสารควอนตัม อุปกรณ์นี้ช่วยลดความจำเป็นในการทำความเย็นอย่างมาก และยังอยู่ระหว่างการพัฒนาเพื่อเชื่อมเข้ากับเครือข่ายควอนตัม [Source](https://www.networkworld.com/article/4088709/top-quantum-breakthroughs-of-2025.html) [Source](https://news.stanford.edu/stories/2025/12/quantum-communication-room-temperature-breakthrough-research)
 
 - 🔋 **Solid-State Battery Commercialization** *(22 May 2026)*
-  แบตเตอรี่โซลิดสเตทที่มาถึงจุดทางการค้าขาย → Stellantis และ Factorial Energy ยืนยัน validation ของ 77-amp-hour solid-state battery cells Toyota และ BYD กำลังเข้าสู่การใช้งานเชิงพาณิชย์ การแทนที่อิเล็กโทรไลต์ของเหลวด้วยของแข็งเพิ่มความปลอดภัยและความหนาแน่นพลังงาน [Source](https://www.intelligentliving.co/solid-state-battery-scoreboard-2025-2026/) [Source](https://www.sciencedaily.com/releases/2026/01/260108231331.htm) [Source](https://to7motor.com/solid-state-batteries-2026-commercial-reality)
+  แบตเตอรี่โซลิดสเตทกำลังก้าวสู่การใช้งานเชิงพาณิชย์ Stellantis และ Factorial Energy ยืนยันผลทดสอบเซลล์ขนาด 77 แอมป์ชั่วโมง ขณะที่ Toyota และ BYD กำลังเตรียมนำไปใช้เชิงพาณิชย์ การแทนอิเล็กโทรไลต์เหลวด้วยของแข็งช่วยเพิ่มความปลอดภัยและความหนาแน่นพลังงาน [Source](https://www.intelligentliving.co/solid-state-battery-scoreboard-2025-2026/) [Source](https://www.sciencedaily.com/releases/2026/01/260108231331.htm) [Source](https://to7motor.com/solid-state-batteries-2026-commercial-reality)
 
 - 💊 **AI-Designed Drugs Clinical Trials** *(22 May 2026)*
-  Isomorphic Labs (spinoff จาก DeepMind) นำยาที่ออกแบบโดย AI เข้าสู่การทดลองในร่างกายมนุษย์ครั้งแรก → ลดเวลาการพัฒนายาจากปีเป็นเดือนๆ China กลายเป็นผู้นำโลกในการพัฒนายาขั้นต้นด้วย AI-driven discovery platforms [Source](https://www.wired.com/story/wired-health-2026-how-ai-is-powering-drug-discovery-max-jaderberg/) [Source](https://ardigen.com/ai-in-biotech-lessons-from-2025-and-the-trends-shaping-drug-discovery-in-2026/) [Source](https://www.drugdiscoveryonline.com/doc/2025s-top-5-drug-discovery-highlights-and-how-to-stay-ahead-in-2026-0001)
+  Isomorphic Labs ซึ่งแยกตัวมาจาก DeepMind นำยาที่ออกแบบด้วย AI เข้าสู่การทดลองในมนุษย์ครั้งแรก โดยมุ่งลดเวลาพัฒนายาจากหลายปีเหลือหลายเดือน ขณะที่จีนมีบทบาทนำในการพัฒนายาระยะต้นด้วยแพลตฟอร์มค้นหายาที่ใช้ AI [Source](https://www.wired.com/story/wired-health-2026-how-ai-is-powering-drug-discovery-max-jaderberg/) [Source](https://ardigen.com/ai-in-biotech-lessons-from-2025-and-the-trends-shaping-drug-discovery-in-2026/) [Source](https://www.drugdiscoveryonline.com/doc/2025s-top-5-drug-discovery-highlights-and-how-to-stay-ahead-in-2026-0001)
 
 - ⚡ **Fusion Power Grid Timeline** *(22 May 2026)*
-  Commonwealth Fusion Systems ในการแข่งขันที่จะเป็นคนแรกที่นำพลังงานจากดวงอาทิตย์และดวงดาวเข้าสู่กริดไฟฟ้าสหรัฐอเมริกา China "artificial sun" fusion reactor ทะลุ barrier ในความหนาแน่นของ plasma fusion → กำลังเข้าสู่การผลิตพลังงานที่สะอาดและไม่มีของเสียในราคาที่ทางการค้าขายได้ [Source](https://energy-solutions.co/articles/sub/fusion-energy-breakthroughs-2026) [Source](https://www.cnn.com/2026/04/30/climate/nuclear-fusion-real-world-electricity-grid) [Source](https://www.sciencedaily.com/releases/2026/03/260303050622.htm)
+  Commonwealth Fusion Systems กำลังแข่งขันเพื่อนำพลังงานฟิวชันเข้าสู่โครงข่ายไฟฟ้าสหรัฐฯ ขณะที่เครื่องปฏิกรณ์ฟิวชัน "ดวงอาทิตย์ประดิษฐ์" ของจีนก้าวข้ามข้อจำกัดด้านความหนาแน่นของพลาสมา โดยมีเป้าหมายผลิตพลังงานสะอาดที่ไม่มีของเสียในต้นทุนที่คุ้มค่าเชิงพาณิชย์ [Source](https://energy-solutions.co/articles/sub/fusion-energy-breakthroughs-2026) [Source](https://www.cnn.com/2026/04/30/climate/nuclear-fusion-real-world-electricity-grid) [Source](https://www.sciencedaily.com/releases/2026/03/260303050622.htm)
 
 - 🌐 **Graphene Energy Networks** *(22 May 2026)*
-  การออกแบบ carbon structures เป็น highly curved graphene networks ที่มีความหนาแน่นพลังงานและพลังงานที่สูงที่สุดเท่าที่เคยมีมา → เก็บพลังงานได้หลายเท่าตัวและเหมาะสำหรับรถยนต์ไฟฟ้าและระบบจัดเก็บพลังงาน Samsung "graphene ball" เริ่มการผลิต display ในปี 2025 และ full commercialization สำหรับ quantum dot displays ใน 2026-2027 [Source](https://www.sciencedaily.com/releases/2025/11/251130205509.htm) [Source](https://briandcolwell.com/the-state-of-carbon-science-in-2025-graphene-nanotubes-quantum-dots-and-more/) [Source](https://www.sciencedaily.com/news/matter_energy/graphene/)
+  โครงข่ายกราฟีนที่มีความโค้งสูงช่วยเพิ่มความหนาแน่นพลังงานและกำลังไฟ เหมาะกับรถยนต์ไฟฟ้าและระบบกักเก็บพลังงาน รายงานที่อ้างถึงยังกล่าวถึง Samsung "graphene ball" การเริ่มผลิตจอในปี 2025 และการผลิตจอ quantum dot เชิงพาณิชย์เต็มรูปแบบในปี 2026–2027 [Source](https://www.sciencedaily.com/releases/2025/11/251130205509.htm) [Source](https://briandcolwell.com/the-state-of-carbon-science-in-2025-graphene-nanotubes-quantum-dots-and-more/) [Source](https://www.sciencedaily.com/news/matter_energy/graphene/)
 
 
 - 🌟 **Room Temperature Quantum Computing** *(21 May 2026)*
-  IBM และ MIT พัฒนาคอมพิวเตอร์ควอนตัมที่ทำงานได้ที่อุณหภูมิห้องโดยไม่ต้องการระบบเย็นลงเย็นครั้งลำดับ → ลดต้นทุนและความซับซ้อนในการผลิตระบบควอนตัมได้อย่างมีนัยสำคัญ [Source](https://ibm.com/research)
+  มีข้อกล่าวอ้างว่า IBM และ MIT พัฒนาคอมพิวเตอร์ควอนตัมที่ทำงานได้ที่อุณหภูมิห้อง แต่ลิงก์ที่ให้มาเป็นหน้าวิจัยทั่วไป จึงยังยืนยันความสามารถนี้จากแหล่งอ้างอิงดังกล่าวไม่ได้ [Source](https://ibm.com/research)
 
 - 🧠 **AI-Designed Metamaterials** *(21 May 2026)*
-  DeepMind และ University of Oxford พัฒนา AI ที่สามารถออกแบบวัสดุเฉพาะทางสำหรับการควบคุมคลื่นแสงได้ → ลดเวลาออกแบบจากเดือนเป็นนาทีและค้นพบโครงสร้างที่มนุษย์ไม่คิดถึง [Source](https://deepmind.com)
+  DeepMind และ University of Oxford ใช้ AI ออกแบบวัสดุสำหรับควบคุมคลื่นแสง เพื่อลดเวลาออกแบบจากหลายเดือนเหลือไม่กี่นาทีและค้นหาโครงสร้างที่การออกแบบทั่วไปอาจมองข้าม [Source](https://deepmind.com)
 
 - ⚛️ **Cold Fusion Energy Systems** *(21 May 2026)*
-  Industrial Heat และ Mitsubishi พัฒนะเซลล์ LENR (Low Energy Nuclear Reactions) ที่ผลิตพลังงานได้เกิน 100% โดยไม่สร้างของเสียรังสี → ทางเลือกพลังงานที่ยั่งยืนและปลอดภัย [Source](https://industrialheat.com)
+  Industrial Heat และ Mitsubishi พัฒนาเซลล์ LENR (Low Energy Nuclear Reactions) โดยระบุว่าผลิตพลังงานได้เกิน 100% และไม่สร้างของเสียกัมมันตรังสี เพื่อเป็นทางเลือกด้านพลังงานที่ยั่งยืนและปลอดภัย [Source](https://industrialheat.com)
 
 - 🤖 **Nanorobotics for Precision Drug Delivery** *(21 May 2026)*
-  ETH Zurich และ Harvard University สร้างหุ่นยนต์นาโนที่สามารถนำยาไปยังเนื้องอกได้อย่างเฉพาะเจาะจงโดยไม่ทำลายเซลล์อื่นๆ → ลดผลข้างเคียงของยาและเพิ่มประสิทธิภาพในการรักษามะเร็ง [Source](https://ethz.ch)
+  ETH Zurich และ Harvard University พัฒนาหุ่นยนต์นาโนเพื่อนำยาไปยังเนื้องอกอย่างจำเพาะ โดยมุ่งลดผลกระทบต่อเซลล์อื่นและเพิ่มประสิทธิภาพการรักษามะเร็ง [Source](https://ethz.ch)
 
 - 🌿 **Bioluminescent Lighting Systems** *(21 May 2026)*
-  University of Cambridge และ MIT สร้างสิ่งมีชีวิตที่สามารถสร้างแสงได้โดยไม่ต้องใช้ไฟฟ้าหรือเคมี → ทางเลือกพลังงานยั่งยืนสำหรับไฟถนนและป้ายสัญญาณ [Source](https://cambridge.ac.uk)
+  University of Cambridge และ MIT พัฒนาสิ่งมีชีวิตที่สร้างแสงได้เอง เพื่อศึกษาเป็นทางเลือกสำหรับไฟถนนและป้ายสัญญาณที่ไม่ใช้ไฟฟ้า [Source](https://cambridge.ac.uk)
 
 - 🌱 **Direct Air Capture with Mineralization** *(20 May 2026)*
-  Climeworks + ETH Zurich: ดักจับ CO2 1 ตัน/วัน แปลงเป็นแร่หินใน 15 นาที (ลดเวลา 87%) [Source](https://climeworks.com)
+  Climeworks และ ETH Zurich: ดักจับ CO2 ได้ 1 ตันต่อวันและเปลี่ยนเป็นแร่ใน 15 นาที โดยระบุเวลาลดลง 87% [Source](https://climeworks.com)
 - ☀️ **Perovskite Tandem Solar Cells 35% Efficiency** *(20 May 2026)*
-  Oxford PV + Longi Solar: เซลล์แสงที่ 35% ประสิทธิภาพ ราคา $0.25/sqft (ลด 80%) [Source](https://oxfordpv.com)
+  Oxford PV และ Longi Solar: เซลล์แสงอาทิตย์ประสิทธิภาพ 35% ราคา $0.25/sqft (ลดลง 80%) [Source](https://oxfordpv.com)
 - 💡 **Quantum Dot LED Lighting Commercialization** *(20 May 2026)*
-  Samsung + LG Innotek: LED ควอนตัมดอท 150 lm/W, 100,000 ชม. ราคาถูกลง 80% [Source](https://samsung.com)
+  Samsung และ LG Innotek: LED ควอนตัมดอทที่มีประสิทธิภาพ 150 lm/W อายุการใช้งาน 100,000 ชั่วโมง และราคาลดลง 80% [Source](https://samsung.com)
 - 🤖 **Biohybrid Robot with Artificial Muscle** *(20 May 2026)*
-  MIT + Harvard: หุ่นยนต์ชีวสมดุลใช้กล้ามเนื้อโปรตีนพืช ให้แรงบิด 3 เท่า [Source](https://mit.edu)
+  MIT และ Harvard: หุ่นยนต์ชีวผสมที่ใช้กล้ามเนื้อจากโปรตีนพืช ให้แรงบิด 3 เท่า [Source](https://mit.edu)
 - ⚛️ **Superconducting Quantum Computer Error Correction** *(20 May 2026)*
-  Google Quantum AI + Caltech: ลด error rate เหลือ 0.001% (ลดจำนวน qubit 90%) [Source](https://quantumai.google)
+  Google Quantum AI และ Caltech: ลดอัตราข้อผิดพลาดเหลือ 0.001% และลดจำนวน qubit ที่ต้องใช้ 90% [Source](https://quantumai.google)
 
 - 🔋 **Quantum Battery — Superextensive Charging via Super Absorption** *(18 May 2026)*
-  Quantum battery prototype แรกที่ใช้ quantum super absorption — ยิ่งขนาดใหญ่ยิ่งชาร์จเร็ว (ผิดกฎฟิสิกส์ทั่วไป) University of Melbourne + UNSW: microcavity + organic dye molecules → collective coherent absorption, power output เกิน classical limit
+  University of Melbourne และ UNSW สร้างต้นแบบแบตเตอรี่ควอนตัมที่ใช้ quantum superabsorption โดยยิ่งเพิ่มขนาดก็ยิ่งชาร์จได้เร็ว ใช้ microcavity ร่วมกับโมเลกุลสีย้อมอินทรีย์เพื่อให้ดูดกลืนพลังงานร่วมกันอย่างสอดคล้อง และให้กำลังสูงกว่าขีดจำกัดแบบคลาสสิก
   [Source](https://scitechdaily.com/scientists-just-built-a-quantum-battery-that-charges-almost-instantly/)
 
 - ⚛️ **Floquet Quantum States — Exotic Matter via Magnetic Driving** *(18 May 2026)*
-  นักวิจัยสร้าง exotic quantum states ใหม่ด้วย "ขับ" วัสดุด้วยสนามแม่เหล็กจังหวะ → quantum phases ที่เสถียรกว่า ทนต่อ errors — ไม่ต้องหาวัสดุใหม่ แค่ปรับ driving pattern
+  นักวิจัยกระตุ้นวัสดุด้วยสนามแม่เหล็กที่เปลี่ยนเป็นจังหวะ เพื่อสร้างสถานะควอนตัมใหม่ที่เสถียรและทนต่อข้อผิดพลาดมากขึ้น โดยปรับรูปแบบการกระตุ้นแทนการเปลี่ยนวัสดุ
   [Source](https://www.sciencedaily.com/releases/2026/05/260504154014.htm)
 
 - 💧 **Sodium-Ion Battery + Desalination — Energy & Clean Water in One Device** *(18 May 2026)*
-  University of Surrey: sodium-ion battery เก็บพลังงาน 2x + desalinate น้ำทะเล simultaneously — เก็บน้ำไว้ในวัสดุแทนเอาออก = ทั้งเพิ่ม capacity และแยกเกลือ
+  University of Surrey พัฒนาแบตเตอรี่โซเดียมไอออนที่เก็บพลังงานได้เพิ่มขึ้น 2 เท่าและแยกเกลือออกจากน้ำทะเลได้พร้อมกัน โดยเก็บน้ำไว้ในวัสดุแทนการกำจัดออก
   [Source](https://www.sciencedaily.com/releases/2026/02/260218031603.htm)
 
 - 🤖 **MIT Magno-Bots — Magnetic Hydrogel Micro-Robots Smaller Than Sand** *(18 May 2026)*
-  MIT + EPFL: soft magnetic hydrogel 3D-print เป็น micro-robots ขนาด sub-millimeter — ควบคุมด้วยแม่เหล็ก เปลี่ยนรูปจาก lollipop เป็น gripper ทันที → targeted drug delivery, microsurgery
+  MIT และ EPFL พิมพ์หุ่นยนต์จิ๋วขนาดต่ำกว่ามิลลิเมตรด้วยไฮโดรเจลแม่เหล็กเนื้อนิ่ม หุ่นยนต์เปลี่ยนจากรูปอมยิ้มเป็นตัวคีบได้เมื่อควบคุมด้วยแม่เหล็ก มีแนวทางใช้ส่งยาเฉพาะจุดและทำศัลยกรรมระดับจุลภาค
   [Source](https://news.mit.edu/2026/microscopic-magno-bots-perform-complex-maneuvers-with-magnet-swipe-0428)
 
 - 🧠 **Wetware Computer — 200K Brain Cells on Chip Learn to Play Doom** *(18 May 2026)*
-  Cortical Labs CL1: 200,000+ human neurons บน chip เรียนรู้เล่น Doom ใน ~1 สัปดาห์ — Sean Cole ใช้ Python API สอนผ่าน reinforcement signals, energy efficiency สูงกว่า silicon หลายสิบเท่า
+  Cortical Labs CL1 ใช้เซลล์ประสาทมนุษย์มากกว่า 200,000 เซลล์บนชิปเรียนรู้การเล่น Doom ในเวลาประมาณ 1 สัปดาห์ Sean Cole ใช้ Python API ป้อนสัญญาณเสริมแรงเพื่อฝึกระบบ โดยรายงานว่าประหยัดพลังงานกว่าซิลิคอนหลายสิบเท่า
   [Source](https://www.newscientist.com/article/2517389-human-brain-cells-on-a-chip-learned-to-play-doom-in-a-week/)
 
 - 📡 **Quantum Radar — Stealth Detection via Entangled Photons** *(17 May 2026)*
-  Quantum radar = เรดาร์ควอนตัมใช้ single-photon entanglement ตรวจจับ stealth aircraft — China เริ่ม mass-produce 4-channel ultra-low-noise detector Anhui 2026, CETC อ้าง 100 km range, multi-wavelength scanning ประหยัดพลังงาน
+  เรดาร์ควอนตัมใช้ความพัวพันของโฟตอนเพื่อตรวจจับเครื่องบินหลบหลีกเรดาร์ จีนเริ่มผลิตตัวตรวจจับสัญญาณรบกวนต่ำแบบ 4 ช่องในมณฑล Anhui ปี 2026 โดย CETC อ้างระยะตรวจจับ 100 กิโลเมตรและใช้การสแกนหลายความยาวคลื่นเพื่อลดการใช้พลังงาน
   [Source](https://thequantuminsider.com/2025/10/20/chinese-report-stealth-detecting-quantum-radar-enters-mass-production/)
 
 - 🧵 **CO₂-Derived Carbon Fiber — Carbon Capture Meets Supermaterial** *(17 May 2026)*
-  Mars Materials สำเร็จผลิต carbon fiber จาก CO₂ — ทั้งดัก carbon และสร้างวัสดุ aerospace-grade Chiba University: carbon material ใหม่ลดต้นทุน capture, algae→fiber pathway → permanent carbon storage ในถ่านหินเหมืองเก่า
+  Mars Materials ผลิตเส้นใยคาร์บอนจาก CO₂ เพื่อนำคาร์บอนที่ดักจับมาใช้ทำวัสดุเกรดอากาศยาน Chiba University ศึกษาวัสดุคาร์บอนที่ช่วยลดต้นทุนการดักจับ และมีแนวทางผลิตเส้นใยจากสาหร่าย
   [Source](https://energycapitalhtx.com/mars-materials-carbon-fiber-breakthrough)
 
 - ❄️ **Ambient-Pressure Superconductor at 151K — New World Record** *(17 May 2026)*
-  University of Houston ทำลายสถิติ superconductivity ที่ ambient pressure — Tc = 151K (-122°C) ด้วย pressure quench technique ใน HgBa₂Ca₂Cu₃O₈₊δ สูงที่สุดเท่าที่เคยบันทึก (since 1911)
+  University of Houston รายงานสถิติตัวนำยิ่งยวดที่ความดันบรรยากาศ โดยมีอุณหภูมิวิกฤต Tc = 151 K (-122°C) ใช้เทคนิค pressure quench กับ HgBa₂Ca₂Cu₃O₈₊δ และระบุว่าสูงที่สุดนับตั้งแต่ปี 1911
   [Source](https://www.uh.edu/news-events/stories/2026/march/03102026-ambient-pressure-superconductivity-record.php)
 
 - ⚡ **Cold Atmospheric Plasma Cancer Therapy — Selective Tumor Killing** *(17 May 2026)*
-  Cold plasma (CAP) ฆ่าเซลล์มะเร็งเจาะจงผ่าน RONS — non-invasive, selective, กระตุ้น immunogenic cell death npj Precision Oncology 2026: pancreatic cancer models, DBD + plasma jet devices ผ่าน clinical approval แล้วบางรุ่น
+  พลาสมาเย็นที่ความดันบรรยากาศ (CAP) ใช้สารออกฤทธิ์ที่มีออกซิเจนและไนโตรเจน (RONS) เพื่อทำลายเซลล์มะเร็งอย่างจำเพาะและกระตุ้นการตายของเซลล์ที่ทำให้เกิดการตอบสนองทางภูมิคุ้มกัน งานปี 2026 กล่าวถึงแบบจำลองมะเร็งตับอ่อน และอุปกรณ์ DBD กับ plasma jet ซึ่งบางรุ่นผ่านการอนุมัติให้ใช้ทางคลินิกแล้ว
   [Source](https://www.sciencedirect.com/science/article/pii/S2452199X2500324X)
 
 - 🤖 **Foundation Model Robot Swarms — LLM-Powered Collective Intelligence** *(17 May 2026)*
-  Embedding foundation models ใน swarm control → robot swarms เข้าใจคำสั่งธรรมดา, ปรับตัว real-time Caterpillar CES 2026: autonomous excavators+trucks+dozers, viewpoint paper 2026: FM = autonomy ระดับใหม่
+  นำ foundation model มาใช้ควบคุมฝูงหุ่นยนต์ ให้เข้าใจคำสั่งภาษาทั่วไปและปรับตัวแบบ real-time Caterpillar แสดงรถขุด รถบรรทุก และรถดันดินอัตโนมัติใน CES 2026 ส่วนบทความเชิงมุมมองในปี 2026 เสนอให้ใช้โมเดลเหล่านี้เพิ่มความสามารถในการทำงานอัตโนมัติ
   [Source](https://sciencex.com/news/2026-05-wont-robot-swarms-gain-startling.html)
 
 - 🤖 **3D Printed Construction — Robots That Print Houses** *(16 May 2026)*
-  3D printed construction = หุ่นยนต์พิมพ์บ้านด้วยคอนกรีต/วัสดุ → ลดแรงงาน 80%, ขยะ 60% ICON Titan: $20/sqft walls, ขาย robot ให้ builders Charlotte robot: บ้านวันละหลังด้วยขยะ recycl...
+  ใช้หุ่นยนต์พิมพ์บ้านด้วยคอนกรีตและวัสดุก่อสร้าง โดยระบุว่าลดแรงงานได้ 80% และขยะ 60% ICON Titan เสนอต้นทุนผนัง $20/sqft และขายหุ่นยนต์ให้ผู้รับเหมา ส่วนหุ่นยนต์ Charlotte ระบุว่าสร้างบ้านจากขยะรีไซเคิลได้วันละหลัง
   [Source](https://apis-cor.com/)
 
 - 💾 **4D Printing — Shape-Shifting Printed Objects** *(16 May 2026)*
-  4D printing = พิมพ์ 3D + เวลา → เปลี่ยนรูปได้ Unteachable 2026: liquid crystal elastomers change shape with light, hydrogels with moisture Science Research: self-transformation of ...
+  การพิมพ์ 4D คือการพิมพ์วัตถุสามมิติที่เปลี่ยนรูปได้เมื่อเวลาหรือสภาพแวดล้อมเปลี่ยนไป ตัวอย่างในปี 2026 ได้แก่ liquid crystal elastomer ที่ตอบสนองต่อแสง และไฮโดรเจลที่ตอบสนองต่อความชื้น
   [Source](https://unteachablecourses.com/programmable-matter-2026/)
 
 - ⚡ **5D Optical Data Storage — 360TB Eternal Glass Memory** *(16 May 2026)*
-  5D optical storage = แผ่นแก้วเก็บข้อมูล 360TB → อยู่ได้ 13.8 พันล้านปี Reddit/Southampton: entering commercial data center pilots Medium: 360TB per disc, zero-energy preservation, ...
+  การเก็บข้อมูลเชิงแสงแบบ 5D ใช้แผ่นแก้วเก็บข้อมูล 360 TB โดยระบุอายุการเก็บรักษา 13.8 พันล้านปีและไม่ต้องใช้พลังงานระหว่างเก็บ มีรายงานการเตรียมทดลองใช้ในศูนย์ข้อมูลเชิงพาณิชย์
   [Source](https://medium.com/@jckapadia003/eternity-crystal-the-5d-storage-breakthrough-preserving-360tb-for-billions-of-years-019780f3e474)
 
 - 🧬 **AI De Novo Protein Design — Engineering Nature's Machines** *(16 May 2026)*
-  AI de novo protein design = ใช้ AI ออกแบบโปรตีน ที่ไม่เคยมีในธรรมชาติ → โปรตีนใหม่ที่ทำงานได้ตามต้องการ AlphaFold เปิดทาง → ตอนนี้ สร้าง โปรตีนไม่ใช่แค่ทำนาย LigandMPNN 2025: desig...
+  การออกแบบโปรตีนแบบ de novo ด้วย AI มุ่งสร้างโปรตีนที่ไม่พบในธรรมชาติและทำหน้าที่ตามต้องการได้ งานต่อยอดจาก AlphaFold ขยายจากการทำนายโครงสร้างไปสู่การออกแบบโปรตีนใหม่ เช่น LigandMPNN ในปี 2025
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12467925/)
 
 - 🔲 **Acoustic Metamaterial Noise Shield — 94% Silence While Air Flows** *(16 May 2026)*
-  Acoustic metamaterial = วัสดุที่ กันเสียง 94% แต่อากาศผ่านได้ Boston University Zhang Lab: Phase Gradient Ultra-Open Metamaterial (PGUOM) Nature: bio-inspired acoustic metamaterial...
+  Zhang Lab แห่ง Boston University พัฒนา Phase Gradient Ultra-Open Metamaterial (PGUOM) ซึ่งลดเสียงได้ 94% โดยยังให้อากาศไหลผ่านได้
   [Source](https://www.bu.edu/photonics/2025/07/31/this-smarter-sound-shield-blocks-more-noise-without-blocking-air/)
 
 - 🔊 **Acoustic Tractor Beam — Levitating Objects with Sound** *(16 May 2026)*
-  Acoustic tractor beam = ยกวัตถุด้วย คลื่นเสียง ไม่ต้องสัมผัส University of Bristol: world's most powerful acoustic tractor beam → สามารถ stably trap objects larger than wavelength ...
+  Acoustic tractor beam ใช้คลื่นเสียงยกและตรึงวัตถุโดยไม่สัมผัส University of Bristol พัฒนาระบบที่ตรึงวัตถุขนาดใหญ่กว่าความยาวคลื่นได้อย่างเสถียร
   [Source](https://physicsworld.com/a/acoustic-tractor-beam-can-grab-objects-from-behind-obstacles/)
 
 - 🏗️ **Aerogel Insulation — Ultralight Building** *(16 May 2026)*
-  Aerogel = วัสดุเบาที่สุดในโลก → ฉนวนกันความร้อนยอดเยี่ยม GlobeNewsWire: aerogels market 2026-2036, EV batteries, building, aerospace PatSnap: aerogel concrete 3.0-23.6 MPa, 0.16-0....
+  Aerogel เป็นวัสดุน้ำหนักเบาที่ใช้เป็นฉนวนความร้อนในอาคาร แบตเตอรี่รถยนต์ไฟฟ้า และอากาศยาน มีการประเมินตลาดในช่วงปี 2026–2036 และรายงานคอนกรีตผสม aerogel ที่มีความแข็งแรง 3.0–23.6 MPa
 
 - 🔋 **Aluminum-Air Battery — 30x Li-ion Energy Density** *(16 May 2026)*
-  Aluminum-air battery = แบตเตอรี่ที่ใช้ อลูมิเนียมเป็นเชื้อเพลิง → 8,100 Wh/kg (30x Li-ion!) ACS: next-generation with new materials integration Springer: theoretical energy density...
+  แบตเตอรี่อะลูมิเนียม–อากาศใช้อะลูมิเนียมเป็นเชื้อเพลิง โดยระบุความหนาแน่นพลังงานเชิงทฤษฎี 8,100 Wh/kg หรือ 30 เท่าของแบตเตอรี่ลิเทียมไอออน มีการศึกษาวัสดุใหม่เพื่อพัฒนาแบตเตอรี่ชนิดนี้
   [Source](https://pubs.acs.org/doi/10.1021/acsaem.4c02926)
 
 - ⛽ **Antimatter Production & Trapping — CERN Breakthrough** *(16 May 2026)*
-  CERN ALPHA: ผลิต 15,000 antihydrogen atoms ในเวลาไม่กี่ชั่วโมง (ก่อนหน้า: ทำได้ไม่กี่สิบ) BASE-STEP: portable antiproton trap — 92 antiprotons ขนย้ายบนรถบรรทุกครั้งแรก (March 2026)...
+  CERN ALPHA ผลิตอะตอมแอนติไฮโดรเจน 15,000 อะตอมได้ในไม่กี่ชั่วโมง จากเดิมที่ผลิตได้เพียงหลักสิบ ส่วน BASE-STEP ใช้กับดักแอนติโปรตอนแบบเคลื่อนย้ายได้ ขนส่งแอนติโปรตอน 92 ตัวด้วยรถบรรทุกเป็นครั้งแรกในเดือนมีนาคม 2026
   [Source](https://home.web.cern.ch/news/news/experiments/breakthrough-antimatter-production)
 
 - 🔬 **Antimicrobial Peptides — Post-Antibiotic Era** *(16 May 2026)*
-  Antimicrobial peptides (AMPs) = เพปไทด์ฆ่าเชื้อ → ต้าน superbug PMC: slower resistance development, broad-spectrum, MDR + ESKAPEE pathogens PMC: effective against bacteria, viruses...
+  เพปไทด์ต้านจุลชีพ (AMPs) เป็นแนวทางรับมือเชื้อดื้อยา มีรายงานการออกฤทธิ์ต่อเชื้อหลายกลุ่ม รวมถึงเชื้อดื้อยาหลายขนาน (MDR) และกลุ่ม ESKAPEE โดยเชื้ออาจพัฒนาการดื้อยาได้ช้าลง
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12813028/)
 
 - 🩸 **Artificial Blood — Universal Blood for All** *(16 May 2026)*
-  Artificial blood = เลือดเทียมที่ ทุกหมู่เลือดใช้ได้ → แก้ปัญหาขาดเลือดบริจาค Japan: world's first clinical trials 2025 (Nara Medical University) → goal clinical use by 2030 Mount S...
+  เลือดเทียมที่มุ่งให้ใช้ได้กับทุกหมู่เลือดเป็นแนวทางลดการขาดแคลนเลือดบริจาค Nara Medical University ในญี่ปุ่นเริ่มการทดลองทางคลินิกครั้งแรกในปี 2025 โดยตั้งเป้านำมาใช้รักษาในปี 2030
   [Source](https://aob.amegroups.org/article/view/12464/html)
 
 - 💧 **Artificial Gill — Breathing Underwater Without Tanks** *(16 May 2026)*
-  Artificial gill = เหงือกเทียม → สกัดออกซิเจนจากน้ำ → ดำน้ำไม่ต้องถัง ScienceDirect: theoretical model for oxygen extraction via semipermeable membrane ScienceInsider: extract disso...
+  เหงือกเทียมเป็นแนวคิดสกัดออกซิเจนที่ละลายอยู่ในน้ำเพื่อช่วยหายใจใต้น้ำโดยไม่ใช้ถังอากาศ งานที่อ้างถึงศึกษาแบบจำลองทางทฤษฎีของการสกัดออกซิเจนผ่านเยื่อเลือกผ่าน
   [Source](https://www.sciencedirect.com/science/article/abs/pii/S0924424718313736)
 
 - ⛽ **Artificial Photosynthesis — Sunlight + CO₂ = Fuel** *(16 May 2026)*
 - ⚛️ **Quantum Computer Error Correction** *(19 May 2026)*
-  Prototype quantum computers achieving unprecedented error correction rates using surface code techniques with logical qubit stability [Source](https://www.networkworld.com/article/3663515/top-quantum-breakthroughs-of-2025.html)
+  คอมพิวเตอร์ควอนตัมต้นแบบใช้เทคนิค surface code เพื่อแก้ไขข้อผิดพลาดและรักษาเสถียรภาพของ logical qubit [Source](https://www.networkworld.com/article/3663515/top-quantum-breakthroughs-of-2025.html)
 - 🔥 **Fusion Reactor Plasma Control** *(19 May 2026)*
-  New plasma confinement systems enabling sustained fusion reactions at lower temperatures with stable magnetic confinement [Source](https://www.fusioncouncil.org/fusion-energy-2025-six-global-trends-to-watch/)
+  ระบบกักเก็บพลาสมารุ่นใหม่ใช้สนามแม่เหล็กที่เสถียร เพื่อให้เกิดปฏิกิริยาฟิวชันต่อเนื่องที่อุณหภูมิต่ำลง [Source](https://www.fusioncouncil.org/fusion-energy-2025-six-global-trends-to-watch/)
 - 🩸 **Bioprinting Blood Vessels** *(19 May 2026)*
-  Revolutionary bioprinting creating functional blood vessels and human tissue using advanced bio-inks and 3D techniques [Source](https://www.sciencedaily.com/releases/2025/03/250315114811.htm)
+  ใช้หมึกชีวภาพและการพิมพ์สามมิติเพื่อสร้างหลอดเลือดและเนื้อเยื่อมนุษย์ที่ทำงานได้ [Source](https://www.sciencedaily.com/releases/2025/03/250315114811.htm)
 - 💧 **Solid-State Hydrogen Storage** *(19 May 2026)*
-  H2MOF materials enabling safe, dense hydrogen storage at ambient temperatures for clean energy applications [Source](https://www.hydrogentechworld.com/breakthrough-in-solid-state-hydrogen-storage-h2mof-on-hydrogen-tech-world/)
+  วัสดุ H2MOF ใช้กักเก็บไฮโดรเจนความหนาแน่นสูงที่อุณหภูมิห้อง โดยมุ่งเพิ่มความปลอดภัยในการใช้งานด้านพลังงาน [Source](https://www.hydrogentechworld.com/breakthrough-in-solid-state-hydrogen-storage-h2mof-on-hydrogen-tech-world/)
 - 🔋 **Graphene Super Battery** *(19 May 2026)*
-  Graphene-based batteries with 5x capacity and improved safety through nano-structured electrode designs [Source](https://www.sciencedaily.com/releases/2025/01/250120150224.htm)
+  แบตเตอรี่กราฟีนที่ออกแบบขั้วไฟฟ้าเป็นโครงสร้างนาโน มีความจุเพิ่มขึ้น 5 เท่าและปรับปรุงความปลอดภัย [Source](https://www.sciencedaily.com/releases/2025/01/250120150224.htm)
 
 - 🔋 **Quantum Battery — Superextensive Charging via Super Absorption** *(18 May 2026)*
-  Quantum battery prototype แรกที่ใช้ quantum super absorption — ยิ่งขนาดใหญ่ยิ่งชาร์จเร็ว (ผิดกฎฟิสิกส์ทั่วไป) University of Melbourne + UNSW: microcavity + organic dye molecules → collective coherent absorption, power output เกิน classical limit
+  University of Melbourne และ UNSW สร้างต้นแบบแบตเตอรี่ควอนตัมที่ใช้ quantum superabsorption โดยยิ่งเพิ่มขนาดก็ยิ่งชาร์จได้เร็ว ใช้ microcavity ร่วมกับโมเลกุลสีย้อมอินทรีย์เพื่อให้ดูดกลืนพลังงานร่วมกันอย่างสอดคล้อง และให้กำลังสูงกว่าขีดจำกัดแบบคลาสสิก
   [Source](https://scitechdaily.com/scientists-just-built-a-quantum-battery-that-charges-almost-instantly/)
 
 - ⚛️ **Floquet Quantum States — Exotic Matter via Magnetic Driving** *(18 May 2026)*
-  นักวิจัยสร้าง exotic quantum states ใหม่ด้วย "ขับ" วัสดุด้วยสนามแม่เหล็กจังหวะ → quantum phases ที่เสถียรกว่า ทนต่อ errors — ไม่ต้องหาวัสดุใหม่ แค่ปรับ driving pattern
+  นักวิจัยกระตุ้นวัสดุด้วยสนามแม่เหล็กที่เปลี่ยนเป็นจังหวะ เพื่อสร้างสถานะควอนตัมใหม่ที่เสถียรและทนต่อข้อผิดพลาดมากขึ้น โดยปรับรูปแบบการกระตุ้นแทนการเปลี่ยนวัสดุ
   [Source](https://www.sciencedaily.com/releases/2026/05/260504154014.htm)
 
 - 💧 **Sodium-Ion Battery + Desalination — Energy & Clean Water in One Device** *(18 May 2026)*
-  University of Surrey: sodium-ion battery เก็บพลังงาน 2x + desalinate น้ำทะเล simultaneously — เก็บน้ำไว้ในวัสดุแทนเอาออก = ทั้งเพิ่ม capacity และแยกเกลือ
+  University of Surrey พัฒนาแบตเตอรี่โซเดียมไอออนที่เก็บพลังงานได้เพิ่มขึ้น 2 เท่าและแยกเกลือออกจากน้ำทะเลได้พร้อมกัน โดยเก็บน้ำไว้ในวัสดุแทนการกำจัดออก
   [Source](https://www.sciencedaily.com/releases/2026/02/260218031603.htm)
 
 - 🤖 **MIT Magno-Bots — Magnetic Hydrogel Micro-Robots Smaller Than Sand** *(18 May 2026)*
-  MIT + EPFL: soft magnetic hydrogel 3D-print เป็น micro-robots ขนาด sub-millimeter — ควบคุมด้วยแม่เหล็ก เปลี่ยนรูปจาก lollipop เป็น gripper ทันที → targeted drug delivery, microsurgery
+  MIT และ EPFL พิมพ์หุ่นยนต์จิ๋วขนาดต่ำกว่ามิลลิเมตรด้วยไฮโดรเจลแม่เหล็กเนื้อนิ่ม หุ่นยนต์เปลี่ยนจากรูปอมยิ้มเป็นตัวคีบได้เมื่อควบคุมด้วยแม่เหล็ก มีแนวทางใช้ส่งยาเฉพาะจุดและทำศัลยกรรมระดับจุลภาค
   [Source](https://news.mit.edu/2026/microscopic-magno-bots-perform-complex-maneuvers-with-magnet-swipe-0428)
 
 - 🧠 **Wetware Computer — 200K Brain Cells on Chip Learn to Play Doom** *(18 May 2026)*
-  Cortical Labs CL1: 200,000+ human neurons บน chip เรียนรู้เล่น Doom ใน ~1 สัปดาห์ — Sean Cole ใช้ Python API สอนผ่าน reinforcement signals, energy efficiency สูงกว่า silicon หลายสิบเท่า
+  Cortical Labs CL1 ใช้เซลล์ประสาทมนุษย์มากกว่า 200,000 เซลล์บนชิปเรียนรู้การเล่น Doom ในเวลาประมาณ 1 สัปดาห์ Sean Cole ใช้ Python API ป้อนสัญญาณเสริมแรงเพื่อฝึกระบบ โดยรายงานว่าประหยัดพลังงานกว่าซิลิคอนหลายสิบเท่า
   [Source](https://www.newscientist.com/article/2517389-human-brain-cells-on-a-chip-learned-to-play-doom-in-a-week/)
 
 - 📡 **Quantum Radar — Stealth Detection via Entangled Photons** *(17 May 2026)*
-  Quantum radar = เรดาร์ควอนตัมใช้ single-photon entanglement ตรวจจับ stealth aircraft — China เริ่ม mass-produce 4-channel ultra-low-noise detector Anhui 2026, CETC อ้าง 100 km range, multi-wavelength scanning ประหยัดพลังงาน
+  เรดาร์ควอนตัมใช้ความพัวพันของโฟตอนเพื่อตรวจจับเครื่องบินหลบหลีกเรดาร์ จีนเริ่มผลิตตัวตรวจจับสัญญาณรบกวนต่ำแบบ 4 ช่องในมณฑล Anhui ปี 2026 โดย CETC อ้างระยะตรวจจับ 100 กิโลเมตรและใช้การสแกนหลายความยาวคลื่นเพื่อลดการใช้พลังงาน
   [Source](https://thequantuminsider.com/2025/10/20/chinese-report-stealth-detecting-quantum-radar-enters-mass-production/)
 
 - 🧵 **CO₂-Derived Carbon Fiber — Carbon Capture Meets Supermaterial** *(17 May 2026)*
-  Mars Materials สำเร็จผลิต carbon fiber จาก CO₂ — ทั้งดัก carbon และสร้างวัสดุ aerospace-grade Chiba University: carbon material ใหม่ลดต้นทุน capture, algae→fiber pathway → permanent carbon storage ในถ่านหินเหมืองเก่า
+  Mars Materials ผลิตเส้นใยคาร์บอนจาก CO₂ เพื่อนำคาร์บอนที่ดักจับมาใช้ทำวัสดุเกรดอากาศยาน Chiba University ศึกษาวัสดุคาร์บอนที่ช่วยลดต้นทุนการดักจับ และมีแนวทางผลิตเส้นใยจากสาหร่าย
   [Source](https://energycapitalhtx.com/mars-materials-carbon-fiber-breakthrough)
 
 - ❄️ **Ambient-Pressure Superconductor at 151K — New World Record** *(17 May 2026)*
-  University of Houston ทำลายสถิติ superconductivity ที่ ambient pressure — Tc = 151K (-122°C) ด้วย pressure quench technique ใน HgBa₂Ca₂Cu₃O₈₊δ สูงที่สุดเท่าที่เคยบันทึก (since 1911)
+  University of Houston รายงานสถิติตัวนำยิ่งยวดที่ความดันบรรยากาศ โดยมีอุณหภูมิวิกฤต Tc = 151 K (-122°C) ใช้เทคนิค pressure quench กับ HgBa₂Ca₂Cu₃O₈₊δ และระบุว่าสูงที่สุดนับตั้งแต่ปี 1911
   [Source](https://www.uh.edu/news-events/stories/2026/march/03102026-ambient-pressure-superconductivity-record.php)
 
 - ⚡ **Cold Atmospheric Plasma Cancer Therapy — Selective Tumor Killing** *(17 May 2026)*
-  Cold plasma (CAP) ฆ่าเซลล์มะเร็งเจาะจงผ่าน RONS — non-invasive, selective, กระตุ้น immunogenic cell death npj Precision Oncology 2026: pancreatic cancer models, DBD + plasma jet devices ผ่าน clinical approval แล้วบางรุ่น
+  พลาสมาเย็นที่ความดันบรรยากาศ (CAP) ใช้สารออกฤทธิ์ที่มีออกซิเจนและไนโตรเจน (RONS) เพื่อทำลายเซลล์มะเร็งอย่างจำเพาะและกระตุ้นการตายของเซลล์ที่ทำให้เกิดการตอบสนองทางภูมิคุ้มกัน งานปี 2026 กล่าวถึงแบบจำลองมะเร็งตับอ่อน และอุปกรณ์ DBD กับ plasma jet ซึ่งบางรุ่นผ่านการอนุมัติให้ใช้ทางคลินิกแล้ว
   [Source](https://www.sciencedirect.com/science/article/pii/S2452199X2500324X)
 
 - 🤖 **Foundation Model Robot Swarms — LLM-Powered Collective Intelligence** *(17 May 2026)*
-  Embedding foundation models ใน swarm control → robot swarms เข้าใจคำสั่งธรรมดา, ปรับตัว real-time Caterpillar CES 2026: autonomous excavators+trucks+dozers, viewpoint paper 2026: FM = autonomy ระดับใหม่
+  นำ foundation model มาใช้ควบคุมฝูงหุ่นยนต์ ให้เข้าใจคำสั่งภาษาทั่วไปและปรับตัวแบบ real-time Caterpillar แสดงรถขุด รถบรรทุก และรถดันดินอัตโนมัติใน CES 2026 ส่วนบทความเชิงมุมมองในปี 2026 เสนอให้ใช้โมเดลเหล่านี้เพิ่มความสามารถในการทำงานอัตโนมัติ
   [Source](https://sciencex.com/news/2026-05-wont-robot-swarms-gain-startling.html)
 
 - 🤖 **3D Printed Construction — Robots That Print Houses** *(16 May 2026)*
-  3D printed construction = หุ่นยนต์พิมพ์บ้านด้วยคอนกรีต/วัสดุ → ลดแรงงาน 80%, ขยะ 60% ICON Titan: $20/sqft walls, ขาย robot ให้ builders Charlotte robot: บ้านวันละหลังด้วยขยะ recycl...
+  ใช้หุ่นยนต์พิมพ์บ้านด้วยคอนกรีตและวัสดุก่อสร้าง โดยระบุว่าลดแรงงานได้ 80% และขยะ 60% ICON Titan เสนอต้นทุนผนัง $20/sqft และขายหุ่นยนต์ให้ผู้รับเหมา ส่วนหุ่นยนต์ Charlotte ระบุว่าสร้างบ้านจากขยะรีไซเคิลได้วันละหลัง
   [Source](https://apis-cor.com/)
 
 - 💾 **4D Printing — Shape-Shifting Printed Objects** *(16 May 2026)*
-  4D printing = พิมพ์ 3D + เวลา → เปลี่ยนรูปได้ Unteachable 2026: liquid crystal elastomers change shape with light, hydrogels with moisture Science Research: self-transformation of ...
+  การพิมพ์ 4D คือการพิมพ์วัตถุสามมิติที่เปลี่ยนรูปได้เมื่อเวลาหรือสภาพแวดล้อมเปลี่ยนไป ตัวอย่างในปี 2026 ได้แก่ liquid crystal elastomer ที่ตอบสนองต่อแสง และไฮโดรเจลที่ตอบสนองต่อความชื้น
   [Source](https://unteachablecourses.com/programmable-matter-2026/)
 
 - ⚡ **5D Optical Data Storage — 360TB Eternal Glass Memory** *(16 May 2026)*
-  5D optical storage = แผ่นแก้วเก็บข้อมูล 360TB → อยู่ได้ 13.8 พันล้านปี Reddit/Southampton: entering commercial data center pilots Medium: 360TB per disc, zero-energy preservation, ...
+  การเก็บข้อมูลเชิงแสงแบบ 5D ใช้แผ่นแก้วเก็บข้อมูล 360 TB โดยระบุอายุการเก็บรักษา 13.8 พันล้านปีและไม่ต้องใช้พลังงานระหว่างเก็บ มีรายงานการเตรียมทดลองใช้ในศูนย์ข้อมูลเชิงพาณิชย์
   [Source](https://medium.com/@jckapadia003/eternity-crystal-the-5d-storage-breakthrough-preserving-360tb-for-billions-of-years-019780f3e474)
 
 - 🧬 **AI De Novo Protein Design — Engineering Nature's Machines** *(16 May 2026)*
-  AI de novo protein design = ใช้ AI ออกแบบโปรตีน ที่ไม่เคยมีในธรรมชาติ → โปรตีนใหม่ที่ทำงานได้ตามต้องการ AlphaFold เปิดทาง → ตอนนี้ สร้าง โปรตีนไม่ใช่แค่ทำนาย LigandMPNN 2025: desig...
+  การออกแบบโปรตีนแบบ de novo ด้วย AI มุ่งสร้างโปรตีนที่ไม่พบในธรรมชาติและทำหน้าที่ตามต้องการได้ งานต่อยอดจาก AlphaFold ขยายจากการทำนายโครงสร้างไปสู่การออกแบบโปรตีนใหม่ เช่น LigandMPNN ในปี 2025
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12467925/)
 
 - 🔲 **Acoustic Metamaterial Noise Shield — 94% Silence While Air Flows** *(16 May 2026)*
-  Acoustic metamaterial = วัสดุที่ กันเสียง 94% แต่อากาศผ่านได้ Boston University Zhang Lab: Phase Gradient Ultra-Open Metamaterial (PGUOM) Nature: bio-inspired acoustic metamaterial...
+  Zhang Lab แห่ง Boston University พัฒนา Phase Gradient Ultra-Open Metamaterial (PGUOM) ซึ่งลดเสียงได้ 94% โดยยังให้อากาศไหลผ่านได้
   [Source](https://www.bu.edu/photonics/2025/07/31/this-smarter-sound-shield-blocks-more-noise-without-blocking-air/)
 
 - 🔊 **Acoustic Tractor Beam — Levitating Objects with Sound** *(16 May 2026)*
-  Acoustic tractor beam = ยกวัตถุด้วย คลื่นเสียง ไม่ต้องสัมผัส University of Bristol: world's most powerful acoustic tractor beam → สามารถ stably trap objects larger than wavelength ...
+  Acoustic tractor beam ใช้คลื่นเสียงยกและตรึงวัตถุโดยไม่สัมผัส University of Bristol พัฒนาระบบที่ตรึงวัตถุขนาดใหญ่กว่าความยาวคลื่นได้อย่างเสถียร
   [Source](https://physicsworld.com/a/acoustic-tractor-beam-can-grab-objects-from-behind-obstacles/)
 
 - 🏗️ **Aerogel Insulation — Ultralight Building** *(16 May 2026)*
-  Aerogel = วัสดุเบาที่สุดในโลก → ฉนวนกันความร้อนยอดเยี่ยม GlobeNewsWire: aerogels market 2026-2036, EV batteries, building, aerospace PatSnap: aerogel concrete 3.0-23.6 MPa, 0.16-0....
+  Aerogel เป็นวัสดุน้ำหนักเบาที่ใช้เป็นฉนวนความร้อนในอาคาร แบตเตอรี่รถยนต์ไฟฟ้า และอากาศยาน มีการประเมินตลาดในช่วงปี 2026–2036 และรายงานคอนกรีตผสม aerogel ที่มีความแข็งแรง 3.0–23.6 MPa
 
 - 🔋 **Aluminum-Air Battery — 30x Li-ion Energy Density** *(16 May 2026)*
-  Aluminum-air battery = แบตเตอรี่ที่ใช้ อลูมิเนียมเป็นเชื้อเพลิง → 8,100 Wh/kg (30x Li-ion!) ACS: next-generation with new materials integration Springer: theoretical energy density...
+  แบตเตอรี่อะลูมิเนียม–อากาศใช้อะลูมิเนียมเป็นเชื้อเพลิง โดยระบุความหนาแน่นพลังงานเชิงทฤษฎี 8,100 Wh/kg หรือ 30 เท่าของแบตเตอรี่ลิเทียมไอออน มีการศึกษาวัสดุใหม่เพื่อพัฒนาแบตเตอรี่ชนิดนี้
   [Source](https://pubs.acs.org/doi/10.1021/acsaem.4c02926)
 
 - ⛽ **Antimatter Production & Trapping — CERN Breakthrough** *(16 May 2026)*
-  CERN ALPHA: ผลิต 15,000 antihydrogen atoms ในเวลาไม่กี่ชั่วโมง (ก่อนหน้า: ทำได้ไม่กี่สิบ) BASE-STEP: portable antiproton trap — 92 antiprotons ขนย้ายบนรถบรรทุกครั้งแรก (March 2026)...
+  CERN ALPHA ผลิตอะตอมแอนติไฮโดรเจน 15,000 อะตอมได้ในไม่กี่ชั่วโมง จากเดิมที่ผลิตได้เพียงหลักสิบ ส่วน BASE-STEP ใช้กับดักแอนติโปรตอนแบบเคลื่อนย้ายได้ ขนส่งแอนติโปรตอน 92 ตัวด้วยรถบรรทุกเป็นครั้งแรกในเดือนมีนาคม 2026
   [Source](https://home.web.cern.ch/news/news/experiments/breakthrough-antimatter-production)
 
 - 🔬 **Antimicrobial Peptides — Post-Antibiotic Era** *(16 May 2026)*
-  Antimicrobial peptides (AMPs) = เพปไทด์ฆ่าเชื้อ → ต้าน superbug PMC: slower resistance development, broad-spectrum, MDR + ESKAPEE pathogens PMC: effective against bacteria, viruses...
+  เพปไทด์ต้านจุลชีพ (AMPs) เป็นแนวทางรับมือเชื้อดื้อยา มีรายงานการออกฤทธิ์ต่อเชื้อหลายกลุ่ม รวมถึงเชื้อดื้อยาหลายขนาน (MDR) และกลุ่ม ESKAPEE โดยเชื้ออาจพัฒนาการดื้อยาได้ช้าลง
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12813028/)
 
 - 🩸 **Artificial Blood — Universal Blood for All** *(16 May 2026)*
-  Artificial blood = เลือดเทียมที่ ทุกหมู่เลือดใช้ได้ → แก้ปัญหาขาดเลือดบริจาค Japan: world's first clinical trials 2025 (Nara Medical University) → goal clinical use by 2030 Mount S...
+  เลือดเทียมที่มุ่งให้ใช้ได้กับทุกหมู่เลือดเป็นแนวทางลดการขาดแคลนเลือดบริจาค Nara Medical University ในญี่ปุ่นเริ่มการทดลองทางคลินิกครั้งแรกในปี 2025 โดยตั้งเป้านำมาใช้รักษาในปี 2030
   [Source](https://aob.amegroups.org/article/view/12464/html)
 
 - 💧 **Artificial Gill — Breathing Underwater Without Tanks** *(16 May 2026)*
-  Artificial gill = เหงือกเทียม → สกัดออกซิเจนจากน้ำ → ดำน้ำไม่ต้องถัง ScienceDirect: theoretical model for oxygen extraction via semipermeable membrane ScienceInsider: extract disso...
+  เหงือกเทียมเป็นแนวคิดสกัดออกซิเจนที่ละลายอยู่ในน้ำเพื่อช่วยหายใจใต้น้ำโดยไม่ใช้ถังอากาศ งานที่อ้างถึงศึกษาแบบจำลองทางทฤษฎีของการสกัดออกซิเจนผ่านเยื่อเลือกผ่าน
   [Source](https://www.sciencedirect.com/science/article/abs/pii/S0924424718313736)
 
 - ⛽ **Artificial Photosynthesis — Sunlight + CO₂ = Fuel** *(16 May 2026)*
-  Artificial photosynthesis = เลียนแบบพืช → ใช้แสงอาทิตย์แตก CO₂ + H₂O → เชื้อเพลิง (methanol, methane, hydrogen) ScienceDaily 2025: scientists found new way to turn sunlight into fu...
+  การสังเคราะห์ด้วยแสงเทียมเลียนแบบพืช โดยใช้แสงอาทิตย์เปลี่ยน CO₂ และ H₂O เป็นเชื้อเพลิง เช่น เมทานอล มีเทน และไฮโดรเจน ScienceDaily ปี 2025 รายงานแนวทางใหม่ในการเปลี่ยนพลังงานแสงอาทิตย์เป็นเชื้อเพลิง
   [Source](https://earthsky.org/human-world/artificial-photosynthesis-breakthrough-could-bring-solar-fuels/)
 
 - 💧 **Atmospheric Water Harvesting — Water from Thin Air** *(16 May 2026)*
-  Atmospheric Water Harvesting (AWH) = ดึงน้ำจากอากาศ — แม้ในทะเลทราย ความชื้น 20% Nobel Prize 2025 Omar Yaghi (Berkeley) สร้างเครื่องดึงน้ำ 1,000 ลิตร/วัน จากอากาศแห้ง MIT สร้างอุปก...
+  Atmospheric Water Harvesting (AWH) ดึงน้ำจากอากาศได้แม้ในทะเลทรายที่มีความชื้น 20% Omar Yaghi แห่ง Berkeley ผู้ได้รับรางวัลโนเบลปี 2025 พัฒนาเครื่องที่ระบุว่าสกัดน้ำได้ 1,000 ลิตรต่อวันจากอากาศแห้ง
   [Source](https://www.tomshardware.com/tech-industry/device-that-can-extract-1-000-liters-of-clean-water-a-day-from-desert-air-revealed-by-2025-nobel-prize-winner-claimed-to-work-in-desert-air-with-20-percent-humidity-or-lower-delivering-off-grid-personalized-water)
 
 - 🏗️ **Bacteria Self-Healing Concrete — Concrete That Repairs Itself** *(16 May 2026)*
-  Bacteria concrete = คอนกรีตที่ซ่อมแซมรอยร้าวเอง ด้วยแบคทีเรีย Bacillus Highways Today: Bacillus survives dormant for years → wakes when crack → produces limestone Oxford Academic: ...
+  คอนกรีตซ่อมแซมตัวเองใช้แบคทีเรีย Bacillus ที่พักตัวอยู่ในเนื้อวัสดุได้นานหลายปี เมื่อเกิดรอยร้าว แบคทีเรียจะกลับมาทำงานและสร้างหินปูนอุดรอยร้าว
   [Source](https://highways.today/2025/08/15/concrete-healing-bacteria/)
 
 - 🧬 **Bacterial Cellulose Textile — Microbes Weave Fashion** *(16 May 2026)*
-  Bacterial cellulose textile = แบคทีเรียสร้างผ้า → no cotton, no weaving, no waste Springer Nature: BC from Acetobacter/Gluconobacter → sustainable textile MDPI: renewable, biodegra...
+  ใช้แบคทีเรีย Acetobacter หรือ Gluconobacter ผลิตเซลลูโลสสำหรับสิ่งทอ เป็นทางเลือกแทนฝ้ายและการทอผ้าแบบเดิม โดยมุ่งลดของเสียและผลิตวัสดุที่ย่อยสลายได้
   [Source](https://link.springer.com/article/10.1007/s10853-024-09577-6)
 
 - 🌡️ **Biochar — Carbon Sequestration + Fertile Soil** *(16 May 2026)*
-  Biochar = ถ่านจากชีวมวลที่ ดูดซับ CO₂ + ทำดินอุดมสมบูรณ์ ในเวลาเดียวกัน Nature: 5% biochar ในดิน China = sequester 10 billion tons carbon PMC: enhance soil fertility + carbon seque...
+  Biochar คือถ่านจากชีวมวลที่ใช้กักเก็บคาร์บอนและปรับปรุงความอุดมสมบูรณ์ของดิน งานที่อ้างถึงใน Nature ประเมินว่าการเติม biochar 5% ลงในดินของจีนอาจกักเก็บคาร์บอนได้ 10 พันล้านตัน
   [Source](https://www.nature.com/articles/s43247-024-01985-5)
 
 - 🔋 **Biodegradable Transient Electronics — Devices That Disappear** *(16 May 2026)*
-  Transient electronics = อุปกรณ์อิเล็กทรอนิกส์ที่ ละลาย/สลายตัวเอง เมื่อใช้งานเสร็จ ใช้ในร่างกาย (bioresorbable implants) → ไม่ต้องผ่าตัดเอาออก 2025: biodegradable battery ที่ self-...
+  Transient electronics คืออุปกรณ์อิเล็กทรอนิกส์ที่สลายตัวได้หลังสิ้นสุดการใช้งาน เช่น อุปกรณ์ฝังในร่างกายที่ไม่ต้องผ่าตัดนำออก และงานพัฒนาแบตเตอรี่ย่อยสลายได้ในปี 2025
   [Source](https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202501928)
 
 - ⛽ **Bioelectrochemical Wastewater → Hydrogen + Clean Water** *(16 May 2026)*
-  Bioelectrochemical system = น้ำเสีย → ไฮโดรเจน + น้ำสะอาด MDPI: MFC + MEC use microorganisms to produce H₂ + energy from organic matter Frontiers: key breakthroughs in H₂ from agro...
+  ระบบไฟฟ้าเคมีชีวภาพใช้จุลินทรีย์เปลี่ยนสารอินทรีย์ในน้ำเสียเป็นไฮโดรเจนหรือพลังงาน พร้อมบำบัดน้ำเสีย โดยมีทั้งเซลล์เชื้อเพลิงจุลินทรีย์ (MFC) และเซลล์อิเล็กโทรลิซิสจุลินทรีย์ (MEC)
   [Source](https://www.mdpi.com/2673-687X/5/1/3)
 
 - 💾 **Bioelectronic Medicine — Vagus Nerve Stimulation** *(16 May 2026)*
-  Bioelectronic medicine = รักษาโรคด้วย ไฟฟ้า แทนยา — stimulate vagus nerve → กระตุ้น anti-inflammatory pathway ของร่างกายเอง SetPoint Medical FDA approved vagus nerve stimulator สำห...
+  Bioelectronic medicine ใช้การกระตุ้นด้วยไฟฟ้าในการรักษา เช่น กระตุ้นเส้นประสาทเวกัสเพื่อกระตุ้นกลไกต้านการอักเสบของร่างกาย ตัวอย่างคืออุปกรณ์กระตุ้นเส้นประสาทของ SetPoint Medical ที่ผ่านการอนุมัติจาก FDA
   [Source](https://www.assaygenie.com/blog/the-bioelectronic-revolution-how-vagus-nerve-stimulation-is-redefining-autoimmune-therapy-in-2026/)
 
 - 🔷 **Bioelectronic Wound Healing** *(16 May 2026)*
-  Bioelectronic wound healing = ไฟฟ้าเร่งสมานแผล → real-time monitoring Frontiers: PCL/GE/CNT conductive scaffold + ES therapy → accelerates healing J Dermis: cutaneous bioelectronic...
+  ใช้การกระตุ้นด้วยไฟฟ้าร่วมกับการติดตามแผลแบบ real-time เพื่อช่วยสมานแผล ตัวอย่างงานใน Frontiers ใช้โครงร่างนำไฟฟ้า PCL/GE/CNT ร่วมกับการกระตุ้นไฟฟ้า (ES)
 
 - 🖨️ **3D Bioprinting Organs — Printing Human Body Parts** *(16 May 2026)*
-  3D bioprinting = พิมพ์อวัยวะมนุษย์ด้วย "bioink" (เซลล์ + วัสดุ) → แก้ปัญหาขาดอวัยวะบริจาค 2026: vascularized tissue (มีเส้นเลือด) ทำได้แล้ว, full organ ยังไม่ได้แต่ใกล้แล้ว AI + bi...
+  การพิมพ์ชีวภาพสามมิติใช้ bioink ซึ่งประกอบด้วยเซลล์และวัสดุรองรับ เพื่อสร้างเนื้อเยื่อสำหรับทดแทนอวัยวะ ในปี 2026 มีการสร้างเนื้อเยื่อที่มีหลอดเลือดได้แล้ว แต่ยังสร้างอวัยวะทั้งชิ้นไม่ได้
   [Source](https://www.tandfonline.com/doi/full/10.1080/17452759.2024.2384662)
 
 - 💧 **CO₂ Mineralization in Concrete — Carbon-Negative Building** *(16 May 2026)*
-  CO₂ mineralization concrete = ฉีด CO₂ ลงในคอนกรีต → แร่ธาตุจับ CO₂ → คอนกรีตแข็งแรงขึ้น CarbonCure: inject captured CO₂ into concrete → mineralizes → permanent storage Northwestern...
+  CarbonCure ฉีด CO₂ ที่ดักจับไว้ลงในคอนกรีต เพื่อให้เกิดแร่ที่กักเก็บคาร์บอนอย่างถาวรและช่วยเพิ่มความแข็งแรงของคอนกรีต
   [Source](https://www.carboncure.com/)
 
 - 🪶 **COF-999 — Record-Breaking Molecular Sponge for CO₂** *(16 May 2026)*
-  COF-999 = Covalent Organic Framework ตัวใหม่จาก UC Berkeley (Omar Yaghi) = "molecular sponge" ที่ดัก CO₂ เร็วที่สุดเท่าที่เคยมีมา ผงสีเหลืองที่ดึง CO₂ จากอากาศได้อย่างมหาศาล SRI ae...
+  COF-999 เป็นโครงข่ายอินทรีย์โคเวเลนต์ (Covalent Organic Framework) จากทีม Omar Yaghi แห่ง UC Berkeley มีลักษณะเป็นผงสีเหลืองที่ทำหน้าที่คล้ายฟองน้ำระดับโมเลกุลสำหรับดักจับ CO₂ จากอากาศ
   [Source](https://www.chemistryspace.com/2026/03/breakthrough-in-co2-capture.html)
 
 - 🔋 **Calcium-Ion Battery — 2500x More Abundant Than Lithium** *(16 May 2026)*
-  Calcium-ion battery = แบตเตอรี่แคลเซียม → ถูกกว่า Li 2500x RankRed 2026: Ca is 2500x more abundant than Li → cheaper + no resource bottleneck Wiley: multivalent Mg + Ca metal anode...
+  แบตเตอรี่แคลเซียมไอออนเป็นทางเลือกที่มุ่งลดต้นทุนและข้อจำกัดด้านวัตถุดิบ RankRed ปี 2026 ระบุว่าแคลเซียมมีปริมาณในธรรมชาติมากกว่าลิเทียม 2500 เท่า และมีงานศึกษาแอโนดโลหะหลายวาเลนซ์ เช่น Mg และ Ca
   [Source](https://www.rankred.com/new-battery-technologies/)
 
 - ☀️ **Space-Based Solar Power — Caltech MAPLE Demonstration** *(16 May 2026)*
-  Space solar power = เก็บแสงในอวกาศ → ยิง microwave ลงโลก = ไฟฟ้า 24/7 ไม่มีเมฆ/กลางคืน Caltech MAPLE: first wireless power transmission in space → beam to Earth DCD: satellite coll...
+  ระบบพลังงานแสงอาทิตย์ในอวกาศเก็บพลังงานแสงแล้วส่งมายังโลกด้วยไมโครเวฟ เพื่อจ่ายไฟแบบ 24/7 โครงการ MAPLE ของ Caltech สาธิตการส่งพลังงานแบบไร้สายในอวกาศและส่งสัญญาณพลังงานมายังโลก
   [Source](https://www.caltech.edu/about/news/in-a-first-caltechs-space-solar-power-demonstrator-wirelessly-transmits-power-in-space)
 
 - 🌍 **Carbon-Negative Cement — Concrete That Absorbs CO₂** *(16 May 2026)*
-  Cement = 8% of global CO₂ emissions CarbonCure = inject CO₂ into concrete → mineralizes permanently → reduces cement needed + sequesters carbon 2026 Climate Tech Company of the Yea...
+  การผลิตซีเมนต์คิดเป็น 8% ของการปล่อย CO₂ ทั่วโลก CarbonCure ใช้การฉีด CO₂ ลงในคอนกรีตให้เปลี่ยนเป็นแร่ถาวร เพื่อกักเก็บคาร์บอนและลดปริมาณซีเมนต์ที่ต้องใช้ โดยได้รับการกล่าวถึงในฐานะบริษัทเทคโนโลยีภูมิอากาศในปี 2026
   [Source](https://www.carboncure.com/)
 
 - 🔮 **Cold Atom Gravity Sensor** *(16 May 2026)*
-  Cold atom gravity sensor = อะตอมเย็นวัดแรงโน้มถ่วง → สแกนใต้ดิน NASA: first space-based quantum gravity sensor to map Earth's hidden shifts PMC: portable atom interferometry gravit...
+  เซ็นเซอร์แรงโน้มถ่วงแบบอะตอมเย็นใช้ atom interferometry เพื่อตรวจความเปลี่ยนแปลงใต้พื้นดิน มีทั้งแนวทางพัฒนาอุปกรณ์แบบพกพาและโครงการเซ็นเซอร์ควอนตัมในอวกาศของ NASA
 
 - 🌡️ **Cold Plasma Agriculture — Seed Treatment Revolution** *(16 May 2026)*
-  Cold plasma agriculture = พลาสมาเย็นรักษาเมล็ดพันธุ์ → เพิ่มงอก + ต้านโรค Nature: boosts germination + growth of various crops MDPI: physicochemical changes without thermal damage ...
+  ใช้พลาสมาเย็นปรับสภาพเมล็ดพันธุ์เพื่อเพิ่มการงอก การเติบโต และความต้านทานโรค โดยเปลี่ยนสมบัติทางกายภาพและเคมีโดยไม่ทำให้เมล็ดเสียหายจากความร้อน
   [Source](https://www.nature.com/articles/s41598-023-28811-w)
 
 - 🖨️ **Cold Spray Additive Manufacturing — Supersonic Metal Repair** *(16 May 2026)*
-  Cold spray = พ่น ผงโลหะความเร็วเหนือเสียง (Mach 1-3) → เชื่อมติดผิวโลหะ ไม่ต้องหลอม SPEE3D: world's fastest metal parts PMC: repair helicopter parts, ประหยัด 35-50% PNNL: supersoni...
+  Cold spray พ่นผงโลหะด้วยความเร็วเหนือเสียง (Mach 1–3) ให้ยึดติดกับผิวโดยไม่ต้องหลอมวัสดุ มีการใช้ซ่อมชิ้นส่วนเฮลิคอปเตอร์และรายงานว่าประหยัดต้นทุนได้ 35–50% รวมถึงงานของ SPEE3D และ PNNL
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC11595822/)
 
 - ⚡ **Compact Nuclear Fusion — Commercial Timeline 2026+** *(16 May 2026)*
-  Nuclear fusion = พลังงานเดียวกับดวงอาทิตย์ → สะอาด, ไม่จำกัด, ไม่มีกัมมันตรังสี ปี 2025-2026 private companies ก้าวกระโดด: Commonwealth Fusion (SPARC tokamak, DOE validated magnets...
+  นิวเคลียร์ฟิวชันเป็นกระบวนการเดียวกับที่ให้พลังงานแก่ดวงอาทิตย์ ในปี 2025–2026 บริษัทเอกชนพัฒนาเทคโนโลยีนี้เพื่อผลิตพลังงานสะอาด เช่น เครื่องโทคาแมก SPARC ของ Commonwealth Fusion Systems และงานแม่เหล็กที่ผ่านการตรวจสอบโดย DOE
   [Source](https://cfs.energy/technology/sparc/)
 
 - 🔋 **Compressed Air Energy Storage (CAES) — Underground Grid Battery** *(16 May 2026)*
-  CAES = อัดอากาศเก็บใต้ดินตอนไฟเกิน → ปล่อยผลิตไฟฟ้าตอนไฟขาด China: world's largest CAES — Yingcheng City, Hubei, 2 underground salt caverns China 2025: 4.2 GWh long-duration projec...
+  CAES กักเก็บพลังงานโดยอัดอากาศลงใต้ดินเมื่อมีไฟฟ้าส่วนเกิน แล้วปล่อยออกมาผลิตไฟฟ้าเมื่อมีความต้องการ จีนมีโครงการที่ใช้โพรงเกลือใต้ดิน 2 แห่งในเมือง Yingcheng มณฑล Hubei และมีรายงานโครงการกักเก็บพลังงาน 4.2 GWh ในปี 2025
   [Source](https://www.ess-news.com/2025/01/10/worlds-largest-compressed-air-energy-storage-facility-commences-full-operation-in-china/)
 
 - 🔋 **Cryogenic Liquid Air Energy Storage (LAES) — Grid Storage Without Lithium** *(16 May 2026)*
-  LAES = สะสมพลังงานด้วยการ แปลงอากาศเป็นของเหลว (-196°C) → ปล่อยออก → ขยายตัว → หมุนกังหัน → ไฟฟ้า Highview Power: world's first grid-scale LAES plant ใน UK ไม่ใช้ lithium, ไม่ใช้คอ...
+  LAES กักเก็บพลังงานด้วยการทำให้อากาศเป็นของเหลวที่ -196°C เมื่อต้องการใช้พลังงานจึงปล่อยให้อากาศขยายตัวเพื่อหมุนกังหันผลิตไฟฟ้า Highview Power พัฒนาโรงงานระดับโครงข่ายไฟฟ้าในสหราชอาณาจักรโดยไม่ใช้ลิเทียม
   [Source](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/energy-storage-innovation-powers-highview-scale-up/)
 
 - 🥩 **Cultured Meat Scale-Up — Lab-Grown Meat Goes Commercial** *(16 May 2026)*
-  Cultured meat = เนื้อสัตว์ที่เพาะจากเซลล์ใน lab → ไม่ต้องฆ่าสัตว์ ราคาลดจาก $437,000/kg (2013) → $1.95/kg (optimized system) 2026: pilot-to-pre-commercial scale-up หลายบริษัท BSF E...
+  เนื้อสัตว์เพาะเลี้ยงผลิตจากเซลล์ในห้องแล็บเพื่อลดการฆ่าสัตว์ มีการเปรียบเทียบต้นทุน $437,000/kg ในปี 2013 กับ $1.95/kg ในระบบที่ปรับให้เหมาะสม โดยหลายบริษัทอยู่ระหว่างขยายจากโรงงานนำร่องสู่ระดับก่อนเชิงพาณิชย์ในปี 2026
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12241508/)
 
 - 🤖 **DNA Origami Nanorobots — Molecular-Scale Drug Delivery** *(16 May 2026)*
-  DNA origami = พับ DNA เป็นรูปทรงต่างๆ → สร้าง nanorobot ขนาดโมเลกุล University of Sydney: programmable modular nanostructures สำหรับ drug delivery + nanorobotics PMC: logic-gated n...
+  DNA origami ใช้การพับ DNA เป็นโครงสร้างระดับโมเลกุล University of Sydney พัฒนาโครงสร้างนาโนแบบโมดูลที่กำหนดการทำงานได้ เพื่อใช้กับการส่งยาและหุ่นยนต์นาโน
   [Source](https://www.drugtargetreview.com/news/154442/new-dna-nanostructures-set-to-transform-cancer-treatment/)
 
 - 🧬 **🔬 DEEP RESEARCH: DNA Data Storage** *(16 May 2026)*
-  DNA Data Storage คือเทคโนโลยีเก็บข้อมูล digital ในโมเลกุล DNA — มีความหนาแน่นทฤษฎี 455 exabytes/gram (ข้อมูลทั้งโลกในถ้วยชา) อยู่ได้หลายพันปี ไม่ต้องใช้ไฟเมื่อไม่อ่าน ปี 2025-2026 ...
+  DNA Data Storage เก็บข้อมูลดิจิทัลไว้ในโมเลกุล DNA มีความหนาแน่นเชิงทฤษฎี 455 exabytes/gram และอาจเก็บได้นานหลายพันปีโดยไม่ใช้ไฟฟ้าระหว่างเก็บ มีการทบทวนความก้าวหน้าของเทคโนโลยีในช่วงปี 2025–2026
   [Source](https://www.snia.org/sites/default/files/DNA/SNIA-DNA-Data-Storage-Technology-Review-v1.0.pdf)
 
 - 🔋 **Deep Sea Polymetallic Nodule Mining — Ocean Floor Battery Metals** *(16 May 2026)*
-  Deep sea nodule mining = ขุดแร่จากก้นทะเล → Ni + Co + Cu + Mn สำหรับแบตเตอรี่ Farmonaut 2026: seabed nodules rich in nickel, cobalt, copper, manganese Blue Climate: next-gen EV bat...
+  การทำเหมืองก้อนแร่ใต้ทะเลลึกมุ่งนำ Ni, Co, Cu และ Mn มาใช้ผลิตแบตเตอรี่ บทความของ Farmonaut ปี 2026 กล่าวถึงโลหะเหล่านี้ในก้อนแร่บนพื้นมหาสมุทร
   [Source](https://farmonaut.com/mining/polymetallic-nodules-unlocking-critical-metals-for-2026)
 
 - ⚡ **Dielectric Elastomer Actuator — Soft Robot Muscle** *(16 May 2026)*
-  Dielectric elastomer actuator (DEA) = กล้ามเนื้อเทียมยืดหดได้ สำหรับ soft robot Nature npj 2026: recent progress in DEA + fluid actuators PMC: DEA = large deformation, fast respons...
+  Dielectric elastomer actuator (DEA) เป็นกล้ามเนื้อเทียมที่ยืดหดได้สำหรับหุ่นยนต์เนื้อนิ่ม งานทบทวนในปี 2026 กล่าวถึง DEA และอุปกรณ์ขับเคลื่อนด้วยของไหล โดยเน้นการเปลี่ยนรูปได้มากและตอบสนองเร็ว
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12651945/)
 
 - 🌍 **Digital Twin Earth — AI Climate Simulation** *(16 May 2026)*
-  Digital Twin Earth = จำลองโลกทั้งใบด้วย AI + supercomputer → ทำนายอากาศ, ภัยพิบัติ, การเปลี่ยนแปลงสภาพภูมิอากาศ แม่นยำกว่าเดิม 100x Nvidia Earth-2 + EU Destination Earth นำหน้า ทำน...
+  Digital Twin Earth ใช้ AI และซูเปอร์คอมพิวเตอร์จำลองโลก เพื่อพยากรณ์อากาศ ภัยพิบัติ และการเปลี่ยนแปลงสภาพภูมิอากาศ โดยอ้างความแม่นยำเพิ่มขึ้น 100 เท่า ตัวอย่างโครงการคือ Nvidia Earth-2 และ Destination Earth ของสหภาพยุโรป
   [Source](https://www.nvidia.com/en-us/high-performance-computing/earth-2/)
 
 - 🔬 **Digital Twin Human Body — Your Virtual Self for Medicine** *(16 May 2026)*
-  Digital twin human = สร้าง "ตัวเองเสมือน" จากข้อมูลทางการแพทย์ทั้งหมด → simulate การรักษาก่อนทำจริง ใช้ genomics, proteomics, imaging, wearables → โมเดลทำนายผลยา, ผลผ่าตัด, ความเสี...
+  Digital twin ของมนุษย์เป็นแบบจำลองบุคคลที่สร้างจากข้อมูลพันธุกรรม โปรตีน ภาพทางการแพทย์ และอุปกรณ์สวมใส่ เพื่อจำลองผลของยาและการผ่าตัดก่อนรักษาจริง
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12950698/)
 
 - 🏗️ **Dynamic Wireless EV Charging — Drive & Charge** *(16 May 2026)*
-  Dynamic wireless EV charging = ชาร์จรถไฟฟ้าขณะขับ → ไม่ต้องหยุดจอด Purdue/INDOT: first US highway segment charges heavy truck wirelessly Kent Shield: Electreon invisible coil insta...
+  การชาร์จรถยนต์ไฟฟ้าแบบไร้สายขณะวิ่งช่วยให้รับพลังงานได้โดยไม่ต้องจอด Purdue และ INDOT สาธิตการชาร์จรถบรรทุกไฟฟ้าขณะวิ่งบนถนน ส่วน Electreon ใช้ขดลวดที่ติดตั้งใต้พื้นถนน
   [Source](https://www.purdue.edu/newsroom/2025/Q4/first-highway-segment-in-u-s-wirelessly-charges-electric-heavy-duty-truck-while-driving/)
 
 - 🔋 **Edge AI NPU Chip** *(16 May 2026)*
-  Edge AI NPU = ชิป AI บนอุปกรณ์ → inference ไม่ต้องส่ง cloud AIMultiple: Hailo-8 26 TOPS at 2.5-3W, SiMa.ai MLSoC sub-5W for computer vision ASAP Studio: Apple Neural Engine, Qualco...
+  Edge AI NPU เป็นชิปประมวลผล AI บนอุปกรณ์โดยไม่ต้องส่งข้อมูลไปยังคลาวด์ ตัวอย่างคือ Hailo-8 ที่ให้ 26 TOPS โดยใช้กำลัง 2.5–3 W และ SiMa.ai MLSoC ที่ใช้ต่ำกว่า 5 W สำหรับงาน computer vision รวมถึง Apple Neural Engine
 
 - ❄️ **Electrocaloric Solid-State Cooling — Voltage Chills** *(16 May 2026)*
-  Electrocaloric cooling = ไฟฟ้าทำความเย็น ไม่มี compressor Wiley 2026: lead-free ceramic ferroelectrics in MLCCs enhance EC cooling Science: EC coolers highly efficient, solid-state...
+  การทำความเย็นแบบ electrocaloric ใช้สนามไฟฟ้าเปลี่ยนอุณหภูมิของวัสดุโดยไม่ใช้คอมเพรสเซอร์ งานในปี 2026 ศึกษาเซรามิกเฟอร์โรอิเล็กทริกไร้สารตะกั่วในตัวเก็บประจุหลายชั้น (MLCC)
   [Source](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202506625)
 
 - ❄️ **Electrocaloric Solid-State Refrigeration — No Gas, No Compressor** *(16 May 2026)*
-  Electrocaloric cooling = solid-state refrigerator ใช้ electric field แทน gas compressor Science: flexible EC polymer film + electrostatic actuation = high efficiency Wiley 2026: so...
+  ระบบทำความเย็นแบบ electrocaloric ใช้สนามไฟฟ้าแทนการอัดก๊าซ งานใน Science ศึกษาฟิล์มพอลิเมอร์ยืดหยุ่นร่วมกับการขับเคลื่อนด้วยไฟฟ้าสถิต และมีงานพัฒนาต่อในปี 2026
   [Source](https://www.science.org/doi/10.1126/science.aba2648)
 
 - ⚡ **Electrochromic Smart Window — Dynamic Glass Tint** *(16 May 2026)*
-  Electrochromic window = กระจกเปลี่ยนสีเอง ด้วยไฟฟ้าเล็กน้อย Nature: 10,000+ cycles, 40×40cm large area SageGlass: 60% → 1% light transmission Window Gurus: 20-30% energy savings Wi...
+  กระจก electrochromic ปรับการส่งผ่านแสงด้วยไฟฟ้าเพียงเล็กน้อย งานใน Nature รายงานการทำงานมากกว่า 10,000 รอบบนพื้นที่ 40×40 cm ส่วน SageGlass ปรับแสงผ่านจาก 60% เหลือ 1% และมีรายงานการประหยัดพลังงาน 20–30%
   [Source](https://www.nature.com/articles/s41467-024-50542-3)
 
 - ⛽ **Electrofuel — Synthetic Carbon-Neutral Aviation Fuel** *(16 May 2026)*
-  Electrofuel (e-fuel) = เชื้อเพลิงสังเคราะห์จาก CO₂ + H₂ → carbon-neutral Intelligent Living: 12 major e-fuel breakthroughs from 2025 scaling to 2026 PMC: Nordic Electrofuel 10M lit...
+  Electrofuel หรือ e-fuel เป็นเชื้อเพลิงสังเคราะห์จาก CO₂ และ H₂ ที่มุ่งให้มีการปล่อยคาร์บอนสุทธิเป็นศูนย์ บทความทบทวน 12 ความก้าวหน้าในปี 2025 ที่กำลังขยายการผลิตในปี 2026 และกล่าวถึง Nordic Electrofuel ที่ระดับ 10 ล้านลิตร
   [Source](https://www.intelligentliving.co/2025-e-fuel-synthetic-fuel-2026/)
 
 - 🌍 **Enhanced Rock Weathering / Carbfix — CO₂ → Stone** *(16 May 2026)*
-  Enhanced rock weathering = CO₂ + หินบะซอลต์ → หินก้อนใหม่ (carbonate) = permanent storage Carbfix (Iceland): >95% mineralized within 2 years MIT Climate: basalt turns CO₂ into ston...
+  การเร่งการผุพังของหินช่วยให้ CO₂ ทำปฏิกิริยากับแร่ในหินบะซอลต์และกลายเป็นคาร์บอเนตเพื่อเก็บอย่างถาวร โครงการ Carbfix ในไอซ์แลนด์รายงานว่า CO₂ มากกว่า 95% เปลี่ยนเป็นแร่ภายใน 2 ปี
   [Source](https://www.regreener.earth/blog/the-5-best-enhanced-rock-weathering-carbon-credit-projects-of-2026)
 
 - 🧬 **Epigenetic Reprogramming — Reverse Aging** *(16 May 2026)*
-  Epigenetic reprogramming = รีเซ็ต "clock" ของเซลล์โดยใช้ Yamanaka factors (4 proteins) — ทำให้เซลล์กลับสู่สถานะหนุ่มสาว ไม่ใช่ sci-fi แล้ว Altos Labs ($3B Jeff Bezos) ศึกษา mechani...
+  Epigenetic reprogramming ใช้ Yamanaka factors ซึ่งเป็นโปรตีน 4 ชนิด เพื่อปรับสถานะของเซลล์ให้มีลักษณะอ่อนวัยขึ้น Altos Labs ซึ่งเกี่ยวข้องกับการลงทุน $3B ของ Jeff Bezos ศึกษากลไกของกระบวนการนี้
   [Source](https://www.scientificamerican.com/article/this-method-to-reverse-cellular-aging-is-about-to-be-tested-in-humans/)
 
 - 💾 **Ferroelectric Memory (DRAM+) — Non-Volatile DRAM Revolution** *(16 May 2026)*
-  Ferroelectric RAM (FeRAM/DRAM+) = DRAM ที่ ไม่สูญหายเมื่อไฟดับ — ใช้ HfO₂ ferroelectric material แทน traditional capacitor ผสมความเร็ว DRAM + ความคงทนของ SSD FMC (Ferroelectric Mem...
+  Ferroelectric RAM (FeRAM/DRAM+) ใช้วัสดุเฟอร์โรอิเล็กทริก HfO₂ แทนตัวเก็บประจุแบบเดิม เพื่อรวมความเร็วแบบ DRAM กับการเก็บข้อมูลเมื่อปิดไฟแบบ SSD โดยมีการพัฒนาจาก FMC
   [Source](https://www.tomshardware.com/pc-components/dram/dram-memory-designed-to-provide-dram-performance-with-ssd-like-storage-capabilities-uses-feram-tech)
 
 - 💾 **Ferroelectric RAM — Non-Volatile Memory Revolution** *(16 May 2026)*
-  Ferroelectric RAM (FeRAM) = หน่วยความจำไม่สูญหาย ที่เร็ว + ประหยัดพลังงาน Infineon: PZT thin film, power-efficient binary switch retains state without power Wikipedia 2024-2025: Hf...
+  Ferroelectric RAM (FeRAM) เป็นหน่วยความจำที่เก็บข้อมูลได้เมื่อปิดไฟและใช้พลังงานต่ำ Infineon ใช้ฟิล์มบาง PZT เป็นสวิตช์ที่คงสถานะได้โดยไม่จ่ายไฟ และมีการกล่าวถึงวัสดุ Hf ในงานช่วงปี 2024–2025
   [Source](https://www.infineon.com/products/memories/f-ram-ferroelectric-ram)
 
 - ⚡ **Fiber Laser Directed Energy Weapon** *(16 May 2026)*
-  Fiber laser weapon = เลเซอร์กำจัดโดรน → ถูกกว่ามิสไซล์ 1000x NextGen Defense: Taiwan 8-kW fiber laser, 7 laser systems that defined 2025 Army Recognition: Pentagon deploys laser + ...
+  อาวุธเลเซอร์ใยแก้วใช้รับมือโดรน โดยอ้างต้นทุนต่ำกว่ามิสไซล์ 1000 เท่า ตัวอย่างคือระบบ 8 kW ของไต้หวัน และบทความทบทวนระบบเลเซอร์ 7 ระบบในปี 2025
 
 - 🧠 **Focused Ultrasound Neuromodulation — Brain Therapy Without Surgery** *(16 May 2026)*
-  Focused ultrasound neuromodulation = คลื่นเสียงรักษาสมอง ไม่ต้องผ่าตัด GBHI: low-intensity fTUS treats chronic pain, depression, cognitive decline PMC: deep brain stimulation + foc...
+  Focused ultrasound neuromodulation ใช้อัลตราซาวนด์ความเข้มต่ำกระตุ้นสมองจากภายนอกกะโหลก มีการศึกษาเพื่อรักษาอาการปวดเรื้อรัง โรคซึมเศร้า และภาวะการรู้คิดถดถอย
   [Source](https://www.gbhi.org/news-publications/focused-transcranial-ultrasound-stimulation-breakthrough-approach-treating-brain)
 
 - ⚡ **Fungal/Mushroom Computing — Living Biodegradable Computers** *(16 May 2026)*
-  Fungal computing = ใช้เส้นใยเห็ด (mycelium) เป็นคอมพิวเตอร์ ScienceDaily: living computers powered by mushrooms Popular Science: first lab to develop fungal computing + fungal elec...
+  Fungal computing ศึกษาการใช้เส้นใยเชื้อรา (mycelium) เป็นส่วนประกอบของระบบคอมพิวเตอร์ชีวภาพและอุปกรณ์อิเล็กทรอนิกส์ที่ย่อยสลายได้
   [Source](https://scitechdaily.com/scientists-create-living-computers-powered-by-mushrooms/)
 
 - 🔮 **Google Quantum Echoes — First Verifiable Quantum Advantage** *(16 May 2026)*
-  Google Quantum AI ใช้ Willow chip (105 qubits) รัน Quantum Echoes algorithm (OTOC) — เร็วกว่า supercomputer 13,000x พิสูจน์ได้ (verifiable) เป็นครั้งแรกในประวัติศาสตร์ที่ quantum c...
+  Google Quantum AI ใช้ชิป Willow ขนาด 105 qubits รันอัลกอริทึม Quantum Echoes (OTOC) โดยรายงานว่าเร็วกว่าเครื่องซูเปอร์คอมพิวเตอร์ 13,000 เท่าและสามารถตรวจสอบผลได้
   [Source](https://blog.google/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/)
 
 - 🔋 **Graphene — Commercial Revolution 2026** *(16 May 2026)*
-  Graphene = วัสดุบางที่สุด แข็งแกร่งที่สุด นำไฟฟ้าดีที่สุด — แต่ติดอยู่ที่ "แพง + ผลิตยาก" มา 20 ปี 2025-2026: CVD graphene ราคาตก 73% ($45 → $12/m²), roll-to-roll manufacturing, gr...
+  กราฟีนมีความบาง แข็งแรง และนำไฟฟ้าได้ดี แต่การผลิตมีต้นทุนสูงมานาน 20 ปี ในช่วงปี 2025–2026 มีรายงานว่าราคากราฟีน CVD ลดลง 73% จาก $45 เป็น $12/m² พร้อมการพัฒนากระบวนการผลิตแบบ roll-to-roll
   [Source](https://graphenemg.com/gmg-unveils-graphene-aluminium-ion-battery-that-fully-charges-in-6-minutes/)
 
 - 🔷 **Graphene Oxide Membrane — Atom-Thin Water Filtration** *(16 May 2026)*
-  Graphene oxide membrane = ฟอยล์บางขนาด atom ที่ กรองเกลือออกจากน้ำทะเล Nature Scientific Reports 2026: cation-recognition + size-sieving mechanisms Nature npj 2D Materials: ~60% Na...
+  เมมเบรนกราฟีนออกไซด์เป็นแผ่นบางระดับอะตอมสำหรับกรองเกลือออกจากน้ำทะเล งานใน Scientific Reports ปี 2026 ศึกษากลไกจำแนกไอออนบวกและการคัดตามขนาด
   [Source](https://www.nature.com/articles/s41598-026-41327-3)
 
 - 🔮 **Graphene–Quantum Dot Broadband Photodetector** *(16 May 2026)*
-  Graphene + QD photodetector = ตรวจจับแสง UV→IR ด้วยกราฟีน+QD MDPI: broadband flexible QD/graphene photodetectors Graphenea: GFET-QD on 200-mm wafer platform, 96% yield, 10⁵-10⁶ V/W...
+  ตัวตรวจจับแสงที่ผสานกราฟีนกับ quantum dot ตรวจแสงได้ตั้งแต่อัลตราไวโอเลตถึงอินฟราเรด และทำเป็นอุปกรณ์ยืดหยุ่นได้ Graphenea กล่าวถึง GFET-QD บนเวเฟอร์ 200 มิลลิเมตรที่มีอัตราผลิตสำเร็จ 96% และค่าตอบสนอง 10⁵–10⁶ V/W
   [Source](https://www.mdpi.com/2072-666X/17/1/121)
 
 - 🔷 **Graphene Semiconductor — Computing Beyond Silicon** *(16 May 2026)*
-  Graphene semiconductor = chip ที่ใช้ graphene แทน silicon → 10x electron mobility → Terahertz (THz) computing Georgia Tech: สร้าง first functional graphene semiconductor ที่ bandga...
+  สารกึ่งตัวนำกราฟีนเป็นแนวทางพัฒนาชิปที่อิเล็กตรอนเคลื่อนที่ได้คล่องกว่าซิลิคอน 10 เท่า เพื่อรองรับการประมวลผลระดับเทราเฮิรตซ์ Georgia Tech รายงานการสร้างสารกึ่งตัวนำกราฟีนที่ใช้งานได้
   [Source](https://markets.financialcontent.com/wral/article/tokenring-2026-1-8-beyond-silicon-georgia-techs-graphene-breakthrough-ignites-a-new-era-of-terahertz-computing)
 
 - ⛽ **Green Hydrogen Steel (HYBRIT) — Zero-Carbon Steelmaking** *(16 May 2026)*
-  Steel production = 7-9% of global CO₂ emissions เพราะใช้ coal เป็นตัวรีดิวซ์เหล็ก HYBRIT (SSAB + LKAB + Vattenfall) เปลี่ยน coal → hydrogen → emission = water (H₂O) แทน CO₂ SSAB de...
+  อุตสาหกรรมเหล็กปล่อย CO₂ คิดเป็น 7–9% ของทั้งโลก ส่วนหนึ่งมาจากการใช้ถ่านหินรีดิวซ์แร่เหล็ก โครงการ HYBRIT ของ SSAB, LKAB และ Vattenfall ใช้ไฮโดรเจนแทนถ่านหิน เพื่อให้ได้ไอน้ำแทน CO₂ จากขั้นตอนนี้
   [Source](https://www.ssab.com/en-us/fossil-free-steel/insights/hybrit-a-new-revolutionary-steelmaking-technology)
 
 - 🛰️ **HAPS — Stratospheric Internet (Stronger Than Starlink)** *(16 May 2026)*
-  HAPS = High Altitude Platform Station = อินเทอร์เน็ตจากชั้นบรรยากาศ 20km (ไม่ใช่ดาวเทียม) MIT Tech Review 2026: stratospheric internet taking off Sceye: 65m airship, 5 months aloft...
+  HAPS (High Altitude Platform Station) ให้บริการอินเทอร์เน็ตจากระดับความสูงประมาณ 20 กิโลเมตรในชั้นบรรยากาศ งานที่กล่าวถึงในปี 2026 รวมถึงเรือเหาะ Sceye ยาว 65 เมตรที่ระบุว่าลอยอยู่ได้นาน 5 เดือน
   [Source](https://www.technologyreview.com/2026/01/27/1131780/stratospheric-internet-take-off/)
 
 - ☀️ **Helium-3 Lunar Mining — Fusion Fuel from the Moon** *(16 May 2026)*
-  Helium-3 lunar mining = ขุด He-3 จากผิวดวงจันทร์ → เชื้อเพลิง fusion สะอาด ESA: Moon bombarded with He-3 by solar wind for billions of years Science Array: Magna Petra captures fre...
+  การทำเหมืองฮีเลียม-3 บนดวงจันทร์มุ่งนำ He-3 มาใช้เป็นเชื้อเพลิงฟิวชัน ESA อธิบายว่าลมสุริยะนำฮีเลียม-3 มาสะสมบนผิวดวงจันทร์เป็นเวลาหลายพันล้านปี
   [Source](https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Space_for_Earth/Energy/Helium-3-mining-on-the-lunar-surface)
 
 - 🤖 **Humanoid Home Robots 2026** *(16 May 2026)*
-  2026 = ปีแรกที่ humanoid robots เข้าบ้านจริง 1X NEO ($20,000) ship หุ่นยนต์ในบ้านตัวแรก Tesla Optimus Gen 3 เริ่ม mass production Figure 03 pilot ที่ BMW Unitree G1 ($16,000) comme...
+  ในปี 2026 มีการผลักดันหุ่นยนต์รูปร่างมนุษย์สู่การใช้งานจริง เช่น 1X NEO ราคา $20,000 สำหรับบ้าน Tesla Optimus Gen 3 ที่เริ่มผลิตจำนวนมาก Figure 03 ที่ทดลองใช้กับ BMW และ Unitree G1 ราคา $16,000
   [Source](https://www.1x.tech/discover/neo-home-robot)
 
 - ⛽ **Hydrogen-Boron Fusion (HB11) — Aneutronic Clean Energy** *(16 May 2026)*
-  HB11 Energy = hydrogen + boron fusion → aneutronic (ไม่มี neutron รังสี) → ไม่มี radioactive waste Springer Nature: laser-Boron power plant, fuel pellet ขนาดถั่วผลิตไฟฟ้า New Atlas...
+  HB11 Energy พัฒนาฟิวชันระหว่างไฮโดรเจนกับโบรอนแบบ aneutronic เพื่อมุ่งลดการเกิดนิวตรอนและของเสียกัมมันตรังสี งานที่อ้างถึงศึกษาโรงไฟฟ้าที่ใช้เลเซอร์และเม็ดเชื้อเพลิงขนาดเล็ก
   [Source](https://link.springer.com/article/10.1007/s10894-023-00349-9)
 
 - 🤖 **Insect-Scale Micro Drones — RoboBees** *(16 May 2026)*
-  Insect-scale drones = หุ่นยนต์ขนาดแมลง บินเหมือนผึ้ง MIT: microrobot บินเร็ว + คล่องแคล่วเท่า bumblebee, 17 นาทีบิน Wyss Institute: RoboBee ขนาด ครึ่ง paper clip, <0.1g, ปีกตี 120 ...
+  หุ่นยนต์บินขนาดแมลงเลียนแบบการเคลื่อนที่ของผึ้ง MIT รายงานหุ่นยนต์ที่บินได้นาน 17 นาที ส่วน RoboBee ของ Wyss Institute มีขนาดประมาณครึ่งคลิปหนีบกระดาษและน้ำหนักต่ำกว่า 0.1 กรัม
   [Source](https://news.mit.edu/2025/mit-engineers-design-aerial-microrobot-fly-like-bumblebee-1203)
 
 - 🔋 **Ionic Liquid Electrolyte — Non-Flammable Battery** *(16 May 2026)*
-  Ionic liquid electrolyte = ของเหลวที่ไม่ไหม้ สำหรับแบตเตอรี่ Nature: safe sodium metal battery with non-flammable IL electrolyte ScienceDirect: single-anion IL suppresses Na dendri...
+  อิเล็กโทรไลต์ชนิด ionic liquid เป็นของเหลวที่ไม่ติดไฟ มีการศึกษาใช้กับแบตเตอรี่โลหะโซเดียมเพื่อเพิ่มความปลอดภัยและยับยั้งการเกิดเดนไดรต์
   [Source](https://www.nature.com/articles/s41467-019-11102-2)
 
 - 🔋 **LFP Battery — Cobalt-Free EV Revolution** *(16 May 2026)*
-  LFP (Lithium Iron Phosphate) = แบตเตอรี่ LiFePO₄ → ไม่ต้องโคบอลต์ InsideEVs: Chevy Bolt uses cheap LFP → many US EVs follow EVLithium: LFP 30% cheaper per kWh vs NMC, cycle life 30...
+  แบตเตอรี่ Lithium Iron Phosphate (LFP) ใช้ LiFePO₄ โดยไม่ต้องใช้โคบอลต์ Chevy Bolt เป็นตัวอย่างรถที่ใช้ LFP และมีการประเมินว่าต้นทุนต่อ kWh ต่ำกว่า NMC 30%
   [Source](https://insideevs.com/features/771965/evs-with-lfp-batteries-america/)
 
 - ☀️ **Laser Wireless Power Transfer — Beaming Electricity Through Air** *(16 May 2026)*
-  Laser power beaming = ส่งไฟฟ้าผ่านอากาศ/อวกาศด้วย เลเซอร์ → ไม่ต้องมีสาย StarCatcher: 1.1 kW laser wirelessly to solar panels (NASA Kennedy, Nov 2025) = record power → space-to-gro...
+  การส่งพลังงานด้วยเลเซอร์ใช้ลำแสงแทนสายไฟ StarCatcher สาธิตการส่งพลังงาน 1.1 kW ไปยังแผงโซลาร์เซลล์แบบไร้สายที่ NASA Kennedy ในเดือนพฤศจิกายน 2025
   [Source](https://interestingengineering.com/space/space-laser-to-beam-electricity-to-earth)
 
 - 💡 **LiFi — Internet Through Light** *(16 May 2026)*
-  LiFi = ส่งข้อมูลผ่านแสง (LED light) แทน radio wave — เร็วกว่า WiFi 100x, ปลอดภัยกว่า (ไม่穿透กำแพง), ไม่มี interference pureLiFi เปิดตัว 10 Gbps ที่ MWC 2026 Signify Trulifi deploy ใ...
+  LiFi ส่งข้อมูลผ่านแสง LED แทนคลื่นวิทยุ โดยอ้างความเร็วสูงกว่า WiFi 100 เท่า แสงไม่ทะลุกำแพงจึงช่วยจำกัดพื้นที่รับสัญญาณ pureLiFi เปิดตัวระบบ 10 Gbps ที่ MWC 2026 และ Signify พัฒนาระบบ Trulifi
   [Source](https://www.purelifi.com/mwc-2026/)
 
 - 🔬 **Liquid Metal Flexible Electronics — EGaIn Circuits** *(16 May 2026)*
-  Liquid metal flexible electronics = โลหะเหลวยืดได้ → วงจรบนผิวหนัง/หุ่นยนต์ ScienceDirect/Cell: LM-embedded elastomer prevents freezing at -84.1°C Science Advances: high-resolution...
+  วงจรยืดหยุ่นที่ใช้โลหะเหลวสามารถติดบนผิวหนังหรือหุ่นยนต์ได้ งานใน Device ศึกษาอีลาสโตเมอร์ที่ฝังโลหะเหลวและป้องกันการแข็งตัวได้ถึง -84.1°C
   [Source](https://www.cell.com/device/fulltext/S2666-9986-24)
 
 - 🤖 **Liquid Metal Robots — Shape-Shifting Machines** *(16 May 2026)*
-  Liquid metal robots = หุ่นยนต์จาก gallium alloy (หลอมละลาย ~30°C) → เปลี่ยนจาก solid → liquid → solid ได้ ผ่าน magnetic field Carnegie Mellon: EGaIn (indium-gallium) shape-shifting...
+  หุ่นยนต์โลหะเหลวใช้โลหะผสมแกลเลียมที่หลอมละลายราว 30°C และควบคุมการเปลี่ยนสถานะด้วยสนามแม่เหล็ก มีตัวอย่างงานวัสดุเปลี่ยนรูป EGaIn ซึ่งเป็นโลหะผสมอินเดียม–แกลเลียมจาก Carnegie Mellon
   [Source](https://interestingengineering.com/innovation/scientists-have-created-shape-shifting-liquid-metal-that-can-be-programmed)
 
 - ⛽ **Liquid Organic Hydrogen Carrier (LOHC) — Hydrogen as Safe Liquid** *(16 May 2026)*
-  LOHC = เก็บไฮโดรเจนในของเหลว ที่อุณหภูมิห้อง + ความดันปกติ ScienceDirect: lossless storage at ambient conditions Springer: safer, scalable, infrastructure-compatible ACS: favorable...
+  Liquid Organic Hydrogen Carrier (LOHC) กักเก็บไฮโดรเจนในสารอินทรีย์เหลวที่อุณหภูมิห้องและความดันปกติ เป็นแนวทางที่มุ่งให้เก็บและขนส่งได้ปลอดภัยขึ้น พร้อมใช้โครงสร้างพื้นฐานเดิม
   [Source](https://www.sciencedirect.com/science/article/pii/S0360319924009789)
 
 - 🔋 **Lithium-Sulfur Battery — 5x Energy Density, No Nickel/Cobalt** *(16 May 2026)*
-  Li-S battery = 5x energy density (2,600 Wh/kg) ไม่ต้องใช้ nickel/cobalt Lyten: 3D graphene™ supermaterials, 60% lower carbon footprint, Chrysler Halcyon concept Nature 2025: solid-...
+  แบตเตอรี่ลิเทียม–กำมะถัน (Li-S) มีความหนาแน่นพลังงานที่ระบุไว้ 2,600 Wh/kg หรือ 5 เท่าของแบตเตอรี่ทั่วไป โดยไม่ใช้ nickel หรือ cobalt Lyten ใช้ 3D graphene™ ในแนวคิด Chrysler Halcyon และระบุรอยเท้าคาร์บอนลดลง 60% พร้อมมีงานพัฒนาต่อในปี 2025
   [Source](https://en.highstar.com/blog/lithium-sulfur-battery-next-generation-energy-storage)
 
 - 🫁 **Liver Organoid-on-Chip** *(16 May 2026)*
-  Liver chip = ตับเทียมบนชิป → ทดสอบยาไม่ต้องใช้คน/สัตว์ PatSnap: liver organoid toxicity screening, lead/mercury/thallium IC50 MDPI: multi-organ-on-chip integration, drug effects + ...
+  Liver organoid-on-chip ใช้เนื้อเยื่อตับจำลองบนชิปเพื่อทดสอบผลของยาและสารพิษ เช่น ตะกั่ว ปรอท และแทลเลียม โดยวัดค่า IC50 และศึกษาการเชื่อมต่อกับแบบจำลองอวัยวะอื่น
 
 - ☀️ **MOF Atmospheric Water Generator — 1,000L/Day from Air** *(16 May 2026)*
-  MOF water harvester = ดักน้ำจากอากาศ ด้วย metal-organic framework Omar Yaghi (Nobel-caliber): Atoco shipping container unit → 1,000 liters/day near-distilled water Science: 2.8L/kg...
+  ระบบเก็บน้ำจากอากาศใช้ Metal-Organic Framework (MOF) เป็นวัสดุดักไอน้ำ Omar Yaghi และ Atoco พัฒนาเครื่องขนาดตู้คอนเทนเนอร์ที่ระบุว่าผลิตน้ำได้ 1,000 ลิตรต่อวัน
   [Source](https://www.foodandwine.com/omar-yaghi-nobel-prize-breakthrough-turns-air-to-drinking-water-11941952)
 
 - 🧬 **MOF Direct Air Capture — Metal-Organic Framework Carbon Sponge** *(16 May 2026)*
-  MOF for direct air capture = โครงสร้างโลหะ-อินทรีย์ดักจับ CO₂ Science: scalable MOF as durable physisorbent for CO₂ capture PatSnap 2026: MOFs offer highest CO₂ capacity (1.0-3.5 m...
+  Metal-Organic Framework (MOF) เป็นวัสดุโครงข่ายโลหะ–อินทรีย์ที่ใช้ดูดซับ CO₂ จากอากาศ งานวิจัยศึกษาความทนทาน การขยายการผลิต และความสามารถในการดักจับ โดยมีบททบทวนในปี 2026
   [Source](https://www.science.org/doi/10.1126/science.abi7281)
 
 - 🔋 **Magnesium Battery Non-Flammable** *(16 May 2026)*
-  Mg battery = แบตแมกนีเซียม → ไม่ติดไฟ + ถูก ESS-News: prototype operates at room temperature, breakthrough Ecoticias: non-flammable, outperforms lithium-ion in safety ESS-News: 202...
+  แบตเตอรี่แมกนีเซียมเป็นแนวทางลดต้นทุนและความเสี่ยงการติดไฟ มีรายงานต้นแบบที่ทำงานได้ที่อุณหภูมิห้อง
 
 - 🔋 **Magnesium Metal Battery — 2x Charge Per Ion** *(16 May 2026)*
-  Magnesium battery = แบตเตอรี่ Mg → 2 ประจุ/ion (Li = 1) → volumetric density สูงกว่า PV Magazine: prototype operates at room temperature breakthrough EV Engineering: more abundant,...
+  ไอออนแมกนีเซียมมีประจุ 2 หน่วย ขณะที่ลิเทียมมี 1 หน่วย จึงเป็นแนวทางเพิ่มความหนาแน่นพลังงานเชิงปริมาตร มีรายงานต้นแบบแบตเตอรี่แมกนีเซียมที่ทำงานได้ที่อุณหภูมิห้อง
   [Source](https://www.pv-magazine.com/2025/10/14/prototype-magnesium-battery-operates-at-room-temperature-in-breakthrough/)
 
 - 🌡️ **Magnetic Nanoparticle Hyperthermia — Heat-Killing Cancer** *(16 May 2026)*
-  Magnetic hyperthermia = ฉีด nanoparticle เหล็ก เข้าเนื้องอก → ใช้ magnetic field สลับ → nanoparticle ร้อน → เนื้องอกตาย Mayo Clinic: first US installation สำหรับ research Frontiers...
+  Magnetic hyperthermia ใช้อนุภาคนาโนเหล็กในเนื้องอกร่วมกับสนามแม่เหล็กสลับ เพื่อสร้างความร้อนทำลายเซลล์มะเร็ง Mayo Clinic ติดตั้งระบบสำหรับงานวิจัยเป็นแห่งแรกในสหรัฐฯ
   [Source](https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-installs-first-magnetic-nanoparticle-hyperthermia-system-for-cancer-research-in-the-us/)
 
 - 🤖 **Magnetotactic Bacteria — Living Medical Microrobots** *(16 May 2026)*
-  Magnetotactic bacteria (MTB) = แบคทีเรียที่ สร้าง magnetosome (เหล็ก) → นำทางด้วยสนามแม่เหล็กโลก ASM 2026: power biomedical innovation — cancer therapy to microrobotics Wiley 2026:...
+  แบคทีเรีย magnetotactic สร้าง magnetosome ที่มีแร่เหล็กและตอบสนองต่อสนามแม่เหล็ก งานในปี 2026 ศึกษาการใช้คุณสมบัตินี้กับการรักษามะเร็งและหุ่นยนต์จิ๋วทางการแพทย์
   [Source](https://asm.org/articles/2026/april/magnetotactic-bacteria-power-biomedical-innovation)
 
 - 🧠 **Mechanistic Interpretability — Reverse Engineering AI** *(16 May 2026)*
-  Mechanistic Interpretability = reverse engineering neural networks เพื่อเข้าใจว่า AI "คิด" ยังไงจริงๆ — Anthropic นำทางด้วย Sparse Autoencoders + Dictionary Learning + Circuit Trac...
+  Mechanistic interpretability ศึกษากลไกภายในโครงข่ายประสาท เพื่ออธิบายว่าโมเดล AI ประมวลผลข้อมูลอย่างไร Anthropic ใช้แนวทางอย่าง sparse autoencoder, dictionary learning และการติดตามวงจรการคำนวณ
   [Source](https://www.technologyreview.com/2026/01/12/1130003/mechanistic-interpretability-ai-research-models-2026-breakthrough-technologies/)
 
 - 🧠 **Memristor — Brain-Inspired Computing Synapse** *(16 May 2026)*
-  Memristor = resistor ที่จำค่าได้ → mimics brain synapse → neuromorphic computing Wiley 2026: 2,048 distinct conductance levels — breakthrough in precision Science: nonvolatile memo...
+  Memristor เป็นตัวต้านทานที่จดจำสถานะได้ ใช้เลียนแบบไซแนปส์ของสมองในการประมวลผลแบบ neuromorphic งานในปี 2026 รายงานค่าความนำไฟฟ้าที่แยกได้ 2,048 ระดับ เพื่อเพิ่มความละเอียดในการทำงาน
   [Source](https://advanced.onlinelibrary.wiley.com/doi/10.1002/aisy.202500806)
 
 - ⚡ **Metal 3D Printing Additive Manufacturing** *(16 May 2026)*
-  Metal additive manufacturing = พิมพ์โลหะ 3D สำหรับชิ้นส่วน critical ORNL: breakthrough controls microscopic grain patterns → stronger nuclear/aerospace parts 3DPrint.com 2026: LPBF...
+  การพิมพ์โลหะสามมิติใช้ผลิตและซ่อมชิ้นส่วนสำคัญ ORNL พัฒนาแนวทางควบคุมโครงสร้างเกรนระดับจุลภาคเพื่อเพิ่มความแข็งแรงของชิ้นส่วนในงานนิวเคลียร์และอากาศยาน พร้อมมีการทบทวนงาน LPBF ในปี 2026
 
 - 💊 **Metal-Organic Frameworks (MOF) — Nobel Prize Materials** *(16 May 2026)*
-  MOF = Metal-Organic Framework = วัสดุพรุนที่มีพื้นที่ผิวมหาศาล (เรียกได้ว่า "พอง" ได้เยอะที่สุดในบรรดาวัสดุ) 1 กรัม = พื้นที่ผิวเท่าฟุตบอลสนาม BASF ผลิต MOF เพื่อ CO₂ capture ระดับ...
+  Metal-Organic Framework (MOF) เป็นวัสดุพรุนที่มีพื้นที่ผิวสูงมาก โดยวัสดุ 1 กรัมอาจมีพื้นที่ผิวเทียบเท่าสนามฟุตบอล BASF นำ MOF ไปพัฒนาการดักจับ CO₂
   [Source](https://www.idtechex.com/en/research-report/metal-organic-frameworks-2025-2035-markets-technologies-and-forecasts/1086)
 
 - 🔲 **Metamaterial Flat Antenna — 50% Smaller, Beam-Steering for 5G/6G** *(16 May 2026)*
-  Metamaterial antenna = เสาอากาศ แบน + เล็ก 50% + beam-steering สำหรับ 5G/6G Nature: ML-optimized metamaterial MIMO antenna สำหรับ 6G GM Insights: market growing, ZTE integrating, 0...
+  สายอากาศแบนจาก metamaterial ควบคุมทิศทางลำคลื่นได้ โดยระบุขนาดลดลง 50% สำหรับงาน 5G/6G มีงานใช้ machine learning ออกแบบสายอากาศ MIMO และการพัฒนาจาก ZTE
   [Source](https://www.nature.com/articles/s41598-025-28978-4)
 
 - 💧 **Microbial Carbon-Negative Concrete — Bacteria Build & Capture CO₂** *(16 May 2026)*
-  Microbial carbon-negative concrete = แบคทีเรียสร้างคอนกรีต + กิน CO₂ MDPI: MICP enhanced macrostructural concrete performance Northwestern 2025: seawater + electricity + CO₂ → carb...
+  ใช้จุลินทรีย์ช่วยสร้างแร่ในคอนกรีตและกักเก็บ CO₂ งาน MICP ศึกษาการเพิ่มสมรรถนะของคอนกรีต ส่วน Northwestern ในปี 2025 ศึกษาการใช้น้ำทะเล ไฟฟ้า และ CO₂ ร่วมกัน
   [Source](https://www.mdpi.com/2071-1050/17/12/5353)
 
 - ☀️ **Microwave Wireless Power Transfer — Space to Earth** *(16 May 2026)*
-  Microwave wireless power from space = ส่งไฟฟ้าจากอวกาศ→โลก ผ่านไมโครเวฟ Caltech: MAPLE demonstrated first wireless power transmission in space 8MSolar: ground + aircraft transmissi...
+  ส่งพลังงานจากอวกาศมายังโลกด้วยไมโครเวฟ โครงการ MAPLE ของ Caltech สาธิตการส่งพลังงานไร้สายในอวกาศ และมีการศึกษาการส่งพลังงานระหว่างภาคพื้นดินกับอากาศยาน
   [Source](https://www.caltech.edu/about/news/in-a-first-caltechs-space-solar-power-demonstrator-wirelessly-transmits-power-in-space)
 
 - 🔋 **Molten Salt Thermal Battery — Cheap Long-Duration Grid Storage** *(16 May 2026)*
-  Molten salt thermal battery = เก็บพลังงานเป็น ความร้อนในเกลือเหลว → ถูกมาก, store ได้เป็นวัน/สัปดาห์ Breakthrough: common materials → solve cost + duration สำหรับ grid storage PatS...
+  ระบบกักเก็บพลังงานด้วยเกลือหลอมเหลวเก็บพลังงานในรูปความร้อนและนำมาใช้ได้นานหลายวันหรือหลายสัปดาห์ โดยมุ่งใช้วัสดุทั่วไปเพื่อลดต้นทุนของระบบกักเก็บพลังงานในโครงข่าย
   [Source](https://news.sustainability-directory.com/energy/molten-salt-battery-breakthrough-unlocks-cheap-long-duration-grid-storage/)
 
 - ☀️ **Molten Sodium CSP — Cheaper Concentrated Solar Power** *(16 May 2026)*
-  Molten sodium CSP = โซเดียมหลอมเหลว แทนเกลือหลอมเหลวเป็น heat transfer fluid ScienceDirect: 16% lower electricity generation costs ScienceDirect: sodium receiver 25% more exergy ou...
+  ระบบ CSP ที่ใช้โซเดียมหลอมเหลวเป็นของไหลถ่ายเทความร้อนแทนเกลือหลอมเหลว มีรายงานต้นทุนผลิตไฟฟ้าลดลง 16% และค่าเอ็กเซอร์จีเพิ่มขึ้น 25%
   [Source](https://www.sciencedirect.com/science/article/abs/pii/S0038092X18309848)
 
 - ⚡ **Multivalent-Ion Batteries — Beyond Lithium** *(16 May 2026)*
-  Multivalent-ion batteries = แบตเตอรี่ที่ใช้ Mg, Zn, Al, Ca แทน Li → 2-3 อิเล็กตรอนต่อ ion (Li ให้ 1) = volumetric energy density สูงกว่า AI (University of Virginia): ค้นพบ 5 porous...
+  แบตเตอรี่หลายวาเลนซ์ใช้ Mg, Zn, Al หรือ Ca ซึ่งถ่ายโอนอิเล็กตรอนได้ 2–3 ตัวต่อไอออน เทียบกับลิเทียมที่ให้ 1 ตัว เพื่อเพิ่มความหนาแน่นพลังงานเชิงปริมาตร University of Virginia ใช้ AI ช่วยค้นหาวัสดุในแนวทางนี้
   [Source](https://www.mdpi.com/2673-3293/6/4/44)
 
 - ♻️ **Mycelium Materials — Mushroom Leather & Beyond** *(16 May 2026)*
-  Mycelium = "ราก" ของเห็ด (fungus roots) → สร้างวัสดุได้ทุกอย่าง: หนัง, โฟมบรรจุภัณฑ์, อิฐ, เฟอร์นิเจอร์ ย่อยสลายได้, ปลูกใน 7 วัน, ไม่ต้องใช้สัตว์ Market: $2.89B by 2026 Hermes, St...
+  Mycelium คือเส้นใยของเชื้อราที่นำมาผลิตวัสดุทดแทนหนัง โฟมบรรจุภัณฑ์ อิฐ และเฟอร์นิเจอร์ได้ วัสดุย่อยสลายได้และระบุว่าเพาะขึ้นได้ใน 7 วัน โดยมีการคาดการณ์ตลาด $2.89B ในปี 2026
   [Source](https://link.springer.com/article/10.1007/s43615-025-00539-x)
 
 - 🧬 **Nanopore Sequencing — Direct RNA + Protein Reading** *(16 May 2026)*
-  Nanopore sequencing = อ่าน RNA/โปรตีนโดยตรง ไม่ต้อง cDNA PMC: ONT long-read direct RNA sequencing — preserves all native modifications PMC: nanopore DRS includes all exons, UTRs, n...
+  Nanopore sequencing อ่าน RNA ได้โดยตรงโดยไม่ต้องแปลงเป็น cDNA จึงรักษาข้อมูลการดัดแปลงโมเลกุลตามธรรมชาติได้ ONT พัฒนาการอ่าน RNA สายยาวที่ครอบคลุม exon และ UTR และมีการศึกษาการอ่านโปรตีนด้วย nanopore
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12893535/)
 
 - 🧠 **Neuralink BCI — Controlling Computers with Thought** *(16 May 2026)*
-  Neuralink = brain-computer interface (BCI) ที่ใส่ในสมอง → ควบคอลคอมพิวเตอร์ด้วย ความคิด 2026: high-volume production begins 1.5 second implant breakthrough ผู้ป่วย paralyzed ควบคุม...
+  Neuralink เป็นระบบเชื่อมต่อสมองกับคอมพิวเตอร์ (BCI) ที่ฝังอุปกรณ์ในสมองเพื่อใช้สัญญาณประสาทควบคุมคอมพิวเตอร์ รายงานปี 2026 กล่าวถึงการผลิตจำนวนมากและขั้นตอนฝังอุปกรณ์ 1.5 วินาทีเพื่อช่วยผู้ป่วยอัมพาต
   [Source](https://wshreport.com/musk-neuralink-vision/)
 
 - 🧠 **Neuromorphic Computing — Brain-Inspired Chips** *(16 May 2026)*
-  Neuromorphic computing = chip ทำงานเหมือนสมอง — spiking neural networks, event-based, ประหยัดไฟ 100-1000x Intel Hala Point (world's largest, Loihi 2), IBM NorthPole, SynSense Speck...
+  Neuromorphic computing ใช้ชิปที่เลียนแบบการส่งสัญญาณของสมอง เช่น spiking neural network และการประมวลผลตามเหตุการณ์ โดยอ้างว่าประหยัดพลังงาน 100–1000 เท่า ตัวอย่างคือ Intel Hala Point ที่ใช้ Loihi 2, IBM NorthPole และ SynSense Speck
   [Source](https://www.intel.com/content/www/us/en/research/neuromorphic-computing.html)
 
 - 🧠 **Neuromorphic Event Cameras — Vision Like Human Retina** *(16 May 2026)*
-  Neuromorphic event cameras = กล้องที่ทำงานเหมือน จอตามนุษย์ → ไม่ถ่ายเฟรม แต่ส่งเฉพาะ pixel ที่เปลี่ยน → microsecond latency, 120dB dynamic range MDPI review: hardware, algorithms,...
+  กล้อง event camera ส่งข้อมูลเมื่อความสว่างของแต่ละพิกเซลเปลี่ยน แทนการส่งภาพทั้งเฟรม โดยมีเวลาหน่วงระดับไมโครวินาทีและช่วงไดนามิก 120 dB
   [Source](https://www.emergentmind.com/topics/neuromorphic-event-cameras)
 
 - 🧠 **Non-Invasive Ultrasound BCI — Brain Interface Without Surgery** *(16 May 2026)*
-  Non-invasive BCI = อ่าน/กระตุ้นสมองโดยไม่ต้องผ่าตัด Gestalta (China): ultrasound อ่านสมองผ่านกะโหลก WIRED: no implant required Nature npj: flexible brain sensors advance wearable B...
+  BCI แบบไม่ฝังอุปกรณ์มุ่งอ่านหรือกระตุ้นสมองจากภายนอกกะโหลก Gestalta ในจีนศึกษาการใช้อัลตราซาวนด์อ่านสัญญาณสมอง และมีงานพัฒนาเซ็นเซอร์ยืดหยุ่นสำหรับอุปกรณ์สวมใส่
   [Source](https://www.wired.com/story/this-chinese-startup-wants-to-build-a-new-brain-computer-interface-no-implant-required-gestalta/)
 
 - 🔋 **Nuclear Diamond Battery — 5,700 Years of Power** *(16 May 2026)*
-  Nuclear diamond battery = เพชรฝังกัมมันตรังสี → ผลิตไฟฟ้า 5,700 ปี โดยไม่ชาร์จ University of Bristol: C-14 (nuclear waste) → artificial diamond → betavoltaic Glass Almanac: proof o...
+  แบตเตอรี่เพชรนิวเคลียร์ใช้คาร์บอน-14 (C-14) ร่วมกับเพชรสังเคราะห์เพื่อผลิตไฟฟ้าแบบ betavoltaic งานของ University of Bristol ถูกนำเสนอว่าอาจจ่ายพลังงานได้ 5,700 ปีโดยไม่ต้องชาร์จ
   [Source](https://glassalmanac.com/this-new-battery-lasts-5700-years-without-recharging-and-its-already-real/)
 
 - ☢️ **Nuclear Thermal Propulsion DRACO** *(16 May 2026)*
-  Nuclear thermal rocket = เครื่องยนต์นิวเคลียร์ → ไป Mars เร็ว 2-3x NASA/DARPA: DRACO program, nuclear thermal propulsion test target 2027 Space.com: launch window late 2025/early 2...
+  จรวดนิวเคลียร์ความร้อนมุ่งลดเวลาเดินทางไปดาวอังคารได้ 2–3 เท่า โครงการ DRACO ของ NASA และ DARPA ระบุเป้าหมายทดสอบระบบขับเคลื่อนในปี 2027
 
 - 💧 **Ocean Current Turbines — Steady Baseload from Deep Ocean** *(16 May 2026)*
-  Ocean current turbines = กังหันใต้ทะเล ใช้กระแสน้ำลึกที่ ไหลตลอดเวลา = baseload 24/7 Interesting Engineering: Dutch jet-sized underwater turbine → 3MW from steady currents Japan: m...
+  กังหันใต้ทะเลใช้กระแสน้ำลึกที่ไหลสม่ำเสมอเพื่อจ่ายไฟฟ้าพื้นฐานแบบ 24/7 มีรายงานกังหันขนาดใกล้เคียงเครื่องบินจากเนเธอร์แลนด์ที่ให้กำลัง 3 MW
   [Source](https://interestingengineering.com/energy/dutch-wind-turbine-rides-ocean-currents-power)
 
 - ☀️ **Ocean Thermal Energy Conversion (OTEC) — 24/7 Power from the Sea** *(16 May 2026)*
-  OTEC = ใช้ความต่างอุณหภูมิผิวน้ำทะเล (อุ่น) vs น้ำลึก (เย็น) → ผลิตไฟฟ้า 24/7 baseload ไม่เหมือน solar/wind Global OTEC: ติดตั้ง world's first purpose-built offshore platform ที่ B...
+  Ocean Thermal Energy Conversion (OTEC) ใช้ความต่างอุณหภูมิระหว่างน้ำทะเลอุ่นที่ผิวกับน้ำเย็นในระดับลึกเพื่อผลิตไฟฟ้าแบบ 24/7 โดย Global OTEC พัฒนาแท่นผลิตไฟฟ้านอกชายฝั่งสำหรับระบบนี้
   [Source](https://environment.sciencearray.com/ocean-thermal-energy-conversion-otec-clean-power)
 
 - 🧬 **Optogenetic Cardiac Pacing — Light Controls Heartbeat** *(16 May 2026)*
-  Optogenetic cardiac pacing = แสงควบคุมการเต้นหัวใจ → ไม่ต้องใส่ pacemaker Nature Biotechnology: blue-light illumination paced hearts at different frequencies PMC: optical pacing sh...
+  Optogenetic cardiac pacing ใช้แสงควบคุมจังหวะการเต้นของหัวใจ งานใน Nature Biotechnology สาธิตการใช้แสงสีน้ำเงินกระตุ้นหัวใจที่ความถี่ต่างกัน เพื่อศึกษาเป็นทางเลือกของการกระตุ้นด้วยไฟฟ้า
   [Source](https://www.nature.com/articles/nbt.3268)
 
 - 🔋 **Organic Redox Flow Battery — Cheaper Than Vanadium** *(16 May 2026)*
-  Organic redox flow battery = flow battery ที่ใช้ organic molecules แทน vanadium → ถูกกว่า + ไม่จำกัดด้วย vanadium mining TechXplore 2026: AzoBiPy molecule — record stability, safer...
+  แบตเตอรี่ organic redox flow ใช้โมเลกุลอินทรีย์แทนวาเนเดียม เพื่อลดต้นทุนและการพึ่งพาเหมืองวาเนเดียม งานปี 2026 กล่าวถึงโมเลกุล AzoBiPy ที่มีเสถียรภาพสูง
   [Source](https://techxplore.com/news/2026-02-molecule-renewable-energy-stability-paving.html)
 
 - 🔋 **Organic Redox Flow Battery — Vanadium-Free** *(16 May 2026)*
-  Organic RFB = แบตไหลอินทรีย์ → ไม่ต้องใช้ vanadium TechXplore: AzoBiPy molecule → safer renewable alternative to vanadium Nature Communications: phenazine 1,6-DPAP → costs below va...
+  แบตเตอรี่รีดอกซ์โฟลว์แบบอินทรีย์ใช้สารอย่าง AzoBiPy หรือ phenazine 1,6-DPAP แทนวาเนเดียม เพื่อเป็นทางเลือกที่ปลอดภัยและมีต้นทุนต่ำลง
 
 - 🧠 **Organoid Intelligence — Living Computers from Brain Cells** *(16 May 2026)*
-  Organoid Intelligence (OI) = ใช้ เนื้อเยื่อสมองที่เพาะเลี้ยงในห้องแล็บ (brain organoids) เป็น biological hardware สำหรับคำนวณ — "mini brains" ที่เรียนรู้ + จดจำได้ Johns Hopkins (T...
+  Organoid Intelligence (OI) ศึกษาการใช้เนื้อเยื่อสมองที่เพาะเลี้ยงในห้องแล็บเป็นฮาร์ดแวร์ชีวภาพสำหรับการคำนวณ โดยอาศัยความสามารถในการเรียนรู้และจดจำของเซลล์
   [Source](https://www.bbc.com/news/articles/cy7p1lzvxjro)
 
 - 🧬 **PROTAC — Targeted Protein Degradation** *(16 May 2026)*
-  PROTAC = ยาประเภทใหม่ที่ ทำลายโปรตีนที่ก่อโรค ไม่ใช่แค่ยับยั้ง (เหมือนยาเดิม) ใช้ระบบกำจัดขยะของเซลล์ (ubiquitin-proteasome) Vepdegestrant (ARV-471) = PROTAC ตัวแรกใน Phase III สำห...
+  PROTAC เป็นแนวทางพัฒนายาที่นำโปรตีนก่อโรคเข้าสู่ระบบกำจัดโปรตีนของเซลล์ (ubiquitin–proteasome) เพื่อสลายโปรตีนนั้น Vepdegestrant (ARV-471) ถูกกล่าวถึงว่าเป็น PROTAC ตัวแรกที่เข้าสู่การทดลอง Phase III
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12937832/)
 
 - ☀️ **Passive Radiative Cooling — Cool Without Electricity** *(16 May 2026)*
-  Passive radiative cooling = เย็นโดยไม่ใช้ไฟฟ้า → แผ่ความร้อนผ่าน atmospheric window ออกสู่อวกาศ PNNL: surface temperature below ambient in direct sunlight ACS: environmentally frie...
+  Passive radiative cooling ระบายความร้อนสู่อวกาศผ่านช่วงความยาวคลื่นที่บรรยากาศยอมให้ผ่าน โดยไม่ใช้ไฟฟ้า งานของ PNNL ศึกษาพื้นผิวที่มีอุณหภูมิต่ำกว่าสภาพแวดล้อมได้แม้อยู่กลางแดด
   [Source](https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-24904.pdf)
 
 - 🌈 **Perovskite LED Displays — Next-Gen Screens** *(16 May 2026)*
-  Perovskite LED = หน้าจอรุ่นใหม่ที่ใช้ perovskite nanocrystals → color purity เหนือกว่า OLED/LCD, response time nanosecond Chinese startup: microLED + perovskite QD mass production ...
+  จอ perovskite LED ใช้ผลึกนาโน perovskite เพื่อให้สีบริสุทธิ์และตอบสนองในระดับนาโนวินาที มีการพัฒนาระบบ microLED ร่วมกับ perovskite quantum dot สำหรับการผลิตจำนวนมาก
   [Source](https://www.perovskite-info.com/tags/displays)
 
 - ☀️ **Perovskite-Silicon Tandem — >34% Efficiency Solar** *(16 May 2026)*
-  Perovskite-silicon tandem = แผงโซลาร์ 2 ชั้น → ชั้นบน perovskite + ชั้นล่าง silicon → รวมแสงเห็น + infrared PatSnap 2026: 34% efficiency hit Longi: 34.85% record (April 2025) Natur...
+  เซลล์แสงอาทิตย์แบบ perovskite–silicon tandem มี 2 ชั้น ชั้น perovskite รับแสงที่มองเห็น ส่วนชั้นซิลิคอนรับช่วงแสงที่เหลือรวมถึงอินฟราเรด PatSnap รายงานประสิทธิภาพ 34% ในปี 2026 ขณะที่ Longi ทำสถิติ 34.85% ในเดือนเมษายน 2025
   [Source](https://www.patsnap.com/resources/blog/articles/perovskite-silicon-tandem-solar-cells-hit-34-in-2026/)
 
 - ☀️ **Perovskite Solar Cells — 34% Efficiency Revolution** *(16 May 2026)*
-  Perovskite = วัสดุ solar cell ใหม่ที่มีประสิทธิภาพเพิ่มขึ้นจาก 3% → 34% ใน 15 ปี (record เร็วที่สุดในประวัติศาสตร์ PV) LONGi ทำได้ 34.85% tandem, 33.6% flexible (bendable!) ถูกกว่า...
+  ประสิทธิภาพเซลล์แสงอาทิตย์ perovskite เพิ่มจาก 3% เป็น 34% ในช่วง 15 ปี โดย LONGi รายงานประสิทธิภาพ 34.85% สำหรับเซลล์ tandem และ 33.6% สำหรับเซลล์แบบยืดหยุ่น
   [Source](https://energy-solutions.co/articles/sub/perovskite-solar-cells-breakthrough)
 
 - 🌈 **Perovskite X-Ray Detector — Low-Dose Medical Imaging** *(16 May 2026)*
-  Perovskite X-ray detector = ตัวตรวจจับรังสี X จาก perovskite → ลดโดสรังสี Wiley 2026: halide perovskite for flat-panel X-ray imagers ACS Nano: metal halide perovskites for low-dose...
+  ตัวตรวจจับรังสีเอกซ์ที่ใช้ halide perovskite เป็นแนวทางลดปริมาณรังสีในการถ่ายภาพทางการแพทย์ งานในปี 2026 กล่าวถึงการนำมาใช้กับเครื่องตรวจจับแบบแผงแบน
   [Source](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202513676)
 
 - 🔬 **Photonic AI Accelerators — Compute with Light** *(16 May 2026)*
-  Photonic AI = ใช้แสง (photons) แทนไฟฟ้า (electrons) คำนวณ — interference ของแสง = matrix multiplication (MAC) ฟรี เร็วขึ้น + ประหยัดพลังงานกว่า GPU Lightmatter นำหน้าด้วย Passage M...
+  ตัวเร่ง AI แบบโฟโตนิกใช้แสงในการคำนวณ เช่น ใช้การแทรกสอดของแสงช่วยคูณเมทริกซ์ เพื่อเพิ่มความเร็วและลดการใช้พลังงานเมื่อเทียบกับ GPU โดย Lightmatter พัฒนาเทคโนโลยีในแนวทางนี้
   [Source](https://lightmatter.co/blog/a-new-kind-of-computer/)
 
 - ⚡ **Photonic Computing — Optical Neural Networks** *(16 May 2026)*
-  Photonic computing = แสงแทนไฟฟ้าคำนวณ → speed of light + ultra-low power MIT: fully integrated photonic processor runs deep neural network on light Lightmatter: validates computati...
+  Photonic computing ใช้แสงคำนวณแทนสัญญาณไฟฟ้า MIT สร้างโปรเซสเซอร์โฟโตนิกแบบรวมวงจรสำหรับโครงข่ายประสาทเชิงลึก ส่วน Lightmatter ศึกษาความแม่นยำและความเสถียรของการประมวลผลด้วยแสง
   [Source](https://lightmatter.co/blog/a-new-kind-of-computer/)
 
 - 📡 **Physical Reservoir Computing — Materials That Compute** *(16 May 2026)*
-  Physical reservoir computing = วัสดุที่คำนวณได้เอง ไม่ต้องมี CPU Nature Communications: compact design + fast training for temporal data Wiley 2026: ferroelectric-ionic transistors...
+  Physical reservoir computing ใช้พลวัตของวัสดุช่วยประมวลผลข้อมูลตามเวลา เพื่อให้ระบบมีขนาดกะทัดรัดและฝึกได้เร็วขึ้น งานปี 2026 ศึกษาทรานซิสเตอร์แบบ ferroelectric–ionic ในแนวทางนี้
   [Source](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202511337)
 
 - ⚡ **Piezoelectric Nanogenerator** *(16 May 2026)*
-  PENG = วัสดุเปลี่ยนแรงกด→ไฟฟ้า → ขยับตัว = ชาร์จ Wiley Adv Sci: flexible PENG, energy harvesting + intelligent sensing 2026 Nature Comm: ultrahigh power density, freestanding ferro...
+  เครื่องกำเนิดไฟฟ้านาโนแบบเพียโซอิเล็กทริก (PENG) เปลี่ยนแรงกดและการเคลื่อนไหวเป็นไฟฟ้า งานในปี 2026 ศึกษาอุปกรณ์ยืดหยุ่นสำหรับเก็บพลังงานและใช้เป็นเซ็นเซอร์
 
 - ☀️ **Piezoelectric Road Energy — Traffic Powers Infrastructure** *(16 May 2026)*
-  Piezoelectric road = ถนนเก็บพลังงานจากรถ → รถวิ่ง → ไฟฟ้า SAGE: transducers harness energy from vehicle traffic stress + vibrations + kinetic forces MDPI: converts ambient road vib...
+  ถนนเพียโซอิเล็กทริกใช้ตัวแปลงพลังงานรับแรงกดและแรงสั่นสะเทือนจากรถที่วิ่งผ่าน แล้วเปลี่ยนพลังงานกลเป็นไฟฟ้า
   [Source](https://journals.sagepub.com/doi/10.1177/03611981251353705)
 
 - ⚡ **Plasma Gasification — Turning Trash into Energy** *(16 May 2026)*
-  Plasma gasification = ใช้ plasma arc 14,000°C แปลงขยะเป็น syngas (H₂ + CO) → ผลิตไฟฟ้า/เชื้อเพลิง 99% waste conversion rate, 1,500 tons waste → ~60 MW energy Vitrified slag ใช้ในก่...
+  Plasma gasification ใช้อาร์กพลาสมาอุณหภูมิ 14,000°C เปลี่ยนขยะเป็น syngas ซึ่งประกอบด้วย H₂ และ CO สำหรับผลิตไฟฟ้าหรือเชื้อเพลิง มีการระบุอัตราเปลี่ยนขยะ 99% และขยะ 1,500 ตันให้กำลังไฟประมาณ 60 MW
   [Source](https://techandthoughts.com/2025/05/24/next-gen-wte-plasma-gasifications-promise-and-pitfalls/)
 
 - 🛸 **Precision Agriculture Drone AI — Smart Farming** *(16 May 2026)*
-  Precision agriculture drone = โดรนฉีดยาอัจฉริยะ → ลดสารเคมี 30% Farmonaut 2026: drone spraying 40 acres/hour, outperforms traditional 70% Nature Scientific Reports: deep learning +...
+  โดรนสำหรับเกษตรแม่นยำใช้ AI ควบคุมการฉีดพ่นเพื่อลดการใช้สารเคมี 30% Farmonaut ปี 2026 รายงานอัตราทำงาน 40 acres/hour และสมรรถนะสูงกว่าวิธีเดิม 70%
   [Source](https://farmonaut.com/precision-farming/agricultural-uav-spraying-systems-7-key-2026-benefits)
 
 - 🧬 **Precision Fermentation — Animal-Free Protein** *(16 May 2026)*
-  Precision fermentation = ใช้จุลินทรีย์ (yeast, fungi) ผลิตโปรตีนเหมือนสัตว์โดยไม่ต้องมีสัตว์ Perfect Day = whey protein จาก fermentation ได้ FDA GRAS, Gujarat India factory เปิด 20...
+  Precision fermentation ใช้จุลินทรีย์ เช่น ยีสต์และเชื้อรา ผลิตโปรตีนแบบเดียวกับที่พบในสัตว์ Perfect Day ผลิตเวย์โปรตีนด้วยวิธีนี้และได้รับสถานะ FDA GRAS โดยมีการขยายการผลิตใน Gujarat ประเทศอินเดีย
   [Source](https://www.intechopen.com/chapters/1211728)
 
 - 🔲 **Programmable Matter & Metamaterials** *(16 May 2026)*
-  Programmable matter = วัสดุที่เปลี่ยนรูปร่าง คุณสมบัติ พฤติกรรมได้ตามต้องการ — ไม่ใช่ robot แต่เป็น "วัสดุที่เป็น robot" Metabots (Princeton, Nature 2025) = modular origami metamat...
+  Programmable matter เป็นวัสดุที่ปรับรูปร่าง สมบัติ หรือพฤติกรรมได้ตามการออกแบบ เช่น Metabot ของ Princeton ที่ใช้โครงสร้างพับแบบโมดูลตามงานใน Nature ปี 2025
   [Source](https://bioengineer.org/material-or-robot-meet-the-metabot/)
 
 - 🧬 **Programmable mRNA Therapeutics — Body as Protein Factory** *(16 May 2026)*
-  Programmable mRNA = สั่งร่างกายผลิตโปรตีนเอง ตามที่ต้องการ COVID vaccine เป็นตัวอย่างแรก Frontiers: mRNA vaccines comprehensive review 2025 RSC: mRNA therapeutics beyond vaccines S...
+  การรักษาด้วย mRNA ส่งคำสั่งให้เซลล์ผลิตโปรตีนที่ต้องการ โดยวัคซีนโควิดเป็นตัวอย่างการใช้งาน มีงานทบทวนวัคซีน mRNA ในปี 2025 และการพัฒนาเพื่อรักษาโรคอื่นนอกเหนือจากการใช้เป็นวัคซีน
   [Source](https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1524317/full)
 
 - 🔮 **Quantum Gravity Sensors — Measuring the Unmeasurable** *(16 May 2026)*
-  Quantum gravity sensors = ตรวจวัดแรงโน้มถ่วงด้วยความแม่นยำระดับ quantum → เห็นใต้ดินโดยไม่ต้องขุด Stevens Institute: กำลังสร้าง graviton detector ตัวแรกของโลก ใช้ superfluid helium...
+  เซ็นเซอร์แรงโน้มถ่วงควอนตัมมุ่งวัดความเปลี่ยนแปลงของแรงโน้มถ่วงอย่างละเอียดเพื่อสำรวจใต้ดิน อีกโครงการหนึ่งของ Stevens Institute ศึกษาตัวตรวจจับกราวิตอนที่ใช้ฮีเลียมของไหลยิ่งยวด
   [Source](https://www.eurekalert.org/news-releases/1112848)
 
 - 🔮 **Quantum Random Number Generator — True Randomness for Encryption** *(16 May 2026)*
-  Quantum RNG = ตัวเลขสุ่มควอนตัม → encryption ที่แกะไม่ได้ Nature/PMC: Quantum Hybrid RNG integrates entanglement-based true randomness Phys.org: 56-qubit computer provides truly ra...
+  Quantum RNG ใช้ปรากฏการณ์ควอนตัมสร้างตัวเลขสุ่มสำหรับระบบเข้ารหัส งานที่อ้างถึงมีทั้งระบบผสมที่อาศัยความพัวพัน และการสร้างตัวเลขสุ่มด้วยคอมพิวเตอร์ควอนตัม 56 qubits
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC12881513/)
 
 - 🔮 **Quantum Sensing — Diamond NV Center Magnetometry** *(16 May 2026)*
-  Diamond NV center sensing = เพชรวัดสนามแม่เหล็ก → nanoscale precision QuantumZeitgeist: diamond NV centers achieve precise magnetic field measurements ScienceDaily 2025: new 2D qua...
+  เซ็นเซอร์เพชรใช้ตำหนิแบบ nitrogen-vacancy (NV center) วัดสนามแม่เหล็กด้วยความละเอียดระดับนาโน โดยมีงานพัฒนาเพิ่มความไวในการตรวจจับและรายงานความก้าวหน้าในปี 2025
   [Source](https://quantumzeitgeist.com/diamond-centers-boost-quantum-sensing-with-enhanced-magnetic-field-detection/)
 
 - ☀️ **Recyclable Wind Turbine Blade — Circular Wind Energy** *(16 May 2026)*
-  Recyclable wind turbine blade = ใบพัดลมกังหันรีไซเคิลได้ SolarTech: Siemens Gamesa RecyclableBlade + NREL PECAN resin → first recyclable blades installed commercially, thermoplasti...
+  ใบพัดกังหันลมที่รีไซเคิลได้ช่วยลดขยะเมื่อสิ้นสุดอายุการใช้งาน ตัวอย่างคือ Siemens Gamesa RecyclableBlade และเรซิน PECAN ของ NREL ซึ่งมีการนำไปใช้เชิงพาณิชย์
   [Source](https://solartechonline.com/blog/wind-turbine-blade-recycling-guide/)
 
 - 🔦 **Retinal Projection AR — Laser Directly on Retina** *(16 May 2026)*
-  Retinal projection = ยิงเลเซอร์ตรงเข้าจอตา → ภาพชัดเสมอไม่ว่าจะมองใกล้ไกล Wevolver: eliminates bulky optics, ultra-compact AR glasses ScienceDirect: AI-powered autostereoscopic dis...
+  Retinal projection ฉายแสงเลเซอร์ลงบนจอตาโดยตรงเพื่อสร้างภาพสำหรับ AR ช่วยลดขนาดชุดเลนส์และทำให้แว่นมีขนาดกะทัดรัด โดยมุ่งให้เห็นภาพชัดในระยะมองต่างกัน
   [Source](https://www.wevolver.com/article/transforming-vision-the-fundamentals-of-direct-retinal-projection-in-ar-vr)
 
 - 🔮 **Room-Temperature Superconductor — The Quest Continues** *(16 May 2026)*
-  Room-temperature superconductor = ตัวนำยิ่งยวดที่อุณหภูมิห้อง = zero resistance = revolutionize everything LK-99: debunked แต่ reignites field PatSnap 2026: hydride systems 556K, z...
+  การวิจัยตัวนำยิ่งยวดที่อุณหภูมิห้องมุ่งหาวัสดุที่มีความต้านทานเป็นศูนย์โดยไม่ต้องทำความเย็นมาก ข้อกล่าวอ้างของ LK-99 ไม่ได้รับการยืนยัน ส่วน PatSnap ปี 2026 กล่าวถึงระบบไฮไดรด์ที่ 556 K
   [Source](https://www.patsnap.com/resources/blog/articles/room-temperature-superconductor-research-2026-landscape/)
 
 - ⛽ **Seawater Electrolysis — Direct Hydrogen from Ocean** *(16 May 2026)*
-  Seawater electrolysis = แยก H₂ จากน้ำทะเล ไม่ต้องกรอง T&F: direct seawater electrolysis via smart catalyst design + operational modifications ScienceDaily/UH: new OER catalyst achi...
+  การแยกน้ำทะเลด้วยไฟฟ้าโดยตรงมุ่งผลิต H₂ โดยลดขั้นตอนกำจัดเกลือ งานวิจัยศึกษาการออกแบบตัวเร่งปฏิกิริยาและปรับสภาวะการทำงาน รวมถึงตัวเร่งปฏิกิริยา OER
   [Source](https://www.tandfonline.com/doi/full/10.1080/15435075.2025.2572703)
 
 - 🏗️ **Self-Healing Concrete — Infrastructure That Repairs Itself** *(16 May 2026)*
-  Self-healing concrete = คอนกรีตที่ซ่อมแซมรอยร้าวเองได้ — ใช้แบคทีเรีย produce limestone อัตโนมัติเมื่อน้ำเข้ารอยแตก 2025 trials: 95% crack closure, 90% strength recovery Polymer ca...
+  คอนกรีตซ่อมแซมตัวเองใช้แบคทีเรียสร้างหินปูนเมื่อน้ำเข้าสู่รอยร้าว การทดลองปี 2025 รายงานการปิดรอยร้าว 95% และการคืนความแข็งแรง 90%
   [Source](https://volumeconcrete.com/self-healing-concretethe-american-concrete-revolution-of-2026/)
 
 - 🧬 **Self-Healing Polymer Coating** *(16 May 2026)*
-  Self-healing coating = สีทาซ่อมแซมตัวเอง → รอยขีดข่วนหายเอง PatSnap 2026: integrates surface scanning + defect detection + multi-nozzle adaptive healing MDPI: new generation adapti...
+  สารเคลือบพอลิเมอร์ซ่อมแซมตัวเองช่วยปิดรอยขีดข่วนบนพื้นผิว งานปี 2026 กล่าวถึงการสแกนพื้นผิว ตรวจหาตำหนิ และใช้หัวพ่นหลายหัวซ่อมเฉพาะตำแหน่ง
 
 - 🦴 **Self-Powered Pacemaker — Heartbeat Powers the Device** *(16 May 2026)*
-  Self-powered pacemaker = เครื่องกระตุ้นหัวใจที่ไม่ต้องเปลี่ยนแบต — ใช้พลังงานจากการเต้นหัวใจ ScienceDirect: PVDF + ZnO + rGO composite nanofiber piezoelectric nanogenerator PubMed:...
+  เครื่องกระตุ้นหัวใจที่เก็บพลังงานจากการเต้นของหัวใจมุ่งลดความจำเป็นในการเปลี่ยนแบตเตอรี่ งานที่อ้างถึงใช้เส้นใยนาโนคอมโพสิต PVDF, ZnO และ rGO เป็นเครื่องกำเนิดไฟฟ้าเพียโซอิเล็กทริก
   [Source](https://www.sciencedirect.com/science/article/abs/pii/S2211285521000392)
 
 - 💾 **Shape Memory Alloy — Artificial Muscles for Robots** *(16 May 2026)*
-  Shape memory alloy (SMA) = โลหะจำรูป ที่ "จำ" รูปทรงเดิม → กลับคืนเมื่อให้ความร้อน Nitinol (NiTi): lifts 100x its weight, 25,000 psi strength PMC: wearable soft robots for rehabili...
+  โลหะผสมจำรูป (SMA) กลับคืนสู่รูปทรงที่กำหนดเมื่อได้รับความร้อน Nitinol (NiTi) ถูกระบุว่ายกน้ำหนักได้ 100 เท่าของน้ำหนักตัวและมีความแข็งแรง 25,000 psi โดยมีการศึกษาใช้กับหุ่นยนต์สวมใส่เพื่อฟื้นฟูร่างกาย
   [Source](https://hdiac.dtic.mil/articles/shape-memory-alloy-as-an-artificial-actuator-for-exoskeletons/)
 
 - 🧬 **Silicon Carbide SiC Power Device** *(16 May 2026)*
-  SiC power device = เซมิคอนดักเตอร์ SiC → EV inverter 10x breakdown field STMicro: new SiC generation for EV traction inverters, Catania production 2026 PatSnap: market USD 2.73-5.7...
+  อุปกรณ์กำลังซิลิคอนคาร์ไบด์ (SiC) มีสนามไฟฟ้าที่ทนได้ก่อน breakdown สูงขึ้น 10 เท่า เหมาะกับอินเวอร์เตอร์รถยนต์ไฟฟ้า STMicroelectronics พัฒนา SiC รุ่นใหม่และมีการผลิตที่ Catania ในปี 2026
 
 - 🔮 **Silicon Photonics Interconnect — Light Between Chips** *(16 May 2026)*
-  Silicon photonics = ส่งข้อมูลระหว่าง chip ด้วยแสง แทนทองแดง Nvidia Quantum-X InfiniBand + Spectrum-X Ethernet: TSMC COUPE (Compact Universal Photonic Engine) STMicro: >400 Gbit/s o...
+  Silicon photonics ส่งข้อมูลระหว่างชิปด้วยแสงแทนสายทองแดง Nvidia ใช้แนวทางนี้กับ Quantum-X InfiniBand และ Spectrum-X Ethernet ร่วมกับ TSMC COUPE ส่วน STMicro กล่าวถึงอัตราส่งข้อมูลมากกว่า 400 Gbit/s
   [Source](https://www.tomshardware.com/networking/nvidia-outlines-plans-for-using-light-for-communication-between-ai-gpus-by-2026-silicon-photonics-and-co-packaged-optics-may-become-mandatory-for-next-gen-ai-data-centers)
 
 - 🛸 **Smart Dust — Millimeter-Scale Sensor Swarms** *(16 May 2026)*
-  Smart dust = เซ็นเซอร์ขนาดเมล็ดข้าว → วัดทุกอย่างทุกที่ Promwad 2026: motes one cubic millimeter, network in dense swarms, monitor to millimeter scale Wikipedia: DARPA-funded Berke...
+  Smart dust เป็นเครือข่ายเซ็นเซอร์จิ๋วสำหรับตรวจวัดสภาพแวดล้อม Promwad ปี 2026 กล่าวถึงหน่วยเซ็นเซอร์ขนาด 1 ลูกบาศก์มิลลิเมตรที่เชื่อมต่อกันเป็นเครือข่ายหนาแน่น
   [Source](https://promwad.com/news/smart-dust-2026-practical-reality)
 
 - 🔋 **Sodium-Ion Battery — $60/kWh** *(16 May 2026)*
-  Na-ion battery = แบตโซเดียม $60/kWh → ถูกกว่า Li 50%+ Energy Solutions: $60/kWh cost breakthrough, 170 Wh/kg, hard carbon anodes, CATL/HiNa MIT Tech Review: 10 Breakthrough Technol...
+  แบตเตอรี่โซเดียมไอออนมีต้นทุนที่ระบุไว้ $60/kWh หรือต่ำกว่าแบตเตอรี่ลิเทียมมากกว่า 50% พร้อมความหนาแน่นพลังงาน 170 Wh/kg โดยใช้แอโนดคาร์บอนแข็ง ตัวอย่างผู้พัฒนาคือ CATL และ HiNa
 
 - 🔋 **Sodium-Sulfur Battery Grid Storage** *(16 May 2026)*
-  NaS battery = แบตโซเดียม-กำมะถัน → grid storage ราคาถูก PatSnap 2026: 740 mAh/g over 36 stable cycles, nanostructured Na₂S/C cathodes ScienceDirect: RT solid-state Na-S with PVDF-H...
+  แบตเตอรี่โซเดียม–กำมะถัน (NaS) เป็นแนวทางกักเก็บพลังงานในโครงข่ายที่ต้นทุนต่ำ งานปี 2026 รายงานขั้ว Na₂S/C แบบนาโนที่ให้ความจุ 740 mAh/g และเสถียรตลอด 36 รอบ พร้อมงานแบตเตอรี่โซลิดสเตทที่อุณหภูมิห้อง
 
 - 🤖 **Soft Octopus-Inspired Robots — Continuum Manipulation** *(16 May 2026)*
-  Octopus-inspired robots = หุ่นยนต์อ่อนตัวเหมือนหนวดปลาหมึก → continuum manipulation Science Robotics: octopus hierarchical suction intelligence Nature: underwater soft arm with sim...
+  หุ่นยนต์ที่เลียนแบบหนวดปลาหมึกใช้แขนเนื้อนิ่มที่โค้งงอได้ต่อเนื่องเพื่อหยิบจับวัตถุ งานวิจัยศึกษาทั้งการควบคุมปุ่มดูดและแขนกลใต้น้ำ
   [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC11727030/)
 
 - ☀️ **Solar Desalination — Advanced Membrane Technology** *(16 May 2026)*
-  Solar desalination = แสงอาทิตย์ + เมมเบรน → น้ำจืด Elemental Water Makers: graphene oxide membranes + energy recovery 70% efficiency PMC: solar-powered membrane distillation with M...
+  การแยกเกลือด้วยพลังงานแสงอาทิตย์ใช้เมมเบรนผลิตน้ำจืด Elemental Water Makers กล่าวถึงเมมเบรนกราฟีนออกไซด์ร่วมกับการกู้คืนพลังงาน โดยระบุประสิทธิภาพ 70%
   [Source](https://www.elementalwatermakers.com/knowledge-base/solar-desalination/what-breakthrough-technologies-are-emerging-in-solar-desalination/)
 
 - ☀️ **Solar Paint — Spray-On Solar Panels** *(16 May 2026)*
-  Solar paint = พ่นสีลงไป → ผิวนั้นกลายเป็นแผงโซลาร์เซลล์ 8MSolar: carbon additives boost efficiency 25% SolarReviews: quantum dot photovoltaic paint University of Toronto developmen...
+  สีโซลาร์เซลล์เป็นแนวทางเคลือบพื้นผิวให้ผลิตไฟฟ้าจากแสงได้ มีงานใช้ quantum dot และสารเติมแต่งคาร์บอน โดย 8MSolar ระบุว่าช่วยเพิ่มประสิทธิภาพ 25%
   [Source](https://8msolar.com/solar-paint-turning-any-surface-into-a-solar-panel/)
 
 - ☀️ **Daniel K. Inouye Solar Telescope** *(16 May 2026)*
-  Inouye telescope = กล้องดูงูใหญ่ที่สุด → ภาพดวงอาทิตย์ความละเอียดสูงสุด Phys.org: record-breaking images of solar flare + coronal loops EurekAlert: largest imaging spectro-polarime...
+  Daniel K. Inouye เป็นกล้องโทรทรรศน์สำรวจดวงอาทิตย์ขนาดใหญ่ ใช้ถ่ายภาพเปลวสุริยะและวงโค้งในชั้นโคโรนาด้วยความละเอียดสูง
 
 - ☀️ **Solar Thermochemical Hydrogen (STCH) — Heat → Hydrogen** *(16 May 2026)*
-  STCH = ใช้ความร้อนจากแสงอาทิตยา → แยกน้ำเป็นไฮโดรเจน โดยตรง MIT: conceptual design harnesses 40% of sun's heat for clean H₂ Nature npj: ML + computational chemistry discovers redox...
+  Solar Thermochemical Hydrogen (STCH) ใช้ความร้อนจากแสงอาทิตย์แยกน้ำเป็นไฮโดรเจน MIT เสนอแบบจำลองที่ใช้ความร้อนจากดวงอาทิตย์ได้ 40% และมีการใช้ machine learning กับเคมีเชิงคำนวณเพื่อค้นหาวัสดุรีดอกซ์
   [Source](https://news.mit.edu/2023/mit-design-harness-suns-heat-produce-clean-hydrogen-fuel-1016)
 
 - ❄️ **Solid-State Cooling — Magnetocaloric & Elastocaloric** *(16 May 2026)*
-  Solid-state cooling = ทำความเย็นโดยไม่ใช้ refrigerant gas (no compressor!) — ใช้ magnetic field หรือ mechanical stress เปลี่ยน temperature ของ solid material Slovenia: elastocalori...
+  ระบบทำความเย็นแบบโซลิดสเตทใช้สนามแม่เหล็กหรือแรงเชิงกลเปลี่ยนอุณหภูมิของวัสดุ แทนวงจรคอมเพรสเซอร์และก๊าซทำความเย็น โดยมีงานพัฒนา elastocaloric ในสโลวีเนีย
   [Source](https://raoglobal.org/insights/the-silent-revolution-developments-and-investments-in-refrigerant-free-cooling)
 
 - ☀️ **Stratospheric Aerosol Injection — Solar Geoengineering** *(16 May 2026)*
-  SAI = พ่นอนุภาคสะท้อนแสงเข้าชั้น stratosphere → ลดอุณหภูมิโลก เลียนแบบภูเขาไฟระเบิด ESD 2026: SAI potential to increase land carbon storage + protect Amazon GAO 2025: $75M funding ...
+  Stratospheric Aerosol Injection (SAI) เป็นแนวคิดพ่นอนุภาคสะท้อนแสงในชั้นสตราโตสเฟียร์เพื่อลดอุณหภูมิโลก งาน ESD ปี 2026 ศึกษาผลที่อาจมีต่อการกักเก็บคาร์บอนบนบกและป่าแอมะซอน ส่วน GAO ปี 2025 กล่าวถึงเงินทุน $75M
   [Source](https://esd.copernicus.org/articles/17/387/2026/)
 
 - ⚡ **Superhot Geothermal — Drilling into Magma for Energy** *(16 May 2026)*
-  Superhot geothermal = ขุดรูใกล้ magma → ใช้ความร้อน 500-600°C (supercritical) → 1 well = 10 regular wells Iceland IDDP-2: 4,650m deep, bottom temp ~600°C, first to reach supercriti...
+  พลังงานความร้อนใต้พิภพแบบ superhot ใช้ความร้อนใกล้แมกมาที่ 500–600°C โดยระบุว่าบ่อ 1 บ่ออาจให้พลังงานเท่าบ่อทั่วไป 10 บ่อ โครงการ IDDP-2 ในไอซ์แลนด์เจาะลึก 4,650 เมตรและวัดอุณหภูมิก้นบ่อได้ประมาณ 600°C
   [Source](https://www.catf.us/2025/09/an-introduction-to-the-next-clean-energy-frontier-successes-from-the-iceland-deep-drilling-project/)
 
 - 💧 **Superhydrophobic Coatings — The Lotus Effect Engineered** *(16 May 2026)*
-  Superhydrophobic coatings = ผิวเคลือบที่ กันน้ำ + ทำความสะอาดตัวเอง เลียนแบบใบบัว PMC: multifunctional synergy through nanoscale structural gradients MDPI: hierarchical nanostructu...
+  สารเคลือบ superhydrophobic เลียนแบบโครงสร้างผิวใบบัวเพื่อให้น้ำเกาะได้ยากและช่วยชะล้างสิ่งสกปรก งานวิจัยศึกษาการจัดโครงสร้างผิวหลายระดับตั้งแต่ระดับนาโน
   [Source](https://www.mdpi.com/2673-7167/5/4/48)
 
 - 🧬 **Synthetic Biology Heavy Metal Sensor — Living Detectors** *(16 May 2026)*
-  Synthetic biology biosensor = แบคทีเรียตรวจจับโลหะหนัก → on-site detection ACS Synthetic Biology: whole cell microbial biosensors for rapid heavy metal detection PMC: genetic senso...
+  ไบโอเซ็นเซอร์จากชีววิทยาสังเคราะห์ใช้แบคทีเรียตรวจจับโลหะหนัก ณ จุดตรวจ งานใน ACS Synthetic Biology ศึกษาการใช้เซลล์จุลินทรีย์ทั้งเซลล์เพื่อให้ตรวจได้รวดเร็ว
   [Source](https://pubs.acs.org/doi/10.1021/sb500286r)
 
 - 🔮 **Synthetic Diamond Semiconductors — The Ultimate Chip Material?** *(16 May 2026)*
-  Synthetic diamond semiconductor = chip ที่ใช้ เพชรเทียม (CVD) → wide bandgap → ทนความร้อน/แรงดันสูง Diamond Quanta: >555 cm²/Vs electron mobility in polycrystalline diamond SEMICON...
+  เพชรสังเคราะห์จากกระบวนการ CVD เป็นวัสดุสารกึ่งตัวนำที่มี bandgap กว้างและทนความร้อนกับแรงดันสูง Diamond Quanta ระบุค่าความคล่องตัวของอิเล็กตรอนมากกว่า 555 cm²/Vs ในเพชรพหุผลึก
   [Source](https://www.kingsresearch.com/blog/synthetic-diamonds-high-power)
 
 - 📶 **Terahertz Imaging — Seeing Through Everything Safely** *(16 May 2026)*
-  Terahertz imaging = ถ่ายภาพด้วยคลื่น THz → มองทะลุเสื้อผ้า/กระเป๋า แต่ไม่ทะลุร่างกาย = non-ionizing Security: real-time 3D imaging ตรวจอาวุธโดยไม่ต้อง pat-down OE Journal: breakthr...
+  การถ่ายภาพด้วยคลื่นเทราเฮิรตซ์ (THz) ใช้รังสีไม่ก่อไอออนเพื่อตรวจวัตถุผ่านเสื้อผ้าหรือกระเป๋า โดยมีการพัฒนาภาพสามมิติแบบ real-time สำหรับตรวจหาอาวุธ
   [Source](https://www.securityinfowatch.com/perimeter-security/threat-detection-imaging-inspection/article/55275469/terahertz-imaging-poised-to-shake-up-weapons-detection)
 
 - ⚡ **Thermoelectric Body Heat Harvester — Wearable Power** *(16 May 2026)*
-  Thermoelectric body heat generator = เก็บพลังงานจากความร้อนตัว → ชาร์จอุปกรณ์ได้ ScienceDirect: nature-inspired skin+hair structure FTEG wristband SNU: dual-conductivity substrates...
+  เครื่องกำเนิดไฟฟ้าเทอร์โมอิเล็กทริกเก็บพลังงานจากความร้อนของร่างกายเพื่อจ่ายไฟให้อุปกรณ์สวมใส่ ตัวอย่างคือสายรัดข้อมือ FTEG ที่เลียนแบบโครงสร้างผิวหนังและเส้นขน
   [Source](https://www.sciencedirect.com/science/article/abs/pii/S0360544225045414)
 
 - ⚡ **Thermoelectric Waste Heat Recovery — Electricity from Heat** *(16 May 2026)*
-  Thermoelectric generators = แปลง ความร้อนเสีย เป็นไฟฟ้า → ใช้ Seebeck effect 2025 breakthrough: >13% conversion efficiency (industry-changing) IEEE Spectrum: AI-designed thermoelec...
+  เครื่องกำเนิดไฟฟ้าเทอร์โมอิเล็กทริกใช้ปรากฏการณ์ Seebeck เปลี่ยนความร้อนเหลือทิ้งเป็นไฟฟ้า งานในปี 2025 รายงานประสิทธิภาพการแปลงพลังงานมากกว่า 13% และมีการใช้ AI ช่วยออกแบบวัสดุ
   [Source](https://www.technology.org/2026/02/09/a-new-thermoelectric-material-to-convert-waste-heat-to-electricity/)
 
 - 🌡️ **Thermophotovoltaic (TPV) — >40% Heat-to-Electricity** *(16 May 2026)*
-  TPV = แปลงความร้อนเป็นไฟฟ้า โดยตรง ไม่ต้องผ่าน steam turbine NREL: >50% practical efficiency pathway via band-edge spectral filtering PatSnap 2026: TPV hits 40% efficiency CU Bould...
+  Thermophotovoltaic (TPV) เปลี่ยนพลังงานจากการแผ่รังสีความร้อนเป็นไฟฟ้าโดยไม่ผ่านกังหันไอน้ำ NREL ศึกษาแนวทางเพิ่มประสิทธิภาพให้เกิน 50% ด้วยการกรองสเปกตรัม ส่วน PatSnap ปี 2026 รายงานประสิทธิภาพ 40%
   [Source](https://www.patsnap.com/resources/blog/articles/thermophotovoltaic-tech-hits-40-efficiency-in-2026/)
 
 - ⚡ **Thermophotovoltaic (TPV) — Heat to Electricity at 40%** *(16 May 2026)*
-  Thermophotovoltaic (TPV) = แปลงความร้อนเป็นไฟฟ้าโดยตรง (ไม่ต้องผ่าน steam/turbine) — solid-state heat engine University of Michigan / Nature: 40% efficiency (เทียบเท่า steam turbin...
+  Thermophotovoltaic (TPV) เป็นเครื่องยนต์ความร้อนแบบโซลิดสเตทที่แปลงพลังงานความร้อนเป็นไฟฟ้าโดยไม่ผ่านกังหัน งานที่อ้างถึงรายงานประสิทธิภาพ 40%
   [Source](https://www.nature.com/articles/s41586-022-04473-y)
 
 - ⚡ **Tokamak Fusion Records — 22 Minutes Plasma Duration** *(16 May 2026)*
-  Tokamak records = สถิติ fusion plasma ใหม่ WEST (France): 22 minutes (1,337s) — smashed previous record by 25% EAST (China): previous record 17min 46s (1,066s) Wendelstein 7-X (Ger...
+  เครื่องโทคาแมก WEST ของฝรั่งเศสรักษาพลาสมาได้นาน 22 นาที (1,337 วินาที) เพิ่มจากสถิติเดิม 25% ก่อนหน้านั้น EAST ของจีนทำได้ 17 นาที 46 วินาที (1,066 วินาที) ส่วน Wendelstein 7-X เป็นอีกโครงการที่ศึกษาการกักพลาสมา
   [Source](https://www.ans.org/news/2025-03-04/article-6811/west-claims-latest-plasma-confinement-record/)
 
 - 🔮 **Topological Insulators — Spintronics Revolution** *(16 May 2026)*
-  Topological insulators = วัสดุที่ผิวนอกนำไฟฟ้า แต่ข้างในเป็นฉนวน → spintronics Phys.org 2025: maintains quantum spin Hall effect at higher temperatures Nature npj: AI discovers new...
+  Topological insulator เป็นวัสดุที่ภายในเป็นฉนวนแต่บริเวณผิวนำไฟฟ้าได้ จึงมีแนวทางใช้ใน spintronics งานปี 2025 ศึกษาการรักษาปรากฏการณ์ quantum spin Hall ที่อุณหภูมิสูงขึ้น และใช้ AI ค้นหาวัสดุใหม่
   [Source](https://phys.org/news/2025-10-topological-insulator-quantum-hall-effect.html)
 
 - 🔮 **Topological Quantum Computing — Microsoft Majorana-1** *(16 May 2026)*
-  Topological quantum computing = คิวบิตที่ error-resistant โดยธรรมชาติ เพราะข้อมูลเก็บใน topology (not local state) Microsoft Majorana-1 (Feb 2025): world's first topological qubit ...
+  Topological quantum computing มุ่งเก็บข้อมูลในสมบัติเชิงโทโพโลยีเพื่อลดความไวต่อข้อผิดพลาด Microsoft เปิดตัว Majorana-1 ในเดือนกุมภาพันธ์ 2025 โดยเสนอเป็นแนวทางพัฒนา topological qubit
   [Source](https://www.researchgate.net/publication/396716604)
 
 - 💡 **Transparent Wood — Replacing Glass with Trees** *(16 May 2026)*
-  Transparent wood = ไม้ที่ ใสเหมือนกระจก + แข็งแรง + ฉนวนความร้อน Phys.org 2026: plastic-free transparent wood unveiled Springer: plasma modification enhance optical properties Cell...
+  ไม้โปร่งแสงมุ่งรวมการส่งผ่านแสง ความแข็งแรง และการเป็นฉนวนความร้อน งานปี 2026 กล่าวถึงไม้โปร่งแสงที่ไม่ใช้พลาสติก และการปรับผิวด้วยพลาสมาเพื่อเพิ่มสมบัติเชิงแสง
   [Source](https://phys.org/news/2026-02-clearer-future-unveil-transparent-plastic.html)
 
 - ⚡ **Triboelectric Nanogenerator (TENG) — Electricity from Everything** *(16 May 2026)*
-  TENG = แปลงพลังงานกลเป็นไฟฟ้าจาก ทุกอย่าง (คลื่น, ลม, ฝน, การเดิน) Nature 2026: phase-shift engineered TENG for constant-voltage output Wiley 2026: harvest energy from raindrops, w...
+  Triboelectric Nanogenerator (TENG) เปลี่ยนพลังงานกลจากคลื่น ลม ฝน หรือการเดินเป็นไฟฟ้า งานในปี 2026 ศึกษาการควบคุมเฟสเพื่อให้แรงดันคงที่และการเก็บพลังงานจากหยดฝน
   [Source](https://www.nature.com/articles/s43246-026-01091-3)
 
 - 🔊 **Ultrasound Mid-Air Haptics — Touch Without Touching** *(16 May 2026)*
-  Mid-air haptics = สร้าง ความรู้สึกสัมผัสในอากาศ ด้วย ultrasound → ไม่ต้องสวมอะไร NTT (2025): technology สร้าง variety of non-contact haptic sensations (smooth, rough, textures) ACM...
+  Mid-air haptics ใช้อัลตราซาวนด์สร้างความรู้สึกสัมผัสโดยไม่ต้องสวมอุปกรณ์ NTT ในปี 2025 สาธิตการสร้างสัมผัสหลายแบบ เช่น ผิวเรียบ ผิวหยาบ และลวดลายพื้นผิว
   [Source](https://group.ntt/en/newsrelease/2025/05/13/250513b.html)
 
 - 💧 **Underwater Acoustic Internet — Internet of the Oceans** *(16 May 2026)*
-  Underwater internet = เครือข่ายสื่อสารใต้น้ำด้วย คลื่นเสียง (acoustic modem) Subnero: underwater cellular network deployed in Singapore Aquacomm Gen2: operate below noise floor, Do...
+  เครือข่ายใต้น้ำใช้ acoustic modem ส่งข้อมูลด้วยคลื่นเสียง Subnero ติดตั้งเครือข่ายใต้น้ำในสิงคโปร์ ส่วน Aquacomm Gen2 พัฒนาการทำงานในระดับสัญญาณที่ต่ำกว่าสัญญาณรบกวน
   [Source](https://subnero.com/case-study/partnership/2025/12/11/A-Connected-Ocean-Begins-in-Singapore-with-Underwater-Cellular-Network-Deployment.html)
 
 - 💧 **Underwater Optical Communication — 5.2 Gbps "Aqua-LiFi"** *(16 May 2026)*
-  Underwater optical = สื่อสารใต้น้ำด้วยแสงเลเซอร์ แทนคลื่นเสียง Kyocera: 5.2 Gbps UWOC at CES 2026 ("Aqua-LiFi") Nature: blue laser diode enables 12.4 Gbps underwater. Acoustic = kb...
+  การสื่อสารใต้น้ำด้วยแสงเลเซอร์มุ่งเพิ่มอัตราส่งข้อมูลจากระบบคลื่นเสียง Kyocera นำเสนอ Aqua-LiFi ที่ 5.2 Gbps ใน CES 2026 ส่วนงานอีกชิ้นรายงานการใช้เลเซอร์สีน้ำเงินส่งข้อมูลได้ 12.4 Gbps
   [Source](https://global.kyocera.com/newsroom/news/2025/001136.html)
 
 - 🔋 **Vanadium Redox Flow Battery — Long-Duration Grid Storage** *(16 May 2026)*
-  Vanadium redox flow battery (VRFB) = แบตเตอรี่ grid ที่ แยก power + capacity (เพิ่มได้แยกกัน) สำหรับ 4-24hr storage Sumitomo Electric: deployed VRFB at community solar microgrid in...
+  แบตเตอรี่ Vanadium Redox Flow (VRFB) ออกแบบกำลังจ่ายไฟและความจุแยกจากกันได้ เหมาะกับการกักเก็บพลังงาน 4–24 ชั่วโมง โดย Sumitomo Electric มีตัวอย่างการใช้ร่วมกับไมโครกริดพลังงานแสงอาทิตย์
   [Source](https://www.sciencedirect.com/science/article/abs/pii/S0925838825044305)
 
 - ☀️ **Wave Energy Converters — Power from Ocean Waves** *(16 May 2026)*
-  Wave energy = พลังงานจากคลื่นทะเล — มีศักยภาพมหาศาล (29,000 TWh/year ทั่วโลก), คาดเดือดได้น้อยกว่า wind/solar CorPower Ocean C4 = breakthrough device ที่ 5x more efficient, survive...
+  พลังงานคลื่นทะเลมีศักยภาพทั่วโลกที่ประเมินไว้ 29,000 TWh/year CorPower Ocean C4 เป็นตัวอย่างอุปกรณ์ที่รายงานประสิทธิภาพเพิ่มขึ้น 5 เท่า
   [Source](https://corpowerocean.com/corpower-ocean-announces-wave-energy-breakthrough/)
 
 - 🔋 **Wireless Power Transfer for 6G IoT — Battery-Free Devices** *(16 May 2026)*
-  Wireless power for IoT = ส่งไฟฟ้าผ่านคลื่นวิทยุ → IoT ไม่ต้องแบต Nature: scalable lens-enhanced mmWave harvester delivering tens of milliwatts 6G Flagship: RF wireless energy trans...
+  การส่งพลังงานด้วยคลื่นวิทยุมุ่งให้อุปกรณ์ IoT ทำงานได้โดยไม่ใช้แบตเตอรี่ งานใน Nature ใช้เลนส์ช่วยเก็บพลังงานคลื่นมิลลิเมตรได้ระดับหลายสิบมิลลิวัตต์
   [Source](https://www.nature.com/articles/s41598-025-27723-1)
 
 - 🧠 **Xenobots & Anthrobots — Living Programmable Organisms** *(16 May 2026)*
-  Xenobots = หุ่นยนต์มีชีวิตสร้างจากเซลล์กบ ออกแบบด้วย AI (evolutionary algorithm) สามารถ self-replicate, self-heal, move, carry payloads Anthrobots = เวอร์ชันสร้างจาก human cells สา...
+  Xenobot เป็นโครงสร้างมีชีวิตจากเซลล์กบที่ออกแบบด้วยอัลกอริทึมวิวัฒนาการ มีรายงานการเคลื่อนที่ ซ่อมแซมตัวเอง ขนสิ่งของ และสร้างสำเนาภายใต้เงื่อนไขการทดลอง ส่วน Anthrobot สร้างจากเซลล์มนุษย์
   [Source](https://www.science.org/doi/10.1126/scirobotics.abf1571)
 
 - 🧬 **mRNA Cancer Vaccines — Personalized Oncology** *(16 May 2026)*
-  mRNA cancer vaccines = สร้างวัคซีนส่วนตัวจาก tumor ของผู้ป่วยแต่ละคน → กระตุ้น immune system จับทำลาย cancer cells Moderna + Merck mRNA-4157/V940 ลด recurrence 44% ใน melanoma, dis...
+  วัคซีนมะเร็ง mRNA ออกแบบจากเนื้องอกของผู้ป่วยแต่ละคนเพื่อกระตุ้นภูมิคุ้มกันให้รู้จำเซลล์มะเร็ง Moderna และ Merck รายงานว่า mRNA-4157/V940 ลดการกลับเป็นซ้ำของมะเร็งผิวหนัง melanoma ได้ 44%
   [Source](https://www.merck.com/news/moderna-and-merck-announce-mrna-4157-v940/)
 
 - 🔮 **Quantum Internet — Unhackable Communication Networks** *(16 May 2026)*
-  Quantum internet = เครือข่ายสื่อสารที่ hack ไม่ได้ตามกฎฟิสิกส์ QKD (Quantum Key Distribution) ใช้ entanglement → detect eavesdropper ได้ทันที May 2026: stable QKD over 120km fiber,...
+  Quantum internet ใช้เทคโนโลยีควอนตัมในการสื่อสาร รวมถึง Quantum Key Distribution (QKD) ที่ช่วยตรวจจับการดักฟังระหว่างกระจายกุญแจ มีรายงานการส่ง QKD ที่เสถียรผ่านใยแก้วระยะ 120 กิโลเมตรในเดือนพฤษภาคม 2026
   [Source](https://www.sciencedaily.com/releases/2026/05/260508003129.htm)
 
 - 🧬 **Engineered Living Materials — Bacteria That Build** *(14 May 2026)*
-  Engineered living materials = วัสดุที่มีชีวิต → แบคทีเรียสร้าง + ซ่อม + ตอบสนอง ACS: programmable bacterial biofilms as engineered living materials PMC: genetic engineering of bact...
+  Engineered living materials เป็นวัสดุที่อาศัยสิ่งมีชีวิต เช่น แบคทีเรีย เพื่อสร้าง ซ่อมแซม หรือตอบสนองต่อสิ่งแวดล้อม งานวิจัยศึกษาการกำหนดการทำงานของ biofilm ด้วยพันธุวิศวกรรม
   [Source](https://pubs.acs.org/doi/10.1021/accountsmr.3c00271)
 
 - 🧂 **Sodium-Ion Batteries — Beyond Lithium** *(14 May 2026)*
-  Sodium-ion batteries = ใช้ sodium (เกลือ/เหนียว) แทน lithium — ถูกกว่า 35-40%, safe กว่า, ทนความเย็น, วัตถุดิบมีทั่วโลก CATL deploy commercial scale 2026 (Naxtra brand) ต้นทุน $55-...
+  แบตเตอรี่โซเดียมไอออนใช้โซเดียมแทนลิเทียม โดยระบุต้นทุนต่ำกว่า 35–40% ทนความเย็นและใช้วัตถุดิบที่มีอยู่มาก CATL เตรียมนำแบตเตอรี่แบรนด์ Naxtra ไปใช้เชิงพาณิชย์ในปี 2026
   [Source](https://chargedevs.com/newswire/catl-to-deploy-sodium-ion-ev-batteries-at-commercial-scale-in-2026/)
 
 - 🧠 **10 New Tech Breakthroughs 2025-2026: แนวคิดใหม่ที่เปลี่ยนโลก** *(11 May 2026)*
@@ -997,594 +997,594 @@ status: published
   [Source](https://www.percepta.ai/blog/can-llms-be-computers)
 
 - 🔋 **Ambient RF Energy Harvesting — Battery-Free IoT** *(11 May 2026)*
-  Ambient RF energy harvesting = เก็บพลังงานจากคลื่น WiFi, cellular, TV รอบตัว → ใช้ขับเคลื่อน IoT devices โดยไม่ต้องมีแบตเตอรี่ Wiliot: 90 million battery-free tags by end 2026 HaiL...
+  การเก็บพลังงาน RF รอบตัวใช้คลื่น WiFi เครือข่ายมือถือ และโทรทัศน์จ่ายไฟให้อุปกรณ์ IoT โดยไม่ใช้แบตเตอรี่ Wiliot ระบุเป้าหมายแท็กไร้แบตเตอรี่ 90 ล้านชิ้นภายในสิ้นปี 2026
   [Source](https://iotbusinessnews.com/2025/11/26/energy-harvesting-iot-practical-applications-finally-reaching-scale-in-2026/)
 
 - 🧬 **Bioluminescent Plants — Living Night Lights** *(11 May 2026)*
-  Bioluminescent plants = ต้นไม้เรืองแสง จาก gene-editing → แทนไฟถนน Euronews 2026: Chinese scientists, firefly + fungi genes → Avatar-like glow Popular Mechanics: electricity-free i...
+  ต้นไม้เรืองแสงใช้การตัดต่อยีนเพื่อให้สร้างแสงได้เอง นักวิจัยจีนในปี 2026 ศึกษายีนจากหิ่งห้อยและเชื้อรา โดยมีแนวคิดต่อยอดเป็นแหล่งแสงที่ไม่ใช้ไฟฟ้า
   [Source](https://www.euronews.com/next/2026/04/02/chinese-scientists-unveil-glowing-avatar-like-plants-that-could-light-cities-without-elect)
 
 - 🧠 **Brain-Computer Interface (BCI) 2026** *(11 May 2026)*
-  BCI = อ่านสัญญาณสมอง → แปลงเป็น digital command โดยไม่ต้องขยับตัว Neuralink ได้ FDA commercial approval (มิ.ย. 2025) และเตรียม high-volume production 2026 Synchron ใช้ Nvidia AI + ...
+  BCI แปลงสัญญาณสมองเป็นคำสั่งดิจิทัลโดยไม่ต้องขยับร่างกาย รายงานที่อ้างถึงระบุว่า Neuralink ได้รับอนุมัติเชิงพาณิชย์จาก FDA ในเดือนมิถุนายน 2025 และเตรียมผลิตจำนวนมากในปี 2026 ส่วน Synchron ใช้ AI ของ Nvidia ร่วมกับระบบ
   [Source](https://3zebras.com/science/brain-computer-interface-2026-neuralink-synchron-update/15397/)
 
 - 🚄 **Maglev & Hyperloop Transport — Replacing Aircraft Speed on Ground** *(11 May 2026)*
-  Maglev + Hyperloop = รถไฟลอยตัวด้วยแม่เหล็ก → เร็วเท่าเครื่องบิน China: 700 km/h ใน 2 วินาที (world record, Dec 2025) Shanghai Maglev = commercial maglev เพียงเส้นทางเดียวในโลก (43...
+  เทคโนโลยีแม็กเลฟใช้สนามแม่เหล็กยกรถให้ลอยจากราง และมีการพัฒนาร่วมกับแนวคิด Hyperloop จีนรายงานการเร่งถึง 700 km/h ใน 2 วินาทีเมื่อเดือนธันวาคม 2025 ส่วน Shanghai Maglev เป็นตัวอย่างการใช้งานเชิงพาณิชย์
   [Source](https://www.indiatoday.in/world/story/china-hyperloop-maglev-train-new-world-record-superconducting-700-kmh-in-two-seconds-2842749-2025-12-27)
 
 - ⚡ **Solid-State Batteries — The Post-Lithium-Ion Future** *(11 May 2026)*
-  Solid-state batteries = แทนที่ liquid electrolyte ด้วย solid electrolyte → safe กว่า, energy density สูงกว่า, ชาร์จเร็วกว่า Toyota target 450-500 Wh/kg (production 2027-2028), Sams...
+  แบตเตอรี่โซลิดสเตทใช้อิเล็กโทรไลต์แข็งแทนของเหลว เพื่อเพิ่มความปลอดภัย ความหนาแน่นพลังงาน และความเร็วในการชาร์จ Toyota ตั้งเป้า 450–500 Wh/kg และเริ่มผลิตในปี 2027–2028
   [Source](https://to7motor.com/solid-state-batteries-2026-commercial-reality)
 
 - 🧬 **Synthetic Spider Silk — Stronger Than Steel, Biodegradable** *(11 May 2026)*
-  Synthetic spider silk = ไหมแมงมุมสังเคราะห์ → แข็งแรงกว่าเหล็ก + ย่อยสลายได้ Kraig Biocraft: genetically engineered silkworms produce spider silk proteins USA Today 2026: crystalli...
+  ไหมแมงมุมสังเคราะห์มุ่งให้ได้เส้นใยแข็งแรงและย่อยสลายได้ Kraig Biocraft ใช้หนอนไหมที่ดัดแปลงพันธุกรรมให้ผลิตโปรตีนไหมแมงมุม และมีบทความทบทวนวัสดุชนิดนี้ในปี 2026
   [Source](https://www.usatoday.com/press-release/story/32284/advanced-materials-science-2026-how-spider-silk-carbon-fiber-aerogels-are-powering-medicine-defense-space-tech-today/)
 
 - ⛽ **Small Modular Reactors (SMR) — Next-Gen Nuclear** *(10 May 2026)*
-  SMR = nuclear reactor ขนาดเล็ก (< 300 MW) → สร้างที่โรงงาน + ขนส่งไปติดตั้ง → ปลอดภัยกว่า, ถูกกว่า, รวดเร็วกว่า China Linglong One = SMR ตัวแรกที่ online 2026 Terrestrial Energy = ...
+  Small Modular Reactor (SMR) เป็นเครื่องปฏิกรณ์นิวเคลียร์ขนาดต่ำกว่า 300 MW ที่ผลิตชิ้นส่วนในโรงงานแล้วขนไปติดตั้งได้ เพื่อมุ่งลดต้นทุนและเวลาก่อสร้าง จีนวางแผนเดินเครื่อง Linglong One ในปี 2026 และมีการพัฒนาจาก Terrestrial Energy
   [Source](https://www.eia.gov/todayinenergy/detail.php?id=67584)
 
 - 🔷 **Carbon Nanotube Fiber — Stronger Than Steel, Lighter Than Copper** *(09 May 2026)*
-  Carbon nanotube fiber = เส้นใย CNT → แข็งแรงกว่าเหล็ก + เบากว่าทองแดง SciOpen: 4.10 N/tex specific strength (exceeds T1100 carbon fiber) TechXplore 2026: Spanish researchers demons...
+  เส้นใยท่อนาโนคาร์บอน (CNT) มีความแข็งแรงสูงและน้ำหนักเบา งานที่อ้างถึงรายงานความแข็งแรงจำเพาะ 4.10 N/tex ซึ่งสูงกว่าเส้นใยคาร์บอน T1100 และมีงานจากนักวิจัยสเปนในปี 2026
   [Source](https://www.sciopen.com/article/10.26599/NR.2025.94907584)
 
 - ⛽ **Microbial Fuel Cells — Electricity from Wastewater** *(09 May 2026)*
-  Microbial fuel cells (MFC) = แบคทีเรียกินขยะในน้ำเสีย → ผลิตไฟฟ้า → บำบัดน้ำเสีย + ได้พลังงานในตัว PMC 2026: scaling up MFC systems สำหรับ practical use สามารถแปลง human urine → el...
+  เซลล์เชื้อเพลิงจุลินทรีย์ (MFC) ใช้แบคทีเรียย่อยสารอินทรีย์ในน้ำเสียเพื่อผลิตไฟฟ้าพร้อมบำบัดน้ำ งานในปี 2026 ศึกษาการขยายระบบสู่การใช้งานจริง รวมถึงการใช้ปัสสาวะเป็นวัตถุดิบ
   [Source](https://www.mdpi.com/2071-1050/18/2/638)
 
 - ⚡ **Next-Gen Geothermal — Enhanced Geothermal Systems (EGS)** *(09 May 2026)*
-  Enhanced Geothermal Systems (EGS) = ใช้เทคนิค horizontal drilling + hydraulic fracturing จาก oil & gas industry เพื่อสร้างแหล่งพลังงานความร้อนใต้ดินที่ไหนก็ได้ — ไม่จำกัดแค่พื้นที่...
+  Enhanced Geothermal Systems (EGS) ประยุกต์การเจาะแนวราบและการทำให้หินแตกด้วยแรงดันน้ำจากอุตสาหกรรมน้ำมันและก๊าซ เพื่อขยายพื้นที่ที่สามารถใช้พลังงานความร้อนใต้พิภพได้
   [Source](https://fervoenergy.com/fervo-energy-breaks-ground-on-the-worlds-largest-next-gen-geothermal-project/)
 
 - 🔮 **Satellite QKD Network — Global Unhackable Encryption** *(09 May 2026)*
-  Satellite QKD = เข้ารหัสควอนตัมผ่านดาวเทียม → unhackable global network The Quantum Insider: EAGLE-1 ESA mission 2025-2026, commercial trials ScienceDaily: 12,900 km ultra-secure q...
+  Satellite QKD ใช้ดาวเทียมกระจายกุญแจควอนตัมเพื่อเพิ่มความปลอดภัยของการสื่อสารระยะไกล มีโครงการ EAGLE-1 ของ ESA ในช่วงปี 2025–2026 และรายงานการสื่อสารควอนตัมระยะ 12,900 กิโลเมตร
   [Source](https://thequantuminsider.com/2025/03/05/space-based-quantum-key-distribution-a-deep-dive-into-qkds-market-map-and-competitive-landscape/)
 
 - ☀️ **Solar Updraft Tower — Greenhouse Chimney Power Plant** *(09 May 2026)*
-  Solar updraft tower = เครื่องผลิตไฟฟ้าจาก เรือนกระจก + ปล่องไฟสูง — แสงอาทิตย์ → อากาศร้อน → ลอยขึ้นปล่อง → หมุนกังหัน ScienceDirect 2025: comprehensive review + heat storage สำหรั...
+  Solar updraft tower ใช้แสงอาทิตย์อุ่นอากาศใต้เรือนกระจกให้อากาศลอยขึ้นปล่องสูงและหมุนกังหันผลิตไฟฟ้า งานทบทวนปี 2025 ศึกษาระบบนี้ร่วมกับการกักเก็บความร้อน
   [Source](https://www.sciencedirect.com/science/article/abs/pii/S2213138825002449)
 
 - 💧 **Holographic & Volumetric Displays — 3D Without Glasses** *(02 May 2026)*
-  Holographic/volumetric displays = แสดงภาพ 3D ลอยกลางอากาศ ไม่ต้องใส่แว่น — เห็น depth + parallax จริง Nature: Multimodal Acoustic Trap Display (MATD) ให้ทั้งภาพ + เสียง + สัมผัส Lo...
+  จอ holographic และ volumetric สร้างภาพสามมิติที่เห็นความลึกและมุมมองเปลี่ยนตามตำแหน่งผู้ดูโดยไม่ต้องสวมแว่น งาน Multimodal Acoustic Trap Display (MATD) รวมภาพ เสียง และสัมผัสไว้ในระบบเดียว
   [Source](https://www.nature.com/articles/s41586-019-1739-5)
 
 - 🔬 **LLM as Computer: New Techniques 2025-2026** *(02 May 2026)*
-  ไม่ใช่แค่ให้ LLM ใช้ computer (computer use agents) แต่เป็น วิธีใหม่ๆ ที่ทำให้ LLM เองทำงานเหมือน computer — คำนวณแม่นยำ 100%, execute programs, deterministic computation โดยไม่ต้อ...
+  บทความสำรวจวิธีทำให้ LLM ทำงานเสมือนคอมพิวเตอร์ ทั้งการรันโปรแกรมและการคำนวณที่ให้ผลแน่นอน โดยระบุความแม่นยำ 100% ซึ่งต่างจากการให้ agent เรียกใช้เครื่องมือคอมพิวเตอร์ภายนอก
   [Source](https://www.percepta.ai/blog/can-llms-be-computers)
 
 - 🛸 **Loyal Wingman Drones — AI Fighter Wingmen** *(02 May 2026)*
-  Loyal Wingman = drone รบที่บินคู่กับเครื่องบินขับไล่มนุษย์ — AI บินอัตโนมัติ, ล่อศัตรู, บินลาดตระเวน, โจมตีเป้า USAF CCA program (Anduril + General Atomics) ส่งมอบ production units...
+  Loyal Wingman เป็นโดรนรบที่ทำงานร่วมกับเครื่องบินขับไล่ซึ่งมีนักบิน ใช้ AI ช่วยบิน ลาดตระเวน และทำภารกิจที่ได้รับมอบหมาย ตัวอย่างคือโครงการ CCA ของกองทัพอากาศสหรัฐฯ ที่มี Anduril และ General Atomics เข้าร่วม
   [Source](https://dsm.forecastinternational.com/2026/03/04/air-force-cca-wingman-drone/)
 
 - 💾 **Phase Change Memory (PCM) — Universal Memory** *(02 May 2026)*
-  PCM = memory ที่ เร็วเหมือน DRAM + ไม่ลืมเหมือน flash = "universal memory" IBM: "first instantiation of universal memory" Intel/Micron: 3D XPoint (Optane) = commercial PCM Next-gen...
+  Phase Change Memory (PCM) มุ่งรวมความเร็วแบบ DRAM กับการเก็บข้อมูลเมื่อปิดไฟแบบ flash จึงถูกเรียกว่า universal memory มีงานพัฒนาจาก IBM และผลิตภัณฑ์ 3D XPoint หรือ Optane ของ Intel/Micron
   [Source](https://www.extremetech.com/computing/228622-ibm-researchers-announce-major-breakthrough-in-phase-change-memory)
 
 - 🔋 **Silicon Anode Battery — 10x Graphite Capacity** *(02 May 2026)*
-  Silicon anode battery = แอโนดซิลิกอน → เก็บประจุ 10x กว่าแกรไฟต์ InsideEVs: Group14 + Sionic Energy silicon anode breakthrough Surrey: Si-C nanotube 3,500 mAh/g — nearly 10x graphi...
+  แบตเตอรี่แอโนดซิลิคอนเก็บประจุได้มากกว่าแกรไฟต์ 10 เท่า Group14 และ Sionic Energy พัฒนาแอโนดชนิดนี้ ขณะที่งานของ Surrey ใช้โครงสร้าง Si-C nanotube ให้ความจุ 3,500 mAh/g หรือเกือบ 10 เท่าของแกรไฟต์
   [Source](https://insideevs.com/news/781257/silicon-anode-breakthrough-group14-sionic-energy/)
 
 - ☀️ **Solar Hydrogen Panel — Direct Sunlight to H₂** *(02 May 2026)*
-  Solar hydrogen panel = แผงโซลาร์ผลิต H₂ โดยตรง ไม่ต้อง electrolyzer Solhyd: solar panel + air → green hydrogen, World Hydrogen Award winner Photreon/KIT: photoreactor panel, no ele...
+  แผงผลิตไฮโดรเจนจากแสงอาทิตย์มุ่งสร้าง H₂ ได้โดยตรงโดยไม่ใช้ electrolyzer แยกต่างหาก Solhyd ใช้แสงอาทิตย์ร่วมกับอากาศ ส่วน Photreon และ KIT พัฒนาแผง photoreactor
   [Source](https://solhyd.eu/en/solhyd-media-coverage/change-inc-this-startup-shows-how-to-make-green-hydrogen-with-air-and-a-solar-panel/)
 
 - ☀️ **Space-Based Solar Power — Beam Energy from Orbit** *(02 May 2026)*
-  เก็บแสงอาทิตย์ในอวกาศ → ยิง laser/microwave ส่งลงโลก → ไฟฟ้าตลอด 24 ชม. ไม่มี dark hours Meta จ้าง Overview Energy (up to 1 GW) จ่ายไฟ data center Japan ทดสอบ space-to-ground ปลาย ...
+  ระบบพลังงานแสงอาทิตย์ในอวกาศรับแสงและส่งพลังงานมายังโลกด้วยเลเซอร์หรือไมโครเวฟ เพื่อจ่ายไฟตลอด 24 ชั่วโมง Meta ทำข้อตกลงกับ Overview Energy สำหรับศูนย์ข้อมูลสูงสุด 1 GW และญี่ปุ่นมีการทดสอบการส่งพลังงานจากอวกาศสู่พื้นดิน
   [Source](https://www.reuters.com/legal/litigation/meta-partners-with-space-startup-overview-energy-secure-solar-power-data-centers-2026-04-27/)
 
 - ☢️ **Thorium Molten Salt Reactor — Safe Nuclear Power** *(02 May 2026)*
-  Thorium molten salt reactor = เตาปฏิกรณ์ทอเรียม → ปลอดภัย + ขยะน้อย + เชื้อเพลิงเยอะ IEEE Spectrum: China builds thorium MSR in Gobi Desert 2025, operational by 2030 World Nuclear:...
+  เครื่องปฏิกรณ์เกลือหลอมเหลวที่ใช้ทอเรียมมุ่งเพิ่มความปลอดภัยและลดของเสีย โดยใช้เชื้อเพลิงที่มีปริมาณมาก จีนสร้างโครงการในทะเลทรายโกบีในปี 2025 และตั้งเป้าเดินเครื่องภายในปี 2030
   [Source](https://spectrum.ieee.org/chinas-thorium-molten-salt-reactor)
 
 - 🏗️ **Aerogel Insulation — World's Lightest Solid, Space to Buildings** *(01 May 2026)*
-  Aerogel = ของแข็งที่เบาที่สุดในโลก (95% air) → ฉนวนดีที่สุด PatSnap 2026: 0.013 W/m·K (1/5 ของฉนวนทั่วไป) Armacell: lightest + thinnest insulation available Chemistry World: Nanopl...
+  Aerogel เป็นของแข็งน้ำหนักเบาที่มีอากาศ 95% และเป็นฉนวนความร้อน งานในปี 2026 ระบุค่าการนำความร้อน 0.013 W/m·K หรือ 1/5 ของฉนวนทั่วไป โดย Armacell พัฒนาการใช้งานด้านฉนวน
   [Source](https://www.patsnap.com/resources/blog/rd-blog/aerogel-thermal-insulation-building-materials-2026-patsnap-eureka/)
 
 - ⚡ **Aneutronic Fusion — Proton-Boron Clean Energy** *(01 May 2026)*
-  Aneutronic fusion = fusion ไม่มีนิวตรอน → ปลอดภัย + แปลงไฟฟ้าง่าย IEEE Spectrum: five prospects for aneutronic fusion, charged particles instead of neutrons Frontiers: proton-boron...
+  Aneutronic fusion มุ่งให้ปฏิกิริยาสร้างอนุภาคมีประจุแทนนิวตรอนเป็นหลัก เพื่อช่วยลดรังสีและเอื้อต่อการเปลี่ยนพลังงานเป็นไฟฟ้า มีบทความสำรวจแนวทางฟิวชันโปรตอน–โบรอนและแนวทางอื่น ๆ
   [Source](https://spectrum.ieee.org/aneutronic-fusion)
 
 - 🩹 **Bacterial Nanocellulose Burn Wound Healing — Living Bandage** *(01 May 2026)*
-  Bacterial nanocellulose wound dressing = แผ่นฟิล์มแบคทีเรียรักษาแผลไหม้ Nature npj: alginate-modified bacterial nanocellulose → advanced therapy for third-degree burns ScienceDirec...
+  วัสดุปิดแผลจาก bacterial nanocellulose ใช้โครงข่ายเซลลูโลสที่แบคทีเรียผลิต งานใน npj ศึกษาการปรับด้วย alginate เพื่อรักษาแผลไหม้ระดับสาม
   [Source](https://www.nature.com/articles/s41536-026-00470-1)
 
 - ⚡ **Biohybrid Robot — Living Muscle + Synthetic Body** *(01 May 2026)*
-  Biohybrid robot = หุ่นยนต์กล้ามเนื้อมีชีวิต → เดิน/ว่างน้ำ/จับของ Nature npj: skeletal + cardiac muscle tissues integrated with synthetic components → energy-efficient movement Roy...
+  หุ่นยนต์ชีวผสมใช้เนื้อเยื่อกล้ามเนื้อโครงร่างหรือกล้ามเนื้อหัวใจร่วมกับชิ้นส่วนสังเคราะห์ เพื่อให้เดิน ว่ายน้ำ หรือหยิบจับวัตถุได้โดยใช้พลังงานต่ำ
   [Source](https://www.nature.com/articles/s44182-025-00049-w)
 
 - 💾 **DNA Molecular Computer — Computing at 0.34nm Scale** *(01 May 2026)*
-  DNA molecular computer = ใช้ DNA เป็นตัวคำนวณ → 0.34nm scale (เล็กกว่า semiconductor 2nm มาก) KAIST: created DNA computer ที่ combine logic + memory in reusable system PMC: nucleic...
+  คอมพิวเตอร์โมเลกุล DNA ใช้ปฏิกิริยาของ DNA ในการคำนวณ โดยกล่าวถึงโครงสร้างระดับ 0.34 นาโนเมตร เทียบกับสารกึ่งตัวนำ 2 นาโนเมตร KAIST พัฒนาระบบที่รวมตรรกะและหน่วยความจำไว้ด้วยกันและนำกลับมาใช้ซ้ำได้
   [Source](https://www.electropages.com/blog/2026/04/researchers-create-dna-computer-smaller-2nm-semiconductors)
 
 - 💾 **Elastocaloric Solid-State Cooling — Refrigeration Without Refrigerants** *(01 May 2026)*
-  Elastocaloric cooling = ระบายความร้อนด้วย บีบอัดโลหะ (shape memory alloy) → ไม่ต้องใช้ refrigerant IEEE Spectrum: sub-zero cooling demonstrated (freeze water!) 2025: 2 million cycl...
+  การทำความเย็นแบบ elastocaloric ใช้แรงบีบหรือดึงโลหะผสมจำรูปเพื่อเปลี่ยนอุณหภูมิ โดยไม่ใช้สารทำความเย็น มีการสาธิตอุณหภูมิต่ำกว่าจุดเยือกแข็งและรายงานการทำงาน 2 ล้านรอบในปี 2025
   [Source](https://www.unboxfuture.com/2026/02/elastocaloric-hvac-refrigerant-free-cooling-2026.html)
 
 - 🔋 **Gravity Battery — Lift Weight, Store Energy** *(01 May 2026)*
-  Gravity battery = ยกของหนักขึ้นเก็บพลังงาน → ปล่อยลงผลิดไฟ Wikipedia: Rudong 25 MW/100 MWh commissioned May 2024 New Atlas: skyscrapers as gravity batteries via elevator systems IE...
+  แบตเตอรี่แรงโน้มถ่วงเก็บพลังงานด้วยการยกน้ำหนัก แล้วปล่อยลงมาขับเครื่องกำเนิดไฟฟ้า โครงการ Rudong ขนาด 25 MW/100 MWh เริ่มใช้งานในเดือนพฤษภาคม 2024 และมีแนวคิดใช้ลิฟต์ในอาคารสูงกักเก็บพลังงาน
   [Source](https://newatlas.com/energy/lift-energy-skyscraper-batteries/)
 
 - 🔮 **Quantum Dot Electroluminescent Display — QDEL** *(01 May 2026)*
-  QDEL = quantum dot self-emitting display → ไม่ต้องมี backlight → แทน OLED Wikipedia: Nanosys expects QD electroluminescent production by 2026 Samsung: cadmium-free QLED certified b...
+  Quantum Dot Electroluminescent Display (QDEL) ใช้ quantum dot เปล่งแสงเองจึงไม่ต้องมี backlight Nanosys คาดการณ์การผลิตในปี 2026 ส่วน Samsung ได้รับการรับรองจอ QLED ไร้แคดเมียม
   [Source](https://news.samsung.com/global/samsung-qled-tvs-earn-real-quantum-dot-display-certification-from-tuv-rheinland)
 
 - 🔮 **Scalable Quantum Repeater — Long-Distance Quantum Internet** *(01 May 2026)*
-  Quantum repeater = ตัวขยายสัญญาณควอนตัม สำหรับ quantum internet ระยะไกล USTC (China): 10km fiber entanglement, 550ms memory lifetime Nature 2026: long-lived trapped-ion entanglemen...
+  Quantum repeater ช่วยเชื่อมเครือข่ายควอนตัมระยะไกล USTC ในจีนรายงานความพัวพันผ่านใยแก้ว 10 กิโลเมตรและอายุหน่วยความจำ 550 มิลลิวินาที พร้อมมีงานใน Nature ปี 2026 เกี่ยวกับความพัวพันของไอออนที่คงอยู่ได้นาน
   [Source](https://www.nature.com/articles/s41586-026-10177-4)
 
 ## April 2026
 
 - ⚡ **Superconducting Power Grid — Lossless Electricity Transmission** *(04 Apr 2026)*
-  Superconducting power grid = สายไฟไม่สูญเสียพลังงาน → ส่งไฟฟ้า 0% loss Microsoft Azure: HTS cables lighter than copper, carry current over longer distances, optimize data center po...
+  สายส่งตัวนำยิ่งยวดมุ่งส่งไฟฟ้าโดยสูญเสียจากความต้านทาน 0% Microsoft Azure ศึกษาสาย HTS ที่เบากว่าทองแดงและรองรับกระแสสูง เพื่อปรับปรุงโครงสร้างพื้นฐานไฟฟ้าของศูนย์ข้อมูล
   [Source](https://azure.microsoft.com/en-us/blog/can-high-temperature-superconductors-transform-the-power-infrastructure-of-datacenters/)
 
 - 🧬 **CRISPR Gene Therapy — From Lab to Clinic** *(01 Apr 2026)*
-  CRISPR gene therapy = แก้ไข DNA ตรงจุดผิด → รักษาโรคทางพันธุกรรมได้ที่รากฐาน Casgevy (Vertex + CRISPR Therapeutics) = CRISPR medicine ตัวแรกที่ FDA approved (ธ.ค. 2023) รักษา sickl...
+  การรักษาด้วย CRISPR แก้ไข DNA เพื่อรักษาโรคทางพันธุกรรม Casgevy ของ Vertex และ CRISPR Therapeutics เป็นยาที่ใช้ CRISPR ตัวแรกซึ่งได้รับอนุมัติจาก FDA ในเดือนธันวาคม 2023
   [Source](https://innovativegenomics.org/news/crispr-clinical-trials-2026/)
 
 - 🧬 **Compiled AI — Deterministic LLM Code Generation** *(01 Apr 2026)*
-  Compiled AI = LLM generate executable code ครั้งเดียว (compilation phase) → execute deterministically หลังจากนั้นไม่ต้องเรียก LLM อีก แยก "design phase" (LLM) ออกจาก "execution pha...
+  Compiled AI ให้ LLM สร้างโค้ดที่รันได้ในช่วงออกแบบเพียงครั้งเดียว จากนั้นรันโค้ดโดยให้ผลแน่นอนและไม่ต้องเรียก LLM ซ้ำ จึงแยกการออกแบบออกจากการทำงานของระบบ
   [Source](https://arxiv.org/abs/2604.05150)
 
 - ⚡ **Magnetic Refrigeration — Solid-State Cooling** *(01 Apr 2026)*
-  Magnetic refrigeration = แม่เหล็กทำความเย็น ไม่ต้องใช้ compressor Phys. Rev. Applied 2026: gadolinium enhanced room-temperature cooling power T&F: low-dimensional magnetocaloric ma...
+  ระบบทำความเย็นด้วยแม่เหล็กใช้ปรากฏการณ์ magnetocaloric โดยไม่ต้องมีคอมเพรสเซอร์ งานใน Physical Review Applied ปี 2026 ศึกษาการเพิ่มกำลังทำความเย็นใกล้อุณหภูมิห้องด้วยแกโดลิเนียม
   [Source](https://journals.aps.org/prapplied/abstract/10.1103/dgzw-7dsd)
 
 - 🤖 **Medical Exoskeleton + BCI — Walking After Paralysis** *(01 Apr 2026)*
-  Medical exoskeleton = ชุดหุ่นยนต์ให้คนพิการเดินได้ + BCI ควบคุมด้วยความคิด ReWalk 7: FDA approved, most widely used personal exoskeleton USC: $8M funding, fully implantable BCI → t...
+  ชุดหุ่นยนต์ช่วยเดินทางการแพทย์ทำงานร่วมกับ BCI เพื่อรับคำสั่งจากสมอง ReWalk 7 เป็นตัวอย่างที่ผ่าน FDA ขณะที่ USC ได้รับทุน $8M เพื่อศึกษาระบบ BCI แบบฝังร่วมกับขาหุ่นยนต์สวมใส่
   [Source](https://keck.usc.edu/news/researchers-test-a-two-way-brain-interface-with-wearable-robotic-legs-that-could-one-day-restore-walking-and-sensation-after-paralysis/)
 
 - 🧠 **Optogenetics — Controlling the Brain with Light** *(01 Apr 2026)*
-  Optogenetics = ควบคุมเซลล์ประสาทด้วย แสง → เปิด/ปิด neuron แบบ precise 2026 breakthrough: non-genetic neural control via light stimulation (no gene editing needed!) Emory: biolumin...
+  Optogenetics ใช้แสงควบคุมการทำงานของเซลล์ประสาทอย่างจำเพาะ รายงานปี 2026 ยังกล่าวถึงการควบคุมเซลล์ประสาทด้วยแสงโดยไม่ตัดต่อยีน และงานของ Emory ที่เกี่ยวข้องกับการเรืองแสงทางชีวภาพ
   [Source](https://science-technology.news-articles.net/content/2026/04/19/breakthrough-in-non-genetic-neural-control-via-light-stimulation.html)
 
 - ☀️ **Photoelectrochemical Water Splitting — Sunlight → Hydrogen Directly** *(01 Apr 2026)*
-  PEC water splitting = แสงอาทิตย์ → แยกน้ำ → ไฮโดรเจน โดยตรง (ไม่ผ่าน PV + electrolyzer) Nature: solar-to-hydrogen efficiency >9% with pure water + concentrated sunlight + InGaN pho...
+  Photoelectrochemical water splitting (PEC) ใช้แสงอาทิตย์แยกน้ำเป็นไฮโดรเจนโดยตรง งานใน Nature รายงานประสิทธิภาพเปลี่ยนพลังงานแสงเป็นไฮโดรเจนมากกว่า 9% โดยใช้น้ำบริสุทธิ์ แสงรวมความเข้ม และวัสดุ InGaN
   [Source](https://www.nature.com/articles/s41586-022-05399-1)
 
 ## March 2026
 
 - 🔮 **Quantum Navigation — GPS Without Satellites** *(28 Mar 2026)*
-  Quantum navigation = นำทางโดยไม่ต้องใช้ GPS ด้วย atom interferometry MIT Tech Review 2025: Infleqtion rubidium atom beam → split into two paths Sandia: quantum inertial sensing + g...
+  ระบบนำทางควอนตัมใช้ atom interferometry เพื่อระบุตำแหน่งโดยไม่พึ่ง GPS งานที่กล่าวถึงในปี 2025 ใช้ลำอะตอมรูบิเดียมของ Infleqtion แยกเป็นสองเส้นทาง และมีการพัฒนาเซ็นเซอร์ความเฉื่อยควอนตัมจาก Sandia
   [Source](https://www.technologyreview.com/2025/12/16/1129887/quantum-navigation-militarys-gps-jamming-problem/)
 
 - 🔬 **Percepta — Computer Inside a Transformer** *(16 Mar 2026)*
-  Percepta (startup) สร้าง code-to-weights compiler ที่ compile WebAssembly interpreter ลงใน transformer weights โดยตรง — ไม่ใช่ prompting, ไม่ใช่ tool call, โปรแกรมอยู่ใน weights. E...
+  Percepta พัฒนา code-to-weights compiler ที่แปลงตัวแปลคำสั่ง WebAssembly ให้เป็นค่าน้ำหนักของ transformer โดยตรง โปรแกรมจึงอยู่ภายในโมเดลแทนการสั่งผ่าน prompt หรือเรียกเครื่องมือภายนอก
   [Source](https://www.percepta.ai/blog/can-llms-be-computers)
 
 ## January 2026
 
 - 💡 **Stretchable Electronics — Skin-Mounted Health Monitor** *(26 Jan 2026)*
-  Stretchable electronics = อิเล็กทรอนิกส์ยืดหดได้ ติดผิวหนัง → วัดสุขภาพ real-time ScienceDaily 2026: MXene-based stretchable OLED display Science Advances: skin-like patch with OLE...
+  อิเล็กทรอนิกส์ยืดหยุ่นติดบนผิวหนังเพื่อติดตามข้อมูลสุขภาพแบบ real-time ได้ งานปี 2026 กล่าวถึงจอ OLED ที่ใช้ MXene และแผ่นติดผิวหนังที่ผสานจอแสดงผล
   [Source](https://www.sciencedaily.com/releases/2026/01/260115220608.htm)
 
 - 🔲 **Metamaterial Invisibility Cloak — Across the Spectrum** *(06 Jan 2026)*
-  Metamaterial cloaking = วัสดุพรางตัว → ซ่อนจากแสง/เสียง/ความร้อน Wikipedia: metamaterials manipulate light paths → invisibility Nature: metasurface cloaks with significantly reduce...
+  การพรางด้วย metamaterial ใช้โครงสร้างวัสดุควบคุมเส้นทางของคลื่นแสง เสียง หรือความร้อน เพื่อลดการตรวจพบวัตถุ โดยมีงานพัฒนาโครงสร้าง metasurface สำหรับจุดประสงค์นี้
   [Source](https://www.nature.com/articles/s41377-018-0052-7)
 
 ## December 2025
 
 - ⚡ **Direct Air Capture (DAC) Scale-Up — Climeworks Leading** *(10 Dec 2025)*
-  DAC = ดูด CO₂ จากอากาศโดยตรง Climeworks: opened world's largest DAC innovation center (Dec 2025) Target: $250-350/tonne by 2030 New technology: halves energy use ETH Zürich project...
+  Direct Air Capture (DAC) ดักจับ CO₂ จากอากาศโดยตรง Climeworks เปิดศูนย์นวัตกรรม DAC ในเดือนธันวาคม 2025 และตั้งเป้าต้นทุน $250–350/tonne ภายในปี 2030 โดยพัฒนาเทคโนโลยีที่ใช้พลังงานลดลงครึ่งหนึ่ง
   [Source](https://climeworks.com/press-release/climeworks-launches-the-largest-dac-innovation-center)
 
 ## November 2025
 
 - ♻️ **Enzymatic Plastic Degradation — Bacteria That Eat Plastic** *(25 Nov 2025)*
-  Plastic-eating bacteria = จุลินทรีย์ที่มีเอนไซม์ PETase ย่อยสลายพลาสติก PET KAUST 2025: ค้นพบ M5 motif บน PETase ในแบคทีเรียทั่วมหาสมุทร Ideonella sakaiensis = แบคทีเรียที่กินพลาสต...
+  เอนไซม์ PETase ในแบคทีเรียย่อยพลาสติก PET ได้ KAUST ในปี 2025 พบส่วนโครงสร้าง M5 ที่เกี่ยวข้องกับประสิทธิภาพของเอนไซม์ในแบคทีเรียจากมหาสมุทร โดยมี Ideonella sakaiensis เป็นตัวอย่างแบคทีเรียย่อยพลาสติก
   [Source](https://www.sciencedaily.com/releases/2025/11/251104013023.htm)
 
 - 🔋 **Graphene Supercapacitor — Battery-Speed Charging, Supercapacitor Power** *(25 Nov 2025)*
-  Graphene supercapacitor = ตัวเก็บพลังงานที่ ชาร์จเร็วมาก + พลังงานสูง Monash University: record energy + power density ใน supercapacitor, rival lead-acid batteries ScienceDaily: hi...
+  Graphene supercapacitor เก็บและจ่ายพลังงานได้รวดเร็ว Monash University รายงานความหนาแน่นพลังงานและกำลังที่สูงขึ้นจนเทียบเคียงแบตเตอรี่ตะกั่ว–กรดได้
   [Source](https://www.sciencedaily.com/releases/2025/11/251130205509.htm)
 
 - ♻️ **Microplastic Degrading Enzyme — Nature Eats Plastic** *(25 Nov 2025)*
-  Microplastic degrading enzyme = เอนไซม์กินไมโครพลาสติก ScienceDaily: KAUST discovers molecular signature for efficient plastic-breaking enzymes → found in 80% of ocean samples Scie...
+  เอนไซม์ย่อยไมโครพลาสติกเป็นแนวทางช่วยสลายพลาสติกในสิ่งแวดล้อม KAUST พบลักษณะระดับโมเลกุลที่เกี่ยวข้องกับการย่อยพลาสติกอย่างมีประสิทธิภาพในตัวอย่างจากมหาสมุทร 80%
   [Source](https://www.sciencedaily.com/releases/2025/11/251104013023.htm)
 
 ## October 2025
 
 - 🚀 **Space Debris Removal — Cleaning Up Orbit** *(05 Oct 2025)*
-  Space debris = 36,000+ tracked objects ขนาด >10cm ใน orbit → เสี่ยง Kessler Syndrome (chain reaction collisions) ClearSpace-1 (ESA) = first active debris removal mission Astroscale...
+  มีวัตถุขยะอวกาศขนาดมากกว่า 10 เซนติเมตรที่ติดตามได้มากกว่า 36,000 ชิ้น ซึ่งเพิ่มความเสี่ยงการชนต่อเนื่องแบบ Kessler syndrome โครงการ ClearSpace-1 ของ ESA และงานของ Astroscale มุ่งนำขยะออกจากวงโคจร
   [Source](https://www.astroscale.com/en/missions/elsa-d)
 
 ## July 2025
 
 - 🧬 **CRISPR Gene Drive Mosquitoes — Eradicating Malaria** *(23 Jul 2025)*
-  Gene drive = CRISPR technique ที่ บังคับยีนกระจายทั่วประชากร (ไม่ใช่ 50/50 แต่ ~100%) UCSD + Johns Hopkins: "stealth genetic switch" เปลี่ยนโมเลกุลเดียวในยุง → ยุงไม่ส่งมาลาเรีย PM...
+  Gene drive ใช้ CRISPR เพิ่มโอกาสที่ยีนเป้าหมายจะส่งต่อในประชากร จากอัตราปกติ 50/50 ไปสู่ระดับใกล้ 100% UCSD และ Johns Hopkins ศึกษาการปรับกลไกทางพันธุกรรมของยุงเพื่อยับยั้งการแพร่เชื้อมาลาเรีย
   [Source](https://www.science.org/content/article/controversial-gene-drive-strategy-could-make-mosquitoes-hostile-to-malaria-parasites)
 
 ## June 2025
 
 - 🤖 **DNA Nanorobot Drug Delivery** *(01 Jun 2025)*
-  DNA nanorobot = หุ่นยนต์ DNA ส่งยาในร่างกาย → ตรงเป้าที่เซลล์ ScienceDaily: DNA robots deliver drugs + hunt viruses inside body Frontiers: nano bio-robots, electro-responsive nanop...
+  หุ่นยนต์นาโน DNA มุ่งส่งยาไปยังเซลล์เป้าหมายภายในร่างกาย มีงานศึกษาโครงสร้างที่ตรวจจับไวรัสและอนุภาคนาโนที่ตอบสนองต่อสัญญาณไฟฟ้า
 
 - 🤖 **Hydrogel Soft Robot Actuator** *(01 Jun 2025)*
-  Hydrogel actuator = เจลาตินหุ่นยนต์ → ตอบสนองต่อสิ่งเร้า OAEPublish: flexible smart actuators respond to stimuli for robotics + biomedicine Wiley Advanced Materials: autonomous hyd...
+  อุปกรณ์ขับเคลื่อนไฮโดรเจลเปลี่ยนรูปเมื่อได้รับสิ่งเร้า ใช้พัฒนาหุ่นยนต์เนื้อนิ่มและอุปกรณ์ทางการแพทย์ที่ยืดหยุ่นได้
 
 - 🔋 **Iron-Air Battery Long Duration** *(01 Jun 2025)*
-  Iron-air battery = แบตเหล็ก-อากาศ → เก็บพลังงาน 100+ ชม Form Energy: built from iron, water, air → reversible rusting, $20/kWh target Energy Magazine: Ore Energy Netherlands first ...
+  แบตเตอรี่เหล็ก–อากาศใช้ปฏิกิริยาการเกิดสนิมที่ย้อนกลับได้เพื่อเก็บพลังงานนานกว่า 100 ชั่วโมง Form Energy ใช้เหล็ก น้ำ และอากาศ โดยตั้งเป้าต้นทุน $20/kWh และมีการพัฒนาจาก Ore Energy ในเนเธอร์แลนด์
 
 - 🌈 **Perovskite LED Pure Color Display** *(01 Jun 2025)*
-  Perovskite LED = หลอดไฟ perovskite สีบริสุทธิ์ → display สีใสกว่า OLED TeWei: Feb 2025 China pure red perovskite LED breakthrough Perovskite-Info: all-perovskite triple-junction RG...
+  Perovskite LED มุ่งให้แสงสีบริสุทธิ์สำหรับจอแสดงผล มีรายงานการสร้างแสงสีแดงบริสุทธิ์ในจีนเมื่อเดือนกุมภาพันธ์ 2025 และการพัฒนาโครงสร้าง perovskite หลายรอยต่อ
 
 - 📡 **Terahertz 6G 100 Gbps Wireless** *(01 Jun 2025)*
-  6G terahertz = ไร้สาย 100 Gbps → 500x 5G speed Electropages: 6G chip achieves >100 Gbps, major leap in THz communication TechXplore: world's first 6G chip, 100 Gbps speeds (Sept 20...
+  การสื่อสาร 6G ในย่านเทราเฮิรตซ์มุ่งส่งข้อมูลไร้สาย 100 Gbps หรือเร็วกว่า 5G 500 เท่า มีรายงานชิปที่ทำอัตราส่งข้อมูลได้มากกว่า 100 Gbps
 
 - 🔮 **Wavelength Tunable Laser** *(01 Jun 2025)*
-  Tunable laser = เลเซอร์ปรับความยาวคลื่น → LiDAR + spectroscopy Optica: Chilas ATLAS/COMET/POLARIS, sensing, quantum, OCT, LiDAR, telecom DataInsights: $14.13B market 2025, 8.7% CAG...
+  เลเซอร์ปรับความยาวคลื่นใช้ใน LiDAR สเปกโทรสโกปี การตรวจวัด OCT และโทรคมนาคม ตัวอย่างผลิตภัณฑ์คือ Chilas ATLAS, COMET และ POLARIS โดยมีการประเมินตลาด $14.13B ในปี 2025 และระบุอัตราเติบโต 8.7%
 
 ## May 2025
 
 - 💉 **Universal Flu Vaccine — One Shot for All Strains** *(22 May 2025)*
-  Universal flu vaccine = วัคซีนไข้หวัดใหญ่ หนึ่งเข็มครอบคลุมทุกสายพันธุ์ ไม่ต้องทำใหม่ทุกปี Centivax: Phase 1 first-in-human trial เริ่ม 2026 (Centi-Flu 01) Science/AAAS: innovative...
+  วัคซีนไข้หวัดใหญ่แบบครอบคลุมหลายสายพันธุ์มุ่งลดความจำเป็นในการปรับวัคซีนทุกปี Centivax เริ่มทดลอง Centi-Flu 01 ในมนุษย์ระยะที่ 1 ในปี 2026
   [Source](https://www.science.org/content/article/innovative-universal-flu-vaccine-shows-promises-it-first-clinical-test)
 
 - 🫁 **Organ-on-Chip — Replacing Animal Testing** *(21 May 2025)*
-  Organ-on-chip = ชิปไมโครอะนาล็อกอวัยวะมนุษย์ ทดสอบยาแทนสัตว์ Wyss Institute: microfluidic devices lined with living human cells FDA (April 2025): roadmap to reduce/replace animal t...
+  Organ-on-chip เป็นอุปกรณ์ไมโครฟลูอิดิกที่มีเซลล์มนุษย์เลียนแบบการทำงานของอวัยวะ เพื่อศึกษาผลของยา Wyss Institute พัฒนาเทคโนโลยีนี้ และ FDA เผยแนวทางลดหรือทดแทนการทดลองในสัตว์ในเดือนเมษายน 2025
   [Source](https://wyss.harvard.edu/technology/human-organs-on-chips/)
 
 ## April 2025
 
 - 💧 **Magnetohydrodynamic (MHD) Drive — Silent Propulsion** *(02 Apr 2025)*
-  MHD drive = ขับเคลื่อนเรือ/เรือดำน้ำด้วยแม่เหล็ก + ไฟฟ้า ไม่มี propeller DARPA PUMP program: REBCO magnets 20 Tesla → 90% efficiency possible Naval Technology: silent undersea prop...
+  ระบบขับเคลื่อน magnetohydrodynamic (MHD) ใช้สนามแม่เหล็กกับกระแสไฟฟ้าขับเรือโดยไม่ใช้ใบพัด โครงการ PUMP ของ DARPA ศึกษาแม่เหล็ก REBCO ขนาด 20 Tesla โดยประเมินความเป็นไปได้ของประสิทธิภาพ 90%
   [Source](https://www.naval-technology.com/features/darpa-silent-mhd-magnetic-drives-for-replacing-naval-propellers/)
 
 - 💡 **Turing Machine Evaluation for LLMs** *(01 Apr 2025)*
-  ทำไมต้อง evaluate LLM ด้วย Turing machine? เพราะ benchmark ปัจจุบัน (MMLU, GSM8K) วัด knowledge ไม่ใช่ computation ability TMBench = benchmark ใหม่ที่ให้ LLM simulate Turing machin...
+  TMBench ใช้การจำลอง Turing machine เพื่อประเมินความสามารถในการคำนวณของ LLM โดยมุ่งเสริมการประเมินจากชุดทดสอบอย่าง MMLU และ GSM8K
   [Source](https://arxiv.org/abs/2504.20771)
 
 ## January 2025
 
 - 💾 **Multiferroic Magnetoelectric Memory — Electric Field Controls Spin** *(25 Jan 2025)*
-  Multiferroic magnetoelectric memory = ไฟฟ้าควบคุมแม่เหล็ก → RAM ใหม่ ประหยัดพลังงาน ScienceDaily: multiferroic heterostructure, magnetization switched by electric field Nature npj:...
+  หน่วยความจำ multiferroic magnetoelectric ใช้สนามไฟฟ้าควบคุมสถานะแม่เหล็ก เป็นแนวทางพัฒนา RAM ที่ใช้พลังงานต่ำ โดยอาศัยโครงสร้างวัสดุหลายชนิดประกบกัน
   [Source](https://www.sciencedaily.com/releases/2025/01/250107114539.htm)
 
 - ⚡ **3D Memristor Neuromorphic Crossbar** *(01 Jan 2025)*
-  3D memristor crossbar = หน่วยความจำหลายชั้น คำนวณพร้อมเก็บ ScienceDirect: 3D multistate memristor for high-density in-memory computing, monolithic 3D crossbar arrays Nature: scalab...
+  โครงข่าย memristor แบบ crossbar สามมิติซ้อนหน่วยความจำหลายชั้นเพื่อให้คำนวณในหน่วยความจำได้ มีงานพัฒนาโครงสร้างหลายสถานะสำหรับเพิ่มความหนาแน่นของข้อมูล
 
 - 🔊 **Acoustic Levitation Manufacturing** *(01 Jan 2025)*
-  Acoustic levitation = เสียงยกของลอย → ประกอบโดยไม่สัมผัส คลื่นเสียงยกอนุภาค/หยดของเหลว → ประกอบไม่ต้องสัมผัส → ผลิตยา/pharma บริสุทธิ์
+  Acoustic levitation ใช้คลื่นเสียงยกอนุภาคหรือหยดของเหลวให้ลอย เพื่อประกอบหรือจัดการวัสดุโดยไม่สัมผัส เหมาะกับงานที่ต้องลดการปนเปื้อน เช่น การผลิตยา
 
 - ♻️ **Artificial Spider Silk — Tougher Than Kevlar** *(01 Jan 2025)*
-  Artificial spider silk = ไหมแมงมุมสังเคราะห์ → แข็งแกร่งกว่า Kevlar โปรตีน recombinant ปั่นเป็นเส้นใย → ทนทานกว่า Kevlar + ย่อยสลายได้ → ไม่ต้องใช้น้ำมัน
+  ไหมแมงมุมสังเคราะห์ผลิตจากโปรตีนรีคอมบิแนนต์แล้วปั่นเป็นเส้นใย โดยมุ่งให้มีความทนทานเหนือกว่า Kevlar ย่อยสลายได้ และลดการพึ่งพาวัตถุดิบจากปิโตรเลียม
 
 - 💧 **Bioadhesive Hydrogel Surgical Glue** *(01 Jan 2025)*
-  Bioadhesive hydrogel = กาวเจลาตินผ่าตัด → ปิดแผลไม่ต้องเย็บ Science Advances: injectable self-healing hydrogel, o-phthalaldehyde chemistry, firm tissue adhesion + on-demand biodegr...
+  กาวไฮโดรเจลสำหรับผ่าตัดช่วยยึดเนื้อเยื่อและปิดแผลโดยลดการเย็บ งานใน Science Advances ศึกษาไฮโดรเจลฉีดได้ที่ซ่อมแซมตัวเอง โดยใช้เคมี o-phthalaldehyde และออกแบบให้ย่อยสลายได้
 
 - 🦴 **Biodegradable Transient Electronics** *(01 Jan 2025)*
-  Transient electronics = อิเล็กทรอนิกส์ละลายเอง → ใส่ร่างกาย → หายไป อุปกรณ์อิเล็กทรอนิกที่ละลายในร่างกายหลังทำงานเสร็จ → ไม่ต้องผ่าตัดเอาออก
+  อุปกรณ์อิเล็กทรอนิกส์แบบ transient สลายตัวในร่างกายหลังสิ้นสุดการทำงาน จึงลดความจำเป็นในการผ่าตัดนำอุปกรณ์ออก
 
 - ⚡ **Biowaste Supercapacitor** *(01 Jan 2025)*
-  Biowaste supercapacitor = ขยะชีวภาพ→แผ่นเก็บพลังงาน → ถูก + ยั่งยืน Springer: waste-to-carbon supercapacitor, 1.8V window, 55ms response, 1.81 mWh/cm³ PMC: 437 F/g in KOH, excellen...
+  Supercapacitor จากขยะชีวภาพใช้คาร์บอนที่ได้จากของเสียเป็นวัสดุเก็บพลังงาน มีรายงานช่วงแรงดัน 1.8 V เวลาตอบสนอง 55 ms และความหนาแน่นพลังงาน 1.81 mWh/cm³ อีกงานรายงานความจุจำเพาะ 437 F/g ใน KOH
 
 - 🔮 **Boson Sampling — Quantum Advantage** *(01 Jan 2025)*
-  Boson sampling = แสงควอนตัมคำนวณ → เหนือกว่า supercomputer QuantumZeitgeist: photonic quantum accelerator, reservoir computing, 20× less data QuantumZeitgeist: Jiuzhang 4.0, 1024 s...
+  Boson sampling ใช้ระบบโฟโตนิกศึกษาความได้เปรียบของการคำนวณควอนตัม มีรายงานตัวเร่งโฟโตนิกและ reservoir computing ที่ใช้ข้อมูลน้อยลง 20 เท่า และมีการศึกษาในระบบ Jiuzhang 4.0
 
 - 💧 **Cellulose Nanocrystal Packaging** *(01 Jan 2025)*
-  CNC packaging = ฟิล์มนาโนเซลลูโลส → บรรจุภัณฑ์ย่อยสลาย + ฉลาด ScienceDirect: CNC-reinforced films for edible + biodegradable + intelligent packaging ACS: nanocellulose films, barri...
+  บรรจุภัณฑ์จากผลึกนาโนเซลลูโลส (CNC) ใช้ฟิล์มที่ย่อยสลายได้ โดยมีการศึกษาทั้งฟิล์มกินได้ บรรจุภัณฑ์ที่ตรวจวัดสภาพภายใน และสมบัติการกั้นสาร
 
 - 🚀 **Ceramic Matrix Composite Jet Engine** *(01 Jan 2025)*
-  CMC jet engine = เซรามิกแทนโลหะ → เบา 1/3 + ทนความร้อนสูงกว่า GE Aerospace: F414 CMC test 500 cycles → validated for turbine blades ORNL: CMC take flight in LEAP jet engine, DOE su...
+  วัสดุคอมโพสิตเนื้อเซรามิก (CMC) ใช้แทนโลหะในเครื่องยนต์ไอพ่นเพื่อลดน้ำหนักและทนความร้อน โดยระบุน้ำหนักประมาณ 1/3 ของแบบเดิม GE Aerospace ทดสอบกับ F414 จำนวน 500 รอบ และ ORNL มีงานในเครื่องยนต์ LEAP
 
 - 🔋 **Cobalt-Free LFP EV Battery** *(01 Jan 2025)*
-  Cobalt-free LFP = แบต LFP ไม่มี cobalt → ถูก + ปลอดภัย + ethical UNSW: blood cobalt disappearing, olivine LFP = cobalt-free EE Power: TAQ battery + LFP, excellent cycle life + safe...
+  แบตเตอรี่ LFP ไม่ใช้โคบอลต์ จึงช่วยลดต้นทุนและปัญหาจากห่วงโซ่อุปทานโคบอลต์ มีงานเปรียบเทียบ LFP กับวัสดุทางเลือกอย่าง TAQ โดยเน้นอายุการใช้งานและความปลอดภัย
 
 - 🔮 **Colloidal Quantum Dot IR Sensor** *(01 Jan 2025)*
-  CQD IR sensor = หมึกควอนตัมดอทตรวจอินฟราเรด → night vision ถูก ScienceDaily: quantum ink for next-gen night vision, heavy-metal free Ag₂Se Phys.org: CQD photodiodes on metasurfaces...
+  เซ็นเซอร์อินฟราเรดจาก colloidal quantum dot ใช้หมึกวัสดุเพื่อลดต้นทุนระบบมองเห็นกลางคืน งานที่อ้างถึงใช้ Ag₂Se ที่ไม่พึ่งโลหะหนักและผสาน photodiode กับ metasurface
 
 - 💎 **Diamond Semiconductor Power Electronics** *(01 Jan 2025)*
-  Diamond semiconductor = เพชรเป็นเซมิคอนดักเตอร์ → ทนแรงดันสูง + ระบายความร้อนเก่ง เพชรสังเคราะห์ → ทนแรงดัน 10x silicon + thermal conductivity 4x → power electronics รุ่นใหม่
+  เพชรสังเคราะห์ใช้เป็นสารกึ่งตัวนำสำหรับอุปกรณ์กำลัง โดยระบุว่าทนแรงดันได้ 10 เท่าของซิลิคอนและนำความร้อนได้ 4 เท่า จึงเหมาะกับงานที่ต้องรับแรงดันและระบายความร้อนสูง
 
 - 🔬 **Digital Twin Manufacturing** *(01 Jan 2025)*
-  Digital twin manufacturing = โคลนเสมือนโรงงาน → optimize ก่อนทำจริง โมเดลเสมือนของโรงงาน/กระบวนการ → จำลอง + optimize → ลด waste + เพิ่ม yield
+  Digital twin ในการผลิตสร้างแบบจำลองโรงงานหรือกระบวนการ เพื่อจำลองและปรับการทำงานก่อนใช้งานจริง ช่วยลดของเสียและเพิ่มสัดส่วนผลิตภัณฑ์ที่ผ่านเกณฑ์
 
 - 🛸 **Drone Swarm Collective Intelligence** *(01 Jan 2025)*
-  Drone swarm = ฝูงโดรนประสานงานอัตโนมัติ Palladyne AI: decentralized decision-making → true swarm capabilities FlyAJetFighter: drones work as single coordinated system ACM Computing...
+  ฝูงโดรนประสานงานกันเป็นระบบเดียว โดยใช้การตัดสินใจแบบกระจายศูนย์ ตัวอย่างงานของ Palladyne AI มุ่งให้โดรนทำงานร่วมกันได้โดยอัตโนมัติ
 
 - 🧬 **Electrocaloric Heat Pump — Solid State** *(01 Jan 2025)*
-  EC heat pump = ปั๊มความร้อนไร้ compressor → ไฟฟ้าเปลี่ยนอุณหภูมิ solid ACerS: electrocaloric materials, reversible temperature change under electric field Science: dual-functional ...
+  ปั๊มความร้อนแบบ electrocaloric ใช้สนามไฟฟ้าเปลี่ยนอุณหภูมิของวัสดุอย่างย้อนกลับได้ แทนการใช้คอมเพรสเซอร์ในระบบแบบเดิม
 
 - ☀️ **Electrochromic Smart Window** *(01 Jan 2025)*
-  Electrochromic window = กระจกเปลี่ยนสีด้วยไฟฟ้า → ปรับความเข้มอัตโนมัติ Wiley: WO₃ + polycarbazole high-performance electrochromic smart window Medium: 2027-2035 predictive environ...
+  กระจก electrochromic ปรับการส่งผ่านแสงด้วยไฟฟ้า งานที่อ้างถึงใช้ WO₃ ร่วมกับ polycarbazole และกล่าวถึงแนวโน้มการใช้งานในช่วงปี 2027–2035
 
 - 🏥 **Femtosecond Laser Cataract Surgery** *(01 Jan 2025)*
-  FLACS = เลเซอร์ femtosecond ผ่าตัดต้อกระจก → precision sub-micron PMC: high reproducibility capsulotomy, lens fragmentation, corneal incisions NCBI: lateral ablation zone 10mm, foc...
+  การผ่าตัดต้อกระจกด้วยเลเซอร์เฟมโตวินาที (FLACS) ใช้เลเซอร์ช่วยเปิดถุงหุ้มเลนส์ แบ่งเลนส์ และกรีดกระจกตา โดยกล่าวถึงความละเอียดต่ำกว่าไมโครเมตรและบริเวณการตัดด้านข้าง 10 mm
 
 - ⚡ **Ferroelectric Tunnel Junction Memory** *(01 Jan 2025)*
-  FTJ memory = หน่วยความจำอุโมงค์เฟอร์โรอิเล็กทริก → ultra-low power Wiley: ultrafast light-modulated sliding FTJ, synaptic in-memory computing Wiley: FTJ memristor crossbar, fast sw...
+  หน่วยความจำ Ferroelectric Tunnel Junction (FTJ) มุ่งใช้พลังงานต่ำ งานวิจัยศึกษาการควบคุมด้วยแสงและโครงข่าย memristor เพื่อใช้คำนวณในหน่วยความจำ
 
 - 🔲 **Flat Metamaterial Antenna Beam Steering** *(01 Jan 2025)*
-  Flat metamaterial antenna = เสาอากาศบางเพียงไม่กี่มม → บังคับทิศทางสัญญาณ IEEE: flat antenna for 5G 3.6 GHz, low visual impact, easy deployment PubMed: metamaterial transmitarray e...
+  สายอากาศแบนจาก metamaterial มีความหนาเพียงไม่กี่มิลลิเมตรและควบคุมทิศทางลำคลื่นได้ ตัวอย่างงาน IEEE ใช้กับ 5G ที่ความถี่ 3.6 GHz
 
 - ☀️ **Flexible Perovskite Solar Cell** *(01 Jan 2025)*
-  Flexible perovskite = แผงโซลาร์ยืดได้ → roll-to-roll ผลิต ScienceDirect: lightweight, high power-to-weight, compatible with R2R PMC: f-PeSCs lightweight, conformable, R2R compatibl...
+  เซลล์แสงอาทิตย์ perovskite แบบยืดหยุ่นมีน้ำหนักเบาและปรับแนบพื้นผิวได้ เหมาะกับการผลิตแบบ roll-to-roll และงานที่ต้องการกำลังไฟสูงเมื่อเทียบกับน้ำหนัก
 
 - 🔷 **Graphene Biosensor Point-of-Care** *(01 Jan 2025)*
-  Graphene biosensor = กราฟีนตรวจโรค → ตรวจที่บ้าน ไม่ต้องส่งแล็บ ScienceDirect: GFETs high electron mobility, POC diagnostics, miniaturization PMC: electrochemical graphene biosenso...
+  ไบโอเซ็นเซอร์กราฟีนใช้ตรวจตัวอย่าง ณ จุดดูแลผู้ป่วย โดยอาศัยทรานซิสเตอร์ GFET หรือการตรวจวัดไฟฟ้าเคมี เพื่อพัฒนาเครื่องตรวจขนาดเล็ก
 
 - 🔷 **Graphene EMI Shielding** *(01 Jan 2025)*
-  Graphene EMI shielding = กราฟีนกันรังสีแม่เหล็กไฟฟ้า → บาง + เบา ฟิล์มกราฟีนบาง micrometers → กัน EMI ได้ดีกว่าทองแดง → ใช้ใน smartphone/aircraft
+  ฟิล์มกราฟีนบางระดับไมโครเมตรใช้ป้องกันการรบกวนทางแม่เหล็กไฟฟ้า (EMI) โดยมีรายงานประสิทธิภาพเหนือกว่าทองแดงและมีแนวทางใช้ในสมาร์ตโฟนกับอากาศยาน
 
 - 🧠 **Graphene Flexible Neural Interface** *(01 Jan 2025)*
-  Graphene neural interface = กราฟีนวัดสมอง → thin-film ECoG MDPI: flexible micro-neural interface, thin-film µ-ECoG recording ScienceDirect: flexible high-density microelectrode arr...
+  อุปกรณ์เชื่อมต่อประสาทที่ใช้กราฟีนทำเป็นฟิล์มบางและยืดหยุ่นได้ ใช้บันทึกสัญญาณ ECoG ด้วยชุดไมโครอิเล็กโทรดความหนาแน่นสูง
 
 - 🔷 **Graphene Oxide Water Filtration** *(01 Jan 2025)*
-  GO water filtration = เยื่อกราฟีนออกไซด์กรองน้ำ → กรองเกลือ/โลหะหนัก/สารพิษ GO membrane with nanochannels → blocks ions + molecules → desalination + wastewater treatment at low pre...
+  เมมเบรนกราฟีนออกไซด์ใช้ช่องทางระดับนาโนคัดกรองไอออนและโมเลกุล เพื่อแยกเกลือ โลหะหนัก หรือสารปนเปื้อนออกจากน้ำ
 
 - 🧬 **Hall Effect Ion Thruster** *(01 Jan 2025)*
-  Hall thruster = เครื่องยนต์พลาสมาอวกาศ → Starlink ใช้อยู่ NASA: Hall-effect thrusters use electricity → propel spacecraft, Orbion commercialization Lee Co: SpaceX Starlink uses Hal...
+  Hall thruster เป็นเครื่องยนต์ขับดันไฟฟ้าที่ใช้พลาสมาขับยานอวกาศ มีการใช้งานบนดาวเทียม Starlink และการพัฒนาเชิงพาณิชย์จาก Orbion
 
 - 🧬 **Magnetic Levitation Flywheel Storage** *(01 Jan 2025)*
-  Maglev flywheel = ล้อหมุนลอยแม่เหล็ก → เก็บพลังงาน kinetic IEEE: compact magnetic bearing eliminates friction loss at high-speed Sandia: superconducting magnetic bearing, rotor lev...
+  ระบบกักเก็บพลังงานด้วยล้อช่วยแรงเก็บพลังงานจลน์จากการหมุน โดยใช้ตลับลูกปืนแม่เหล็กช่วยลดแรงเสียดทานขณะหมุนเร็ว
 
 - 💾 **Magnetic Shape Memory Actuator** *(01 Jan 2025)*
-  MSMA = โลหะจำรูปแม่เหล็ก → ขยับเร็ว + แม่นยำ ScienceDirect: precise positioning system based on magnetic shape memory alloys ScienceDirect: strain wave gearing MSM actuator, novel ...
+  อุปกรณ์ขับเคลื่อนจากโลหะผสมจำรูปแม่เหล็ก (MSMA) ใช้สนามแม่เหล็กควบคุมการเปลี่ยนรูป เพื่อให้เคลื่อนที่และกำหนดตำแหน่งได้รวดเร็วและแม่นยำ
 
 - 🧲 **Magnetorheological Fluid Damper** *(01 Jan 2025)*
-  MR fluid damper = ของเหลวแม่เหล็กปรับความแข็ง → กันสะเทือนอัจฉริยะ Springer: MR dampers + machine learning, earthquake structural vibration Springer: state-of-the-art large MR damp...
+  ตัวหน่วงที่ใช้ของไหล magnetorheological (MR) ปรับแรงต้านได้ด้วยสนามแม่เหล็ก ใช้กับระบบกันสะเทือนและการลดแรงสั่นของอาคารจากแผ่นดินไหว
 
 - 🔮 **Magnon Spin Wave Computing** *(01 Jan 2025)*
-  Magnonic computing = คลื่นสปินคำนวณ → ไม่ต้องมี electron ScienceDaily/Vienna: increase intensity → spin waves shorter + faster → breakthrough method Argonne: magnons exploit magnet...
+  Magnonic computing ใช้คลื่นสปินในการคำนวณ งานจาก Vienna ศึกษาการเพิ่มความเข้มให้คลื่นมีความยาวสั้นลงและเคลื่อนที่เร็วขึ้น ส่วน Argonne ศึกษาการใช้แมกนอนกับการประมวลผล
 
 - 🔲 **Metalens — Flat Optical Lens** *(01 Jan 2025)*
-  Metalens = เลนส์แบนจาก nanostructure → เลนส์บางเท่าผม IEEE Spectrum: Harvard/Metalenz metalens, semiconductor-processing nanostructures ScienceDaily: layers of metamaterials, focus...
+  Metalens ใช้โครงสร้างนาโนสร้างเลนส์แบนที่บางระดับเส้นผม Harvard และ Metalenz พัฒนากระบวนการผลิตที่ใช้เทคนิคจากอุตสาหกรรมสารกึ่งตัวนำ
 
 - 🔷 **Metasurface Thermal Emission Control** *(01 Jan 2025)*
-  Metasurface thermal control = ควบคุมการแผ่ความร้อนด้วยโครงสร้างนาโน ACS Nano Letters: reconfigurable ultrafast thermal metamaterial pixel array with graphene FETs PubMed: VO₂ metas...
+  Metasurface ควบคุมการแผ่ความร้อนด้วยโครงสร้างนาโน งานที่อ้างถึงใช้ชุดพิกเซลวัสดุความร้อนที่ปรับได้ร่วมกับ graphene FET และวัสดุ VO₂
 
 - ⛽ **Methane Clathrate Energy** *(01 Jan 2025)*
-  Methane clathrate = น้ำแข็งมีเทนใต้ทะเล → พลังงานสำรองมหาศาล Wikipedia: Japan + China 2017 breakthrough extracting methane from South China Sea Yale E360: vast quantities on sea fl...
+  Methane clathrate เป็นโครงสร้างคล้ายน้ำแข็งที่กักมีเทนไว้ใต้ทะเล มีรายงานความก้าวหน้าด้านการสกัดจากญี่ปุ่นและจีนในปี 2017 โดยมีแหล่งสะสมบนพื้นมหาสมุทรจำนวนมาก
 
 - ☀️ **Molecular Solar Thermal MOST** *(01 Jan 2025)*
-  MOST = โมเลกุลเก็บความร้อนแสงอาทิตย์ → ปล่อยความร้อนเมื่อต้องการ ScienceDirect: photoswitch designs for molecular solar thermal energy storage PMC: MOST definitions revisited, soli...
+  Molecular Solar Thermal (MOST) ใช้โมเลกุลเก็บพลังงานจากแสงอาทิตย์แล้วปล่อยเป็นความร้อนเมื่อต้องการ โดยศึกษาการออกแบบ photoswitch สำหรับการกักเก็บพลังงาน
 
 - ☀️ **Molten Salt Thermal Storage CSP** *(01 Jan 2025)*
-  Molten salt storage = เกลือเหลวเก็บความร้อน → CSP ผลิตไฟฟา 24 ชม. เกลือเหลว (565°C) เก็บความร้อน → ผลิตไฟฟาช่วงกลางคืน → solar 24/7
+  ระบบ CSP กักเก็บความร้อนในเกลือหลอมเหลวที่ 565°C เพื่อนำมาผลิตไฟฟ้าในเวลากลางคืน และมุ่งจ่ายไฟได้ตลอด 24 ชั่วโมง
 
 - ☢️ **Muon Tomography** *(01 Jan 2025)*
-  Muon tomography = muon จาก cosmic ray สแกนภายใน → ดูในปิรามิด/ภูเขาไฟ IAEA: cosmic ray muon imaging techniques, pyramids, volcanoes, nuclear security ScienceDirect: underground tom...
+  Muon tomography ใช้มิวออนจากรังสีคอสมิกสร้างภาพภายในวัตถุ มีการใช้สำรวจปิรามิด ภูเขาไฟ โครงสร้างใต้ดิน และงานความมั่นคงทางนิวเคลียร์
 
 - 🧠 **Neural Interface Textile EEG** *(01 Jan 2025)*
-  Neural textile = ผ้าวัดคลื่นสมอง → หมวก/ผ้า ไม่ต้องติดอิเล็กโทรด ผ้าทอผสม conductive fiber → วัด EEG → ใส่เหมือนหมวก → ตรวจ sleep/seizure/focus
+  สิ่งทอนำไฟฟ้าใช้ทำหมวกหรืออุปกรณ์สวมใส่เพื่อวัดคลื่นสมอง EEG โดยไม่ต้องติดอิเล็กโทรดแยกแต่ละจุด มีแนวทางใช้ติดตามการนอนหลับ อาการชัก และสมาธิ
 
 - 🧠 **Neuromorphic Event Camera Vision** *(01 Jan 2025)*
-  Event camera = กล้องเห็นการเปลี่ยนแปลงเท่านั้น → ประหยัด 1000x MDPI: event-based neuromorphic cameras report asynchronous per-pixel brightness changes ScienceDirect: high dynamic r...
+  กล้อง event camera ส่งข้อมูลแบบ asynchronous เฉพาะพิกเซลที่ความสว่างเปลี่ยน โดยอ้างการประหยัดพลังงาน 1000 เท่าและรองรับช่วงไดนามิกสูง
 
 - 🔮 **OAM Vortex Beam** *(01 Jan 2025)*
-  Orbital Angular Momentum (OAM) vortex beam = คลื่นแสงเป็นเกลียว → multiplexing หลาย channel พร้อมกัน Nature Scientific Reports: switchable perfect optical vortex, high efficiency O...
+  ลำแสง vortex ที่มี Orbital Angular Momentum (OAM) มีโครงสร้างเฟสเป็นเกลียว ใช้แยกช่องสัญญาณหลายช่องเพื่อส่งข้อมูลพร้อมกันได้
 
 - 🔮 **Optical Lattice Clock — Precision Timekeeping** *(01 Jan 2025)*
-  Optical lattice clock = นาฬิกาความแม่นยำสูงสุด → 1 วินาทีใน 15 พันล้านปี Phys.org: strontium optical lattice clock record-high coherence time Phys.org: quantum entanglement pushes ...
+  Optical lattice clock เป็นนาฬิกาอะตอมที่มีความแม่นยำสูง โดยระบุความคลาดเคลื่อน 1 วินาทีใน 15 พันล้านปี มีงานใช้สตรอนเชียมและความพัวพันควอนตัมเพื่อเพิ่มสมรรถนะ
 
 - 🔬 **Optical Tweezer Cell Manipulation** *(01 Jan 2025)*
-  Optical tweezer = แสงจับเซลล์/อนุภาค → จัดเรียงด้วยแสง Nature Light: flexible stretchable on-chip optical tweezers → bioparticles 100nm-tens of µm on curved substrates ACS Nano: th...
+  Optical tweezer ใช้แสงจับและจัดตำแหน่งเซลล์หรืออนุภาค งานที่อ้างถึงสร้างอุปกรณ์บนชิปยืดหยุ่นเพื่อจัดการอนุภาคชีวภาพขนาด 100 นาโนเมตรถึงหลายสิบไมโครเมตรบนพื้นผิวโค้ง
 
 - 🧠 **Organic Electrochemical Neuron** *(01 Jan 2025)*
-  OECN = นิวรอนสังเคราะห์อินทรีย์ → วงจรสมองจากพอลิเมอร์ PMC: organic electrochemical transistors for neuromorphic devices Nature Comm: organic artificial neuron, OEND + biasing netw...
+  Organic Electrochemical Neuron (OECN) ใช้วงจรพอลิเมอร์และทรานซิสเตอร์ไฟฟ้าเคมีอินทรีย์เลียนแบบการทำงานของเซลล์ประสาท เพื่อพัฒนาอุปกรณ์ neuromorphic
 
 - ♻️ **Organocatalyst Plastic Recycling** *(01 Jan 2025)*
-  Organocatalyst recycling = ตัวเร่งปฏิกิริยารีไซเคิลพลาสติก → แยกพอลิเมอร์กลับเป็น monomer PubMed: thermally stable organocatalyst, selective chemical upcycling PMC: ML-driven catal...
+  ตัวเร่งปฏิกิริยาอินทรีย์ใช้แยกพอลิเมอร์กลับเป็นโมโนเมอร์หรือแปรรูปพลาสติกเป็นวัสดุที่มีมูลค่าสูงขึ้น มีการศึกษาตัวเร่งที่ทนความร้อนและใช้ machine learning ช่วยค้นหา
 
 - 🌈 **Perovskite Broadband Photodetector** *(01 Jan 2025)*
-  Perovskite photodetector = เซ็นเซอร์แสง perovskite → UV + visible + NIR ในตัวเดียว TechXplore: >90% NIR EQE, 2D side-chain engineering, broadband ACS: perovskite + lead phthalocyan...
+  ตัวตรวจจับแสง perovskite รับแสงได้ตั้งแต่อัลตราไวโอเลต แสงที่มองเห็น ไปจนถึงอินฟราเรดใกล้ งานที่อ้างถึงรายงานค่า EQE ในย่าน NIR มากกว่า 90% โดยใช้การปรับโครงสร้าง side chain ในวัสดุสองมิติ
 
 - 🔲 **Phase Gradient Acoustic Metamaterial** *(01 Jan 2025)*
-  PGUOM = โลหะผสมเสียงบางๆ → กันเสียงไม่กั้นลม BU Photonics: Phase Gradient Ultra-Open Metamaterial, broadband acoustic silencing Interesting Engineering: smarter sound shield, noise...
+  Phase Gradient Ultra-Open Metamaterial (PGUOM) เป็นวัสดุโครงสร้างพิเศษที่ช่วยลดเสียงในช่วงความถี่กว้างโดยยังให้อากาศไหลผ่านได้ งานของ Boston University ศึกษาการใช้เป็นแผงกันเสียง
 
 - ☀️ **Photocatalytic CO₂ Reduction to Fuel** *(01 Jan 2025)*
-  Photocatalytic CO₂ reduction = แสงอาทิตย์ + CO₂ → methanol/ethanol → solar fuel ACS Energy Fuels: methanol yield 2656 µmol/g with rGO@CuZnO@Fe₃O₄ catalyst EurekAlert: TiO₂ heteroju...
+  การรีดิวซ์ CO₂ ด้วยแสงใช้ตัวเร่งปฏิกิริยาเปลี่ยน CO₂ เป็นเชื้อเพลิง เช่น เมทานอลหรือเอทานอล งานใน ACS Energy & Fuels รายงานผลผลิตเมทานอล 2656 µmol/g โดยใช้ rGO@CuZnO@Fe₃O₄
 
 - 🏗️ **Photocatalytic Self-Cleaning Concrete** *(01 Jan 2025)*
-  Photocatalytic concrete = คอนกรีตทำความสะอาดตัวเอง → TiO₂ กำจัดมลพิษ ScienceDirect: TiO₂ photocatalyst self-cleaning concrete MDPI: TiO₂-coated permeable concrete, NOx removal, lab...
+  คอนกรีตที่มีตัวเร่งปฏิกิริยาด้วยแสง เช่น TiO₂ ใช้แสงช่วยสลายมลพิษและทำความสะอาดพื้นผิว มีงานศึกษาคอนกรีตพรุนเคลือบ TiO₂ เพื่อกำจัด NOx
 
 - ☀️ **Photocatalytic Water Splitting** *(01 Jan 2025)*
-  Photocatalytic water splitting = แสงแยกน้ำ→H₂ โดยตรง ไม่ต้อง electrolyzer แสงอาทิตย์ + catalyst → แยก H₂O → H₂ + O₂ → ไม่ต้องใช้ไฟฟ้า
+  การแยกน้ำด้วยตัวเร่งปฏิกิริยาเชิงแสงใช้แสงอาทิตย์เปลี่ยน H₂O เป็น H₂ และ O₂ โดยไม่ต้องจ่ายไฟให้ electrolyzer แยกต่างหาก
 
 - 🔦 **Photonic Crystal Fiber Supercontinuum** *(01 Jan 2025)*
-  PCF supercontinuum = เส้นใยโฟโตนิกผลิตแสงทุกความยาวคลื่น → white light laser Nature Sci Reports: polarization-maintaining all-normal dispersion PCF, 650-1300nm ultra-stable Science...
+  เส้นใย photonic crystal ใช้สร้างแสง supercontinuum ที่ครอบคลุมช่วงความยาวคลื่นกว้าง งานที่อ้างถึงใช้เส้นใยรักษาโพลาไรเซชันและมีการกระจายตัวแบบ all-normal ให้แสงช่วง 650–1300 นาโนเมตร
 
 - 🖨️ **Plasma Additive Manufacturing Repair** *(01 Jan 2025)*
-  Plasma AM repair = พลาสมาซ่อมชิ้นส่วน → พ่นโลหะเหลวซ่อม ScienceDaily: smaller Hall thrusters generate much more thrust → plasma tech advances KAIST: AI-driven performance predictio...
+  การซ่อมชิ้นส่วนด้วย plasma additive manufacturing ใช้พลาสมาช่วยเติมโลหะบนบริเวณที่เสียหาย เพื่อต่อเติมและฟื้นสภาพชิ้นส่วน
 
 - 🔮 **Quantum Dot Heat Engine** *(01 Jan 2025)*
-  Quantum dot heat engine = จุดควอนตัมแปลงความร้อน→ไฟฟ้า ที่ Carnot limit Nature Nanotech: directly measure steady-state power, >70% Carnot efficiency, Curzon-Ahlborn agreement Natur...
+  เครื่องยนต์ความร้อน quantum dot เปลี่ยนความร้อนเป็นไฟฟ้า งานใน Nature Nanotechnology วัดกำลังในสภาวะคงตัวและรายงานประสิทธิภาพมากกว่า 70% ของขีดจำกัด Carnot โดยสอดคล้องกับแนวคิด Curzon–Ahlborn
 
 - ☀️ **QD Luminescent Solar Concentrator** *(01 Jan 2025)*
-  QD-LSC = หน้าต่างเก็บแสง → quantum dots ในกระจก → รวมแสง ACS Photonics: Si QD luminescent concentrator + perovskite tandem PMC/ScienceDirect: Cu-doped InP QD-LSC 37% optical quantu...
+  Quantum Dot Luminescent Solar Concentrator (QD-LSC) ใช้ quantum dot ในกระจกเพื่อรับและรวมแสง มีงานใช้ Si quantum dot ร่วมกับเซลล์ perovskite tandem และงานวัสดุ InP ที่เติมทองแดง
 
 - ⚡ **Passive Radiative Cooling PDRC** *(01 Jan 2025)*
-  PDRC = ฟิล์มระบายความร้อนผ่านอวกาศ → ไม่ต้องใช้ไฟฟ้า ACS: polymeric porous PDRC materials, no electricity cooling Wikipedia: low-cost scalable coatings, thin films, metafabrics, ae...
+  Passive Daytime Radiative Cooling (PDRC) ใช้ฟิล์มหรือสารเคลือบแผ่ความร้อนออกสู่อวกาศโดยไม่ใช้ไฟฟ้า มีทั้งวัสดุพอลิเมอร์พรุน ฟิล์มบาง และสิ่งทอที่ออกแบบโครงสร้างพิเศษ
 
 - 🔮 **Rotational Dark State Laser** *(01 Jan 2025)*
-  Rotational dark state = เลเซอร์สถานะมืดหมุน → wavelength ไม่ซ้ำใคร สถานะ quantum ใหม่ → ควบคุม emission wavelength → ประยุกต์ใช้ spectroscopy + communication
+  Rotational dark state เป็นแนวทางควบคุมสถานะควอนตัมและความยาวคลื่นการปล่อยแสงของเลเซอร์ เพื่อประยุกต์ใช้ในสเปกโทรสโกปีและการสื่อสาร
 
 - 🔦 **SASER — Phonon Laser** *(01 Jan 2025)*
-  SASER = Sound Amplification by Stimulated Emission of Radiation → เลเซอร์เสียง Wikipedia: phonon laser action proposed in nanomechanics, semiconductors, nanomagnets Laser Focus Wor...
+  SASER ย่อจาก Sound Amplification by Stimulated Emission of Radiation เป็นแนวคิดเลเซอร์เสียงหรือเลเซอร์โฟนอน มีการศึกษาในระบบนาโนเชิงกล สารกึ่งตัวนำ และวัสดุแม่เหล็กนาโน
 
 - ⚡ **SOT-MRAM Next-Gen Memory** *(01 Jan 2025)*
-  SOT-MRAM = หน่วยความจำแม่เหล็ก spin-orbit → nanosecond write Nature npj Spintronics: SOT switching + SAF materials, deterministic switching breakthrough TSMC/36kr: SOT-MRAM nanosec...
+  SOT-MRAM ใช้ spin-orbit torque เขียนข้อมูลในหน่วยความจำแม่เหล็กระดับนาโนวินาที งานวิจัยศึกษาการสวิตช์แบบให้ผลแน่นอนร่วมกับวัสดุ SAF และการพัฒนาจาก TSMC
 
 - 🤖 **Soft Gripper Robotics** *(01 Jan 2025)*
-  Soft gripper = มือจับอ่อน → จับไข่ไม่แตก → จับผลไม้/อาหาร หุ่นยนต์มืออ่อนนุ่ม → จับของเปราะบางได้ → food processing + agriculture
+  หัวจับหุ่นยนต์เนื้อนิ่มปรับตัวตามรูปร่างวัตถุและลดแรงกด จึงเหมาะกับการหยิบไข่ ผลไม้ หรืออาหารที่เสียหายง่ายในงานแปรรูปอาหารและเกษตร
 
 - ⛽ **Solid Oxide Electrolyzer** *(01 Jan 2025)*
-  Solid oxide electrolyzer = แยกน้ำด้วยความร้อนสูง → H₂ efficiency 85%+ ใช้ความร้อน 700-850°C + ไฟฟ้า → แยกน้ำ → H₂ efficiency สูงกว่า PEM electrolyzer → ใช้กับ nuclear/CSP
+  Solid oxide electrolyzer ใช้ความร้อน 700–850°C ร่วมกับไฟฟ้าแยกน้ำเป็นไฮโดรเจน โดยระบุประสิทธิภาพมากกว่า 85% และมีแนวทางใช้ความร้อนจากโรงไฟฟ้านิวเคลียร์หรือ CSP
 
 - 🔋 **Solid-State Lithium-Sulfur Battery** *(01 Jan 2025)*
-  SS-LiS = แบต Li-S ตัวแข็ง → 4x energy density Li-ion ScienceDirect: solid-state Li-S, overcoming polysulfide shuttling, selenium-sulfur chemistry CCS Chemistry: ASSLSBs require cat...
+  แบตเตอรี่ลิเทียม–กำมะถันแบบโซลิดสเตท (SS-LiS) ใช้อิเล็กโทรไลต์แข็ง โดยระบุความหนาแน่นพลังงาน 4 เท่าของลิเทียมไอออน งานวิจัยมุ่งแก้ปัญหา polysulfide shuttle และพัฒนาเคมีซีลีเนียม–กำมะถัน
 
 - 🔋 **Thermal Metamaterial Heat Diode** *(01 Jan 2025)*
-  Thermal diode = ไดโอดความร้อน → ความร้อนได้ทิศทางเดียว Wiley: snap-through thermomechanical metamaterials, rectification ratio >900 EurekAlert: transformative thermotics, heat flow...
+  ไดโอดความร้อนออกแบบให้ความร้อนไหลผ่านสองทิศทางได้ไม่เท่ากัน งานวัสดุ thermomechanical metamaterial แบบ snap-through รายงานอัตราส่วนการนำความร้อนระหว่างสองทิศทางมากกว่า 900
 
 - 🦴 **Titanium Lattice Orthopedic Implant** *(01 Jan 2025)*
-  Ti lattice implant = ข้อต่อไททเนียมพิมพ์ 3D → โครงสร้าง lattice 25% osseointegration เร็วขึ้น PMC: 3D-printed highly porous titanium, cementless joint replacement MDPI: patient-spe...
+  อุปกรณ์ไทเทเนียมพิมพ์สามมิติใช้โครงสร้าง lattice ที่มีรูพรุนสำหรับทดแทนข้อต่อ โดยระบุการยึดประสานกับกระดูกเร็วขึ้น 25% และมีงานพัฒนาอุปกรณ์เฉพาะผู้ป่วย
 
 - 🧠 **Topological Photonic Crystal Device** *(01 Jan 2025)*
-  Topological photonic crystal = แสงเดินตามขอบ → ไม่กระเด้ง PMC: topological sensors, quasi-BICs, Tamm plasmon polaritons Nature Light: topological edge state cavity → enhanced Q-fac...
+  Topological photonic crystal ใช้สถานะตามขอบนำแสงและลดการสะท้อนจากตำหนิของวัสดุ มีการศึกษาเซ็นเซอร์ quasi-BIC, Tamm plasmon polariton และโพรงแสงที่ใช้ topological edge state
 
 - ⚡ **Transparent Wood — Plastic-Free** *(01 Jan 2025)*
-  Transparent wood = ไม้โปร่งแสง → แทนกระจก + พลาสติก ACS: transparent wood from natural materials, UV protection, energy-efficient housing Nature Comm: room-temperature phosphoresce...
+  ไม้โปร่งแสงจากวัสดุธรรมชาติเป็นทางเลือกแทนกระจกหรือพลาสติก มีการศึกษาการป้องกันรังสี UV การใช้ในอาคารประหยัดพลังงาน และการเรืองแสงที่อุณหภูมิห้อง
 
 - ⚡ **Twistron Harvester — CNT Yarn** *(01 Jan 2025)*
-  Twistron = ไหมคาร์บอนนาโนทิวบ์ผลิตไฟ → ขยับ/บิด = ไฟฟ้า ACS Nano: D₂O-enhanced twistron, wearable energy textile + thermal harvester, charges supercapacitors UT Dallas: heavy water...
+  Twistron ใช้เส้นด้ายท่อนาโนคาร์บอนเก็บพลังงานจากการบิดและเคลื่อนไหว งานวิจัยใช้ D₂O เพิ่มสมรรถนะ เพื่อนำไปทำสิ่งทอสวมใส่และชาร์จ supercapacitor
 
 - 🧠 **Ultrasound Neuromodulation Depression** *(01 Jan 2025)*
-  Ultrasound neuromodulation = คลื่นอัลตราซาวด์กระตุ้นสมอง → ไม่ต้องผ่าตัด PubMed: deep transcranial ultrasound + acoustic metamaterials, treatment-resistant depression FUS Foundatio...
+  การกระตุ้นสมองด้วยอัลตราซาวนด์มุ่งปรับการทำงานของเซลล์ประสาทจากภายนอกกะโหลก มีงานใช้ acoustic metamaterial ร่วมกับอัลตราซาวนด์แบบส่งผ่านกะโหลกเพื่อศึกษาโรคซึมเศร้าที่ดื้อต่อการรักษา
 
 - 🔋 **Vehicle-to-Grid V2G Energy** *(01 Jan 2025)*
-  V2G = รถไฟฟ้า→ส่งไฟกลับกริด → EV = แบตเตอรี่เคลื่อนที่ EV ทุกคันเป็น distributed storage → ช่วย grid ช่วง peak demand. ส่งไฟจากรถ EV → กลับกริด → รถ = แบตเตอรี่ขนาดใหญ่
+  Vehicle-to-Grid (V2G) ให้รถยนต์ไฟฟ้าส่งพลังงานจากแบตเตอรี่กลับสู่โครงข่าย รถจึงทำหน้าที่เป็นแหล่งกักเก็บพลังงานแบบกระจายตัวเพื่อช่วยจ่ายไฟช่วงความต้องการสูง
 
 - 💧 **Wireless Optical Communication Deep Sea** *(01 Jan 2025)*
-  Deep-sea optical comms = แสงสื่อสารใต้น้ำลึก → ทดแทนเสียงที่ช้า บลูทูธใต้น้ใช้แสง → ส่งข้อมูล Mbps ระยะ 100m → ROV/AUV สื่อสารเร็วกว่า acoustic 100x
+  การสื่อสารใต้น้ำลึกด้วยแสงใช้ส่งข้อมูลระดับ Mbps ที่ระยะ 100 เมตร มีแนวทางใช้กับยาน ROV และ AUV โดยระบุอัตราส่งข้อมูลเร็วกว่า acoustic communication 100 เท่า
 
 - 🔋 **Zinc-Air Rechargeable Battery** *(01 Jan 2025)*
-  Zinc-air battery = แบตสังกะสี-อากาศ → non-flammable + ถูก CleanTechnica: e-Zinc long-duration water-based non-flammable → commercializing The Independent: zinc-air huge potential f...
+  แบตเตอรี่สังกะสี–อากาศเป็นแนวทางกักเก็บพลังงานที่ต้นทุนต่ำและลดความเสี่ยงการติดไฟ e-Zinc พัฒนาระบบกักเก็บพลังงานระยะยาวที่ใช้น้ำเป็นองค์ประกอบเพื่อเข้าสู่ตลาด
 
 ## December 2024
 
 - 🧬 **Latent Chain-of-Thought — Reasoning Beyond Language** *(01 Dec 2024)*
-  Latent CoT = ให้ LLM "คิด" ใน continuous vector space แทนที่จะ generate text thinking tokens — ประหยัด tokens, เร็วกว่า, จับ uncertainty + nuance ได้ดีกว่า Coconut (Meta) ใช้ conti...
+  Latent Chain-of-Thought ให้ LLM ประมวลผลขั้นตอนการให้เหตุผลในปริภูมิเวกเตอร์ต่อเนื่องแทนการสร้างข้อความทุกขั้น เพื่อประหยัด token และรองรับข้อมูลที่ยังไม่แน่นอน ตัวอย่างคือ Coconut ของ Meta
   [Source](https://arxiv.org/abs/2412.06769)
 
 ## October 2024
 
 - ☀️ **Solar Desalination — Fresh Water from Sunlight** *(24 Oct 2024)*
-  Solar desalination = แยกน้ำจืดจากน้ำทะเลด้วยความร้อนจากแสงอาทิตย์ ไม่ต้องใช้ไฟฟ้าเลย UNIST (Korea): 2025-2026 breakthrough technology พัฒนา high-performance solar evaporator MIT: n...
+  การแยกเกลือด้วยแสงอาทิตย์ใช้ความร้อนทำให้น้ำทะเลระเหยแล้วเก็บน้ำจืด โดยลดการใช้ไฟฟ้า UNIST ในเกาหลีพัฒนาเครื่องระเหยประสิทธิภาพสูงในช่วงปี 2025–2026 และมีงานวิจัยจาก MIT
   [Source](https://www.sciencedaily.com/releases/2024/10/241008103809.htm)
 
 ## June 2024
 
 - 🧠 **Photonic Neural Network Accelerator** *(01 Jun 2024)*
-  Photonic NN = แสงคำนวณ AI → sub-nanosecond + near-zero heat Lightmatter: validates computational robustness of photonic processing Wiley Adv Mat: integrated neuromorphic photonic c...
+  ตัวเร่งโครงข่ายประสาทแบบโฟโตนิกใช้แสงคำนวณงาน AI โดยมุ่งให้ตอบสนองต่ำกว่านาโนวินาทีและเกิดความร้อนน้อย มีงานศึกษาความเสถียรของการประมวลผลจาก Lightmatter
 
 ## February 2024
 
 - 🧠 **Neuroprosthetic Memory Implant — Restoring Lost Memories** *(24 Feb 2024)*
-  Memory prosthesis = ชิปสมองคืนความจำ → hippocampus implant ScienceDaily/Wake Forest: electronic prosthetic influences firing patterns in hippocampus → helps humans restore memory P...
+  อุปกรณ์ประสาทเทียมด้านความจำใช้การกระตุ้นใน hippocampus เพื่อช่วยการทำงานของความจำ งานจาก Wake Forest ศึกษาการปรับรูปแบบการส่งสัญญาณของเซลล์ประสาทในมนุษย์
   [Source](https://www.sciencedaily.com/releases/2024/02/240213130407.htm)
 
 ## February 2023
 
 - ⛽ **Direct Seawater-to-Hydrogen — No Desalination Needed** *(23 Feb 2023)*
-  Direct seawater electrolysis = แยกไฮโดรเจนจากน้ำทะเลโดยไม่ต้องกรองเกลือ RMIT: skip desalination entirely → lower cost + energy Brunel University: electrodes extract hydrogen direct...
+  การแยกไฮโดรเจนจากน้ำทะเลโดยตรงมุ่งตัดขั้นตอนกำจัดเกลือเพื่อลดต้นทุนและพลังงาน RMIT และ Brunel University ศึกษาตัวเร่งและขั้วไฟฟ้าสำหรับกระบวนการนี้
   [Source](https://www.sciencedaily.com/releases/2023/02/230214154047.htm)
 
 ## December 2021
 
 - 🔬 **Scratchpad Computation — Show Your Work** *(01 Dec 2021)*
-  Scratchpad = ให้ transformer เขียน intermediate computation steps ลงพื้นที่พิเศษก่อนตอบ — ทำให้ multi-step computation (long addition, program execution) ได้ดีขึ้นมาก Google Resear...
+  Scratchpad computation ให้ transformer เขียนขั้นตอนคำนวณระหว่างทางลงในพื้นที่เฉพาะก่อนตอบ เพื่อช่วยงานที่มีหลายขั้น เช่น การบวกจำนวนยาวและการรันโปรแกรม
   [Source](https://arxiv.org/abs/2112.00114)
 
 - ⚛️ **Nuclear Fusion 3.15 MJ Breakthrough** *(26 May 2026)*
-  การทดลองนิวเคลียร์ฟิวชั่นที่บันทึกผลลัพธ์ 3.15 เมกะจูล จากพลังงานเข้าสู่ระบบ 2.05 MJ → การบรรลุ Q > 1 ครั้งแรกโดยเฉพาะจริง ไม่ใช่แค่สถิติในห้องปฏิบัติการเล็กๆ → เริ่มเข้าสู่ระยะการพาณิชย์ได้ในอนาคตใกล้นี้ [Source](https://www.weforum.org/stories/2026/02/nuclear-fusion-science-explained/) [Source](https://energy-solutions.co/articles/sub/fusion-energy-breakthroughs-2026)
+  การทดลองนิวเคลียร์ฟิวชันให้พลังงาน 3.15 เมกะจูลจากพลังงานป้อนเข้า 2.05 MJ หรือ Q > 1 เป็นความก้าวหน้าในการพัฒนาฟิวชัน โดยยังต้องพัฒนาต่อเพื่อให้ผลิตพลังงานเชิงพาณิชย์ได้ [Source](https://www.weforum.org/stories/2026/02/nuclear-fusion-science-explained/) [Source](https://energy-solutions.co/articles/sub/fusion-energy-breakthroughs-2026)
 
 - ☀️ **Perovskite Solar 35% Efficiency UCL** *(26 May 2026)*
-  เซลล์โซล่าร์เปอรอสไคท์ที่บันทึกความสามารถในการแปลงพลังงาน 35% จากการวิจัยของ UCL และ National Yang Ming Chiao Tung University → เทคโนโลยีนี้มีศักยภาพในการทำให้พลังงานแสงอาทิตย์กลายเป็นแหล่งพลังงานที่คุ้มค่าและสามารถผลิตในมาตราส่วนใหญ่ได้ [Source](https://www.greenfueljournal.com/post/perovskite-solar-cell-revolution-2026-part-i) [Source](https://energy-solutions.co/articles/sub/perovskite-solar-cells-breakthrough)
+  UCL และ National Yang Ming Chiao Tung University รายงานเซลล์แสงอาทิตย์ perovskite ที่มีประสิทธิภาพการแปลงพลังงาน 35% เป็นแนวทางพัฒนาแผงที่คุ้มค่าและผลิตได้ในปริมาณมาก [Source](https://www.greenfueljournal.com/post/perovskite-solar-cell-revolution-2026-part-i) [Source](https://energy-solutions.co/articles/sub/perovskite-solar-cells-breakthrough)
 
 - 🏭 **Dutch Perovskite Roll-to-Roll Manufacturing** *(26 May 2026)*
-  สตาร์ทอัพดัชชีวางแผนสร้างโรงงานผลิตแผ่นโซล่าร์เปอรอสไคท์แบบ roll-to-roll ในปี 2026 → เซลล์เปอรอสไคท์ยืดหยุ่นสามารถผลิตแบบ roll-to-roll ได้แล้วในปี 2026 → การเปลี่ยนเทคโนโลยีที่ทำในห้องปฏิบัติการเป็นการผลิตในราคาที่สามารถแข่งขันได้จริง [Source](https://www.pv-magazine.com/2026/03/16/dutch-startup-plans-roll-to-roll-factory-for-perovskite-solar-cells/) [Source](https://pubs.acs.org/doi/10.1021/acsami.5c14588)
+  สตาร์ตอัปจากเนเธอร์แลนด์วางแผนสร้างโรงงานเซลล์แสงอาทิตย์ perovskite แบบ roll-to-roll ในปี 2026 การผลิตเซลล์ยืดหยุ่นด้วยวิธีนี้มุ่งขยายจากห้องแล็บสู่การผลิตที่มีต้นทุนแข่งขันได้ [Source](https://www.pv-magazine.com/2026/03/16/dutch-startup-plans-roll-to-roll-factory-for-perovskite-solar-cells/) [Source](https://pubs.acs.org/doi/10.1021/acsami.5c14588)
 
 - 💧 **Atoco Atmospheric Water Harvesting** *(26 May 2026)*
-  เทคโนโลยีการสกัดน้ำจากอากาศของ Atoco ที่มุ่งเน้นการเปิดตัวเชิงพาณิชย์ในปี 2026 → สกัดน้ำจากอากาศเป็นเทคโนโลยีคุ้มค่าและพร้อมใช้งานในมาตราส่วนพาณิชย์แล้ว → การแก้ปัญหาน้ำดื่มในพื้นที่แห้งแล้งและสภาพอากาศที่เปลี่ยนแปลง [Source](https://www.agnavigator.com/Article/2026/01/21/atoco-targets-commercial-rollout-of-atmospheric-water-harvesting-tech-following-nobel-prize/) [Source](https://www.wahainc.com/)
+  Atoco ตั้งเป้าเปิดตัวเทคโนโลยีดึงน้ำจากอากาศเชิงพาณิชย์ในปี 2026 เพื่อช่วยจัดหาน้ำดื่มในพื้นที่แห้งแล้งและพื้นที่ที่ได้รับผลกระทบจากการเปลี่ยนแปลงสภาพภูมิอากาศ [Source](https://www.agnavigator.com/Article/2026/01/21/atoco-targets-commercial-rollout-of-atmospheric-water-harvesting-tech-following-nobel-prize/) [Source](https://www.wahainc.com/)
 
 - 🔋 **Iron-Air Battery Game Changer** *(26 May 2026)*
-  แบตเตอรี่ไอร์-แอร์ที่เปลี่ยนแปลงการจัดเก็บพลังงานระยะยาวโดยใช้วัตถุดิบที่เป็นมิตรกับสิ่งแวดล้อม → แบตเตอรี่สามารถจัดเก็บพลังงานได้นานถึง 100 ชั่วโมงและไม่มีความเสี่ยงต่อการลุกลาม → ปฏิวัติการจัดเก็บพลังงานหมุนเวียน [Source](https://www.dowellelectronic.com/weblog/iron-air-battery-energy-storage/) [Source](https://energydigital.com/news/iron-air-batteries-transforming-renewable-energy-storage)
+  แบตเตอรี่เหล็ก–อากาศใช้วัตถุดิบที่หาได้ทั่วไปเพื่อกักเก็บพลังงานระยะยาว โดยระบุว่าเก็บได้นานถึง 100 ชั่วโมงและลดความเสี่ยงการลุกติดไฟ เหมาะกับการสำรองพลังงานหมุนเวียน [Source](https://www.dowellelectronic.com/weblog/iron-air-battery-energy-storage/) [Source](https://energydigital.com/news/iron-air-batteries-transforming-renewable-energy-storage)
 
 
 ## [เดือนพฤษภาคม 2026]
 
 - 🔬 **Shape-Shifting Molecules for AI Hardware** *(27 May 2026)*
-  โมเลกุลที่เปลี่ยนรูปร่างและคุณสมบัติทางเคมีได้ → ฮาร์ดแวร์ AI ที่เรียนรู้ได้จริง → เปลี่ยนจากการเลียนแบบอินเทลลิเจนซ์เป็นการเข้ารหัสทางกายภาพ
+  โมเลกุลที่เปลี่ยนรูปร่างและสมบัติทางเคมีได้เป็นแนวทางพัฒนาฮาร์ดแวร์ AI ที่เรียนรู้ผ่านการเปลี่ยนสถานะทางกายภาพของวัสดุ
   [Source](https://www.sciencedaily.com/releases/2026/01/260101160857.htm) [Source](https://pme.uchicago.edu/news/world-quantum-day-2026-shaping-future-quantum-technology)
 
 - ⚛️ **Graphene Superconductor** *(27 May 2026)*
-  Graphene 2D material ที่ทำงานเป็นตัวนำไฟฟ้าในอุณหภูมิห้อง → ความหนาแน่นกระแสไฟสูงกว่าที่เคยทำได้ 10 เท่า → เปลี่ยนอุตสาหกรรมพลังงาน
+  กราฟีนเป็นวัสดุสองมิติที่นำไฟฟ้าได้ที่อุณหภูมิห้อง รายงานที่อ้างถึงระบุความหนาแน่นกระแสไฟสูงขึ้น 10 เท่า โดยมุ่งนำไปใช้ในอุตสาหกรรมพลังงาน
   [Source](https://web.mit.edu/newsoffice/2026/graphene-superconductor-breakthrough.html) [Source](https://news.stanford.edu/2026/graphene-superconductor-breakthrough)
 
 - 💫 **Magnetic Levitation Energy Storage** *(27 May 2026)*
-  เก็บพลังงานด้วยแรงเหลือบของแม่เหล็กที่ลอยน้ำ → ไม่มีขี้เลื่อย ไม่มีฟริกชัน → ประสิทธิภาพ 95% คงทน 50 ปี → ต้นทุนลดลง 40%
+  ระบบกักเก็บพลังงานที่ใช้การลอยตัวด้วยแม่เหล็กช่วยลดการสัมผัสและแรงเสียดทาน โดยรายงานประสิทธิภาพ 95% อายุการใช้งาน 50 ปี และต้นทุนลดลง 40%
   [Source](https://www.seas.harvard.edu/news/2026/maglev-energy-storage-breakthrough) [Source](https://www.energy.gov/2026/magnetic-levitation-energy-storage-grid-scale)
 
 - 🔋 **Battery 3D Printing** *(27 May 2026)*
-  พิมพ์แบตเตอรี่ 3D ที่ปรับรูปทราบได้ → ประสิทธิภาพสูงกว่าแบบแบน 40% → ชาร์จได้เร็วกว่า 3 เท่า → ช่วยขยาย battery life ได้ 50%
+  การพิมพ์แบตเตอรี่สามมิติช่วยปรับรูปทรงให้เหมาะกับอุปกรณ์ โดยระบุประสิทธิภาพสูงกว่าแบบแบน 40% ชาร์จเร็วขึ้น 3 เท่า และอายุแบตเตอรี่เพิ่มขึ้น 50%
   [Source](https://newscenter.lbl.gov/2026/3d-printed-batteries-breakthrough) [Source](https://www.tesila.com/2026/battery-3d-printing)
 
 - 🤖 **AI Materials Discovery Platform** *(27 May 2026)*
-  AI-powered open-source infrastructure สำหรับการค้นพบวัสดุใหม่ → ลดเวลาจากปีเป็นวัน → ทำให้การค้นพบวัสดุใหม่เร็วขึ้น 100 เท่า → ไม่แค่ predict แต่ create สารใหม่
+  แพลตฟอร์มโอเพนซอร์สที่ใช้ AI ช่วยค้นหาและออกแบบวัสดุใหม่ โดยมุ่งลดเวลาจากหลายปีเหลือหลายวันและเร่งการค้นพบ 100 เท่า ครอบคลุมทั้งการทำนายสมบัติและการออกแบบสารใหม่
   [Source](https://www.nature.com/articles/s43246-026-01105-0) [Source](https://newscenter.lbl.gov/2026/accelerating-discovery-how-the-materials-project-is-helping-to-usher-in-the-ai-revolution-for-materials-science)
 
 - 🧠 **Neurorobotics Brain-Machine Interface** *(28 May 2026)*
-  Wireless neural dust sensors (1mm³) ที่ติดตาม brain activity แบบ real-time โดยไม่ต้องผ่าตัด → 100,000 sensors per brain ความแม่นยำ 10x สูงกว่า EEG → การรักษาทางประสาทและ cognitive enhancement
-  [Source](https://www.nature.com/articles/s41565-026-02345-6) [Source](https://www.berkeley.edu/news/brain-neural-dust-2026/)
+  เซ็นเซอร์ neural dust ไร้สายแบบฝังในร่างกายใช้อัลตราซาวนด์ส่งพลังงานและรับส่งข้อมูลเพื่อบันทึกสัญญาณประสาท งานของ Berkeley พัฒนาแนวทางนี้สำหรับการเชื่อมต่อกับสมองและระบบประสาทส่วนปลาย
+  [Source](https://www.nature.com/articles/s41565-026-02345-6) [Source](https://www.berkeley.edu/news/brain-neural-dust-2026/) [Source](https://news.berkeley.edu/2018/04/10/berkeley-engineers-build-smallest-volume-most-efficient-wireless-nerve-stimulator/)
 
 - ⚛️ **Twistronics Superconductors** *(28 May 2026)*
-  Twisted bilayer graphene ที่มี superconductivity ที่ 77K ด้วย twist angle 0.1° precision → electron-phonon coupling enhanced → quantum computing applications ที่ทำงานได้ที่อุณหภูมิสูงขึ้น
+  กราฟีนสองชั้นแบบบิดถูกนำเสนอว่ามีสภาพนำยิ่งยวดที่ 77 K โดยควบคุมมุมบิดได้ละเอียด 0.1° เพื่อเพิ่มการเชื่อมโยงระหว่างอิเล็กตรอนกับโฟนอน และศึกษาการใช้กับการประมวลผลควอนตัมที่อุณหภูมิสูงขึ้น
   [Source](https://www.science.org/doi/10.1126/sciadv.adz8028) [Source](https://arxiv.org/abs/2304.05678)
 
 - 📡 **Quantum Network Antennas** *(28 May 2026)*
-  Quantum-enabled antennas ที่ใช้ quantum entanglement สร้าง secure communication → 100x ประสิทธิภาพสูงกว่า traditional antennas → ทำงานที่อุณหภูมิห้อง และ process multiple frequency channels พร้อมกัน
+  สายอากาศควอนตัมใช้ความพัวพันเพื่อเพิ่มความปลอดภัยของการสื่อสาร โดยระบุประสิทธิภาพสูงกว่าสายอากาศทั่วไป 100 เท่า ทำงานได้ที่อุณหภูมิห้องและประมวลผลหลายช่องความถี่พร้อมกัน
   [Source](https://ieeexplore.ieee.org/document/10703234/) [Source](https://www.sciencedirect.com/science/article/abs/pii/S2666389923001751)
 
 - 🔊 **Phononic Crystal Quantum Computing** *(28 May 2026)*
-  Sound-controlled quantum computing โดยใช้ phononic crystals ควบคุม acoustic waves ที่ nanoscale → 99.9% noise isolation for qubits → fault-tolerant quantum computing through acoustic shielding
+  ใช้ phononic crystal ควบคุมคลื่นเสียงระดับนาโนเพื่อลดสัญญาณรบกวนที่กระทบ qubit โดยระบุการแยกสัญญาณรบกวน 99.9% เป็นแนวทางช่วยพัฒนาคอมพิวเตอร์ควอนตัมที่ทนต่อข้อผิดพลาด
   [Source](https://www.nature.com/articles/s41567-026-04567-x) [Source](https://sciencedaily.com/releases/2024/07/240703131750.htm)
 
 - 🔩 **Superlubricity Coating** *(28 May 2026)*
-  Vertically aligned carbon nanotube coating ลด friction coefficient เหลือ 0.001-0.007 บน steel-steel contact → self-replenishing lubricating layer ด้วย PAO oil → industrial machinery และ automotive applications
+  ชั้นเคลือบท่อนาโนคาร์บอนเรียงตัวในแนวตั้งร่วมกับน้ำมัน PAO ลดสัมประสิทธิ์แรงเสียดทานระหว่างผิวเหล็กเหลือ 0.001–0.007 และช่วยเติมชั้นหล่อลื่นระหว่างใช้งาน มีแนวทางใช้ในเครื่องจักรและยานยนต์
   [Source](https://www.nature.com/articles/s41563-026-02576-9) [Source](https://newatlas.com/materials/superlubricity-friction-machines/)
 
 - 🧠 **Magnetoencephalography 2026 — Brain Imaging Revolution** *(29 May 2026)*
-  Quantum-enhanced brain scanning technology with 10x sensitivity improvement → Real-time brain mapping transforms neurological diagnosis and brain-computer interface development → Cerca Magnetics secured £3.8m funding for quantum brain scanners using optically pumped magnetometers
+  เครื่องตรวจวัดสนามแม่เหล็กสมองที่ใช้เทคโนโลยีควอนตัมรายงานความไวเพิ่มขึ้น 10 เท่า เพื่อสร้างแผนที่การทำงานของสมองแบบ real-time Cerca Magnetics ได้รับเงินทุน £3.8m เพื่อขยายเครื่องตรวจที่ใช้ optically pumped magnetometer
   [Source](https://thequantuminsider.com/2026/04/21/cerca-magnetics-secures-38m-series-a-funding-scale-quantum-brain-scanner/) [Source](https://www.euronews.com/health/2026/03/22/breakthrough-in-brain-research-german-researcher-discovers-brain-navigational-system)
 
 - 🌋 **Supercritical CO2 Geothermal 2026 — Clean Energy Revolution** *(29 May 2026)*
-  Next-generation geothermal using supercritical CO2 achieves 40% higher thermal efficiency → Eliminates scaling problems while delivering 100MW clean electricity from Fervo Energy's Cape Station plant → Clean energy solution for much of the planet
+  พลังงานความร้อนใต้พิภพที่ใช้ CO2 สภาวะเหนือวิกฤตถูกนำเสนอว่ามีประสิทธิภาพความร้อนเพิ่มขึ้น 40% และช่วยแก้ปัญหาตะกรัน บทความยังกล่าวถึงไฟฟ้าสะอาด 100 MW จากโครงการ Cape Station ของ Fervo Energy
   [Source](https://news.mit.edu/2026/next-gen-geothermal-energy-promise-progress-challenges-0313) [Source](https://www.pnas.org/doi/10.1073/pnas.2601712123)
 
 - 📡 **Quantum Sensor Network 2026 — Smart City Sensing Revolution** *(29 May 2026)*
-  Distributed quantum sensing network achieves picometer-scale precision → 1000x improvement over classical sensors for real-time infrastructure monitoring → Revolutionizes smart city monitoring and environmental sensing
+  เครือข่ายเซ็นเซอร์ควอนตัมแบบกระจายตัวมุ่งตรวจวัดโครงสร้างพื้นฐานและสิ่งแวดล้อมแบบ real-time โดยระบุความละเอียดระดับพิโคเมตรและสมรรถนะสูงกว่าเซ็นเซอร์ทั่วไป 1000 เท่า
   [Source](https://www.sciencedirect.com/science/article/pii/S0924424726004152) [Source](https://www.mdpi.com/journal/sensors/special_issues/41T1M04VVU)
 
 - ⚛️ **Fusion Neutron Source 2026 — Medical Isotope Revolution** *(29 May 2026)*
-  Fusion-powered neutron sources produce medical isotopes with zero long-lived waste → SHINE Technologies combines fusion neutrons with uranium targets to produce Mo-99 for cancer diagnosis → Eliminates global isotope shortages from aging research reactors
+  แหล่งกำเนิดนิวตรอนจากฟิวชันใช้ผลิตไอโซโทปทางการแพทย์ SHINE Technologies ใช้นิวตรอนกับเป้ายูเรเนียมเพื่อผลิต Mo-99 สำหรับการวินิจฉัยโรค โดยมุ่งลดการพึ่งพาเครื่องปฏิกรณ์วิจัยเก่าและลดของเสียกัมมันตรังสีอายุยาว
   [Source](https://neutronbytes.com/2026/04/09/from-fusion-to-life-saving-medicine-a-revolution-in-isotope-production-the-journey-of-mo-99/) [Source](https://www.science.org/content/article/ceo-aims-revolutionize-cancer-killing-isotope-production-fusion-power)
 
 - 🧬 **Biohybrid Electronics 2026 — Living Electronics Revolution** *(29 May 2026)*
-  Bio-inspired synthetic biology powers 100x more energy-efficient electronics → Self-healing electronic devices that form functional neuromuscular junctions → Breakthrough in neural interfaces and medical devices from Oren, Gupta, and Habib teams
+  ชีววิทยาสังเคราะห์ที่เลียนแบบสิ่งมีชีวิตเป็นแนวทางพัฒนาอิเล็กทรอนิกส์ที่ใช้พลังงานน้อยลง 100 เท่า งานของทีม Oren, Gupta และ Habib กล่าวถึงอุปกรณ์ซ่อมแซมตัวเองและรอยต่อระหว่างเซลล์ประสาทกับกล้ามเนื้อที่ทำงานได้ เพื่อใช้กับอุปกรณ์ทางการแพทย์
   [Source](https://bioengineer.org/bioinspired-synthetic-biology-powers-energy-efficient-electronics/) [Source](https://www.nature.com/articles/s41467-025-57016-0)
 
 - 🚄 **Magnetic Levitation Train Transportation** *(31 May 2026)*
-  China shatters world speed record with maglev train reaching 700 km/h in just 2 seconds → ultra-high-speed transportation revolutionizing intercity travel → reducing travel times between cities by 80% compared to traditional high-speed rail → world record achievement enabling unprecedented urban connectivity
+  จีนรายงานการทดสอบรถแม็กเลฟที่เร่งถึง 700 km/h ใน 2 วินาที เพื่อพัฒนาการเดินทางระหว่างเมืองความเร็วสูง โดยมีการคาดการณ์ว่าอาจลดเวลาเดินทางได้ 80% เมื่อเทียบกับรถไฟความเร็วสูงทั่วไป
   [Source](https://planet.news/article/china-maglev-train-700kmh-world-record-2026)
 
 - 🌌 **Space Elevator Technology** *(31 May 2026)*
-  Breakthroughs in advanced materials making space elevators more feasible within next several decades → carbon nanotubes and graphene composites could reduce launch costs by 95% → potential game-changer for space access → opening commercial, scientific, and tourism applications to orbit
+  ความก้าวหน้าของท่อนาโนคาร์บอนและคอมโพสิตกราฟีนช่วยเพิ่มความเป็นไปได้ของลิฟต์อวกาศในอีกหลายทศวรรษ โดยมีการประเมินว่าหากพัฒนาได้สำเร็จอาจลดต้นทุนขึ้นสู่วงโคจร 95% และรองรับงานพาณิชย์ วิทยาศาสตร์ และการท่องเที่ยว
   [Source](https://www.techtimes.com/articles/316591/20260514/could-space-elevators-become-reality-future-space-technology-explained.htm)
 
 - 🤖 **Artificial General Intelligence 2026** *(31 May 2026)*
-  Gartner predicts 40% of enterprise applications will leverage task-specific AI agents by end of 2026 → remarkable progress in multi-agent systems → integration of LLMs with domain knowledge bases enabling complex reasoning tasks → bringing us closer to generalized AI capabilities
+  Gartner คาดว่า 40% ของแอปพลิเคชันองค์กรจะใช้ AI agent สำหรับงานเฉพาะทางภายในสิ้นปี 2026 การพัฒนาระบบหลาย agent และการเชื่อม LLM กับฐานความรู้เฉพาะด้านช่วยให้รับมือโจทย์ที่ซับซ้อนได้มากขึ้น
   [Source](https://www.timetrex.com/blog/artificial-general-intelligence-in-2026)
 
 - 🌱 **Vertical Farming Technology 2026** *(31 May 2026)*
-  Precision vertical farming emerging with 10x more yield per square meter compared to traditional farming → 95% less water usage and zero pesticides → AI-controlled environments and automated hydroponic systems enabling year-round fresh produce regardless of climate → transformative solution for sustainable urban agriculture
+  เกษตรแนวตั้งแบบแม่นยำใช้ AI ควบคุมสภาพแวดล้อมและระบบไฮโดรโปนิกส์อัตโนมัติ เพื่อปลูกได้ตลอดปี โดยระบุผลผลิตต่อพื้นที่สูงขึ้น 10 เท่า ใช้น้ำน้อยลง 95% และไม่ใช้สารกำจัดศัตรูพืช
   [Source](https://farmonaut.com/precision-farming/new-method-of-farming-precision-vertical-agriculture-2026)
 
 - 🚀 **Fusion Rocket Propulsion 2026** *(31 May 2026)*
-  UK startup achieves first-ever plasma ignition inside nuclear fusion rocket engine → revolutionary breakthrough reducing Mars travel time from 6-9 months to just 2-3 weeks → magnetic confinement technology controlling plasma efficiently → clean and efficient propulsion method enabling solar system exploration
+  สตาร์ตอัปในสหราชอาณาจักรจุดพลาสมาในเครื่องยนต์จรวดฟิวชันได้เป็นครั้งแรก โดยพัฒนาการกักพลาสมาด้วยสนามแม่เหล็กและตั้งเป้าลดเวลาเดินทางไปดาวอังคารจาก 6–9 เดือนเหลือ 2–3 สัปดาห์
   [Source](https://www.euronews.com/next/2026/03/26/world-first-uk-startup-ignites-plasma-inside-nuclear-fusion-rocket-in-major-step-for-space)
 
 - 🎵 **Acoustic Holography Medical Imaging — Non-Invasive 3D Sound Patterns** *(02 June 2026)*
-  MIT researchers develop acoustic holography creating 3D sound patterns for non-invasive tumor imaging → 10x higher resolution than ultrasound using metamaterial transducers. University College London: acoustic holography guides surgery with sub-millimeter precision without radiation exposure [Source](https://www.media.mit.edu/projects/acoustic-holography/2026) [Source](https://www.ucl.ac.uk/centre-medical-image-computing)
+  นักวิจัย MIT พัฒนา acoustic holography เพื่อสร้างสนามเสียงสามมิติสำหรับถ่ายภาพเนื้องอกโดยไม่ผ่าตัด โดยระบุความละเอียดสูงกว่าอัลตราซาวนด์ 10 เท่าเมื่อใช้ตัวแปลงสัญญาณ metamaterial ส่วน UCL ศึกษาการใช้ช่วยนำทางผ่าตัดด้วยความละเอียดต่ำกว่ามิลลิเมตรโดยไม่ใช้รังสี [Source](https://www.media.mit.edu/projects/acoustic-holography/2026) [Source](https://www.ucl.ac.uk/centre-medical-image-computing)
 
 - 🌊 **Phononic Crystal Waveguides — Lossless Acoustic Communication** *(02 June 2026)*
-  Stanford engineers create phononic crystal waveguides with 99.9% sound confinement using artificial periodic structures. University of Illinois Urbana-Champaign: waveguides enable lossless acoustic communication at MHz frequencies for quantum computing applications. ETH Zurich achieves room-temperature phonon control for heat management in microelectronics [Source](https://me.stanford.edu/research/phononic-crystal-2026) [Source](https://physics.illinois.edu/news/phononic-waveguides-breakthrough)
+  Stanford พัฒนา phononic crystal waveguide ที่กักคลื่นเสียงได้ 99.9% ด้วยโครงสร้างคาบที่ออกแบบขึ้น University of Illinois Urbana-Champaign ศึกษาการสื่อสารเสียงที่ความถี่ระดับ MHz สำหรับงานควอนตัม ส่วน ETH Zurich ศึกษาการควบคุมโฟนอนที่อุณหภูมิห้องเพื่อจัดการความร้อนในไมโครอิเล็กทรอนิกส์ [Source](https://me.stanford.edu/research/phononic-crystal-2026) [Source](https://physics.illinois.edu/news/phononic-waveguides-breakthrough)
 
 - 🎯 **Metasurface Acoustic Lenses — Flat Sound Beam Steering** *(02 June 2026)*
-  Harvard researchers develop ultra-thin metasurface acoustic lenses focusing sound waves with 5° precision using subwavelength structures. Caltech creates flat acoustic lenses that steer sound beams without moving parts for medical ultrasound. University of Manchester achieves frequency-tunable acoustic focusing for non-invasive surgery applications [Source](https://seas.harvard.edu/research/metasurface-acoustic-lenses-2026) [Source](https://www.caltech.edu/about/news/acoustic-metasurface-breakthrough)
+  Harvard พัฒนาเลนส์เสียง metasurface บางพิเศษที่ควบคุมทิศทางได้ละเอียด 5° ด้วยโครงสร้างเล็กกว่าความยาวคลื่น Caltech ศึกษาเลนส์แบนที่เบนลำเสียงโดยไม่มีชิ้นส่วนเคลื่อนที่ ส่วน University of Manchester ศึกษาการปรับจุดรวมเสียงด้วยความถี่สำหรับงานรักษา [Source](https://seas.harvard.edu/research/metasurface-acoustic-lenses-2026) [Source](https://www.caltech.edu/about/news/acoustic-metasurface-breakthrough)
 
 - 🧲 **Magnonic Waveguides — Spin Wave Computing Revolution** *(02 June 2026)*
-  IBM Research creates magnonic waveguides transmitting spin waves with 99.8% efficiency at room temperature for next-gen computing. University of California San Diego achieves terahertz-frequency magnonic interconnects using yttrium iron garnet (YIG) films. MIT demonstrates low-power magnonic logic circuits consuming 100x less energy than electronic chips [Source](https://research.ibm.com/magnonic-waveguides-2026) [Source](https://ucsd.edu/news/magnonic-computing-breakthrough)
+  IBM Research พัฒนา waveguide ที่ส่งคลื่นสปินได้ด้วยประสิทธิภาพ 99.8% ที่อุณหภูมิห้อง University of California San Diego ศึกษาการเชื่อมต่อแมกนอนระดับเทราเฮิรตซ์ด้วยฟิล์ม YIG ส่วน MIT สาธิตวงจรตรรกะแมกนอนที่ใช้พลังงานน้อยกว่าชิปอิเล็กทรอนิกส์ 100 เท่า [Source](https://research.ibm.com/magnonic-waveguides-2026) [Source](https://ucsd.edu/news/magnonic-computing-breakthrough)
 
 - 🌌 **Topological Acoustics — Defect-Immune Sound Propagation** *(02 June 2026)*
-  Princeton University develops topological acoustic metamaterials with defect-immune sound propagation for perfect wave transmission. University of Paris-Saclay creates topological insulators for sound enabling lossless acoustic pathways around obstacles. Max Planck Institute demonstrates topological protection in phononic crystals for quantum acoustic applications [Source](https://www.princeton.edu/research/topological-acoustics-2026) [Source](https://www.mps.mpg.de/topological-acoustics-breakthrough)
+  Princeton University พัฒนา acoustic metamaterial ที่ใช้สมบัติทางโทโพโลยีช่วยให้เสียงผ่านตำหนิของวัสดุได้ University of Paris-Saclay ศึกษาเส้นทางนำเสียงรอบสิ่งกีดขวาง ส่วน Max Planck Institute ศึกษา topological protection ใน phononic crystal สำหรับงานควอนตัม [Source](https://www.princeton.edu/research/topological-acoustics-2026) [Source](https://www.mps.mpg.de/topological-acoustics-breakthrough)

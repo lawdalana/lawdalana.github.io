@@ -2,7 +2,7 @@
 title: "TurboVec — Vector Index บน TurboQuant"
 notetype: feed
 date: 2026-05-26
-last_modified: 2026-05-26
+last_modified: 2026-09-16
 tags: [vector-search, quantization, turboquant, FAISS, RAG, rust, python]
 status: published
 ---
@@ -30,7 +30,7 @@ status: published
 
 ## ❓ คืออะไร
 
-**TurboVec** คือ vector index library เขียนด้วย **Rust** + Python bindings ที่ build บน Google Research's **TurboQuant** algorithm (ICLR 2026)
+**TurboVec** คือไลบรารีสำหรับสร้าง vector index เขียนด้วย **Rust** และเรียกใช้จาก Python ได้ โดยพัฒนาต่อยอดจากอัลกอริทึม **TurboQuant** ของ Google Research (ICLR 2026)
 
 - **Author:** Ryan Codrai
 - **License:** MIT
@@ -39,7 +39,7 @@ status: published
 - **★ 2,900+** GitHub stars
 - **Paper:** [TurboQuant (arXiv:2504.19874)](https://arxiv.org/abs/2504.19874)
 
-Core idea: ใช้ **data-oblivious quantization** (random rotation + Lloyd-Max scalar quantizer) บีบอัด vectors โดยไม่ต้อง train codebook เลย — ผลคือ compression 16x แต่ recall ยังดีกว่า FAISS PQ
+แนวคิดหลักคือใช้ **data-oblivious quantization** (random rotation + Lloyd-Max scalar quantizer) บีบอัด vectors โดยไม่ต้องฝึก codebook จากชุดข้อมูล ผลที่รายงานคือบีบอัดได้ 16x และยังให้ recall ดีกว่า FAISS PQ
 
 ---
 
@@ -59,7 +59,7 @@ Core idea: ใช้ **data-oblivious quantization** (random rotation + Lloyd-Ma
 
 ## TurboQuant Algorithm ทำงานยังไง
 
-TurboQuant ใช้ insight ง่ายๆ: **random rotation ทำให้ทุก coordinate ตาม distribution ที่รู้** → ไม่ต้องดู data เลย
+TurboQuant อาศัยแนวคิดว่า **หลัง random rotation การกระจายของแต่ละ coordinate อธิบายได้ทางคณิตศาสตร์** จึงออกแบบ quantizer ได้โดยไม่ต้องเรียนรู้การกระจายจากชุดข้อมูล
 
 ### 5 Steps
 
@@ -70,21 +70,21 @@ TurboQuant ใช้ insight ง่ายๆ: **random rotation ทำให้�
 └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
 ```
 
-1. **Normalize** — ดึง norm ออกจาก vector, เก็บเป็น float แยก → vector กลายเป็น unit direction บน hypersphere
+1. **Normalize** — แยกค่า norm ของ vector ไปเก็บเป็น float แล้วปรับ vector ให้มีความยาวหนึ่งหน่วยบน hypersphere
 
 2. **Random Rotation** — คูณทุก vector ด้วย random orthogonal matrix เดียวกัน
-   - หลัง rotation → แต่ละ coordinate ตาม **Beta distribution** ที่ converge เป็น $N(0, \frac{1}{d})$ ใน high dimensions
+   - หลัง rotation แต่ละ coordinate มีการกระจายแบบ **Beta distribution** ซึ่งเข้าใกล้ $N(0, \frac{1}{d})$ เมื่อจำนวนมิติสูง
    - เป็น **data-oblivious** — ไม่สนใจ input distribution
 
-3. **Lloyd-Max Scalar Quantization** — รู้ distribution แล้ว → precompute optimal bucket boundaries
+3. **Lloyd-Max Scalar Quantization** — เมื่อทราบการกระจายแล้ว จึงคำนวณขอบเขต bucket ที่เหมาะสมไว้ล่วงหน้าได้
    - 2-bit = 4 buckets, 4-bit = 16 buckets
-   - คำนวณจาก math, ไม่ต้องใช้ data
+   - คำนวณจากแบบจำลองทางคณิตศาสตร์ ไม่ต้องใช้ชุดข้อมูลฝึก
    - Distortion อยู่ภายใน **2.7× ของ Shannon's lower bound**
 
-4. **Bit-pack** — แต่ละ coordinate เป็น integer เล็ก → pack แน่น
+4. **Bit-pack** — แปลงแต่ละ coordinate เป็นจำนวนเต็มขนาดเล็ก แล้วจัดเก็บบิตให้ใช้พื้นที่น้อยที่สุด
    - dim=1536: 6,144 bytes (FP32) → 384 bytes (2-bit) = **16× compression**
 
-5. **Length-renormalized Scoring** — scalar quantization underestimate inner products
+5. **Length-renormalized Scoring** — ปรับแก้ผลจาก scalar quantization ที่ทำให้ค่าประมาณ inner product ต่ำกว่าค่าจริง
    - เก็บ $\frac{\|v\|}{\langle u, \hat{x} \rangle}$ ต่อ vector
    - Search kernel คูณ scalar → **unbiased estimator** โดยไม่เสีย search-time cost
 
@@ -106,7 +106,7 @@ TurboQuant ใช้ insight ง่ายๆ: **random rotation ทำให้�
 | **Privacy** | Pure local | Pure local |
 | **Add vectors** | Instant, no calibration | Need retrain |
 
-**สรุป:** TurboVec ชนะเรื่อง convenience (ไม่ต้อง train) + compression + ARM speed ส่วน FAISS ยังแข็งแกร่งเรื่อง ecosystem และ features ที่หลากหลายกว่า
+**สรุป:** TurboVec เด่นทั้งเรื่องการบีบอัด ความเร็วบน ARM และความสะดวกจากการไม่ต้องฝึก codebook ส่วน FAISS มีเครื่องมือรอบข้างและฟีเจอร์ให้เลือกหลากหลายกว่า
 
 ---
 
@@ -121,7 +121,7 @@ TurboQuant ใช้ insight ง่ายๆ: **random rotation ทำให้�
 | GloVe d=200, 4-bit | +0.3 points |
 | GloVe d=200, 2-bit | -1.2 points (close by k≈16) |
 
-ทั้งคู่ converge → R@1 = 1.0 ที่ k=4 สำหรับ OpenAI embeddings
+สำหรับ OpenAI embeddings ทั้งคู่ให้ R@1 = 1.0 เมื่อ k=4
 
 > **หมายเหตุ:** FAISS baseline ที่ใช้เปรียบเทียบเป็น **LUT256 (float32 LUT)** ซึ่งแม่นกว่า u8-LUT ใน paper ต้นฉบับ — เป็น baseline ที่แข็งแกร่งกว่า
 
@@ -155,7 +155,7 @@ index.write("my_index.tq")
 loaded = TurboQuantIndex.load("my_index.tq")
 ```
 
-> `dim` เป็น optional — ถ้าไม่ใส่จะ infer จาก first `add()` call
+> ไม่จำเป็นต้องระบุ `dim` เพราะไลบรารีจะอ่านจำนวนมิติจากข้อมูลที่ส่งให้ `add()` ครั้งแรก
 
 ---
 
@@ -185,7 +185,7 @@ idx.remove(1002)                         # O(1) by id
 
 ## Hybrid Retrieval (Filtered Search)
 
-ของจริง — BM25/SQL กรอง candidates ก่อน แล้ว dense rerank:
+ตัวอย่างการใช้งาน: ใช้ BM25/SQL กรองรายการที่เข้าเกณฑ์ก่อน แล้วจัดอันดับซ้ำด้วย dense vectors:
 
 ```python
 import numpy as np
@@ -205,6 +205,7 @@ scores, ids = idx.search(query, k=10, allowlist=allowed)
 ```
 
 **ทำไมดีกว่า post-filter:**
+
 - Kernel ไม่ insert disallowed vectors เข้า heap เลย
 - ได้ `min(k, len(allowed))` results เสมอ — ไม่มี -1/NaN padding
 - Selective allowlists → skip SIMD blocks ที่ไม่มี allowed slots → เร็วขึ้น
@@ -213,7 +214,7 @@ scores, ids = idx.search(query, k=10, allowlist=allowed)
 
 ## Framework Integrations
 
-Drop-in replacements — เปลี่ยนแค่ import, pipeline เดิมทำงานได้เหมือนเดิม
+มี integrations สำหรับใช้แทน vector store เดิมใน framework ต่อไปนี้ โดยออกแบบให้ปรับ pipeline เดิมเพียงเล็กน้อย
 
 | Framework | Install | Replaces |
 |-----------|---------|----------|
@@ -248,10 +249,12 @@ index.remove(1002);
 ### File Formats
 
 **`.tv`** — TurboQuantIndex:
+
 - Header: `bit_width` (u8) + `dim` (u32) + `n_vectors` (u32)
 - Packed codes + norms (f32)
 
 **`.tvim`** — IdMapIndex:
+
 - Magic "TVIM" + version byte + core payload + `slot_to_id` (u64 array)
 
 ---
@@ -275,19 +278,19 @@ index.remove(1002);
 
 ### Key Contributions
 
-- **Data-oblivious algorithm** ที่ achieve near-optimal distortion rate (within ~2.7× of Shannon lower bound) ทุก bit-width ทุก dimension
+- **Data-oblivious algorithm** ที่ให้ distortion rate ใกล้ค่าต่ำสุดทางทฤษฎี (ภายใน ~2.7× ของ Shannon lower bound) ทุก bit-width และทุก dimension
 - **Two-stage approach** สำหรับ unbiased inner product:
   1. MSE quantizer (Lloyd-Max)
   2. 1-bit Quantized JL (QJL) transform บน residual
-- **KV cache quantization:** quality-neutral ที่ **3.5 bits/channel**, marginal degradation ที่ **2.5 bits/channel**
-- **ANN search:** recall ดีกว่า PQ เดิม, indexing time เกือบเป็น **zero**
+- **KV cache quantization:** รักษาคุณภาพได้ที่ **3.5 bits/channel** และคุณภาพลดลงเล็กน้อยที่ **2.5 bits/channel**
+- **ANN search:** recall ดีกว่า PQ เดิม และใช้เวลาสร้าง index ต่ำมาก
 - **Formal proof** ของ information-theoretic lower bounds สำหรับ vector quantization
 
 ### ทำไม TurboQuant ถึงใกล้ optimal
 
 $$\text{Distortion ratio} = \frac{\text{TurboQuant distortion}}{\text{Shannon lower bound}} \approx 2.7$$
 
-Random rotation ทำให้ coordinates independent → scalar quantizer แต่ละตัว optimal → distortion ใกล้ theoretical limit
+Random rotation ทำให้ใช้ scalar quantizer ที่ออกแบบตามการกระจายของแต่ละ coordinate ได้ จึงให้ distortion ใกล้ขีดจำกัดทางทฤษฎี
 
 ---
 
@@ -298,4 +301,3 @@ Random rotation ทำให้ coordinates independent → scalar quantizer แ
 - [RaBitQ (arXiv:2405.12497)](https://arxiv.org/abs/2405.12497) — Source ของ length-renormalization technique (SIGMOD 2024)
 - [FAISS FastScan](https://github.com/facebookresearch/faiss/wiki/Fast-accumulation-of-PQ-and-AQ-codes-(FastScan)) — SIMD kernel reference
 - [turboquant-py](https://pypi.org/project/turboquant-py/) — Community reference implementation
-

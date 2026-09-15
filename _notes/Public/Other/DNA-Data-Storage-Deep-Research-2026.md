@@ -2,22 +2,22 @@
 title: "DNA Data Storage: เก็บข้อมูลทั้งโลกในถ้วยชา (Deep Research 2026)"
 notetype: feed
 date: 2026-05-16
-last_modified: 2026-05-16
+last_modified: 2026-09-16
 tags: [dna-storage, biotechnology, data-storage, molecular-computing, research, deep-research]
 status: published
 ---
 
 # DNA Data Storage: เก็บข้อมูลทั้งโลกในถ้วยชา
 
-> Deep Research เรื่อง DNA Data Storage — เทคโนโลยีเก็บข้อมูล digital ในโมเลกุล DNA ความหนาแน่น 455 exabytes/gram อยู่ได้หลายพันปี ไม่ต้องใช้ไฟเวลาไม่อ่าน ปี 2025-2026 เริ่มมี commercial products แล้ว (อัปเดต 16 พ.ค. 2026, 25+ sources)
+> เจาะลึก DNA Data Storage หรือการเก็บข้อมูลดิจิทัลในโมเลกุล DNA ซึ่งมีความหนาแน่นตามทฤษฎี 455 exabytes/gram เก็บได้นานหลายพันปี และไม่ต้องใช้ไฟเลี้ยงเพื่อคงข้อมูลไว้ ช่วงปี 2025-2026 เริ่มมีผลิตภัณฑ์เชิงพาณิชย์แล้ว (อัปเดต 16 พ.ค. 2026, 25+ sources)
 
 ---
 
 ## มันคืออะไร?
 
-**DNA Data Storage** คือการเข้ารหัสข้อมูล digital (binary 0,1) เป็นลำดับ nucleotide (A,T,G,C) ในโมเลกุล DNA สังเคราะห์ — เอาธรรมชาติที่เก็บ genetic information มาเก็บ digital information แทน
+**DNA Data Storage** คือการเข้ารหัสข้อมูลดิจิทัล (binary 0,1) เป็นลำดับ nucleotide (A,T,G,C) ในโมเลกุล DNA สังเคราะห์ โดยนำหลักการที่ธรรมชาติใช้เก็บข้อมูลพันธุกรรมมาประยุกต์เก็บข้อมูลดิจิทัล
 
-กล่าวง่ายๆ: ถ้า SSD เก็บข้อมูลด้วย electric charge ใน silicon DNA storage เก็บข้อมูลด้วยโมเลกุลชีวภาพ — **455 exabytes ต่อ 1 gram** (ข้อมูลทั้งโลกในถ้วยชา)
+เปรียบเทียบง่าย ๆ คือ SSD เก็บข้อมูลด้วยประจุไฟฟ้าในซิลิคอน ส่วน DNA storage เก็บข้อมูลในโมเลกุลชีวภาพ โดยมีความหนาแน่นตามทฤษฎี **455 exabytes ต่อ 1 gram** จึงมีคำเปรียบเทียบว่าเก็บข้อมูลทั้งโลกได้ในถ้วยชา
 
 ---
 
@@ -43,7 +43,7 @@ Digital Data → Encoding → DNA Synthesis → Storage → Sequencing → Decod
 
 ### 3. Storage (เก็บ)
 
-เก็บในสภาพแวดล้อมที่เหมาะสม (อุณหภูมิต่ำ แห้ง) — **ไม่ต้องใช้ไฟเลย** เมื่อไม่อ่าน (zero energy at rest) เทคนิคใหม่ใช้ Liquid crystal preservation (Science Advances 2025) — cationic surfactants → nondestructive recovery และ inorganic crystal mineralization → อายุยืด 10x ที่ -20°C
+เก็บ DNA ในสภาพแวดล้อมที่เหมาะสม เช่น อุณหภูมิต่ำและแห้ง โดย **ตัวสื่อไม่ต้องใช้ไฟเลี้ยงเพื่อคงข้อมูลไว้** (zero energy at rest) เทคนิคใหม่มีทั้งการเก็บด้วย liquid crystal (Science Advances 2025) ที่ใช้ cationic surfactants เพื่อให้นำ DNA กลับมาอ่านได้โดยไม่ทำลาย และการสร้างผลึกอนินทรีย์ห่อหุ้ม ซึ่งยืดอายุการเก็บได้ 10x ที่ -20°C
 
 ### 4. Sequencing (อ่าน)
 
@@ -118,7 +118,7 @@ Digital Data → Encoding → DNA Synthesis → Storage → Sequencing → Decod
 - **Product: Atlas Eon 100**
   - First scalable DNA storage service
   - **36-60 petabytes per cassette**
-  - 60 PB in 60 cubic inches (ใส่มือ)
+  - 60 PB ในปริมาตร 60 ลูกบาศก์นิ้ว (ขนาดถือด้วยมือได้)
   - 1000x denser than LTO-10 tape
   - EMP-resistant, millennia-stable
   - Zero energy post-write
@@ -131,14 +131,14 @@ Digital Data → Encoding → DNA Synthesis → Storage → Sequencing → Decod
   - เก็บ 1 KB → $1,100
   - Data retention: 50, 100, หรือ 150 ปี
   - Biomemory Prime: targeted 2026 release
-- Acquired Catalog (มี.ค. 2026) → เร่ง development
+- เข้าซื้อ Catalog (มี.ค. 2026) เพื่อเร่งการพัฒนา
 - End-to-end commercial solutions before end of 2026
 
 ### Catalog
 
 - Shortmer combinatorial encoding (Nature Scientific Reports)
 - ไม่ต้อง synthesize DNA base-by-base → ใช้ pre-made DNA blocks ประกอบ
-- ถูก Biomemory acquire แล้ว
+- ถูก Biomemory เข้าซื้อแล้ว
 
 ### Iridia
 
@@ -159,9 +159,9 @@ Digital Data → Encoding → DNA Synthesis → Storage → Sequencing → Decod
 
 ### 1. Rewritable DNA Hard Drive (University of Missouri, 2026)
 
-**ทำสำเร็จครั้งแรก:** erase + overwrite DNA data repeatedly — เปลี่ยน DNA จาก "write-once" → rewritable medium
+**ทำสำเร็จครั้งแรก:** ลบและเขียนข้อมูล DNA ทับได้หลายครั้ง จึงเปลี่ยนจากสื่อที่เขียนครั้งเดียวไปเป็นสื่อที่เขียนซ้ำได้
 
-ก่อนหน้านี้ DNA = write-once only (เขียนแล้วเขียนอีกไม่ได้) ถือเป็น game changer เพราะ storage ที่ใช้งานได้จริงต้อง rewritable — เป้าหมาย: thumb-drive-sized DNA storage
+ก่อนหน้านี้ DNA storage เน้นการเขียนข้อมูลครั้งเดียว ความสามารถในการเขียนซ้ำจึงช่วยขยายรูปแบบการใช้งาน โดยมีเป้าหมายพัฒนาอุปกรณ์ให้มีขนาดใกล้เคียงแฟลชไดรฟ์
 
 ### 2. Cas9 Random Access + Semantic Search (Nature Comms, ก.ค. 2025)
 
@@ -171,11 +171,11 @@ Digital Data → Encoding → DNA Synthesis → Storage → Sequencing → Decod
 
 ### 3. Liquid Crystal DNA Preservation (Science Advances, 2025)
 
-Liquid crystal-guided DNA preservation platform (LDIPP) — **Nondestructive recovery:** ดึง DNA ออกมาอ่านโดยไม่ทำลาย Inorganic crystal mineralization → preservation ยืด 10x ที่ -20°C + antimicrobial + anti-enzymatic properties
+Liquid crystal-guided DNA preservation platform (LDIPP) ช่วยให้ **นำ DNA กลับมาอ่านได้โดยไม่ทำลาย** ส่วนการเก็บด้วยผลึกอนินทรีย์ช่วยยืดอายุ 10x ที่ -20°C พร้อมป้องกันการย่อยสลายจากจุลินทรีย์และเอนไซม์
 
 ### 4. DNA-DISK: Automated End-to-End (PNAS, 2025)
 
-Enzymatic single-nucleotide DNA synthesis + sequencing บน digital microfluidics — รวม Gibson assembly, PCR, Nanopore sequencing ใน platform เดียว ก้าวหน้าไปสู่ "DNA storage drive" ที่ใช้งานได้จริง
+รวมการสังเคราะห์ DNA ทีละ nucleotide ด้วยเอนไซม์และการอ่านลำดับ DNA บนระบบ digital microfluidics โดยใช้ Gibson assembly, PCR และ Nanopore sequencing ในแพลตฟอร์มเดียว เป็นแนวทางพัฒนาอุปกรณ์เก็บข้อมูล DNA ที่ทำงานครบวงจร
 
 ### 5. 12-Letter DNA (XNA) — Beyond ATGC
 
@@ -183,7 +183,7 @@ Enzymatic synthesis + nanopore sequencing ของ **12-letter DNA** — เพ
 
 ### 6. Solid-State Nanopore Readout (PMC, 2025)
 
-SiNx nanopore platform สำหรับอ่าน DNA data — Programmable DNA + peptide nanostructures Scale to array formats → multiple reads พร้อมกัน
+ใช้แพลตฟอร์ม SiNx nanopore อ่านข้อมูล DNA ร่วมกับ programmable DNA และโครงสร้างนาโนจากเปปไทด์ โดยพัฒนาเป็น array เพื่ออ่านหลายชุดพร้อมกัน
 
 ---
 
@@ -223,8 +223,8 @@ SiNx nanopore platform สำหรับอ่าน DNA data — Programmable 
 ## ข้อจำกัด
 
 - **แพงมาก:** 1MB in DNA = 1 ล้านเท่า SSD — ยังห่างกันมหาศาล
-- **ช้า:** Read/Write เป็น hours-days ไม่ใช่ milliseconds
-- **Cold storage only** — ไม่เหมาะ active data
+- **ช้า:** การอ่านและเขียนใช้เวลาหลายชั่วโมงถึงหลายวัน แทนที่จะเป็นมิลลิวินาที
+- **เหมาะกับ cold storage** — ไม่เหมาะกับข้อมูลที่ต้องเรียกใช้บ่อย
 - **Random access ยาก** — DNA อยู่ใน liquid ต้องใช้ Cas9 technique
 - **Standards ยังไม่มี** — แต่ละบริษัทใช้ encoding ต่างกัน
 - **Error rates:** Synthesis deletion errors, sequencing substitution errors
@@ -234,16 +234,16 @@ SiNx nanopore platform สำหรับอ่าน DNA data — Programmable 
 
 ## สรุป
 
-DNA Data Storage มี physics ที่สวยงาม — density ไม่มีอะไรเทียบได้, longevity เป็นพันปี, zero energy at rest แต่ economics ยังไม่เข้าขั้น ต้นทุนสูงเกินไปสำหรับการใช้งานทั่วไป
+DNA Data Storage เด่นเรื่องความหนาแน่นสูง อายุการเก็บนับพันปี และการคงข้อมูลไว้โดยไม่ต้องใช้ไฟเลี้ยง แต่ต้นทุนยังสูงเกินไปสำหรับการใช้งานทั่วไป
 
-แต่จุดพลิกผันกำลังเกิดขึ้น:
+พัฒนาการที่น่าติดตามมีดังนี้:
 
 1. **Commercial products วางจำหน่ายแล้ว** (Atlas Eon 100, Biomemory DNA Card)
 2. **Rewritable DNA** ทำสำเร็จ (ไม่ใช่ write-once อีกต่อไป)
-3. **Cost ลด 10x/ปี** — trajectory ไป mainstream ภายใน 10 ปี
-4. **Big tech ลงทั้งที** — Microsoft, Seagate, Western Digital, Meta
+3. **ต้นทุนลด 10x/ปี** — เป็นแนวโน้มที่อาจนำไปสู่การใช้งานแพร่หลายภายใน 10 ปี
+4. **บริษัทเทคโนโลยีรายใหญ่เข้ามาลงทุน** — Microsoft, Seagate, Western Digital, Meta
 
-ถ้าถามว่า "เมื่อไหร่จะใช้ได้จริง?" — สำหรับ cold/archive storage: **~2030** สำหรับ general storage: **~2050** แต่ถ้า cost reduction เร่งตัวเร็วกว่าที่คาด ทุกอย่างจะเร็วขึ้น
+บทความนี้คาดว่าการใช้งานจะเริ่มแพร่หลายในกลุ่ม cold/archive storage ราว **~2030** และในงานเก็บข้อมูลทั่วไปช่วง **~2050** กรอบเวลานี้ยังขึ้นอยู่กับการลดต้นทุน ซึ่งอาจเร็วหรือช้ากว่าที่คาด
 
 ---
 

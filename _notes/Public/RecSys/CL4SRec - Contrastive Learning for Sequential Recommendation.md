@@ -2,7 +2,7 @@
 title: "CL4SRec: Contrastive Learning for Sequential Recommendation"
 notetype: feed
 date: 2026-06-15
-last_modified: 2026-06-15
+last_modified: 2026-09-16
 tags: [recommendation-system, contrastive-learning, sequential-recommendation, deep-learning, self-supervised]
 status: published
 ---
@@ -21,11 +21,11 @@ status: published
 
 ## Problem Statement
 
-Sequential recommendation methods capture user's dynamic interests from historical interactions but suffer from **data sparsity**. Traditional methods (e.g., [[SASRec]]) rely solely on the next-item prediction task to optimize parameters, making it difficult to learn high-quality user representations.
+Sequential recommendation methods learn users' changing interests from past interactions, but **data sparsity** makes this difficult. Traditional methods (e.g., [[SASRec]]) optimize their parameters using only next-item prediction, which can limit the quality of the user representations they learn.
 
 > The objective function of predictive self-supervised learning is almost the same as the goal of sequential recommendation. Applying another same objective function on the same data cannot help.
 
-**Key insight:** Applying another predictive self-supervised task on the same data doesn't help (same objective). Instead, contrastive learning introduces a *different* learning signal.
+**Key insight:** Adding a predictive self-supervised task with the same objective does not provide a new learning signal. Contrastive learning introduces a *different* signal.
 
 ---
 
@@ -34,10 +34,11 @@ Sequential recommendation methods capture user's dynamic interests from historic
 ### Core Idea
 
 CL4SRec combines:
+
 1. **Traditional sequential prediction** (next-item recommendation)
 2. **Contrastive learning** (self-supervised signal from augmented sequences)
 
-Inspired by **SimCLR** (computer vision), adapted for recommendation sequences.
+The approach adapts ideas from **SimCLR**, a computer vision method, to recommendation sequences.
 
 ### Architecture
 
@@ -50,6 +51,7 @@ Original sequence → [Augmentation ai] → Encoder f(·) → si_ai
 ```
 
 **Encoder:** SASRec (Transformer-based, unidirectional)
+
 - Item embedding + Position embedding
 - Multi-head self-attention (causal mask)
 - Position-wise feed-forward network
@@ -59,13 +61,14 @@ Original sequence → [Augmentation ai] → Encoder f(·) → si_ai
 
 | Augmentation | Parameter | Description |
 |---|---|---|
-| **Crop** | η (ratio) | Select continuous sub-sequence of length ⌊η × \|s\|⌋ |
-| **Mask** | γ (ratio) | Replace γ fraction of items with [mask] token |
-| **Reorder** | β (ratio) | Shuffle a continuous sub-sequence of length ⌊β × \|s\|⌋ |
+| **Crop** | η (ratio) | Select a contiguous subsequence of length ⌊η × \|s\|⌋ |
+| **Mask** | γ (ratio) | Replace a fraction γ of the items with the [mask] token |
+| **Reorder** | β (ratio) | Shuffle a contiguous subsequence of length ⌊β × \|s\|⌋ |
 
 ### Contrastive Loss
 
-For a mini-batch of N users, apply 2 random augmentations → 2N augmented sequences.
+For a mini-batch of N users, apply 2 random augmentations to each sequence, producing 2N augmented sequences.
+
 - **Positive pair:** Two augmented views from the same user
 - **Negative samples:** 2(N-1) augmented sequences from other users in the batch
 
@@ -75,7 +78,7 @@ $$L_{cl}(s_u^{a_i}, s_u^{a_j}) = -\log \frac{\exp(\text{sim}(s_u^{a_i}, s_u^{a_j
 
 $$L_{total} = L_{main} + \lambda L_{cl}$$
 
-**Key design choice:** Removed SimCLR's non-linear projection head — direct improvement.
+**Key design choice:** Removing SimCLR's non-linear projection head improved performance.
 
 ---
 
@@ -105,11 +108,11 @@ $$L_{total} = L_{main} + \lambda L_{cl}$$
 
 ### Key Findings
 
-1. **Augmentation choice matters per dataset** — Mask works best on Sports, Crop on Yelp
-2. **Optimal augmentation ratio** peaks then deteriorates (e.g., mask γ≈0.5 on Yelp)
+1. **The best augmentation depends on the dataset** — Mask works best on Sports, Crop on Yelp
+2. **Augmentation strength has an optimum** — Performance improves up to a point, then declines as the ratio increases further (e.g., mask γ≈0.5 on Yelp)
 3. **λ weight** — Too high hurts performance; contrastive loss should not dominate
 4. **All augmentations help** — Even individually, each augmentation improves over SASRec baseline
-5. **Better on sparse datasets** — Larger gains on sparse data (Sports, Yelp) vs dense (ML-1M)
+5. **Larger gains on sparse datasets** — Improvements are greater on sparse data (Sports, Yelp) than on dense data (ML-1M)
 
 ---
 
@@ -135,9 +138,9 @@ $$L_{total} = L_{main} + \lambda L_{cl}$$
 ## Limitations
 
 - Augmentation operators are relatively simple
-- Negative samples only from in-batch (limited diversity)
-- No item-side information utilized (ID-only)
-- Performance gains smaller on dense datasets
+- Negative samples come only from users in the same batch, which limits their diversity
+- The model uses item IDs without additional item information
+- Performance gains are smaller on dense datasets
 
 ## Related Papers
 

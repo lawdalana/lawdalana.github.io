@@ -2,18 +2,18 @@
 title: "Constraint Pruner: Neuro-Symbolic Token Pruning for LLM Generation"
 notetype: feed
 date: 2026-05-09
-last_modified: 2026-05-09
+last_modified: 2026-09-16
 tags: [llm, speculative-decoding, neuro-symbolic, constrained-generation, sudoku, rust]
 status: published
 ---
 
 # Constraint Pruner: Neuro-Symbolic Token Pruning
 
-> ใช้ deterministic rules ตัด (prune) tokens ที่ "ผิดกฎ" ก่อนส่ง verify → ลด cost + เพิ่ม acceptance rate → แสดงผลด้วย Sudoku solver
+> ใช้กฎที่ตรวจสอบได้แน่นอน (deterministic rules) ตัด tokens ที่ไม่ผ่านเงื่อนไขก่อนส่งให้โมเดลหลักตรวจสอบ เพื่อลดต้นทุนและเพิ่ม acceptance rate โดยใช้ Sudoku solver เป็นตัวอย่าง
 
 ## ปัญหา
 
-LLM generate tokens จาก probability distribution — แต่หลายครั้งเราต้องการ output ที่ **ถูกต้องตามกฎ**:
+LLM สร้าง tokens จากการแจกแจงความน่าจะเป็น แต่หลายงานต้องการผลลัพธ์ที่ **เป็นไปตามกฎที่กำหนด** ด้วย:
 
 ```
 ❌ LLM ธรรมดา:
@@ -29,11 +29,12 @@ LLM generate tokens จาก probability distribution — แต่หลาย
   Output: def foo(x:\n    return x  ← missing type annotation close
 ```
 
-**Constraint Pruner** แก้ปัญหานี้โดยตัด tokens ที่ผิดกฎออกก่อนจะส่งไป verify
+**Constraint Pruner** จัดการปัญหานี้โดยตัด tokens ที่ผิดกฎออก ก่อนส่งตัวเลือกที่เหลือไปตรวจสอบ
 
 ## คืออะไร
 
-Constraint Pruner = plugin system ที่:
+Constraint Pruner เป็นระบบปลั๊กอินที่ทำงานดังนี้:
+
 1. รับ candidate tokens พร้อม probability จาก draft model
 2. ตรวจสอบแต่ละ token ด้วย **deterministic rules**
 3. ตัด tokens ที่ผิด constraints ออก
@@ -52,13 +53,13 @@ Constraint Pruner = plugin system ที่:
 
 ## Neuro-Symbolic Integration
 
-แนวคิดที่ผสมรวม:
+หน้าที่ของทั้งสองส่วน:
 
 | ฝั่ง | หน้าที่ | ตัวอย่าง |
 |------|---------|---------|
 | **Neural** (LLM) | สร้าง probability distribution | "Token 4 มีโอกาส 40%, token 1 มีโอกาส 30%" |
 | **Symbolic** (Rules) | ตรวจ constraints | "Token 4 ซ้ำในแถว → ตัดออก" |
-| **รวม** | LLM ทาย + Rules ตรวจ → เหลือแค่ valid + probable | ส่งเฉพาะ {1, 2, 7} ไป verify |
+| **รวม** | LLM เสนอตัวเลือก แล้วกฎช่วยกรองให้เหลือเฉพาะตัวเลือกที่ผ่านเงื่อนไข | ส่งเฉพาะ {1, 2, 7} ไป verify |
 
 ## Trait Design (Rust)
 
@@ -129,7 +130,7 @@ struct RegexPruner {
 
 ### Static vs Path-Aware
 
-**Static Pruning** = ตรวจเฉพาะ input เริ่มต้น:
+**Static Pruning** ตรวจเงื่อนไขจาก input เริ่มต้นเท่านั้น:
 
 ```
 Sudoku board:
@@ -143,7 +144,7 @@ Static: Row=[5,3], Col=[8], Box=[5,6,3,9,8]
 → Remove {3,5,6,8,9} → candidates = {1,2,4,7} ✅
 ```
 
-**Path-Aware Pruning** = ตรวจ input เริ่มต้น + tokens ที่ generate มาแล้ว:
+**Path-Aware Pruning** ตรวจเงื่อนไขจากทั้ง input เริ่มต้นและ tokens ที่สร้างมาแล้ว:
 
 ```
 ถ้า generate มาแล้ว:
@@ -369,7 +370,7 @@ struct ChessMovePruner {
 
 ### Key Difference
 
-Constraint Pruner integrate **เข้ากับ speculative decoding pipeline** โดยตรง:
+Constraint Pruner ทำงานร่วมกับ **กระบวนการ speculative decoding** โดยตรง:
 
 ```
 Normal constrained generation:
@@ -383,7 +384,7 @@ Constraint Pruner:
 
 ## Computable LoRA — Concept ที่เชื่อมโยง
 
-"Computable LoRA" คือ metaphor ที่อธิบายว่า Constraint Pruner ทำหน้าที่เหมือน LoRA adapter:
+"Computable LoRA" เป็นคำเปรียบเทียบที่ใช้อธิบายบทบาทของ Constraint Pruner ว่าคล้ายกับ LoRA adapter:
 
 ```
 LoRA ปกติ:
@@ -420,7 +421,7 @@ enum SolverEvent {
 }
 ```
 
-ทำให้ visualize solver ทำงานแบบ real-time ได้:
+events เหล่านี้ใช้แสดงขั้นตอนการทำงานของ solver แบบ real-time ได้:
 
 ```
 [00:01] Try (0,2) = 4 → Pruned {3,5,6,8,9} → Accepted ✅
@@ -483,4 +484,4 @@ Path-Aware จับได้หมดเพราะ:
 
 ---
 
-*Constraint Pruner = เอา deterministic rules มาช่วย LLM generate แต่ things ที่ถูกต้อง. Neuro (LLM) ทาย + Symbolic (rules) ตรวจ = ลด cost + เพิ่ม accuracy + เร่ง speculative decoding. Path-Aware pruning ดีกว่า static มากเพราะ track state ที่สะสมมาทุก step*
+*Constraint Pruner ใช้กฎช่วยกรองตัวเลือกที่ LLM สร้างให้ผ่านเงื่อนไขก่อนตรวจสอบ โดย LLM เสนอตัวเลือกและกฎเป็นผู้ตรวจ วิธีนี้ช่วยลดต้นทุน เพิ่มความถูกต้อง และเร่ง speculative decoding ส่วน Path-Aware pruning ตรวจได้ครอบคลุมกว่า static เพราะติดตามสถานะที่สะสมมาตลอดแต่ละขั้นตอน*

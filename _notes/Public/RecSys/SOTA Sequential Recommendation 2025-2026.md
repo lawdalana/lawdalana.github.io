@@ -2,7 +2,7 @@
 title: "State-of-the-Art Sequential Recommendation Systems (2025-2026)"
 notetype: feed
 date: 2026-06-15
-last_modified: 2026-06-15
+last_modified: 2026-09-16
 tags: [recommendation-system, sequential-recommendation, LLM, foundation-model, survey, SOTA]
 status: published
 ---
@@ -11,7 +11,7 @@ status: published
 
 ### คลื่นที่ 1: Classical Sequential Models (2018-2022)
 
-โมเดลที่เป็น foundation และยังเป็น baseline ที่ใช้เปรียบเทียบทุกวันนี้
+โมเดลกลุ่มนี้วางรากฐานให้วิธีที่พัฒนาตามมา และยังใช้เป็น baseline ในการเปรียบเทียบ
 
 | Model | Year | สิ่งที่สำคัญ |
 |---|---|---|
@@ -30,7 +30,7 @@ status: published
 | Model | Year | สิ่งที่สำคัญ |
 |---|---|---|
 | **FMLP-Rec** | 2022 | แทน self-attention ด้วย Filter-enhanced MLP (Fourier) — เร็วกว่าและดีกว่า |
-| **FEARec** | 2023 | Frequency-enhanced analysis — decompose sequences เป็น low/high frequency |
+| **FEARec** | 2023 | วิเคราะห์ลำดับข้อมูลโดยแยกส่วนความถี่ต่ำและสูง |
 | **BSARec** | 2024 | Bipartite Spatial-Temporal Aggregation |
 | **TiSRec** | 2025 | Time Interval-wise Segmentation — แบ่ง sequence ตาม time gap |
 
@@ -39,11 +39,11 @@ status: published
 | Model | Year | สิ่งที่สำคัญ |
 |---|---|---|
 | **P5** | 2023 | รุ่นแรกที่ใช้ LLM เป็น recommendation engine (T5-based) |
-| **LLM-Emb SeqRec** | 2024 | ใช้ LLM embeddings มา initialize SASRec/BERT4Rec → gains ชัดเจน |
+| **LLM-Emb SeqRec** | 2024 | ใช้ LLM embeddings เป็นค่าเริ่มต้นของ SASRec/BERT4Rec และช่วยให้ผลลัพธ์ดีขึ้น |
 | **ReaRec** | 2025-2026 | Reasoning-augmented framework — multi-step reasoning ตอน inference |
 | **GenAIR** | 2026 | Generative Archetype-grounded Item Representations (WWW 2026 Oral) |
 | **Agent4Rec** | 2024 | LLM agent-based recommender simulator (1,000 agents) |
-| **RecAgent** | 2025 | LLM agents ที่ model user behavior แบบ simulation |
+| **RecAgent** | 2025 | ใช้ LLM agents จำลองพฤติกรรมผู้ใช้ |
 | **MemRec** | 2026 | Collaborative Memory-Augmented Agentic Recommender |
 | **FindRec** | 2025 | Stein-Guided Entropic Flow สำหรับ Multi-Modal SeqRec (WWW 2025) |
 
@@ -59,14 +59,14 @@ status: published
 
 ### 🏆 LLM-Enhanced Sequential
 
-1. **ReaRec** (2025-2026) — เพิ่ม multi-step reasoning ตอน inference บน base model ที่มี → Cited 73 ในเวลาสั้น
+1. **ReaRec** (2025-2026) — เพิ่มการให้เหตุผลหลายขั้นระหว่าง inference ให้กับโมเดลพื้นฐานที่มีอยู่ และได้รับการอ้างอิง 73 ครั้งในเวลาไม่นาน
 2. **GenAIR** (2026, WWW Oral) — LLM สร้าง item archetype → behavioral calibration
 3. **LLM-init SASRec/BERT4Rec** — ใช้ LLM embeddings initialize แล้ว fine-tune
 
 ### 🏆 Agentic Recommendation (Emerging)
 
 1. **Agent4Rec** — Simulation framework ที่ใช้ LLM agents เป็น users
-2. **RecAgent** — ทะลุกรอบ traditional → user + item agents
+2. **RecAgent** — ขยายจากโมเดลแนะนำแบบดั้งเดิมไปสู่ agents ที่แทนผู้ใช้และ item
 3. **AgentRecBench** (NeurIPS 2026) — Benchmark สำหรับ LLM agent-based recommenders
 4. **MemRec** — Memory-augmented agents
 
@@ -86,31 +86,33 @@ SASRec (2018) → CL4SRec (2021) → FEARec (2023) → ReaRec/GenAIR (2025-26)
 
 ### 1. LLM Integration เป็น Mainstream
 
-ไม่ใช่แค่ใช้ LLM แยก แต่ integrate เข้ากับ traditional architectures:
-- LLM embeddings → initialize traditional models = gains ชัดเจน
-- LLM agents → redefine ว่า "recommendation" คืออะไร (conversational, reasoning)
+LLM ถูกนำมาใช้ร่วมกับสถาปัตยกรรมเดิมมากขึ้น:
+
+- ใช้ LLM embeddings เป็นค่าเริ่มต้นของโมเดลเดิม เพื่อช่วยให้ผลลัพธ์ดีขึ้น
+- ใช้ LLM agents เพิ่มความสามารถในการสนทนาและให้เหตุผลแก่ระบบแนะนำ
 
 ### 2. Reasoning-Augmented Recommendation
 
-**ReaRec** (73 citations ใน ~6 เดือน) = trend ที่ร้อนแรงสุด
+**ReaRec** ได้รับการอ้างอิง 73 ครั้งใน ~6 เดือน สะท้อนความสนใจต่อการใช้ reasoning ในระบบแนะนำ
 
-> "Think before recommend" — multi-step reasoning ก่อนให้คำแนะนำ
+> แนวคิดคือให้โมเดลคิดอย่างเป็นขั้นตอนก่อนเสนอคำแนะนำ
 
 ### 3. Agentic Recommender Systems
 
-เปลี่ยนจาก model → agent ที่สามารถ interact, explain, และ refine:
+บทบาทขยับจากโมเดลที่ให้ผลแนะนำ ไปสู่ agent ที่โต้ตอบ อธิบาย และปรับคำแนะนำได้:
+
 - Benchmarks ใหม่เกิดขึ้น (AgentRecBench, RecoWorld)
 - ใช้ LLM เป็น user simulator และ recommender
 
 ### 4. Foundation Models for Recommendation
 
-- Pre-train บน cross-domain data → fine-tune บน specific domain
+- Pre-train ด้วยข้อมูลจากหลายโดเมน แล้ว fine-tune สำหรับโดเมนที่ต้องการใช้งาน
 - Semantic IDs แทน traditional item IDs
 - Multi-modal (ข้อความ + รูป + behavior)
 
 ### 5. Efficiency Still Matters
 
-FMLP-Rec approach (แทน attention ด้วย MLP+filter) ยังได้ผลดีและเร็วกว่า — สำหรับ production: โมเดลง่ายๆ ที่ efficient ยังเป็นที่ต้องการ
+แนวทางของ FMLP-Rec ซึ่งแทน attention ด้วย MLP+filter ยังให้ผลดีและทำงานได้เร็ว โมเดลที่เรียบง่ายและใช้ทรัพยากรคุ้มค่าจึงยังสำคัญสำหรับ production
 
 ---
 
@@ -122,9 +124,9 @@ FMLP-Rec approach (แทน attention ด้วย MLP+filter) ยังได�
 | **LLM era** | ReaRec (reasoning) / GenAIR (archetype) |
 | **Production-friendly** | FMLP-Rec (efficiency) / SASRec (simplicity) |
 | **Emerging** | Agent-based (Agent4Rec, RecAgent, MemRec) |
-| **All-rounder** | ReaRec framework ที่สามารถ augment บน base model ใดๆ |
+| **All-rounder** | ReaRec เป็น framework สำหรับเสริมความสามารถให้โมเดลพื้นฐาน |
 
-**[[CL4SRec]]** เป็น milestone สำคัญ (paper แรกที่ apply CL กับ SeqRec) แต่ตอนนี้มี follow-ups ที่ทำได้ดีกว่าแล้ว ทั้งในแกน contrastive (CoSeRec, ICLRec) และแกนอื่น (LLM, reasoning, agent)
+**[[CL4SRec]]** เป็นงานสำคัญที่เริ่มนำ contrastive learning มาใช้กับ sequential recommendation งานที่ต่อยอดภายหลังให้ผลดีขึ้น ทั้งการพัฒนา contrastive learning เช่น CoSeRec และ ICLRec และการใช้แนวทางอื่น เช่น LLM, reasoning และ agent
 
 ---
 

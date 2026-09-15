@@ -2,7 +2,7 @@
 title: "Glass/Silica Data Storage: เก็บข้อมูล 10,000+ ปีในแก้ว (Deep Research 2026)"
 notetype: feed
 date: 2026-06-01
-last_modified: 2026-06-02
+last_modified: 2026-09-16
 tags: [glass-storage, silica, project-silica, 5d-optical-storage, data-storage, femtosecond-laser, research, deep-research]
 status: published
 ---
@@ -11,7 +11,7 @@ status: published
 
 ![Microsoft Project Silica — แผ่นแก้วเก็บข้อมูลด้วย femtosecond laser](/assets/img/Other/GlassStorage/ms-project-silica-hero.avif)
 
-> Deep Research เรื่อง Glass/Silica Data Storage — เทคโนโลยีเก็บข้อมูลถาวรบนแก้วด้วย femtosecond laser สร้าง voxel ระดับนาโน อายุขัย 10,000+ ปี (Microsoft Project Silica) ถึง 10²⁰ ปี (5D Optical Storage) ไม่ต้องใช้ไฟเวลาไม่อ่าน (อัปเดต 2 มิ.ย. 2026, Nature 2026 + SPhotonix commercialization)
+> เจาะลึก Glass/Silica Data Storage หรือการเก็บข้อมูลระยะยาวในแก้วด้วย femtosecond laser ซึ่งสร้างโครงสร้างระดับนาโนภายใน voxel มีการประเมินอายุการเก็บข้อมูลตั้งแต่ 10,000+ ปี (Microsoft Project Silica) ถึง 10²⁰ ปี (5D Optical Storage) โดยไม่ต้องใช้ไฟเลี้ยงเพื่อคงข้อมูลไว้ (อัปเดต 2 มิ.ย. 2026 จากงานใน Nature 2026 และการพัฒนาเชิงพาณิชย์ของ SPhotonix)
 
 ---
 
@@ -19,7 +19,7 @@ status: published
 
 **Glass/Silica Data Storage** คือการใช้ **femtosecond laser** (พัลส์สั้น ~10⁻¹⁵ วินาที) ยิงเข้าไปในแก้ว เพื่อสร้างโครงสร้างนาโนเรียกว่า **voxel** (volume pixel) — ข้อมูลถูกเข้ารหัสเป็นการเปลี่ยนแปลงสมบัติทางแสงของแก้ว ไม่ต้องใช้ไฟเก็บ **อยู่ได้ 10,000+ ปี**
 
-ถ้า SSD เก็บด้วย electric charge, HDD เก็บด้วย magnetic field — Glass Storage เก็บด้วย **โครงสร้างทางกายภาพในแก้ว** ที่ไม่เสื่อม
+SSD เก็บข้อมูลด้วยประจุไฟฟ้า ส่วน HDD ใช้สนามแม่เหล็ก ขณะที่ Glass Storage ใช้ **โครงสร้างทางกายภาพในแก้ว** ที่คงอยู่ได้นาน
 
 ![Ars Technica — แผ่นแก้ว Project Silica ขนาด 75mm สำหรับเก็บข้อมูล](/assets/img/Other/GlassStorage/ars-technica-figure2.avif)
 
@@ -45,7 +45,7 @@ status: published
 - ข้อมูลโลกปี 2025 มีมากกว่า **120+ zettabytes** และเพิ่มขึ้น ~20% ต่อปี
 - Cloud archival storage ใช้ HDD/tape ที่ต้อง **copy ทุก 3-5 ปี** เพื่อป้องกันข้อมูลเสีย
 - การ copy ข้อมูลซ้ำๆ ใช้ **พลังงานมหาศาล** — Project Silica ตั้งเป้าลด carbon footprint ของ archival storage อย่างมีนัยสำคัญ
-- Glass storage เขียนครั้งเดียว → ไม่ต้อง copy อีกเลย → **ประหยัดพลังงาน + ลด e-waste**
+- Glass storage เขียนครั้งเดียวและเก็บได้นาน จึงลดความจำเป็นในการย้ายข้อมูลซ้ำ ช่วย **ประหยัดพลังงานและลดขยะอิเล็กทรอนิกส์**
 
 ---
 
@@ -78,6 +78,7 @@ Glass → Microscope → CNN Decode → FEC → Decrypt → Decompress → Data 
 ![Nature Fig.1 — Voxel ในแก้วเห็นภายใต้กล้องจุลทรรศน์ แสดง nanograting structures](/assets/img/Other/GlassStorage/nature-fig1-voxel.avif)
 
 **1. Data Preparation**
+
 - **Compression** — บีบอัดข้อมูล
 - **Encryption** — เข้ารหัสลับ
 - **FEC (Forward Error Correction)** — เพิ่ม redundant bits เพื่อกู้คืนเมื่อมี error
@@ -86,7 +87,8 @@ Glass → Microscope → CNN Decode → FEC → Decrypt → Decompress → Data 
 
 FEC = **Forward Error Correction** — เป็นเทคนิคเพิ่มข้อมูลสำรอง (redundant bits) เข้าไปตอนเขียน เพื่อให้ **อ่านคืนได้ถูกต้องแม้บาง voxel เสีย**
 
-**ปัญหา:** แก้วถาวร แต่ไม่ได้หมายความว่าทุก voxel จะอ่านได้สมบูรณ์ 100%:
+**ปัญหา:** แม้แก้วจะเก็บข้อมูลได้นาน แต่ไม่ได้หมายความว่าจะอ่านทุก voxel ได้ถูกต้อง 100%:
+
 - รอยขีดข่วนบนแก้ว → บาง voxel อาจเบลอ
 - Read noise จากกล้อง → ภาพไม่ชัดเจน
 - Cross-talk ระหว่าง voxel ข้างเคียง → สัญญาณรบกวน
@@ -120,6 +122,7 @@ FEC decode: ใช้ P1 P2 P3 คำนวณ → ได้ [1] คืน → *
 > **Overhead:** FEC เพิ่มข้อมูล ~20-50% แต่แลกกับการกู้ errors ได้แม้ raw BER (Bit Error Rate) จะสูงถึง 10⁻³ → หลัง FEC decode ลดเหลือ **< 10⁻¹²** (แทบจะไม่มี error เลย)
 
 **2. Symbol Encoding**
+
 - Bits ถูกจัดกลุ่มเป็น **symbols** (1 symbol = 1 voxel)
 - แต่ละ voxel เก็บได้ **มากกว่า 1 bit** (multi-level encoding — สูงสุด 100 levels)
 
@@ -133,7 +136,7 @@ FEC decode: ใช้ P1 P2 P3 คำนวณ → ได้ [1] คืน → *
 
 | พารามิเตอร์ | หมายถึง | เปลี่ยนยังไง | ผลลัพธ์ |
 |:-----------|:--------|:-------------|:--------|
-| **Energy (พลังงานพัลส์)** | แรงของแสง | ปรับความแรงของพัลส์ | ควบคุมขนาด + รูปร่าง nanovoid |
+| **Energy (พลังงานพัลส์)** | พลังงานที่ส่งมากับแต่ละพัลส์ | ปรับพลังงานของพัลส์ | ควบคุมขนาด + รูปร่าง nanovoid |
 | **Polarization (ทิศทางสั่น)** | ทิศทางที่แสงสั่น | หมุนทิศทาง polarization | ควบคุม orientation ของ nanograting |
 
 **การ modulate ทำงานจริง:**
@@ -188,22 +191,25 @@ Phase Voxels (Borosilicate):
 | | Birefringent Voxels | Phase Voxels |
 |--|--|--|
 | กลไก | Anisotropic change (ขึ้นกับทิศทางวัด) | Isotropic refractive index change |
-| วัสดุ | Fused Silica **เท่านั้น** | แก้วใส่ทุกชนิด (รวม Borosilicate/Pyrex) |
+| วัสดุ | Fused Silica **เท่านั้น** | แก้วใสทุกชนิด (รวม Borosilicate/Pyrex) |
 | ความจุ/voxel | สูง (8 polarization levels → สูงสุด 100 levels) | ต่ำกว่า |
 | พัลส์ | 2 (seed + data) | 1 |
 | ต้นทุน | แพงกว่า | **ถูกกว่า** (Pyrex = ราคาถูกกว่า fused silica หลายเท่า) |
-| หมายเหตุ | Phase voxels เป็นนวัตกรรมใหม่ของ Gen 2 — ทำให้ใช้แก้วที่ถูกกว่าได้ |
+
+หมายเหตุ: Phase voxels เป็นนวัตกรรมใหม่ของ Gen 2 ที่ช่วยให้ใช้แก้วราคาถูกลงได้
 
 > **ทำไม Borosilicate (Pyrex) ถึงสำคัญ?** Fused silica แพงมาก แต่ Pyrex เป็นแก้วที่ผลิตได้ง่าย ราคาถูก และมีอยู่ทั่วไป — Microsoft เลือกใช้ phase voxels กับ Pyrex แม้ความจุจะต่ำกว่า (2 TB vs 5 TB) แต่ต้นทุนต่อ TB ถูกกว่ามาก
 
 ### ขั้นตอนอ่าน (Read)
 
 **1. Microscope Scanning** 🔭
+
 - Gen 2: ใช้ **กล้องเดียว** (wide-field polarization microscope) — ก่อนหน้าต้องใช้ 3 ตัว
 - Auto: fiducial alignment + focus + z-stack capture
 - จับภาพ voxel ทีละชั้น
 
 **2. CNN Decoding** 🧠
+
 - ภาพส่งเข้า **Convolutional Neural Network (CNN)**
 - CNN แก้:
   - Read noise
@@ -212,6 +218,7 @@ Phase Voxels (Borosilicate):
 - แปลง pixel pattern → symbol → bit stream
 
 **3. Error Correction + Decryption**
+
 - **FEC decode** — ตรวจ + แก้ errors
 - **Decrypt** → **Decompress** → ได้ข้อมูลคืน
 
@@ -235,7 +242,7 @@ Phase Voxels (Borosilicate):
 
 - Femtosecond laser สร้าง **nanogratings** ที่ self-assemble ในแก้ว (เรียกว่า **FemtoEtch™** โดย SPhotonix)
 - Features เล็กเพียง **20 nm** — เล็กที่สุดที่สร้างด้วยแสง
-- Nanogratings สร้าง **birefringence** — เปลี่ยนวิธีเดินของแสง
+- Nanogratings ทำให้เกิด **birefringence** ซึ่งทำให้แสงเคลื่อนที่ผ่านวัสดุด้วยความเร็วต่างกันตามทิศทาง
 - เหมือนแว่นกันแดด polarized: แต่ละโครงสร้างเปลี่ยนแสงต่างกัน → อ่านแยกได้
 
 ### การอ่าน 5D
@@ -259,7 +266,7 @@ Phase Voxels (Borosilicate):
 | **Project Silica** | **3D + optical** | **2-5 TB** | **10,000+ ปี** | **ไม่** | ยังไม่พาณิชย์ (แต่วัสดุถูก) |
 | **5D Glass** | **5D** | **360 TB (ทฤษฎี)** | **13B+ ปี** | **ไม่** | พาณิชย์แล้ว (ราคา premium) |
 
-> **ความสำคัญ:** ต้นทุนหลักของ tape/HDD archival ไม่ใช่แค่อุปกรณ์ แต่คือ **"copy cost"** — ต้องย้ายข้อมูลทุก 3-5 ปี ใช้ไฟ + แรงงาน + เครื่องใหม่ → Glass storage ตัดต้นทุนนี้ออกทั้งหมด
+> ต้นทุนของการเก็บข้อมูลระยะยาวบน tape/HDD รวมถึง **ต้นทุนการย้ายข้อมูล** ทุก 3-5 ปี ซึ่งใช้ทั้งไฟฟ้า แรงงาน และอุปกรณ์ใหม่ การเก็บข้อมูลในแก้วได้นานจึงช่วยลดภาระส่วนนี้
 
 ---
 
@@ -361,7 +368,7 @@ HDD/Tape Archival Lifecycle (วนซ้ำทุก 3-5 ปี):
 │  to Media   │    │  to New Media │    │  Integrity   │
 └─────────────┘    └──────────────┘    └──────────────┘
        ↑                                    │
-       └──────── ทุก 3-5 ป์ ───────────────┘
+       └──────── ทุก 3-5 ปี ───────────────┘
 ```
 
 - ทุกรอบใช้ **ไฟฟ้า + แรงงาน + อุปกรณ์ใหม่** + สร้าง e-waste
@@ -374,14 +381,14 @@ HDD/Tape Archival Lifecycle (วนซ้ำทุก 3-5 ปี):
 Glass Archival Lifecycle (เขียนครั้งเดียว):
 ┌─────────────┐
 │  Write Data │
-│  to Glass   │ →  ไม่ต้องทำอะไรอีกเลย 10,000+ ปี
+│  to Glass   │ →  เก็บข้อมูลได้นาน 10,000+ ปี
 └─────────────┘
 ```
 
 - **ไม่ต้อง copy** — ข้อมูลอยู่ในแก้วถาวร
 - **ไม่ต้องใช้ไฟ** — ไม่มี moving parts, ไม่มี charge ที่รั่ว
 - **ไม่มี e-waste** — แก้วไม่เป็นพิษ, รีไซเคิลได้
-- **TCO ต่ำกว่า** — แม้ต้นทุนเขียนจะแพงกว่า แต่ไม่ต้องดูแล
+- **TCO ต่ำกว่า** — แม้ต้นทุนเขียนจะแพงกว่า แต่ภาระดูแลสื่อในระยะยาวลดลง
 
 > Microsoft ประเมินว่า archival storage ด้วย glass สามารถลด **total energy consumption** ได้หลายสิบเท่าเมื่อเทียบกับ HDD-based archival ในระยะเวลา 10+ ปี
 
@@ -421,7 +428,7 @@ Glass Archival Lifecycle (เขียนครั้งเดียว):
 | ความเสถียร | ทนทุกสภาพ (น้ำ, ไฟ, รังสี) | ต้องควบคุม temp/humidity |
 | Maturity | ใกล้พาณิชย์ (5D) / ยังวิจัย (Silica) | ยังวิจัย แต่ progress เร็ว |
 
-> **สรุป:** DNA ชนะเรื่องความหนาแน่น แต่ Glass ชนะเรื่อง speed + stability + cost → **ทั้งสองอาจเติมเต็มกัน** ไม่ใช่แข่งกัน
+> **สรุป:** DNA เด่นเรื่องความหนาแน่น ส่วน Glass เด่นเรื่องความเร็ว ความเสถียร และต้นทุน **ทั้งสองจึงอาจเหมาะกับงานคนละแบบและใช้เสริมกันได้**
 
 ---
 
@@ -433,7 +440,7 @@ Glass Archival Lifecycle (เขียนครั้งเดียว):
 
 - **2016** — เก็บ Universal Declaration of Human Rights, Bible ลง 5D crystal
 - **2018** — Arch Mission Foundation ส่ง 5D crystal (Isaac Asimov Foundation Trilogy) ขึ้น SpaceX Falcon Heavy → โคจรรอบดวงอาทิตย์ 30 ล้านปี
-- **2024** — University of Southampton เก็บ **human genome ฉบับสมบูรณ์** บน 5D memory crystal → "เผยพันธุกรรมมนุษย์ไว้เป็นล้านปี"
+- **2024** — University of Southampton เก็บ **human genome ฉบับสมบูรณ์** บน 5D memory crystal เพื่อรักษาข้อมูลพันธุกรรมมนุษย์ไว้เป็นล้านปี
 - **2024** — Boucheron แหวน Quatre 5D Memory ring — ฝัง 5D crystal ในแหวนเพชร
 - **2024** — GOG เก็บ video game icon ลง 5D crystal "forever"
 
@@ -450,7 +457,7 @@ Glass Archival Lifecycle (เขียนครั้งเดียว):
 
 | ปัญหา | รายละเอียด |
 |:------|:----------|
-| **WORM** | Write Once Read Many — เขียนครั้งเดียว ไม่ลบ/แก้ไขได้ |
+| **WORM** | Write Once Read Many — เขียนครั้งเดียว อ่านได้หลายครั้ง แต่ลบหรือแก้ไขข้อมูลไม่ได้ |
 | **เขียนช้า** | ~25.6 Mbit/s/beam vs LTO-10: 8,000 Mbit/s — ช้ากว่า ~300x |
 | **อ่านช้า** | ต้องสแกนด้วย microscope + CNN → เป็นนาที ไม่ใช่มิลลิวินาที |
 | **อุปกรณ์แพง** | Femtosecond laser (write) + polarization microscope (read) |
@@ -459,6 +466,7 @@ Glass Archival Lifecycle (เขียนครั้งเดียว):
 | **ไม่มี random access** | ต้องอ่านตามลำดับ layer → ไม่เหมาะสำหรับ random I/O |
 
 ### เหมาะสำหรับ ✅
+
 - Archival storage (เก็บถาวรระดับชาติ)
 - Cold storage (ข้อมูลที่ไม่ค่อยเข้าถึง)
 - ข้อมูลประวัติศาสตร์ / วัฒนธรรม
@@ -467,6 +475,7 @@ Glass Archival Lifecycle (เขียนครั้งเดียว):
 - Backup ระดับ "last resort"
 
 ### ไม่เหมาะ ❌
+
 - Hot data / ข้อมูลที่แก้ไขบ่อย
 - ใช้แทน HDD/SSD ปกติ
 - Real-time access / random I/O

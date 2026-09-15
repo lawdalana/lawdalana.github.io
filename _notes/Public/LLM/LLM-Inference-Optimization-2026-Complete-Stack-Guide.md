@@ -2,35 +2,35 @@
 title: "LLM Inference Optimization 2026: คู่มือเร่ง inference และ serving แบบครบทั้ง stack"
 notetype: feed
 date: 2026-08-09
-last_modified: 2026-08-09
+last_modified: 2026-09-16
 tags: [LLM, Inference, Optimization, Serving, Quantization, KV Cache, Speculative Decoding, GPU]
 status: published
 ---
 
 # LLM Inference Optimization 2026
 
-เวลาได้ยินว่า “ช่วย optimize LLM ให้เร็วขึ้น” คำถามแรกของผมไม่ใช่จะใช้ FP4, FlashAttention หรือเพิ่ม GPU กี่ใบ แต่คือ **เร็วขึ้นใน metric ไหน ภายใต้ quality และ cost เท่าไร** เพราะระบบที่ output tokens/second สูงที่สุดอาจมี p99 TTFT แย่จนผู้ใช้เลิกใช้ ขณะที่ configuration ซึ่งตอบ request เดียวเร็วที่สุดอาจแพงและรับ traffic พร้อมกันแทบไม่ได้
+เวลาได้ยินว่า “ช่วยปรับ LLM ให้เร็วขึ้น” ผมจะถามก่อนว่า **ต้องการให้ตัวชี้วัดไหนดีขึ้น โดยต้องรักษาคุณภาพระดับใดและใช้งบเท่าไร** จึงค่อยเลือกว่าจะใช้ FP4, FlashAttention หรือเพิ่ม GPU กี่ใบ เพราะระบบที่สร้าง output tokens/second ได้สูงที่สุดอาจมี p99 TTFT สูงจนผู้ใช้เลิกใช้ ขณะที่ configuration ซึ่งตอบ request เดียวเร็วที่สุดอาจแพงและรองรับหลาย request พร้อมกันแทบไม่ได้
 
-บทความนี้รวบรวมเทคนิคหลักที่ใช้ optimize LLM inference ตั้งแต่ prompt, model architecture, quantization, kernel, KV cache, batching, speculative decoding, parallelism ไปจนถึง disaggregated serving และ cluster scheduling พร้อมสถานะของ runtime และงานวิจัยล่าสุดที่ตรวจถึง **9 สิงหาคม 2026** จุดประสงค์ไม่ใช่เสนอ “สูตรวิเศษหนึ่งสูตร” แต่ให้แผนที่ว่าแต่ละเทคนิคแก้คอขวดอะไร แลกกับอะไร และควรทดสอบอย่างไร
+บทความนี้รวบรวมเทคนิคหลักในการปรับประสิทธิภาพ LLM inference ตั้งแต่ prompt, model architecture, quantization, kernel, KV cache, batching, speculative decoding, parallelism ไปจนถึง disaggregated serving และ cluster scheduling พร้อมสถานะของ runtime และงานวิจัยล่าสุดที่ตรวจถึง **9 สิงหาคม 2026** เพื่ออธิบายว่าแต่ละเทคนิคแก้คอขวดอะไร มีข้อแลกเปลี่ยนอย่างไร และควรทดสอบแบบไหน
 
-> **ขอบเขต:** คำว่า “ทั้งหมด” ในพื้นที่ที่เปลี่ยนรายสัปดาห์ไม่อาจหมายถึงทุก paper และทุก flag ได้ บทความนี้จึงครอบคลุม **ทุกชั้นของ optimization stack และตระกูลเทคนิคหลักที่ใช้จริง** พร้อมตัวอย่าง frontier ปี 2026 โดยแยกของ production-ready ออกจาก preprint/experimental feature ให้ชัด
+> **ขอบเขต:** เทคนิคด้านนี้เปลี่ยนแปลงทุกสัปดาห์ จึงรวบรวมทุกงานวิจัยและทุกตัวเลือกการตั้งค่าไว้ในบทความเดียวไม่ได้ บทความนี้ครอบคลุม **ทุกชั้นของระบบและกลุ่มเทคนิคหลักที่ใช้จริง** พร้อมตัวอย่างงานใหม่ในปี 2026 โดยแยกเทคนิคที่พร้อมใช้ใน production ออกจาก preprint และฟีเจอร์ทดลองให้ชัดเจน
 
 ## คำตอบสั้น: ลำดับที่ควรทำจริง
 
 ถ้าต้อง optimize ระบบวันนี้ ผมจะทำตามลำดับนี้ก่อน:
 
-1. กำหนด quality floor, TTFT, ITL/TPOT, p99, throughput และ cost SLO ให้ชัด
+1. กำหนดคุณภาพขั้นต่ำที่ยอมรับได้ และ SLO ด้าน TTFT, ITL/TPOT, p99, throughput และต้นทุนให้ชัด
 2. เก็บ production trace ที่มี input/output length, arrival rate, prefix similarity, cache hit และ sampling จริง
-3. ลด token ที่ไม่สร้างคุณค่า เลือกโมเดลเล็กที่สุดที่ผ่าน quality และ route งานตามความยาก
+3. ลด token ที่ไม่จำเป็น เลือกโมเดลเล็กที่สุดที่ผ่านเกณฑ์คุณภาพ และส่งงานให้โมเดลตามระดับความยาก
 4. ใช้ inference runtime ที่มี fused attention, continuous batching และ paged KV cache
 5. เปิด prefix/KV reuse, chunked prefill และ tune token budget ด้วย load sweep
-6. เลือก quantization ที่ **hardware มี native kernel** แล้วทำ quality gate ราย use case
-7. ใช้ speculative decoding เฉพาะเมื่อ draft cost, acceptance และ batch regime ทำให้ชนะจริง
-8. scale ด้วย replicas/data parallel ก่อน ถ้าโมเดล fit; ใช้ TP/PP/CP/EP เมื่อ memory, latency หรือ architecture บังคับ
-9. ทำ prefill/decode disaggregation หรือ hierarchical KV เมื่อ cluster ใหญ่พอที่ประโยชน์ชนะค่า transfer และ operational complexity
-10. เปิดทีละ optimization, canary, วัด p50/p95/p99 + goodput + quality + cost และมี rollback
+6. เลือก quantization ที่ **hardware มี native kernel** แล้วตรวจคุณภาพแยกตามการใช้งาน
+7. ใช้ speculative decoding เมื่อทดสอบแล้วว่าต้นทุนการ draft อัตราการยอมรับ token และขนาด batch ทำให้ระบบเร็วขึ้นจริง
+8. ถ้าโมเดลใส่ในหน่วยความจำของ worker ได้ ให้ขยายด้วย replicas/data parallel ก่อน ใช้ TP/PP/CP/EP เมื่อจำเป็นด้าน memory, latency หรือ architecture
+9. ทำ prefill/decode disaggregation หรือ hierarchical KV เมื่อ cluster ใหญ่พอที่จะได้ประโยชน์คุ้มกับการย้ายข้อมูลและความซับซ้อนในการดูแล
+10. เปิดใช้ทีละเทคนิค ทดลองกับ traffic ส่วนน้อย วัด p50/p95/p99 + goodput + quality + cost และเตรียมย้อนกลับได้
 
-สิ่งสำคัญคือ **อย่าคูณ speedup จากแต่ละ paper เข้าด้วยกัน** เช่น FlashAttention 2x × quantization 2x × speculation 2x ไม่ได้แปลว่าระบบเร็ว 8x เพราะเทคนิคเหล่านี้อาจแก้ bottleneck เดียวกัน มี overhead ทับกัน หรือทำให้คอขวดเลื่อนไปชั้นอื่น
+สิ่งสำคัญคือ **อย่านำอัตราเร็วที่เพิ่มขึ้นจากแต่ละงานวิจัยมาคูณกัน** เช่น FlashAttention 2x × quantization 2x × speculation 2x ไม่ได้แปลว่าระบบจะเร็วขึ้น 8x เพราะเทคนิคเหล่านี้อาจแก้คอขวดเดียวกัน มี overhead ร่วมกัน หรือทำให้คอขวดย้ายไปอยู่ส่วนอื่น
 
 ## 1. Optimize อะไร: inference เป็นปัญหาแบบหลายเป้าหมาย
 
@@ -42,7 +42,7 @@ minimize   TTFT, ITL, p99 latency, cost/request, joules/token
 subject to model quality >= floor และ error rate <= budget
 ```
 
-ไม่มี configuration เดียวที่ maximize ทุกแกนพร้อมกัน:
+ไม่มี configuration เดียวที่ให้ผลดีที่สุดในทุกด้านพร้อมกัน:
 
 - batch ใหญ่เพิ่ม throughput แต่เพิ่ม queue และ latency
 - tensor parallel อาจลด latency หรือช่วยให้ model fit แต่เพิ่ม collective communication
@@ -72,7 +72,7 @@ flowchart LR
 
 Prefill ป้อน prompt หลาย token พร้อมกัน ทำ matrix multiplication ขนาดใหญ่และ parallelism ได้ดี จึงมัก **compute-bound** โดยเฉพาะ prompt ยาวและ batch ที่เหมาะสม ส่วน attention ของ full prompt มีงานเพิ่มตามความยาวบริบทและต้องเขียน KV cache ออกมา
 
-คันโยกที่มักช่วย prefill:
+เทคนิคที่มักช่วยเร่ง prefill:
 
 - ลด/บีบ prompt และ RAG context
 - prefix cache reuse
@@ -84,9 +84,9 @@ Prefill ป้อน prompt หลาย token พร้อมกัน ทำ m
 
 ### Decode
 
-Decode สร้าง token ทีละตัว ลำดับ token มี dependency จึง parallel ตาม sequence โดยตรงไม่ได้ แต่แต่ละ step ต้องอ่าน weights และ KV cache จำนวนมากอีกครั้ง งานนี้มัก **memory-bandwidth-bound** ที่ batch ต่ำ และ attention traffic โตตาม context ที่สะสม
+Decode สร้าง token ทีละตัว โดยแต่ละ token ขึ้นกับ token ก่อนหน้า จึงสร้างทุกตำแหน่งใน sequence พร้อมกันโดยตรงไม่ได้ แต่ละ step ยังต้องอ่าน weights และ KV cache จำนวนมากซ้ำ งานนี้จึงมักติดข้อจำกัดด้านอัตรารับส่งข้อมูลของหน่วยความจำ (**memory-bandwidth-bound**) เมื่อ batch เล็ก และปริมาณข้อมูลที่ attention ต้องอ่านจะเพิ่มตาม context ที่สะสม
 
-คันโยกที่มักช่วย decode:
+เทคนิคที่มักช่วยเร่ง decode:
 
 - continuous batching เพื่อ amortize weight reads หลาย requests
 - weight/KV quantization เพื่อลด bytes
@@ -96,7 +96,7 @@ Decode สร้าง token ทีละตัว ลำดับ token มี 
 - tensor/data/expert parallelism ที่ match topology
 - จำกัด output length และหยุดให้เร็วเมื่อ task เสร็จ
 
-> คำว่า “prefill compute-bound, decode memory-bound” เป็น heuristic ไม่ใช่กฎตายตัว Long-context decode อาจติด attention/KV traffic, batch ใหญ่อาจเพิ่ม arithmetic intensity และ MoE อาจติด all-to-all หรือ expert imbalance แทน ต้อง profile ของจริง
+> คำว่า “prefill compute-bound, decode memory-bound” เป็นเพียงแนวทางเบื้องต้น Long-context decode อาจติดการรับส่งข้อมูลของ attention/KV ส่วน batch ใหญ่อาจเพิ่มสัดส่วนการคำนวณต่อข้อมูลที่อ่าน และ MoE อาจติด all-to-all หรือการกระจายงานระหว่าง experts ที่ไม่สมดุล จึงต้องวัดการทำงานของระบบจริง
 
 ## 3. Metric ที่ต้องวัดก่อนแตะ optimization
 
@@ -139,7 +139,7 @@ cache_state:       [cold, warm, churn]
 metrics:           [p50/p95/p99 TTFT, ITL, e2e, TPS, RPS, goodput, VRAM, power]
 ```
 
-ให้ warm up kernel/JIT, lock model/runtime version, บันทึก driver/GPU topology, ทำซ้ำหลายรอบ และวัด client-side เพื่อรวมสิ่งที่ผู้ใช้เห็นจริง
+ให้ warm up kernel/JIT ใช้ model/runtime version เดิมตลอดการทดสอบ บันทึก driver/GPU topology รันซ้ำหลายรอบ และวัดจากฝั่ง client เพื่อรวมเวลาที่ผู้ใช้ต้องรอจริง
 
 ## 4. Memory math: ทำไม weights และ KV cache ต้องแยกกัน
 
@@ -186,7 +186,7 @@ KV = 2 × 32 × 8 × 128 × 2
 | 32K tokens | 4 GiB | 2 GiB |
 | 128K tokens | 16 GiB | 8 GiB |
 
-นี่คือเหตุผลที่ **weight-only INT4 ไม่ได้แก้ long-context bottleneck โดยอัตโนมัติ** และทำไม GQA/MLA, KV quantization, cache eviction/compression และ offload จึงเป็นอีกแกนหนึ่ง
+นี่คือเหตุผลที่ **weight-only INT4 ไม่ได้แก้คอขวดของ long context โดยอัตโนมัติ** จึงต้องพิจารณา GQA/MLA, KV quantization, cache eviction/compression และ offload แยกจากการลดพื้นที่เก็บ weights
 
 ## 5. แผนที่เทคนิคทั้ง stack
 
@@ -219,7 +219,7 @@ flowchart TD
 
 ### 6.1 ลด input tokens
 
-ทุก token ที่ตัดออกช่วยหลายจุดพร้อมกัน: tokenization, prefill FLOPs, KV memory, decode attention traffic และบาง API คิดราคาตาม token
+ทุก token ที่ตัดออกช่วยลดงานหลายส่วนพร้อมกัน ทั้ง tokenization, prefill FLOPs, KV memory และ decode attention traffic อีกทั้งยังลดค่าใช้จ่ายของ API ที่คิดราคาตาม token
 
 แนวทางที่ใช้ได้จริง:
 
@@ -231,7 +231,7 @@ flowchart TD
 - ทำ context budget ต่อส่วน เช่น system 10%, retrieved evidence 60%, history 20%, query 10%
 - เลือก tokenizer/model ที่ represent domain ได้มีประสิทธิภาพเมื่อกำลังเลือก architecture ใหม่
 
-[LLMLingua](https://arxiv.org/abs/2310.05736) เป็นตัวอย่าง prompt compression แต่เป็น approximate transformation ต้องทดสอบ factuality, instruction retention, citations และ prompt-injection behavior ไม่ควรใช้ compression ratio จาก paper เป็น production guarantee
+[LLMLingua](https://arxiv.org/abs/2310.05736) เป็นตัวอย่างของการบีบ prompt ที่อาจทำให้เนื้อหาบางส่วนเปลี่ยนไป ต้องทดสอบทั้งความถูกต้องของข้อเท็จจริง การคงคำสั่งไว้ครบ การอ้างอิง และพฤติกรรมเมื่อเจอ prompt injection ไม่ควรถือว่าอัตราการบีบอัดที่งานวิจัยรายงานจะทำได้เสมอใน production
 
 ### 6.2 ลด output tokens และ reasoning budget
 
@@ -244,7 +244,7 @@ Decode มักเป็นส่วนแพงสำหรับ chat/reasoni
 - ให้ model หยุดเมื่อ tool call พร้อม แทน generate คำอธิบายต่อ
 - ใช้ adaptive reasoning budget: งานง่ายสั้น งานยากค่อยขยาย
 
-อย่าตัด budget โดยไม่วัด success rate เพราะ latency ลดแต่ retry rate อาจเพิ่มจน cost รวมแย่กว่าเดิม
+อย่าลด budget โดยไม่วัดอัตราทำงานสำเร็จ เพราะแม้ latency ลดลง แต่อาจต้องลองใหม่บ่อยขึ้นจนต้นทุนรวมสูงกว่าเดิม
 
 ### 6.3 Exact response cache, semantic cache และ prefix cache ไม่ใช่สิ่งเดียวกัน
 
@@ -257,7 +257,7 @@ Decode มักเป็นส่วนแพงสำหรับ chat/reasoni
 
 OpenAI และ Anthropic มี [prompt caching](https://platform.openai.com/docs/guides/prompt-caching) / [prompt caching docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching) ของ provider ส่วน self-hosted runtime ใช้ prefix/KV cache ในระดับ engine
 
-Semantic cache ต้อง include model version, system policy, tools, tenant, safety policy และ freshness ใน key/validation ไม่ใช่ดู cosine similarity อย่างเดียว งาน [LaCache ปี 2026](https://arxiv.org/abs/2608.01718) ชี้ threat model แบบ cache-collision จึงควร treat semantic cache เป็นระบบ retrieval ที่ต้องมี security และ correctness gate
+Semantic cache ต้องคำนึงถึง model version, system policy, tools, tenant, safety policy และความสดใหม่ของข้อมูล ทั้งตอนสร้าง key และตรวจสอบผลลัพธ์ ไม่ใช่ดู cosine similarity อย่างเดียว งาน [LaCache ปี 2026](https://arxiv.org/abs/2608.01718) ชี้ถึงภัยคุกคามแบบ cache-collision จึงควรดูแล semantic cache เหมือนระบบค้นคืนข้อมูลที่ต้องผ่านเกณฑ์ความปลอดภัยและความถูกต้อง
 
 ### 6.4 Routing และ cascade
 
@@ -268,15 +268,15 @@ Semantic cache ต้อง include model version, system policy, tools, tenant,
 3. หาก confidence ต่ำหรือ validator ไม่ผ่าน จึง escalate ไป larger model
 4. ใช้ policy แยกสำหรับ high-risk task ที่ห้าม downgrade
 
-[RouteLLM](https://arxiv.org/abs/2406.18665) ใช้ preference data เรียนรู้การ route ระหว่างโมเดลแรง/อ่อน ส่วน [FrugalGPT](https://arxiv.org/abs/2305.05176) ศึกษา prompt adaptation, approximation และ cascades ผลที่ paper รายงานขึ้นกับชุดโมเดล/ราคา/benchmark ณ เวลานั้น ไม่ควรคัดตัวเลขไปคาดการณ์ workload ใหม่ตรง ๆ
+[RouteLLM](https://arxiv.org/abs/2406.18665) ใช้ข้อมูลความชอบของผู้ประเมินเรียนรู้ว่าจะส่งงานให้โมเดลที่มีความสามารถระดับใด ส่วน [FrugalGPT](https://arxiv.org/abs/2305.05176) ศึกษา prompt adaptation, approximation และ cascades ผลที่งานวิจัยรายงานขึ้นกับชุดโมเดล ราคา และ benchmark ณ เวลานั้น ไม่ควรนำตัวเลขไปคาดการณ์ workload ใหม่โดยตรง
 
-สิ่งที่ต้อง monitor คือ router drift, false downgrade, escalation rate, tail latency จากสองรอบ และ vendor/model availability
+สิ่งที่ต้องติดตามคือคุณภาพของ router ที่อาจเปลี่ยนไป การส่งงานให้โมเดลเล็กผิดกรณี อัตราส่งงานต่อไปยังโมเดลใหญ่ tail latency จากการทำงานสองรอบ และความพร้อมของผู้ให้บริการหรือโมเดล
 
 ## 7. Model-level optimization
 
 ### 7.1 เลือกโมเดลเล็กที่สุดที่ผ่าน quality
 
-นี่มักเป็น optimization ที่ลดทุกอย่างพร้อมกันมากกว่า kernel trick:
+การเลือกโมเดลให้เล็กลงมักลดการใช้ทรัพยากรได้หลายด้านพร้อมกัน มากกว่าการปรับ kernel เพียงอย่างเดียว:
 
 - weight memory และ model-load time ลด
 - FLOPs ต่อ token ลด
@@ -284,7 +284,7 @@ Semantic cache ต้อง include model version, system policy, tools, tenant,
 - ใช้ replica มากขึ้นต่อ GPU fleet
 - quantize ง่ายขึ้นและ speculative drafter มีช่องว่างมากขึ้น
 
-แต่ต้อง benchmark **task ของเรา** ไม่ใช่ leaderboard ค่าเฉลี่ย และแยก quality ตามภาษา, domain, context length, tool use, safety และ structured-output adherence
+แต่ต้องทดสอบกับ **งานของเรา** โดยแยกคุณภาพตามภาษา domain, context length, tool use, safety และการทำตามรูปแบบ output ที่กำหนด คะแนนเฉลี่ยบน leaderboard เพียงอย่างเดียวใช้ตัดสินไม่ได้
 
 ### 7.2 Knowledge distillation
 
@@ -299,8 +299,8 @@ Distillation ฝึก student ให้เลียนแบบ teacher ผ่�
 ต้นทุน/ความเสี่ยง:
 
 - ต้องสร้าง/กรอง teacher data และฝึกใหม่
-- student อาจเลียนแบบ error และ calibration เปลี่ยน
-- out-of-distribution capability มักลดก่อน benchmark กลาง
+- student อาจเรียนรู้ข้อผิดพลาดของ teacher มาด้วย และความมั่นใจของโมเดลอาจไม่สอดคล้องกับความถูกต้องเหมือนเดิม
+- ความสามารถกับข้อมูลที่ต่างจากชุดฝึกมักลดลงก่อนจะเห็นผลใน benchmark ทั่วไป
 - ต้องตรวจ licensing และสิทธิการใช้ outputs เพื่อ train
 
 ### 7.3 Pruning และ sparsity
@@ -311,11 +311,11 @@ Distillation ฝึก student ให้เลียนแบบ teacher ผ่�
 2. **Semi-structured sparsity** — รูปแบบเช่น N:M ที่ hardware/kernel รองรับ มีโอกาสได้ speedup จริงกว่าแต่จำกัด pattern
 3. **Structured pruning** — ตัด heads, channels, neurons, layers หรือ width ทำให้ matrix เล็กลงแบบ dense ใช้ง่ายกว่า แต่กระทบ quality และอาจต้อง fine-tune
 
-[SliceGPT](https://arxiv.org/abs/2401.15024) ใช้ computational invariance เพื่อลด embedding dimension และสร้าง dense matrices เล็กลง ประเด็นทั่วไปคือ **จำนวนศูนย์ไม่ใช่ speedup** ต้องดู representation, index overhead, load balance และ kernel support
+[SliceGPT](https://arxiv.org/abs/2401.15024) ใช้ computational invariance เพื่อลด embedding dimension และสร้าง dense matrices ที่เล็กลง หลักสำคัญคือ **การมี weight เป็นศูนย์มากขึ้นไม่ได้แปลว่าจะเร็วขึ้นตามสัดส่วน** ต้องดูรูปแบบการเก็บข้อมูล index overhead การกระจายงาน และ kernel ที่รองรับด้วย
 
 ### 7.4 Low-rank factorization, layer dropping และ early exit
 
-- factorize weight matrix เป็นสอง matrix rank ต่ำ ลด parameters/FLOPs เมื่อ rank ต่ำพอชนะ launch และ intermediate overhead
+- แยก weight matrix เป็นสอง matrix ที่มี rank ต่ำ ช่วยลด parameters/FLOPs เมื่อ rank ต่ำพอให้ประโยชน์ที่ได้คุ้มกับ overhead จากการเรียก kernel และผลลัพธ์ระหว่างทาง
 - layer dropping/width reduction ทำให้ model เล็กลงโดยตรง แต่ต้อง retrain/calibrate
 - early exit หยุดที่ layer ตื้นเมื่อ confidence สูง เหมาะ task ที่มีคำตอบตัดสินได้ แต่ generation ต้องออกแบบ exit per token/sequence และ calibration ยาก
 - dynamic depth/adaptive compute ใช้ layers ไม่เท่ากันตาม token/request เพิ่ม scheduler irregularity
@@ -334,7 +334,7 @@ Multi-Query Attention ([MQA](https://arxiv.org/abs/1911.02150)) แชร์ K/V
 GQA KV / MHA KV ≈ num_kv_heads / num_attention_heads
 ```
 
-นี่เป็น architecture property: runtime ใช้ประโยชน์ได้ถ้า checkpoint ถูก train/uptrain มาแล้ว ไม่ใช่ flag ที่เปลี่ยน MHA checkpoint เป็น GQA ฟรี
+นี่เป็นคุณสมบัติของสถาปัตยกรรม Runtime ใช้ประโยชน์ได้เมื่อ checkpoint ผ่านการ train/uptrain มาแล้ว ไม่ใช่ตัวเลือกที่เปิดแล้วเปลี่ยน MHA checkpoint เป็น GQA ได้ทันที
 
 #### MLA
 
@@ -347,13 +347,13 @@ GQA KV / MHA KV ≈ num_kv_heads / num_attention_heads
 - linear attention เปลี่ยน formulation เพื่อลด scaling ตาม context แต่ behavior ต่างจาก softmax attention
 - [Mamba](https://arxiv.org/abs/2312.00752) และ SSM/hybrid models ใช้ recurrent state ที่ scale ต่างจาก KV cache แบบ Transformer
 
-สิ่งเหล่านี้เหมาะกับการเลือก/ออกแบบโมเดลใหม่ มากกว่าการ optimize checkpoint เดิมแบบ drop-in
+เทคนิคเหล่านี้เหมาะกับการเลือกหรือออกแบบโมเดลใหม่ มากกว่านำไปใช้กับ checkpoint เดิมโดยไม่ปรับอย่างอื่น
 
 ### 7.6 Mixture of Experts
 
-MoE มี parameters ทั้งหมดมากแต่ activate เพียง experts บางส่วนต่อ token จึงลด active FLOPs เทียบ dense model capacity ใกล้กัน อย่างไรก็ตาม inference เพิ่มคอขวดใหม่:
+MoE มี parameters จำนวนมาก แต่ใช้ experts เพียงบางส่วนต่อ token จึงลด FLOPs ที่ต้องคำนวณเมื่อเทียบกับ dense model ที่มีความสามารถใกล้กัน อย่างไรก็ตาม การทำ inference มีคอขวดเพิ่มขึ้น:
 
-- expert weights จำนวนมากยังต้อง reside หรือโหลด
+- ยังต้องเก็บ expert weights จำนวนมากไว้ในหน่วยความจำหรือโหลดเข้ามาใช้
 - token dispatch/combine ใช้ all-to-all
 - hot experts ทำให้ GPU บางตัวแน่น บางตัวว่าง
 - batch ต่อ expert เล็กทำให้ GEMM efficiency ต่ำ
@@ -363,7 +363,7 @@ MoE มี parameters ทั้งหมดมากแต่ activate เพี
 
 ### 7.7 Multi-Token Prediction
 
-[MTP](https://arxiv.org/abs/2404.19737) เพิ่ม heads ที่ทำนายอนาคตหลาย token ระหว่าง training สามารถเพิ่ม training signal และเป็น native drafter สำหรับ speculative decoding ได้ แต่ไม่ได้แปลว่าทุก runtime จะ generate หลาย token ต่อ target pass อัตโนมัติ ต้องมี verification/acceptance implementation และ tune draft depth
+[MTP](https://arxiv.org/abs/2404.19737) เพิ่ม heads ที่ทำนายหลาย token ถัดไประหว่าง training จึงเพิ่มข้อมูลที่ใช้ฝึกและใช้เป็น drafter ในตัวสำหรับ speculative decoding ได้ แต่ไม่ได้แปลว่าทุก runtime จะสร้างหลาย token ต่อ target pass โดยอัตโนมัติ Runtime ยังต้องรองรับการตรวจและยอมรับ token พร้อมปรับ draft depth ให้เหมาะสม
 
 ## 8. Quantization: ลด bytes ให้ตรงคอขวดและตรง hardware
 
@@ -449,7 +449,7 @@ execution: native low-bit GEMM / weight-only dequantize / emulation-fallback
 - GPU generation
 - batch และ context distribution
 
-[FlashInfer](https://arxiv.org/abs/2501.01005) เน้น serving attention ที่ customizable และรองรับ request/KV patterns หลากหลาย จึงมักเป็นชั้น kernel ใต้ runtime มากกว่า end-user server ครบชุด
+[FlashInfer](https://arxiv.org/abs/2501.01005) เน้น attention สำหรับ serving ที่ปรับแต่งได้และรองรับรูปแบบ request/KV หลากหลาย จึงมักใช้เป็น kernel ภายใน runtime มากกว่าเป็น server สำเร็จรูปสำหรับผู้ใช้
 
 ### 9.2 Operator fusion
 
@@ -462,7 +462,7 @@ Fusion ลด kernel launches, intermediate tensors และ HBM round trips �
 - logits processing + sampling
 - MoE routing + grouped GEMM/dispatch paths
 
-Fusion มากเกินอาจเพิ่ม register pressure, ลด occupancy หรือสร้าง kernel เฉพาะ shape จำนวนมาก จึงต้อง profile
+การรวมงานมากเกินไปอาจใช้ register มากขึ้น ลด occupancy หรือทำให้มี kernel เฉพาะสำหรับหลาย shape จึงต้องวัดผลจริง
 
 ### 9.3 CUDA Graphs, compile และ shape bucketing
 
@@ -477,7 +477,7 @@ Shape bucketing รวม requests ให้ลง graph variants ที่จ�
 
 ### 9.4 Packed tokens และ remove padding
 
-ถ้า batch มี prompt ยาว 8K หนึ่งตัวกับ prompt 100 token หลายตัว การ pad ทุก sequence ถึง 8K เสีย compute มาก Packed/ragged representation ประมวลผลเฉพาะ token จริง [TensorRT-LLM in-flight batching docs](https://nvidia.github.io/TensorRT-LLM/features/paged-attention-ifb-scheduler.html) ระบุ packed input เป็นส่วนสำคัญของ efficiency
+ถ้า batch มี prompt ยาว 8K หนึ่งรายการกับ prompt 100 token หลายรายการ การเติม padding ให้ทุก sequence ยาวถึง 8K จะสิ้นเปลืองการคำนวณมาก Packed/ragged representation ช่วยให้ประมวลผลเฉพาะ token จริง [TensorRT-LLM in-flight batching docs](https://nvidia.github.io/TensorRT-LLM/features/paged-attention-ifb-scheduler.html) ระบุว่า packed input เป็นส่วนสำคัญที่ช่วยเพิ่มประสิทธิภาพ
 
 ### 9.5 CPU และ pipeline รอบ GPU
 
@@ -490,7 +490,7 @@ GPU เร็วขึ้นแล้วคอขวดอาจย้ายไ�
 - image/audio preprocessing ใน multimodal model
 - Python GIL/event loop และ scheduler control plane
 
-ใช้ async pipeline, pinned memory, batched tokenization, zero/low-copy transfer, backpressure และแยก telemetry path ที่ไม่ block hot path
+ใช้ async pipeline, pinned memory, batched tokenization, zero/low-copy transfer และ backpressure พร้อมแยกงาน telemetry ออก เพื่อไม่ให้ขวางขั้นตอนหลักในการตอบ request
 
 ## 10. KV-cache และ memory-management optimization
 
@@ -503,7 +503,7 @@ GPU เร็วขึ้นแล้วคอขวดอาจย้ายไ�
 - share blocks สำหรับ common prefix/candidates
 - ไม่ต้องย้าย contiguous tensor ใหญ่ทุกครั้ง
 
-block size มี trade-off: block ใหญ่ metadata/lookup น้อยแต่ fragmentation มาก; block เล็ก reuse granularity ดีแต่ page table และ kernel overhead เพิ่ม
+ขนาด block มีข้อแลกเปลี่ยน: block ใหญ่ใช้ metadata และการค้นหาน้อยลง แต่มีพื้นที่ว่างที่ใช้ประโยชน์ไม่ได้มากขึ้น ส่วน block เล็กนำข้อมูลกลับมาใช้ซ้ำได้ละเอียดกว่า แต่เพิ่ม overhead ของ page table และ kernel
 
 ### 10.2 Prefix caching และ Radix reuse
 
@@ -521,13 +521,13 @@ block size มี trade-off: block ใหญ่ metadata/lookup น้อยแ�
 
 - ช่วย prefill ที่ซ้ำ แต่ไม่ทำให้ decode token ใหม่เร็วขึ้นโดยตรง
 - token IDs, model, adapter, position/rope config และ relevant sampling state ต้อง match
-- dynamic timestamps/request IDs ที่ต้น prompt ทำลาย hit ทั้ง suffix
+- timestamp หรือ request ID ที่เปลี่ยนทุกครั้งตรงต้น prompt ทำให้ข้อความถัดจากนั้นใช้ prefix cache เดิมไม่ได้
 - HBM ที่ให้ cache มากเกินไปลด active concurrency
 - multi-tenant ต้อง isolate ด้วย namespace/salt; TensorRT-LLM มี cache salting เพื่อควบคุม reuse
 
 ### 10.3 Cache-aware routing
 
-ในหลาย replicas การ round-robin อาจส่ง prefix เดิมไป GPU ที่ไม่มี cache แล้วคำนวณใหม่ Smart router ควร balance:
+เมื่อมีหลาย replicas การส่ง request แบบ round-robin อาจส่ง prefix เดิมไปยัง GPU ที่ไม่มี cache จนต้องคำนวณใหม่ Router จึงควรพิจารณาปัจจัยเหล่านี้ร่วมกัน:
 
 ```text
 estimated queue delay
@@ -537,11 +537,11 @@ estimated queue delay
 + SLO deadline
 ```
 
-hit rate อย่างเดียวไม่พอ เพราะ prefix ใหญ่บน link ช้ากับ prefix เล็กบน GPU ว่างมี economics ต่างกัน งาน [PrefixPlace](https://arxiv.org/abs/2608.01655) ปี 2026 ศึกษา placement ที่รวม compute และ transfer cost แทน maximize hit rate อย่างเดียว
+Hit rate อย่างเดียวไม่พอ เพราะการดึง prefix ใหญ่ผ่าน link ที่ช้ากับการคำนวณ prefix เล็กบน GPU ที่ว่างมีต้นทุนต่างกัน งาน [PrefixPlace](https://arxiv.org/abs/2608.01655) ปี 2026 ศึกษาการวาง cache โดยคิดทั้งต้นทุนการคำนวณและการย้ายข้อมูล แทนการเพิ่ม hit rate เพียงอย่างเดียว
 
 ### 10.4 Offload และ hierarchical KV
 
-ย้าย cold KV จาก HBM ไป CPU DRAM, local SSD หรือ remote cache เพิ่ม effective capacity แต่ reuse ต้องจ่าย transfer และอาจช้ากว่า recompute
+การย้าย KV ที่ไม่ค่อยได้ใช้จาก HBM ไปยัง CPU DRAM, local SSD หรือ remote cache ช่วยเพิ่มพื้นที่เก็บรวม แต่เมื่อนำกลับมาใช้ต้องเสียเวลาย้ายข้อมูล ซึ่งอาจช้ากว่าคำนวณใหม่
 
 ตัดสินด้วย:
 
@@ -554,14 +554,14 @@ reuse benefit
 
 ### 10.5 KV eviction/compression
 
-นอกจาก quantize ทุก entry ยังลดจำนวน token ที่เก็บ:
+นอกจาก quantize แต่ละ entry แล้ว ยังลดจำนวน token ที่เก็บได้ด้วยวิธีเหล่านี้:
 
 - [H2O](https://arxiv.org/abs/2306.14048): เก็บ recent tokens + heavy hitters
 - [SnapKV](https://arxiv.org/abs/2404.14469): ใช้ observation window เลือก prompt positions สำคัญต่อ head
 - [PyramidKV](https://arxiv.org/abs/2406.02069): budget ต่างกันตาม layer จากรูปแบบ information funnel
 - sliding-window/attention sinks: เก็บ recent window และ sink/global tokens
 
-ทั้งหมดนี้ approximate context ต่างจาก PagedAttention ซึ่งเป็น exact memory management ต้องทดสอบ retrieval, long-form generation, code, repeated entities, multilingual context และ adversarial “needle” หลายตำแหน่ง
+เทคนิคเหล่านี้เลือกเก็บ context เพียงบางส่วน ต่างจาก PagedAttention ที่จัดการหน่วยความจำโดยไม่ตัดข้อมูล จึงต้องทดสอบทั้ง retrieval, long-form generation, code, repeated entities, multilingual context และ adversarial “needle” หลายตำแหน่ง
 
 ### 10.6 Multi-LoRA / adapter memory
 
@@ -572,13 +572,13 @@ reuse benefit
 - route ตาม adapter locality
 - กำหนด per-tenant cache quota
 
-adapter ขนาดเล็กไม่ได้แปลว่า overhead เล็กเสมอ เพราะ dynamic dispatch และ batch fragmentation อาจลด GEMM efficiency
+Adapter ขนาดเล็กไม่ได้หมายความว่าจะมี overhead ต่ำเสมอ เพราะการสลับเรียกใช้ adapter และการแบ่ง batch ออกเป็นกลุ่มย่อยอาจลดประสิทธิภาพ GEMM
 
 ## 11. Batching และ scheduling
 
 ### 11.1 Static, dynamic และ continuous batching
 
-- **Static batch:** รอ batch ครบแล้วรันทุก sequence จนจบ; sequence สั้นทำให้ช่องว่างเสียไป
+- **Static batch:** รอ batch ครบแล้วรันทุก sequence จนจบ เมื่อ sequence สั้นจบก่อน พื้นที่ส่วนนั้นจะว่างโดยยังนำไปใช้งานใหม่ไม่ได้
 - **Dynamic batch:** รอใน time window สั้นเพื่อรวม requests
 - **Continuous/in-flight/iteration-level batching:** ทุก decode iteration นำ request ใหม่เข้าและเอา request จบออก
 
@@ -603,11 +603,11 @@ adapter ขนาดเล็กไม่ได้แปลว่า overhead �
 - queue และ p99 แย่
 - OOM/preemption risk เพิ่ม
 
-งาน [SLIM ปี 2026](https://arxiv.org/abs/2607.29575) วิเคราะห์ saturation ของ decode attention และเสนอเลือก batching configuration ภายใต้ latency target ประเด็นใช้งานจริงคือให้เลือก **จุดก่อน plateau ที่ผ่าน SLO** ไม่ใช่ batch สูงสุดที่ engine รับได้
+งาน [SLIM ปี 2026](https://arxiv.org/abs/2607.29575) วิเคราะห์จุดอิ่มตัวของ decode attention และเสนอให้เลือก batching configuration ภายใต้เป้าหมาย latency เมื่อนำไปใช้จริงควรเลือก **จุดที่ยังผ่าน SLO ก่อน throughput จะเริ่มคงที่** ไม่ใช่เลือก batch ใหญ่ที่สุดที่ engine รับได้
 
 ### 11.3 Chunked prefill
 
-prompt ยาวหนึ่ง request สามารถครอง iteration ใหญ่และทำให้ decode requests รอนาน Chunked prefill แบ่ง prompt เป็น chunks แล้ว interleave กับ decode:
+Prompt ยาวเพียง request เดียวอาจใช้เวลาส่วนใหญ่ของ iteration จน request ที่กำลัง decode ต้องรอนาน Chunked prefill จึงแบ่ง prompt เป็นส่วนย่อยแล้วสลับประมวลผลกับ decode:
 
 ข้อดี:
 
@@ -623,11 +623,11 @@ prompt ยาวหนึ่ง request สามารถครอง iteration
 - chunk ใหญ่เกินกลับไป block decode
 - prefix cache/speculation/graphs อาจมี interaction เฉพาะ runtime
 
-TensorRT-LLM docs แนะนำเปิด chunked context ในกรณี serving ทั่วไป แต่ต้อง benchmark workload ของเรา งาน [ปี 2026 เรื่อง power dynamics](https://arxiv.org/abs/2608.01250) ยังพบว่า chunked prefill ลด power ramp rate ภายใต้ load แม้ไม่ลด peak power จึงเริ่มมีมิติ grid/power-aware scheduling เพิ่มเข้ามา
+เอกสาร TensorRT-LLM แนะนำให้เปิด chunked context สำหรับ serving ทั่วไป แต่ยังต้องทดสอบกับ workload ของเรา งาน [ปี 2026 เรื่อง power dynamics](https://arxiv.org/abs/2608.01250) ยังพบว่า chunked prefill ช่วยลดอัตราการเพิ่มกำลังไฟภายใต้ load แม้ไม่ลดกำลังไฟสูงสุด จึงเริ่มมีการนำข้อจำกัดด้านกำลังไฟและระบบจ่ายไฟมาพิจารณาในการจัดคิวด้วย
 
 ### 11.4 SLO-aware scheduling
 
-Production scheduler ควรคิดมากกว่า FIFO:
+Scheduler ใน production ควรพิจารณาปัจจัยอื่นร่วมกับลำดับมาก่อนทำก่อน (FIFO):
 
 - deadline/priority classes
 - age และ fairness ป้องกัน starvation
@@ -638,11 +638,11 @@ Production scheduler ควรคิดมากกว่า FIFO:
 - model/adapter/expert locality
 - retry/idempotency policy
 
-Admission control และ backpressure มีค่าเท่ากับ kernel optimization เพราะเมื่อรับมากกว่า capacity ทุก request อาจพังพร้อมกัน ควร reject/queue/degrade อย่างตั้งใจ เช่น ลด output cap, route ไป model สำรอง หรือไม่รับ low-priority work
+Admission control และ backpressure สำคัญพอ ๆ กับการปรับ kernel เพราะเมื่อรับงานเกินกำลัง ระบบอาจตอบทุก request ไม่สำเร็จพร้อมกัน ควรกำหนดล่วงหน้าว่าเมื่อใดจะปฏิเสธงาน เข้าคิว หรือลดระดับการให้บริการ เช่น ลด output cap ส่งไปโมเดลสำรอง หรือไม่รับงานที่มีความสำคัญต่ำ
 
 ## 12. Speculative decoding แบบละเอียด
 
-Autoregressive decode ปกติ target model สร้างหนึ่ง token ต่อ sequential step Speculative decoding ให้ระบบราคาถูกเสนอ `K` tokens แล้ว target verify พร้อมกัน:
+ในการทำ autoregressive decode ปกติ target model สร้างหนึ่ง token ต่อ step ตามลำดับ ส่วน speculative decoding ให้ระบบที่ใช้ทรัพยากรน้อยกว่าเสนอ `K` tokens แล้วให้ target ตรวจสอบพร้อมกัน:
 
 ```text
 draft:   t1, t2, t3, t4
@@ -672,7 +672,7 @@ accept matching prefix + sample correction token ตาม algorithm
 
 ### 12.2 Linear chain กับ tree drafting
 
-linear draft ให้เส้นทางเดียว ถ้า token แรกผิด candidates หลังจากนั้นเสียทั้งหมด Tree draft ขยายหลาย branch เพิ่มโอกาสมี prefix ที่ target ยอมรับ แต่ใช้ draft/verification tokens และ memory มากขึ้น ต้อง optimize tree width/depth ภายใต้ token budget
+Linear draft เสนอเส้นทางเดียว ถ้า token แรกไม่ผ่านการตรวจสอบ token ที่เสนอต่อจากนั้นจะใช้ไม่ได้ทั้งหมด ส่วน tree draft แตกหลาย branch เพื่อเพิ่มโอกาสที่จะมี prefix ซึ่ง target ยอมรับ แต่ใช้ token สำหรับ draft/verification และ memory มากขึ้น จึงต้องปรับความกว้างและความลึกของ tree ภายใต้ token budget
 
 [EAGLE](https://arxiv.org/abs/2401.15077), [EAGLE-2](https://arxiv.org/abs/2406.16858) และ [EAGLE-3](https://arxiv.org/abs/2503.01840) พัฒนา feature-level drafting และ dynamic/test-time scaling ต่อเนื่อง เอกสาร TensorRT-LLM ปี 2026 รองรับ EAGLE-3 dynamic tree พร้อมข้อจำกัดบาง architecture
 
@@ -698,19 +698,19 @@ speedup เกิดเมื่อ
 - domain similarity กับ draft training
 - memory ของ second model/draft heads
 
-TensorRT-LLM docs ระบุว่า speedup สังเกตง่ายที่ low batch เพราะเมื่อ target ถูก batch จนอิ่มอยู่แล้ว speculative verification อาจแย่ง throughput งาน [consumer hardware ปี 2026](https://arxiv.org/abs/2607.17283) พบหลาย configuration ช้าลงเมื่อ draft ไม่เร็วพอหรือ backend ไม่ verify แบบ parallel จริง
+เอกสาร TensorRT-LLM ระบุว่าจะเห็นความเร็วที่เพิ่มขึ้นได้ชัดเมื่อ batch เล็ก เพราะหาก target ทำงานเต็มกำลังจาก batching อยู่แล้ว งาน speculative verification อาจแย่งทรัพยากรจน throughput ลดลง งาน [consumer hardware ปี 2026](https://arxiv.org/abs/2607.17283) พบว่าหลาย configuration ช้าลงเมื่อ draft ไม่เร็วพอหรือ backend ไม่ได้ตรวจสอบแบบ parallel จริง
 
 ### 12.4 สถานะปี 2026
 
 ณ วันที่ตรวจ [TensorRT-LLM speculative decoding docs](https://nvidia.github.io/TensorRT-LLM/features/speculative-decoding.html) ระบุ draft/target, EAGLE-3, n-gram, MTP, PARD, DFlash, suffix automaton และ user-provided drafter ขณะที่ SGLang รายงาน [DFlash v2](https://lmsys.org/blog/2026-06-15-next-generation-speculative-decoding-dflash-v2/) ใน stack ของโครงการ
 
-frontier ใหม่คือ long-context draft cost: [Windowed-MTP](https://arxiv.org/abs/2607.21535) เสนอ window เฉพาะ draft attention แต่ยังให้ target full-attention verify เพื่อไม่เปลี่ยน final acceptance semantics งานยังเป็น preprint จึงควรดู implementation/model support ก่อนใช้
+ประเด็นใหม่ที่กำลังศึกษาอยู่คือต้นทุนการ draft เมื่อ context ยาว [Windowed-MTP](https://arxiv.org/abs/2607.21535) เสนอให้จำกัด window เฉพาะ draft attention แล้วให้ target ตรวจสอบด้วย full attention เพื่อคงเงื่อนไขการยอมรับผลลัพธ์เดิม งานนี้ยังเป็น preprint จึงควรตรวจ implementation และโมเดลที่รองรับก่อนใช้
 
 ## 13. Parallelism: เพิ่ม GPU อย่างไรไม่ให้ communication กินหมด
 
 ### 13.1 Data parallel / replicas
 
-replicate model เต็มบนแต่ละ GPU/worker แล้ว route requests คนละชุด
+เก็บโมเดลเต็มชุดไว้บนแต่ละ GPU/worker แล้วกระจาย request ให้แต่ละชุดประมวลผลแยกกัน
 
 เหมาะเมื่อ:
 
@@ -718,11 +718,11 @@ replicate model เต็มบนแต่ละ GPU/worker แล้ว route 
 - ต้องเพิ่ม total throughput/availability
 - request isolation สูง
 
-ข้อดีคือ communication ใน forward path ต่ำและ scale operationally ง่าย ข้อเสียคือ weight memory ซ้ำและ request เดี่ยวไม่ได้เร็วขึ้น
+ข้อดีคือมีการสื่อสารระหว่างเครื่องใน forward path น้อยและขยายระบบได้ง่าย ข้อเสียคือต้องเก็บ weights ซ้ำ และไม่ได้ทำให้ request เดียวเร็วขึ้น
 
 ### 13.2 Tensor parallelism
 
-shard matrices/attention heads ข้าม GPUs แต่ละ layer มี collective เช่น all-reduce/reduce-scatter/all-gather
+แบ่ง matrices หรือ attention heads ไปยังหลาย GPU โดยแต่ละ layer มีการสื่อสารร่วมกัน (collective) เช่น all-reduce/reduce-scatter/all-gather
 
 เหมาะเมื่อ:
 
@@ -748,7 +748,7 @@ shard matrices/attention heads ข้าม GPUs แต่ละ layer มี co
 - batch ต่ำมี pipeline bubbles
 - stage imbalance ทำให้ GPU ช้าที่สุดกำหนด throughput
 
-สำหรับ interactive decode ที่แต่ละ token ต้องผ่านทุก stage PP อาจเพิ่ม per-token hop จึงไม่ใช่ default ที่ดีที่สุดเสมอ
+สำหรับ interactive decode ที่แต่ละ token ต้องผ่านทุก stage การใช้ PP อาจเพิ่มจำนวนครั้งที่ส่งข้อมูลระหว่าง GPU ต่อ token จึงไม่ใช่ค่าเริ่มต้นที่ดีที่สุดเสมอ
 
 ### 13.4 Context parallelism
 
@@ -765,7 +765,7 @@ CP ช่วย memory/compute ของ context แต่ไม่จำเป�
 - hybrid ETP: ผสม EP/TP
 - Wide-EP: กระจายกว้างพร้อม replicate hot experts/load balancing
 
-[TensorRT-LLM parallelism docs](https://nvidia.github.io/TensorRT-LLM/features/parallel-strategy.html) ระบุ TP, PP, DP, EP, CP และ Wide-EP พร้อม attention-DP/FFN strategies current snapshot ปี 2026 จุดคอขวดหลักคือ all-to-all, expert imbalance และ tiny GEMMs
+[เอกสาร TensorRT-LLM ด้าน parallelism](https://nvidia.github.io/TensorRT-LLM/features/parallel-strategy.html) ณ วันที่ตรวจในปี 2026 ระบุ TP, PP, DP, EP, CP และ Wide-EP พร้อมกลยุทธ์ attention-DP/FFN คอขวดหลักคือ all-to-all การกระจายงานระหว่าง experts ที่ไม่สมดุล และ GEMM ขนาดเล็กมาก
 
 ### 13.6 เลือกแบบสั้น
 
@@ -780,7 +780,7 @@ CP ช่วย memory/compute ของ context แต่ไม่จำเป�
 
 ## 14. Disaggregated serving: แยก prefill กับ decode
 
-Prefill และ decode ต้องการ resource profile ต่างกัน จึงมีแนวคิดแยก worker pools:
+Prefill และ decode ใช้ทรัพยากรต่างกัน จึงมีแนวคิดแยกกลุ่ม worker สำหรับแต่ละช่วง:
 
 ```mermaid
 flowchart LR
@@ -812,13 +812,13 @@ flowchart LR
 - cache consistency, ownership และ eviction
 - control plane, autoscaling และ observability ที่ซับซ้อน
 
-จากตัวอย่าง KV ก่อนหน้า prompt 32K มี KV 4 GiB หากต้องย้ายทั้งก้อน lower bound เชิงเส้นทางของ link 100 Gb/s คือราว 0.344 วินาที และ 400 Gb/s ราว 0.086 วินาที ก่อน protocol/contention นี่อธิบายว่าทำไม fast fabric, overlap, compression และ selective transfer สำคัญ
+จากตัวอย่าง KV ก่อนหน้า prompt 32K มี KV 4 GiB หากต้องย้ายทั้งหมดผ่าน link 100 Gb/s จะใช้เวลาอย่างน้อยราว 0.344 วินาที และผ่าน link 400 Gb/s จะใช้ราว 0.086 วินาที โดยยังไม่รวม overhead ของ protocol และการแย่งใช้เครือข่าย จึงต้องให้ความสำคัญกับเครือข่ายที่เร็ว การส่งข้อมูลพร้อมกับการคำนวณ การบีบอัด และการเลือกส่งเฉพาะข้อมูลที่จำเป็น
 
 ### 14.3 Disaggregation ไม่ได้เพิ่ม throughput โดยอัตโนมัติ
 
 [vLLM disaggregated prefill docs](https://docs.vllm.ai/en/latest/features/disagg_prefill.html) เตือนว่า implementation ของ feature เน้นแยก TTFT/ITL และไม่ได้ปรับ throughput ให้ดีขึ้นโดยตัวมันเอง ขณะที่ระบบ cluster เช่น [NVIDIA Dynamo](https://developer.nvidia.com/blog/introducing-nvidia-dynamo-a-low-latency-distributed-inference-framework-for-scaling-reasoning-ai-models/) รายงาน gains เมื่อรวม planner, smart router, distributed KV manager และ fast transfer บน hardware/workload ที่กำหนด
 
-สองข้อความไม่ขัดกัน: **separation เป็น architecture primitive; gain ต้องมาจาก provisioning, routing, overlap และ workload ที่เหมาะ**
+สองข้อความนี้ไม่ขัดกัน: **การแยกส่วนเป็นเพียงการออกแบบสถาปัตยกรรม ประสิทธิภาพที่ดีขึ้นต้องมาจากการจัดสรรทรัพยากร การส่ง request การทำงานซ้อนกัน และ workload ที่เหมาะสม**
 
 ### 14.4 Frontier 2026
 
@@ -826,7 +826,7 @@ flowchart LR
 - [When Does Disaggregation Pay?](https://arxiv.org/abs/2608.03741) จำลองการแยกต่อไปถึง attention/FFN และ heterogeneous hardware
 - KV placement เริ่ม optimize cost/latency มากกว่า hit rate อย่างเดียว
 
-ทั้งหมดเป็นงานใหม่มาก ณ วันที่บทความ จึงควรถือเป็น design signals ไม่ใช่ default recommendation
+ทั้งหมดเป็นงานที่ยังใหม่มาก ณ วันที่เขียน จึงควรใช้ประกอบการพิจารณาทิศทางการออกแบบ โดยยังไม่ถือเป็นแนวทางมาตรฐานที่ควรเปิดใช้ทันที
 
 ## 15. Hardware, topology และ data movement
 
@@ -877,7 +877,7 @@ GPU ที่ FP4 peak สูงแต่ runtime fallback W4A16 อาจแพ
 | NVIDIA Dynamo | distributed control plane, routing, disaggregation, KV transfer/cache | cluster-scale multi-node serving | backend maturity, planner, network |
 | LMDeploy/อื่น ๆ | model/runtime-specific strengths | ecosystem หรือ hardware เฉพาะ | benchmark เดียวกันทั้งหมด |
 
-งาน [LLM Serving in the Wild ปี 2026](https://arxiv.org/abs/2608.03036) สำรวจ open-source adoption และพบ framework หลักหลายตัวถูกใช้ต่างกันตาม model/use case แต่ paper เป็น empirical snapshot ไม่ใช่ performance ranking
+งาน [LLM Serving in the Wild ปี 2026](https://arxiv.org/abs/2608.03036) สำรวจการใช้ซอฟต์แวร์โอเพนซอร์ส และพบว่า framework หลักหลายตัวถูกเลือกใช้ต่างกันตามโมเดลและลักษณะงาน งานนี้สะท้อนการใช้งานที่สำรวจพบในช่วงหนึ่ง ไม่ใช่อันดับประสิทธิภาพ
 
 ### วิธีเลือก runtime ที่น่าเชื่อถือ
 
@@ -896,15 +896,15 @@ GPU ที่ FP4 peak สูงแต่ runtime fallback W4A16 อาจแพ
 | Quantization + continuous batching | weights เล็กและ amortize reads | batch ใหญ่ทำ low-bit GEMM shape ดี/แย่ได้ต่างกัน |
 | GQA/MLA + KV quantization | ลดทั้งจำนวน elements และ bytes/element | custom attention kernel/model support |
 | Prefix cache + cache-aware routing | reuse ข้าม request/replica สูง | load imbalance และ tenant isolation |
-| Chunked prefill + continuous batching | ลด decode stall จาก prompt ยาว | chunk size/token budget ต้อง tuneร่วม |
+| Chunked prefill + continuous batching | ลดการรอ decode จาก prompt ยาว | ต้องปรับ chunk size และ token budget ร่วมกัน |
 | Speculation + low-batch interactive | ลด sequential target steps | ที่ high batch verification แย่ง throughput |
 | Speculation + prefix cache | draft/target เริ่มจาก state ซ้ำได้ | cache key/tree/rollback ซับซ้อน |
 | Quantized target + drafter | target ถูกลงและ memory fit | drafter/target latency gap แคบลง อาจลด speedup |
-| TP + quantization | model fit degree ต่ำลง | บางทีควรลด TP เพื่อเลี่ยง communication |
+| TP + quantization | ใช้ parallel degree น้อยลงก็เก็บโมเดลได้ | บางกรณีควรลด TP เพื่อลดการสื่อสาร |
 | PD disaggregation + KV quantization | transfer bytes ลด | quant/dequant และ cross-worker format compatibility |
 | EP + disaggregation | tune MoE phases แยก | network contention หลายรูปแบบ |
 
-ตัวอย่างสำคัญ: quantization อาจทำให้โมเดล fit GPU เดียว จากเดิม TP=2 เป็น TP=1 แม้ low-bit kernel เร็วไม่มาก การตัด collective ออกอาจเป็น gain ที่ใหญ่กว่า quantized GEMM เอง
+ตัวอย่างเช่น quantization อาจทำให้เก็บโมเดลได้ใน GPU เดียว จึงลดจาก TP=2 เป็น TP=1 แม้ low-bit kernel เร็วขึ้นไม่มาก แต่การตัด collective ออกอาจช่วยให้เร็วขึ้นมากกว่าตัว quantized GEMM เอง
 
 ## 18. Playbook ตาม workload
 
@@ -949,7 +949,7 @@ GPU ที่ FP4 peak สูงแต่ runtime fallback W4A16 อาจแพ
 
 ### 18.4 Agent/tool loop
 
-agent มักมี stable system/tools + history โต + output สั้นหลายรอบ:
+Agent มักใช้ system prompt/tools ชุดเดิม มี history ยาวขึ้นเรื่อย ๆ และสร้าง output สั้น ๆ หลายรอบ:
 
 - canonicalize tool schemas และเก็บไว้ต้น prompt
 - prefix/Radix cache
@@ -960,7 +960,7 @@ agent มักมี stable system/tools + history โต + output สั้น
 - cache-aware sticky routing ต่อ session
 - จำกัด stale history และ summarize tool outputs
 
-อย่าลืม cancellation: หาก user/tool ยกเลิก ต้องคืน KV blocks และหยุด decode เร็ว
+ต้องจัดการ cancellation ด้วย เมื่อผู้ใช้หรือ tool ยกเลิกงาน ระบบควรหยุด decode และคืน KV blocks ให้เร็ว
 
 ### 18.5 Giant MoE reasoning model
 
@@ -980,13 +980,13 @@ agent มักมี stable system/tools + history โต + output สั้น
 | TTFT โตตาม prompt มาก | prefill compute/attention | ลด context, FlashAttention, prefix cache, quant/CP |
 | TTFT พุ่งเมื่อมี long prompt ปน | head-of-line blocking | chunked prefill, token budget, separate queue |
 | ITL สูงแม้ concurrency=1 | decode bandwidth/launch | weight quant, fused decode, CUDA Graph, speculation |
-| TPS โตแล้ว plateau แต่ latencyพุ่ง | saturation | ลด batch/token budget, SLO-aware admission |
+| TPS เพิ่มแล้วคงที่ แต่ latency พุ่ง | saturation | ลด batch/token budget, SLO-aware admission |
 | OOM เมื่อ context/concurrency สูง | KV cache | GQA model, KV quant, paging, lower caps, offload |
-| Prefix hit สูงแต่ latencyไม่ดี | fetch/routing/eviction cost | cost-aware placement, local hit, lower churn |
+| Prefix hit สูงแต่ latency ยังสูง | fetch/routing/eviction cost | cost-aware placement, local hit, lower churn |
 | TP เพิ่มแล้วช้าลง | collective dominates | ลด TP, quantize, keep TP intra-node |
 | MoE GPU utilization ไม่สมดุล | hot experts | expert replication/EPLB, routing batch, EP layout |
 | Speculation acceptance สูงแต่ไม่เร็ว | drafter/verification overhead | profile components, ลด K/tree, low-batch only |
-| Quantized model memoryลดแต่ไม่เร็ว | dequant/fallback/KV bottleneck | verify kernel, operator coverage, profile bytes |
+| Quantized model ใช้ memory ลดลงแต่ไม่เร็วขึ้น | dequant/fallback/KV bottleneck | verify kernel, operator coverage, profile bytes |
 | p99 แย่แต่ average ดี | queue/burst/preemption | admission control, priority, capacity headroom |
 | GPU ว่างแต่ request ช้า | CPU/network/control plane | tokenizer, proxy, async logging, NUMA, graph launch |
 
@@ -1002,7 +1002,7 @@ agent มักมี stable system/tools + history โต + output สั้น
 
 ### Phase B — Isolated microbench
 
-วัด prefill, decode, attention, GEMM, KV transfer และ tokenizer แยก เพื่อรู้ mechanism แต่ไม่ใช้แทน end-to-end
+วัด prefill, decode, attention, GEMM, KV transfer และ tokenizer แยกกัน เพื่อเข้าใจว่าแต่ละส่วนทำงานอย่างไร แล้ววัด end-to-end เพิ่มเพื่อดูผลทั้งระบบ
 
 ### Phase C — End-to-end load sweep
 
@@ -1033,7 +1033,7 @@ cost/1M output tokens = fleet cost × 1,000,000 / valid output tokens
 energy/token = integrated watts over time / valid tokens
 ```
 
-ใช้ **valid** output/requests หลัง quality gate ไม่เช่นนั้นระบบที่เร็วแต่ตอบผิดจะดูคุ้มผิดจริง
+นับเฉพาะ output/requests ที่ **ผ่านเกณฑ์คุณภาพ** ไม่เช่นนั้นระบบที่เร็วแต่ตอบผิดจะดูคุ้มกว่าความเป็นจริง
 
 ### Phase F — Canary
 
@@ -1045,7 +1045,7 @@ energy/token = integrated watts over time / valid tokens
 
 ## 21. Current frontier ณ 9 สิงหาคม 2026
 
-ส่วนนี้เป็นภาพสถานะ ไม่ใช่คำแนะนำให้เปิดทุกอย่าง:
+ส่วนนี้สรุปสถานะของงานใหม่เพื่อประกอบการพิจารณา:
 
 ### 21.1 Speculation กำลังเปลี่ยนจาก small-model draft ไป parallel/native draft
 
@@ -1053,7 +1053,7 @@ TensorRT-LLM docs ที่อัปเดต 30 กรกฎาคม 2026 แ�
 
 ### 21.2 Disaggregation ขยายจาก PD ไป component/hardware specialization
 
-PD เริ่ม mature ใน cluster stacks แต่ research กำลังถามต่อว่าจะย้ายเฉพาะ KV, แยก attention/FFN หรือใช้ hardware คนละแบบหรือไม่ สิ่งนี้เพิ่ม potential และ complexity พร้อมกัน ต้อง model queue + transfer + failure ไม่ใช่ดู kernel อย่างเดียว
+PD เริ่มใช้งานได้จริงมากขึ้นในระบบ cluster ขณะที่งานวิจัยกำลังศึกษาต่อว่าจะย้ายเฉพาะ KV แยก attention/FFN หรือใช้ hardware ต่างชนิดกันได้หรือไม่ แนวทางนี้เพิ่มทั้งโอกาสในการเร่งระบบและความซับซ้อน จึงต้องจำลองผลของ queue การย้ายข้อมูล และความล้มเหลวร่วมกับการวัด kernel
 
 ### 21.3 KV cache กลายเป็น distributed data plane
 
@@ -1065,11 +1065,11 @@ PD เริ่ม mature ใน cluster stacks แต่ research กำลั�
 - selective KV transfer
 - security isolation/salting
 
-ระบบยุคต่อไปจึง optimize “สถานที่ที่ KV อยู่” พอ ๆ กับ “GPU ที่ model อยู่”
+ระบบรุ่นถัดไปจึงต้องเลือกว่าจะเก็บ KV ไว้ที่ใดให้เหมาะสม พอ ๆ กับการเลือก GPU ที่ใช้รันโมเดล
 
 ### 21.4 Saturation, power และ goodput สำคัญกว่าค่า peak
 
-งาน SLIM และ chunked-prefill power study ปี 2026 สะท้อนแนวโน้มว่า scheduler ต้อง optimize SLO, memory และ power dynamics ไม่ใช่แค่ tokens/sec ส่วน empirical consumer speculation study เตือนว่าฟีเจอร์ที่ lossless เชิง algorithm ยังไม่ free เชิงระบบ
+งาน SLIM และงานศึกษากำลังไฟของ chunked prefill ปี 2026 สะท้อนว่า scheduler ต้องพิจารณา SLO, memory และการเปลี่ยนแปลงกำลังไฟร่วมกับ tokens/sec ส่วนงานทดลอง speculation บนฮาร์ดแวร์ทั่วไปแสดงว่า แม้ algorithm จะรักษาผลลัพธ์เดิมได้ แต่ยังมีต้นทุนการทำงานในระบบ
 
 ### 21.5 Runtime feature surface โตเร็วมาก
 
@@ -1161,7 +1161,7 @@ vLLM, SGLang, TensorRT-LLM, FlashInfer, LMDeploy และ Dynamo เพิ่�
 
 ## 24. สรุป
 
-เทคนิค optimize LLM inference ที่ครบจริงต้องมองเป็นลำดับชั้น:
+การปรับประสิทธิภาพ LLM inference ให้ครอบคลุมต้องพิจารณาตามลำดับชั้น:
 
 1. **ไม่ทำงานที่ไม่จำเป็น** — ลด tokens, cache, route และกำหนด output budget
 2. **ใช้ model ที่เหมาะ** — size, distillation, pruning, GQA/MLA/MoE/MTP
@@ -1169,12 +1169,12 @@ vLLM, SGLang, TensorRT-LLM, FlashInfer, LMDeploy และ Dynamo เพิ่�
 4. **ใช้ GPU ให้มีประสิทธิภาพ** — FlashAttention, fusion, graphs, packed inputs
 5. **บริหาร state ให้ดี** — paged/prefix/hierarchical KV, eviction และ isolation
 6. **จัดคิวให้ตรง SLO** — continuous batching, chunked prefill, token budget, admission
-7. **ลด serial decode steps** — speculative decoding เมื่อ economics ชนะ
+7. **ลด serial decode steps** — ใช้ speculative decoding เมื่อได้ประโยชน์คุ้มกับงานที่เพิ่มขึ้น
 8. **scale แบบ topology-aware** — DP/TP/PP/CP/EP และ hybrid
 9. **แยก cluster เมื่อคุ้ม** — PD disaggregation, smart routing, distributed KV
 10. **พิสูจน์ด้วย goodput + quality + cost** — ไม่ใช่ benchmark headline
 
-คำแนะนำสุดท้ายของผมคือเริ่มจาก production trace และ bottleneck ที่วัดได้ เปิด optimization ทีละตัว แล้วรักษา “quality-adjusted goodput ภายใต้ SLO” เป็น north-star metric ระบบที่เร็วที่สุดใน slide ไม่สำคัญเท่าระบบที่ตอบถูก ทันเวลา รับ peak traffic ได้ และมีต้นทุนที่ธุรกิจยอมรับ
+คำแนะนำของผมคือเริ่มจาก production trace และคอขวดที่วัดได้ ปรับทีละเทคนิค แล้วใช้ “จำนวน request ต่อวินาทีที่ผ่านเกณฑ์คุณภาพและ SLO” เป็นตัวชี้วัดหลัก เป้าหมายคือระบบที่ตอบถูก ทันเวลา รับ peak traffic ได้ และมีต้นทุนที่ธุรกิจยอมรับ
 
 ## แหล่งอ้างอิงและอ่านต่อ
 

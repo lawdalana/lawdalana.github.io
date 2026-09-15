@@ -2,7 +2,7 @@
 title: Probabilistic Data Structures
 notetype: feed
 date: 2026-08-16
-last_modified: 2026-08-17
+last_modified: 2026-09-16
 tags: [data-structures, probabilistic, bloom-filter, hyperloglog, count-min-sketch, minhash, space-saving, ddsketch, streaming, big-data]
 status: published
 ---
@@ -11,7 +11,7 @@ status: published
 
 เมื่อข้อมูลไหลเข้ามาเป็นล้านหรือพันล้านรายการ ปัญหาไม่ได้อยู่ที่ `HashSet` หรือ `HashMap` ตอบผิด แต่เป็นเพราะการเก็บข้อมูลทุกชิ้นเพื่อให้ได้คำตอบแบบแม่นยำอาจใช้หน่วยความจำ เวลา และค่าใช้จ่ายสูงเกินความจำเป็น
 
-**Probabilistic Data Structures** และ **Approximate Streaming Summaries** ใช้วิธีเก็บ “ร่องรอยสรุป” ขนาดเล็กแทนข้อมูลทั้งหมด แล้วตอบคำถามเฉพาะอย่างภายใต้ขอบเขตความผิดพลาดที่อธิบายได้ เช่น
+**Probabilistic Data Structures** และ **Approximate Streaming Summaries** เก็บข้อมูลสรุปขนาดเล็กแทนข้อมูลทั้งหมด แล้วใช้ตอบคำถามเฉพาะอย่างโดยมีขอบเขตความคลาดเคลื่อนที่อธิบายได้ เช่น
 
 - เคยเห็นค่านี้หรือยัง?
 - มีค่าที่ไม่ซ้ำประมาณกี่ค่า?
@@ -57,7 +57,7 @@ status: published
 | แนวทาง | สิ่งที่เก็บ | สิ่งที่ได้ | ต้นทุนหลัก |
 |---|---|---|---|
 | Exact | สมาชิกหรือ counter ครบทุก key | คำตอบแม่นยำและมักเรียกดูสมาชิกเดิมได้ | หน่วยความจำโตตามจำนวน key หรือจำนวนค่า |
-| Approximate | bit, register, counter, signature หรือ bucket ที่สรุปข้อมูล | คำตอบเฉพาะประเภทพร้อม error contract | ต้องออกแบบพารามิเตอร์ ตรวจสอบ error และมี fallback เมื่อจำเป็น |
+| Approximate | bit, register, counter, signature หรือ bucket ที่สรุปข้อมูล | คำตอบเฉพาะประเภท พร้อมเงื่อนไขและขอบเขตความคลาดเคลื่อน (error contract) | ต้องออกแบบพารามิเตอร์ ตรวจสอบ error และมี fallback เมื่อจำเป็น |
 
 ตัวอย่างเช่น HyperLogLog อาจตอบว่า “มีผู้ใช้ไม่ซ้ำประมาณ 10.1 ล้านคน” แต่ไม่สามารถคืนรายชื่อผู้ใช้ทั้ง 10.1 ล้านคนนั้นได้ เพราะรายชื่อไม่ได้ถูกเก็บไว้ตั้งแต่แรก
 
@@ -191,7 +191,7 @@ $$\hat n = m\ln\left(\frac{m}{V}\right)$$
 
 $$\hat n = 8\ln\left(\frac{8}{3}\right) \approx 7.85$$
 
-จึงตอบว่า **มีประมาณ 8 คนไม่ซ้ำ** ซึ่งใกล้กับค่าจริง 8 คน ตัวอย่างนี้ตั้งใจใช้ register น้อยเพื่อให้เห็นขั้นตอน; HLL จริงใช้ register มากกว่า รวมค่าด้วย harmonic mean และมีการแก้ bias ตามช่วงข้อมูล
+จึงตอบว่า **มีผู้ใช้ไม่ซ้ำประมาณ 8 คน** ซึ่งใกล้กับค่าจริง 8 คน ตัวอย่างนี้ตั้งใจใช้ register น้อยเพื่อให้เห็นขั้นตอน ส่วน HLL ที่ใช้งานจริงใช้ register มากกว่า รวมค่าด้วย harmonic mean และแก้ bias ตามช่วงข้อมูล
 
 สำหรับ HLL ดั้งเดิมที่มี `m` registers ค่าคลาดเคลื่อนมาตรฐานโดยคร่าวคือ
 
@@ -275,7 +275,7 @@ C → (แถว 1 ช่อง 2, แถว 2 ช่อง 3, แถว 3 ช�
 3. แถว 3 อ่านได้ `3` และไม่มี key อื่นชนช่องนี้
 4. เลือกค่าต่ำสุด: `min(5, 4, 3) = 3`
 
-ดังนั้น CMS ตอบ `A ≈ 3` ซึ่งตรงกับค่าจริงในตัวอย่างนี้ ส่วน `C` อ่านได้ `min(1, 4, 1) = 1` แนวคิดสำคัญคือ **ค่าต่ำสุดช่วยเลือกแถวที่ปนเปื้อนจาก collision น้อยที่สุด** ไม่ได้แปลว่าทุก query จะตรงค่าจริงเสมอไป
+ดังนั้น CMS ตอบ `A ≈ 3` ซึ่งตรงกับค่าจริงในตัวอย่างนี้ ส่วน `C` อ่านได้ `min(1, 4, 1) = 1` แนวคิดสำคัญคือ **การเลือกค่าต่ำสุดช่วยลดผลจาก hash ของ key อื่นที่ชนช่องเดียวกัน** แต่ไม่ได้แปลว่าทุก query จะตรงกับค่าจริงเสมอไป
 
 พารามิเตอร์ที่ใช้บ่อยคือ
 
@@ -381,7 +381,7 @@ $$\sigma \approx \sqrt{\frac{0.60(1-0.60)}{256}} \approx 0.0306$$
 
 ## 5. Space-Saving — หา heavy hitters ด้วยจำนวนช่องจำกัด
 
-> **จำประโยคเดียว:** Space-Saving เป็นกระดานอันดับที่มีที่นั่งจำกัด รายการที่มาบ่อยจะรักษาที่นั่งไว้ได้ ส่วนรายการที่พบน้อยอาจถูกผู้มาใหม่แทนที่
+> **จำประโยคเดียว:** Space-Saving เป็นกระดานอันดับที่มีช่องจำกัด รายการที่มาบ่อยจะอยู่ต่อ ส่วนรายการที่พบน้อยอาจถูกแทนที่ด้วยรายการใหม่
 
 Space-Saving เก็บรายการ `(item, estimated_count, error)` ไว้เพียง `k` ช่อง จึงไม่ต้องสร้าง counter ให้ทุก item ที่เคยผ่านเข้ามา
 
@@ -391,7 +391,7 @@ Space-Saving เก็บรายการ `(item, estimated_count, error)` ไ
 2. ถ้ายังมีช่องว่าง → เพิ่ม item ด้วย count เท่ากับ 1
 3. ถ้าเต็ม → แทน item ที่มี count ต่ำสุดด้วย item ใหม่ และตั้ง count ใหม่เป็น `minimum + 1`
 
-การ “รับช่วง” count ต่ำสุดทำให้ count ของ item ใหม่เริ่มสูงกว่าจำนวนครั้งที่เห็นจริง แต่เราจะบันทึก error เดิมไว้ด้วย วิธีนี้เปิดโอกาสให้ item ที่เพิ่งเริ่มมาแรงเข้าสู่กระดานได้ แทนที่จะถูกกันออกตลอดไป
+การ “รับช่วง” count ต่ำสุดทำให้ count ของ item ใหม่เริ่มสูงกว่าจำนวนครั้งที่เห็นจริง เราจึงบันทึกส่วนที่อาจนับเกินไว้เป็น error ด้วย วิธีนี้เปิดโอกาสให้ item ที่เริ่มพบบ่อยเข้ามาอยู่บนกระดานได้
 
 ### ตัวอย่างคำนวณทีละขั้น
 
@@ -499,7 +499,7 @@ $$\gamma = \frac{1+0.10}{1-0.10} = \frac{1.10}{0.90} \approx 1.2222$$
 
 ตัวอย่างนี้จงใจใช้ `α = 10%` เพื่อให้เห็นการรวม bucket ชัดเจน งาน monitoring จริงมักเลือกค่าที่ละเอียดกว่า เช่น 1–2% ตาม error budget และต้นทุนหน่วยความจำ
 
-เหมาะกับข้อมูลที่กระจายหลาย order of magnitude เช่น
+เหมาะกับข้อมูลที่มีช่วงค่ากว้างหลายลำดับขนาด (orders of magnitude) เช่น
 
 - API latency ตั้งแต่ไม่กี่ millisecond ถึงหลายวินาที
 - payload sizes
@@ -604,7 +604,7 @@ user stream:    u1, u2, u1, u3, u4, u2, u5, u1, u6, u5, u7, u1
 | วันนี้มีผู้ใช้ไม่ซ้ำกี่คน? | HyperLogLog | ควรได้ค่าประมาณใกล้ `7`; ใน production ขนาดใหญ่ยอมรับค่าคลาดตาม precision ที่กำหนด |
 | สินค้า A ถูกเปิดกี่ครั้ง? | Count-Min Sketch | ค่าจริงคือ `6`; sketch อาจตอบ `6` หรือสูงกว่าเล็กน้อยจาก collision |
 | session สองชุดมีพฤติกรรมคล้ายกันไหม? | MinHash | จากตัวอย่างก่อนหน้า Jaccard จริงคือ `0.60`; signature สั้น 4 ตำแหน่งประมาณได้ `0.75` และจะนิ่งขึ้นเมื่อเพิ่มจำนวนตำแหน่ง |
-| สินค้าใดกำลังเป็น heavy hitters? | Space-Saving | ใช้ช่องจำนวนจำกัดติดตาม A, B และผู้สมัครใกล้ลำดับถัดไป โดยไม่เก็บ count ของทุกสินค้า |
+| สินค้าใดกำลังเป็น heavy hitters? | Space-Saving | ใช้ช่องจำนวนจำกัดติดตาม A, B และสินค้าที่อาจติดอันดับถัดไป โดยไม่เก็บ count ของทุกสินค้า |
 | latency p95/p99 เท่าไร? | DDSketch | สำหรับชุดตัวอย่าง exact คือ `210/860 ms`; sketch ตอบค่าจาก logarithmic buckets ภายใน relative error ที่ตั้งไว้ |
 
 > ค่าจริงในตารางมีไว้สำหรับอธิบายและตรวจสอบ การทำงานใน production ต้องเปรียบเทียบ sketch กับ exact sample เป็นระยะ ไม่ควรสมมติว่าค่าประมาณจะตรงทุกครั้ง
@@ -613,7 +613,7 @@ user stream:    u1, u2, u1, u3, u4, u2, u5, u1, u6, u5, u7, u1
 
 ## ตารางเปรียบเทียบแบบไม่ซ่อนเงื่อนไข
 
-| โครงสร้าง | State หลัก | ปุ่มปรับ accuracy | การรวมข้อมูลจากหลายเครื่อง |
+| โครงสร้าง | State หลัก | พารามิเตอร์ที่ใช้ปรับ accuracy | การรวมข้อมูลจากหลายเครื่อง |
 |---|---|---|---|
 | Bloom Filter | `m` bits, `k` positions | capacity `n`, FPR `p` | OR ได้เฉพาะ layout/hash/config ที่เข้ากัน และต้องประเมิน capacity/FPR หลังรวม |
 | HyperLogLog | `m` registers | precision/register count | ใช้ max ต่อ register เมื่อ precision, hash และรูปแบบ state เข้ากัน |
@@ -622,7 +622,7 @@ user stream:    u1, u2, u1, u3, u4, u2, u5, u1, u6, u5, u7, u1
 | Space-Saving | `k` candidate entries | จำนวนช่อง `k` | แบบพื้นฐานไม่ใช่ element-wise merge; ต้องใช้อัลกอริทึมหรือ implementation ที่นิยาม merge โดยเฉพาะ |
 | DDSketch | logarithmic buckets | `α`, range/store/collapse policy | บวก bucket counts ได้เมื่อ mapping, accuracy และ storage semantics เข้ากัน |
 
-**คำว่า mergeable จึงไม่ใช่เพียง ✅ หรือ ❌** แต่เป็นสัญญาว่า state จากทุก shard ใช้ precision, dimensions, hash seed, bucket mapping และเวอร์ชันที่เข้ากัน
+**คำว่า mergeable ต้องระบุเงื่อนไขให้ครบ** เพราะ state จากทุก shard ต้องใช้ precision, dimensions, hash seed, bucket mapping และเวอร์ชันที่เข้ากันได้
 
 ---
 
@@ -630,7 +630,7 @@ user stream:    u1, u2, u1, u3, u4, u2, u5, u1, u6, u5, u7, u1
 
 ![Workflow เลือก Probabilistic Data Structure จากชนิดของคำถาม](/assets/img/DS/Probabilistic/probabilistic-decision-workflow.svg)
 
-*Workflow ที่ปลอดภัย: เริ่มจากชนิดของคำตอบ ตรวจ error contract ตรวจ merge compatibility แล้ว validate กับข้อมูล exact*
+*ขั้นตอนการเลือก: เริ่มจากชนิดของคำตอบ ตรวจเงื่อนไขความคลาดเคลื่อนและความเข้ากันได้เมื่อรวมข้อมูล แล้วเทียบผลกับข้อมูล exact*
 
 สรุปเป็นคำถามสั้น ๆ:
 
@@ -722,7 +722,7 @@ FROM `project.dataset.events`
 WHERE event_date = DATE '2026-08-16';
 ```
 
-BigQuery ระบุว่า approximate aggregate functions แลก statistical uncertainty กับการใช้ memory และเวลาที่รองรับข้อมูลขนาดใหญ่ ฟังก์ชัน convenience กลุ่มนี้ไม่ได้เปิด precision parameter ให้กำหนดเอง และไม่ควรสรุปว่าแต่ละฟังก์ชันใช้ implementation ภายในชนิดใด หากเอกสารไม่ได้ระบุไว้
+BigQuery ระบุว่า approximate aggregate functions ยอมให้มีความคลาดเคลื่อนทางสถิติ เพื่อประหยัดหน่วยความจำและเวลาเมื่อประมวลผลข้อมูลขนาดใหญ่ ฟังก์ชันสำเร็จรูปกลุ่มนี้ไม่ได้เปิดให้กำหนด precision เอง และไม่ควรสรุปว่าแต่ละฟังก์ชันใช้ implementation ภายในชนิดใด หากเอกสารไม่ได้ระบุไว้
 
 ---
 
@@ -755,7 +755,7 @@ BigQuery ระบุว่า approximate aggregate functions แลก statist
 
 ## สรุป
 
-Probabilistic Data Structures ไม่ได้มีไว้แทน exact data structures ทุกกรณี แต่มีไว้เมื่อระบบต้องตอบ **คำถามเฉพาะอย่างด้วย state ที่เล็ก คงที่ หรือ merge กระจายได้**
+Probabilistic Data Structures ไม่ได้มีไว้แทน exact data structures ทุกกรณี แต่เหมาะเมื่อระบบต้องตอบ **คำถามเฉพาะอย่างด้วยข้อมูลสรุปที่มีขนาดเล็ก ขนาดคงที่ หรือรวมจากหลายเครื่องได้**
 
 วิธีเลือกที่ถูกต้องคือ
 

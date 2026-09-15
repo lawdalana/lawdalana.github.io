@@ -2,7 +2,7 @@
 title: "Sequential Recommendation: Benchmark Comparison"
 notetype: feed
 date: 2026-06-15
-last_modified: 2026-06-15
+last_modified: 2026-09-16
 tags: [recommendation-system, benchmark, NDCG, HR, evaluation, comparison]
 status: published
 ---
@@ -14,7 +14,7 @@ status: published
 - **Metrics:** HR@N (Hit Rate), NDCG@N (Normalized Discounted Cumulative Gain)
 - **Source:** FEARec paper (SIGIR 2023) — same evaluation protocol across all models
 
-> ⚠️ ตัวเลขจาก FEARec paper ซึ่ง reimplement baselines เอง → อาจมี bias นิดหน่อย
+> ⚠️ ตัวเลขมาจากงานวิจัย FEARec ซึ่งผู้วิจัยนำ baseline มาเขียนและทดสอบใหม่ ผลเปรียบเทียบจึงอาจขึ้นกับรายละเอียดของ implementation
 
 ---
 
@@ -117,21 +117,21 @@ FEARec     ███████████████████████
 
 ## สรุป Gap ระหว่างรุ่น
 
-| เปรียบเทียบ | Gap โดยเฉลี่ย | ข้อสังเกต |
+| เปรียบเทียบ | ช่วงที่ผลดีขึ้น | ข้อสังเกต |
 |---|---|---|
 | SASRec → CL4SRec | **+3.7% ถึง +8.9%** | Contrastive learning ช่วยเรื่อง sparse data |
-| CL4SRec → CoSeRec | **+10% ถึง +12%** | Item-aware augmentation ดีกว่า generic |
-| CoSeRec → DuoRec | **+10% ถึง +33%** | Model-level augmentation > data-level |
-| DuoRec → FEARec | **+4% ถึง +9%** | Frequency domain ให้มุมใหม่ |
-| SASRec → FEARec | **+41% ถึง +64%** | สะสมทั้งหมด = ใหญ่มาก |
+| CL4SRec → CoSeRec | **+10% ถึง +12%** | Augmentation ที่ใช้ข้อมูลของ item ให้ผลดีกว่าแบบทั่วไป |
+| CoSeRec → DuoRec | **+10% ถึง +33%** | การทำ augmentation ที่ระดับโมเดลให้ผลดีกว่าระดับข้อมูล |
+| DuoRec → FEARec | **+4% ถึง +9%** | การวิเคราะห์ใน frequency domain ช่วยเพิ่มผลลัพธ์ |
+| SASRec → FEARec | **+41% ถึง +64%** | ผลจากการปรับปรุงแต่ละรุ่นสะสมเป็นความต่างที่ชัดเจน |
 
 ### Key Takeaways
 
-1. **แต่ละขั้นพัฒนาเพิ่ม ~10-20%** สะสมไปเรื่อยๆ
-2. **DuoRec และ FEARec คือก้าวกระโดดใหญ่สุด** — จาก contrastive/data augmentation → model-level + frequency domain
+1. **ผลจากการปรับปรุงแต่ละรุ่นสะสมต่อกัน** โดยหลายช่วงดีขึ้นราว ~10-20%
+2. **DuoRec และ FEARec ให้ผลดีขึ้นชัดเจนที่สุด** — ขยับจาก contrastive learning และ data augmentation ไปสู่การปรับระดับโมเดลและการวิเคราะห์ใน frequency domain
 3. **Sparse datasets** ได้ประโยชน์จาก contrastive learning มากกว่า dense datasets
 4. **Dense datasets (ML-1M)** ได้ประโยชน์จาก DuoRec/FEARec มากกว่า (+54-64%)
-5. **LLM-enhanced รุ่นใหม่** (ReaRec, GenAIR) คาดว่าจะเพิ่มอีก 5-15% บน FEARec baseline
+5. **LLM-enhanced รุ่นใหม่** (ReaRec, GenAIR) มีการคาดการณ์ว่าจะดีขึ้นอีก 5-15% เมื่อเทียบกับ FEARec baseline ซึ่งเป็นค่าคาดการณ์ ไม่ใช่ผลในตารางข้างต้น
 
 ---
 

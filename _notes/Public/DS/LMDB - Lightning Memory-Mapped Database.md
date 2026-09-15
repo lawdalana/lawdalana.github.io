@@ -2,22 +2,22 @@
 title: "LMDB - Lightning Memory-Mapped Database"
 notetype: feed
 date: 2026-08-16
-last_modified: 2026-08-17
+last_modified: 2026-09-16
 tags: [database, lmdb, embedded-database, key-value-store, b-tree, mmap, mvcc, rocksdb, tuning, license]
 status: published
 ---
 
 # LMDB (Lightning Memory-Mapped Database)
 
-LMDB คือ embedded transactional key-value database แบบเรียงลำดับ เขียนด้วย C และเป็นส่วนหนึ่งของโครงการ OpenLDAP จุดเด่นคือใช้ `mmap`, B+ tree, MVCC และ copy-on-write (COW) เพื่อให้หลาย read transactions อ่าน snapshot ที่คงที่ได้พร้อมกัน ขณะที่มี write transaction ทำงานได้ครั้งละหนึ่งตัว
+LMDB คือฐานข้อมูลแบบ embedded ที่เก็บคู่ key-value เรียงตาม key และรองรับ transactions เขียนด้วย C และเป็นส่วนหนึ่งของโครงการ OpenLDAP จุดเด่นคือใช้ `mmap`, B+ tree, MVCC และ copy-on-write (COW) เพื่อให้ read transactions หลายตัวอ่าน snapshot ของตนได้พร้อมกัน ขณะที่มี write transaction ทำงานได้ครั้งละหนึ่งตัว
 
 ## Mental model แบบสั้น
 
-1. Environment ปกติมี `data.mdb` สำหรับข้อมูล และ `lock.mdb` สำหรับ coordination
+1. Environment ปกติมี `data.mdb` สำหรับข้อมูล และ `lock.mdb` สำหรับประสานการเข้าถึงฐานข้อมูล
 2. ทุกการอ่าน/เขียนต้องอยู่ใน transaction
 3. Reader อ่าน root ของ snapshot ตัวเอง แล้วเดิน B+ tree ผ่าน memory map
 4. Writer ไม่แก้ active page เดิม แต่สร้าง page ชุดใหม่ด้วย COW
-5. Commit เผยแพร่ root ใหม่ผ่าน meta page อีกฝั่ง ส่วน page เก่าจะ reuse ได้เมื่อไม่มี reader เก่าใช้อยู่
+5. เมื่อ commit จะบันทึก root ใหม่ลง meta page อีกหน้า ส่วน page เก่าจะนำกลับมาใช้ได้เมื่อไม่มี reader อ้างอิงแล้ว
 
 > LMDB ไม่มี server process, WAL หรือ background compaction thread แต่ความทนทานของ commit ยังขึ้นกับ sync flags, filesystem และ storage hardware
 
@@ -27,7 +27,7 @@ LMDB คือ embedded transactional key-value database แบบเรีย�
 
 ![LMDB architecture: read path, write path, mmap, data.mdb และ lock.mdb](/assets/img/DS/LMDB/lmdb-architecture.svg)
 
-*เส้นสีฟ้าแสดง read path ผ่าน snapshot และ memory map; เส้นสีส้มแสดง write path ที่ serialize writer, ทำ COW และ publish snapshot ใหม่ตอน commit*
+*เส้นสีฟ้าแสดงขั้นตอนการอ่านผ่าน snapshot และ memory map ส่วนเส้นสีส้มแสดงขั้นตอนการเขียนที่ให้ writer ทำงานทีละตัว ทำ COW และบันทึก snapshot ใหม่ตอน commit*
 
 Environment แบบ directory ปกติมีไฟล์หลัก 2 ไฟล์:
 
@@ -51,7 +51,7 @@ void *map = mmap(NULL, map_size, prot, MAP_SHARED, fd, 0);
 สิ่งที่ควรเข้าใจ:
 
 - การ map ไฟล์ใหญ่ **ไม่ได้หมายความว่าไฟล์ทั้งก้อนอยู่ใน RAM**
-- OS โหลด page เมื่อถูกแตะผ่าน demand paging และบริหาร residency ด้วย page cache
+- OS โหลด page เมื่อมีการเข้าถึงผ่าน demand paging และใช้ page cache จัดการว่า page ใดอยู่ใน RAM
 - หลาย process ที่ map ไฟล์เดียวกันบนเครื่องเดียวกันใช้ physical page cache ร่วมกันได้
 - ใน C API ค่า `MDB_val` ที่อ่านได้มักชี้เข้า mapped page โดยตรง จึงห้ามใช้ pointer ต่อหลัง transaction สิ้นสุดหรือหลัง operation ที่ทำให้ข้อมูลนั้นเปลี่ยน
 - ขนาดสูงสุดที่ใช้งานจริงไม่ได้เป็นเลขตายตัว แต่ถูกจำกัดโดย map size, virtual address space, build/platform, filesystem และพื้นที่ disk
@@ -60,11 +60,11 @@ void *map = mmap(NULL, map_size, prot, MAP_SHARED, fd, 0);
 
 ![LMDB read workflow from transaction snapshot to B+ tree leaf and OS page fault handling](/assets/img/DS/LMDB/lmdb-read-path.svg)
 
-Read transaction จับ snapshot transaction ID หนึ่งค่า จากนั้นใช้ root ที่อยู่ใน meta snapshot เดิมตลอดอายุ transaction ดังนั้น writer จะ commit root ใหม่ได้โดยไม่เปลี่ยนภาพที่ reader ตัวเดิมเห็น
+Read transaction ยึด snapshot ตาม transaction ID หนึ่งค่า แล้วใช้ root ของ snapshot นั้นตลอดอายุ transaction ดังนั้น writer จึง commit root ใหม่ได้โดยไม่เปลี่ยนข้อมูลที่ reader ตัวเดิมมองเห็น
 
 - ถ้า page อยู่ใน RAM การเดิน tree คือ memory access
-- ถ้า page ไม่ resident การแตะ mapped address จะเกิด page fault แล้ว OS โหลด page จาก storage
-- การหา key ที่ไม่มีสิ้นสุดเมื่อค้นถึง leaf แล้วไม่พบ; ค่าใช้จ่ายจริงขึ้นกับ tree depth, cache state, key/value layout และ storage
+- ถ้า page ยังไม่อยู่ใน RAM การเข้าถึง mapped address จะทำให้เกิด page fault แล้ว OS โหลด page จาก storage
+- หากไม่มี key ที่ต้องการ การค้นหาจะจบเมื่อถึง leaf แล้วไม่พบ key นั้น ต้นทุนในการค้นหาขึ้นกับ tree depth, cache state, key/value layout และ storage
 
 > ใน Python binding (`py-lmdb`) `txn.get()` คืน `bytes` โดยปกติ จึงไม่ควรเรียกว่า zero-copy เสมอไป ต้องเปิด transaction ด้วย `buffers=True` หากต้องการ buffer ที่อ้าง mapped memory และต้องเลิกใช้ buffer ก่อน transaction สิ้นสุดหรือถูกแก้ไข
 
@@ -87,7 +87,7 @@ Read transaction จับ snapshot transaction ID หนึ่งค่า จ�
 
 Page size ถูกบันทึกใน metadata และมักเท่ากับ virtual-memory page size ของระบบ เช่น 4 KiB แต่ไม่ควร hard-code สมมติฐานนี้ในการอ่าน file format เอง
 
-ตอนเปิด environment LMDB ตรวจ meta pages แล้วเลือก snapshot ที่ valid และใหม่กว่า การมี meta สองหน้าช่วยให้ commit รุ่นใหม่ไม่ต้อง overwrite meta snapshot เดียวที่ reader/การ recovery ต้องพึ่งอยู่
+ตอนเปิด environment LMDB จะตรวจ meta pages แล้วเลือก snapshot ที่ถูกต้องและใหม่กว่า การมี meta สองหน้าช่วยให้ commit ใหม่ไม่ต้องเขียนทับ meta snapshot เดิมที่ reader หรือกระบวนการกู้คืนยังต้องใช้
 
 ---
 
@@ -101,7 +101,7 @@ Page size ถูกบันทึกใน metadata และมักเท่
 - มี read transactions พร้อมกันได้หลายตัว ภายใต้จำนวน reader slots ที่กำหนด
 - มี active write transaction ได้ครั้งละหนึ่งตัวต่อ environment; writer อื่นรอ writer lock
 - Reader ใช้ snapshot คงที่และไม่ถือ page-level read locks ระหว่าง traversal
-- Writer กับ readers มักเดินพร้อมกันได้ เพราะ writer สร้าง page รุ่นใหม่แทนการแก้ page ที่ reader กำลังอ้าง
+- Writer กับ readers มักทำงานพร้อมกันได้ เพราะ writer สร้าง page รุ่นใหม่แทนการแก้ page ที่ reader กำลังอ้างอิง
 - Cursor และ mapped value มี lifetime ผูกกับ transaction
 - เพื่อความปลอดภัยและ portability อย่าใช้ transaction/cursor ตัวเดียวพร้อมกันจากหลาย threads; write transaction ต้องอยู่กับ thread ที่สร้างมัน
 
@@ -122,7 +122,7 @@ LMDB เก็บ records ตามลำดับ key ใน B+ tree:
 
 ![LMDB copy-on-write commit workflow](/assets/img/DS/LMDB/lmdb-cow-commit.svg)
 
-เมื่อแก้ key หนึ่งตัว writer โดยสรุปจะ:
+เมื่อแก้ key หนึ่งตัว writer จะทำงานตามขั้นตอนหลักดังนี้:
 
 1. ล็อก writer และเริ่มจาก latest committed snapshot
 2. เลือก page IDs ที่ปลอดภัยต่อการ reuse หรือขยาย file หากไม่มีพอ
@@ -149,7 +149,7 @@ LMDB จึงไม่ต้อง append WAL แล้ว replay ตอนเ�
 - เมื่อ Reader A จบ มันเพียงปล่อย reader slot — **reader ไม่ได้เขียน FreeDB เอง**
 - write transaction ถัดไปจึงประเมินว่า page ปลอดภัย แล้วบันทึก/เลือก page IDs ผ่าน FreeDB เพื่อนำกลับมาใช้
 
-ผลคือ readers ไม่ต้อง block writer บน data pages แต่ long-lived reader สามารถทำให้ file โต เพราะ writer ต้องเก็บ page versions เก่าไว้
+ผลคือ readers ไม่ต้องล็อก data pages จน writer ทำงานต่อไม่ได้ แต่ reader ที่เปิดค้างไว้นานอาจทำให้ไฟล์โต เพราะ writer ต้องเก็บ page รุ่นเก่าไว้
 
 ---
 
@@ -162,7 +162,7 @@ FreeDB เป็น logical B+ tree อยู่ใน `data.mdb` เช่น�
 1. COW ทำให้ page รุ่นเก่าหลุดจาก tree ใหม่
 2. Writer เทียบอายุ page กับ oldest active reader
 3. Page ที่ปลอดภัยถูกจัดการผ่าน FreeDB และเลือก reuse ก่อนขยาย high-water mark เมื่อทำได้
-4. ถ้าพื้นที่ reusable ยังใช้ไม่ได้หรือไม่พอ file จะโต
+4. ถ้าพื้นที่ที่จะนำกลับมาใช้ยังไม่พร้อมหรือมีไม่พอ ไฟล์จะโตขึ้น
 5. การลบ records ไม่ทำให้ `data.mdb` หดทันที; พื้นที่กลายเป็น reusable ภายใน file
 
 ดังนั้นคำว่า “ไม่ต้อง compaction” หมายถึง LMDB ไม่ต้องมี background compaction เพื่อให้ read path ทำงาน แต่ถ้าต้องการไฟล์ที่เล็กลง สามารถสร้าง **compact copy** ด้วย:
@@ -173,13 +173,13 @@ mdb_copy -c /path/to/source-env /path/to/compact-copy
 
 `-c` คัดลอกเฉพาะ pages ของ current snapshot และละ pages ที่ free/unused ออก ควรเผื่อ disk สำหรับทั้งต้นฉบับและสำเนา และระวังว่าการ copy ขณะมี writer อาจยืดอายุ snapshot ทำให้ต้นฉบับโตชั่วคราว
 
-สำหรับ backup ให้ใช้ `mdb_copy` หรือ environment-copy API ของ LMDB แทนการคัดลอกไฟล์แบบไม่ประสานขณะที่มี write activity
+สำหรับ backup ให้ใช้ `mdb_copy` หรือ environment-copy API ของ LMDB แทนการคัดลอกไฟล์เองโดยไม่ประสานกับกระบวนการเขียนที่กำลังทำงาน
 
 ---
 
 ## 7. Durability modes: เร็วขึ้นแลกกับอะไร
 
-ไม่มีตัวเลข throughput สากลสำหรับแต่ละ flag เพราะผลต่างขึ้นกับ transaction batching, filesystem, drive cache และ latency ของ sync แต่ guarantee ต่างกันชัดเจน:
+ไม่มีตัวเลข throughput ที่ใช้ได้กับทุกระบบสำหรับแต่ละ flag เพราะผลขึ้นกับ transaction batching, filesystem, drive cache และเวลาที่ใช้ sync แต่แต่ละ flag ให้การรับประกันความทนทานของข้อมูลต่างกัน:
 
 | Mode / flag | พฤติกรรมโดยสรุป | ความเสี่ยงเมื่อเครื่อง/OS ล้ม |
 |---|---|---|
@@ -200,7 +200,7 @@ mdb_copy -c /path/to/source-env /path/to/compact-copy
 
 ## 8. Performance และ Transactions / sec
 
-ตัวเลข throughput เคยถูกเอาออกตอนปรับบทความรอบก่อน เพราะตารางเดิมไม่ได้ระบุ source, hardware, transaction size และ durability mode ทำให้ดูเหมือนเป็นค่าที่ LMDB ทำได้เสมอ รอบนี้นำกลับมาโดยใช้ผลทดสอบที่ตรวจสอบย้อนกลับได้ พร้อมแยก `ops/sec`, `entries/sec` และ `transactions/sec` ให้ชัดเจน
+การอ่านตัวเลข throughput ต้องดูแหล่งที่มา hardware, transaction size และ durability mode ประกอบด้วย ตารางต่อไปนี้ใช้ผลทดสอบที่ตรวจสอบย้อนกลับได้ และแยก `ops/sec`, `entries/sec` กับ `transactions/sec` เพื่อให้เปรียบเทียบได้ถูกหน่วย
 
 ประสิทธิภาพของ storage engine เปลี่ยนมากตาม workload จึงไม่ควรใช้ตัวเลขจากเครื่องอื่นเป็นคำตอบสุดท้าย จุดแข็งเชิงสถาปัตยกรรมของ LMDB คือ read path สั้น, ไม่มี cache copy ชั้นที่สอง, ordered scan และไม่มี background compaction มาแย่ง I/O ส่วนข้อจำกัดหลักคือ writer serialization, COW/page splits, commit sync และ file growth เมื่อ readers ค้าง
 
@@ -222,7 +222,7 @@ mdb_copy -c /path/to/source-env /path/to/compact-copy
 | Batch sequential write | 2,481,390 | —¹ | 677,048 | 109,302 | entries/sec |
 | Batch random write | 294,898 | —¹ | 432,152 | 58,432 | entries/sec |
 
-> ¹ รายงานปี 2012 ไม่ได้ทดสอบ RocksDB จึงไม่ควรนำตัวเลขจาก benchmark คนละปีและคนละ workload มาเสียบในช่องเดียวกัน ตารางถัดไปเป็นการเปรียบเทียบ LMDB กับ RocksDB ที่รันอยู่ใน test เดียวกัน
+> ¹ รายงานปี 2012 ไม่ได้ทดสอบ RocksDB จึงไม่ควรนำตัวเลขจาก benchmark คนละปีและคนละ workload มาใส่ในตารางเดียวกัน ตารางถัดไปเปรียบเทียบ LMDB กับ RocksDB ภายใต้การทดสอบเดียวกัน
 
 ### LMDB vs RocksDB ใน benchmark เดียวกัน (2014)
 
@@ -315,7 +315,7 @@ RocksDB เป็น LSM engine: write โดยทั่วไปเข้า W
 | Multi-process | ออกแบบให้หลาย process เปิด local environment ร่วมกัน | primary open ปกติมี lock; มี read-only/secondary modes เฉพาะ |
 | Feature surface | API เล็กและตรงไปตรงมา | column families, merge operators, filters และ tuning จำนวนมาก |
 
-ไม่มีผู้ชนะสากล: LMDB มักเหมาะเมื่อ read/scan และ simplicity สำคัญ ส่วน RocksDB มักเหมาะเมื่อ write ingestion, feature set และการกระจายงานเบื้องหลังสำคัญ ต้อง benchmark บน workload จริงเสมอ
+ไม่มีฐานข้อมูลใดเหมาะที่สุดกับทุกงาน LMDB มักเหมาะกับงานที่เน้นการอ่าน การ scan และความเรียบง่าย ส่วน RocksDB มักเหมาะกับงานที่ให้ความสำคัญกับการรับข้อมูลเข้า ฟีเจอร์ที่หลากหลาย และการกระจายงานเบื้องหลัง จึงต้อง benchmark บน workload จริงเสมอ
 
 ---
 
@@ -326,14 +326,14 @@ RocksDB เป็น LSM engine: write โดยทั่วไปเข้า W
 - embedded/local key-value store ที่ต้องการ ACID transactions
 - read-heavy หรือ ordered range scans
 - หลาย process ต้องแชร์ฐานข้อมูลบนเครื่องเดียวกัน
-- ต้องการ snapshot reads และ operational surface ที่เล็ก
+- ต้องการ snapshot reads และระบบที่มีส่วนให้ดูแลไม่มาก
 - รับข้อจำกัด one-active-writer ได้
 - ต้องการหลีกเลี่ยง background compaction และ WAL recovery
 
 ### ควรพิจารณาทางเลือกเมื่อ
 
 - ต้องการ write transactions หลายตัวทำงานพร้อมกันจริง ๆ
-- workload มี sustained write rate ที่ writer เดียวรับไม่ไหว
+- workload มีอัตราการเขียนสูงต่อเนื่องจน writer เดียวรับไม่ไหว
 - ต้องการ remote/distributed database, replication หรือ network API ในตัว
 - ต้องการ column families/merge/TTL และ ecosystem ของ LSM engine
 - ไม่สามารถกำหนด map-size headroom หรือเฝ้าระวัง long readers/disk growth ได้
@@ -418,7 +418,7 @@ env.close()
 - กำหนดจำนวน reader slots ใน lock table ไม่ใช่จำนวน keys หรือ requests
 - opener ตัวแรกของ environment เป็นผู้กำหนดขนาด reader table ที่ใช้งานร่วมกัน
 - นับ peak concurrent read transactions จริง รวมทุก threads/processes แล้วเผื่อ margin
-- ตรวจและเก็บ stale slots ด้วย `mdb_reader_check()` หรือเครื่องมือ binding ที่เทียบเท่า
+- ตรวจและคืน reader slots ที่ค้างด้วย `mdb_reader_check()` หรือเครื่องมือของ binding ที่ทำหน้าที่เทียบเท่ากัน
 
 ### `max_dbs`
 
@@ -428,7 +428,7 @@ env.close()
 
 ### Transaction sizing
 
-- batch หลาย writes ใน transaction เดียวช่วย amortize commit/sync cost
+- การรวมหลาย writes ใน transaction เดียวช่วยเฉลี่ยต้นทุน commit/sync ต่อรายการให้ต่ำลง
 - transaction ใหญ่มากใช้ dirty pages และทำให้ writer lock ถูกถือนาน
 - เลือก batch จาก p99 latency, memory, crash-loss boundary และ throughput ที่วัดจริง
 
@@ -465,9 +465,9 @@ mdb_stat -r /path/to/env
 mdb_copy -c /path/to/env /path/to/backup-env
 ```
 
-- ทำ backup restore drill ไม่ใช่แค่ตรวจว่าคำสั่ง copy สำเร็จ
-- หาก file โตผิดปกติ ให้หา long-lived/stale reader ก่อนสรุปว่า leak
-- compact copy เป็น operation แยก ไม่ใช่งาน maintenance ที่ต้องรันตาม schedule เสมอ
+- ทดลองกู้คืนจาก backup ด้วย เพื่อยืนยันว่าสำเนาที่สร้างใช้กู้คืนได้จริง
+- หากไฟล์โตผิดปกติ ให้ตรวจหา reader ที่เปิดค้างนานหรือค้างจาก process ที่จบไปแล้ว ก่อนสรุปว่าเป็น leak
+- compact copy เป็นงานแยกต่างหาก ไม่จำเป็นต้องรันตามตารางบำรุงรักษาเสมอไป
 - อย่าแก้/ตัด `data.mdb` ด้วย filesystem tools เพื่อหวังลดขนาด
 
 ---
@@ -476,10 +476,10 @@ mdb_copy -c /path/to/env /path/to/backup-env
 
 LMDB แจกภายใต้ OpenLDAP Public License 2.8 ซึ่งเป็น permissive license โดยเงื่อนไขหลักในข้อความ license คือ:
 
-- source redistribution ต้องคง copyright notices, เงื่อนไข และ disclaimer
-- binary redistribution ต้องทำซ้ำ notices/เงื่อนไข/disclaimer ใน documentation หรือ materials ที่ให้มาด้วย
-- ต้องแจกสำเนา license แบบ verbatim
-- ห้ามใช้ชื่อผู้เขียนหรือ copyright holders เพื่อ endorse/promote derived products โดยไม่มี written permission
+- การแจกจ่าย source code ต่อ ต้องคงข้อความลิขสิทธิ์ เงื่อนไข และข้อความปฏิเสธความรับผิดไว้
+- การแจกจ่าย binary ต่อ ต้องแนบข้อความลิขสิทธิ์ เงื่อนไข และข้อความปฏิเสธความรับผิดไว้ในเอกสารหรือสื่อที่มาพร้อมกัน
+- ต้องแนบสำเนา license โดยคงข้อความเดิมทุกคำ
+- ห้ามใช้ชื่อผู้เขียนหรือผู้ถือลิขสิทธิ์เพื่อรับรองหรือโฆษณาผลิตภัณฑ์ที่พัฒนาต่อยอด โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อักษร
 
 โดยทั่วไป license นี้รองรับ commercial และ closed-source redistribution เมื่อปฏิบัติตามเงื่อนไขข้างต้น แต่ข้อความนี้เป็นสรุปทางเทคนิค **ไม่ใช่คำแนะนำทางกฎหมาย** ควรให้ทีมกฎหมายตรวจ license text ฉบับจริงสำหรับการแจกจ่ายผลิตภัณฑ์
 
@@ -493,7 +493,7 @@ LMDB แจกภายใต้ OpenLDAP Public License 2.8 ซึ่งเป�
 - mapped pointers/buffers มี transaction lifetime
 - map size และ disk free space เป็นคนละ limit และต้อง monitor ทั้งคู่
 - unsafe sync flags เปลี่ยน durability guarantee
-- `MDB_WRITEMAP` เพิ่ม blast radius ของ memory corruption
+- `MDB_WRITEMAP` ทำให้ memory corruption ส่งผลเสียหายได้กว้างขึ้น
 - อย่าใช้บน network filesystem โดยสมมติว่า mmap/locking เหมือน local disk
 - อย่าสมมติว่า file copy portable ข้ามทุก architecture, endianness, page-size และ build option; ตรวจ compatibility ก่อน และใช้ logical export/import เมื่อ environment ไม่ compatible
 

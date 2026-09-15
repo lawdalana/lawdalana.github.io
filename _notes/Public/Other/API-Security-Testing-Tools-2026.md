@@ -2,16 +2,17 @@
 title: "API Security Testing Tools Guide 2026"
 notetype: feed
 date: 2026-05-30
-last_modified: 2026-05-30
+last_modified: 2026-09-16
 tags: [security, api, owasp, testing, devsecops, pentesting, tools]
 status: published
 ---
 
 ## ทำไม API Security ถึงสำคัญ
 
-API คือ attack surface หลักของแอปสมัยใหม่ — OWASP API Top 10 ระบุช่องโหว่ที่โดน exploit มากที่สุด ตั้งแต่ Broken Authentication ไปจนถึง SSRF
+API เป็นช่องทางสำคัญที่ผู้โจมตีใช้เข้าถึงแอปสมัยใหม่ OWASP API Top 10 รวบรวมความเสี่ยงด้านความปลอดภัยของ API ตั้งแต่ Broken Authentication ไปจนถึง SSRF
 
-ปัญหาคือ general-purpose DAST tools มักพลาดช่องโหว่เฉพาะ API เพราะ:
+เครื่องมือ DAST ที่ออกแบบมาสำหรับเว็บทั่วไปอาจตรวจช่องโหว่เฉพาะของ API ได้ไม่ครบ เนื่องจาก API มีลักษณะต่างจากเว็บทั่วไป เช่น:
+
 - API ใช้ JSON ไม่ใช่ HTML
 - Auth ใช้ JWT/OAuth ไม่ใช่ cookies
 - Attack surface อยู่ที่ endpoint schemas ไม่ใช่ crawlable links
@@ -44,7 +45,7 @@ API คือ attack surface หลักของแอปสมัยใหม
 | **CI/CD** | ✅ Docker + GitHub Actions |
 | **ราคา** | ฟรี (Apache 2.0) |
 
-DAST tool ฟรีที่ใช้กันที่สุดในโลก — import OpenAPI/Swagger spec แล้ว scan ทุก endpoint อัตโนมัติ
+เครื่องมือ DAST ฟรีที่ใช้กันอย่างแพร่หลาย สามารถนำเข้า OpenAPI/Swagger spec เพื่อสแกน endpoint ที่ระบุไว้โดยอัตโนมัติ
 
 ```yaml
 # GitHub Actions
@@ -66,7 +67,7 @@ DAST tool ฟรีที่ใช้กันที่สุดในโลก 
 | **Templates** | 12,000+ |
 | **ราคา** | ฟรี (MIT) |
 
-Template granularity สูง — รันเฉพาะ check ที่ต้องการ ครอบคลุม JWT confusion, BOLA/IDOR, GraphQL introspection, SSRF, API key exposure
+เลือก template เพื่อตรวจเฉพาะประเด็นที่ต้องการได้ เช่น JWT confusion, BOLA/IDOR, GraphQL introspection, SSRF และ API key exposure
 
 ```bash
 nuclei -l api-endpoints.txt -t nuclei-templates/exposures/apis/ -severity high,critical
@@ -81,7 +82,7 @@ nuclei -l api-endpoints.txt -t nuclei-templates/exposures/apis/ -severity high,c
 | **ประเภท** | Interactive HTTPS Proxy |
 | **ราคา** | ฟรี (MIT) |
 
-Intercept ทุก API request/response แบบ real-time — แก้ user ID, เปลี่ยน JWT claims, ลบ auth headers, replay request
+ดักดู request/response ของ API ที่ส่งผ่าน proxy แบบ real-time เพื่อทดสอบการแก้ user ID, เปลี่ยน JWT claims, ลบ auth headers หรือส่ง request ซ้ำ
 
 ```bash
 mitmproxy --mode regular --listen-port 8080
@@ -97,7 +98,7 @@ mitmproxy --mode regular --listen-port 8080
 | **ประเภท** | Static (Spec Analysis) |
 | **ราคา** | Free tier / Commercial |
 
-วิเคราะห์ OpenAPI spec ก่อนเขียนโค้ด — จับ missing auth, permissive schemas, input validation gaps
+วิเคราะห์ OpenAPI spec ก่อนเขียนโค้ด เพื่อหาจุดที่ไม่ได้กำหนดการยืนยันตัวตน schema ที่เปิดกว้างเกินไป และการตรวจสอบ input ที่ยังไม่ครบ
 
 ---
 
@@ -109,7 +110,7 @@ mitmproxy --mode regular --listen-port 8080
 | **GraphQL** | ✅ (ดีสุด) |
 | **ราคา** | Free tier / Commercial |
 
-AI-assisted fuzzing สร้าง test cases อัตโนมัติ — GraphQL support ดีที่สุดในบรรดา free tools
+ใช้ AI ช่วยทำ fuzzing และสร้าง test cases อัตโนมัติ โดยมีการรองรับ GraphQL เป็นจุดเด่น
 
 ---
 
@@ -137,7 +138,7 @@ bearer scan ./src --severity=high --exit-code=1
 | **ราคา** | Open Source |
 
 - **Schemathesis**: property-based testing จาก OpenAPI spec → หา edge cases
-- **RESTler** (Microsoft Research): stateful REST API fuzzer → chain API calls ตามลำดับ
+- **RESTler** (Microsoft Research): ทดสอบ REST API แบบคำนึงถึงสถานะ โดยเรียก API ต่อเนื่องตามลำดับที่สัมพันธ์กัน
 
 ---
 
@@ -239,13 +240,14 @@ jobs:
 
 ## สรุป
 
-Combination ที่ดีที่สุด:
+ตัวอย่างการใช้เครื่องมือร่วมกันในแต่ละช่วง:
+
 1. **Design phase** → 42Crunch audit spec
 2. **Development** → Bearer + Semgrep ใน CI
 3. **Testing** → ZAP + Nuclei ใน staging
 4. **Production** → mitmproxy manual test + monitoring
 
-> Static analysis จับ design flaws, Dynamic testing จับ runtime bugs — ต้องใช้คู่กัน
+> Static analysis ช่วยหาปัญหาจากโค้ดและการออกแบบ ส่วน dynamic testing ตรวจพฤติกรรมขณะระบบทำงาน การใช้ร่วมกันจึงช่วยให้ตรวจสอบได้ครอบคลุมขึ้น
 
 ---
 
