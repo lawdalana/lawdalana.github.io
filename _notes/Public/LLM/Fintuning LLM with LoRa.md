@@ -1,14 +1,19 @@
 ---
-title : Fintuning LLM with LoRa
+title : Fine-Tuning LLMs with LoRA
 notetype : feed
 date : 19-10-2024
+last_modified: 2026-09-16
 ---
 
-## *[Fine-Tuning Large Language Models with LORA Slide](https://docs.google.com/presentation/d/1yVhLz403YsCUI3C3mg59-a5OyT2z6hBqP5KcY7z1mJE/edit#slide=id.p)*
+<a id="fine-tuning-large-language-models-with-lora-slide"></a>
 
-## Comparision table Lora & QLora
+## *[Fine-Tuning Large Language Models with LoRA — Slides](https://docs.google.com/presentation/d/1yVhLz403YsCUI3C3mg59-a5OyT2z6hBqP5KcY7z1mJE/edit#slide=id.p)*
 
-![LLM recommendation from google](/assets/img/Other/image.avif)
+<a id="comparision-table-lora--qlora"></a>
+
+## LoRA and QLoRA Comparison
+
+![LLM recommendations from Google](/assets/img/Other/image.avif)
 
 ## Resource
 - https://www.mercity.ai/blog-post/guide-to-fine-tuning-llms-with-lora-and-qlora
@@ -30,5 +35,4 @@ date : 19-10-2024
 - https://www.superannotate.com/blog/rlhf-for-llm
 - https://medium.com/@madalina.lupu.d/align-llms-with-reinforcement-learning-from-human-feedback-595d61f160d5
 - https://huggingface.co/docs/trl/main/en/lora_tuning_peft
-
 

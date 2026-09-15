@@ -2,16 +2,16 @@
 title: Bloom Filter
 notetype: feed
 date: 2026-05-05
-last_modified: 2026-05-05
+last_modified: 2026-09-16
 tags: [data-structures, bloom-filter, probabilistic, membership, hash, AMQ, streaming]
 status: published
 ---
 
 # Bloom Filter: กระเป๋าเล็กๆ ที่จำว่าอะไรเคยผ่านมา
 
-> **"ใช้ memory แค่ 9.6 bits ต่อ item ในการบอกว่า 'เคยเห็นของชิ้นนี้ไหม?' — ตอบ 'ไม่เคย' ได้ถูก 100% แต่ตอบ 'เคย' อาจผิด 1%"**
+> **"ใช้หน่วยความจำเพียง 9.6 bits ต่อ item เพื่อตรวจว่า 'เคยเพิ่ม item นี้ไว้หรือไม่?' ถ้าตอบว่า 'ไม่มี' จะถูกต้อง 100% แต่ถ้าตอบว่า 'อาจมี' ก็ยังมีโอกาสเป็น false positive ราว 1%"**
 
-Bloom Filter เป็น **Approximate Membership Query (AMQ)** structure ที่เก่าแก่และใช้กันแพร่หลายที่สุด — ตีพิมพ์ปี 1970 โดย Burton Howard Bloom แต่ยังเป็น default ใน RocksDB, Cassandra, Chrome จนถึงทุกวันนี้
+Bloom Filter เป็นโครงสร้างข้อมูลสำหรับตรวจสอบความเป็นสมาชิกแบบประมาณค่า หรือ **Approximate Membership Query (AMQ)** ที่มีมานานและใช้กันอย่างแพร่หลาย Burton Howard Bloom เผยแพร่แนวคิดนี้ในปี 1970 และยังเป็นตัวเลือกเริ่มต้นใน RocksDB, Cassandra และ Chrome จนถึงปัจจุบัน
 
 ---
 
@@ -111,19 +111,19 @@ $$m = -\frac{n \ln(p)}{(\ln 2)^2}$$
 
 $$m = -\frac{10{,}000{,}000 \times \ln(0.01)}{(0.693)^2} = \frac{10{,}000{,}000 \times 4.605}{0.480} \approx 95{,}940{,}000 \text{ bits}$$
 
-$$\approx 11.4 \text{ MB}$$
+$$\approx 11.4 \text{ MiB} \approx 12.0 \text{ MB}$$
 
 **Step 2: หา k ที่เหมาะสม**
 
-$$k = \frac{m}{n} \ln 2 = \frac{95{,}940{,}000}{10{,}000{,}000} \times 0.693 \approx 6.64 \approx 7 \text{ hash functions}$$
+$$k = \frac{m}{n} \ln 2 = \frac{95{,}940{,}000}{10{,}000{,}000} \times 0.693 \approx 6.65 \approx 7 \text{ hash functions}$$
 
 **Step 3: Verify FPR**
 
-$$FPR = \left(1 - e^{-7 \times 10{,}000{,}000 / 95{,}940{,}000}\right)^7 = (1 - e^{-0.729})^7$$
+$$FPR \approx \left(1 - e^{-7 \times 10{,}000{,}000 / 95{,}940{,}000}\right)^7 \approx (1 - e^{-0.729623})^7$$
 
-$$= (1 - 0.482)^7 = (0.518)^7 \approx 0.0083 = 0.83\%$$
+$$\approx (1 - 0.482091)^7 = (0.517909)^7 \approx 0.0099948 = 0.99948\%$$
 
-**สรุป:** 10M items, 1% FPR → **11.4 MB, 7 hash functions** ✅
+**สรุป:** 10M items, FPR ประมาณ 1% → **11.4 MiB หรือประมาณ 12.0 MB, 7 hash functions** ✅
 
 ---
 
@@ -139,7 +139,7 @@ $$= (1 - 0.482)^7 = (0.518)^7 \approx 0.0083 = 0.83\%$$
 | 100M | 1% | 9.6 | 120 MB | 7 |
 | 1B | 1% | 9.6 | 1.2 GB | 7 |
 
-> **Key insight:** bits/item ขึ้นอยู่กับ FPR ที่ต้องการ ไม่ขึ้นกับจำนวน items — 1M items ใช้ 9.6 bits/item เท่ากับ 1B items
+> **ประเด็นสำคัญ:** จำนวน bits/item ขึ้นอยู่กับ FPR ที่ต้องการ ไม่ได้ขึ้นกับจำนวน items ดังนั้น 1M items จึงใช้ 9.6 bits/item เท่ากับ 1B items
 
 ---
 
@@ -160,11 +160,11 @@ Insert: "banana" → set bits {3, 7, 11}  (overlap!)
 
 ### ❌ นับไม่ได้
 
-Bloom Filter บอกแค่ "มี/ไม่มี" — ไม่รู้ว่ามากี่ครั้ง ถ้าต้องนับ → ใช้ [[Count-Min Sketch]]
+Bloom Filter บอกได้เพียงว่า "อาจมี" หรือ "ไม่มีแน่นอน" แต่บอกไม่ได้ว่าเพิ่ม item นั้นมากี่ครั้ง หากต้องการนับความถี่ให้ใช้ [[Count-Min Sketch]]
 
 ### ❌ ดึงข้อมูลกลับไม่ได้
 
-ไม่สามารถ list ทุก item ที่ insert แล้วได้ — รู้แค่ query ทีละตัว
+ไม่สามารถเรียกดูรายการ items ทั้งหมดที่เพิ่มไว้ได้ ทำได้เพียงตรวจสอบ item ทีละตัว
 
 ---
 
@@ -324,7 +324,7 @@ Result: ลด disk I/O 90%+ ใน read-heavy workloads
 | Binary Fuse | 7.5 bits/elem | ❌ | O(n) | O(1) | ✅ |
 | Ribbon Filter | 7.0 bits/elem | ❌ | O(n) | O(1) | ✅ |
 
-> Bloom Filter = ง่ายที่สุด, เข้าใจง่ายที่สุด, debug ง่ายที่สุด — แต่ไม่ใช่เลือดเย็น/เร็วที่สุด
+> Bloom Filter มีโครงสร้างเรียบง่าย เข้าใจและ debug ได้ง่าย แต่ไม่ได้ใช้พื้นที่น้อยที่สุดหรือค้นหาได้เร็วที่สุด
 
 ---
 
@@ -332,7 +332,7 @@ Result: ลด disk I/O 90%+ ใน read-heavy workloads
 
 | Aspect | Detail |
 |--------|--------|
-| **What** | ทดสอบว่า "item เคยเห็นมาก่อนไหม?" |
+| **What** | ตรวจสอบว่าเคยเพิ่ม item นี้ไว้หรือไม่ |
 | **Space** | ~9.6 bits/item (FPR 1%) |
 | **Speed** | O(k) insert + query |
 | **False Negative** | ❌ ไม่มี (100% recall) |

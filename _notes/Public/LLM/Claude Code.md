@@ -2,13 +2,14 @@
 title : Claude Code
 notetype : feed
 date : 19-07-2025
+last_modified: 2026-09-16
 ---
 
 # [Claude Code](https://www.anthropic.com/claude-code)
 
 - [Claude Code](#claude-code)
   - [❔คืออะไร (What is it)](#คืออะไร-what-is-it)
-  - [UseCase ไหนบ้างที่ Claude code สามารถทำงานได้ดี](#usecase-ไหนบ้างที่-claude-code-สามารถทำงานได้ดี)
+  - [งานที่ Claude Code ช่วยได้ดี](#usecase-ไหนบ้างที่-claude-code-สามารถทำงานได้ดี)
     - [🟡 Data Infrastructure](#-data-infrastructure)
     - [🟢 Claude Code (Product Dev)](#-claude-code-product-dev)
     - [🔵 Security Engineering](#-security-engineering)
@@ -24,27 +25,29 @@ date : 19-07-2025
 
 
 ## ❔คืออะไร (What is it)
-Claude Code คือ “agentic coding tool” (เครื่องมือช่วยเขียนโค้ดเชิงตัวแทน) แบบบรรทัดคำสั่ง (CLI) ที่ฝังโมเดล Claude (เช่น Opus / รุ่น Sonnet ล่าสุด) ลงในเทอร์มินัล ให้มัน เข้าใจโค้ดเบสทั้งโปรเจ็กต์, เลือกไฟล์ที่เกี่ยวข้องเอง, แก้ / สร้าง / refactor โค้ด, รันคำสั่ง shell และจัดการเวิร์กโฟลว์ Git ผ่านภาษามนุษย์ เพื่อเร่งความเร็วการพัฒนาแบบ end-to-end.
+Claude Code เป็นเครื่องมือเขียนโค้ดที่ทำงานเป็น agent ผ่านบรรทัดคำสั่ง (CLI) โดยใช้โมเดล Claude เช่น Opus หรือ Sonnet ช่วยอ่านโค้ดในโปรเจกต์ เลือกไฟล์ที่เกี่ยวข้อง สร้าง แก้ไข หรือ refactor โค้ด รันคำสั่ง shell และจัดการงาน Git ตามคำสั่งภาษาปกติ
 
 ---
-## [UseCase ไหนบ้างที่ Claude code สามารถทำงานได้ดี](https://www.facebook.com/share/p/16qvfvKsVW/)
+<a id="usecase-ไหนบ้างที่-claude-code-สามารถทำงานได้ดี"></a>
+
+## [งานที่ Claude Code ช่วยได้ดี](https://www.facebook.com/share/p/16qvfvKsVW/)
 
 ### 🟡 Data Infrastructure
 ```
 ใช้ทำ: อัปเดตเอกสาร, วิเคราะห์โค้ด, ทำให้ทีมอื่นเข้าใจโค้ดง่ายขึ้น
 เทคนิคเด่น:
- • เขียน Claude.md แบบละเอียด จะช่วยให้ Claude ทำงานได้ดีขึ้น
+ • เขียน CLAUDE.md ให้มีบริบทและข้อกำหนดที่ชัดเจน เพื่อช่วยให้ Claude ทำงานได้ตรงโจทย์
  • แชร์ session การใช้งาน Claude ภายในทีม เพื่อสร้างแนวปฏิบัติร่วม
- • ใช้ Claude ช่วยจัดการสิทธิ์ผ่าน MCP servers ที่ปลอดภัยกว่า CLI เดิม
+ • ใช้ MCP servers เชื่อมต่อเครื่องมือที่ Claude ต้องใช้ พร้อมกำหนดสิทธิ์ให้เหมาะสม
 ```
 
 ### 🟢 Claude Code (Product Dev)
 ```
-ใช้ทำ: Prototype, สร้างฟีเจอร์ใหม่, สร้าง unit test
+ใช้ทำ: สร้าง prototype ฟีเจอร์ใหม่ และ unit tests
 เทคนิคเด่น:
  • สร้าง loop อัตโนมัติให้ Claude ตรวจผลและทำซ้ำ
- • เขียน prompt แบบละเอียด เพื่อให้ Claude ทำงาน autonomously ได้
- • แยกการตั้งชื่อ task classification และระบบ supervision ออกให้ชัด
+ • เขียน prompt ให้ละเอียด เพื่อให้ Claude ทำงานต่อได้ด้วยตัวเอง
+ • แบ่งประเภทงานและกำหนดวิธีติดตามการทำงานให้ชัดเจน
 ```
 
 ### 🔵 Security Engineering
@@ -58,11 +61,11 @@ Claude Code คือ “agentic coding tool” (เครื่องมือ�
 
 ### 🟣 Inference
 ```
-ใช้ทำ: อธิบายโค้ด, เตรียม onboarding, แปลคำสั่งหลายภาษา
+ใช้ทำ: อธิบายโค้ด เตรียมเอกสารให้ผู้เริ่มใช้งาน และแปลคำสั่งหลายภาษา
 เทคนิคเด่น:
  • ใช้ Claude ตรวจว่า “รู้อะไรมากกว่า Google” ก่อนเริ่ม
- • เริ่มจากให้ Claude generate โค้ด → แล้วค่อย review
- • ใช้ Claude ทำ first draft ช่วยลดแรงกดดันจาก deadline
+ • ให้ Claude สร้างโค้ดร่าง แล้วตรวจทานก่อนนำไปใช้
+ • ใช้ Claude ช่วยทำฉบับร่าง เพื่อให้มีเวลาตรวจและแก้ไขก่อนกำหนดส่ง
 ```
 
 ### 🟠 Data Science & ML Engineering
@@ -71,32 +74,32 @@ Claude Code คือ “agentic coding tool” (เครื่องมือ�
 เทคนิคเด่น:
  • ให้ Claude ช่วยจัดลำดับความสำคัญ → ลองถาม “ทำไมทำสิ่งนี้?”
  • ให้ Claude จดบันทึกแทนใน Notebooks
- • delegate task โดยไม่ต้องผ่านโค้ดหนัก
+ • มอบหมายงานให้ Claude ช่วย โดยลดส่วนที่ต้องเขียนโค้ดเอง
 ```
 
 ### 🔴 API Knowledge
 ```
-ใช้ทำ: วางแผน API, ลดการ switch context
+ใช้ทำ: วางแผน API และลดการสลับไปมาระหว่างเครื่องมือหรือเอกสาร
 เทคนิคเด่น:
- • ใช้ Claude เป็น partner ในการ iterate prompt
+ • ใช้ Claude ช่วยปรับ prompt เป็นรอบ ๆ
  • ให้ Claude เริ่มจากข้อมูลให้น้อยที่สุดก่อน แล้วค่อยเติม
- • ใช้ Claude ช่วย build มั่นใจแม้ในโค้ดที่ไม่ถนัด
+ • ใช้ Claude ช่วยทำความเข้าใจและพัฒนาโค้ดในส่วนที่ยังไม่คุ้นเคย
 ```
 
 ### 🟤 Growth Marketing
 ```
 ใช้ทำ: สร้างโฆษณาอัตโนมัติ, วิเคราะห์ Meta Ads, เขียนคอนเทนต์
 เทคนิคเด่น:
- • คัด task ซ้ำ → ให้ Claude ทำอัตโนมัติ
+ • เลือกงานที่ต้องทำซ้ำ แล้วให้ Claude ช่วยทำโดยอัตโนมัติ
  • แยก workflow เป็น sub-agent แต่ละงาน เพื่อปรับแต่ง
- • brainstorm กับ Claude ก่อนเริ่มงานจริง ช่วยจัดลำดับความคิด
+ • ระดมความคิดกับ Claude ก่อนเริ่มงาน เพื่อช่วยจัดลำดับสิ่งที่ต้องทำ
 ```
 
 ### 🟡 Product Design
 ```
 ใช้ทำ: Rapid prototyping, แก้ไข state management
 เทคนิคเด่น:
- • เตรียมไฟล์ memory สำหรับ Claude ใช้แทนดีไซน์
+ • เตรียมไฟล์ memory ที่บันทึกบริบทและข้อกำหนดของงานออกแบบให้ Claude
  • ใช้ Claude อ่านและสรุประบบ backend
  • วางภาพ UI ลงไป → Claude สร้าง prototype จากภาพได้เลย
 ```
@@ -107,7 +110,7 @@ Claude Code คือ “agentic coding tool” (เครื่องมือ�
 เทคนิคเด่น:
  • ปรับ prompt เพื่อหลีกเลี่ยงการเรียกเครื่องมือซ้ำ
  • สร้าง workflow ที่ rollback ได้
- • ให้ Claude ทำ first try ก่อน แล้วค่อย review เป็นรอบ ๆ
+ • ให้ Claude ลองทำรอบแรก แล้วค่อยตรวจทานและปรับแก้เป็นรอบ ๆ
 ```
 
 ### 🔵 Legal
@@ -115,13 +118,13 @@ Claude Code คือ “agentic coding tool” (เครื่องมือ�
 ใช้ทำ: เขียนสัญญา, วิเคราะห์ความเสี่ยง, สื่อสารกับครอบครัวผู้ใช้
 เทคนิคเด่น:
  • วางแผนเอกสารใน Claude ก่อน แล้วค่อยจัดทำจริง
- • แสดงผลลัพธ์แบบ visual ให้เข้าใจง่าย
- • แชร์ prototype แม้เป็นไอเดียใหม่ (Claude รับมือได้)
+ • ใช้ภาพหรือแผนภาพช่วยอธิบายผลลัพธ์
+ • ใช้ prototype ช่วยสื่อสารแนวคิดใหม่
 ```
 
 ### 📌 ข้อคิดจากทีม Anthropic
 ```
- • Claude ทำงานได้ดีมากเมื่อมีเอกสาร Claude.md ที่ละเอียด
+ • เอกสาร CLAUDE.md ที่ละเอียดช่วยให้ Claude มีบริบทในการทำงาน
  • ให้ Claude “ทำเองก่อน” แล้วเราค่อย review เป็นรอบ
  • เขียน prompt แบบแยกปัญหาใหญ่เป็นส่วนย่อย ทำให้ Claude ตอบแม่นขึ้น
  • ใช้ภาพ, code block และ memory file เพื่อช่วยให้ Claude เข้าใจ context ได้เร็ว
@@ -135,7 +138,7 @@ use Claude Code](https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad88
 
 > ⚠️ **Warning**
 >  
-> Be careful when using **Claude Code**: data is retained for **2 years** by default, and can be stored for up to **7 years** if the appropriate flag is set.
+> ระยะเวลาที่ **Claude Code** เก็บข้อมูลขึ้นอยู่กับประเภทบัญชีและการตั้งค่าความเป็นส่วนตัว ส่วนข้อมูลที่ส่งเป็น feedback อาจมีเงื่อนไขต่างจากบทสนทนาทั่วไป ดูรายละเอียดใน [นโยบายการใช้และเก็บข้อมูลของ Claude Code](https://code.claude.com/docs/en/data-usage)
 
 
 ---
@@ -150,7 +153,7 @@ use Claude Code](https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad88
 | `/compact`            | Clear conversation history but keep a summary in context. Optional: `/compact [instructions for summarization]` |
 | `/config`             | Open config panel                                                                                               |
 | `/cost`               | Show the total cost and duration of the current session                                                         |
-| `/doctor`             | Checks the health of your Claude Code installation                                                              |
+| `/doctor`             | Check the health of your Claude Code installation                                                               |
 | `/exit`               | Exit the REPL                                                                                                   |
 | `/help`               | Show help and available commands                                                                                |
 | `/ide`                | Manage IDE integrations and show status                                                                         |
@@ -168,7 +171,7 @@ use Claude Code](https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad88
 | `/resume`             | Resume a conversation                                                                                           |
 | `/review`             | Review a pull request                                                                                           |
 | `/status`             | Show Claude Code status including version, model, account, API connectivity, and tool statuses                  |
-| `/upgrade`            | Upgrade to Max for higher rate limits and more Opus                                                             |
+| `/upgrade`            | Upgrade to Max for higher rate limits and more access to Opus                                                   |
 | `/vim`                | Toggle between Vim and Normal editing modes                                                                     |
 
 ---

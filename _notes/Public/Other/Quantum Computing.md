@@ -2,7 +2,7 @@
 title: "Quantum Computing: ภาพรวม ความก้าวหน้า และอนาคต (2026)"
 notetype: feed
 date: 2026-04-05
-last_modified: 2026-04-05
+last_modified: 2026-09-16
 tags: [quantum-computing, technology, research, quantum-mechanics, cryptography, AI]
 status: published
 ---
@@ -15,34 +15,38 @@ status: published
 
 ## 1. Quantum Computing คืออะไร?
 
-**Quantum Computing** คือระบบคอมพิวเตอร์ที่ใช้หลักการ **Quantum Mechanics** (กลศาสตร์ควอนตัม) ในการประมวลผลข้อมูล แทนที่จะใช้ bit แบบดั้งเดิม (0 หรือ 1) จะใช้ **qubit** (คิวบิต) ซึ่งสามารถเป็น 0, 1 หรือ **ทั้งสองสถานะพร้อมกัน** ได้
+**Quantum Computing** คือการประมวลผลข้อมูลโดยใช้หลักการ **Quantum Mechanics** (กลศาสตร์ควอนตัม) คอมพิวเตอร์ทั่วไปใช้ bit ที่มีค่า 0 หรือ 1 ส่วนคอมพิวเตอร์ควอนตัมใช้ **qubit** (คิวบิต) ซึ่งอยู่ในสถานะ 0, 1 หรือ **สถานะซ้อนทับของทั้งสองค่า (superposition)** ได้
 
-กล่าวง่ายๆ: ถ้า Classical Computer เปรียบเหมือนการอ่านหนังสือทีละหน้า Quantum Computer ก็เหมือนอ่านทุกหน้าพร้อมกัน
+คอมพิวเตอร์ควอนตัมจัดการสถานะซ้อนทับและใช้การแทรกสอดเพื่อเพิ่มโอกาสได้คำตอบที่ต้องการ การวัดยังให้ผลลัพธ์เพียงค่าหนึ่ง จึงไม่เท่ากับอ่านคำตอบทุกทางเลือกออกมาได้พร้อมกัน ดู [คำอธิบายหลักการจาก IBM](https://www.ibm.com/think/topics/quantum-computing)
 
 ---
 
 ## 2. หลักการพื้นฐาน 4 ประการ
 
 ### 🔵 Qubit (คิวบิต)
+
 - หน่วยข้อมูลพื้นฐานของ Quantum Computer
-- Classical bit = 0 **หรือ** 1 | Qubit = 0 **และ** 1 พร้อมกัน (superposition)
+- Classical bit มีค่า 0 **หรือ** 1 ส่วน qubit อยู่ใน **สถานะซ้อนทับของ 0 และ 1** ได้
 - n qubits → แทน $2^n$ สถานะพร้อมกัน
 - เมื่อ "วัด" (measure) qubit → collapse เหลือ 0 หรือ 1
 
 ### 🌀 Superposition (ซูเปอร์พอซิชัน)
-- Qubit อยู่ในสถานะผสม $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ ได้
+
+- Qubit อยู่ในสถานะซ้อนทับ $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ ได้
 - $|\alpha|^2$ = ความน่าจะเป็นที่จะได้ 0 เมื่อวัด
 - $|\beta|^2$ = ความน่าจะเป็นที่จะได้ 1 เมื่อวัด
 - ทำให้ quantum computer สำรวจทางเลือกหลายทางพร้อมกัน
 
 ### 🔗 Entanglement (เอนแทงเกิลเมนต์)
-- Qubit สองอันสามารถ "พันธะ" กัน → เปลี่ยนอันหนึ่ง อีกอันเปลี่ยนทันที
-- ไม่ว่าจะอยู่ห่างกันแค่ไหน (Einstein เรียกว่า *"spooky action at a distance"*)
+
+- Qubit สองตัวอาจมีสถานะพัวพันกัน ทำให้ผลการวัดของทั้งคู่มีความสัมพันธ์กัน
+- ความสัมพันธ์นี้ยังเกิดขึ้นได้แม้ qubits อยู่ห่างกัน (Einstein เรียกว่า *"spooky action at a distance"*)
 - เป็นกุญแจสำคัญของ quantum speedup
 
 ### 🌊 Quantum Interference
-- ใช้การแทรกสองของความน่าจะเป็น
-- เสริม (constructive) คำตอบที่ถูกต้อง + ยกเลิก (destructive) คำตอบที่ผิด
+
+- ใช้การแทรกสอดของแอมพลิจูดความน่าจะเป็น
+- ออกแบบให้แทรกสอดแบบเสริมกัน (constructive) เพื่อเพิ่มโอกาสได้คำตอบที่ต้องการ และแบบหักล้างกัน (destructive) เพื่อลดโอกาสได้คำตอบอื่น
 - เป็นพื้นฐานของ quantum algorithm เช่น Grover's
 
 ---
@@ -58,7 +62,7 @@ status: published
 | **Neutral Atom** | อะตอมใน optical tweezers | Scale ดี, coherence ยาว | Gate ช้า | QuEra, Pasqal |
 | **Quantum Dot** | Electron spin ใน semiconductor | เข้ากับ CMOS | Noise สูง | Intel |
 
-> 💡 **ปี 2025**: Trapped ion และ photonics ได้รับ investment เพิ่มขึ้นมากที่สุด (McKinsey)
+> 💡 **ปี 2025**: การลงทุนใน Trapped ion และ photonics เพิ่มขึ้นมากที่สุด (McKinsey)
 
 ---
 
@@ -78,37 +82,43 @@ status: published
 ## 5. ความก้าวหน้าล่าสุด 2025-2026
 
 ### 🏆 Google Willow — 13,000× Speedup
+
 - ปี 2025: Google Willow processor (65 qubits) รัน simulation เร็วกว่า supercomputer Frontier **13,000 เท่า**
 - เป็นการพิสูจน์ **quantum advantage** ในงานจริง ไม่ใช่แค่ benchmark
 - Google ประกาศ post-quantum encryption timeline เร่งเป็นปี **2029** (จากเดิม 2035)
 
 ### 🔵 IBM Nighthawk & Roadmap
+
 - **Nighthawk processor**: คาด 7,500 gates ปลาย 2026, 10,000 gates ใน 2027
 - Multi-chip scaling ถึง 3 chips (360 qubits) ในปี 2026
 - **Kookaburra** (2026): Logical qubits + quantum memory
 - **Starling** (2028): เป้า 200+ logical qubits
-- ปล่อย blueprint สำหรับ **Quantum-Centric Supercomputing** (มี.ค. 2026)
+- เผยแพร่แนวทางออกแบบ **Quantum-Centric Supercomputing** (มี.ค. 2026)
 
 ### 🟢 Microsoft Majorana 1
+
 - กุมภาพันธ์ 2025: เปิดตัว **Majorana 1** — quantum chip ตัวแรกที่ใช้ **Topological Core** architecture
 - สร้าง topological superconductivity ได้สำเร็จ
 - ร่วมกับ Atom Computing: สร้าง 24 logical qubits
 - เปิด **Quantum Pioneers Program** (ม.ค. 2026) สำหรับ measurement-based quantum computing
 
 ### 🟡 IonQ — 99.99% Gate Fidelity
+
 - ตุลาคม 2025: IonQ ทำสถิติโลก — **two-qubit gate fidelity > 99.99%** ด้วย Electronic Qubit Control (EQC)
-- Revenue เติบโต **202%** ในปี 2025 เทียบปีก่อน
-- คาด revenue $225-245M ในปี 2026
+- รายได้เติบโต **202%** ในปี 2025 เมื่อเทียบกับปีก่อน
+- คาดว่ารายได้จะอยู่ที่ $225-245M ในปี 2026
 - ขายระบบ 100-qubit ให้เกาหลีใต้, เปิดเครือข่ายในยุโรป
 
 ### 🔴 Error Correction — จุดเปลี่ยนสำคัญ
+
 - **120+ peer-reviewed papers** เกี่ยวกับ QEC codes ใน 10 เดือนแรกของ 2025 (เพิ่มจาก 36 เมื่อปี 2024)
-- บริษัทที่ประกาศ QEC progress: QuEra ("magic states"), Alice & Bob, Microsoft, Google, IBM, Quantinuum, IonQ, Nord Quantique, Infleqtion, Rigetti
-- **Stanford breakthrough** (ธ.ค. 2025): อุปกรณ์เล็กๆ ที่ entangle แสงกับอิเล็กตรอนได้โดย **ไม่ต้อง super-cooling** → อาจเปลี่ยน quantum communication
+- บริษัทที่รายงานความก้าวหน้าด้าน QEC ได้แก่ QuEra ("magic states"), Alice & Bob, Microsoft, Google, IBM, Quantinuum, IonQ, Nord Quantique, Infleqtion และ Rigetti
+- **ผลงานจาก Stanford** (ธ.ค. 2025): อุปกรณ์ขนาดเล็กที่สร้าง entanglement ระหว่างแสงกับอิเล็กตรอนได้โดย **ไม่ต้องทำให้เย็นจัด** ซึ่งอาจช่วยพัฒนาการสื่อสารควอนตัม
 
 ### 💰 Investment & Market
+
 - อุตสาหกรรม quantum สร้างรายได้ $650-750M ในปี 2024, คาดเกิน **$1B ในปี 2025**
-- McKinsey: 3 เสา (computing, communication, sensing) อาจสร้างรายได้ **หลายสิบพันล้านดอลลาร์** ภายในกลางทศวรรษ 2030
+- McKinsey: 3 สาขาหลัก ได้แก่ computing, communication และ sensing อาจสร้างรายได้ **หลายหมื่นล้านดอลลาร์** ภายในกลางทศวรรษ 2030
 - Quantum firms เริ่ม **IPO** (มี.ค. 2026 — CNBC)
 - Nature จัด quantum computing เป็น 1 ใน 7 เทคโนโลยีสำคัญปี 2026
 
@@ -117,42 +127,50 @@ status: published
 ## 6. การใช้งานจริง 8 ด้าน
 
 ### 🔐 1. Cryptography & Cybersecurity
+
 - **ปัญหา**: Shor's Algorithm ทลาย RSA, ECC ได้ → Google (มี.ค. 2026) เตือนว่า Bitcoin อาจถูกทลายเร็วกว่าที่คาด
 - **ทางออก**: Post-Quantum Cryptography (PQC), Quantum Key Distribution (QKD)
 - NIST ประกาศมาตรฐาน PQC แล้ว
 - Google เร่ง PQC migration เป็นปี 2029
 
 ### 💊 2. Drug Discovery & Molecular Simulation
+
 - จำลองโมเลกุลที่ classical computer ทำไม่ได้ (exponential scaling)
 - VQE + Quantum Phase Estimation จำลองพันธะเคมี
 - เร่งกระบวนการค้นพบยาใหม่จาก 10+ ปี
 
 ### 📊 3. Financial Modeling & Risk Analysis
+
 - Portfolio optimization, Monte Carlo simulation, Option pricing
-- HSBC + IBM ใช้ quantum system ปรับปรุงกระบวนการซับซ้อน
+- HSBC และ IBM ใช้ระบบควอนตัมช่วยปรับปรุงกระบวนการที่ซับซ้อน
 - Fraud detection ด้วย quantum-enhanced ML
 
 ### 🚛 4. Logistics & Supply Chain
-- Route optimization: IBM + commercial vehicle → optimize 1,200 locations ใน NYC
+
+- การวางเส้นทาง: IBM ใช้กับงานขนส่งเชิงพาณิชย์เพื่อวางเส้นทางสำหรับ 1,200 จุดใน NYC
 - Inventory + scheduling optimization
-- ลดต้นทุน + ลด carbon emissions
+- ลดต้นทุนและการปล่อยคาร์บอน
 
 ### 🧪 5. Materials Science & Chemistry
+
 - ออกแบบวัสดุใหม่: แบตเตอรี่, catalysts, superconductors
-- Microsoft ใช้ quantum ออกแบบแบตเตอรี่ + optimize renewable energy
+- Microsoft ใช้ควอนตัมช่วยออกแบบแบตเตอรี่และเพิ่มประสิทธิภาพการใช้พลังงานหมุนเวียน
 
 ### 🤖 6. Machine Learning / AI
+
 - Quantum-enhanced ML: เร่ง training, สร้าง high-fidelity data
 - Quantum neural networks, quantum kernel methods
-- เหมาะกับ domain ที่ข้อมูลจริงหายาก (pharma, materials)
+- เหมาะกับสาขาที่ข้อมูลจริงหาได้ยาก เช่น เภสัชกรรมและวัสดุศาสตร์
 
 ### ⚡ 7. Energy & Climate
+
 - Grid balancing สำหรับ renewable energy
 - Climate forecasting ที่แม่นยำขึ้น
 - ออกแบบแบตเตอรี่ที่มีประสิทธิภาพมากขึ้น
 
 ### 🚀 8. Aerospace
-- NASA ใช้ quantum สำหรับ mission scheduling + trajectory optimization
+
+- NASA ใช้ควอนตัมช่วยจัดตารางภารกิจและคำนวณเส้นทางการเคลื่อนที่ให้เหมาะสม
 - ออกแบบวัสดุสำหรับยานอวกาศ
 
 ---
@@ -164,8 +182,8 @@ status: published
 | **Qubit Noise** | Error rate สูง, coherence time จำกัด |
 | **Scalability** | ยังไม่มีระบบล้าน qubits ที่เสถียร |
 | **Talent Gap** | ขาดแคลน quantum engineers อย่างหนัก |
-| **Integration** | ผูกกับ IT เดิมได้ยาก |
-| **ROI Uncertainty** | ต้นทุนสูง, business value ยังพิสูจน์ไม่เต็มที่ |
+| **Integration** | เชื่อมต่อกับระบบ IT เดิมได้ยาก |
+| **ROI Uncertainty** | ต้นทุนสูง และยังต้องพิสูจน์ความคุ้มค่าทางธุรกิจ |
 | **Cryogenics** | Superconducting ต้องการ ~15 mK (ใกล้ absolute zero) |
 | **Data Loading** | โหลดข้อมูลเข้า quantum system เป็น bottleneck |
 
@@ -185,25 +203,30 @@ status: published
 
 ---
 
-## 9. แนวโน้วอนาคต
+<a id="9-แนวโน้วอนาคต"></a>
+
+## 9. แนวโน้มอนาคต
 
 ### 📅 ระยะสั้น (2026-2028)
-- **Hybrid Classical-Quantum** — quantum เป็น accelerator ไม่ใช่ replacement
+
+- **Hybrid Classical-Quantum** — ใช้ควอนตัมช่วยเร่งงานบางส่วนร่วมกับคอมพิวเตอร์แบบเดิม
 - **QaaS** (Quantum-as-a-Service) ผ่าน cloud (IBM, AWS Braket, Azure Quantum)
 - Error correction ดีขึ้น → logical qubits เริ่มใช้ได้จริง
 - IBM เตรียม quantum advantage ภายในปลาย 2026
 - อุตสาหกรรมที่ใกล้ใช้จริงที่สุด: Finance, Pharma, Logistics, Cybersecurity
 
 ### 📅 ระยะกลาง (2028-2032)
+
 - Fault-tolerant quantum computers ขนาดใหญ่ขึ้น
 - Quantinuum เป้า Apollo: fully fault-tolerant ภายใน 2030
 - PQC adoption ทั่วโลก
-- Commercial applications ชัดเจน
+- รูปแบบการใช้งานเชิงพาณิชย์ชัดเจนขึ้น
 
 ### 📅 ระยะยาว (2032+)
+
 - Quantum advantage ในหลาย domain
 - General-purpose quantum computers
-- รายได้อุตสาหกรรมหลายสิบพันล้านดอลลาร์
+- รายได้ของอุตสาหกรรมหลายหมื่นล้านดอลลาร์
 
 ---
 
@@ -228,7 +251,7 @@ status: published
 
 1. **IBM จะบรรลุ quantum advantage จริงหรือไม่?** — Roadmap ชัดเจนที่สุดในวงการ
 2. **Google Willow จะ scale ได้แค่ไหน?** — จาก 65 qubits สู่ระบบใหญ่ขึ้น
-3. **Microsoft Majorana จะพิสูจน์ได้หรือไม่?** — Topological qubit ยังเป็น争议
+3. **Microsoft Majorana จะพิสูจน์ได้หรือไม่?** — Topological qubit ยังเป็นประเด็นถกเถียง
 4. **Quantum จะทลาย Bitcoin จริงหรือ?** — Google paper (มี.ค. 2026) บอกเร็วกว่าที่คาด
 5. **PQC migration จะทันหรือไม่?** — Google เร่งเป็น 2029 แต่หลายองค์กรยังไม่เริ่ม
 

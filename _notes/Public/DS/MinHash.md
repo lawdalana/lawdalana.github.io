@@ -2,18 +2,18 @@
 title: MinHash
 notetype: feed
 date: 2026-05-05
-last_modified: 2026-05-05
+last_modified: 2026-09-16
 tags: [data-structures, minhash, similarity, jaccard, lsh, locality-sensitive-hashing, document-dedup, probabilistic]
 status: published
 ---
 
 # MinHash: เปรียบเทียบความคล้ายของชุดข้อมูลด้วย 2 KB
 
-> **"มีเอกสาร 1 ล้านฉบับ — จะรู้ได้ยังไงว่าฉบับไหนคล้ายกัน โดยไม่ต้องเปรียบเทียบทุกคู่ (500 พันล้านคู่)?"** — MinHash ลดปัญหานี้เหลือเปรียบเทียบแค่ signature ขนาด 2 KB ต่อชุด
+> **"มีเอกสาร 1 ล้านฉบับ การเปรียบเทียบทุกคู่มีมากถึง 500 พันล้านคู่ จะหาฉบับที่คล้ายกันได้อย่างไร?"** MinHash ช่วยย่อข้อมูลที่ใช้เปรียบเทียบให้เป็น signature ขนาด 2 KB ต่อชุด
 
-MinHash เป็น **Locality-Sensitive Hashing (LSH)** technique สำหรับประเมิน **Jaccard Similarity** ระหว่างชุดข้อมูล — ใช้ใน document deduplication, recommendation systems, DNA sequence comparison, และ web-scale similarity search
+MinHash เป็นเทคนิค **Locality-Sensitive Hashing (LSH)** สำหรับประมาณ **Jaccard Similarity** ระหว่างชุดข้อมูล ใช้ค้นหาเอกสารซ้ำ สร้างระบบแนะนำ เปรียบเทียบลำดับ DNA และค้นหาข้อมูลที่คล้ายกันในระดับเว็บ
 
-**Inventor:** Andrei Broder (1997) — สร้างเพื่อใช้ใน AltaVista search engine สำหรับ deduplicate web pages
+**ผู้คิดค้น:** Andrei Broder (1997) พัฒนาขึ้นเพื่อค้นหาหน้าเว็บซ้ำใน search engine ของ AltaVista
 
 ---
 
@@ -35,7 +35,7 @@ $$J(A, B) = \frac{|A \cap B|}{|A \cup B|}$$
   J = 0.0 → completely different
 ```
 
-**ปัญหา:** คำนวณ Jaccard แบบ exact ต้องเก็บทุก element ในทั้งสองชุด → O(|A| + |B|) ต่อการเปรียบเทียบ 1 คู่
+**ปัญหา:** การคำนวณ Jaccard แบบ exact ต้องเก็บสมาชิกทั้งหมดของทั้งสองชุด และใช้เวลา O(|A| + |B|) ต่อการเปรียบเทียบ 1 คู่
 
 ---
 
@@ -45,7 +45,7 @@ $$J(A, B) = \frac{|A \cap B|}{|A \cup B|}$$
 
 $$P(\min h(A) = \min h(B)) = J(A, B)$$
 
-> "probability ที่ hash ต่ำสุดของ A และ B จะเท่ากัน = Jaccard similarity ของ A และ B"
+> "ความน่าจะเป็นที่ค่า hash ต่ำสุดของ A และ B เท่ากัน คือค่า Jaccard similarity ของ A และ B"
 
 ### ทำไม?
 
@@ -178,6 +178,7 @@ Python library: datasketch.MinHashLSHForest
 ## Variants
 
 ### One-Permutation MinHash (OPH)
+
 ```
 ใช้ hash function แค่ 1 ตัว + partition เป็น k bins
 เร็วกว่า standard MinHash 5-10x
@@ -185,6 +186,7 @@ Li, Owen, Zhang (2012)
 ```
 
 ### b-bit MinHash
+
 ```
 เก็บแค่ b bits แรกของแต่ละ hash (b=1 คือ default)
 ลด space 8x, เพิ่ม variance เล็กน้อย
@@ -192,6 +194,7 @@ Li & König (2010)
 ```
 
 ### BagMinHash
+
 ```
 สำหรับ weighted sets (elements มี weight)
 จัดการ bag/multiset similarity
@@ -277,7 +280,7 @@ mash dist genome1.fna.msh genome2.fna.msh
 
 | Aspect | Detail |
 |--------|--------|
-| **What** | ประเมิน Jaccard similarity ระหว่างชุดข้อมูล |
+| **What** | ประมาณค่า Jaccard similarity ระหว่างชุดข้อมูล |
 | **Space** | k × 8 bytes per set (2 KB for k=256) |
 | **Error** | ~$1/\sqrt{k}$ (6.3% for k=256) |
 | **Compare** | O(k) per pair |

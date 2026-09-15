@@ -2,26 +2,26 @@
 title: "DDTree: Dynamic Draft Tree for Speculative Decoding"
 notetype: feed
 date: 2026-05-09
-last_modified: 2026-05-09
+last_modified: 2026-09-16
 tags: [llm, speculative-decoding, inference, tree-search, rust]
 status: published
 ---
 
 # DDTree (Dynamic Draft Tree)
 
-> ใช้ Best-First Search สร้าง candidate token tree จาก draft model → verify ทั้ง tree กับ target model → accept เส้นทางที่ยาวสุด → เร่ง LLM inference โดยไม่เสีย quality
+> ใช้ Best-First Search สร้างต้นไม้ของ token ที่ draft model เสนอ แล้วให้ target model ตรวจสอบทั้งต้นไม้และเลือกเส้นทางที่ผ่านการตรวจสอบได้ยาวที่สุด เพื่อเร่ง LLM inference โดยรักษาคุณภาพคำตอบ
 
 ## ทำไมต้องเป็น Tree
 
-Speculative decoding แบบดั้งเดิม (linear): draft model ทาย token ต่อเนื่องกันเป็นเส้นตรง
+Speculative decoding แบบ linear ให้ draft model ทำนาย token ต่อเนื่องกันเป็นเส้นทางเดียว
 
 ```
 Prefix → [draft₁] → [draft₂] → [draft₃] → [draft₄] → [draft₅]
 ```
 
-ถ้า token ตัวที่ 3 ผิด → **ยกเลิก token 4, 5 ด้วย** → เสีย draft 2 tokens ฟรี
+ถ้า token ตัวที่ 3 ไม่ผ่านการตรวจสอบ ก็ต้อง **ยกเลิก token 4, 5 ด้วย** ทำให้ draft อีก 2 tokens ใช้ต่อไม่ได้
 
-**DDTree แก้ปัญหานี้** ด้วยการสร้าง tree ของทางเลือกแทน:
+**DDTree เพิ่มทางเลือก** ด้วยการสร้างต้นไม้ที่แตกแขนงเป็นหลายเส้นทาง:
 
 ```
                     Prefix
@@ -33,7 +33,7 @@ Prefix → [draft₁] → [draft₂] → [draft₃] → [draft₄] → [draft₅
        draft₃   draft₃'
 ```
 
-ถ้า `draft₁-draft₂-draft₃` ผิด → ยังมี `draft₁-draft₂'-draft₃'` หรือ `draft₁'-draft₂"` รออยู่ → **ไม่เสีย draft ไปเปล่า**
+ถ้าเส้นทาง `draft₁-draft₂-draft₃` ไม่ผ่าน ก็ยังมีเส้นทางอื่นให้ตรวจ เช่น `draft₁-draft₂'-draft₃'` หรือ `draft₁'-draft₂"` จึงเพิ่มโอกาสใช้ token ที่ draft ไว้
 
 ## มาจากไหน
 
@@ -85,7 +85,7 @@ Prefix → [draft₁] → [draft₂] → [draft₃] → [draft₄] → [draft₅
 
 ## BinaryHeap ใน Rust
 
-DDTree ใช้ `std::collections::BinaryHeap` — max-heap ที่มี:
+DDTree ใช้ `std::collections::BinaryHeap` ซึ่งเป็น max-heap โดยแต่ละ operation มีความซับซ้อนดังนี้:
 
 | Operation | Complexity |
 |-----------|-----------|
@@ -121,7 +121,7 @@ while heap.len() < budget {
 
 ## Tree Budget
 
-Budget = จำนวน nodes สูงสุดใน tree → ควบคุม compute cost
+Budget คือจำนวน nodes สูงสุดใน tree ใช้จำกัดต้นทุนการคำนวณ
 
 ```
 Budget น้อย (เช่น 8):
@@ -133,12 +133,12 @@ Budget มาก (เช่น 64):
   → แต่มีทางเลือกเยอะ → โอกาสเจอ accepted path ยาวสูงกว่า
 ```
 
-**Optimal budget** ขึ้นกับ acceptance rate:
+**Budget ที่เหมาะสม** ขึ้นกับ acceptance rate:
 
 | Acceptance Rate | Best Budget | เหตุผล |
 |----------------|-------------|--------|
 | สูง (>90%) | เล็ก (4-8) | draft แม่นอยู่แล้ว ไม่ต้องมีทางเลือกเยอะ |
-| กลาง (70-90%) | กลาง (16-32) | มีบ้างที่ผิด → ต้องมี backup |
+| กลาง (70-90%) | กลาง (16-32) | บาง token ไม่ผ่านการตรวจสอบ จึงควรมีทางเลือกสำรอง |
 | ต่ำ (<70%) | ใหญ่ (32-64) | draft ไม่แม่น → ต้องมีทางเลือกเยอะ |
 
 ## DDTree vs DFlash vs Linear Speculative
@@ -224,10 +224,10 @@ Budget มาก (เช่น 64):
 
 ## Limitations
 
-1. **Memory:** Tree ต้องเก็บทุก path → memory ใช้มากกว่า linear
-2. **Tree attention mask:** Target model ต้องรองรับ tree-structured attention → implementation ซับซ้อน
-3. **Budget tuning:** ต้องหา budget ที่เหมาะะสม → มากเกิน = verify ช้า, น้อยเกิน = เสียโอกาส
-4. **Draft model quality:** ถ้า draft model แย่มาก → แม้ tree ใหญ่ก็ไม่ช่วย
+1. **Memory:** ต้องเก็บทุกเส้นทางใน tree จึงใช้หน่วยความจำมากกว่าแบบ linear
+2. **Tree attention mask:** Target model ต้องรองรับ tree-structured attention ทำให้ implementation ซับซ้อนขึ้น
+3. **Budget tuning:** ต้องหา budget ที่เหมาะสม ถ้ามากเกินไปจะตรวจสอบช้า แต่ถ้าน้อยเกินไปก็อาจพลาดเส้นทางที่ผ่านการตรวจสอบ
+4. **Draft model quality:** หาก draft model ทำนายได้ไม่ดี การเพิ่มขนาด tree ก็อาจไม่ช่วย
 
 ## Papers ที่เกี่ยวข้อง
 
@@ -238,4 +238,4 @@ Budget มาก (เช่น 64):
 
 ---
 
-*DDTree คือการนำ Best-First Search มาใช้กับ speculative decoding — แทนที่จะเดาทางเดียวแล้วหวังว่าถูก ลองหลายทางพร้อมกันแล้วเลือกทางที่ดีที่สุด*
+*DDTree นำ Best-First Search มาใช้กับ speculative decoding เพื่อสร้างทางเลือกหลายเส้นทาง แล้วให้ target model ตรวจสอบและเลือกเส้นทางที่ผ่านเกณฑ์*

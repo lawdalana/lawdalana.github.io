@@ -2,16 +2,16 @@
 title: Space-Saving Algorithm
 notetype: feed
 date: 2026-05-05
-last_modified: 2026-05-05
+last_modified: 2026-09-16
 tags: [data-structures, space-saving, heavy-hitters, top-k, streaming, probabilistic, frequency]
 status: published
 ---
 
 # Space-Saving Algorithm: หา Top-K ด้วยแค่ K Counters
 
-> **"Stream มี 1 ล้าน distinct items แต่เราสนใจแค่ 10 อันดับแรก — ไม่ต้องนับทั้ง 1 ล้านตัว ใช้แค่ 10 counters!"**
+> **"Stream มี items ไม่ซ้ำกัน 1 ล้านรายการ แต่เราสนใจแค่ 10 อันดับแรก จึงใช้ 10 counters ติดตามรายการที่พบบ่อย แทนการเก็บตัวนับครบทั้ง 1 ล้านรายการ"**
 
-Space-Saving Algorithm คือ heavy hitter detection algorithm ที่ **track top-K most frequent items** โดยใช้ memory เพียง O(k) — เล็กกว่า [[Count-Min Sketch]] 100-1000 เท่า เมื่อต้องการแค่ Top-K
+Space-Saving Algorithm เป็นอัลกอริทึมสำหรับ **ติดตามรายการที่พบบ่อยเพื่อประมาณ Top-K** โดยใช้หน่วยความจำเพียง O(k) ซึ่งน้อยกว่า [[Count-Min Sketch]] 100-1000 เท่า เมื่อต้องการเฉพาะ Top-K
 
 **Inventors:** Ahmed Metwally, Divyakant Agrawal, Amr El Abbadi (2003)
 
@@ -212,7 +212,7 @@ Min-heap of (count, item):
 
 ## HeavyKeepers: Space-Saving + Decay
 
-HeavyKeepers (2020) เพิ่ม **exponential decay** ให้ counters:
+HeavyKeepers (2020) เพิ่มกลไกลดค่า counters แบบ **exponential decay**:
 
 ```
 เพิ่ม periodic decay:
@@ -313,9 +313,9 @@ TOPK.QUERY trending "java"     # → 0
 | [[Count-Min Sketch]] | O(d×w) | O(d) | ≤ εN | ✅ | indirect | ✅ |
 | Misra-Gries | O(k) | O(k) | ≤ n/k | ❌ | ✅ | ❌ |
 
-> **ถ้าต้องการแค่ Top-K → Space-Saving เลือดเย็นที่สุด (O(k) space)**
-> **ถ้าต้องการทุก frequency → [[Count-Min Sketch]]**
-> **ถ้าต้องการทั้งสองอย่าง → ใช้ทั้งคู่**
+> **ถ้าต้องการเฉพาะ Top-K ให้พิจารณา Space-Saving ซึ่งใช้พื้นที่ O(k)**
+> **ถ้าต้องการประมาณความถี่ของ item ใดก็ได้ ให้ใช้ [[Count-Min Sketch]]**
+> **ถ้าต้องการทั้งสองอย่าง ใช้ทั้งคู่ร่วมกันได้**
 
 ---
 
@@ -335,7 +335,7 @@ TOPK.QUERY trending "java"     # → 0
 
 | Aspect | Detail |
 |--------|--------|
-| **What** | หา Top-K most frequent items ใน stream |
+| **What** | ประมาณ Top-K ของ items ที่พบบ่อยที่สุดใน stream |
 | **Space** | O(k) — เพียง k counters |
 | **Error** | Overestimate ≤ n/k |
 | **Insert** | O(log k) |

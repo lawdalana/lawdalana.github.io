@@ -2,18 +2,19 @@
 title : Docker and Docker Compose
 notetype : feed
 date : 01-02-2025
+last_modified: 2026-09-16
 ---
 
 
 ## Docker คืออะไร 
 ![Docker](https://diagrams.mingrammer.com/img/resources/onprem/container/docker.png)
-- **Docker** เป็นแพลตฟอร์มสำหรับการสร้าง จัดการ และรัน **Container** ซึ่งเป็นเหมือนกล่องเล็ก ๆ ที่บรรจุแอปพลิเคชันและ dependencies (เช่น ไลบรารี, ระบบปฏิบัติการขั้นต่ำ ฯลฯ) เอาไว้
-- ข้อดีหลักของการใช้ Container คือทำให้การติดตั้งและจัดการแอปพลิเคชันสะดวกขึ้น เพราะทุกอย่างรวมอยู่ใน Container เดียว ลดปัญหา “เครื่องฉันรันได้ ทำไมเครื่องเธอรันไม่ได้”
-- Docker ใช้ **Docker Engine** ในการรัน Container และใช้ **Dockerfile** สำหรับสร้าง Image
+- **Docker** เป็นแพลตฟอร์มสำหรับสร้าง จัดการ และรัน **Container** ซึ่งบรรจุแอปพลิเคชันพร้อมสิ่งที่ต้องใช้ เช่น ไลบรารีและส่วนประกอบของระบบปฏิบัติการ
+- Container ช่วยให้ติดตั้งและจัดการแอปพลิเคชันได้สะดวกขึ้น เพราะจัดเตรียมสภาพแวดล้อมไว้ด้วยกัน ลดปัญหา “เครื่องฉันรันได้ แต่เครื่องเธอรันไม่ได้”
+- **Docker Engine** ทำหน้าที่รัน Container ส่วน **Dockerfile** ระบุขั้นตอนสร้าง Image
 
 ### Docker ต่างอะไรกับ VM
-- VM จำลองระบบฮาร์ดแวร์และรัน OS เต็มรูปแบบ ทำให้มีการใช้ทรัพยากรมากขึ้นและมีเวลาบูตช้ากว่า แต่ให้การแยกส่วนและความปลอดภัยที่สูง
-- Docker ใช้ containerization โดยแชร์ kernel ของ host ทำให้มีน้ำหนักเบา ใช้ทรัพยากรน้อยกว่าและบูตได้เร็วกว่า แต่มีระดับการแยกส่วนที่ต่ำกว่าในบางแง่มุม
+- VM จำลองฮาร์ดแวร์และรันระบบปฏิบัติการเต็มรูปแบบ จึงใช้ทรัพยากรมากกว่าและบูตช้ากว่า แต่แยกสภาพแวดล้อมได้ชัดเจน
+- Docker ใช้ containerization และแชร์ kernel กับ host จึงใช้ทรัพยากรน้อยกว่าและเริ่มทำงานได้เร็วกว่า โดยมีขอบเขตการแยกจาก host ต่างจาก VM
 
 [![Container Vs VMs](/assets/img/Other/Docker/vm-docker5.avif)](https://dockerlabs.collabnix.com/beginners/difference-docker-vm.html)
 
@@ -25,16 +26,28 @@ date : 01-02-2025
 
 ### คำศัพท์ที่ควรรู้
 1. **Image**: แม่แบบ (Template) สำหรับสร้าง Container
-2. **Container**: อินสแตนซ์ที่เกิดจาก Image เมื่อทำงานจริง
+2. **Container**: อินสแตนซ์ที่สร้างจาก Image เพื่อนำไปรัน
 3. **Registry**: ที่เก็บ Image ส่วนกลาง เช่น Docker Hub หรือ Registry ภายในองค์กร
 
 
-### Exmaple Command
-#### Pre-Require
-- Install [Docker Engine](https://docs.docker.com/engine/install/) ถ้าใช้ Linux
-- Install [Docker Desktop](https://docs.docker.com/desktop/), [Rancher Desktop](https://rancherdesktop.io/) ถ้าใช้ Window, Mac
 
-#### Simaple Command
+<a id="exmaple-command"></a>
+
+### Example Command
+
+
+<a id="pre-require"></a>
+
+#### Prerequisites
+
+- ติดตั้ง [Docker Engine](https://docs.docker.com/engine/install/) สำหรับ Linux
+- ติดตั้ง [Docker Desktop](https://docs.docker.com/desktop/) หรือ [Rancher Desktop](https://rancherdesktop.io/) สำหรับ Windows และ macOS
+
+
+<a id="simaple-command"></a>
+
+#### Simple Command
+
 ```bash
 docker build -t {image_name}:{tag} .        # Build local image
 
@@ -63,8 +76,12 @@ docker load -i my_image.tar                 # Load docker image
 [![Container Vs VMs](/assets/img/Other/Docker/dockercheatsheet8.avif)](https://dockerlabs.collabnix.com/docker/cheatsheet/)
 
 
-#### Exmaple 1:
-ลองรัน docker image
+
+<a id="exmaple-1"></a>
+
+#### Example 1:
+
+ลองรันคอนเทนเนอร์จาก Docker image
 ```bash
 docker run hello-world
 
@@ -73,14 +90,18 @@ docker run hello-world
 ```
 ---
 
-#### Exmaple 2:
-Step
-1. สร้าง project folder และใช้เป็นที่เก็บไฟล์ทั้งหมด
-2. สร้าง python file (`example.py`)
+
+<a id="exmaple-2"></a>
+
+#### Example 2:
+
+ขั้นตอน:
+1. สร้างโฟลเดอร์โปรเจกต์สำหรับเก็บไฟล์ทั้งหมด
+2. สร้างไฟล์ Python (`example.py`)
     ```python
     print("test python image file")
     ```
-3. สร้างไฟล์ ชื่อ `Dockerfile` (ไม่ต้องมีนามสกุล)
+3. สร้างไฟล์ชื่อ `Dockerfile` โดยไม่ใส่นามสกุล
     ```
     From python:3.12.8-slim
 
@@ -94,10 +115,10 @@ Step
     CMD [ "python", "./example.py" ]
     ```
     Note ([Python docker hub](https://hub.docker.com/_/python/tags)): 
-    - `alpine` = ใช้ Alpine Linux เป็น base image ที่มีขนาดเล็ก เบา และมีเพียงแพ็คเกจที่จำเป็นเท่านั้น
-    - `slim` = เป็น variant ที่ตัดส่วนที่ไม่จำเป็นออกจาก image ปกติ มีขนาดเล็กลง
-    - `bullseye` = เป็นชื่อรหัสของ Debian 11 (Bullseye) ซึ่งเป็นระบบปฏิบัติการที่เสถียรและมีแพ็คเกจครบครัน
-    - `bookworm` =  เป็นชื่อรหัสของ Debian รุ่นใหม่กว่า (ในขณะนี้คือ Debian Bookworm ซึ่งอาจอยู่ในช่วง testing หรือ release ใหม่)
+    - `alpine` = ใช้ Alpine Linux เป็น base image ซึ่งมีขนาดเล็กและติดตั้งเฉพาะแพ็กเกจที่จำเป็น
+    - `slim` = ลดส่วนประกอบบางอย่างจาก image ปกติเพื่อให้มีขนาดเล็กลง
+    - `bullseye` = ชื่อรหัสของ Debian 11 (Bullseye)
+    - `bookworm` = ชื่อรหัสของ Debian รุ่นถัดจาก Bullseye
 4. รันคำสั่ง
     ```
     docker build -t example:1.0.0 .
@@ -105,16 +126,28 @@ Step
     ```
 
 ## Docker Compose คืออะไร
-- **Docker Compose** เป็นเครื่องมือสำหรับจัดการ **Multi-Container** ในการพัฒนาแอปพลิเคชันที่ต้องมีหลาย Service ทำงานร่วมกัน เช่น แอปพลิเคชัน python คุยกับฐานข้อมูล MySQL หรือ Redis
-- ใช้ไฟล์ `docker-compose.yml` ในการกำหนดว่าเราต้องการรันคอนเทนเนอร์อะไรบ้าง แต่ละคอนเทนเนอร์เชื่อมต่อกันอย่างไร และมี Volume หรือ Port mapping อย่างไร
+- **Docker Compose** ใช้จัดการแอปพลิเคชันที่มีหลายคอนเทนเนอร์ทำงานร่วมกัน เช่น แอป Python ที่เชื่อมต่อกับ MySQL หรือ Redis
+- ไฟล์ `docker-compose.yml` กำหนดว่าจะรันคอนเทนเนอร์ใดบ้าง เชื่อมต่อกันอย่างไร และตั้งค่า volume กับ port mapping แบบใด
 
-### Exmaple Command
-#### Pre-Require
-- Install [Docker Engine](https://docs.docker.com/engine/install/) ถ้าใช้ Linux
-- Install [Docker Desktop](https://docs.docker.com/desktop/), [Rancher Desktop](https://rancherdesktop.io/) ถ้าใช้ Window, Mac
-- Install [Docker Compose](https://docs.docker.com/compose/install/) / มี [version stand alone](https://docs.docker.com/compose/install/standalone/) `docker-compose`
 
-#### Simaple Command
+<a id="exmaple-command-1"></a>
+
+### Example Command
+
+
+<a id="pre-require-1"></a>
+
+#### Prerequisites
+
+- ติดตั้ง [Docker Engine](https://docs.docker.com/engine/install/) สำหรับ Linux
+- ติดตั้ง [Docker Desktop](https://docs.docker.com/desktop/) หรือ [Rancher Desktop](https://rancherdesktop.io/) สำหรับ Windows และ macOS
+- ติดตั้ง [Docker Compose](https://docs.docker.com/compose/install/) หรือใช้ [เวอร์ชัน standalone](https://docs.docker.com/compose/install/standalone/) ซึ่งเรียกด้วย `docker-compose`
+
+
+<a id="simaple-command-1"></a>
+
+#### Simple Command
+
 ```bash
 docker-compose up                                       # Build local image
 docker-compose up {service_name1} {service_name2} ...   # Start the follow service name container 
@@ -137,8 +170,7 @@ COPY . .  # <-- เพิ่มบรรทัดนี้ทีหลัง
 CMD ["python", "app.py"]
 ```
 Command: `docker-compose up --build`
-- ถ้า requirements.txt เปลี่ยน → pip install -r requirements.txt จะทำงานใหม่
-- ถ้า requirements.txt ไม่เปลี่ยน → pip install จะใช้ cache และไม่รันใหม่
-- ถ้าคุณแก้ Dockerfile แต่มันอยู่หลังคำสั่ง pip install → pip install จะใช้ cache และไม่รันใหม่
+- ถ้า requirements.txt เปลี่ยน → ขั้นตอน pip install -r requirements.txt จะทำงานใหม่
+- ถ้า requirements.txt ไม่เปลี่ยน → Docker อาจใช้เลเยอร์จาก cache โดยไม่รัน pip install ซ้ำ
+- ถ้าแก้ Dockerfile ในขั้นตอนหลัง pip install → เลเยอร์ของ pip install ยังใช้ cache เดิมได้
 - ถ้าต้องการให้ pip install ทำงานใหม่เสมอ → ใช้ rm -rf /root/.cache/pip หรือ BuildKit cache
-

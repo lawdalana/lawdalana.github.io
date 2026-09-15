@@ -2,16 +2,16 @@
 title: HyperLogLog
 notetype: feed
 date: 2026-05-05
-last_modified: 2026-05-05
+last_modified: 2026-09-16
 tags: [data-structures, hyperloglog, cardinality, counting, streaming, probabilistic, redis]
 status: published
 ---
 
 # HyperLogLog: นับพันล้าน Unique ด้วย 12 KB
 
-> **"ใช้ memory แค่ 12 KB เพื่อนับ unique items พันล้านตัว โดย error แค่ 0.8%"** — นี่คือ data structure ที่อยู่เบื้องหลัง `APPROX_COUNT_DISTINCT` ใน BigQuery, Spark, Redis
+> **"ใช้หน่วยความจำเพียง 12 KB เพื่อประมาณจำนวน items ที่ไม่ซ้ำกันระดับพันล้านรายการ โดยมีค่าคลาดเคลื่อนราว 0.8%"** นี่คือโครงสร้างข้อมูลที่อยู่เบื้องหลัง `APPROX_COUNT_DISTINCT` ใน BigQuery, Spark และ Redis
 
-HyperLogLog (HLL) เป็น cardinality estimation algorithm ที่ตอบคำถาม *"มี unique items กี่ตัว?"* — เหมาะสำหรับ use cases เช่น "วันนี้มี unique visitors กี่คน?", "มี distinct IPs กี่อันใน log?"
+HyperLogLog (HLL) เป็นอัลกอริทึมสำหรับประมาณจำนวนสมาชิกที่ไม่ซ้ำกัน (cardinality estimation) ใช้ตอบคำถาม เช่น *"วันนี้มีผู้เข้าชมที่ไม่ซ้ำกันกี่คน?"* หรือ *"ใน log มี IP ที่ไม่ซ้ำกันกี่รายการ?"*
 
 **History:** Probabilistic Counting (1985) → LogLog (2004) → **HyperLogLog** (2007) → **HLL++** (Google, 2013)
 
@@ -19,7 +19,7 @@ HyperLogLog (HLL) เป็น cardinality estimation algorithm ที่ตอ�
 
 ## หลักการ: หา Leftmost 1-bit
 
-ถ้า hash output มี leading zeros มาก → เราเห็น "rare" value → มี unique items เยอะ
+ผล hash ที่ขึ้นต้นด้วยศูนย์หลายตัวเป็นค่าที่พบได้ยาก การพบค่าเช่นนี้จึงเป็นเบาะแสสำหรับประมาณว่ามี items ที่ไม่ซ้ำกันมากเพียงใด
 
 ```
 Intuition: โยนเหรียญ
@@ -124,7 +124,7 @@ Step 3: คำนวณ E
 
 ## HyperLogLog++ (Google's Improvement)
 
-Google ปรับปรุง HLL ใน paper "HyperLogLog in Practice" (Heule et al., 2013) — version นี้ใช้ใน Redis, BigQuery, Spark
+Google เสนอการปรับปรุง HLL ในงานวิจัย "HyperLogLog in Practice" (Heule et al., 2013) โดยรุ่นนี้ใช้ใน Redis, BigQuery และ Spark
 
 ### สิ่งที่ปรับปรุง
 
@@ -163,13 +163,13 @@ Auto-switch: เมื่อ sparse ใหญ่กว่า dense → convert �
 
 $$\text{Std Error} = \frac{1.04}{\sqrt{m}}$$
 
-> **Key insight:** เพิ่ม precision 1 → memory x2, error / √2
+> **ประเด็นสำคัญ:** เมื่อเพิ่ม precision อีก 1 ระดับ หน่วยความจำเพิ่ม x2 ส่วนค่าคลาดเคลื่อนลดลงเป็นค่าเดิม / √2
 
 ---
 
 ## Merge Operation (Union)
 
-HLL สามารถ merge ข้าม machines ได้ — **lossless**:
+HLL จากหลายเครื่องสามารถนำมารวมกันได้โดย **ไม่เพิ่มความคลาดเคลื่อน (lossless merge)**:
 
 ```
 Server A counts users 9am-12pm → HLL_A
@@ -270,8 +270,8 @@ WHERE date = '2024-05-05';
 
 | Aspect | Detail |
 |--------|--------|
-| **What** | นับจำนวน unique items ใน stream |
-| **Space** | 12 KB (p=14) สำหรับ billions of items |
+| **What** | ประมาณจำนวน items ที่ไม่ซ้ำกันใน stream |
+| **Space** | 12 KB (p=14) สำหรับ items ระดับพันล้านรายการ |
 | **Error** | ~0.81% (p=14), tunable |
 | **Insert** | O(1) |
 | **Merge** | ✅ Lossless union |

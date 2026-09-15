@@ -2,14 +2,14 @@
 title: "Leviathan Algorithm: Speculative Decoding with Rejection Sampling"
 notetype: feed
 date: 2026-05-09
-last_modified: 2026-05-09
+last_modified: 2026-09-16
 tags: [llm, speculative-decoding, inference, rejection-sampling, probability, google]
 status: published
 ---
 
 # Leviathan Algorithm: Speculative Decoding
 
-> Algorithm จาก Google (2022) ที่เร่ง LLM inference 2-3× โดย **output quality เหมือนเดิมเป๊ะ** — mathematically proven distribution-preserving
+> อัลกอริทึมจาก Google (2022) ที่เร่ง LLM inference 2-3× โดย **รักษาการแจกแจงความน่าจะเป็นของผลลัพธ์เหมือนโมเดลหลัก** ซึ่งพิสูจน์ได้ทางคณิตศาสตร์ (distribution-preserving)
 
 ## Paper
 
@@ -17,11 +17,11 @@ status: published
 - Authors: Yaniv Leviathan, Matan Kalman, Yossi Matias (Google)
 - Published: November 2022
 - [arXiv:2211.17192](https://arxiv.org/abs/2211.17192)
-- Demo: 2-3× speedup บน T5-XXL โดย output identical
+- ผลสาธิต: เร็วขึ้น 2-3× บน T5-XXL โดยคงการแจกแจงความน่าจะเป็นของผลลัพธ์เดิม
 
 ## ปัญหาที่แก้
 
-LLM generate text ทีละ token → **ช้า** เพราะ:
+การสร้างข้อความของ LLM ทีละ token ใช้เวลาเพราะแต่ละขั้นต้องรอผลจากขั้นก่อนหน้า:
 
 ```
 Step 1: model(input) → token₁     (~30ms)
@@ -31,7 +31,7 @@ Step 3: model(input + token₁₂) → token₃ (~30ms)
 K tokens = K × 30ms (serial, ไม่มีทาง parallelize)
 ```
 
-**Key insight:** "งานยากส่วนใหญ่มีงานย่อยที่ง่ายกว่า ซึ่ง model เล็กทำได้ดีพอสมควร"
+**แนวคิดสำคัญ:** งานยากมักมีส่วนย่อยที่ง่ายกว่าและโมเดลเล็กทำได้ดีพอ จึงให้โมเดลเล็กช่วยเสนอคำตอบก่อน
 
 ## แนวคิดหลัก
 
@@ -167,11 +167,11 @@ p/q < 1 → Target ไม่เห็นด้วยเท่า draft → ACCEP
 p/q ≈ 0 → Target ไม่เห็นด้วยเลย → REJECT แทบแน่นอน
 ```
 
-**Intuition:** ถ้า draft model ทายแม่น (q ≈ p) → p/q ≈ 1 → accept บ่อย → speedup มาก
+**แนวคิด:** ถ้า draft model ให้ความน่าจะเป็นใกล้กับ target (q ≈ p) อัตราส่วน p/q จะใกล้ 1 จึงยอมรับ token ได้บ่อยและมีโอกาสเร่งการทำงานได้มากขึ้น
 
 ## Residual Distribution (ทำไม output ไม่เบ้)
 
-เมื่อ reject → ต้องเลือก token ใหม่ให้ **distribution ยังตรงกับ target**
+เมื่อปฏิเสธ token ที่ draft เสนอ ต้องสุ่ม token ใหม่ให้ **การแจกแจงของผลลัพธ์โดยรวมยังตรงกับ target**
 
 $$\text{residual}(x) = \max(0,\ p(x) - q(x))$$
 
@@ -197,11 +197,11 @@ P(new = A) = 0.20/0.20 = 100%
 
 $$P(\text{output} = x) = P(\text{accept}) \cdot q(x) + P(\text{reject}) \cdot \frac{\max(0, p(x)-q(x))}{\sum \max(0, p-q)} = p(x)$$
 
-ทุก token มีโอกาสถูกเลือกเท่ากับ target model distribution **เป๊ะ** — ไม่มี approximation
+ทุก token มีโอกาสถูกเลือกตรงตามการแจกแจงของ target model โดยไม่มีการประมาณค่าในตัวอัลกอริทึม ข้อนี้ไม่ได้หมายความว่าการสุ่มแต่ละครั้งจะได้ข้อความเดียวกันทุกคำ
 
 ## Bonus Token
 
-ถ้า draft tokens ทั้ง γ ตัวถูก accept → ได้ **+1 token ฟรี**
+ถ้ายอมรับ draft tokens ครบทั้ง γ ตัว จะได้ **+1 token โดยไม่ต้องรัน target เพิ่ม**
 
 ```
 ทำไมฟรี?
@@ -220,7 +220,7 @@ $$P(\text{output} = x) = P(\text{accept}) \cdot q(x) + P(\text{reject}) \cdot \f
 
 $$\text{Speedup} = \frac{\text{time}_{AR}}{\text{time}_{spec}} = \frac{\gamma \cdot T_{target}}{T_{draft} + T_{verify}}$$
 
-Break-even: เมื่อ acceptance rate เพียงพอ
+จุดคุ้มทุนเกิดเมื่อ acceptance rate สูงพอ
 
 $$\text{acceptance\_rate} > \frac{T_{target}}{T_{target} + T_{draft}}$$
 
@@ -327,10 +327,10 @@ log_residual = log(max(0, exp(log_p) - exp(log_q)))
 
 ## Limitations
 
-1. **ต้องการ model asymmetry มาก** — Draft model ต้องเล็กกว่า target 10× ขึ้นไปจึงคุ้ม
-2. **Acceptance rate ต่ำ = ช้าลง** — ถ้า draft ไม่แม่น → overhead เกินประโยชน์
-3. **Memory สำหรับ 2 models** — ต้อง load draft + target พร้อมกัน
-4. **Distribution matching ไม่แม่นถ้าคำนวณ float ไม่ระวัง** — Need log-space operations
+1. **ขนาดโมเดลต้องต่างกันมาก** — Draft model ต้องเล็กกว่า target 10× ขึ้นไปจึงคุ้ม
+2. **Acceptance rate ต่ำอาจทำให้ช้าลง** — หาก draft ไม่แม่น ต้นทุนที่เพิ่มขึ้นอาจมากกว่าประโยชน์ที่ได้
+3. **ต้องมีหน่วยความจำสำหรับ 2 models** — ต้องโหลดทั้ง draft และ target พร้อมกัน
+4. **ความคลาดเคลื่อนจาก floating point อาจกระทบการแจกแจง** — ควรคำนวณใน log-space อย่างระมัดระวัง
 
 ## ความสัมพันธ์กับ Methods อื่น
 
@@ -359,4 +359,4 @@ Leviathan (2022) ─── Linear Draft + Rejection Sampling
 
 ---
 
-*Leviathan Algorithm = ใช้ rejection sampling เพื่อรับประกันว่า output ตรงกับ target model เป๊ะ โดยใช้ draft model เร่งความเร็ว. กุญแจสำคัญคือ residual distribution ที่ชดเชยส่วนต่างระหว่าง p และ q ให้ output ไม่เบ้*
+*Leviathan Algorithm ใช้ draft model ช่วยเร่งการสร้าง token และใช้ rejection sampling เพื่อรักษาการแจกแจงผลลัพธ์ของ target model โดย residual distribution ชดเชยส่วนต่างระหว่าง p และ q เมื่อ draft token ถูกปฏิเสธ*

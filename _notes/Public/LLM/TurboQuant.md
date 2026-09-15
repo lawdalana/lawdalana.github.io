@@ -2,28 +2,28 @@
 title: TurboQuant
 notetype: feed
 date: 2026-04-04
-last_modified: 2026-04-05
+last_modified: 2026-09-16
 tags: [llm, quantization, kv-cache, compression, vector-search, google-research]
 ---
 
 # [TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate](https://arxiv.org/abs/2504.19874)
 
-> **บีบอัด memory LLM ได้ 6x โดยไม่สูญเสีย accuracy เลย — plug-and-play, ไม่ต้อง fine-tune, ไม่ต้อง calibration data**
+> **บีบอัด KV cache ของ LLM ได้สูงสุด 6x ตามผลที่รายงาน โดยไม่ต้อง fine-tune หรือใช้ข้อมูล calibration ส่วนผลต่อความแม่นยำขึ้นกับจำนวนบิตและงานที่ทดสอบ**
 
 ---
 
 ## 🔥 ทำไมต้องสนใจ
 
-ถ้าคุณเคยรัน LLM ใน production คุณจะรู้ว่า **model weights ไม่ใช่ปัญหา memory หลัก** — **KV cache ต่างหาก** ที่กิน memory มหาศาล
+เมื่อรัน LLM ใน production ต้องเผื่อหน่วยความจำให้ทั้ง **model weights และ KV cache** โดย KV cache อาจกลายเป็นคอขวดเมื่อ context ยาวหรือมีผู้ใช้พร้อมกันจำนวนมาก
 
-ทุกครั้งที่ transformer สร้าง token ใหม่ มันต้องเก็บ key vector + value vector สำหรับ token นั้นทุก attention layer ชุด vectors ทั้งหมดนี้คือ "working memory" ของโมเดล และมัน **โตขึ้น linear กับ context length**
+ทุกครั้งที่ transformer สร้าง token ใหม่ ระบบจะเก็บ key vector และ value vector ของ token นั้นในแต่ละ attention layer ข้อมูลชุดนี้คือ KV cache ซึ่ง **มีขนาดเพิ่มเป็นสัดส่วนกับความยาว context**
 
 | Model | Context | KV Cache Size |
 | :--- | :--- | :--- |
 | Llama-3.1-8B | 128K | **ใหญ่กว่า model weights** |
 | 70B model + 512 users | — | ~512 GB เฉพาะ cache |
 
-Google Research เอา **TurboQuant** มาแก้ปัญหานี้โดยตรง — compress KV cache แบบ **online** (real-time ระหว่าง inference) ได้ **6x** โดย **zero accuracy loss**
+Google Research เสนอ **TurboQuant** เพื่อบีบอัด KV cache แบบ **online** หรือระหว่าง inference โดยรายงานอัตราการบีบอัดได้ถึง **6x** และการรักษาคุณภาพในงานที่ทดสอบ
 
 ---
 
@@ -40,13 +40,13 @@ Google Research เอา **TurboQuant** มาแก้ปัญหานี้
 
 ## 🧱 สถาปัตยกรรม: Two-Stage Pipeline
 
-TurboQuant ผสาน 2 algorithm เข้าด้วยกัน:
+บทความนี้อธิบายกระบวนการผ่านอัลกอริทึม 2 ส่วน:
 
 ### Stage 1: PolarQuant — Heavy Lifting
 
 ![TurboQuant01](/assets/img/Other/LLM/TurboQuant01.avif)
 
-**หลักการ:** ถ้าเราหมุน (rotate) vector ด้วย random orthogonal matrix → coordinates จะ follow **concentrated Beta distribution** ≈ $\mathcal{N}(0, 1/d)$ โดยที่ $d$ คือ vector dimension
+**หลักการ:** เมื่อหมุน vector ด้วย random orthogonal matrix แต่ละ coordinate จะมีการกระจายแบบ **concentrated Beta distribution** ซึ่งประมาณได้ด้วย $\mathcal{N}(0, 1/d)$ เมื่อ $d$ ซึ่งเป็นจำนวนมิติของ vector มีค่าสูง
 
 $$x' = R \cdot x \quad \text{where } R \sim \text{QR}(\text{Gaussian}(d \times d))$$
 
@@ -54,11 +54,12 @@ $$x' = R \cdot x \quad \text{where } R \sim \text{QR}(\text{Gaussian}(d \times d
 
 | Traditional VQ | PolarQuant |
 | :--- | :--- |
-| ต้องคำนวณ + เก็บ scale factors ทุก block | Distribution เป็น known + data-independent |
+| ต้องคำนวณและเก็บ scale factors ทุก block | อธิบายการกระจายได้โดยไม่ต้องเรียนรู้จากชุดข้อมูล |
 | เพิ่ม overhead 1-2 bits/number | ใช้ pre-computed Lloyd-Max quantizer |
-| Overhead กิน compression gain | **Zero overhead!** |
+| Overhead ลดพื้นที่ที่ประหยัดได้จากการบีบอัด | **ไม่ต้องเก็บ scale factor ต่อ block** |
 
 **ขั้นตอน:**
+
 1. Random rotate vector → coordinates อยู่ใน Beta distribution ที่รู้ล่วงหน้า
 2. แปลงเป็น **polar coordinates** (radius + angle)
 3. Angle distribution มี concentration สูง → ไม่ต้อง normalize
@@ -70,17 +71,17 @@ $$x' = R \cdot x \quad \text{where } R \sim \text{QR}(\text{Gaussian}(d \times d
 
 ![TurboQuant02](/assets/img/Other/LLM/TurboQuant02.avif)
 
-Stage 1 ให้ MSE-optimal quantization แต่มี **bias ใน inner product estimation** → attention scores คลาดเคลื่อน
+Stage 1 ลดความคลาดเคลื่อนแบบ MSE แต่ยังมี **อคติในการประมาณ inner product** ซึ่งส่งผลต่อ attention scores
 
 **QJL แก้ปัญหานี้ด้วย:**
 
 $$\text{residual} = x - \text{PolarQuant}(x)$$
 $$\text{QJL}(\text{residual}) \rightarrow \text{sign bits } \{+1, -1\}$$
 
-1. เอา residual error จาก Stage 1
+1. นำส่วนความคลาดเคลื่อนที่เหลือ (residual error) จาก Stage 1 มาใช้
 2. ใช้ **Quantized Johnson-Lindenstrauss Transform** → compress เหลือ 1 bit/sign
-3. ใช้ **unbiased estimator** ที่ balance high-precision query + low-precision data
-4. ผลลัพธ์: **unbiased inner product** → attention scores แม่นยำ
+3. ใช้ **unbiased estimator** ที่คำนวณร่วมกันระหว่าง query แบบ precision สูงกับข้อมูลที่บีบอัดแล้ว
+4. ผลลัพธ์คือ **ค่าประมาณ inner product ที่ไม่มีอคติ** หมายถึงค่าเฉลี่ยของค่าประมาณตรงกับค่าจริง
 
 > **Companion paper:** QJL (Quantized JL) — AAAI 2025
 
@@ -88,16 +89,16 @@ $$\text{QJL}(\text{residual}) \rightarrow \text{sign bits } \{+1, -1\}$$
 
 ## 🧮 การคำนวณ Step-by-Step (เจาะลึก)
 
-> ส่วนนี้อธิบายทุกขั้นตอนการคำนวณของ TurboQuant ตั้งแต่ต้นจนจบ เหมาะสำหรับผู้ที่ต้องการ implement หรือเข้าใจ math เชิงลึก
+> ส่วนนี้ใช้ตัวอย่างและโค้ดเชิงแนวคิดอธิบายขั้นตอนการคำนวณ สำหรับอ่านประกอบงานวิจัยก่อนพัฒนา implementation จริง
 
 ### ขั้นตอนที่ 1: Random Rotation (Pre-conditioning)
 
-**เป้าหมาย:** แปลง vector ใดๆ ให้มี distribution ที่รู้ล่วงหน้า
+**เป้าหมาย:** แปลง vector ให้มีการกระจายที่อธิบายได้ทางคณิตศาสตร์
 
 **คุณสมบัติสำคัญ 2 ข้อ (จาก Gaussian random variables):**
 1. **Fact 1:** คูณ vector ใดๆ ด้วย random matrix ที่มี entries แจกแจงแบบ Gaussian → ผลลัพธ์เป็น multivariate Gaussian centered at zero
    $$S \cdot x \sim \mathcal{N}(0, \|x\|^2 \cdot I_m)$$
-2. **Fact 2:** ความยาวของ Gaussian vector ในมิติสูงจะ **concentrate** แน่นๆ รอบ $\sqrt{d}$
+2. **Fact 2:** ความยาวของ Gaussian vector ในมิติสูงจะ **กระจุกตัว** ใกล้ $\sqrt{d}$
    $$f_R(r) = \frac{2}{2^{d/2} \cdot \Gamma(d/2)} r^{d-1} \exp(-r^2/2)$$
 
 **วิธีทำ:**
@@ -119,9 +120,9 @@ y = Pi @ x                        # x = KV cache vector (d-dimensional)
 
 ### ขั้นตอนที่ 2: Recursive Polar Transform
 
-**เป้าหมาย:** แปลง d-dimensional vector เป็น 1 final radius + collection ของ angles ที่มี distribution กระจุกแน่น
+**เป้าหมาย:** แปลง vector จำนวน d มิติให้เป็นรัศมีสุดท้าย 1 ค่า และชุดมุมที่มีการกระจายแบบกระจุกตัว
 
-**หลักการ:** จับคู่ coordinates → แปลงเป็น polar → เก็บ angles → เอา radii ไปรอบต่อไป
+**หลักการ:** จับคู่ coordinates แล้วแปลงเป็นพิกัดเชิงขั้ว เก็บค่ามุมไว้ และนำรัศมีที่ได้ไปคำนวณในรอบถัดไป
 
 ```
 ตัวอย่าง d=8:
@@ -179,9 +180,9 @@ def polar_transform(y):
 
 ### ขั้นตอนที่ 3: ทำไม Angle ถึง Concentrate?
 
-นี่คือ **key insight** ของ PolarQuant:
+แนวคิดสำคัญของ PolarQuant คือ:
 
-**Level 1:** Angles แจกแจงแบบ uniform บน $[0, 2\pi)$ — กว้าง ต้องหลาย bit
+**Level 1:** มุมกระจายอย่างสม่ำเสมอบน $[0, 2\pi)$ จึงต้องใช้หลายบิตเพื่อแทนช่วงค่าที่กว้าง
 
 **Level 2+:** แต่ละ radius เป็น norm ของ sub-vector ที่ยาวขึ้นเรื่อยๆ:
 
@@ -191,7 +192,7 @@ def polar_transform(y):
 | 2 | 4 | $[0, \pi/2]$ | $\sin^{1}(2\theta)$ (เริ่มกระจุก) |
 | 3 | 8 | $[0, \pi/2]$ | $\sin^{3}(2\theta)$ (กระจุกมาก) |
 | 4 | 16 | $[0, \pi/2]$ | $\sin^{7}(2\theta)$ (แน่นมาก) |
-| 7 (d=128) | 128 | $[0, \pi/2]$ | เกือบเป็นเส้นตรงที่ $\pi/4$ → **1 bit พอ!** |
+| 7 (d=128) | 128 | $[0, \pi/2]$ | กระจุกในช่วงแคบรอบ $\pi/4$ → **1 bit พอ!** |
 
 **สูตร PDF ของ angle ที่ level $\ell$:**
 
@@ -209,7 +210,7 @@ $$f_{\psi^{(\ell)}}(\psi) = \frac{\Gamma(2^\ell - 1)}{2^{2^{\ell-1}-2} \cdot \Ga
 
 **เป้าหมาย:** สร้าง lookup table ของ quantization buckets ที่เหมาะสมที่สุดสำหรับแต่ละ level
 
-เนื่องจากเรารู้ distribution ของ angles ทุก level ล่วงหน้า → สร้าง codebook ได้ **offline ครั้งเดียว**
+เมื่อทราบการกระจายของมุมในแต่ละ level ล่วงหน้า จึงสร้าง codebook แบบ **offline ไว้ครั้งเดียว** ได้
 
 ```python
 def build_codebook(n_bits, lo, hi, level):
@@ -265,7 +266,7 @@ def quantize(angles, codebooks):
     return indices   # ส่งเก็บแทน angles จริง (ประหยัด bits มาก)
 ```
 
-**ตัวอย่างประหยัด memory อย่างไร:**
+**ตัวอย่างการคำนวณพื้นที่ที่ประหยัดได้:**
 
 d=128 → 7 levels
 - Level 1: 64 angles × 4 bits = 256 bits
@@ -310,7 +311,7 @@ def dequantize(indices, codebooks, R_final, Pi):
 
 ### ขั้นตอนที่ 7: QJL — 1-bit Residual Correction
 
-Stage 1 (PolarQuant) ให้ MSE-optimal quantization แต่มี **bias ใน inner product** → attention scores คลาดเคลื่อน
+Stage 1 (PolarQuant) ลดความคลาดเคลื่อนแบบ MSE แต่ยังมี **อคติในการประมาณ inner product** ซึ่งส่งผลต่อ attention scores
 
 **ทำไมมี bias?**
 - MSE-optimal quantizer ลด $\|x - \hat{x}\|^2$ → แต่ไม่ได้รับประกันว่า $\langle y, \hat{x} \rangle \approx \langle y, x \rangle$
@@ -399,7 +400,7 @@ score_hat = <y, x_hat> + (1/m) * <sign(S@y), sign_bits>
 ทดสอบบน standard long-context benchmarks:
 - **LongBench**, **Needle In A Haystack**, **ZeroSCROLLS**, **RULER**, **L-Eval**
 - Models: **Gemma**, **Mistral**
-- ผล: **Outperform** existing product quantization ใน recall
+- ผล: ให้ recall สูงกว่า product quantization ที่ใช้เปรียบเทียบ
 - **Indexing time → virtually zero** (vs PQ ที่ต้อง train codebook)
 
 ### Mathematical Optimality
@@ -409,15 +410,15 @@ $$\text{TurboQuant distortion} \approx 2.7 \times \text{Shannon's lower bound}$$
 พิสูจน์โดยใช้:
 - **Shannon's lower bound** สำหรับ information-theoretic limit
 - **Yao's minimax principle** สำหรับ randomized algorithms
-- ผล: TurboQuant ใกล้เคียง theoretical optimal โดยต่างเพียง constant factor ≈ 2.7
+- ผล: ความคลาดเคลื่อนของ TurboQuant ใกล้ค่าต่ำสุดทางทฤษฎี โดยต่างกันเป็นสัดส่วนคงที่ ≈ 2.7
 
 ---
 
 ## 💥 Impact
 
 ### สำหรับ AI Infrastructure
-- **ลด GPU memory 6x** → serve users เยอะขึ้นบน hardware เดิม
-- **ลด inference cost** อย่างมีนัยสำลัก
+- **ลดพื้นที่เก็บ KV cache 6x** เพื่อรองรับผู้ใช้เพิ่มขึ้นบน hardware เดิม
+- **ลดต้นทุน inference** ได้อย่างมีนัยสำคัญ
 - **เปิด context window ยาวขึ้น** (1M+ tokens) โดยไม่ OOM
 - Plug-and-play: ไม่ต้อง fine-tune, ไม่ต้อง calibration data
 
@@ -453,7 +454,7 @@ $$\text{TurboQuant distortion} \approx 2.7 \times \text{Shannon's lower bound}$$
 - **ITQ3_S** ([arXiv:2603.27914](https://arxiv.org/abs/2603.27914)) — Interleaved Ternary Quantization ใช้ TurboQuant เป็น rotation-domain strategy ผ่าน Fast Walsh-Hadamard Transform (FWHT) สำหรับ 3-bit inference
 - [[Gemma2]] — Google's open-source LLM ที่ใช้ทดสอบ TurboQuant
 - [[Grouped Query Attention]] — Attention optimization ที่ช่วยลด KV cache size
-- [[Speculative Sampling]] — อีก technique หนึ่งสำหรับ speed up LLM inference
+- [[Speculative Sampling]] — อีกเทคนิคหนึ่งที่ช่วยเร่ง LLM inference
 
 ---
 
@@ -473,11 +474,11 @@ $$\text{TurboQuant distortion} \approx 2.7 \times \text{Shannon's lower bound}$$
 
 ## 🧠 สรุปสั้น
 
-TurboQuant คือ **algorithm บีบอัด KV cache ที่ near-optimal ทางทฤษฎี** โดยใช้ 2-stage pipeline:
+TurboQuant เป็น **อัลกอริทึมบีบอัด KV cache ที่ให้ความคลาดเคลื่อนใกล้ค่าต่ำสุดทางทฤษฎี** บทความนี้สรุปเป็นกระบวนการ 2 ส่วน:
 
 1. **PolarQuant** → random rotate + scalar quantize → compression หลัก, zero overhead
 2. **QJL** → 1-bit residual correction → eliminate inner product bias
 
-ผลลัพธ์: **6x memory reduction, zero accuracy loss, plug-and-play**
+ผลที่รายงานคือ **ลดพื้นที่เก็บ KV cache ได้ถึง 6x และรักษาคุณภาพในงานที่ทดสอบ โดยไม่ต้องฝึกโมเดลใหม่**
 
-นี่คือ breakthrough ที่เปลี่ยน landscape ของ LLM inference — ลด cost, เพิ่ม capacity, เปิดโลก context window ยาวๆ โดยไม่ต้องซื้อ GPU เพิ่ม
+แนวทางนี้ช่วยลดต้นทุน เพิ่มจำนวนคำขอที่รองรับ และเผื่อพื้นที่ให้ context ยาวขึ้นได้บน GPU เดิม โดยต้องตรวจทั้งคุณภาพและประสิทธิภาพกับงานที่จะนำไปใช้

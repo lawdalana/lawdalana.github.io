@@ -2,16 +2,16 @@
 title: Count-Min Sketch
 notetype: feed
 date: 2026-05-05
-last_modified: 2026-05-05
+last_modified: 2026-09-16
 tags: [data-structures, count-min-sketch, frequency, streaming, probabilistic, heavy-hitters, redis]
 status: published
 ---
 
 # Count-Min Sketch: นับ Frequency ทุก Item ใน Stream ด้วย Memory นิดเดียว
 
-> **"Stream มี 10 ล้าน distinct items แต่อยากรู้ว่าแต่ละอันปรากฏกี่ครั้ง — โดยไม่เก็บทั้ง 10 ล้านตัว"** — Count-Min Sketch ตอบคำถามนี้ด้วยแค่ 5 KB
+> **"Stream มี items ไม่ซ้ำกัน 10 ล้านรายการ แต่อยากรู้ว่าแต่ละรายการปรากฏกี่ครั้ง โดยไม่เก็บครบทั้ง 10 ล้านรายการ"** Count-Min Sketch ช่วยประมาณความถี่นี้ได้ด้วยหน่วยความจำเพียง 5 KB
 
-Count-Min Sketch (CMS) เป็น frequency estimation structure ที่ **overestimate เท่านั้น** (never undercount) — เหมาะสำหรับ heavy hitter detection, ad impression counting, network monitoring
+Count-Min Sketch (CMS) เป็นโครงสร้างข้อมูลสำหรับประมาณความถี่ โดยค่าประมาณ **อาจสูงกว่าค่าจริง แต่ไม่ต่ำกว่า** (never undercount) เหมาะกับการตรวจหารายการที่พบบ่อย การนับจำนวนครั้งที่โฆษณาปรากฏ และการติดตามปริมาณเครือข่าย
 
 **Inventors:** Graham Cormode & S. Muthukrishnan (2005)
 
@@ -71,7 +71,7 @@ return min(CMS[0][h₀(item)], CMS[1][h₁(item)], ..., CMS[d-1][h_{d-1}(item)])
 O(d) — d hash computations + d counter reads
 ```
 
-**ทำไมใช้ MIN?** — collisions เพิ่มค่า counter → MIN = closest to true value
+**ทำไมใช้ MIN?** เมื่อ hash ชนกัน ค่า counter จะสูงขึ้น การเลือกค่าต่ำสุดจึงได้ค่าที่ใกล้ความถี่จริงที่สุดจาก counters ที่อ่านมา
 
 ---
 
@@ -166,16 +166,18 @@ Max overcount: ε × N = 0.001 × N
 
 | Use Case | ε | δ | d | w | Memory | Max Overcount (N=1M) |
 |----------|---|---|---|---|--------|---------------------|
-| Rough | 0.01 | 0.01 | 5 | 272 | 5.4 KB | ±10,000 |
-| Moderate | 0.001 | 0.01 | 5 | 2,719 | 54 KB | ±1,000 |
-| High accuracy | 0.0001 | 0.001 | 7 | 27,183 | 760 KB | ±100 |
-| Very high | 0.00001 | 0.0001 | 10 | 271,829 | 10.9 MB | ±10 |
+| Rough | 0.01 | 0.01 | 5 | 272 | 5.4 KB | +10,000 |
+| Moderate | 0.001 | 0.01 | 5 | 2,719 | 54 KB | +1,000 |
+| High accuracy | 0.0001 | 0.001 | 7 | 27,183 | 760 KB | +100 |
+| Very high | 0.00001 | 0.0001 | 10 | 271,829 | 10.9 MB | +10 |
+
+ค่าในคอลัมน์สุดท้ายคือขอบเขตของส่วนที่อาจนับเกิน ภายใต้ความน่าจะเป็นตามที่กำหนดด้วย δ ไม่ใช่ความคลาดเคลื่อนทั้งบวกและลบ
 
 ---
 
 ## Conservative Update (Optimization)
 
-Standard update increments ALL d positions. Conservative update กรองเฉพาะ positions ที่ ≤ current minimum:
+Standard update เพิ่มค่า counter ทั้ง d ตำแหน่ง ส่วน conservative update เพิ่มเฉพาะตำแหน่งที่มีค่าเท่ากับค่าต่ำสุดในปัจจุบัน:
 
 ```
 Standard:
@@ -194,7 +196,7 @@ Benefit: ลด overcounting ได้มาก โดยเฉพาะกั�
 
 ## Heavy Hitter Detection
 
-CMS เหมาะมากสำหรับหา items ที่ปรากฏบ่อยที่สุด (heavy hitters):
+CMS ใช้ช่วยตรวจหา items ที่ปรากฏบ่อย (heavy hitters) ได้ดังนี้:
 
 ```
 Threshold θ: หาทุก item ที่ frequency ≥ θ × N
@@ -286,7 +288,7 @@ println!("apple: ~{}", cms.count("apple"));  // always >= true count
 | [[Space-Saving Algorithm]] | O(k) | ≤ n/k | ❌ (top-K only) | ✅ | ❌ |
 
 > **ถ้าต้องการแค่ Top-K → [[Space-Saving Algorithm]] ประหยัดกว่า 100-1000 เท่า**
-> **ถ้าต้องการ frequency ของทุก item → CMS คือตัวเลือกเดียวที่ใช้ได้**
+> **ถ้าต้องการประมาณความถี่ของ item ใดก็ได้ CMS เป็นตัวเลือกหนึ่งที่ใช้ได้**
 
 ---
 
@@ -294,7 +296,7 @@ println!("apple: ~{}", cms.count("apple"));  // always >= true count
 
 | Aspect | Detail |
 |--------|--------|
-| **What** | นับ frequency ของ items ใน stream |
+| **What** | ประมาณความถี่ของ items ใน stream |
 | **Error** | Overestimate only: ≤ $f_x + \varepsilon N$ |
 | **Space** | $O(1/\varepsilon \times \log(1/\delta))$ — 5 KB to 20 MB |
 | **Speed** | O(d) insert + query |

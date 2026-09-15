@@ -1,49 +1,49 @@
 ---
-title: Introduction Model Context Protocal (MCP)
+title: Introduction to the Model Context Protocol (MCP)
 notetype: feed
 date: 2025-10-04
-last_modified: 2025-10-04
+last_modified: 2026-09-16
 tags: [llm, mcp, ai, tools]
 status: published
 ---
 
 # [Source: Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions](https://arxiv.org/abs/2503.23278)
 
-MCP คืออะไร: โปรโตคอลมาตรฐานที่ทำให้ AI คุยกับ “เครื่องมือ-ข้อมูลภายนอก” ได้แบบเป็นระบบเดียวกัน ลด data silos และเพิ่มการทำงานข้ามระบบอย่างไร้รอยต่อ. เป็นมาตรฐานใหม่ที่ทำให้ AI สามารถสื่อสารกับเครื่องมือและแหล่งข้อมูลภายนอกได้อย่างราบรื่น
+MCP คือโปรโตคอลมาตรฐานที่ให้แอป AI เชื่อมต่อกับเครื่องมือและแหล่งข้อมูลภายนอกผ่านวิธีการเดียวกัน ช่วยลดปัญหาข้อมูลแยกอยู่ในหลายระบบและลดงานเขียนตัวเชื่อมต่อเฉพาะทาง
 
 ## Timeline (ChatGPT - Tools)
 - พ.ย. 2022 — เปิดตัว ChatGPT (จุดเริ่ม “ยุคแชตบอต”)
 - มี.ค. 2023 — ChatGPT Plugins (เริ่ม “ต่อเครื่องมือ/เว็บ”)
 - ก.ค. 2023 — Code Interpreter (ต่อมาเรียก Advanced Data Analysis)
-- *ก.ค. 2023 — **[Function Calling (ทางการสำหรับ Dev)](https://help.openai.com/en/articles/8555517-function-calling-in-the-openai-api)**
+- ก.ค. 2023 — **[Function Calling (ทางการสำหรับ Dev)](https://help.openai.com/en/articles/8555517-function-calling-in-the-openai-api)**
 - ก.ย. 2023 — ChatGPT “กลับมาท่องเว็บได้” (Browse) อย่างเป็นทางการ
 - พ.ย. 2023 — DevDay: GPT-4 Turbo, Assistants API & “Agent-like experiences”
-- พ.ย. 2023 — “GPTs” (ChatGPT Apps/Custom GPT) ให้ใครๆ สร้างแอปย่อยได้
+- พ.ย. 2023 — “GPTs” (ChatGPT Apps/Custom GPT) เปิดให้ผู้ใช้สร้างผู้ช่วยเฉพาะงาน
 - ม.ค. 2024 — GPT Store (คลังแอป GPT สาธารณะ)
-- พ.ค. 2024 — GPT-4o (Omni) โหมดเรียลไทม์/มัลติโมดัลเต็มรูป
-- ก.ค. 2024 — SearchGPT (ต้นแบบ “ChatGPT ที่ค้นหาได้แบบ Search เต็มตัว”)
+- พ.ค. 2024 — GPT-4o (Omni) รองรับการทำงานแบบ real-time และข้อมูลหลายรูปแบบ
+- ก.ค. 2024 — SearchGPT ต้นแบบการค้นหาข้อมูลผ่านบทสนทนา
 - ก.ย. 2024 — รุ่น reasoning ตระกูล o1 (“คิดก่อนตอบ”)
-- *พ.ย. 2024 — **[Anthropic เปิดตัว MCP (Model Context Protocol)](https://modelcontextprotocol.io/docs/getting-started/intro)**
+- พ.ย. 2024 — **[Anthropic เปิดตัว MCP (Model Context Protocol)](https://modelcontextprotocol.io/docs/getting-started/intro)**
 - มี.ค. 2025 — Responses API & Agents SDK (ยุคเอเจนต์สำหรับนักพัฒนา)
 
 ## 1.Introduction
-- พัฒนาการของ AI agent ที่ใช้เครื่องมือภายนอกเพิ่มขึ้นอย่างมากตั้งแต่ปี 2023
-- OpenAI เปิดตัว function calling → Anthropic พัฒนาเป็น MCP ในปี 2024
-- MCP ช่วยให้ AI ค้นหาและใช้เครื่องมือได้อย่างอิสระ ไม่ต้องกำหนดล่วงหน้า
-- งานวิจัยเป็นการวิเคราะห์เชิงลึกครั้งแรกของ MCP ทั้งสถาปัตยกรรม ระบบนิเวศ และความปลอดภัย
+- AI agent ใช้เครื่องมือภายนอกมากขึ้นตั้งแต่ปี 2023
+- หลังจาก OpenAI เปิดตัว function calling Anthropic ก็เปิดตัว MCP ในปี 2024
+- MCP ช่วยให้ AI ค้นหาและเรียกใช้เครื่องมือผ่านอินเทอร์เฟซมาตรฐาน
+- งานวิจัยนี้วิเคราะห์ MCP ทั้งด้านสถาปัตยกรรม ระบบนิเวศ และความปลอดภัย
 
 ---
 
 ## 2.Background and Motivation
 ![Tools_w_wo_MCP](/assets/img/Other/LLM/Tools_w_wo_MCP.avif)
 - AI Tooling
-  - ก่อนมี MCP นักพัฒนาต้องเขียน API เชื่อมต่อเอง (manual API wiring) → ซับซ้อนและเปราะบาง
-  - Plugin interfaces เช่น ChatGPT Plugins แก้บางส่วนแต่ยังจำกัด
+  - ก่อนมี MCP นักพัฒนาต้องเขียนโค้ดเชื่อมต่อ API แต่ละตัวเอง ทำให้ระบบซับซ้อนและดูแลยาก
+  - อินเทอร์เฟซแบบปลั๊กอิน เช่น ChatGPT Plugins ช่วยแก้ปัญหาบางส่วน แต่ยังมีข้อจำกัด
   - Frameworks อย่าง LangChain ช่วยรวมเครื่องมือ แต่ยังไม่เป็นมาตรฐาน
-  - MCP ทำให้ AI เชื่อมต่อและประมวลผลกับเครื่องมือภายนอกได้แบบรวมศูนย์
+  - MCP ให้วิธีมาตรฐานสำหรับเชื่อมแอป AI กับเครื่องมือภายนอก
 
 - Motivation
-  - MCP ช่วยลดภาระของนักพัฒนาและเพิ่มความยืดหยุ่นของ agent แต่ยังมีช่องว่างด้าน security, discoverability และ governance → ต้องมีงานวิจัยต่อเนื่อง
+  - MCP ช่วยลดภาระของนักพัฒนาและเพิ่มความยืดหยุ่นของ agent แต่ยังต้องศึกษาปัญหาด้านความปลอดภัย การค้นพบเครื่องมือ และการกำกับดูแล
 
 ---
 
@@ -55,7 +55,7 @@ MCP คืออะไร: โปรโตคอลมาตรฐานที�
 - Core Components
   - MCP Host: แอป AI เช่น Cursor, Claude Desktop
   - MCP Client: ตัวกลางสื่อสารระหว่าง host และ server
-  - MCP Server: จัดการการเข้าถึงเครื่องมือ, แหล่งข้อมูล, และ prompt templates
+  - MCP Server: เปิดให้เข้าถึงเครื่องมือ แหล่งข้อมูล และ prompt templates
 
 ![MCP_Workflow](/assets/img/Other/LLM/MCP_Workflow.avif)
 
@@ -70,52 +70,52 @@ MCP คืออะไร: โปรโตคอลมาตรฐานที�
 ![MCP Server Lifecycle](/assets/img/Other/LLM/MCP_Server_LF.avif)
 
 - Creation Phase
-  - Name Collision: เซิร์ฟเวอร์ปลอมชื่อใกล้เคียงของจริง
-  - Installer Spoofing: ตัวติดตั้งถูกแก้ไขให้มี backdoor
-  - Code Injection: ฝังโค้ดอันตรายลงใน source
+  - Name Collision: เซิร์ฟเวอร์ปลอมใช้ชื่อใกล้เคียงกับของจริง
+  - Installer Spoofing: ตัวติดตั้งถูกดัดแปลงให้มี backdoor
+  - Code Injection: ฝังโค้ดอันตรายในซอร์สโค้ด
 
 - Operation Phase
-  - Tool Name Conflict: เครื่องมือชื่อเหมือนกัน → เรียกใช้ผิด
-  - Slash Command Overlap: คำสั่งซ้ำกันระหว่าง tools
-  - Sandbox Escape: เครื่องมือออกจากสภาพแวดล้อมจำกัดและเข้าควบคุมระบบหลัก
+  - Tool Name Conflict: เครื่องมือชื่อซ้ำกันอาจทำให้เรียกใช้ผิดตัว
+  - Slash Command Overlap: คำสั่งของเครื่องมือต่างตัวใช้ชื่อซ้ำกัน
+  - Sandbox Escape: เครื่องมือหลุดจากสภาพแวดล้อมที่จำกัดสิทธิ์และเข้าถึงระบบหลัก
 
 - Update Phase
   - Privilege Persistence: สิทธิ์ผู้ใช้ไม่ถูกรีเซ็ตหลังอัปเดต
   - Redeploy Vulnerable Versions: ติดตั้งเวอร์ชันเก่าที่มีช่องโหว่
-  - Configuration Drift: ค่าการตั้งค่าเบี่ยงเบนจากมาตรฐาน
+  - Configuration Drift: ค่าตั้งค่าเปลี่ยนไปจากมาตรฐานที่กำหนด
 
 ### [MCP-Client and MCP-Server] Name Collision Issue (ชื่อซ้ำ)
 - Problem
-  - ผู้โจมตีจงใจจดทะเบียน MCP server ที่ชื่อ “เหมือนหรือคล้าย” ของจริง (เช่น mcp-github เลียนแบบ github-mcp) เพื่อให้ผู้ใช้/เอเจนต์ติดตั้งผิดตัว เพราะไคลเอนต์ MCP อาศัย “ชื่อและคำอธิบาย” เป็นหลักตอนเลือกเซิร์ฟเวอร์
+  - ผู้โจมตีตั้งชื่อ MCP server ให้เหมือนหรือคล้ายของจริง เช่น mcp-github เลียนแบบ github-mcp เพื่อหลอกให้ผู้ใช้หรือ agent ติดตั้งผิดตัว โดยอาศัยการเลือกจากชื่อและคำอธิบาย
 - Impact
-  - ข้อมูลอ่อนไหวถูกดัก/แก้ไข, คำสั่งสำคัญถูกสั่งโดยผู้โจมตี, เวิร์กโฟลว์ล้มเหลวหรือถูกบิดเบือน
+  - ข้อมูลอ่อนไหวอาจถูกดักอ่านหรือแก้ไข ผู้โจมตีอาจสั่งงานแทนผู้ใช้ และทำให้ขั้นตอนการทำงานผิดไปจากที่ตั้งใจ
 - Solution
-  - ใช้ allowlist/pinning ของ “ผู้พัฒนา/ผู้จัดการแพ็กเกจที่เชื่อถือได้” ก่อนอนุญาตให้เอเจนต์ใช้
-  - UI ฝั่งไคลเอนต์โชว์ publisher + fingerprint ชัดเจน และเตือนเมื่อชื่อคล้ายของดัง
-  - ระยะยาว: จัดทำ namespace policy + เซ็นชื่อคริปโต ให้ยืนยันตัวตนเซิร์ฟเวอร์ และ ระบบความน่าเชื่อถือ (reputation) สำหรับการลงทะเบียน/ค้นพบเซิร์ฟเวอร์
+  - กำหนด allowlist และตรึงแหล่งแพ็กเกจหรือผู้เผยแพร่ที่เชื่อถือได้ ก่อนอนุญาตให้ agent ใช้งาน
+  - แสดงผู้เผยแพร่และ fingerprint ให้ชัดเจนในหน้าจอไคลเอนต์ พร้อมเตือนเมื่อชื่อคล้ายเซิร์ฟเวอร์ที่รู้จัก
+  - ระยะยาว: กำหนดนโยบาย namespace ใช้ลายเซ็นดิจิทัลยืนยันตัวตนเซิร์ฟเวอร์ และสร้างระบบประเมินความน่าเชื่อถือสำหรับการลงทะเบียนและค้นหา
 
 ### [MCP-Server] Installer Spoofing 
 - Problem
-  - เพราะการตั้งค่าเซิร์ฟเวอร์ MCP โดยมือค่อนข้างยาก จึงเกิด auto-installer ชุมชน (เช่น Smithery-CLI, mcp-get, mcp-installer) เพื่อกดครั้งเดียวจบ—แต่ช่องทางนี้เปิด “ผิวโจมตีซัพพลายเชน” เพิ่ม หากแพ็กเกจถูกดัดแปลง/ฉีดโค้ด
-  - ผู้โจมตีแนบมัลแวร์/แบ็กดอร์, ตั้งค่าผิดเจตนา, หรือแอบเปิด persistence ระหว่างติดตั้ง โดยผู้ใช้มักไม่ตรวจซอร์สโค้ดของ one-click installer
+  - การตั้งค่า MCP server ด้วยตนเองมีหลายขั้นตอน จึงมีเครื่องมือติดตั้งอัตโนมัติจากชุมชน เช่น Smithery-CLI, mcp-get และ mcp-installer เครื่องมือเหล่านี้เพิ่มความเสี่ยงจากห่วงโซ่อุปทานซอฟต์แวร์ หากแพ็กเกจถูกดัดแปลงหรือฝังโค้ดอันตราย
+  - ผู้โจมตีอาจแนบมัลแวร์หรือ backdoor เปลี่ยนค่าตั้งค่า หรือฝังกลไกให้กลับมาเข้าถึงระบบได้หลังติดตั้ง โดยผู้ใช้อาจไม่ได้ตรวจซอร์สโค้ดของตัวติดตั้ง
 - Impact
-  - สิทธิ์ในเครื่องถูกยึด, config ถูกแก้, outbound แปลก ๆ, ติดตั้งเซิร์ฟเวอร์ที่ถูก “ปรุงแต่ง” รอรับคำสั่ง
+  - ผู้โจมตีอาจได้สิทธิ์ในเครื่อง เปลี่ยนค่าตั้งค่า ส่งข้อมูลออกนอกระบบ หรือติดตั้งเซิร์ฟเวอร์ที่ดัดแปลงไว้เพื่อรอรับคำสั่ง
 - Solution
-  - ติดตั้งจากแหล่งที่ตรวจสอบได้เท่านั้น + ตรวจเช็กซัม/ลายเซ็น ทุกครั้ง
-  - ล็อกเวอร์ชัน (pin) และรัน installer/เซิร์ฟเวอร์ใน sandbox/container แบบ non-root, จำกัดสิทธิ์ไฟล์/เครือข่ายเริ่มต้นเป็น deny by default
-  - ใช้ SBOM/Dependency audit; เปิด audit log สำหรับไฟล์คอนฟิกและเครือข่าย
-  - ระยะยาว: สร้าง framework ติดตั้งอย่างเป็นมาตรฐาน + ตรวจความถูกต้องแพ็กเกจ และ ระบบ reputation สำหรับ auto-installers
+  - ติดตั้งจากแหล่งที่ตรวจสอบได้ และตรวจ checksum หรือลายเซ็นทุกครั้ง
+  - ตรึงเวอร์ชัน (pin) และรันตัวติดตั้งกับเซิร์ฟเวอร์ใน sandbox/container ที่ไม่ใช้สิทธิ์ root โดยปฏิเสธการเข้าถึงไฟล์และเครือข่ายไว้ก่อน แล้วอนุญาตเฉพาะที่จำเป็น
+  - ตรวจ SBOM และ dependencies พร้อมเปิด audit log สำหรับการเปลี่ยนค่าตั้งค่าและการใช้เครือข่าย
+  - ระยะยาว: พัฒนามาตรฐานการติดตั้ง การตรวจสอบแพ็กเกจ และระบบประเมินความน่าเชื่อถือของตัวติดตั้งอัตโนมัติ
 
 ### [MCP-Server] Sandbox Escape
 - Problem
-  - แม้ MCP จะบังคับรัน “เครื่องมือ” ใน sandbox เพื่อจำกัดการเข้าถึงระบบหลัก แต่ผู้โจมตีอาจใช้ช่องโหว่ของ sandbox/container runtime, system calls, lib ภายนอก หรือ side-channel เพื่อ “หนีออก” ไปสู่โฮสต์ แล้วยกระดับสิทธิ์/รันโค้ดอิสระ
-  - เป็นภัยหลักของ ช่วงปฏิบัติการ (operation phase) ของ MCP server ซึ่งงานระบุไว้ตรง ๆ ในไดอะแกรมและคำอธิบายวงจรชีวิต
+  - แม้จะรันเครื่องมือ MCP ใน sandbox เพื่อจำกัดการเข้าถึงระบบหลัก ผู้โจมตีก็อาจใช้ช่องโหว่ของ sandbox/container runtime, system calls, ไลบรารีภายนอก หรือ side-channel เพื่อออกไปยังโฮสต์และยกระดับสิทธิ์
+  - งานวิจัยระบุภัยนี้ไว้ในช่วงการทำงาน (operation phase) ของวงจรชีวิต MCP server
 - Impact
-  - โค้ดอันตรายรันบนโฮสต์, ข้อมูลหลุดจากโฟลเดอร์นอก sandbox, เอเจนต์ถูกยึดคลัสเตอร์/เครื่อง
+  - โค้ดอันตรายอาจทำงานบนโฮสต์และเข้าถึงข้อมูลนอก sandbox รวมถึงทำให้ผู้โจมตียึดเครื่องหรือคลัสเตอร์ที่ agent ใช้งาน
 - Solution
-  - เลือก runtime แยกสิทธิ์เข้ม (เช่น gVisor/Firecracker) + เปิด seccomp/AppArmor/SELinux, drop Linux capabilities, rootless containers
-  - ไฟล์ระบบ read-only + no host bind-mounts โดยปริยาย; network ของเครื่องมือ deny by default แล้วค่อย allowlist เป็นรายปลายทาง
-  - หมุนคีย์/โทเคนแบบสั้นอายุ, อัปแพตช์ runtime/ไลบรารีสม่ำเสมอ, ทำ chaos/sandbox-escape drills ตามรายการโจมตีตัวอย่างในงาน
+  - ใช้ runtime ที่แยกสภาพแวดล้อมเข้มงวด เช่น gVisor/Firecracker ร่วมกับ seccomp/AppArmor/SELinux ลด Linux capabilities และใช้ rootless containers
+  - กำหนดระบบไฟล์ให้อ่านอย่างเดียวและไม่ผูกโฟลเดอร์จากโฮสต์เข้ามาโดยปริยาย ส่วนเครือข่ายให้ปฏิเสธไว้ก่อนแล้วอนุญาตเฉพาะปลายทางใน allowlist
+  - ใช้โทเคนอายุสั้น หมุนเวียนคีย์ อัปเดตแพตช์ runtime และไลบรารีสม่ำเสมอ พร้อมซ้อมรับมือ sandbox escape ตามกรณีที่งานวิจัยยกมา
 
 ---
 
@@ -174,5 +174,5 @@ MCP คืออะไร: โปรโตคอลมาตรฐานที�
 
 ## Useful link
 - [Function Call OpenAI](https://help.openai.com/en/articles/8555517-function-calling-in-the-openai-api)
-- [Antropic MCP Introduction](https://modelcontextprotocol.io/docs/getting-started/intro)
-- [Antropic MCP Authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
+- [Anthropic MCP Introduction](https://modelcontextprotocol.io/docs/getting-started/intro)
+- [Anthropic MCP Authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)

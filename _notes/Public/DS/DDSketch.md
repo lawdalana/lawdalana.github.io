@@ -2,16 +2,16 @@
 title: DDSketch
 notetype: feed
 date: 2026-05-05
-last_modified: 2026-05-05
+last_modified: 2026-09-16
 tags: [data-structures, ddsketch, quantile, percentile, monitoring, latency, streaming, probabilistic, datadog]
 status: published
 ---
 
 # DDSketch: วัด p99 Latency แบบ Real-time ด้วย 5 KB
 
-> **"API ของเรามี p99 latency เท่าไหร่? ต้องตอบได้ทันที โดยไม่เก็บ log ทุก request"** — DDSketch ตอบคำถามนี้ด้วย memory แค่ 5 KB โดยมี relative error ≤ 1%
+> **"API ของเรามี p99 latency เท่าไร? ต้องตอบได้ทันที โดยไม่เก็บ log ของทุก request"** DDSketch ช่วยประมาณค่านี้ได้ด้วยหน่วยความจำเพียง 5 KB โดยมี relative error ≤ 1%
 
-DDSketch เป็น **quantile estimation** algorithm สำหรับหา percentile (p50, p90, p95, p99, p99.9) จาก data stream — คำนวณ latency, response time, และ distribution metrics แบบ real-time
+DDSketch เป็นอัลกอริทึม **ประมาณค่า quantile** สำหรับหา percentile (p50, p90, p95, p99, p99.9) จาก data stream ใช้ติดตามการกระจายของ latency, response time และตัวชี้วัดอื่นแบบ real-time
 
 **Inventors:** Charles Masson, Jee E. Rim, Homin K. Lee (Datadog, 2019)
 
@@ -36,7 +36,7 @@ Naive: เก็บทุก value → sort → pick percentile
 
 ## หลักการ: Logarithmic Bucketing
 
-DDSketch map values เป็น buckets โดยใช้ **logarithmic scaling** — แต่ละ bucket ครอบคลุม range เป็นสัดส่วนของ value:
+DDSketch จัดค่าลง buckets ด้วย **logarithmic scaling** โดยช่วงค่าที่แต่ละ bucket ครอบคลุมจะกว้างขึ้นตามขนาดของค่า:
 
 ```
 Value 100 → bucket ครอบ [99, 101]    (±1%)
@@ -87,50 +87,54 @@ INSERT(value):
 
 ### Step 3: Query Percentile
 
-$$\text{target\_count} = q \times N$$
+ตัวอย่างนี้ใช้การเลือกอันดับแบบ nearest-rank:
+
+$$\text{target\_count} = \left\lceil q \times N \right\rceil$$
 
 ```
 Walk buckets from smallest until cumulative ≥ target_count
-Map bucket index back to value: v = γ^idx
+Map bucket index back to its representative: v = 2 × γ^idx / (γ + 1)
 ```
 
 ### 🧮 ตัวอย่างการคำนวณ
 
 ```
-α = 0.02 (2% error), γ ≈ 1.04
+α = 0.02 (2% error), γ = (1 + α) / (1 - α) ≈ 1.040816
+ln(γ) ≈ 0.040005
 
 Latencies (ms): [5, 12, 15, 23, 45, 67, 89, 120, 350, 890]
 
 Step 1: Map to buckets
-  ln(5)/ln(1.04)   = 1.609/0.0392 = 41.1 → bucket 42
-  ln(12)/ln(1.04)  = 2.485/0.0392 = 63.4 → bucket 64
-  ln(15)/ln(1.04)  = 2.708/0.0392 = 69.1 → bucket 70
-  ln(23)/ln(1.04)  = 3.135/0.0392 = 80.0 → bucket 80
-  ln(45)/ln(1.04)  = 3.807/0.0392 = 97.1 → bucket 98
-  ln(67)/ln(1.04)  = 4.204/0.0392 = 107.2 → bucket 108
-  ln(89)/ln(1.04)  = 4.489/0.0392 = 114.5 → bucket 115
-  ln(120)/ln(1.04) = 4.787/0.0392 = 122.1 → bucket 123
-  ln(350)/ln(1.04) = 5.858/0.0392 = 149.4 → bucket 150
-  ln(890)/ln(1.04) = 6.791/0.0392 = 173.2 → bucket 174
+  ln(5)/ln(γ)   ≈ 40.2306  → bucket 41
+  ln(12)/ln(γ)  ≈ 62.1144  → bucket 63
+  ln(15)/ln(γ)  ≈ 67.6922  → bucket 68
+  ln(23)/ln(γ)  ≈ 78.3769  → bucket 79
+  ln(45)/ln(γ)  ≈ 95.1539  → bucket 96
+  ln(67)/ln(γ)  ≈ 105.1033 → bucket 106
+  ln(89)/ln(γ)  ≈ 112.2009 → bucket 113
+  ln(120)/ln(γ) ≈ 119.6713 → bucket 120
+  ln(350)/ln(γ) ≈ 146.4288 → bucket 147
+  ln(890)/ln(γ) ≈ 169.7579 → bucket 170
 
 Histogram (simplified):
-  42→1, 64→1, 70→1, 80→1, 98→1, 108→1, 115→1, 123→1, 150→1, 174→1
+  41→1, 63→1, 68→1, 79→1, 96→1, 106→1, 113→1, 120→1, 147→1, 170→1
 
-Step 2: Query p50 (5th value out of 10)
-  Walk: bucket 42(1) → 64(2) → 70(3) → 80(4) → 98(5) ← target!
+Step 2: Query p50 (nearest-rank = ceil(0.50 × 10) = 5)
+  Walk: bucket 41(1) → 63(2) → 68(3) → 79(4) → 96(5) ← target!
   
-  p50 estimate = γ^98 = 1.04^98 ≈ 46.8 ms
+  p50 estimate = 2 × γ^96 / (γ + 1) ≈ 45.6183 ms
   True p50 = 45 ms
-  Error = |46.8 - 45| / 45 = 4% (slightly above α due to small sample)
+  Relative error = |45.6183 - 45| / 45 ≈ 1.374% ≤ 2%
 
-Step 3: Query p99 (9.9th value)
-  Walk all → 9th value at bucket 150
+Step 3: Query p99 (nearest-rank = ceil(0.99 × 10) = 10)
+  Walk all → 10th value at bucket 170
   
-  p99 estimate = γ^150 = 1.04^150 ≈ 367 ms
-  True p99 = 350 ms
-  Error = |367 - 350| / 350 = 4.9% (again, small sample)
+  p99 estimate = 2 × γ^170 / (γ + 1) ≈ 880.6887 ms
+  True p99 = 890 ms
+  Relative error = |880.6887 - 890| / 890 ≈ 1.046% ≤ 2%
   
-  With millions of values → error converges to ≤ α
+  The ideal mapping keeps relative error ≤ α for these positive values.
+  A small sample does not invalidate this bound.
 ```
 
 ---
