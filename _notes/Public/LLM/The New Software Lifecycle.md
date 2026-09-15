@@ -11,6 +11,8 @@ status: published
 
 > สรุปและเรียบเรียงจาก [The New Software Lifecycle](https://addyosmani.com/blog/new-sdlc-vibe-coding/) โดย Addy Osmani เผยแพร่เมื่อ 16 มิถุนายน 2026
 
+> ภาพประกอบทั้ง 6 ภาพนำมาจากบทความต้นฉบับ ซึ่งผู้เขียนระบุว่าสามารถนำ figures ไปใช้ซ้ำได้ โดยบันทึกเป็น local assets ของเว็บไซต์เพื่อไม่ให้หน้าเว็บเรียกไฟล์จากโดเมนภายนอก
+
 AI ไม่ได้ทำให้วงจรพัฒนาซอฟต์แวร์หรือ **SDLC (Software Development Lifecycle)** หายไป แต่มันทำให้สัดส่วนของงานแต่ละช่วงเปลี่ยนอย่างมาก: การเขียนโค้ดอาจหดจากหลายสัปดาห์เหลือไม่กี่ชั่วโมง ขณะที่การกำหนดความต้องการ การตัดสินใจด้านสถาปัตยกรรม และการตรวจสอบความถูกต้องยังต้องอาศัยวิจารณญาณสูง
 
 ใจความสำคัญของบทความคือ:
@@ -51,6 +53,10 @@ Agent = Model + Harness
 
 บทความใช้ภาพจำว่าโมเดลอาจเป็นเพียง **10%** ส่วน harness คือ **90%** ของระบบ ตัวเลขนี้ควรอ่านเป็น *mental model* ไม่ใช่สูตรตายตัว แต่ชี้ให้เห็นว่าเมื่อ agent ทำงานพลาด การเปลี่ยนโมเดลอาจไม่ใช่คำตอบแรก ปัญหามักอยู่ที่ tool หาย, rule คลุมเครือ, guardrail ไม่พอ หรือ context เต็มไปด้วยข้อมูลที่ไม่เกี่ยวข้อง
 
+![โครงสร้าง Agent ที่ประกอบด้วย Model และ Harness](/assets/img/LLM/New-SDLC/agent-model-harness.jpg)
+
+*ภาพจากต้นฉบับ: โมเดลเป็นแกนกลาง ส่วน instructions, tools, orchestration, evals, observability และ infrastructure ประกอบกันเป็น harness*
+
 ### วิธี debug ที่ควรลองก่อนเปลี่ยนโมเดล
 
 1. ตรวจว่า agent ได้รับ requirement และ acceptance criteria ครบหรือไม่
@@ -83,6 +89,10 @@ Agent = Model + Harness
 
 > เส้นแบ่งระหว่าง static และ dynamic context ควรถูก review และ version เหมือน source code เพราะมันกระทบทั้งพฤติกรรม ความปลอดภัย latency และค่าใช้จ่าย
 
+![การแบ่ง Static Context และ Dynamic Context](/assets/img/LLM/New-SDLC/static-dynamic-context.jpg)
+
+*ภาพจากต้นฉบับ: static context เชื่อถือได้แต่มีต้นทุนทุก turn ส่วน dynamic context โหลดเฉพาะสิ่งที่ task ต้องใช้*
+
 ---
 
 ## 3. Verification คือเส้นแบ่งระหว่าง Vibe Coding กับ Engineering
@@ -94,6 +104,10 @@ flowchart LR
     A[Vibe Coding<br/>prompt แล้วดูว่าเหมือนจะใช้ได้] --> B[Structured AI-Assisted<br/>มี spec และ tests]
     B --> C[Agentic Engineering<br/>tests + evals + CI/CD + observability]
 ```
+
+![สเปกตรัมจาก Vibe Coding ไปสู่ Agentic Engineering](/assets/img/LLM/New-SDLC/vibe-to-agentic-spectrum.jpg)
+
+*ภาพจากต้นฉบับ: จุดต่างสำคัญไม่ใช่การใช้ AI หรือไม่ แต่คือระดับของ specification และ verification*
 
 บทความแยก verification เป็นสามชั้น:
 
@@ -138,6 +152,10 @@ flowchart LR
 | Maintenance | อธิบาย legacy code, refactor, อัปเกรด dependency | รักษาความเข้าใจระบบและยืนยันว่า behavior สำคัญไม่เปลี่ยน |
 
 AI จึงไม่ได้ทำให้ทุก phase เร็วเท่ากัน เมื่อ implementation ถูกบีบให้สั้นลง **คุณภาพของ specification และ verification จะกลายเป็นคอขวดใหม่**
+
+![เปรียบเทียบ Traditional SDLC กับ AI-Driven SDLC](/assets/img/LLM/New-SDLC/traditional-vs-ai-sdlc.jpg)
+
+*ภาพจากต้นฉบับ: implementation ถูกบีบจากระดับสัปดาห์เป็นนาทีถึงชั่วโมง ขณะที่ specification และการประเมินผลมีความสำคัญมากขึ้น*
 
 ---
 
@@ -188,6 +206,10 @@ Agent มักสร้าง 80% แรกของ feature ได้เร็
 
 บทความแสดงจุด crossover ที่ vibe coding อาจแพงกว่า **3–10 เท่าต่อ feature** แต่ผู้เขียนระบุชัดว่าเป็นตัวเลขเพื่ออธิบายแนวคิด ไม่ใช่ค่าคงที่ที่วัดได้ทุกองค์กร สิ่งที่ตัดสินว่าคุ้มคืออายุของซอฟต์แวร์ ความเสี่ยง และต้นทุนเมื่อผิดพลาด
 
+![ต้นทุนสะสมของ Vibe Coding เทียบกับ Agentic Engineering](/assets/img/LLM/New-SDLC/vibe-vs-agentic-economics.jpg)
+
+*ภาพจากต้นฉบับ: vibe coding เริ่มเร็วและต้นทุนเริ่มต่ำ แต่หนี้จาก prompting, maintenance, security และ context อาจทำให้ต้นทุนสะสมแซงในระยะยาว*
+
 ### Context และ model routing คือ financial controls
 
 - อย่าส่ง repository ขนาดใหญ่ทั้งหมดเข้า prompt ทุกครั้ง
@@ -216,6 +238,10 @@ Agent มักสร้าง 80% แรกของ feature ได้เร็
 - **Orchestrator** — มอบหมาย goal แบบ asynchronous ให้หนึ่งหรือหลาย agents เหมาะกับงานที่ระบุชัด เช่น migration, test generation หรือ refactoring
 
 การเปลี่ยนผ่านนี้เป็นเรื่องทักษะก่อนเรื่องเครื่องมือ: ต้องรู้ว่างานใดควรควบคุมใกล้ชิด งานใด delegate ได้ และหลักฐานแบบใดจึงเพียงพอสำหรับการยอมรับผลลัพธ์
+
+![วิวัฒนาการจาก Autocomplete ไปสู่ Autonomous Agents](/assets/img/LLM/New-SDLC/autocomplete-to-autonomy.jpg)
+
+*ภาพจากต้นฉบับ: เครื่องมือพัฒนาจากการช่วยเติม syntax ไปสู่การรับ intent และดำเนินงานด้วย autonomy ที่สูงขึ้น*
 
 ---
 
