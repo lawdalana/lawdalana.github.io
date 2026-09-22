@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Jev System One decision flow</title>
+  <desc id="desc">Structured state and atomic questions enter Jev, which returns typed probabilities. Application code then acts, asks for review, or escalates to a reasoning model.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#17203b"/>
+    </linearGradient>
+    <linearGradient id="jev" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7456ff"/>
+      <stop offset="1" stop-color="#3aa7ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity=".28"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#87a5d8"/>
+    </marker>
+    <style>
+      .title { font: 700 42px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f4f7ff; }
+      .subtitle { font: 400 21px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #aebddd; }
+      .box-title { font: 700 25px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f7f9ff; }
+      .box-text { font: 400 18px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #c8d3ec; }
+      .chip { font: 700 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #e7eeff; }
+      .small { font: 500 16px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #9fb0d1; }
+      .arrow { stroke: #87a5d8; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1400" height="780" rx="32" fill="url(#bg)"/>
+  <circle cx="1240" cy="105" r="180" fill="#5d7cff" opacity=".08"/>
+  <circle cx="120" cy="720" r="220" fill="#36d7b7" opacity=".06"/>
+
+  <text x="70" y="78" class="title">Jev: typed decisions inside software</text>
+  <text x="70" y="115" class="subtitle">ให้โมเดลตัดสินเชิงความหมาย — ให้โค้ดควบคุม workflow และ side effects</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="175" width="310" height="405" rx="24" fill="#151d34" stroke="#344363" stroke-width="2"/>
+    <text x="105" y="222" class="box-title">1. Input</text>
+    <text x="105" y="260" class="box-text">State (string / JSON)</text>
+    <rect x="105" y="282" width="240" height="54" rx="12" fill="#202b48"/>
+    <text x="125" y="316" class="chip">ticket + policy</text>
+    <text x="105" y="382" class="box-text">Atomic questions</text>
+    <rect x="105" y="403" width="240" height="48" rx="12" fill="#202b48"/>
+    <text x="125" y="434" class="chip">Choice</text>
+    <rect x="105" y="462" width="240" height="48" rx="12" fill="#202b48"/>
+    <text x="125" y="493" class="chip">Score</text>
+    <rect x="105" y="521" width="240" height="48" rx="12" fill="#202b48"/>
+    <text x="125" y="552" class="chip">Noul</text>
+  </g>
+
+  <path class="arrow" d="M 395 378 C 430 378, 445 378, 480 378"/>
+
+  <g filter="url(#shadow)">
+    <rect x="500" y="225" width="340" height="310" rx="30" fill="url(#jev)"/>
+    <text x="670" y="300" text-anchor="middle" class="box-title" style="font-size:38px">Jev</text>
+    <text x="670" y="338" text-anchor="middle" class="box-text" style="fill:#eef5ff">System One model</text>
+    <line x1="555" y1="370" x2="785" y2="370" stroke="#d9e8ff" opacity=".35"/>
+    <text x="670" y="414" text-anchor="middle" class="box-text" style="fill:#fff">parallel evaluation</text>
+    <text x="670" y="447" text-anchor="middle" class="box-text" style="fill:#fff">typed answer space</text>
+    <text x="670" y="480" text-anchor="middle" class="box-text" style="fill:#fff">probability distributions</text>
+  </g>
+
+  <path class="arrow" d="M 860 378 C 895 378, 910 378, 945 378"/>
+
+  <g filter="url(#shadow)">
+    <rect x="965" y="175" width="365" height="405" rx="24" fill="#151d34" stroke="#344363" stroke-width="2"/>
+    <text x="1000" y="222" class="box-title">2. Code decides</text>
+    <rect x="1000" y="267" width="295" height="72" rx="14" fill="#14372f" stroke="#36d7a7" stroke-width="2"/>
+    <text x="1023" y="297" class="chip">HIGH CONFIDENCE</text>
+    <text x="1023" y="323" class="small" style="fill:#aeead8">act automatically</text>
+    <rect x="1000" y="362" width="295" height="72" rx="14" fill="#3d3219" stroke="#f2bd50" stroke-width="2"/>
+    <text x="1023" y="392" class="chip">AMBIGUOUS</text>
+    <text x="1023" y="418" class="small" style="fill:#f4d895">ask / human review</text>
+    <rect x="1000" y="457" width="295" height="72" rx="14" fill="#332343" stroke="#c58af9" stroke-width="2"/>
+    <text x="1023" y="487" class="chip">SYSTEM TWO</text>
+    <text x="1023" y="513" class="small" style="fill:#e2c2fb">reasoning LLM / tools</text>
+  </g>
+
+  <rect x="250" y="653" width="900" height="66" rx="20" fill="#10172a" stroke="#2f3d5d"/>
+  <text x="700" y="681" text-anchor="middle" class="box-text">Type-safe output ≠ guaranteed truth</text>
+  <text x="700" y="707" text-anchor="middle" class="small">ทดสอบกับข้อมูลจริง กำหนด threshold ตามความเสี่ยง และแยก classification ออกจาก authorization</text>
+</svg>
