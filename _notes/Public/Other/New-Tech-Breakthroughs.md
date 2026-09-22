@@ -2,12 +2,14 @@
 title: New Tech Breakthroughs
 notetype: feed
 date: 2026-05-21
-last_modified: "2026-09-16"
+last_modified: "2026-09-22"
 tags: [technology, breakthroughs, research, innovation]
 status: published
 ---
 
 # New Tech Breakthroughs
+
+อ่านชุดเพิ่มเติม: [110 More Innovations — นวัตกรรมเพิ่มเติม 11 หมวด]({% link _notes/Public/Other/New-Tech-Breakthroughs-110-Innovations.md %}) — ค้นคว้า 22 กันยายน 2026 พร้อมคำอธิบาย สถานะการพัฒนา และแหล่งอ้างอิงทุกรายการ
 
 > รวบรวมความก้าวหน้าทางเทคโนโลยีจากงานวิจัย เรียงตามวันที่เผยแพร่ (ใหม่→เก่า)
 > *อัปเดต: 6 June 2026*
