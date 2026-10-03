@@ -61,6 +61,37 @@
         <a href="/latent-ai-knowledge-base/" class="navbar-item">
           AI Knowledge
         </a>
+        <div class="navbar-item has-dropdown navbar-slides slides-dropdown" data-slides-dropdown>
+          <button class="navbar-link slides-dropdown__button" type="button" aria-expanded="false" aria-controls="slides-dropdown-panel" data-slides-dropdown-button>
+            Slides
+          </button>
+          <div class="navbar-dropdown slides-dropdown__panel" id="slides-dropdown-panel" data-slides-dropdown-panel>
+            {%- if site.data.slides and site.data.slides.size > 0 -%}
+            {%- for group in site.data.slides -%}
+            <div class="navbar-dropdown-label slides-dropdown__heading">{{ group.category | escape }}</div>
+            {%- for deck in group.decks -%}
+            {%- assign deck_url = deck.url | default: "" | strip -%}
+            {%- assign deck_url_first = deck_url | slice: 0, 1 -%}
+            {%- assign deck_url_prefix = deck_url | slice: 0, 2 -%}
+            {%- assign decoded_deck_url = deck_url | url_decode -%}
+            {%- assign url_backslash = '%5C' | url_decode -%}
+            {%- if deck_url_first == '/' and deck_url_prefix != '//' -%}
+            {%- unless decoded_deck_url contains ':' or decoded_deck_url contains url_backslash or decoded_deck_url contains '//' -%}
+            <a href="{{ deck_url | relative_url | escape }}" class="navbar-item slides-dropdown__link" title="{{ deck.description | escape }}" data-slides-category="{{ group.category | default: 'Slides' | escape }}">
+              {{ deck.title | escape }}
+            </a>
+            {%- endunless -%}
+            {%- endif -%}
+            {%- endfor -%}
+            {%- unless forloop.last -%}
+            <hr class="navbar-divider">
+            {%- endunless -%}
+            {%- endfor -%}
+            {%- else -%}
+            <div class="navbar-item slides-dropdown__empty">No slides yet</div>
+            {%- endif -%}
+          </div>
+        </div>
         <a href="../obsidian"  class="navbar-item">
           Obs
         </a>
@@ -79,3 +110,4 @@
     </div>
   </nav>
   <script src="/assets/js/Hamburger.js" defer></script>
+  <script src="/assets/js/SlidesDropdown.js" defer></script>

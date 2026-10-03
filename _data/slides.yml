@@ -1,0 +1,5 @@
+- category: "AI / ML"
+  decks:
+    - title: "Latent Lab: From Representation to Runtime"
+      url: "/latent-ai-slides/"
+      description: "Reading deck from the 10-part Latent AI Knowledge Base learning path"
