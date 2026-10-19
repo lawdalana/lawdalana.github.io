@@ -1,5 +1,5 @@
 """Fail-closed gift qualification. Synthetic fixtures live only in tests."""
-from datetime import date
+from datetime import date, datetime
 from decimal import Decimal, InvalidOperation
 from urllib.parse import urlparse
 
@@ -30,7 +30,7 @@ def calculate_saving(china_cny: str, thb_per_cny: str, thai_thb: str, *,
     return (thai_cost - china_cost) / thai_cost * Decimal('100')
 
 
-def sources_verified(ids, sources: dict[str, dict]) -> bool:
+def sources_verified(ids, sources: dict[str, dict], *, allow_community_excerpt: bool = False) -> bool:
     if not isinstance(ids, list) or not ids:
         return False
     for source_id in ids:
@@ -38,16 +38,80 @@ def sources_verified(ids, sources: dict[str, dict]) -> bool:
         if not isinstance(row, dict):
             return False
         parsed = urlparse(str(row.get('url', '')))
+        observed = row.get('access_state') == 'complete'
+        if allow_community_excerpt and row.get('tier') == 'community' and row.get('access_state') == 'indexed_excerpt':
+            observed = all(isinstance(row.get(field),str) and row[field].strip()
+                           for field in ('evidence_excerpt','locator','retrieval_note'))
         if (parsed.scheme not in ('http', 'https') or not parsed.hostname or
-                row.get('review_state') != 'verified' or row.get('access_state') != 'complete' or
+                row.get('review_state') != 'verified' or not observed or
                 not valid_date(row.get('retrieved_at'))):
             return False
     return True
 
 
-def evaluate_gift(item: dict, sources: dict[str, dict], minimum_saving: Decimal) -> dict:
-    result = {'qualified': False, 'route': None, 'saving_percent': None, 'reasons': []}
+def _validate_community(item: dict, sources: dict[str, dict]) -> None:
+    evidence=item['purchase_evidence']
+    if (item.get('category')!='gifts' or evidence.get('kind')!='community_opinion_synthesis' or
+            evidence.get('selection') not in ('buy_in_china','conditional') or
+            evidence.get('market_claim_status')!='reported_not_verified'):
+        raise ValueError('community curation needs a recommendation and explicit unverified-market status')
+    for field in ('rationale','counterpoints','disclosure'):
+        if any(not isinstance(evidence.get(field,{}).get(lang),str) or not evidence[field][lang].strip()
+               for lang in ('th','zh-Hans')):
+            raise ValueError('community curation requires bilingual '+field)
+    if any(evidence.get(field) is True for field in ('guarantees_current_absence','guarantees_price_advantage')):
+        raise ValueError('community opinions cannot guarantee live market absence or price advantage')
+    observations=evidence.get('observations')
+    if not isinstance(observations,list) or not observations:
+        raise ValueError('community recommendation needs actual attributed observations')
+    positive=False
+    for observation in observations:
+        if not isinstance(observation,dict):
+            raise ValueError('community observation must be an object')
+        source_id=observation.get('source_id')
+        if not isinstance(source_id,str):
+            raise ValueError('community source ID must be a string')
+        row=sources.get(source_id,{})
+        if (source_id not in item.get('source_ids',[]) or not isinstance(row,dict) or row.get('tier')!='community' or
+                not sources_verified([source_id],sources,allow_community_excerpt=True) or
+                not isinstance(observation.get('locator'),str) or not observation['locator'].strip() or
+                not isinstance(observation.get('excerpt'),str) or
+                not observation['excerpt'].strip() or 'published_at' not in observation):
+            raise ValueError('missing observed community source, comment context or short excerpt')
+        reviewed=row.get('reviewed_excerpts',[])
+        reviewed=list(reviewed) if isinstance(reviewed,list) else []
+        reviewed.append(row.get('evidence_excerpt'))
+        excerpt=' '.join(observation['excerpt'].split())
+        if not any(isinstance(text,str) and excerpt in ' '.join(text.split()) for text in reviewed):
+            raise ValueError('community observation exceeds the reviewed source excerpt scope')
+        published=observation['published_at']
+        if published is not None and not valid_date(published):
+            try:
+                if datetime.fromisoformat(published).date()>date.today():
+                    raise ValueError('future publication timestamp')
+            except (TypeError,ValueError) as exc:
+                raise ValueError('invalid/future community publication date or ISO timestamp') from exc
+        if observation.get('stance') not in ('recommend','china_value','thai_available','avoid','mixed'):
+            raise ValueError('unknown community stance')
+        positive=positive or observation['stance'] in ('recommend','china_value')
+    if not positive:
+        raise ValueError('negative-only community comments do not qualify a recommended gift')
+
+
+def evaluate_gift(item: dict, sources: dict[str, dict], minimum_saving: Decimal, *, policy: str = 'verified_market') -> dict:
+    result = {'qualified': False, 'route': None, 'saving_percent': None, 'market_verified': False, 'reasons': []}
     try:
+        if policy not in ('verified_market','community_curated'):
+            raise ValueError('unsupported gift policy')
+        evidence=item.get('purchase_evidence')
+        if not isinstance(evidence,dict):
+            raise ValueError('purchase evidence must be an object')
+        if evidence.get('route')=='C':
+            if policy!='community_curated':
+                raise ValueError('community curation requires explicit dataset policy opt-in')
+            _validate_community(item,sources)
+            result.update(qualified=True,route='C',qualification_basis='community_curation')
+            return result
         if not minimum_saving.is_finite() or minimum_saving < 0 or minimum_saving > 100:
             raise ValueError('invalid saving threshold')
         availability = item['availability']
@@ -96,7 +160,7 @@ def evaluate_gift(item: dict, sources: dict[str, dict], minimum_saving: Decimal)
                 raise ValueError('documented saving is below the threshold')
         else:
             raise ValueError('no supported purchase-evidence route')
-        result.update(qualified=True, route=route)
+        result.update(qualified=True, route=route, market_verified=True, qualification_basis='verified_market')
     except (KeyError, ValueError, TypeError, AttributeError, InvalidOperation) as exc:
         result['reasons'].append(str(exc))
     return result

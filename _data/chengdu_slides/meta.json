@@ -6,9 +6,19 @@
   "researched_at": "2026-10-19",
   "target_per_category": 15,
   "minimum_saving_percent": "30",
-  "status": "research_incomplete",
+  "status": "published",
   "disclosure": {
     "th": "ชุดข้อมูลนี้ยังไม่ผ่านเกณฑ์เผยแพร่ ห้ามถือว่ารายการที่รอตรวจคือคำแนะนำที่ยืนยันแล้ว",
     "zh-Hans": "本数据尚未达到发布标准，待核查条目不等于已确认推荐。"
+  },
+  "gift_policy": "community_curated",
+  "gift_methodology": {
+    "th": "คัดจาก Pantip และคอมเมนต์สาธารณะ แยกประสบการณ์ผู้โพสต์ออกจากราคา/สต็อกจริง ไม่รับรองว่าไม่มีขายทั้ง Shopee/Lazada",
+    "zh-Hans": "依据Pantip与公开评论筛选，区分发帖经验与真实现价/库存，不认证整个Shopee/Lazada无售。"
+  },
+  "editorial_review": {
+    "reviewed_at": "2026-10-19",
+    "coverage": "All 45 selected entries, 140 entry units and 13 supporting units reviewed internally against retained observations; three Important and one Minor editorial findings corrected.",
+    "limitations": "Not an independent re-fetch of the 83 retained source records, not current-market or medical certification. Community quotes are attributed experiences, not proven opinions. Local release approval is not a live deployment assertion."
   }
 }

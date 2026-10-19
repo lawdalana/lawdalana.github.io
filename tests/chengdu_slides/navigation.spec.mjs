@@ -1,4 +1,13 @@
 import {test,expect} from '@playwright/test';
+
+test('reduced-motion language changes never paint two language pages at once',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto('/_reports/chengdu-slides/fixture/index.html');
+  await page.waitForFunction(()=>[...document.querySelectorAll('.slide')].filter(s=>getComputedStyle(s).visibility==='visible'&&parseFloat(getComputedStyle(s).opacity)>.001).length===1);
+  await page.click('#next');
+  const painted=await page.evaluate(()=>[...document.querySelectorAll('.slide')].filter(s=>getComputedStyle(s).visibility==='visible'&&parseFloat(getComputedStyle(s).opacity)>.001).map(s=>s.dataset.lang));
+  expect(painted).toEqual(['zh-Hans']);
+});
 const path='/_reports/chengdu-slides/fixture/index.html';
 test.beforeEach(async({page})=>{await page.goto(path);});
 test('next back pair and unknown deep link retain valid slide',async({page})=>{

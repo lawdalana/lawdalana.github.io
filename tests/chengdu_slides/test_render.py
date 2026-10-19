@@ -68,8 +68,14 @@ class RenderTests(unittest.TestCase):
         self.assertIn('DRAFT',render_deck(self.data))
 
     def test_release_build_rejects_incomplete_or_unqualified_data(self):
-        with self.assertRaises(ValueError):
-            build_deck(DATA_DIR,ROOT)
+        import tempfile,json
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);data_dir=root/'_data/chengdu_slides';data_dir.mkdir(parents=True)
+            for key,value in sample_dataset().items():
+                (data_dir/(key+'.json')).write_text(json.dumps(value,ensure_ascii=False))
+            with self.assertRaises(ValueError):
+                build_deck(data_dir,root)
+            self.assertFalse((root/'slides/chengdu/index.html').exists())
 
     def test_standalone_draft_embeds_real_images_and_fonts_without_runtime_fetches(self):
         from scripts.chengdu_slides import render as rendering

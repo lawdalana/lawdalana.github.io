@@ -4,25 +4,29 @@ import copy
 import json
 from pathlib import Path
 from string import Formatter
+from decimal import Decimal
 from .illustrations import write_illustration
+from .evidence import evaluate_gift
 from .model import PARTS
 
 LANGS=('th','zh-Hans')
 
 
-def _paginate_unit(unit: dict) -> list[dict]:
+def _paginate_unit(unit: dict, *, community: bool = False) -> list[dict]:
     """Keep translation bullet boundaries identical; split dense pages, not fonts."""
     count=len(unit['body']['th'])
     if count!=len(unit['body']['zh-Hans']):
         raise ValueError('bilingual bullet boundaries differ for '+unit['id'])
-    if count<=4:
+    limit=2 if community else 4
+    chunk=2 if community else 3
+    if count<=limit:
         return [unit]
-    offsets=list(range(0,count,3));result=[]
+    offsets=list(range(0,count,chunk));result=[]
     for index,offset in enumerate(offsets):
         part=copy.deepcopy(unit)
         part['id']=unit['id'] if index==0 else unit['id']+'-part-'+str(index+1)
         part['original_unit_id']=unit['id']
-        part['body']={lang:unit['body'][lang][offset:offset+3] for lang in LANGS}
+        part['body']={lang:unit['body'][lang][offset:offset+chunk] for lang in LANGS}
         part['title']={lang:unit['title'][lang]+' · '+str(index+1)+'/'+str(len(offsets)) for lang in LANGS}
         part['fact_ids']=sorted({name for line in part['body']['th'] for _,name,_,_ in Formatter().parse(line) if name is not None})
         result.append(part)
@@ -35,18 +39,25 @@ def prepare_report(report: dict, root: Path, meta: dict) -> dict:
           'restaurants':copy.deepcopy(report.get('restaurants',[])),
           'gifts':[],'assets':[],'support':[]}
     data['meta']['status']='research_incomplete'
+    community_policy=meta.get('gift_policy')=='community_curated'
+    if community_policy:
+        data['gifts']=copy.deepcopy(report.get('gifts',[]))
     sources={s['id']:s for s in data['sources']}
-    for category in ('attractions','restaurants'):
+    for category in ('attractions','restaurants','gifts'):
         for item in data[category]:
+            if category=='gifts':
+                assessment=evaluate_gift(item,sources,Decimal('30'),policy=meta.get('gift_policy','verified_market'))
+                if not assessment['qualified']:
+                    raise ValueError(item['id']+': '+'; '.join(assessment['reasons']))
             item['stage']='sourced_draft'
             asset=write_illustration(item,sources,root)
             data['assets'].append(asset)
             paginated=[]
             for unit in item['units']:
                 unit['asset_id']=asset['id']
-                unit['alt']={'th':'ภาพวาดแนวคิดประกอบ '+item['name']['th']+' ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง',
-                             'zh-Hans':item['name']['zh-Hans']+'概念插画，非景点或菜品实拍。'}
-                paginated.extend(_paginate_unit(unit))
+                unit['alt']={'th':'ภาพวาดแนวคิดประกอบ '+item['name']['th']+' ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง',
+                             'zh-Hans':item['name']['zh-Hans']+'概念插画，非景点、菜品或商品实拍。'}
+                paginated.extend(_paginate_unit(unit,community=category=='gifts' and community_policy))
             item['units']=paginated
     font_sources={'Kanit':('TravelDisplay','kanit'),
                   'NotoSansThai':('TravelThai','notosansthai'),
@@ -97,6 +108,19 @@ def prepare_report(report: dict, root: Path, meta: dict) -> dict:
                         'Shopee搜索页不展示商品或无法访问，并不能证明该商品没有销售。',
                         '更低的网页标价若缺货、型号不一致或尚未计入相关费用，不能视为实际可购买的价差。',
                         '因此暂不列入已达标伴手礼，不用普通商品或猜测价格凑足数量。']})]
+    if community_policy:
+        units[0][3]['th'][0]='ข้อมูลเที่ยวและกินประกอบการวางแผน ส่วนของฝากคัดจากความเห็นผู้เดินทาง ไม่ใช่รายการรับรองราคาหรือสต็อกสด'
+        units[0][3]['zh-Hans'][0]='景点与餐饮信息用于规划；伴手礼依据旅行者意见筛选，不是实时价格或库存认证清单。'
+        units[2]=('guide-gift-status','guide',
+                  {'th':'ของฝาก: คัดจากความเห็นชุมชน','zh-Hans':'伴手礼：社区意见筛选'},
+                  {'th':['รวมคำแนะนำและเหตุผลที่ไม่คุ้มซื้อจากกระทู้หรือคอมเมนต์จริง แล้วคัดเป็นตัวเลือก ไม่ใช่คำรับรองของร้านค้า',
+                         'คำว่าในไทยมีขายหรือซื้อจีนคุ้มกว่าเป็นความเห็น ณ เวลาที่โพสต์ ไม่ยืนยันราคาหรือสต็อกของ Shopee และ Lazada ในปัจจุบัน',
+                         'วันที่เก่า แหล่งเดียว หรือข้อความที่อ่านได้เพียงบางส่วนจะระบุข้อจำกัด ไม่เรียกว่าเป็นฉันทามติของนักท่องเที่ยวทั้งหมด',
+                         'ก่อนซื้อให้เทียบรุ่น คุณภาพ น้ำหนักและการหิ้วกลับ พร้อมตรวจข้อกำหนดนำเข้าไทย ไม่สมมติว่าทุกชิ้นถูกกว่าหรือไม่มีขายออนไลน์'],
+                   'zh-Hans':['汇集真实帖文或评论中的推荐与不值得购买理由，再筛成选项，不代表商家保证。',
+                              '泰国有售或在中国更划算均为发帖时的观点，不确认Shopee或Lazada当前的价格与库存。',
+                              '旧资料、单一讨论或只能读取节选的来源会标明限制，不宣称代表所有游客共识。',
+                              '购买前比较型号、品质、重量和携带条件，并核对泰国入境要求；不假定每件都更便宜或网购不到。']})
     for identity,kind,title,body in units:
         unit=copy.deepcopy(common);unit.update({'id':identity,'kind':kind,'title':title,'body':body})
         data['support'].append(unit)

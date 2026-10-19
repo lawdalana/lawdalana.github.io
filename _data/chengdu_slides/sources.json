@@ -865,5 +865,564 @@
       "Chinese profile identifies this exact branch as 杨伯英传统杂酱面（铜丝街店）; address matches the previously retrieved yangboying-michelin record."
     ],
     "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "community-gift-jinli-pantip",
+    "url": "https://pantip.com/topic/38187468",
+    "publisher": "Pantip",
+    "platform": "Pantip",
+    "title": "[CR] Jinli Street, final day of a Jiuzhaigou trip",
+    "published_at": "2018-10-21",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "An original Thai traveler review recommends Jinli and describes embroidery/crafts, colorful masks and panda dolls there; this is a 2018 venue observation, not 2026 stock."
+    ],
+    "locator": "Original review, lines 85–90",
+    "evidence_excerpt": "ทั้งของฝากจากเรื่องสามก๊ก หน้ากากสีสวย ตุ๊กตาแพนด้า",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-jinli-pantip.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 4,
+    "reviewed_excerpts": [
+      "ทั้งของฝากจากเรื่องสามก๊ก หน้ากากสีสวย ตุ๊กตาแพนด้า"
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-chengdu-reddit",
+    "url": "https://www.reddit.com/r/goChinaTrip/comments/1n26sfe/whats_the_most_popular_souvenir_to_buy_in_chengdu/",
+    "publisher": "Reddit r/goChinaTrip",
+    "platform": "Reddit",
+    "title": "What’s the most popular souvenir to buy in Chengdu?",
+    "published_at": "2025-08-28",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Replies recommend face-changing dolls, Shu embroidery scarves, teaware and Panda Post letters.",
+      "One reply recommends panda plush for children and says hotpot bases may be poor purchases where local Asian shops already sell them.",
+      "A pepper recommendation explicitly says not everybody likes it."
+    ],
+    "locator": "Replies, lines 52–107; comment dates read in native search index",
+    "evidence_excerpt": "Face changing dolls thingy",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-chengdu-reddit.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 9,
+    "reviewed_excerpts": [
+      "If for others particularly for some kids, l think a giant panda plush is good",
+      "Face changing dolls thingy",
+      "Shu embroidery scarves",
+      "Go to Panda post and send some letters back home",
+      "Zhu Ye Qing or Mengding Ganlu are my favorites."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-coolest-reddit",
+    "url": "https://www.reddit.com/r/travelchina/comments/1klp63p/coolest_things_you_bought_from_china/",
+    "publisher": "Reddit r/travelchina",
+    "platform": "Reddit",
+    "title": "Coolest things you bought from China",
+    "published_at": "2025-05-13",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Travelers report museum magnets, a Shanghai historical map, batik tablecloths from Dali, a silver comb, and handmade Tibetan toys in Chengdu as memorable purchases.",
+      "These are distinct comments in one discussion, not independent discussions."
+    ],
+    "locator": "Replies, selected lines 52–298",
+    "evidence_excerpt": "Handmade Tibetan toys from Blue Sheep Crafts in Chengdu",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-coolest-reddit.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 6,
+    "reviewed_excerpts": [
+      "They were quite high quality and artistically stunning."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-quality-reddit",
+    "url": "https://www.reddit.com/r/travelchina/comments/1tw2l8x/what_is_the_best_place_to_find_souvenirs_in_china/",
+    "publisher": "Reddit r/travelchina",
+    "platform": "Reddit",
+    "title": "What is the best place to find souvenirs in China?",
+    "published_at": "2026-06-03",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "A commenter recommends folding fans, embroidery scarves, museum merchandise and ceramic teaware.",
+      "The same commenter warns about jade/antiques and says many tourist-market goods can be bought on Taobao/AliExpress.",
+      "Their numerical fake-goods estimates and claims of universal exclusivity/authenticity are unverified rhetoric, not adopted as facts."
+    ],
+    "locator": "Replies, lines 50–73",
+    "evidence_excerpt": "Plus, a lantern is going to be a nightmare to pack in your suitcase.",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-quality-reddit.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 8,
+    "reviewed_excerpts": [
+      "Silk and folding fans",
+      "metal bookmarks",
+      "a single, high-quality Jingdezhen ceramic teacup."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-thai-customs",
+    "url": "https://old-dmk.customs.go.th/cont_strc_faq.php?current_id=142328324147505f48&ini_menu=&lang=th&left_menu=faq&top_menu=menu_FAQ",
+    "publisher": "Don Mueang Airport Customs Office",
+    "platform": "official website",
+    "title": "ซื้อของไม่เกิน 20.000 บาท ทำไมถึงยังต้องเสียภาษี",
+    "published_at": "2017-09-18",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "official",
+    "supported_facts": [
+      "A 2017 FAQ, last updated 2017-09-26, says gifts/souvenirs are not passenger personal effects for that concession. Used as a caution, not an item-specific 2026 tax ruling."
+    ],
+    "locator": "FAQ answer, lines 52–62",
+    "evidence_excerpt": "ของขวัญ ของฝาก ไม่นับเป็นของใช้ส่วนตัวผู้โดยสาร",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-thai-customs.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 16
+  },
+  {
+    "id": "community-gift-thai-fda",
+    "url": "https://en.fda.moph.go.th/import-inspection-service/bringing-of-health-products-02",
+    "publisher": "Thai Food and Drug Administration",
+    "platform": "official website",
+    "title": "Passenger belongings related to health products",
+    "published_at": "2024-10-04",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "official",
+    "supported_facts": [
+      "2024 guidance addresses personal-use health products and personal-consumption food.",
+      "The tea row gives 1 kilogram under that personal-use guidance; this does not automatically authorize bringing gifts.",
+      "Cosmetic limits likewise describe personal use, not blanket gift permission."
+    ],
+    "locator": "Guidance, lines 228–268",
+    "evidence_excerpt": "for personal use only",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-thai-fda.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 15
+  },
+  {
+    "id": "community-gift-chengdu-ideas",
+    "url": "https://www.reddit.com/r/Chengdu/comments/1dtq2il",
+    "publisher": "Reddit r/Chengdu",
+    "platform": "Reddit",
+    "title": "souvenir ideas from chengdu",
+    "published_at": "2024-07-02",
+    "retrieved_at": "2026-10-19",
+    "access_state": "indexed_excerpt",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Opening poster bought Chengdu edition T-shirts; replies recommend panda postcards near Renmin Park and Shu embroidery."
+    ],
+    "locator": "Opening post and 2024-07-03/08 replies",
+    "evidence_excerpt": "Chengdu edition t shirts from Uniqlo",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-chengdu-ideas.txt",
+    "retrieval_note": "Actual native search index post/reply text read. Direct open cache miss; current stock/exclusivity unverified.",
+    "citation_number": 17,
+    "reviewed_excerpts": [
+      "Maybe some old fashioned panda themed postcards from the panda postal office near renmin park?",
+      "Maybe also E'Mei Tea if you don't hate tea",
+      "Chengdu edition t shirts from Uniqlo"
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-name-seal",
+    "url": "https://www.reddit.com/r/travelchina/comments/1fw2shk",
+    "publisher": "Reddit r/travelchina",
+    "platform": "Reddit",
+    "title": "My dad is traveling to China, what should I ask him to bring for me?",
+    "published_at": "2024-10-04",
+    "retrieved_at": "2026-10-19",
+    "access_state": "indexed_excerpt",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "A reply recommends personalized name seals; another says game cards are not cheap unless bought second-hand online."
+    ],
+    "locator": "2024-10-04 replies",
+    "evidence_excerpt": "I like to get friends their names engraved on a seal stone.",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-name-seal.txt",
+    "retrieval_note": "Actual native index comments read. Direct open failed; no unseen comments or implied consensus.",
+    "citation_number": 14,
+    "reviewed_excerpts": [
+      "I like to get friends their names engraved on a seal stone."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-fountainpens",
+    "url": "https://www.reddit.com/r/fountainpens/comments/1fsxjm4",
+    "publisher": "Reddit r/fountainpens",
+    "platform": "Reddit",
+    "title": "Shanghai Fountain Pen Haul",
+    "published_at": "2024-09-30",
+    "retrieved_at": "2026-10-19",
+    "access_state": "indexed_excerpt",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Traveler reviews Hero 616 and Hero 7032 bought in Shanghai; reply says 616 worked well; author reports around 20 RMB on 2024-10-01 (historical only).",
+      "New Hero 616 parts did not match author's older model."
+    ],
+    "locator": "Opening Hero 616/7032 sections and 2024-10-01 reply",
+    "evidence_excerpt": "Still a fairly good writer",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-fountainpens.txt",
+    "retrieval_note": "Actual native search index review text read; direct open cache misses. Historical anecdote, not current price.",
+    "citation_number": 10,
+    "reviewed_excerpts": [
+      "Still a fairly good writer",
+      "The 616 worked well, much better than expected for the price."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-city-tote",
+    "url": "https://www.reddit.com/r/chinalife/comments/1rkkkcz/meaningful_souvenirs_from_china/",
+    "publisher": "Reddit r/chinalife",
+    "platform": "Reddit",
+    "title": "Meaningful souvenirs from China",
+    "published_at": "2026-03-04",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "A commenter collects city-landmark canvas bags and says they are well-sized and easy to pack. US recipient experience; no Thai comparison."
+    ],
+    "locator": "Reply, lines 49–50",
+    "evidence_excerpt": "Currently, I’m getting the canvas bags from Starbucks®",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-city-tote.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 18,
+    "reviewed_excerpts": [
+      "they are very easy to pack."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-quality-shopping",
+    "url": "https://www.reddit.com/r/AskChina/comments/1rka8p2/high_quality_souvenir_shopping_where_see_visited/",
+    "publisher": "Reddit r/AskChina",
+    "platform": "Reddit",
+    "title": "High Quality Souvenir Shopping — Where? See Visited Cities.",
+    "published_at": "2026-03-04",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Reply recommends Tianfu Tea for tea/cups but says it is not cost-effective. Another suggests Shu embroidery boutiques in Kuanzhai.",
+      "Related crossposts are the same discussion and not extra corroboration."
+    ],
+    "locator": "Replies, lines 103, 118",
+    "evidence_excerpt": "it is not cost-effective but will make no mistake.",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-quality-shopping.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 13,
+    "reviewed_excerpts": [
+      "Chengdu-Shu embroidery: boutiques in Kuanzhai Alleys",
+      "it is not cost-effective but will make no mistake."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-embroidery-bookmark",
+    "url": "https://www.reddit.com/r/travelchina/comments/1gybhpj/what_to_bring_back_from_china/",
+    "publisher": "Reddit r/travelchina",
+    "platform": "Reddit",
+    "title": "What to bring back from China",
+    "published_at": "2024-11-23",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "A traveler saw embroidered bookmarks and zodiac magnets in Chengdu; another warns preserved foods can face border restrictions.",
+      "A reply reports latiao at a US Chinese market; this does not establish Thai availability."
+    ],
+    "locator": "Replies, lines 94–119 and 159–178",
+    "evidence_excerpt": "they were selling embroidered bookmarks and zodiac magnets.",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-embroidery-bookmark.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 12,
+    "reviewed_excerpts": [
+      "they were selling embroidered bookmarks and zodiac magnets."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-personalized-pantip",
+    "url": "https://topicstock.pantip.com/library/topicstock/2010/03/K8991253/K8991253.html",
+    "publisher": "Pantip archived public forum",
+    "platform": "Pantip",
+    "title": "ภาพเขียนพู่กันจีน",
+    "published_at": "2010-03-15",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Reply 191 describes a name seal bought in China; reply 199 praises it and discusses script. Replies 120/122 describe commissioned floral/bird name calligraphy in China.",
+      "Opening article credits another site and is not independent traveler testimony."
+    ],
+    "locator": "Replies 191/192/199 (2010-03-28) and 120/122 (2010-03-20)",
+    "evidence_excerpt": "การเขียน อักษรศิลป์แบบนี้เรียกว่า  อักษรดอกไม้ - นก  花鸟字",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-personalized-pantip.txt",
+    "retrieval_note": "Actual native open/find replies read. Only relevant passages saved; handles and personal names omitted. Very old type-level evidence, not current stock/price.",
+    "citation_number": 20,
+    "reviewed_excerpts": [
+      "อันนี้เป็นตราอันแรกที่ทำมาตอนไปจีนน่ะค่ะ",
+      "การเขียน อักษรศิลป์แบบนี้เรียกว่า  อักษรดอกไม้ - นก  花鸟字",
+      "เสียดายทำหายหมด"
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-panda-base",
+    "url": "https://www.reddit.com/r/China/comments/1ljbzij",
+    "publisher": "Reddit r/China",
+    "platform": "Reddit",
+    "title": "Help with replacing a lost souvenir!",
+    "published_at": "2025-06-24",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Original poster cherished a Huahua keychain plush bought at Chengdu panda base; ring came loose. Their failed AliExpress search is not universal absence.",
+      "Bot backups of the same post are not independent testimony."
+    ],
+    "locator": "Original edited post, lines 25–27",
+    "evidence_excerpt": "it was a cherished souvenir from my visit.",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-panda-base.txt",
+    "retrieval_note": "Native web open returned these selected passages. Capture preserves actual extracted body text with author identifiers/UI removed; full-thread completeness and unseen replies are not asserted.",
+    "citation_number": 11,
+    "reviewed_excerpts": [
+      "it was a cherished souvenir from my visit."
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-gift-jade-pantip",
+    "url": "https://pantip.com/topic/30074952",
+    "publisher": "Pantip",
+    "platform": "Pantip",
+    "title": "ขอแชร์ประสบการณ์ปักกิ่ง 4 วัน กับคำถามหลายข้อที่ผมยังรอคำตอบ",
+    "published_at": null,
+    "retrieved_at": "2026-10-19",
+    "access_state": "indexed_excerpt",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Thai traveler describes dramatic jade-shop discount and regret after returning; product authenticity and original price unverified."
+    ],
+    "locator": "Original post, jade-factory story",
+    "evidence_excerpt": "ตอนกลับไทยมาค่อยนึกได้",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-jade-pantip.txt",
+    "retrieval_note": "Undated excerpt; actual native index original-post text read. Direct page redirected to access denial; stopped without bypass.",
+    "citation_number": 21
+  },
+  {
+    "id": "community-gift-latex-pantip",
+    "url": "https://pantip.com/topic/37056180",
+    "publisher": "Pantip",
+    "platform": "Pantip",
+    "title": "ฟูกที่นอนยางพาราปล่อยโอโซน…ของฝากจากทริปจิ่วจ่ายโกว…ใช้รักษาโรคได้จริงไหมครับ?",
+    "published_at": null,
+    "retrieved_at": "2026-10-19",
+    "access_state": "indexed_excerpt",
+    "review_state": "verified",
+    "tier": "community",
+    "supported_facts": [
+      "Thai traveler questions health claims used to sell latex bedding on a Jiuzhaigou tour. Skepticism is documented; no health efficacy is accepted."
+    ],
+    "locator": "Original post, opening tour-shopping account",
+    "evidence_excerpt": "เกือบปีมาแล้วผมไปทริปจิ่วจ่ายโกวกับทัวร์",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/community-gift-latex-pantip.txt",
+    "retrieval_note": "Undated retrieved excerpt; index labels about nine years old. Direct access denial; no bypass.",
+    "citation_number": 22
+  },
+  {
+    "id": "community-market-snow-lotus",
+    "url": "https://pantip.com/topic/38033969",
+    "platform": "Pantip",
+    "title": "ไปเที่ยวจีน บัวหิมะ ควรซื้อกลับมาเปล่า",
+    "published_at": "2018-09-07T17:51:00+07:00",
+    "citation_number": 23,
+    "access_state": "indexed_excerpt",
+    "supported_facts": [
+      "Original question says Laz offered snow-lotus cream and the poster perceived a similar price; authenticity and SKU equivalence are unverified."
+    ],
+    "locator": "Original post, first paragraph; native index turn3search8.",
+    "evidence_excerpt": "เห็นใน Laz ก็มีขาย 990 บาท",
+    "retrieval_note": "Direct open returned the site's access-denied/contact page. Only the native search's visible original-post text is verified; no replies retrieved.",
+    "publisher": "Pantip",
+    "retrieved_at": "2026-10-19",
+    "retrieved_at_precision": "date",
+    "review_state": "verified",
+    "review_scope": "retrieved content only",
+    "tier": "community",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/market-pantip-38033969-indexed.txt"
+  },
+  {
+    "id": "community-market-shopee-snacks",
+    "url": "https://pantip.com/topic/40622173",
+    "platform": "Pantip",
+    "title": "ขนมนำเข้าจากจีน ของกินเล่นติดออฟฟิส มนุษย์ออฟฟิสต้องโดน ของว่าง กับแกล้มพกพา ปี2021",
+    "published_at": "2021-04-04T08:34:33+07:00",
+    "citation_number": 24,
+    "access_state": "indexed_excerpt",
+    "supported_facts": [
+      "Original reviewer reports buying Chinese snacks on Shopee.",
+      "The review likes puffed-rice cakes, calls sunflower seeds ordinary, finds dried beef unexceptional and honey chicken wings too dry."
+    ],
+    "locator": "Original post; groups 1, 3 and 4; native index turn15search0.",
+    "evidence_excerpt": "ขนม ของกินนำเข้าจากจีน ที่เพิ่งตำมาสดๆร้อนๆ จากในช้อปปี้",
+    "retrieval_note": "Direct open was denied. Search returned an extended but partial original-post extract. Named-shop link creates a possible promotional interest; CR status is not proof of independence. No health/diet claims retained.",
+    "publisher": "Pantip",
+    "retrieved_at": "2026-10-19",
+    "retrieved_at_precision": "date",
+    "review_state": "verified",
+    "review_scope": "retrieved content only",
+    "tier": "community",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/market-pantip-40622173-indexed.txt",
+    "reviewed_excerpts": [
+      "ขนม ของกินนำเข้าจากจีน ที่เพิ่งตำมาสดๆร้อนๆ จากในช้อปปี้"
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-market-shanghai-snacks",
+    "url": "https://pantip.com/topic/42380303",
+    "platform": "Pantip",
+    "title": "[CR] รีวิวขนมของฝากเซี่ยงไฮ้ ไปจีนไอเดียซื้ออะไรดี!",
+    "published_at": null,
+    "citation_number": 25,
+    "access_state": "indexed_excerpt",
+    "supported_facts": [
+      "Original reviewer praises butterfly pastries and says pineapple pies are like those in Thailand and taste ordinary."
+    ],
+    "locator": "Original post, opening snack reviews; native index turn14search0.",
+    "evidence_excerpt": "\"พายสัปปะรด\" เหมือนที่ไทยเลยค่ะ อร่อยปกติ",
+    "retrieval_note": "Direct open was denied. Native search shows only the opening review segment; exact publication date absent (index reports 2.9 years ago). Shanghai context, not a Chengdu store report.",
+    "publisher": "Pantip",
+    "retrieved_at": "2026-10-19",
+    "retrieved_at_precision": "date",
+    "review_state": "verified",
+    "review_scope": "retrieved content only",
+    "tier": "community",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/market-pantip-42380303-indexed.txt"
+  },
+  {
+    "id": "community-market-bestore-chengdu",
+    "url": "https://pantip.com/topic/43822061/desktop",
+    "platform": "Pantip",
+    "title": "[CR] รีวิว ร้าน Bestore ร้านขายขนม เดินแค่ 2 นาทีจากตึก IFS เฉิงตู",
+    "published_at": "2025-11-03T14:35:30+07:00",
+    "citation_number": 26,
+    "access_state": "indexed_excerpt",
+    "supported_facts": [
+      "Original Chengdu reviewer likes walnut-stuffed red dates and a white chewy sweet with grains/dried fruit.",
+      "Review says some goods are sold per piece and some by weight; it is an anecdotal store visit."
+    ],
+    "locator": "Original review, paragraph beginning อีกตัวที่ถูกใจ; native index turn3search1.",
+    "evidence_excerpt": "พุทราจีนสอดไส้ด้วยวอลนัท ไม่น่าเชื่อว่าสองอย่างกินด้วยกันจะอร่อยขนาดนี้ อร่อยด้วยดู",
+    "retrieval_note": "Native search returned a long original-post extract and visible publication date. Direct page not opened separately after other Pantip opens were denied. No current branch inventory or price claim.",
+    "publisher": "Pantip",
+    "retrieved_at": "2026-10-19",
+    "retrieved_at_precision": "date",
+    "review_state": "verified",
+    "review_scope": "retrieved content only",
+    "tier": "community",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/market-pantip-43822061-indexed.txt",
+    "reviewed_excerpts": [
+      "ไม่น่าเชื่อว่าสองอย่างกินด้วยกันจะอร่อยขนาดนี้"
+    ],
+    "reviewed_excerpt_scope": "Short selected quotes checked against the actual retrieved capture, not an unseen full thread."
+  },
+  {
+    "id": "community-market-tour-shops",
+    "url": "https://pantip.com/topic/36286011",
+    "platform": "Pantip",
+    "title": "มุกใหม่ ร้านขายหยก ทัวร์จีนล่าสุดที่ไปมา ใครเจอแบบนี้บ้างคะ กับเสียดายเงินซื้อขนมบนรถทัวร์กับไกด์จีน",
+    "published_at": null,
+    "citation_number": 27,
+    "access_state": "indexed_excerpt",
+    "supported_facts": [
+      "Original poster describes pressure/special-friendship sales tactics at jade shops and a group declining diagnostic-led herbal sales.",
+      "The same original poster reports coach cereal bars and packs of plums, dates and sunflower seeds costing more than supermarket alternatives."
+    ],
+    "locator": "Original post, jade-shop narrative and final two paragraphs; native index turn11search0.",
+    "evidence_excerpt": "อีกเรื่องขนมที่ไกด์เอามาให้ชิมบนรถ แพงกว่าทุกอย่างเลยค่ะ ไกด์ฮ่องกงมีขนมซีเรียลอัดเป็นแท่งเล็กๆ",
+    "retrieval_note": "Extended native index extract; exact date absent (index says 9.6 years ago). One poster describing two trips, not two independent respondents. Hong Kong cereal example is distinct from mainland snack-pack example. Sales claims about luck/health are not adopted.",
+    "publisher": "Pantip",
+    "retrieved_at": "2026-10-19",
+    "retrieved_at_precision": "date",
+    "review_state": "verified",
+    "review_scope": "retrieved content only",
+    "tier": "community",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/market-pantip-36286011-indexed.txt"
+  },
+  {
+    "id": "community-market-tourist-markups",
+    "url": "https://www.reddit.com/r/travelchina/comments/1rksgy9/mustbuys_in_china_as_a_tourist/",
+    "platform": "Reddit r/travelchina",
+    "title": "Must-Buys in China as a Tourist",
+    "published_at": null,
+    "citation_number": 28,
+    "access_state": "complete",
+    "supported_facts": [
+      "Original post advocates comparing souvenir shops with online image search while acknowledging cheaper online lookalikes can differ in quality.",
+      "An OP follow-up warns about tourist-spot flower-tea/fruit/crystal pricing tricks; another reply questions reliability of reviews."
+    ],
+    "locator": "Retrieved page L44-L46 (OP); L110-L112 (reply); L128-L134 (OP follow-up).",
+    "evidence_excerpt": "Online quality can be a gamble",
+    "retrieval_note": "Public page text retrieved successfully. Complete means successful page retrieval of visible content, not all collapsed replies. Capture retains relevant actual page lines through L177 and omits account links. Native index dates the cited OP follow-up 2026-03-05; exact OP timestamp not retrieved. Exaggerated numerical claims are excluded.",
+    "publisher": "Reddit r/travelchina",
+    "retrieved_at": "2026-10-19",
+    "retrieved_at_precision": "date",
+    "review_state": "verified",
+    "review_scope": "retrieved content only",
+    "tier": "community",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/market-reddit-1rksgy9-page.txt"
+  },
+  {
+    "id": "community-market-tea-buying",
+    "url": "https://www.reddit.com/r/travelchina/comments/1se1f14/china_must_buys/",
+    "platform": "Reddit r/travelchina",
+    "title": "China must buys?",
+    "published_at": null,
+    "citation_number": 29,
+    "access_state": "indexed_excerpt",
+    "supported_facts": [
+      "A 2026-04-06 reply calls tea a perennial favorite.",
+      "A nested reply says tea quality/prices vary and supermarket tea can have a near-market price."
+    ],
+    "locator": "Native index turn7reddit20; dated 2026-04-06 reply and nested reply.",
+    "evidence_excerpt": "Buying tea in a supermarket will get a near-market price in most circumstances.",
+    "retrieval_note": "Native indexed excerpt only; no direct open performed. Dated visible statements are replies; OP publication date is not established. US-based viewpoint is not evidence about Thai availability.",
+    "publisher": "Reddit r/travelchina",
+    "retrieved_at": "2026-10-19",
+    "retrieved_at_precision": "date",
+    "review_state": "verified",
+    "review_scope": "retrieved content only",
+    "tier": "community",
+    "capture_path": "_reports/chengdu-slides/community-curation/captures/market-reddit-1se1f14-indexed.txt"
   }
 ]

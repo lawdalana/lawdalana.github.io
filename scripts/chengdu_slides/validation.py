@@ -30,6 +30,8 @@ def _tokens(lines):
 
 def _validate(data, *, publication=False, only=None):
     errors = []
+    policy=data.get('meta',{}).get('gift_policy','verified_market')
+    community_policy=policy=='community_curated'
     categories = (only,) if only else CATEGORIES
     rows = data.get('sources', [])
     sources = {row['id']: row for row in rows if isinstance(row, dict) and isinstance(row.get('id'), str)}
@@ -37,7 +39,7 @@ def _validate(data, *, publication=False, only=None):
     if len(ids) != len(set(ids)):
         errors.append(_finding('duplicate-source', 'sources', 'source IDs must be unique'))
     for key, row in sources.items():
-        if not key or not sources_verified([key], sources):
+        if not key or not sources_verified([key], sources,allow_community_excerpt=community_policy):
             errors.append(_finding('source-review', f'sources/{key}', 'source must have a verified accessible dated observation'))
         if publication and urlparse(row.get('url', '')).hostname == 'example.invalid':
             errors.append(_finding('synthetic-source', f'sources/{key}', 'synthetic test sources cannot be published'))
@@ -62,7 +64,10 @@ def _validate(data, *, publication=False, only=None):
                 errors.append(_finding('category', path, 'category does not match file'))
             if publication and item.get('stage') != 'editorial_ready':
                 errors.append(_finding('editorial-stage', path, 'discovery records cannot be published'))
-            if not sources_verified(item.get('source_ids'), sources):
+            purchase_evidence=item.get('purchase_evidence')
+            community_item=(community_policy and category=='gifts' and isinstance(purchase_evidence,dict)
+                            and purchase_evidence.get('route')=='C')
+            if not sources_verified(item.get('source_ids'), sources,allow_community_excerpt=community_item):
                 errors.append(_finding('item-sources', path, 'relevant verified source references required'))
             for lang in LANGS:
                 if not item.get('name', {}).get(lang):
@@ -74,13 +79,19 @@ def _validate(data, *, publication=False, only=None):
             if not valid_date(details.get('observed_at')):
                 errors.append(_finding('date', path, 'invalid/future observation date'))
             if category == 'gifts':
-                eligibility = evaluate_gift(item, sources, Decimal('30'))
+                eligibility = evaluate_gift(item, sources, Decimal('30'),policy=policy)
                 if not eligibility['qualified']:
                     errors.append(_finding('gift-evidence', path, '; '.join(eligibility['reasons'])))
             units = item.get('units', [])
             if not isinstance(units, list) or not {'intro', 'details'} <= {u.get('kind') for u in units if isinstance(u, dict)}:
                 errors.append(_finding('content-units', path, 'distinct intro and details content units required'))
                 continue
+            if community_item and isinstance(purchase_evidence,dict):
+                observations=purchase_evidence.get('observations',[])
+                observed_ids={row.get('source_id') for row in observations if isinstance(row,dict) and isinstance(row.get('source_id'),str)} if isinstance(observations,list) else set()
+                cited_ids={identity for unit in units if isinstance(unit,dict) and isinstance(unit.get('source_ids'),list) for identity in unit['source_ids'] if isinstance(identity,str)}
+                if not observed_ids<=cited_ids:
+                    errors.append(_finding('community-citation-scope',path,'every qualifying observation and countervoice must remain visibly cited on the gift pages'))
             for unit in units:
                 if not isinstance(unit, dict):
                     errors.append(_finding('unit', path, 'unit must be an object')); continue
@@ -105,7 +116,7 @@ def _validate(data, *, publication=False, only=None):
                                    not token_sets[0] <= set(facts) or
                                    token_sets[0] != set(unit.get('fact_ids', []))):
                     errors.append(_finding('fact-parity', path, 'translations must share resolved canonical fact tokens'))
-                if not sources_verified(unit.get('source_ids'), sources):
+                if not sources_verified(unit.get('source_ids'), sources,allow_community_excerpt=community_item):
                     errors.append(_finding('unit-source', path, 'unit needs relevant source references'))
                 if publication and (unit.get('asset_id') not in assets or
                                     any(not unit.get('alt', {}).get(lang) for lang in LANGS)):

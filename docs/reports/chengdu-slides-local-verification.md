@@ -1,4 +1,6 @@
-# Chengdu travel slides: local draft verification
+# Chengdu travel slides: historical local draft checkpoint
+
+This is the **pre-amendment checkpoint**, preserved as history rather than current release status. The user subsequently changed gift filtering to community opinions. See [the community release verification](chengdu-slides-community-release-verification.md) for the later 15/15/15 dataset and its actual verification.
 
 Date:2026-10-19. **The original end-to-end publication task is not complete.**
 

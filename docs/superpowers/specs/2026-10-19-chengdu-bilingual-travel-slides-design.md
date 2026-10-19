@@ -91,7 +91,21 @@ Initial research contains 15 discovery candidates in each category, but **no gif
 
 ## 5. Gift qualification
 
-At least one route must pass for every included gift.
+### Approved amendment — community-opinion curation (2026-10-19)
+
+The user explicitly replaced the requirement to query Shopee/Lazada directly with aggregation and filtering of real Pantip/forum/comment opinions, including reasons not to bring products already sold in Thailand and reasons to buy particular goods in China. The active gift policy is therefore `community_curated` (Route C), not mandatory live marketplace verification or a mandatory30% price advantage. The original E/P routes remain available and retain their strict checks; community evidence must never be silently relabeled as an E/P measurement.
+
+For every counted Route C gift:
+
+- Identify a distinct actual product type/craft and at least one relevant retrieved community recommendation, with exact public URL, thread/comment locator, retrieved date, publication date if known, and a short captured excerpt. Prefer independent discussions, but label single/historical/partial reports rather than inventing consensus.
+- Aggregate selection rationale and counterpoints, including commenters' Thai-market availability/value observations where actually present. An opinion that something is sold on Shopee/Lazada is a dated reported view, not a current stock guarantee. Do not invent an opposing comment when none was found: state that coverage gap.
+- Label every gift page as community-opinion synthesis, not proof of platform-wide absence, current offer/stock or a specific percentage saving. Retain full equivalent Thai/Chinese qualifications. Indexed excerpts support only their literal text and require an explicit partial-access note.
+- Record useful practical purchase/authenticity/carriage guidance; distinguish editorial advice from sourced facts and use official sources for legal/health/import claims. Avoid unsupported medicinal claims or treating a travel comment as customs permission.
+- Select15 supported recommendations, retaining a sourced rejected/low-priority list separately. Negative-only items do not count merely to reach the target. No fabricated price, comment, stock or quote is permitted.
+
+This amendment supersedes the former rule that failure of both E/P automatically excludes all gifts; it does not change attraction/restaurant counts, language adjacency, meaningful pictures, testing, or the public-publication scope gate.
+
+At least one active-policy route must pass for every included gift.
 
 ### Route E — bounded Shopee absence observation
 
@@ -110,7 +124,7 @@ At least one route must pass for every included gift.
 - Calculate the difference programmatically. Do not compare a China single-unit price to a Thai bundle, a counterfeit to an authentic item, or a special membership/coupon offer to an unrestricted retail price without disclosure.
 - State that the comparison concerns the documented purchase cost, not savings after airfare, accommodation, or the personal cost of making a shopping trip.
 
-If neither route can be verified, the candidate is excluded and replaced. If enough qualifying gifts cannot be found, raise the evidence blocker and request a scope decision before declaring content complete. Do not manufacture prices, Shopee results, stock status, or exceptions to customs rules.
+For datasets retaining the original `verified_market` policy, if neither E/P route can be verified, the candidate is excluded and replaced. The approved `community_curated` policy instead uses Route C above. Under either policy, never manufacture prices, Shopee results, stock status, comments, or exceptions to customs rules.
 
 The official Jinsha catalogue already links products to online shopping, and the physical museum is closed during the stated interval. Neither museum branding nor a catalogue listing proves offline exclusivity or an accessible physical pickup point.
 

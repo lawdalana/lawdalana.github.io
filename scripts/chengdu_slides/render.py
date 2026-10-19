@@ -22,6 +22,16 @@ def _safe_url(value):
     return value if urlparse(value).scheme in ('http', 'https') else '#'
 
 
+def _source_link(source: dict, lang: str) -> str:
+    label=source.get('publisher',source.get('id','source'))
+    if source.get('citation_number'):
+        label='['+str(source['citation_number'])+'] '+label
+    if source.get('tier')=='community':
+        label+=' · '+str(source.get('published_at') or ('ไม่ทราบวันโพสต์' if lang=='th' else '发布日期不详'))
+        if source.get('access_state')=='indexed_excerpt':label+=' · '+('ข้อความบางส่วน' if lang=='th' else '节选')
+    return '<a target="_blank" rel="noopener noreferrer" href="'+_e(_safe_url(source['url']))+'">'+_e(label)+'</a>'
+
+
 def content_version(data: dict) -> str:
     digest = hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True).encode())
     for name in ('deck.css', 'deck.js'):
@@ -38,9 +48,10 @@ def content_version(data: dict) -> str:
 def render_deck(data: dict) -> str:
     sources = {row['id']: row for row in data.get('sources', [])}
     assets = {row['id']: row for row in data.get('assets', [])}
-    entries = [(None, unit) for unit in data.get('support', [])]
+    entries = [(None, unit) for unit in data.get('support', []) if unit.get('placement')!='after_gifts']
     for category in ('attractions', 'restaurants', 'gifts'):
         entries.extend((item, unit) for item in data.get(category, []) for unit in item.get('units', []))
+    entries.extend((None,unit) for unit in data.get('support',[]) if unit.get('placement')=='after_gifts')
     sections, options = [], []
     draft = data.get('meta', {}).get('status') != 'published'
     version = content_version(data)
@@ -51,12 +62,17 @@ def render_deck(data: dict) -> str:
             asset_path = asset_path[len('slides/chengdu/'):]
         facts = item.get('facts', {}) if item else unit.get('facts', {})
         category = item.get('category', 'guide') if item else 'guide'
+        community_evidence=item.get('purchase_evidence',{}) if item else {}
+        community=community_evidence.get('route')=='C'
         pair = unit['id']
         for lang in LANGS:
             sid = pair + '--' + lang
             title = unit.get('title', {}).get(lang, '')
             bullets = ''.join('<li>' + _e(text.format_map(facts)) + '</li>' for text in unit.get('body', {}).get(lang, []))
-            refs = ' · '.join('<a target="_blank" rel="noopener noreferrer" href="' + _e(_safe_url(sources[s]['url'])) + '">' + _e(sources[s].get('publisher', s)) + '</a>' for s in unit.get('source_ids', []) if s in sources)
+            refs = ' · '.join(_source_link(sources[s],lang) for s in unit.get('source_ids',[]) if s in sources)
+            opinion_label=community_evidence['disclosure'][lang] if community else unit.get('opinion_disclosure',{}).get(lang,'')
+            opinion_note='<div class="evidence-mark" role="note">'+_e(opinion_label)+'</div>' if opinion_label else ''
+            route_attribute=' data-evidence-route="C"' if community else ''
             credit = _e(asset.get('attribution') or asset.get('creator', ''))
             license_name = _e(asset.get('license', ''))
             credit_link = _e(_safe_url(asset.get('source_url', '')))
@@ -65,10 +81,10 @@ def render_deck(data: dict) -> str:
             caption = _e(disclosure or asset.get('caption', {}).get(lang, ''))
             item_name = item.get('name', {}).get(lang, '') if item else 'CHENGDU · 成都'
             warning = '<span class="draft-mark">DRAFT · ยังไม่ผ่านเกณฑ์เผยแพร่ / 尚未达到发布标准</span>' if draft else ''
-            sections.append(f'''<section class="slide" id="{_e(sid)}" lang="{lang}" data-slide-id="{_e(sid)}" data-pair-id="{_e(pair)}" data-lang="{lang}" data-item-id="{_e(item.get('id','') if item else '')}" data-kind="{_e(unit.get('kind','guide'))}" data-fact-ids="{_e(json.dumps(unit.get('fact_ids', [])))}" data-source-ids="{_e(json.dumps(unit.get('source_ids', [])))}" aria-labelledby="title-{_e(sid)}">
+            sections.append(f'''<section class="slide" id="{_e(sid)}" lang="{lang}" data-slide-id="{_e(sid)}" data-pair-id="{_e(pair)}" data-lang="{lang}" data-item-id="{_e(item.get('id','') if item else '')}" data-kind="{_e(unit.get('kind','guide'))}" data-fact-ids="{_e(json.dumps(unit.get('fact_ids', [])))}" data-source-ids="{_e(json.dumps(unit.get('source_ids', [])))}"{route_attribute} aria-labelledby="title-{_e(sid)}">
 <div class="folio"><span class="seal">蜀</span><span>CHENGDU FIELD NOTES</span><span>{_e(category.upper())} · {'ไทย' if lang=='th' else '中文'}</span></div>
 <div class="spread"><figure class="visual"><img src="{_e(asset_path)}" alt="{_e(unit.get('alt',{}).get(lang,''))}" loading="lazy" decoding="async"><figcaption>{caption}<span><a href="{credit_link}" target="_blank" rel="noopener noreferrer">{credit}</a> · <a href="{license_link}" target="_blank" rel="noopener noreferrer">{license_name}</a></span></figcaption></figure>
-<article class="copy"><div class="eyebrow">{_e(item_name)}</div><h2 id="title-{_e(sid)}">{_e(title)}</h2><div class="rule"></div><ul>{bullets}</ul></article></div>
+<article class="copy"><div class="eyebrow">{_e(item_name)}</div>{opinion_note}<h2 id="title-{_e(sid)}">{_e(title)}</h2><div class="rule"></div><ul>{bullets}</ul></article></div>
 <footer>{warning}<span class="references">{refs}</span><span class="page-no">{len(sections)+1:03d}</span></footer></section>''')
             options.append('<option value="' + _e(sid) + '">' + _e(f'{len(sections):03d} · {title} · {lang}') + '</option>')
     styles_path = ROOT / 'slides/chengdu/deck.css'
@@ -104,11 +120,17 @@ def build_deck(data_dir: Path, site_root: Path) -> dict:
     return manifest
 
 
-def render_standalone(data: dict, site_root: Path) -> str:
-    """Embed actual local visual/font bytes so a draft can be opened offline."""
+def render_standalone(data: dict, site_root: Path, *, publication: bool = False) -> str:
+    """Embed local visual/font bytes; release mode still enforces all publication gates."""
     import copy
-    draft=copy.deepcopy(data);draft['meta']['status']='research_incomplete'
+    draft=copy.deepcopy(data)
     findings=validate_assets(draft,site_root)
+    if publication:
+        findings+=validate_dataset(draft,publication=True)
+        if draft.get('meta',{}).get('status')!='published':
+            findings.append({'code':'publication-status','path':'meta/status','message':'publication status is not approved'})
+    else:
+        draft['meta']['status']='research_incomplete'
     if findings:raise ValueError(json.dumps(findings,ensure_ascii=False))
     result=render_deck(draft)
     for asset in draft.get('assets',[]):

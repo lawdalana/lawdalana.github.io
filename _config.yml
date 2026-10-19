@@ -161,3 +161,12 @@ defaults:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Chengdu slide build/test tooling is repository source, not website content.
+exclude:
+  - scripts/chengdu_slides
+  - tests/chengdu_slides
+  - docs/superpowers/specs/2026-10-19-chengdu-bilingual-travel-slides-design.md
+  - docs/superpowers/plans/2026-10-19-chengdu-bilingual-travel-slides.md
+  - docs/reports/chengdu-slides-local-verification.md
+  - docs/reports/chengdu-slides-community-release-verification.md
