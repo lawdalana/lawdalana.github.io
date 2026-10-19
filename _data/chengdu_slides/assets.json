@@ -1,1 +1,748 @@
-[]
+[
+  {
+    "id": "panda-base-illustration",
+    "path": "slides/chengdu/images/panda-base-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ฐานเพาะพันธุ์แพนด้ายักษ์เฉิงตู",
+      "zh-Hans": "成都大熊猫繁育研究基地"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.panda.org.cn/en/",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "sanxingdui-illustration",
+    "path": "slides/chengdu/images/sanxingdui-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "พิพิธภัณฑ์ซานซิงตุย",
+      "zh-Hans": "三星堆博物馆"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.sxd.cn/Guide?type=3",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "dujiangyan-illustration",
+    "path": "slides/chengdu/images/dujiangyan-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ระบบชลประทานตูเจียงเยี่ยน",
+      "zh-Hans": "都江堰水利工程"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://whc.unesco.org/en/list/1001/",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "qingcheng-front-illustration",
+    "path": "slides/chengdu/images/qingcheng-front-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ภูเขาชิงเฉิง ฝั่งหน้า",
+      "zh-Hans": "青城山前山"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://whc.unesco.org/en/list/1001/",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "wuhou-shrine-illustration",
+    "path": "slides/chengdu/images/wuhou-shrine-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ศาลเจ้าสามก๊กอู่โหว",
+      "zh-Hans": "成都武侯祠"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wuhou_temple.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "jinli-illustration",
+    "path": "slides/chengdu/images/jinli-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ถนนจิ่นหลี่",
+      "zh-Hans": "锦里古街"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/jinli-street.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "kuanzhai-illustration",
+    "path": "slides/chengdu/images/kuanzhai-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ตรอกกว้าง–ตรอกแคบ",
+      "zh-Hans": "宽窄巷子"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wide-narrow-alley.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "wenshu-illustration",
+    "path": "slides/chengdu/images/wenshu-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "วัดเหวินซู",
+      "zh-Hans": "文殊院"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wenshu_monastery.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "peoples-park-illustration",
+    "path": "slides/chengdu/images/peoples-park-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "สวนประชาชนเฉิงตู",
+      "zh-Hans": "成都人民公园"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/peoples-park.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "chunxi-ifs-illustration",
+    "path": "slides/chengdu/images/chunxi-ifs-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ถนนชุนซีและแพนด้า IFS",
+      "zh-Hans": "春熙路与IFS熊猫"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/chunxi-road.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "dufu-cottage-illustration",
+    "path": "slides/chengdu/images/dufu-cottage-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "พิพิธภัณฑ์กระท่อมตู้ฝู่",
+      "zh-Hans": "杜甫草堂博物馆"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/dufu.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "sichuan-museum-illustration",
+    "path": "slides/chengdu/images/sichuan-museum-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "พิพิธภัณฑ์เสฉวน",
+      "zh-Hans": "四川博物院"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.scc.org.cn/centredetail.fds?id=309",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "huanhua-park-illustration",
+    "path": "slides/chengdu/images/huanhua-park-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "สวนลำธารหวนฮวาซี",
+      "zh-Hans": "浣花溪公园"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/huanhua-stream-park.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "leshan-buddha-illustration",
+    "path": "slides/chengdu/images/leshan-buddha-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "พระใหญ่เล่อซาน",
+      "zh-Hans": "乐山大佛"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/leshan/buddha_statue.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "chengdu-museum-illustration",
+    "path": "slides/chengdu/images/chengdu-museum-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "พิพิธภัณฑ์เฉิงตู",
+      "zh-Hans": "成都博物馆"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/museum.htm",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "chen-mapo-illustration",
+    "path": "slides/chengdu/images/chen-mapo-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "เฉินหมาโผโต้วฝู สาขาถนนชิงหัว",
+      "zh-Hans": "陈麻婆豆腐（青华路店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/chen-mapo-tofu-qinghua-road",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "ma-wangzi-illustration",
+    "path": "slides/chengdu/images/ma-wangzi-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "หม่าหวังจื่อ สาขาจิ่นเจียง",
+      "zh-Hans": "马旺子（锦江店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/ma-s-kitchen",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "mi-xun-illustration",
+    "path": "slides/chengdu/images/mi-xun-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "มี่สวินทีเฮาส์ ที่โรงแรม居舍",
+      "zh-Hans": "谧寻茶室（居舍）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/mi-xun-teahouse",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "laoyuanba-37-illustration",
+    "path": "slides/chengdu/images/laoyuanba-37-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "37 เหล่าหยวนป้าเฉาโส่ว สาขาหม่าหวังเมี่ยว",
+      "zh-Hans": "37号老院坝抄手（马王庙街）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/no-37-lao-yuan-ba-chao-shou",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "gan-ji-illustration",
+    "path": "slides/chengdu/images/gan-ji-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "กันจี้เฝยฉางเฝิ่น สาขาถนนหม่าอานเหนือ",
+      "zh-Hans": "甘记肥肠粉（马鞍北路）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/gan-ji-fei-chang-fen",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "long-sen-yuan-illustration",
+    "path": "slides/chengdu/images/long-sen-yuan-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "หลงเซินหยวน สาขาชิงหยาง",
+      "zh-Hans": "龙森园（青羊店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/long-sen-yuan",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "jincheng-yinxiang-illustration",
+    "path": "slides/chengdu/images/jincheng-yinxiang-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "จิ่นเฉิงอิ้นเซี่ยง สาขาถนนอู่โหวฉือ",
+      "zh-Hans": "锦城印象（武侯祠大街店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/china-samite-hot-pot-wuhouci-street",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "hu-er-ge-illustration",
+    "path": "slides/chengdu/images/hu-er-ge-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "หูเอ้อร์เกอย่าวซ่านถีฮวา สาขาถนนวงแหวนตะวันตก",
+      "zh-Hans": "胡二哥药膳蹄花（一环路西一段）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/hu-er-ge-yao-shan-ti-hua",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "nian-feng-illustration",
+    "path": "slides/chengdu/images/nian-feng-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "เหนียนเฟิงฟ่านเตี้ยน สาขาซอยเหนียนเฟิง",
+      "zh-Hans": "年丰饭店（年丰巷店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/nian-feng-restaurant",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "wu-ji-guaiwei-illustration",
+    "path": "slides/chengdu/images/wu-ji-guaiwei-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "อู๋จี้ไกว้เว่ยเมี่ยน สาขาถนนวงแหวนตะวันออก",
+      "zh-Hans": "吴记怪味面（一环路东五段）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/wu-ji-guai-wei-mian-jinjiang",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "rong-yuan-illustration",
+    "path": "slides/chengdu/images/rong-yuan-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "หรงหยวนชานกว่าน สาขาถนนสู่ฮั่น",
+      "zh-Hans": "荣园餐馆（蜀汉街店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/rong-yuan-can-guan",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "xiyu-dumpling-illustration",
+    "path": "slides/chengdu/images/xiyu-dumpling-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "สี่ยู่เจี่ยวจื่อจิ่ว สาขาถนนหลานเฉ่า",
+      "zh-Hans": "喜玉饺子酒（蓝草路店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/dumpling-drinks",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "tan-jia-illustration",
+    "path": "slides/chengdu/images/tan-jia-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ถานเจีย สาขาถนนอวี้หลินใต้",
+      "zh-Hans": "谭家（玉林南路店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/tan-jia",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "fu-rong-chuan-illustration",
+    "path": "slides/chengdu/images/fu-rong-chuan-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "ฝูหรงชวน สาขาไท่กู่หลี่",
+      "zh-Hans": "福蓉川（太古里店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/fu-rong-chuan",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "yang-bo-ying-illustration",
+    "path": "slides/chengdu/images/yang-bo-ying-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "หยางป๋ออิงฉวนถ่งจ๋าเจี้ยงเมี่ยน สาขาถนนถงซือ",
+      "zh-Hans": "杨伯英传统杂酱面（铜丝街店）"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/yangboying-za-jiang-mian",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  },
+  {
+    "id": "font-Kanit",
+    "kind": "font",
+    "path": "slides/chengdu/fonts/TravelDisplay.woff2",
+    "creator": "Google Fonts project contributors",
+    "license": "SIL Open Font License 1.1",
+    "license_url": "https://openfontlicense.org/",
+    "source_url": "https://github.com/google/fonts/tree/main/ofl/kanit",
+    "modifications": "Locally generated WOFF2; Chinese glyph subset with derivative family name; original OFL notice retained",
+    "license_path": "slides/chengdu/fonts/Kanit_OFL.txt"
+  },
+  {
+    "id": "font-NotoSansThai",
+    "kind": "font",
+    "path": "slides/chengdu/fonts/TravelThai.woff2",
+    "creator": "Google Fonts project contributors",
+    "license": "SIL Open Font License 1.1",
+    "license_url": "https://openfontlicense.org/",
+    "source_url": "https://github.com/google/fonts/tree/main/ofl/notosansthai",
+    "modifications": "Locally generated WOFF2; Chinese glyph subset with derivative family name; original OFL notice retained",
+    "license_path": "slides/chengdu/fonts/NotoSansThai_OFL.txt"
+  },
+  {
+    "id": "font-NotoSerifSC",
+    "kind": "font",
+    "path": "slides/chengdu/fonts/TravelChinese.woff2",
+    "creator": "Google Fonts project contributors",
+    "license": "SIL Open Font License 1.1",
+    "license_url": "https://openfontlicense.org/",
+    "source_url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+    "modifications": "Locally generated WOFF2; Chinese glyph subset with derivative family name; original OFL notice retained",
+    "license_path": "slides/chengdu/fonts/NotoSerifSC_OFL.txt"
+  },
+  {
+    "id": "chengdu-guide-illustration",
+    "path": "slides/chengdu/images/chengdu-guide-illustration.svg",
+    "kind": "diagram",
+    "subject": {
+      "th": "อ่านก่อนเปิดคู่มือ",
+      "zh-Hans": "阅读说明"
+    },
+    "meaningful": true,
+    "width": 1100,
+    "height": 1100,
+    "creator": "Original conceptual illustration by Hermes",
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.panda.org.cn/en/",
+    "source_role": "concept reference, not source photograph",
+    "modifications": "Original SVG shapes; display may crop margins",
+    "illustrative": true,
+    "disclosure": {
+      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่หรืออาหารจริง",
+      "zh-Hans": "概念插画，非景点或菜品实拍。"
+    }
+  }
+]

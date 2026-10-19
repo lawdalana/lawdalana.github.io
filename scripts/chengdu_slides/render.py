@@ -1,0 +1,161 @@
+"""Deterministic paired HTML renderer; release builds reject incomplete evidence."""
+import hashlib
+import html
+import json
+import base64
+import mimetypes
+from pathlib import Path
+from urllib.parse import urlparse
+from .model import load_dataset
+from .validation import validate_dataset
+from .asset_validation import validate_assets
+
+ROOT = Path(__file__).resolve().parents[2]
+LANGS = ('th', 'zh-Hans')
+
+
+def _e(value):
+    return html.escape(str(value), quote=True)
+
+
+def _safe_url(value):
+    return value if urlparse(value).scheme in ('http', 'https') else '#'
+
+
+def content_version(data: dict) -> str:
+    digest = hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True).encode())
+    for name in ('deck.css', 'deck.js'):
+        path = ROOT / 'slides/chengdu' / name
+        if path.exists(): digest.update(path.read_bytes())
+    for asset in sorted(data.get('assets', []), key=lambda a: a.get('id', '')):
+        path = ROOT / asset.get('path', '_missing_asset')
+        if path.is_file(): digest.update(path.read_bytes())
+        notice=ROOT/asset.get('license_path','_missing_license')
+        if asset.get('kind')=='font' and notice.is_file():digest.update(notice.read_bytes())
+    return digest.hexdigest()[:16]
+
+
+def render_deck(data: dict) -> str:
+    sources = {row['id']: row for row in data.get('sources', [])}
+    assets = {row['id']: row for row in data.get('assets', [])}
+    entries = [(None, unit) for unit in data.get('support', [])]
+    for category in ('attractions', 'restaurants', 'gifts'):
+        entries.extend((item, unit) for item in data.get(category, []) for unit in item.get('units', []))
+    sections, options = [], []
+    draft = data.get('meta', {}).get('status') != 'published'
+    version = content_version(data)
+    for item, unit in entries:
+        asset = assets.get(unit.get('asset_id'), {})
+        asset_path = asset.get('path', '')
+        if asset_path.startswith('slides/chengdu/'):
+            asset_path = asset_path[len('slides/chengdu/'):]
+        facts = item.get('facts', {}) if item else unit.get('facts', {})
+        category = item.get('category', 'guide') if item else 'guide'
+        pair = unit['id']
+        for lang in LANGS:
+            sid = pair + '--' + lang
+            title = unit.get('title', {}).get(lang, '')
+            bullets = ''.join('<li>' + _e(text.format_map(facts)) + '</li>' for text in unit.get('body', {}).get(lang, []))
+            refs = ' · '.join('<a target="_blank" rel="noopener noreferrer" href="' + _e(_safe_url(sources[s]['url'])) + '">' + _e(sources[s].get('publisher', s)) + '</a>' for s in unit.get('source_ids', []) if s in sources)
+            credit = _e(asset.get('attribution') or asset.get('creator', ''))
+            license_name = _e(asset.get('license', ''))
+            credit_link = _e(_safe_url(asset.get('source_url', '')))
+            license_link = _e(_safe_url(asset.get('license_url', '')))
+            disclosure = asset.get('disclosure', {}).get(lang, '') if asset.get('illustrative') else ''
+            caption = _e(disclosure or asset.get('caption', {}).get(lang, ''))
+            item_name = item.get('name', {}).get(lang, '') if item else 'CHENGDU · 成都'
+            warning = '<span class="draft-mark">DRAFT · ยังไม่ผ่านเกณฑ์เผยแพร่ / 尚未达到发布标准</span>' if draft else ''
+            sections.append(f'''<section class="slide" id="{_e(sid)}" lang="{lang}" data-slide-id="{_e(sid)}" data-pair-id="{_e(pair)}" data-lang="{lang}" data-item-id="{_e(item.get('id','') if item else '')}" data-kind="{_e(unit.get('kind','guide'))}" data-fact-ids="{_e(json.dumps(unit.get('fact_ids', [])))}" data-source-ids="{_e(json.dumps(unit.get('source_ids', [])))}" aria-labelledby="title-{_e(sid)}">
+<div class="folio"><span class="seal">蜀</span><span>CHENGDU FIELD NOTES</span><span>{_e(category.upper())} · {'ไทย' if lang=='th' else '中文'}</span></div>
+<div class="spread"><figure class="visual"><img src="{_e(asset_path)}" alt="{_e(unit.get('alt',{}).get(lang,''))}" loading="lazy" decoding="async"><figcaption>{caption}<span><a href="{credit_link}" target="_blank" rel="noopener noreferrer">{credit}</a> · <a href="{license_link}" target="_blank" rel="noopener noreferrer">{license_name}</a></span></figcaption></figure>
+<article class="copy"><div class="eyebrow">{_e(item_name)}</div><h2 id="title-{_e(sid)}">{_e(title)}</h2><div class="rule"></div><ul>{bullets}</ul></article></div>
+<footer>{warning}<span class="references">{refs}</span><span class="page-no">{len(sections)+1:03d}</span></footer></section>''')
+            options.append('<option value="' + _e(sid) + '">' + _e(f'{len(sections):03d} · {title} · {lang}') + '</option>')
+    styles_path = ROOT / 'slides/chengdu/deck.css'
+    script_path = ROOT / 'slides/chengdu/deck.js'
+    styles = (ROOT / 'scripts/chengdu_slides/viewport-base.css').read_text()
+    styles += '\n' + (styles_path.read_text() if styles_path.exists() else '')
+    script = script_path.read_text() if script_path.exists() else ''
+    reading_tail=styles.partition('/* === READING VIEW:')[2]
+    reading_fallback=('/* === READING VIEW:'+reading_tail).replace('html.reading','html').replace('.reading ','') if reading_tail else ''
+    title = data.get('meta', {}).get('title', {}).get('th', 'Chengdu · 成都')
+    return f'''<!DOCTYPE html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="content-version" content="{version}"><title>{_e(title)}</title><style>{styles}</style></head><body>
+<div class="deck-viewport"><main class="deck-stage" id="deckStage">{''.join(sections)}</main></div>
+<nav class="deck-controls" aria-label="Slide navigation"><button type="button" id="prev" aria-label="Previous slide">←</button><output id="progress" aria-live="polite"></output><button type="button" id="next" aria-label="Next slide">→</button><button type="button" id="pair">ไทย / 中文</button><select id="contents" aria-label="สารบัญ / 目录">{''.join(options)}</select><button type="button" id="read">อ่าน / 阅读</button><button type="button" id="fullscreen" aria-label="Full screen">⛶</button></nav>
+<noscript><style>{reading_fallback}.deck-controls{{display:none!important}}</style><p>JavaScript ปิดอยู่: อ่านสไลด์ตามลำดับด้านล่าง / JavaScript 已关闭，可依次阅读。</p></noscript>
+<script>{script}</script></body></html>'''
+
+
+def build_deck(data_dir: Path, site_root: Path) -> dict:
+    data = load_dataset(data_dir)
+    findings = validate_dataset(data, publication=True) + validate_assets(data, site_root)
+    if findings:
+        raise ValueError(json.dumps(findings, ensure_ascii=False))
+    if data.get('meta', {}).get('status') != 'published':
+        raise ValueError('publication status is not approved')
+    target = site_root / 'slides/chengdu'
+    target.mkdir(parents=True, exist_ok=True)
+    rendered = render_deck(data)
+    manifest = {'content_version': content_version(data),
+        'counts': {key: len(data[key]) for key in ('attractions', 'restaurants', 'gifts')},
+        'slides': rendered.count('<section class="slide"')}
+    (target/'index.html').write_text(rendered, encoding='utf-8')
+    (target/'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    return manifest
+
+
+def render_standalone(data: dict, site_root: Path) -> str:
+    """Embed actual local visual/font bytes so a draft can be opened offline."""
+    import copy
+    draft=copy.deepcopy(data);draft['meta']['status']='research_incomplete'
+    findings=validate_assets(draft,site_root)
+    if findings:raise ValueError(json.dumps(findings,ensure_ascii=False))
+    result=render_deck(draft)
+    for asset in draft.get('assets',[]):
+        relative=str(Path(asset['path']).relative_to('slides/chengdu'))
+        mime='font/woff2' if relative.endswith('.woff2') else mimetypes.guess_type(relative)[0]
+        if not mime:raise ValueError('unknown asset MIME type: '+relative)
+        uri='data:'+mime+';base64,'+base64.b64encode((site_root/asset['path']).read_bytes()).decode('ascii')
+        result=result.replace('src="'+_e(relative)+'"','src="'+uri+'"')
+        result=result.replace("url('"+relative+"')","url('"+uri+"')")
+    notices=[{'font':asset['id'],'license':asset['license'],'source_url':asset['source_url'],
+              'copyright_and_license_notice':(site_root/asset['license_path']).read_text(encoding='utf-8')}
+             for asset in draft.get('assets',[]) if asset.get('kind')=='font']
+    payload=json.dumps(notices,ensure_ascii=False).replace('<','\\u003c')
+    result=result.replace('</head>','<script type="application/json" id="font-license-notices">'+payload+'</script></head>')
+    return result
+
+
+def build_preview(data_dir: Path, site_root: Path, output_dir: Path) -> dict:
+    """Produce an explicitly incomplete local preview, never in a public route."""
+    import shutil
+    allowed = (site_root / '_reports').resolve()
+    output = output_dir.resolve()
+    if not output.is_relative_to(allowed):
+        raise ValueError('draft preview output must be inside the ignored _reports directory')
+    data = load_dataset(data_dir)
+    data['meta']['status'] = 'research_incomplete'
+    if not any(data.get(key) for key in ('support','attractions','restaurants','gifts')):
+        raise ValueError('no actual content to preview')
+    findings = validate_dataset(data, publication=False) + validate_assets(data, site_root)
+    if findings:
+        raise ValueError(json.dumps(findings,ensure_ascii=False))
+    output.mkdir(parents=True,exist_ok=True)
+    for asset in data.get('assets',[]):
+        relative=Path(asset['path']).relative_to('slides/chengdu')
+        destination=output/relative
+        destination.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copy2(site_root/asset['path'],destination)
+    for license_file in (site_root/'slides/chengdu/fonts').glob('*_OFL.txt'):
+        destination=output/'fonts'/license_file.name
+        destination.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copy2(license_file,destination)
+    rendered=render_deck(data)
+    manifest={'preview':True,'status':'research_incomplete','content_version':content_version(data),
+              'counts':{key:len(data.get(key,[])) for key in ('attractions','restaurants','gifts')},
+              'slides':rendered.count('<section class="slide"'),
+              'release_findings':validate_dataset(data,publication=True)}
+    (output/'index.html').write_text(rendered,encoding='utf-8')
+    (output/'Chengdu_Thai_Chinese_Draft.html').write_text(render_standalone(data,site_root),encoding='utf-8')
+    (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    return manifest

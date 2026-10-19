@@ -1,1 +1,869 @@
-[]
+[
+  {
+    "id": "jinsha-closure",
+    "url": "https://www.jinshasitemuseum.com/site-75/info/4720",
+    "publisher": "Chengdu Jinsha Site Museum",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Official notice dated 2025-11-07 closes all museum areas from 2025-12-05 through 2027-04-30 for comprehensive upgrades."
+    ],
+    "retrieval_note": "Useful official notice text retrieved in live search; used only to exclude Jinsha."
+  },
+  {
+    "id": "panda-official",
+    "url": "https://www.panda.org.cn/en/",
+    "publisher": "Chengdu Research Base of Giant Panda Breeding",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Base address: 1375 Panda Avenue, Chenghua District, Chengdu.",
+      "Official site separates the Chengdu base from Panda Valley."
+    ]
+  },
+  {
+    "id": "panda-summer-2026",
+    "url": "https://www.panda.org.cn/cn/news/notice/2026-02-19/8855.html",
+    "publisher": "Chengdu Research Base of Giant Panda Breeding",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "2026 summer admission regime applies 2026-03-16 through 2026-10-31, excluding Dujiangyan Panda Valley.",
+      "Morning-ticket entry 07:30-12:00; afternoon-ticket entry 12:00-17:00."
+    ],
+    "retrieval_note": "Official notice text returned by live search; explicitly date-bounded, not an assumed travel date."
+  },
+  {
+    "id": "panda-booking",
+    "url": "https://www.panda.org.cn/cn/",
+    "publisher": "Chengdu Research Base of Giant Panda Breeding",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Online real-name reservations generally required; stated age/height exemptions have separate rules.",
+      "Home page shows morning and afternoon sessions and 18:00 closure; sightseeing bus is separately priced at CNY30."
+    ],
+    "retrieval_note": "Useful indexed official homepage text retrieved; current season must be checked for the actual visit."
+  },
+  {
+    "id": "panda-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/panda-breeding-and-research-center.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Giant pandas and red pandas; early morning advised by guide.",
+      "Guide lists CNY55 admission and CNY30 sightseeing bus.",
+      "Metro Line 3 to Panda Avenue with a last-mile shuttle to south gate; a different station/shuttle serves west gate.",
+      "No panda holding or unauthorized feeding."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "sanxingdui-guide",
+    "url": "https://www.sxd.cn/Guide?type=3",
+    "publisher": "Sanxingdui Museum",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Museum is in Guanghan beside the Yazi River; intercity rail to Guanghan North plus local transport.",
+      "Guide lists regular adult ticket CNY72; real-name reservations through official website, WeChat or official Douyin.",
+      "Dedicated inbound booking channel; foreign visitors should bring original booking document and exchange tickets at ticketing centre.",
+      "Guide displays 08:30-20:00, entry cut-off 18:00, but contextual text links extended hours to holiday/vacation periods.",
+      "Repair hall 09:00-18:00; normally closed only on Lunar New Year eve, with temporary announcements overriding.",
+      "Excavation site itself is not open; no flash or selfie sticks, and observe no-photo labels.",
+      "New main exhibition opened July 2023; ancient Shu collections include bronze sacred tree."
+    ],
+    "retrieval_note": "Useful guide text actually retrieved through live search extraction. Direct browser open returned an empty JavaScript shell; booking transaction and live availability not tested. Extended-hour applicability remains unresolved."
+  },
+  {
+    "id": "unesco-qingcheng-dujiangyan",
+    "url": "https://whc.unesco.org/en/list/1001/",
+    "publisher": "UNESCO World Heritage Centre",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Dujiangyan system began in the third century BCE and still distributes Minjiang water to Chengdu Plain farmland.",
+      "Its three principal structures are Yuzui, Feishayan and Baopingkou.",
+      "Mount Qingcheng and Dujiangyan form one World Heritage property; Qingcheng has historic Taoist temples."
+    ]
+  },
+  {
+    "id": "dujiangyan-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/dujiangyan.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Yuzui, Feishayan, Baopingkou and Anlan Bridge are visit highlights.",
+      "Rail from Xipu to Lidui Park followed by local walk or transport.",
+      "Guide lists CNY80 admission; sightseeing bus extra.",
+      "Guide hours: March 2-November 30 08:00-18:00; December 1-March 1 08:00-17:30."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "qingcheng-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/mt_qingcheng.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Front Mountain has Jianfu Palace, Tianshi Cave, Shangqing Palace and Laojun Pavilion; Rear Mountain is distinct.",
+      "Rail from Xipu to Qingchengshan then a local connection to Front Mountain.",
+      "Cable car and lake boat are separately priced.",
+      "Guide publishes a foreign-passport Front Mountain price and seasonal hours; these are not accepted here as confirmed current tariffs/hours."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "wuhou-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wuhou_temple.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Shrines to Zhuge Liang and Liu Bei, Huiling mausoleum and Sanyi Temple.",
+      "Main structures run south to north; Jinli is adjacent.",
+      "Guide lists CNY50 and 08:00-18:30, ticket sales stopping 17:30.",
+      "Guide suggests Metro Line3 Gaoshengqiao then walk."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "jinli-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/jinli-street.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Street is east of Wuhou Shrine; restored visitor street opened in 2004.",
+      "Traditional western Sichuan style shops, teahouses, crafts and occasional performances.",
+      "San da pao contains glutinous rice, brown sugar, sesame and beans.",
+      "Guide states free entry; shops and performances have separate arrangements."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "kuanzhai-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wide-narrow-alley.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Kuan, Zhai and Jing alleys with courtyard buildings; renovated commercial and cultural district in Qingyang.",
+      "Restaurants, teahouses, cafes, shops and nightlife; present block opened after renovation in 2008.",
+      "Metro Line4 Kuanzhai Xiangzi, or Line2 People's Park followed by walk."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "wenshu-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wenshu_monastery.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Buddhist monastery at 66 Wenshuyuan Street with halls, garden, Buddhist statues and calligraphy collections.",
+      "Guide lists free entrance and 08:00-17:00.",
+      "Metro Line1 Wenshuyuan."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "peoples-park-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/peoples-park.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Central park on Shaocheng Road, founded in 1911.",
+      "He Ming/Singing Crane Teahouse, Goldfish Island, bonsai garden and Railway Protection Movement monument.",
+      "Metro Line2 People's Park.",
+      "Ordinary-day entry listed free; guide also lists event surcharges and unusual seasonal hours that are not treated as current confirmed rules."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "chunxi-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/chunxi-road.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Pedestrian shopping area in Jinjiang; commercial road originated in 1924.",
+      "Sun Yat-sen Square, sculptures and local snack shopping.",
+      "Metro Lines2/3 Chunxi Road; street entrance listed free.",
+      "Individual shop hours do not establish public street or IFS terrace hours."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "ifs-official",
+    "url": "https://www.cdifs.cn/zh/lynn-haven",
+    "publisher": "Chengdu IFS",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "IFS is in the Chunxi Road shopping district at 1 Hongxing Road Section3, Jinjiang.",
+      "The facade panda installation I Am Here is by Lawrence Argent."
+    ],
+    "retrieval_note": "Useful official text retrieved through live search; no verified terrace hours in this source."
+  },
+  {
+    "id": "dufu-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/dufu.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Commemorative museum and garden on the site associated with Tang poet Du Fu; present structures reflect later rebuilding.",
+      "History-in-Verse Hall, Gongbu Shrine, garden waterways and reconstructed cottage.",
+      "Guide lists CNY50, 08:00-18:30, ticketing ending one hour earlier.",
+      "Guide now suggests Metro Line13 Du Fu Thatched Cottage plus a walk; live route should be checked.",
+      "Sichuan Museum and Huanhua Stream Park nearby."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "sichuan-museum-guide",
+    "url": "https://www.travelchinaguide.com/cityguides/sichuan/museum.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Provincial collections include bronze, Han pottery/stone art, painting, ethnic cultural objects and crafts.",
+      "Museum is beside Huanhua Stream Park.",
+      "Guide lists free entry, 09:00-17:00, last admission 16:00, closed Monday.",
+      "TCG floor-plan and collection-size figures may be older than current exhibition arrangement and are not reproduced as current."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "sichuan-public-culture",
+    "url": "https://www.scc.org.cn/centredetail.fds?id=309",
+    "publisher": "Sichuan Public Culture Cloud",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Sichuan Museum address: 251 Huanhua South Road.",
+      "Public culture listing gives free admission and 09:00-17:00.",
+      "Basic collections span prehistoric and ancient Sichuan, ethnic objects, arts and crafts, Han pottery/stone art."
+    ],
+    "retrieval_note": "Government cultural-service listing text retrieved in live search; reservation process not verified."
+  },
+  {
+    "id": "huanhua-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/huanhua-stream-park.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Park links Du Fu Cottage to its north and Sichuan Museum to its east.",
+      "Wanshu Hill, Canglang Lake, egret wetlands and Poetry Avenue.",
+      "Guide lists free entry; May-October 06:00-22:00, November-April 07:00-21:00.",
+      "Guide gives bus170/1024/1075 for Huanhua Nanlu east-side approach."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "leshan-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/leshan/buddha_statue.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "71-metre seated Buddha carved beside the river; hidden drainage channels protect the sculpture.",
+      "Rail to Leshan then local transport.",
+      "Guide lists land admission CNY80, boat CNY70 extra, and hours09:00-16:50.",
+      "Dedicated guide last updated 2025-08-14; current path access, boat operation and hours require reconfirmation."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "chengdu-museum-guide",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/museum.htm",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Museum is west of Tianfu Square; city history and puppetry/shadow play displays.",
+      "Separate temporary exhibition areas; the old guide floor allocation is not assumed current."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "chengdu-museum-official",
+    "url": "https://www.cdmuseum.com/zhinan/",
+    "publisher": "Chengdu Museum",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Address1 Xiaohe Street, Qingyang, west of Tianfu Square; MetroLines1/2 Tianfu Square.",
+      "Tuesday-Thursday and Sunday09:00-17:00, last entry16:30.",
+      "Friday-Saturday09:00-20:30, last entry20:00; Monday closed except statutory holidays.",
+      "Official online reservation link; security screening; no flash/selfie sticks/tripods where photography allowed."
+    ]
+  },
+  {
+    "id": "chen-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/chen-mapo-tofu-qinghua-road",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chen Mapo Tofu Qinghua Road: 10 Qinghua Road, units10-12, Qingyang; price ¥.",
+      "Stone-pot mapo tofu; Jiangtuan fish/abalone variants, Zhong dumplings and lotus-leaf rice-flour steamed pork.",
+      "Frequently crowded."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "ma-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/ma-s-kitchen",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Ma's Kitchen Jinjiang:1 East Kangshi Street; price ¥¥.",
+      "Brand originated in Meishan in1923.",
+      "Mao xue wang, crispy rice-flour steamed pork, dan dan noodles and bingfen; queues common."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "mixun-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/mi-xun-teahouse",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Mi Xun Teahouse: Upper House,81 Bitieshi Street, Jinjiang; price ¥¥.",
+      "Qing courtyard, courtyard seating, vegetarian cuisine using local seasonal ingredients.",
+      "Termite-mushroom mapo tofu with guokui, handmade spinach dan dan noodles, Chinese afternoon tea.",
+      "Profile lists daily12:00-22:00."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "laoyuanba-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/no-37-lao-yuan-ba-chao-shou",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "No37 Lao Yuan Ba Chao Shou: building2,37 Mawangmiao Street, Qingyang; price ¥.",
+      "Handmade chao shou and dumplings; dry-tossed chao shou with chilli, scallions, peanuts and white sesame.",
+      "Handmade sweet-water noodles; adjustable heat.",
+      "Handmade bingfen only available in summer according to profile."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "gan-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/gan-ji-fei-chang-fen",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Gan Ji:18 Maan North Road, units1-3, Jinniu; price ¥.",
+      "Handmade sweet-potato starch noodles, pork intestines, red spicy or white broth and optional intestine knots.",
+      "Guokui filling includes pork and Sichuan pepper.",
+      "Profile lists daily10:00-22:00."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "longsen-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/long-sen-yuan",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Long Sen Yuan Qingyang:60 Qintai Road; price ¥¥.",
+      "Emei shredded-eel hotpot with lettuce and pork crackling; arrives in an initially cold pot.",
+      "Spicy rabbit stomach, brown-sugar glutinous-rice cakes and house green Sichuan-pepper oil."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "samite-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/china-samite-hot-pot-wuhouci-street",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "China Samite/Jincheng Yinxiang flagship:19 Wuhouci Street, unit94, Wuhou; price ¥¥.",
+      "Sichuan residential-style decor; house-made beef-tallow red broth and sesame-oil dip.",
+      "Signature young-goose intestine; handmade bingfen."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "hu-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/hu-er-ge-yao-shan-ti-hua",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Hu Er Ge:146 First Ring Road West Section1, unit19, Qingyang; price ¥.",
+      "Herbal pork-trotter soup simmered eight hours, plus stir-fried pork snout with small green peppers.",
+      "Profile describes evening-to-early-morning operation without clock hours."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "nianfeng-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/nian-feng-restaurant",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Nian Feng:56-3 Nianfeng Lane, Jinjiang; price ¥¥.",
+      "Home-style Sichuan cooking; kung pao prawns with peanuts and fried eggplant, chilli-oil sliced kidney.",
+      "Private rooms should be booked ahead."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "wuji-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/wu-ji-guai-wei-mian-jinjiang",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Wu Ji:108-11 First Ring Road East Section5, Jinjiang; price ¥.",
+      "Founded1989; garlic-forward guaiwei noodles mildly numbing, spicy and sweet.",
+      "Beef multi-flavour noodles with bean paste and bamboo shoots; three portion sizes."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "rongyuan-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/rong-yuan-can-guan",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Rong Yuan:10 Shuhan Street, unit2, Wuhou; price ¥¥.",
+      "Home-style Sichuan; spicy mandarin fish with chopped chilli and huoxiang herb.",
+      "Quick-fried pork-tripe tip is limited; no private rooms, large round tables."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "dumpling-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/dumpling-drinks",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Dumpling & Drinks Lancao Road:16 Lancao Road, Wuhou; price ¥.",
+      "Fresh hand-wrapped dumplings; pork-shiitake and beef-celery fillings.",
+      "Dumplings five per serving; cold dishes and braised dishes."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "tanjia-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/tan-jia",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Tan Jia:70 Yulin South Road, unit1, Wuhou; price ¥.",
+      "Bobo chicken with varied chicken/tripe ingredients, red-chilli or green Sichuan-pepper flavours; trotter soup, rabbit head and chicken-broth rice.",
+      "Evening only and Monday closed, per profile."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "furongchuan-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/fu-rong-chuan",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Fu Rong Chuan:Taikoo Li building8 unit1243b,8 Middle Shamao Street, Jinjiang; price ¥¥.",
+      "Modern Sichuan cooking: flash-fried Qionghai river shrimp and beef-brisket mapo tofu with aged bean paste."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "yangboying-michelin",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/yangboying-za-jiang-mian",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Yangboying:19 Tongsi Street, unit13, Qingyang; price ¥.",
+      "Su jiao noodles contain minced meat, sesame paste and chilli/Sichuan pepper.",
+      "Non-spicy seafood chao shou broth includes dried shrimp and scallop.",
+      "Thick/thin noodles and three sizes; outdoor seating only."
+    ],
+    "retrieval_note": "Dedicated profile reviewed for this exact address and dishes. Relative price symbol is not an RMB amount. No annual award claim is made."
+  },
+  {
+    "id": "chen-ctrip",
+    "url": "https://gs.ctrip.com/html5/you/foods/fooddetail/104/5233638.html",
+    "publisher": "Ctrip",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Exact Qinghua Road10 units10-12 branch: listing11:00-21:00 and averageCNY70 per person."
+    ],
+    "retrieval_note": "Indicative platform listing, not restaurant confirmation or live menu."
+  },
+  {
+    "id": "samite-trip",
+    "url": "https://sg.trip.com/restaurant/china/chengdu/detail/china-samite-hot-pot-11385067/?curr=&locale=zh-SG",
+    "publisher": "Trip.com",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Caihong branch at19 Wuhouci Street; same public branch phone as Michelin.",
+      "Listing11:00-next day01:30."
+    ],
+    "retrieval_note": "Indicative platform hours for the matched branch; not confirmed for the eventual visit date."
+  },
+  {
+    "id": "rongyuan-ctrip",
+    "url": "https://gs.ctrip.com/html5/you/foods/Chengdu104/5233830.html",
+    "publisher": "Ctrip",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "10 Shuhan Street unit2 branch: listing11:00-21:00 and averageCNY87 per person."
+    ],
+    "retrieval_note": "Indicative platform listing; current menu and closing time require branch confirmation."
+  },
+  {
+    "id": "kuanzhai-ctrip",
+    "url": "https://you.ctrip.com/sight/chengdu104/63456.html",
+    "publisher": "Ctrip",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Pedestrian block at27 Kuan Alley, Qingyang; listing says public block open all day."
+    ],
+    "retrieval_note": "Platform listing; all-day block access does not establish individual courtyard/shop hours."
+  },
+  {
+    "id": "kuanzhai-qunar",
+    "url": "https://piao.qunar.com/ticket/detail_243.html",
+    "publisher": "Qunar",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Wide/Narrow Alley block entry is listed free; cultural experiences are separate products."
+    ],
+    "retrieval_note": "Platform ticket listing, indicative rather than a dated official admission notice."
+  },
+  {
+    "id": "chengdu-museum-current-notice",
+    "url": "https://www.cdmuseum.com/",
+    "publisher": "Chengdu Museum",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Announcement2026-10-12: replacement of escalators from basement1 to floor2 begins2026-10-14; expected completion2026-12-15.",
+      "Museum instructs visitors to follow signs and use passenger lifts during construction."
+    ],
+    "retrieval_note": "Useful current official announcement summary retrieved by live search. Planned completion is not a confirmed reopening date."
+  },
+  {
+    "id": "chengdu-attractions-index",
+    "url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/",
+    "publisher": "TravelChinaGuide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chunxi Road, IFS facade panda and adjacent Taikoo Li form a central shopping/urban walking area."
+    ],
+    "retrieval_note": "Dedicated page text retrieved; fees, hours and transit are indicative secondary information, not a date-specific official guarantee."
+  },
+  {
+    "id": "leshan-2026-operation",
+    "url": "https://www.leshan.gov.cn/lsswszf/bmdt/92337825/819827219292229.html",
+    "publisher": "Leshan Municipal Government / Leshan Giant Buddha Management Committee",
+    "tier": "official",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Report dated2026-06-24 documents visitor reception at Leshan Giant Buddha during the Dragon Boat holiday."
+    ],
+    "retrieval_note": "Supports recent operation, not present-day boat/path access or an eventual travel-date schedule."
+  },
+  {
+    "id": "chen-michelin-en",
+    "url": "https://guide.michelin.com/en/chengdu-municipality/chengdu/restaurant/chen-mapo-tofu-qinghua-road",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "English profile specifies ground beef in the classic stone-pot mapo tofu; lotus-leaf steamed pork also recommended."
+    ]
+  },
+  {
+    "id": "ma-michelin-en",
+    "url": "https://guide.michelin.com/en/chengdu-municipality/chengdu/restaurant/ma-s-kitchen",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "English profile specifies duck blood curd, pork offal and sliced eel in the signature dish; crispy rice-flour pork is steamed then deep-fried."
+    ]
+  },
+  {
+    "id": "ma-hours-secondary",
+    "url": "https://www.cityhui.com/shop/22014.html",
+    "publisher": "Cityhui",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Address1 East Kangshi Street matches Michelin branch.",
+      "User-created public listing gives Monday-Thursday11:00-14:00 and17:00-20:30; Friday-Sunday11:30-14:30 and17:00-20:30."
+    ],
+    "retrieval_note": "Site expressly labels business data user-created. Hours are indicative and require branch confirmation; not an official schedule."
+  },
+  {
+    "id": "longsen-hours-secondary",
+    "url": "https://www.cityhui.com/shop/19906.html",
+    "publisher": "Cityhui",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Address60 Qintai Road matches Michelin; user-created public listing gives11:00-23:00."
+    ],
+    "retrieval_note": "Site expressly labels business data user-created. Used only as an indicative planning window, not confirmed live hours."
+  },
+  {
+    "id": "long-sen-yuan-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/long-sen-yuan",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 龙森园（青羊店）; address matches the previously retrieved longsen-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "jincheng-yinxiang-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/china-samite-hot-pot-wuhouci-street",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 锦城印象（武侯祠大街店）; address matches the previously retrieved samite-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "hu-er-ge-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/hu-er-ge-yao-shan-ti-hua",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 胡二哥药膳蹄花（一环路西一段）; address matches the previously retrieved hu-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "nian-feng-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/nian-feng-restaurant",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 年丰饭店（年丰巷店）; address matches the previously retrieved nianfeng-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "wu-ji-guaiwei-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/wu-ji-guai-wei-mian-jinjiang",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 吴记怪味面（一环路东五段）; address matches the previously retrieved wuji-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "rong-yuan-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/rong-yuan-can-guan",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 荣园餐馆（蜀汉街店）; address matches the previously retrieved rongyuan-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "xiyu-dumpling-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/dumpling-drinks",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 喜玉饺子酒（蓝草路店）; address matches the previously retrieved dumpling-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "tan-jia-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/tan-jia",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 谭家（玉林南路店）; address matches the previously retrieved tanjia-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "fu-rong-chuan-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/fu-rong-chuan",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 福蓉川（太古里店）; address matches the previously retrieved furongchuan-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  },
+  {
+    "id": "yang-bo-ying-name-observation",
+    "url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/yangboying-za-jiang-mian",
+    "publisher": "MICHELIN Guide",
+    "tier": "secondary",
+    "retrieved_at": "2026-10-19",
+    "access_state": "complete",
+    "review_state": "verified",
+    "supported_facts": [
+      "Chinese profile identifies this exact branch as 杨伯英传统杂酱面（铜丝街店）; address matches the previously retrieved yangboying-michelin record."
+    ],
+    "retrieval_note": "Existing dedicated Chinese profile re-read on 2026-10-19 solely to resolve Chinese brand spelling absent from the saved fact summary. Existing specialties and branch evidence retained. No annual award or live-availability claim."
+  }
+]

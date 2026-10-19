@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-10-19",
+  "license": "SIL Open Font License 1.1; notices retained in the adjacent *_OFL.txt files",
+  "fonts": [
+    {
+      "original_family": "Kanit Medium",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/kanit/Kanit-Medium.ttf",
+      "source_sha256": "50a237034244026a7c63fe55e24e0b4298babe363cde043e032075b764c545a2",
+      "derivative_file": "TravelDisplay.woff2",
+      "output_sha256": "1e93348dc8047d446045433e76abcabf0bd78153acbe598c1f4d695cdf45ad0b",
+      "changes": "WOFF2 conversion and renamed family; full glyph coverage retained"
+    },
+    {
+      "original_family": "Noto Sans Thai",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansthai/NotoSansThai%5Bwdth%2Cwght%5D.ttf",
+      "source_sha256": "5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8",
+      "derivative_file": "TravelThai.woff2",
+      "output_sha256": "d66eb389df04f34358a99c8851655b308400ec8fd41a9a1fb3c442ffec536d11",
+      "changes": "WOFF2 conversion and renamed family; full glyph coverage retained"
+    },
+    {
+      "original_family": "Noto Serif SC",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "derivative_file": "TravelChinese.woff2",
+      "output_sha256": "8b478d39628f4ab582602dce8ccbd3c8d6e96351652e714ecc49091c4d680c0a",
+      "changes": "Current dataset glyph subset, WOFF2 conversion and renamed family"
+    }
+  ]
+}
