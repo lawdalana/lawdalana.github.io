@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latent Lab: From Representation to Runtime</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23315a3d'/%3E%3Cpath d='M8 9h16v14H8zM12 6h8M12 26h8' fill='none' stroke='%23f3f0df' stroke-width='2'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           THEME VARIABLES
+           =========================================== */
+        :root {
+            --stage-bg: #d8e0d2;
+            --slide-bg: #f3f0df;
+            --ink: #172019;
+            --muted: #5c6c5d;
+            --soft: #e4e1ce;
+            --panel: rgba(255, 252, 236, 0.86);
+            --panel-strong: #fffbea;
+            --line: #253727;
+            --green: #315a3d;
+            --green-2: #66815b;
+            --yellow: #d8b24a;
+            --red: #a95c48;
+            --blue: #496f87;
+            --shadow: rgba(24, 32, 25, 0.16);
+            --font-display: 'Noto Serif Thai', serif;
+            --font-body: 'IBM Plex Sans Thai', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration-normal: 0.7s;
+        }
+
+        /* ===========================================
+           RESET AND MANDATORY VIEWPORT BASE
+           =========================================== */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* ===========================================
+           FIXED 16:9 STAGE: MANDATORY BASE STYLES
+           Include this ENTIRE file in every presentation.
+           Slides are authored at 1920×1080 and scaled as a whole.
+           =========================================== */
+
+        /* 1. Lock the browser viewport */
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: var(--stage-bg, #000);
+        }
+
+        /* 2. Full-window deck viewport */
+        .deck-viewport {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            background: var(--stage-bg, #000);
+        }
+
+        /* 3. Fixed 16:9 design canvas.
+           JavaScript sets transform: translate(...) scale(...). */
+        .deck-stage {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            transform-origin: 0 0;
+            background: var(--slide-bg, #fff);
+        }
+
+        /* 4. Slides stack inside the fixed stage.
+           Content must be laid out at 1920×1080, not reflowed per device. */
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            display: block;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            background: var(--slide-bg, #fff);
+        }
+
+        .slide.active,
+        .slide.visible {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 1;
+        }
+
+        /* 5. Keep media inside authored slide bounds */
+        img,
+        video,
+        canvas,
+        svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* 6. Presentation chrome stays outside the slide design system */
+        .deck-controls {
+            position: fixed;
+            left: 50%;
+            bottom: 22px;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        /* 7. Print one fixed-size slide per page */
+        @media print {
+            html,
+            body {
+                width: 1920px;
+                height: auto;
+                overflow: visible;
+                background: #fff;
+            }
+
+            .deck-viewport {
+                position: static;
+                overflow: visible;
+                background: #fff;
+            }
+
+            .deck-stage {
+                position: static;
+                width: auto;
+                height: auto;
+                transform: none !important;
+                background: none;
+            }
+
+            .slide {
+                position: relative;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                width: 1920px;
+                height: 1080px;
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .slide:last-child {
+                break-after: auto;
+                page-break-after: auto;
+            }
+
+            .deck-controls {
+                display: none !important;
+            }
+        }
+
+        /* 8. Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+        }
+
+        /* ===========================================
+           BASE SLIDE DESIGN
+           =========================================== */
+        body {
+            color: var(--ink);
+            font-family: var(--font-body);
+        }
+
+        .slide {
+            padding: 76px 92px;
+            background:
+                radial-gradient(circle at 86% 14%, rgba(216, 178, 74, 0.18), transparent 240px),
+                radial-gradient(circle at 12% 88%, rgba(73, 111, 135, 0.14), transparent 280px),
+                linear-gradient(135deg, rgba(255, 251, 234, 0.96), rgba(226, 228, 205, 0.96));
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            inset: 30px;
+            border: 2px solid rgba(37, 55, 39, 0.18);
+            pointer-events: none;
+        }
+
+        .slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.12;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(37, 55, 39, 0.18) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 55, 39, 0.12) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: linear-gradient(120deg, transparent, #000 16%, #000 78%, transparent);
+        }
+
+        .kicker {
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: 24px;
+            letter-spacing: 0.16em;
+            line-height: 1.25;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 112px;
+            font-weight: 700;
+            letter-spacing: 0;
+            line-height: 1.03;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 70px;
+            font-weight: 700;
+            letter-spacing: 0;
+            line-height: 1.08;
+        }
+
+        h3 {
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1.22;
+        }
+
+        p,
+        li {
+            font-size: 27px;
+            line-height: 1.48;
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 34px;
+            line-height: 1.45;
+        }
+
+        .caption {
+            color: var(--muted);
+            font-size: 21px;
+            line-height: 1.5;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+        }
+
+        .content-grid {
+            display: grid;
+            gap: 34px;
+            grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+            height: 730px;
+            margin-top: 44px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .three-grid {
+            display: grid;
+            gap: 26px;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 42px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 2px solid rgba(37, 55, 39, 0.24);
+            box-shadow: 10px 12px 0 rgba(24, 32, 25, 0.07);
+            padding: 30px;
+        }
+
+        .panel strong {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .compact-list {
+            display: grid;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .compact-list li {
+            list-style: none;
+            padding-left: 38px;
+            position: relative;
+        }
+
+        .compact-list li::before {
+            content: "";
+            position: absolute;
+            top: 16px;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            background: var(--yellow);
+            border: 2px solid var(--line);
+            transform: rotate(45deg);
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .tag {
+            background: rgba(49, 90, 61, 0.12);
+            border: 1px solid rgba(49, 90, 61, 0.4);
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: 20px;
+            padding: 8px 14px;
+        }
+
+        .equation {
+            background: #172019;
+            color: #f6f0d4;
+            font-family: var(--font-mono);
+            font-size: 28px;
+            line-height: 1.45;
+            padding: 24px 28px;
+            white-space: pre-wrap;
+        }
+
+        .diagram {
+            width: 100%;
+            height: 100%;
+        }
+
+        .diagram text {
+            fill: var(--ink);
+            font-family: var(--font-body);
+        }
+
+        .diagram .label {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .diagram .small {
+            fill: var(--muted);
+            font-size: 22px;
+        }
+
+        .diagram .mono-label {
+            font-family: var(--font-mono);
+            font-size: 23px;
+        }
+
+        .marker {
+            fill: var(--green);
+        }
+
+        .title-slide {
+            display: grid;
+            grid-template-columns: 1.03fr 0.97fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .title-slide h1 {
+            font-size: 126px;
+        }
+
+        .title-meta {
+            display: grid;
+            gap: 18px;
+            margin-top: 38px;
+        }
+
+        .title-card {
+            background: rgba(255, 251, 234, 0.7);
+            border: 2px solid rgba(37, 55, 39, 0.28);
+            padding: 28px;
+        }
+
+        .path-list {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 36px;
+        }
+
+        .path-item {
+            align-items: center;
+            background: rgba(255, 251, 234, 0.78);
+            border: 1px solid rgba(37, 55, 39, 0.24);
+            display: flex;
+            gap: 14px;
+            min-height: 72px;
+            padding: 14px 18px;
+        }
+
+        .path-index {
+            align-items: center;
+            background: var(--green);
+            color: #fffbea;
+            display: inline-flex;
+            flex: 0 0 46px;
+            font-family: var(--font-mono);
+            font-size: 22px;
+            height: 46px;
+            justify-content: center;
+        }
+
+        .path-title {
+            font-size: 23px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .wide-card {
+            align-items: stretch;
+            display: grid;
+            gap: 22px;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 38px;
+        }
+
+        .summary-slide .wide-card {
+            margin-top: 28px;
+        }
+
+        .summary-slide .metric-card {
+            min-height: 150px;
+            padding: 20px;
+        }
+
+        .summary-slide .content-grid {
+            height: 500px;
+            margin-top: 28px;
+        }
+
+        .stacked-slide .three-grid {
+            margin-top: 30px;
+        }
+
+        .stacked-slide .content-grid {
+            height: 430px;
+            margin-top: 22px;
+        }
+
+        .stacked-slide .panel {
+            padding: 24px;
+        }
+
+        .stacked-slide h3 {
+            font-size: 30px;
+        }
+
+        .stacked-slide p {
+            font-size: 24px;
+        }
+
+        .metric-card {
+            background: var(--panel);
+            border: 2px solid rgba(37, 55, 39, 0.24);
+            min-height: 188px;
+            padding: 24px;
+        }
+
+        .metric-number {
+            color: var(--green);
+            font-family: var(--font-display);
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .metric-card p {
+            color: var(--muted);
+            font-size: 22px;
+            margin-top: 12px;
+        }
+
+        .matrix {
+            display: grid;
+            gap: 0;
+            grid-template-columns: 0.8fr 1fr 1fr 1fr;
+            margin-top: 34px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cell {
+            background: rgba(255, 251, 234, 0.82);
+            border-bottom: 1px solid rgba(37, 55, 39, 0.24);
+            border-right: 1px solid rgba(37, 55, 39, 0.24);
+            min-height: 116px;
+            padding: 18px;
+        }
+
+        .cell.header {
+            background: rgba(49, 90, 61, 0.14);
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .cell p {
+            font-size: 22px;
+            line-height: 1.38;
+        }
+
+        .note-strip {
+            background: rgba(216, 178, 74, 0.18);
+            border-left: 8px solid var(--yellow);
+            margin-top: 24px;
+            padding: 18px 24px;
+        }
+
+        .note-strip p {
+            font-size: 24px;
+        }
+
+        .source-links {
+            bottom: 52px;
+            display: flex;
+            gap: 20px;
+            left: 92px;
+            position: absolute;
+            z-index: 4;
+        }
+
+        .source-links a,
+        .deck-controls button,
+        .deck-controls a,
+        .edit-toggle {
+            background: rgba(23, 32, 25, 0.88);
+            border: 1px solid rgba(255, 251, 234, 0.38);
+            color: #fffbea;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1;
+            padding: 12px 14px;
+            text-decoration: none;
+        }
+
+        /* ===========================================
+           ANIMATION SYSTEM
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.06s; }
+        .reveal:nth-child(2) { transition-delay: 0.14s; }
+        .reveal:nth-child(3) { transition-delay: 0.22s; }
+        .reveal:nth-child(4) { transition-delay: 0.30s; }
+        .reveal:nth-child(5) { transition-delay: 0.38s; }
+
+        .slide.visible .draw {
+            stroke-dasharray: 900;
+            stroke-dashoffset: 900;
+            animation: draw-line 1.2s var(--ease-out-expo) forwards;
+        }
+
+        @keyframes draw-line {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* ===========================================
+           CONTROLS AND EDITING
+           =========================================== */
+        .deck-controls {
+            align-items: center;
+            background: rgba(23, 32, 25, 0.78);
+            border: 1px solid rgba(255, 251, 234, 0.28);
+            display: flex;
+            gap: 10px;
+            padding: 8px;
+        }
+
+        .slide-counter {
+            color: #fffbea;
+            font-family: var(--font-mono);
+            font-size: 16px;
+            min-width: 78px;
+            text-align: center;
+        }
+
+        .edit-hotzone {
+            cursor: pointer;
+            height: 80px;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 80px;
+            z-index: 10000;
+        }
+
+        .edit-toggle {
+            left: 18px;
+            opacity: 0;
+            pointer-events: none;
+            position: fixed;
+            top: 18px;
+            transition: opacity 0.3s ease;
+            z-index: 10001;
+        }
+
+        .edit-toggle.show,
+        .edit-toggle.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .editing [data-editable="true"] {
+            outline: 3px dashed rgba(169, 92, 72, 0.65);
+            outline-offset: 6px;
+        }
+    </style>
+</head>
+<body>
+    <svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path class="marker" d="M 0 0 L 10 5 L 0 10 z"></path>
+            </marker>
+        </defs>
+    </svg>
+    <div class="deck-viewport">
+        <main class="deck-stage" id="deckStage" aria-live="polite">
+            <section class="slide title-slide active visible" data-title="Title">
+                <div>
+                    <p class="kicker reveal" data-editable="true">LATENT LAB / FIELD NOTES</p>
+                    <h1 class="reveal" data-editable="true">From Representation to Runtime</h1>
+                    <p class="lead reveal" data-editable="true">สรุปเส้นทางเรียน 10 บทจาก Latent AI Knowledge Base ให้เป็น deck อ่านเอง: เห็นกลไก เห็นสูตร เห็นข้อจำกัด และรู้ว่าจะทดลองต่ออย่างไร</p>
+                    <div class="title-meta reveal">
+                        <div class="title-card">
+                            <p data-editable="true"><strong>แหล่งหลัก:</strong> https://lawdalana.github.io/latent-ai-knowledge-base/ · Latent Lab, 55 posts, 10 topics, 65 equation guides</p>
+                        </div>
+                    </div>
+                </div>
+                <svg class="diagram reveal" viewBox="0 0 860 760" role="img" aria-label="แผนภาพเส้นทางจากข้อมูล สถานะ latent การตรวจ และ runtime">
+                    <rect x="40" y="54" width="230" height="118" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                    <text x="72" y="105" class="label">observation</text>
+                    <text x="72" y="139" class="small">x_t, documents,</text>
+                    <text x="72" y="162" class="small">world state</text>
+                    <rect x="320" y="238" width="230" height="118" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                    <text x="360" y="288" class="label">latent state</text>
+                    <text x="360" y="325" class="small">z, h, memory</text>
+                    <rect x="590" y="430" width="230" height="118" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                    <text x="705" y="480" class="label" text-anchor="middle">verified action</text>
+                    <text x="630" y="511" class="small">accept / reject</text>
+                    <text x="630" y="535" class="small">abstain</text>
+                    <path class="draw" d="M270 126 C370 140 352 230 430 238" fill="none" stroke="#315a3d" stroke-width="7" marker-end="url(#arrow)"></path>
+                    <path class="draw" d="M550 308 C650 335 650 410 705 430" fill="none" stroke="#315a3d" stroke-width="7" marker-end="url(#arrow)"></path>
+                    <path d="M136 614 C230 510 390 512 492 612 S704 708 798 604" fill="none" stroke="#a95c48" stroke-width="5" stroke-dasharray="12 12"></path>
+                    <text x="92" y="668" class="small">claim ต้องเดินผ่าน evidence, benchmark และ runtime boundary</text>
+                </svg>
+                <div class="source-links">
+                    <a href="/" aria-label="กลับหน้าแรกของ garden">Garden</a>
+                    <a href="/latent-ai-knowledge-base/" aria-label="เปิด Latent AI Knowledge Base">Source Lab</a>
+                </div>
+            </section>
+
+            <section class="slide summary-slide" data-title="Source Contract">
+                <p class="kicker reveal">SOURCE CONTRACT</p>
+                <h2 class="reveal" data-editable="true">deck นี้ย่ออะไรจากเว็บเดิม</h2>
+                <div class="wide-card">
+                    <div class="metric-card reveal"><div class="metric-number">55</div><p data-editable="true">post รายบทที่สกัดเป็น field notes</p></div>
+                    <div class="metric-card reveal"><div class="metric-number">10</div><p data-editable="true">หัวข้อเรียนต่อเนื่องจาก representation ถึง research workflow</p></div>
+                    <div class="metric-card reveal"><div class="metric-number">65</div><p data-editable="true">จุดสมการพร้อมคำอ่าน ตัวอย่าง และข้อจำกัด</p></div>
+                    <div class="metric-card reveal"><div class="metric-number">2</div><p data-editable="true">โหมดอ่าน: เปิดเว็บ interactive หรืออ่าน Markdown ตาม dependency</p></div>
+                </div>
+                <div class="content-grid">
+                    <div class="panel reveal">
+                        <h3 data-editable="true">สิ่งที่รักษาไว้</h3>
+                        <ul class="compact-list">
+                            <li data-editable="true">ลำดับเรียนจากกลไกพื้นฐานไปสู่ runtime และการทดลอง</li>
+                            <li data-editable="true">การแยกสิ่งที่พิสูจน์แล้ว ข้อเสนอ และตัวอย่างสมมติ</li>
+                            <li data-editable="true">สูตรหลักที่ช่วยอ่าน claim เช่น abstraction, attention, latency, speedup</li>
+                        </ul>
+                    </div>
+                    <svg class="diagram panel reveal" viewBox="0 0 760 420" role="img" aria-label="แผนภาพการย่อ 55 โพสต์เป็น 10 บทเรียนและ deck อ่านเอง">
+                        <rect x="42" y="50" width="160" height="80" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="122" y="100" class="label" text-anchor="middle">55 posts</text>
+                        <rect x="304" y="50" width="160" height="80" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <text x="384" y="100" class="label" text-anchor="middle">10 paths</text>
+                        <rect x="562" y="50" width="150" height="80" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect>
+                        <text x="604" y="100" class="label">slides</text>
+                        <path d="M205 90 H300" stroke="#315a3d" stroke-width="6" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M468 90 H558" stroke="#315a3d" stroke-width="6" marker-end="url(#arrow)" fill="none"></path>
+                        <text x="60" y="214" class="small">เก็บ provenance</text>
+                        <text x="310" y="214" class="small">จัด dependency</text>
+                        <text x="560" y="214" class="small">ทำให้เห็นภาพ</text>
+                        <path d="M120 250 C250 348 510 338 640 250" stroke="#a95c48" stroke-width="5" fill="none" stroke-dasharray="12 10"></path>
+                        <text x="156" y="372" class="small">ย่อเพื่อเข้าใจ ไม่ใช่แทน source ทั้งหมด</text>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Learning Map">
+                <p class="kicker reveal">LEARNING MAP</p>
+                <h2 class="reveal" data-editable="true">10 บทเชื่อมเป็นเส้นเดียว</h2>
+                <div class="path-list">
+                    <div class="path-item reveal"><span class="path-index">01</span><span class="path-title">Representation: latent ต้องรักษาอะไรไว้</span></div>
+                    <div class="path-item reveal"><span class="path-index">02</span><span class="path-title">Learned operators: attention, weights, tensor contract</span></div>
+                    <div class="path-item reveal"><span class="path-index">03</span><span class="path-title">Inference-time compute: recurrence, search, stopping</span></div>
+                    <div class="path-item reveal"><span class="path-index">04</span><span class="path-title">Verification: candidate, constraint, verifier</span></div>
+                    <div class="path-item reveal"><span class="path-index">05</span><span class="path-title">Memory: KV cache, external memory, stale state</span></div>
+                    <div class="path-item reveal"><span class="path-index">06</span><span class="path-title">Retrieval: evidence, provenance, privacy boundary</span></div>
+                    <div class="path-item reveal"><span class="path-index">07</span><span class="path-title">Multi-agent: joint dynamics, coordination, feedback</span></div>
+                    <div class="path-item reveal"><span class="path-index">08</span><span class="path-title">Evaluation: work unit, quality, latency, throughput</span></div>
+                    <div class="path-item reveal"><span class="path-index">09</span><span class="path-title">Runtime: memory layout, SIMD, CPU/GPU crossover</span></div>
+                    <div class="path-item reveal"><span class="path-index">10</span><span class="path-title">Research workflow: claim, evidence, ablation</span></div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Representation">
+                <p class="kicker reveal">CHAPTER 01</p>
+                <h2 class="reveal" data-editable="true">Representation ไม่ใช่แค่ย่อให้เล็ก</h2>
+                <div class="content-grid">
+                    <div class="panel reveal">
+                        <h3 data-editable="true">คำถามหลัก</h3>
+                        <p data-editable="true">ถ้า encoder เปลี่ยน observation เป็น latent z แล้ว policy ใช้ z เลือก action เราต้องรู้ว่า z ยังเก็บความต่างที่ส่งผลต่อ reward และอนาคตพอหรือไม่</p>
+                        <div class="equation" data-editable="true">z_t = f_theta(x_t)
+a_t ~ pi( . | z_t)</div>
+                        <p class="caption" data-editable="true">reconstruction ดีไม่ได้แปลว่า decision ดี ถ้า feature ที่จำเป็นต่อ action ถูกทิ้งไป</p>
+                    </div>
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="encoder แปลง observation เป็น latent แล้ว policy เลือก action">
+                        <rect x="44" y="76" width="170" height="112" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="84" y="125" class="label">x_t</text>
+                        <text x="70" y="162" class="small">observation</text>
+                        <rect x="298" y="76" width="170" height="112" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <text x="338" y="125" class="label">z_t</text>
+                        <text x="333" y="162" class="small">latent</text>
+                        <rect x="548" y="76" width="170" height="112" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="594" y="125" class="label">a_t</text>
+                        <text x="590" y="162" class="small">action</text>
+                        <path d="M215 132 H294" stroke="#315a3d" stroke-width="6" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M470 132 H544" stroke="#315a3d" stroke-width="6" marker-end="url(#arrow)" fill="none"></path>
+                        <rect x="95" y="314" width="220" height="96" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect>
+                        <text x="205" y="372" class="label" text-anchor="middle">reward same?</text>
+                        <rect x="430" y="314" width="230" height="96" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect>
+                        <text x="458" y="372" class="label">future same?</text>
+                        <path d="M380 188 C290 236 235 260 205 314" stroke="#a95c48" stroke-width="5" fill="none" stroke-dasharray="11 9"></path>
+                        <path d="M390 188 C475 236 520 260 545 314" stroke="#a95c48" stroke-width="5" fill="none" stroke-dasharray="11 9"></path>
+                        <text x="102" y="482" class="small">ถ้าคำตอบสองข้อไม่เหมือนกัน การรวม state อาจ alias งานจนตัดสินใจผิด</text>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Aliasing">
+                <p class="kicker reveal">TASK ALIASING</p>
+                <h2 class="reveal" data-editable="true">ภาพเหมือนกัน แต่อดีตคนละทาง อนาคตจึงต่าง</h2>
+                <div class="content-grid">
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="สองสถานะดูคล้ายแต่ความเร็วต่างกัน ทำให้ action ที่ดีต่างกัน">
+                        <rect x="58" y="68" width="270" height="178" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <circle cx="156" cy="156" r="36" fill="#496f87"></circle>
+                        <path d="M156 156 L250 118" stroke="#315a3d" stroke-width="6" marker-end="url(#arrow)"></path>
+                        <text x="92" y="220" class="small">state A: moving right</text>
+                        <rect x="430" y="68" width="270" height="178" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <circle cx="528" cy="156" r="36" fill="#496f87"></circle>
+                        <path d="M528 156 L458 112" stroke="#a95c48" stroke-width="6" marker-end="url(#arrow)" fill="none"></path>
+                        <text x="468" y="220" class="small">state B: moving left</text>
+                        <rect x="180" y="350" width="400" height="96" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <text x="380" y="389" class="label" text-anchor="middle">same pixel</text>
+                        <text x="380" y="423" class="label" text-anchor="middle">different dynamics</text>
+                        <path d="M200 246 C240 312 300 332 345 350" stroke="#315a3d" stroke-width="5" fill="none"></path>
+                        <path d="M560 246 C520 312 460 332 415 350" stroke="#a95c48" stroke-width="5" fill="none"></path>
+                    </svg>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">ตัวอย่างอ่านเอง</h3>
+                        <ul class="compact-list">
+                            <li data-editable="true">ถ้า x_t เป็นภาพเดียว วัตถุตำแหน่งเดียวกันอาจกำลังเคลื่อนคนละทิศ</li>
+                            <li data-editable="true">ถ้า z รวมสอง state นี้เป็นจุดเดียว policy จะเห็น action space เดียวกัน แม้ action ที่ดีต่างกัน</li>
+                            <li data-editable="true">แก้ด้วยประวัติ, velocity, belief state หรือ representation ที่รักษา transition/reward ที่จำเป็น</li>
+                        </ul>
+                        <div class="note-strip"><p data-editable="true">บทเรียน: latent ที่ดีเป็น contract กับงาน ไม่ใช่แค่ compression ratio</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Attention">
+                <p class="kicker reveal">CHAPTER 02</p>
+                <h2 class="reveal" data-editable="true">Attention คือ tensor contract ก่อนเป็นคำอธิบาย</h2>
+                <div class="content-grid">
+                    <div class="panel reveal">
+                        <h3 data-editable="true">แยกสิ่งที่คงที่กับสิ่งที่เกิดตอนรัน</h3>
+                        <p data-editable="true">H คือ activation จาก input ปัจจุบัน ส่วน W_Q, W_K, W_V คือ weights ที่เรียนมาแล้ว Q/K/V จึงเป็นค่าระหว่าง inference ไม่ใช่ความจริงของโลกโดยตรง</p>
+                        <div class="equation" data-editable="true">Q = H W_Q, K = H W_K, V = H W_V
+A = softmax(QK^T / sqrt(d_k) + M)</div>
+                    </div>
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="H แตกเป็น Q K V ผ่าน weight matrices และผสมกลับด้วย attention">
+                        <rect x="50" y="70" width="120" height="360" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="86" y="260" class="label">H</text>
+                        <rect x="270" y="58" width="118" height="118" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <text x="304" y="127" class="label">Q</text>
+                        <rect x="270" y="220" width="118" height="118" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <text x="306" y="290" class="label">K</text>
+                        <rect x="270" y="382" width="118" height="118" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <text x="306" y="452" class="label">V</text>
+                        <rect x="510" y="156" width="170" height="120" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect>
+                        <text x="540" y="228" class="label">QK^T</text>
+                        <rect x="510" y="332" width="170" height="112" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="554" y="397" class="label">mix V</text>
+                        <path d="M172 250 C210 170 225 116 268 116" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M172 250 H266" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M172 250 C210 334 225 440 268 440" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M390 118 C450 132 470 172 508 198" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M390 280 C450 270 470 232 508 216" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M595 278 V330" stroke="#a95c48" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M390 440 H506" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Train Vs Inference">
+                <p class="kicker reveal">TRAIN VS INFERENCE</p>
+                <h2 class="reveal" data-editable="true">one layer, LoRA, frozen model: ต้องถามว่าลดตรงไหน</h2>
+                <div class="matrix reveal">
+                    <div class="cell header"><p>คำพูด</p></div>
+                    <div class="cell header"><p>ช่วงที่เปลี่ยน</p></div>
+                    <div class="cell header"><p>สิ่งที่ต้องวัด</p></div>
+                    <div class="cell header"><p>กับดัก</p></div>
+                    <div class="cell"><p>train one layer</p></div>
+                    <div class="cell"><p>gradient ผ่านพารามิเตอร์น้อยลง</p></div>
+                    <div class="cell"><p>training time, quality</p></div>
+                    <div class="cell"><p>inference graph อาจยังใหญ่เท่าเดิม</p></div>
+                    <div class="cell"><p>LoRA / low-rank</p></div>
+                    <div class="cell"><p>adapter เพิ่มบน weights เดิม</p></div>
+                    <div class="cell"><p>merge overhead, memory, latency</p></div>
+                    <div class="cell"><p>rank ต่ำไม่รับประกัน latency ต่ำ</p></div>
+                    <div class="cell"><p>frozen weights</p></div>
+                    <div class="cell"><p>θ คงที่ แต่ activation ยังเปลี่ยนตาม input</p></div>
+                    <div class="cell"><p>compute per request, cacheability</p></div>
+                    <div class="cell"><p>ไม่ได้แปลว่าคำตอบ deterministic หรือถูก</p></div>
+                </div>
+                <div class="note-strip reveal"><p data-editable="true">อ่าน claim ด้วย computational graph: ตัวแปรไหน trainable, activation ไหนเกิดตอน inference, และ denominator ของ speedup คืออะไร</p></div>
+            </section>
+
+            <section class="slide" data-title="Test Time Compute">
+                <p class="kicker reveal">CHAPTER 03</p>
+                <h2 class="reveal" data-editable="true">test-time compute ซื้อ “เวลาคิด” ได้หลายแบบ</h2>
+                <div class="content-grid">
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="เปรียบเทียบ recurrence, search, และ latent optimization">
+                        <rect x="70" y="64" width="190" height="96" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="110" y="123" class="label">z input</text>
+                        <circle cx="386" cy="112" r="58" fill="#dfe8d3" stroke="#253727" stroke-width="3"></circle>
+                        <text x="358" y="123" class="label">Fθ</text>
+                        <rect x="520" y="64" width="170" height="96" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="560" y="123" class="label">h_K</text>
+                        <path d="M260 112 H326" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M444 112 H516" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M386 171 C306 236 306 14 386 54" stroke="#a95c48" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <text x="270" y="228" class="small">recurrence: pass เพิ่ม, θ เดิม</text>
+                        <path d="M156 344 L286 284 L410 344 L546 284 L672 344" stroke="#496f87" stroke-width="5" fill="none"></path>
+                        <circle cx="156" cy="344" r="24" fill="#496f87"></circle>
+                        <circle cx="286" cy="284" r="24" fill="#496f87"></circle>
+                        <circle cx="410" cy="344" r="24" fill="#496f87"></circle>
+                        <circle cx="546" cy="284" r="24" fill="#496f87"></circle>
+                        <circle cx="672" cy="344" r="24" fill="#496f87"></circle>
+                        <text x="170" y="424" class="small">search: node expansions, budget, pruning</text>
+                    </svg>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">สามคำถามก่อนเชื่อว่า reasoning ดีขึ้น</h3>
+                        <ul class="compact-list">
+                            <li data-editable="true">เพิ่มรอบ recurrence, เพิ่ม branch search หรือปรับ latent ด้วย gradient?</li>
+                            <li data-editable="true">จุดหยุดคือ fixed K, confidence, verifier pass หรือ budget หมด?</li>
+                            <li data-editable="true">ประโยชน์วัดด้วย accuracy, abstention, latency, หรือ useful throughput?</li>
+                        </ul>
+                        <div class="equation" data-editable="true">h_{k+1} = F_theta(h_k, z)
+p(y|x) = softmax(g_theta(h_K))</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Verifier Loop">
+                <p class="kicker reveal">CHAPTER 04</p>
+                <h2 class="reveal" data-editable="true">คำตอบที่ดีต้องผ่าน specification ไม่ใช่แค่คะแนนสูง</h2>
+                <div class="content-grid">
+                    <div class="panel reveal">
+                        <h3 data-editable="true">pipeline ที่อ่านง่าย</h3>
+                        <ul class="compact-list">
+                            <li data-editable="true">proposer สร้าง action หรือคำตอบที่เป็น candidate</li>
+                            <li data-editable="true">constraint จำกัด domain ของตัวเลือก เช่น schema, grammar, mask</li>
+                            <li data-editable="true">verifier ตรวจ preconditions, invariants, state version แล้วค่อย commit</li>
+                        </ul>
+                        <div class="equation" data-editable="true">accept(a,s) =
+schema_ok(a) AND preconditions(a,s)</div>
+                    </div>
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="propose constrain verify commit pipeline">
+                        <rect x="48" y="92" width="150" height="96" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="123" y="151" class="label" text-anchor="middle">propose</text>
+                        <rect x="242" y="92" width="160" height="96" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <text x="322" y="151" class="label" text-anchor="middle">constrain</text>
+                        <rect x="448" y="92" width="150" height="96" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect>
+                        <text x="485" y="151" class="label">verify</text>
+                        <rect x="300" y="326" width="160" height="96" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="338" y="385" class="label">commit</text>
+                        <path d="M200 140 H238" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M404 140 H444" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M524 188 C524 270 456 300 410 326" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M500 188 C420 270 270 270 190 188" stroke="#a95c48" stroke-width="5" marker-end="url(#arrow)" fill="none" stroke-dasharray="12 10"></path>
+                        <text x="104" y="314" class="small">reject / abstain / searchต่อ</text>
+                        <text x="132" y="492" class="small">สำคัญ: valid ต้องผูกกับ state version ที่ execute จริง</text>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="slide stacked-slide" data-title="Memory">
+                <p class="kicker reveal">CHAPTER 05</p>
+                <h2 class="reveal" data-editable="true">memory มีหลายอายุ และ stale ได้คนละแบบ</h2>
+                <div class="three-grid">
+                    <div class="panel reveal">
+                        <h3 data-editable="true">Weights θ</h3>
+                        <p data-editable="true">สิ่งที่เรียนข้าม dataset/optimization รอบใหญ่ เปลี่ยนยาก ต้องแยกจาก activation</p>
+                    </div>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">KV Cache</h3>
+                        <p data-editable="true">key/value ของ prefix เดิม ผูกกับ model, position, precision และ layout</p>
+                    </div>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">External Memory</h3>
+                        <p data-editable="true">record, fact, event, summary พร้อม provenance, freshness และสิทธิ์เข้าถึง</p>
+                    </div>
+                </div>
+                <div class="content-grid">
+                    <svg class="diagram panel reveal" viewBox="0 0 760 360" role="img" aria-label="memory timeline แสดงอายุของ weights KV cache external memory และ result cache">
+                        <line x1="70" y1="260" x2="700" y2="260" stroke="#253727" stroke-width="4"></line>
+                        <circle cx="140" cy="260" r="22" fill="#315a3d"></circle><text x="104" y="210" class="small">request</text>
+                        <circle cx="310" cy="260" r="22" fill="#496f87"></circle><text x="250" y="210" class="small">decode step</text>
+                        <circle cx="500" cy="260" r="22" fill="#d8b24a"></circle><text x="430" y="210" class="small">session</text>
+                        <circle cx="660" cy="260" r="22" fill="#a95c48"></circle><text x="612" y="210" class="small">training</text>
+                        <rect x="92" y="80" width="190" height="62" fill="#fffbea" stroke="#253727" stroke-width="3"></rect><text x="120" y="121" class="small">activation h</text>
+                        <rect x="284" y="80" width="180" height="62" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect><text x="318" y="121" class="small">KV cache</text>
+                        <rect x="472" y="80" width="184" height="62" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect><text x="504" y="121" class="small">external M_t</text>
+                    </svg>
+                    <div class="panel reveal">
+                        <div class="equation" data-editable="true">KV_bytes ≈ 2 B L T H_KV d_head b</div>
+                        <p class="caption" data-editable="true">สูตรนี้นับ payload tensor เท่านั้น ยังไม่รวม allocation, metadata, compression และรูปแบบเฉพาะ architecture</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Retrieval">
+                <p class="kicker reveal">CHAPTER 06</p>
+                <h2 class="reveal" data-editable="true">retrieval เลือกหลักฐานก่อน generation</h2>
+                <div class="content-grid">
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="RAG pipeline จาก query ถึง context generator answer และ provenance">
+                        <rect x="58" y="70" width="138" height="74" fill="#fffbea" stroke="#253727" stroke-width="3"></rect><text x="90" y="118" class="label">query</text>
+                        <rect x="272" y="70" width="150" height="74" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect><text x="304" y="118" class="label">embed</text>
+                        <rect x="500" y="70" width="176" height="74" fill="#fffbea" stroke="#253727" stroke-width="3"></rect><text x="534" y="118" class="label">retrieve</text>
+                        <rect x="114" y="260" width="180" height="84" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect><text x="152" y="314" class="label">evidence</text>
+                        <rect x="420" y="260" width="202" height="84" fill="#fffbea" stroke="#253727" stroke-width="3"></rect><text x="462" y="314" class="label">generate</text>
+                        <rect x="284" y="420" width="204" height="78" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect><text x="386" y="470" class="label" text-anchor="middle">cite + verify</text>
+                        <path d="M198 107 H268" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M424 107 H496" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M588 145 C540 214 390 222 230 260" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M295 304 H416" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M520 346 C482 394 440 408 400 420" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                    </svg>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">ข้อเท็จจริงที่ deck เน้น</h3>
+                        <ul class="compact-list">
+                            <li data-editable="true">similarity ไม่ใช่ entailment: เอกสารใกล้ query อาจผิด version หรือผิด domain</li>
+                            <li data-editable="true">context ต้องพก provenance: document id, revision, chunk position, access boundary</li>
+                            <li data-editable="true">embedding ไม่ใช่ encryption: vector อาจเผย topic, intent หรือ attribute ได้</li>
+                        </ul>
+                        <div class="equation" data-editable="true">sim(q,d) = φ(q)^T φ(d) / (||φ(q)|| ||φ(d)||)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Code Healing">
+                <p class="kicker reveal">RAG / CODE HEALING</p>
+                <h2 class="reveal" data-editable="true">ระบบซ่อมโค้ดที่ดีมี validator หลายชั้น</h2>
+                <div class="content-grid">
+                    <div class="panel reveal">
+                        <ul class="compact-list">
+                            <li data-editable="true"><strong>static rule</strong> จับ pattern ที่รู้จัก เช่น lint หรือ diagnostics</li>
+                            <li data-editable="true"><strong>retrieval</strong> หา example หรือ rule ใกล้เคียงจาก corpus เฉพาะ domain</li>
+                            <li data-editable="true"><strong>AST / compiler / tests</strong> ตรวจ patch ก่อนเสนอ diff</li>
+                            <li data-editable="true"><strong>audit log</strong> เก็บ missed case กลับ corpus พร้อม false positive/negative</li>
+                        </ul>
+                    </div>
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="code healing pipeline parse diagnostic retrieve patch validate log">
+                        <g fill="#fffbea" stroke="#253727" stroke-width="3">
+                            <rect x="44" y="70" width="150" height="76"></rect>
+                            <rect x="228" y="70" width="150" height="76"></rect>
+                            <rect x="412" y="70" width="150" height="76"></rect>
+                            <rect x="596" y="70" width="120" height="76"></rect>
+                        </g>
+                        <text x="82" y="119" class="small">parse</text>
+                        <text x="244" y="119" class="small">diagnostic</text>
+                        <text x="440" y="119" class="small">retrieve</text>
+                        <text x="622" y="119" class="small">patch</text>
+                        <path d="M195 108 H224" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M380 108 H408" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M563 108 H592" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <rect x="250" y="292" width="260" height="110" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <text x="314" y="358" class="label">validate</text>
+                        <path d="M656 148 C630 230 508 258 430 292" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M315 292 C250 240 190 214 112 146" stroke="#a95c48" stroke-width="5" marker-end="url(#arrow)" fill="none" stroke-dasharray="12 10"></path>
+                        <text x="86" y="468" class="small">compile ผ่านยังไม่พอ ถ้างานคือ perf/security ต้องมี benchmark หรือ policy gate</text>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Multi-Agent">
+                <p class="kicker reveal">CHAPTER 07</p>
+                <h2 class="reveal" data-editable="true">หลาย agent ไม่ใช่ agent เดียวคูณ N</h2>
+                <div class="content-grid">
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="หลาย agent เลือก action ร่วมกันแล้วเปลี่ยน state ถัดไป">
+                        <circle cx="170" cy="150" r="66" fill="#fffbea" stroke="#253727" stroke-width="3"></circle>
+                        <circle cx="380" cy="120" r="66" fill="#dfe8d3" stroke="#253727" stroke-width="3"></circle>
+                        <circle cx="590" cy="150" r="66" fill="#fffbea" stroke="#253727" stroke-width="3"></circle>
+                        <text x="130" y="162" class="label">agent 1</text>
+                        <text x="342" y="132" class="label">agent 2</text>
+                        <text x="550" y="162" class="label">agent n</text>
+                        <rect x="214" y="340" width="332" height="104" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect>
+                        <text x="264" y="405" class="label">world transition</text>
+                        <path d="M188 214 L286 340" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M380 188 V336" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M570 214 L472 340" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <text x="176" y="506" class="mono-label">s_{t+1} = F(s_t, a_1, ..., a_n)</text>
+                    </svg>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">สิ่งที่ต้องเพิ่มในสมมติฐาน</h3>
+                        <ul class="compact-list">
+                            <li data-editable="true">agent แต่ละตัวมี observation, memory และสิทธิ์เข้าถึงข้อมูลไม่เท่ากัน</li>
+                            <li data-editable="true">policy ของตัวอื่นเปลี่ยน distribution ที่เราเจอ แม้ θ ของตัวเองคงที่</li>
+                            <li data-editable="true">coordination อาจใช้ signal ร่วม, mean-field, cache หรือ hierarchy แต่ต้องวัดคุณภาพที่เสียไป</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Benchmarks">
+                <p class="kicker reveal">CHAPTER 08</p>
+                <h2 class="reveal" data-editable="true">benchmark ที่ดีเริ่มจาก work unit</h2>
+                <div class="matrix reveal">
+                    <div class="cell header"><p>ตัววัด</p></div>
+                    <div class="cell header"><p>ใช้ตอบคำถาม</p></div>
+                    <div class="cell header"><p>ต้องกำกับ</p></div>
+                    <div class="cell header"><p>ผิดพลาดง่าย</p></div>
+                    <div class="cell"><p>tokens/s</p></div>
+                    <div class="cell"><p>แปลงหรือสร้าง token เร็วแค่ไหน</p></div>
+                    <div class="cell"><p>model, prompt, output length</p></div>
+                    <div class="cell"><p>เอาไปเทียบ decisions/s</p></div>
+                    <div class="cell"><p>TTFT / p99</p></div>
+                    <div class="cell"><p>ผู้ใช้รอผลแรกหรือ request ช้าแค่ไหน</p></div>
+                    <div class="cell"><p>queue, prefill, cache, network</p></div>
+                    <div class="cell"><p>ดูเฉพาะค่าเฉลี่ย</p></div>
+                    <div class="cell"><p>coverage</p></div>
+                    <div class="cell"><p>ระบบยอมตอบกี่ข้อ</p></div>
+                    <div class="cell"><p>abstention, timeout, validator</p></div>
+                    <div class="cell"><p>accuracy 100% เฉพาะข้อที่ยอมตอบ</p></div>
+                </div>
+                <div class="note-strip reveal"><p data-editable="true">correctness gate ควรมาก่อน performance gate; speedup เล็กต้องมากกว่า noise และไม่ทำ output contract เสีย</p></div>
+            </section>
+
+            <section class="slide" data-title="Runtime">
+                <p class="kicker reveal">CHAPTER 09</p>
+                <h2 class="reveal" data-editable="true">GPU คุ้มเมื่อ overhead ถูกกลืนด้วยงานพอใหญ่</h2>
+                <div class="content-grid">
+                    <div class="panel reveal">
+                        <p data-editable="true">แบบจำลองง่าย: CPU ใช้ N/q_C ส่วน GPU ใช้ τ + N/q_G ถ้า q_G สูงกว่าแต่มี fixed overhead τ จุดตัด N* คือจำนวนงานที่ GPU เริ่มคุ้ม</p>
+                        <div class="equation" data-editable="true">T_CPU = N / q_C
+T_GPU = τ + N / q_G
+N* = τ / (1/q_C - 1/q_G)</div>
+                        <p class="caption" data-editable="true">ตัวเลขใน source เป็นตัวอย่างสอน ไม่ใช่ threshold ของ hardware ทุกเครื่อง</p>
+                    </div>
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="กราฟเส้นเวลาที่ CPU ดีกว่างานเล็ก GPU ดีกว่างานใหญ่">
+                        <line x1="90" y1="470" x2="690" y2="470" stroke="#253727" stroke-width="4"></line>
+                        <line x1="90" y1="470" x2="90" y2="90" stroke="#253727" stroke-width="4"></line>
+                        <text x="632" y="516" class="small">N</text>
+                        <text x="40" y="105" class="small">time</text>
+                        <path d="M100 450 L650 120" stroke="#496f87" stroke-width="6" fill="none"></path>
+                        <path d="M100 380 L650 170" stroke="#a95c48" stroke-width="6" fill="none"></path>
+                        <line x1="322" y1="470" x2="322" y2="248" stroke="#315a3d" stroke-width="5" stroke-dasharray="10 10"></line>
+                        <text x="284" y="232" class="label">N*</text>
+                        <text x="164" y="424" class="small">CPU wins</text>
+                        <text x="484" y="210" class="small">GPU wins</text>
+                        <text x="520" y="146" class="small">CPU</text>
+                        <text x="524" y="250" class="small">GPU + overhead</text>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Amdahl">
+                <p class="kicker reveal">SPEEDUP CAVEAT</p>
+                <h2 class="reveal" data-editable="true">เร่ง kernel ไม่เท่ากับเร่งระบบทั้งเส้นทาง</h2>
+                <div class="content-grid">
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="timeline latency แสดง queue pre retrieve model verify output">
+                        <rect x="74" y="150" width="70" height="96" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <rect x="144" y="150" width="58" height="96" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <rect x="202" y="150" width="104" height="96" fill="#f0dca0" stroke="#253727" stroke-width="3"></rect>
+                        <rect x="306" y="150" width="282" height="96" fill="#496f87" stroke="#253727" stroke-width="3"></rect>
+                        <rect x="588" y="150" width="68" height="96" fill="#dfe8d3" stroke="#253727" stroke-width="3"></rect>
+                        <rect x="656" y="150" width="34" height="96" fill="#fffbea" stroke="#253727" stroke-width="3"></rect>
+                        <text x="72" y="292" class="small">queue</text>
+                        <text x="146" y="292" class="small">pre</text>
+                        <text x="208" y="292" class="small">retrieve</text>
+                        <text x="394" y="292" class="small">model</text>
+                        <text x="586" y="292" class="small">verify</text>
+                        <text x="642" y="292" class="small">out</text>
+                        <rect x="306" y="356" width="142" height="70" fill="#a95c48" stroke="#253727" stroke-width="3"></rect>
+                        <text x="326" y="402" class="small">2x kernel</text>
+                        <path d="M448 390 H588" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <text x="94" y="492" class="small">ส่วนอื่นยังเท่าเดิม จึงต้องวัด end-to-end ไม่ใช่เฉพาะ block ที่ชนะ</text>
+                    </svg>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">ตัวอย่าง Amdahl</h3>
+                        <p data-editable="true">ถ้าส่วนที่เร่งได้กินเวลาเดิม 20% และทำให้เร็วขึ้น 32 เท่า speedup รวมคือ 1/(0.8+0.2/32) ≈ 1.24 เท่า ไม่ใช่ 32 เท่า</p>
+                        <div class="equation" data-editable="true">speedup = 1 / ((1-p) + p/s)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Research Workflow">
+                <p class="kicker reveal">CHAPTER 10</p>
+                <h2 class="reveal" data-editable="true">อ่าน paper ด้วย dependency graph และ ablation</h2>
+                <div class="content-grid">
+                    <div class="panel reveal">
+                        <h3 data-editable="true">research card</h3>
+                        <div class="equation" data-editable="true">claim
+source
+mechanism
+assumptions
+artifact
+experiment
+unknowns</div>
+                        <p class="caption" data-editable="true">ถ้า claim ว่า latent reasoning เร็วขึ้น ต้องระบุว่าเปลี่ยน encoder, output tokens, recurrence, search, kernel หรือ metric boundary</p>
+                    </div>
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="dependency graph ระหว่าง claim source mechanism artifact experiment">
+                        <g fill="#fffbea" stroke="#253727" stroke-width="3">
+                            <rect x="78" y="70" width="160" height="74"></rect>
+                            <rect x="300" y="70" width="160" height="74"></rect>
+                            <rect x="522" y="70" width="160" height="74"></rect>
+                            <rect x="190" y="260" width="160" height="74"></rect>
+                            <rect x="412" y="260" width="160" height="74"></rect>
+                            <rect x="300" y="430" width="160" height="74"></rect>
+                        </g>
+                        <text x="116" y="117" class="small">claim</text>
+                        <text x="330" y="117" class="small">source</text>
+                        <text x="540" y="117" class="small">mechanism</text>
+                        <text x="222" y="307" class="small">artifact</text>
+                        <text x="436" y="307" class="small">experiment</text>
+                        <text x="322" y="477" class="small">unknowns</text>
+                        <path d="M238 107 H296" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M460 107 H518" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M570 145 C514 196 488 226 472 260" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M350 145 C292 196 274 226 270 260" stroke="#315a3d" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M350 334 C358 376 372 400 380 430" stroke="#a95c48" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                        <path d="M475 334 C442 376 420 400 404 430" stroke="#a95c48" stroke-width="5" marker-end="url(#arrow)" fill="none"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Evidence Ladder">
+                <p class="kicker reveal">EVIDENCE HYGIENE</p>
+                <h2 class="reveal" data-editable="true">แยก verified, inferred, proposed ให้ชัด</h2>
+                <div class="matrix reveal">
+                    <div class="cell header"><p>ระดับ</p></div>
+                    <div class="cell header"><p>ความหมาย</p></div>
+                    <div class="cell header"><p>ตัวอย่างใน deck</p></div>
+                    <div class="cell header"><p>ต้องทำต่อ</p></div>
+                    <div class="cell"><p>verified</p></div>
+                    <div class="cell"><p>มี source, formula, benchmark หรือ artifact รองรับ</p></div>
+                    <div class="cell"><p>attention shapes, Amdahl, cosine similarity</p></div>
+                    <div class="cell"><p>ระบุ version และ boundary</p></div>
+                    <div class="cell"><p>inferred</p></div>
+                    <div class="cell"><p>สรุปจากหลาย source ที่สัมพันธ์กัน</p></div>
+                    <div class="cell"><p>การจัด 55 posts เป็น 10 บท</p></div>
+                    <div class="cell"><p>ลิงก์กลับบทต้นทาง</p></div>
+                    <div class="cell"><p>proposed</p></div>
+                    <div class="cell"><p>แบบฝึกหัดหรือ architecture ที่ยังต้องทดลอง</p></div>
+                    <div class="cell"><p>mini healer, benchmark card, ablation grid</p></div>
+                    <div class="cell"><p>รัน toy experiment และเก็บ raw logs</p></div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Formula Sheet">
+                <p class="kicker reveal">FORMULA SHEET</p>
+                <h2 class="reveal" data-editable="true">สูตรที่ช่วยอ่าน claim ให้ไม่หลุดหน่วย</h2>
+                <div class="three-grid">
+                    <div class="panel reveal"><h3>Representation</h3><p class="mono">z_t = f_theta(x_t)</p><p class="caption">ถามว่า z เก็บ reward/transition ที่จำเป็นหรือไม่</p></div>
+                    <div class="panel reveal"><h3>Attention</h3><p class="mono">Q=HW_Q, K=HW_K</p><p class="caption">แยก weights กับ activation ตอนรัน</p></div>
+                    <div class="panel reveal"><h3>Recurrence</h3><p class="mono">h_{k+1}=F_theta(h_k,z)</p><p class="caption">พารามิเตอร์ไม่โต แต่ compute โตตามรอบ</p></div>
+                    <div class="panel reveal"><h3>Retrieval</h3><p class="mono">cos(q,d)</p><p class="caption">similarity ไม่ใช่ entailment</p></div>
+                    <div class="panel reveal"><h3>Latency</h3><p class="mono">T_request = Σ T_i</p><p class="caption">ใช้เมื่อขั้นตอนอยู่บน critical path จริง</p></div>
+                    <div class="panel reveal"><h3>Speedup</h3><p class="mono">1 / ((1-p)+p/s)</p><p class="caption">เร่งส่วนเล็ก ระบบรวมเร็วขึ้นน้อย</p></div>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Worked Examples">
+                <p class="kicker reveal">WORKED EXAMPLES</p>
+                <h2 class="reveal" data-editable="true">ตัวอย่างอ่าน claim แบบวิศวกรรม</h2>
+                <div class="three-grid">
+                    <div class="panel reveal">
+                        <h3 data-editable="true">“latent ใหญ่กว่า token”</h3>
+                        <p data-editable="true">ถามก่อนว่าบิตที่เพิ่มเป็น bandwidth, FLOPs, latency หรือ accuracy? บิตมากกว่าไม่ได้แปลว่าฉลาดกว่า</p>
+                    </div>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">“NPC ล้านตัวเร็ว”</h3>
+                        <p data-editable="true">แยกจำนวน entity, จำนวน interaction, tick p99, sync, correctness และ replay</p>
+                    </div>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">“GPU เร็วกว่า CPU”</h3>
+                        <p data-editable="true">ดู N, dispatch overhead, memory-bound หรือ compute-bound และงานเล็กที่ยังไม่คุ้ม</p>
+                    </div>
+                </div>
+                <div class="note-strip reveal"><p data-editable="true">หลักเดียวกันใช้ซ้ำได้: define work unit → preserve contract → measure full path → label evidence level</p></div>
+            </section>
+
+            <section class="slide" data-title="Reading Order">
+                <p class="kicker reveal">HOW TO READ NEXT</p>
+                <h2 class="reveal" data-editable="true">ถ้าจะกลับไปอ่าน source ให้เดินแบบนี้</h2>
+                <div class="content-grid">
+                    <div class="panel reveal">
+                        <ul class="compact-list">
+                            <li data-editable="true">เริ่มจาก 007 Latent Space → 012 Latent Reasoning → 017 Lattice/Verifier → 010 World Simulation</li>
+                            <li data-editable="true">ถ้าสนใจ code healing: 022 → 032 → 042 → 046 → 047 → 051</li>
+                            <li data-editable="true">ถ้าสนใจ benchmark/runtime: 018 → 017 → 041 → 044 → 052 แล้วดู 048/049 ตาม workload</li>
+                        </ul>
+                    </div>
+                    <svg class="diagram panel reveal" viewBox="0 0 760 560" role="img" aria-label="สามเส้นทางอ่าน source: core, code healing, benchmark runtime">
+                        <path d="M110 120 H650" stroke="#315a3d" stroke-width="7" marker-end="url(#arrow)" fill="none"></path>
+                        <text x="116" y="88" class="label">core reasoning path</text>
+                        <path d="M110 276 H650" stroke="#496f87" stroke-width="7" marker-end="url(#arrow)" fill="none"></path>
+                        <text x="116" y="244" class="label">code healing path</text>
+                        <path d="M110 430 H650" stroke="#a95c48" stroke-width="7" marker-end="url(#arrow)" fill="none"></path>
+                        <text x="116" y="398" class="label">benchmark path</text>
+                        <g fill="#fffbea" stroke="#253727" stroke-width="3">
+                            <circle cx="160" cy="120" r="30"></circle><circle cx="300" cy="120" r="30"></circle><circle cx="440" cy="120" r="30"></circle>
+                            <circle cx="160" cy="276" r="30"></circle><circle cx="300" cy="276" r="30"></circle><circle cx="440" cy="276" r="30"></circle>
+                            <circle cx="160" cy="430" r="30"></circle><circle cx="300" cy="430" r="30"></circle><circle cx="440" cy="430" r="30"></circle>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="slide" data-title="Limits">
+                <p class="kicker reveal">LIMITS</p>
+                <h2 class="reveal" data-editable="true">ข้อจำกัดที่ควรจำก่อนเอาไปใช้</h2>
+                <div class="three-grid">
+                    <div class="panel reveal">
+                        <h3 data-editable="true">semantic ไม่ใช่ secure</h3>
+                        <p data-editable="true">embedding และ latent เก็บความหมายเพื่อใช้งาน จึงไม่ควรถูกอ่านเป็น anonymization หรือ encryption</p>
+                    </div>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">deterministic ไม่ใช่ correct</h3>
+                        <p data-editable="true">replay/debug ง่ายขึ้น แต่ output ยังอาจผิด specification หรือผิด intent</p>
+                    </div>
+                    <div class="panel reveal">
+                        <h3 data-editable="true">benchmark ไม่ใช่ oracle</h3>
+                        <p data-editable="true">ผลวัดดีเท่ากับ workload, raw logs, thresholds และ artifacts ที่ทำซ้ำได้</p>
+                    </div>
+                </div>
+                <div class="note-strip reveal"><p data-editable="true">deck นี้เป็นแผนที่อ่าน source ไม่ใช่หลักฐานแทน source แต่ละบท กลับไปดู Latent Lab เมื่อจะใช้ claim เฉพาะทาง</p></div>
+            </section>
+
+            <section class="slide title-slide" data-title="Close">
+                <div>
+                    <p class="kicker reveal">LATENT LAB / END</p>
+                    <h1 class="reveal" data-editable="true">อ่าน claim ผ่านระบบ</h1>
+                    <p class="lead reveal" data-editable="true">input → representation → compute → verification → memory/retrieval → interaction → evaluation → runtime → experiment. ถ้า claim ไม่บอกว่ามันเปลี่ยนจุดไหน ให้กลับไปถาม denominator ก่อน</p>
+                    <div class="tag-row reveal">
+                        <span class="tag">representation</span>
+                        <span class="tag">verification</span>
+                        <span class="tag">benchmark</span>
+                        <span class="tag">runtime</span>
+                    </div>
+                </div>
+                <svg class="diagram reveal" viewBox="0 0 860 760" role="img" aria-label="วงจรจาก claim ถึง experiment">
+                    <circle cx="430" cy="380" r="242" fill="none" stroke="#253727" stroke-width="4"></circle>
+                    <circle cx="430" cy="380" r="160" fill="#dfe8d3" stroke="#253727" stroke-width="3"></circle>
+                    <text x="340" y="364" class="label">dependency</text>
+                    <text x="362" y="408" class="label">graph</text>
+                    <text x="410" y="98" class="small">claim</text>
+                    <text x="640" y="214" class="small">source</text>
+                    <text x="660" y="560" class="small">experiment</text>
+                    <text x="104" y="560" class="small">artifact</text>
+                    <text x="118" y="214" class="small">unknowns</text>
+                </svg>
+                <div class="source-links">
+                    <a href="/" aria-label="กลับหน้าแรกของ garden">Garden</a>
+                    <a href="/latent-ai-knowledge-base/" aria-label="เปิด Latent AI Knowledge Base">Source Lab</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="deck-controls" role="group" aria-label="Slide navigation">
+        <button type="button" id="prevSlide" aria-label="Previous slide">Prev</button>
+        <span class="slide-counter" id="slideCounter">1 / 23</span>
+        <button type="button" id="nextSlide" aria-label="Next slide">Next</button>
+        <a href="/" aria-label="Return to garden">Garden</a>
+    </div>
+    <div class="edit-hotzone" aria-hidden="true"></div>
+    <button class="edit-toggle" id="editToggle" type="button" title="Edit mode (E)">Edit</button>
+
+    <script>
+        /* ===========================================
+           SLIDE PRESENTATION CONTROLLER
+           =========================================== */
+        class SlidePresentation {
+            constructor() {
+                this.slides = Array.from(document.querySelectorAll('.slide'));
+                this.currentSlide = 0;
+                this.stage = document.getElementById('deckStage');
+                this.counter = document.getElementById('slideCounter');
+                this.lastWheelAt = 0;
+                this.touchStartX = 0;
+                this.touchStartY = 0;
+                this.setupStageScale();
+                this.setupKeyboardNav();
+                this.setupButtons();
+                this.setupTouchNav();
+                this.setupWheelNav();
+                this.restoreFromHash();
+                this.showSlide(this.currentSlide);
+            }
+
+            setupStageScale() {
+                const scale = () => {
+                    const factor = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+                    const x = (window.innerWidth - 1920 * factor) / 2;
+                    const y = (window.innerHeight - 1080 * factor) / 2;
+                    this.stage.style.transform = `translate(${x}px, ${y}px) scale(${factor})`;
+                };
+                scale();
+                window.addEventListener('resize', scale);
+                if (window.visualViewport) {
+                    window.visualViewport.addEventListener('resize', scale);
+                }
+                requestAnimationFrame(scale);
+            }
+
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (event) => {
+                    const isEditingText = event.target && event.target.getAttribute('contenteditable') === 'true';
+                    if (isEditingText) return;
+                    if (['ArrowRight', 'PageDown', ' '].includes(event.key)) {
+                        event.preventDefault();
+                        this.next();
+                    }
+                    if (['ArrowLeft', 'PageUp'].includes(event.key)) {
+                        event.preventDefault();
+                        this.prev();
+                    }
+                    if (event.key === 'Home') this.showSlide(0);
+                    if (event.key === 'End') this.showSlide(this.slides.length - 1);
+                });
+            }
+
+            setupButtons() {
+                document.getElementById('prevSlide').addEventListener('click', () => this.prev());
+                document.getElementById('nextSlide').addEventListener('click', () => this.next());
+            }
+
+            setupTouchNav() {
+                document.addEventListener('touchstart', (event) => {
+                    const touch = event.changedTouches[0];
+                    this.touchStartX = touch.clientX;
+                    this.touchStartY = touch.clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (event) => {
+                    const touch = event.changedTouches[0];
+                    const dx = touch.clientX - this.touchStartX;
+                    const dy = touch.clientY - this.touchStartY;
+                    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+                        dx < 0 ? this.next() : this.prev();
+                    }
+                }, { passive: true });
+            }
+
+            setupWheelNav() {
+                document.addEventListener('wheel', (event) => {
+                    const now = Date.now();
+                    if (now - this.lastWheelAt < 650 || Math.abs(event.deltaY) < 45) return;
+                    this.lastWheelAt = now;
+                    event.deltaY > 0 ? this.next() : this.prev();
+                }, { passive: true });
+            }
+
+            restoreFromHash() {
+                const match = window.location.hash.match(/^#slide-(\d+)$/);
+                if (match) {
+                    const requested = Number(match[1]) - 1;
+                    if (Number.isInteger(requested)) this.currentSlide = requested;
+                }
+            }
+
+            showSlide(index) {
+                this.currentSlide = Math.max(0, Math.min(index, this.slides.length - 1));
+                this.slides.forEach((slide, slideIndex) => {
+                    const active = slideIndex === this.currentSlide;
+                    slide.classList.toggle('active', active);
+                    slide.classList.toggle('visible', active);
+                    slide.setAttribute('aria-hidden', String(!active));
+                });
+                this.counter.textContent = `${this.currentSlide + 1} / ${this.slides.length}`;
+                history.replaceState(null, '', `#slide-${this.currentSlide + 1}`);
+            }
+
+            next() {
+                this.showSlide(this.currentSlide + 1);
+            }
+
+            prev() {
+                this.showSlide(this.currentSlide - 1);
+            }
+        }
+
+        /* ===========================================
+           INLINE EDITING
+           =========================================== */
+        class InlineEditor {
+            constructor() {
+                this.isActive = false;
+                this.key = 'latent-ai-slides-edits-v1';
+                this.editables = Array.from(document.querySelectorAll('[data-editable="true"]'));
+                this.load();
+            }
+
+            toggleEditMode() {
+                this.isActive = !this.isActive;
+                document.body.classList.toggle('editing', this.isActive);
+                document.getElementById('editToggle').classList.toggle('active', this.isActive);
+                this.editables.forEach((element) => {
+                    element.setAttribute('contenteditable', String(this.isActive));
+                });
+                if (!this.isActive) this.save();
+            }
+
+            save() {
+                const payload = this.editables.map((element) => element.textContent);
+                try {
+                    localStorage.setItem(this.key, JSON.stringify(payload));
+                } catch (error) {
+                    console.warn('Could not save slide edits locally', error);
+                }
+            }
+
+            downloadHtml() {
+                this.save();
+                const clone = document.documentElement.cloneNode(true);
+                clone.querySelectorAll('[contenteditable]').forEach((element) => {
+                    element.removeAttribute('contenteditable');
+                });
+                clone.querySelectorAll('.active, .visible').forEach((element) => {
+                    if (element.classList.contains('slide')) {
+                        element.classList.add('active', 'visible');
+                    }
+                });
+                const body = clone.querySelector('body');
+                if (body) body.classList.remove('editing');
+                const toggle = clone.querySelector('#editToggle');
+                if (toggle) toggle.classList.remove('show', 'active');
+
+                const blob = new Blob(['<!DOCTYPE html>\n', clone.outerHTML], { type: 'text/html;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'latent-ai-slides-edited.html';
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                URL.revokeObjectURL(url);
+            }
+
+            load() {
+                try {
+                    const payload = JSON.parse(localStorage.getItem(this.key) || 'null');
+                    if (!Array.isArray(payload)) return;
+                    this.editables.forEach((element, index) => {
+                        if (typeof payload[index] === 'string') element.textContent = payload[index];
+                    });
+                } catch (error) {
+                    console.warn('Could not load slide edits', error);
+                }
+            }
+        }
+
+        const deck = new SlidePresentation();
+        const editor = new InlineEditor();
+
+        const hotzone = document.querySelector('.edit-hotzone');
+        const editToggle = document.getElementById('editToggle');
+        let hideTimeout = null;
+
+        hotzone.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            editToggle.classList.add('show');
+        });
+        hotzone.addEventListener('mouseleave', () => {
+            hideTimeout = setTimeout(() => {
+                if (!editor.isActive) editToggle.classList.remove('show');
+            }, 400);
+        });
+        hotzone.addEventListener('click', () => editor.toggleEditMode());
+        editToggle.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+        editToggle.addEventListener('mouseleave', () => {
+            hideTimeout = setTimeout(() => {
+                if (!editor.isActive) editToggle.classList.remove('show');
+            }, 400);
+        });
+        editToggle.addEventListener('click', () => editor.toggleEditMode());
+
+        document.addEventListener('keydown', (event) => {
+            const isEditingText = event.target && event.target.getAttribute('contenteditable') === 'true';
+            if ((event.key === 'e' || event.key === 'E') && !isEditingText) {
+                editor.toggleEditMode();
+            }
+            if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+                event.preventDefault();
+                editor.downloadHtml();
+            }
+        });
+    </script>
+</body>
+</html>
