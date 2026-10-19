@@ -6,3 +6,9 @@ _notes/.obsidian
 .ipynb_checkpoints
 .ipynb_checkpoints/*
 Convert_Image_type.ipynb
+.worktrees/
+_reports/
+tests/chengdu_slides/node_modules/
+tests/chengdu_slides/test-results/
+tests/chengdu_slides/playwright-report/
+**/__pycache__/
