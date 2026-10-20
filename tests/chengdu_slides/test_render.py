@@ -47,6 +47,13 @@ class RenderTests(unittest.TestCase):
         self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt;',rendered)
         self.assertNotIn('<script>alert(1)</script>',rendered)
 
+    def test_translations_share_one_logical_page_number(self):
+        import re
+        from scripts.chengdu_slides.render import render_deck as render
+        rendered=render(self.data)
+        numbers=re.findall(r'class="page-no">(\d+)</span>',rendered)
+        self.assertEqual(numbers,['001','001','002','002'])
+
     def test_fact_values_are_identical_in_both_languages(self):
         rendered=render_deck(self.data)
         self.assertEqual(rendered.count('50 CNY'),4)

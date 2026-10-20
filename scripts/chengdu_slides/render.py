@@ -121,8 +121,8 @@ def render_deck(data: dict) -> str:
 <div class="folio"><span class="seal">蜀</span><a class="site-return" href="https://lawdalana.github.io/" aria-label="กลับหน้าเว็บ / 返回网站首页">CHENGDU FIELD NOTES</a><span>{_e(category.upper())} · {'ไทย' if lang=='th' else '中文'}</span></div>
 <div class="spread"><figure class="visual"><img src="{_e(asset_path)}" style="{image_style}" alt="{_e(unit.get('alt',{}).get(lang,''))}" loading="lazy" decoding="async"><figcaption>{caption}<span><a href="{credit_link}" title="{_e(asset.get('source_title',''))}" target="_blank" rel="noopener noreferrer">{credit}</a> · <a href="{license_link}" target="_blank" rel="noopener noreferrer">{license_name}</a></span>{photo_modification}</figcaption></figure>
 <article class="copy"><div class="eyebrow">{_e(item_name)}{continuation_label}</div>{opinion_note}<h2 id="title-{_e(sid)}">{_e(title)}</h2><div class="rule"></div><ul>{bullets}</ul></article></div>
-<footer>{warning}<span class="references">{refs}</span><span class="page-no">{len(sections)+1:03d}</span></footer></section>''')
-            options.append('<option value="' + _e(sid) + '">' + _e(f'{len(sections):03d} · {title} · {lang}') + '</option>')
+<footer>{warning}<span class="references">{refs}</span><span class="page-no">{len(sections)//2+1:03d}</span></footer></section>''')
+            options.append('<option value="' + _e(sid) + '">' + _e(f'{(len(sections)+1)//2:03d} · {title} · {lang}') + '</option>')
     styles_path = ROOT / 'slides/chengdu/deck.css'
     script_path = ROOT / 'slides/chengdu/deck.js'
     styles = (ROOT / 'scripts/chengdu_slides/viewport-base.css').read_text()

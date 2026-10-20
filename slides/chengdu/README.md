@@ -6,6 +6,10 @@ The photographic release contains **15 attractions, 15 distinct restaurant brand
 
 `index.html` and `manifest.json` are generated release artifacts for `/slides/chengdu/`. The canonical metadata value `published` means editorially approved for release generation; it does **not** by itself prove a GitHub push or a live deployment. Read back the deployed `content_version` to establish that separately. Existing site articles and navbar entries are preserved; the deck is additionally registered under Travel in the shared Slides menu and its folio provides a return link to the website. Deployment fingerprints include the renderer/template, viewport foundation, canonical data, styles, scripts and local assets.
 
+## Presentation language navigation
+
+Next/Previous, keyboard navigation, wheel and horizontal swipes advance within the current language, rather than stopping on the other translation of the same page. The bottom `ไทย / 中文` button switches to the same logical page in the other language. Contents, progress and first/last boundaries follow the chosen language: 221 logical pages per language. Both translations share a footer number. Explicit language deep links and browser history still work. Canonical HTML order, no-JavaScript fallback, paired reading and bilingual print exports retain both languages; no content is removed.
+
 ## Community-based gift filtering
 
 The user's amended policy is `gift_policy: community_curated` (Route C). It selects experiences from actual Pantip/public discussions, with both buying reasons and conflicting or limiting opinions. It does not require a marketplace API, prove whole-platform absence, or apply a mandatory 30% saving threshold. Strict measured-search/price Routes E/P remain available and unchanged when those claims are actually made.
