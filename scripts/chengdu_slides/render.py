@@ -34,6 +34,9 @@ def _source_link(source: dict, lang: str) -> str:
 
 def content_version(data: dict) -> str:
     digest = hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True).encode())
+    for relative in ('scripts/chengdu_slides/render.py', 'scripts/chengdu_slides/viewport-base.css'):
+        template = ROOT / relative
+        if template.is_file(): digest.update(template.read_bytes())
     for name in ('deck.css', 'deck.js'):
         path = ROOT / 'slides/chengdu' / name
         if path.exists(): digest.update(path.read_bytes())
@@ -82,7 +85,7 @@ def render_deck(data: dict) -> str:
             item_name = item.get('name', {}).get(lang, '') if item else 'CHENGDU · 成都'
             warning = '<span class="draft-mark">DRAFT · ยังไม่ผ่านเกณฑ์เผยแพร่ / 尚未达到发布标准</span>' if draft else ''
             sections.append(f'''<section class="slide" id="{_e(sid)}" lang="{lang}" data-slide-id="{_e(sid)}" data-pair-id="{_e(pair)}" data-lang="{lang}" data-item-id="{_e(item.get('id','') if item else '')}" data-kind="{_e(unit.get('kind','guide'))}" data-fact-ids="{_e(json.dumps(unit.get('fact_ids', [])))}" data-source-ids="{_e(json.dumps(unit.get('source_ids', [])))}"{route_attribute} aria-labelledby="title-{_e(sid)}">
-<div class="folio"><span class="seal">蜀</span><span>CHENGDU FIELD NOTES</span><span>{_e(category.upper())} · {'ไทย' if lang=='th' else '中文'}</span></div>
+<div class="folio"><span class="seal">蜀</span><a class="site-return" href="https://lawdalana.github.io/" aria-label="กลับหน้าเว็บ / 返回网站首页">CHENGDU FIELD NOTES</a><span>{_e(category.upper())} · {'ไทย' if lang=='th' else '中文'}</span></div>
 <div class="spread"><figure class="visual"><img src="{_e(asset_path)}" alt="{_e(unit.get('alt',{}).get(lang,''))}" loading="lazy" decoding="async"><figcaption>{caption}<span><a href="{credit_link}" target="_blank" rel="noopener noreferrer">{credit}</a> · <a href="{license_link}" target="_blank" rel="noopener noreferrer">{license_name}</a></span></figcaption></figure>
 <article class="copy"><div class="eyebrow">{_e(item_name)}</div>{opinion_note}<h2 id="title-{_e(sid)}">{_e(title)}</h2><div class="rule"></div><ul>{bullets}</ul></article></div>
 <footer>{warning}<span class="references">{refs}</span><span class="page-no">{len(sections)+1:03d}</span></footer></section>''')

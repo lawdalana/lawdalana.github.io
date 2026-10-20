@@ -164,6 +164,14 @@ test('the real Latent Lab deck is the first registered menu entry', async () => 
   assert.ok(slides[0].decks[0].title && slides[0].category);
 });
 
+test('the Chengdu deck is registered in the travel menu without replacing Latent Lab', async () => {
+  const slides = await catalog();
+  assert.equal(slides[0]?.decks?.[0]?.url, '/latent-ai-slides/');
+  const travel = slides.find(group => /Travel|ท่องเที่ยว/i.test(group.category));
+  assert.ok(travel, 'a travel section should expose the requested deck');
+  assert.ok(travel.decks.some(deck => deck.url === '/slides/chengdu/' && /เฉิงตู|Chengdu/i.test(deck.title)));
+});
+
 test('the illustrated Latent Lab deck is standalone and contains the requested source', async () => {
   const file = path.join(root, 'latent-ai-slides/index.html');
   assert.ok(fs.existsSync(file), 'Latent Lab presentation should exist');

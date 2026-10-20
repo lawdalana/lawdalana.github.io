@@ -4,7 +4,7 @@
 
 The local release contains **15 attractions, 15 distinct restaurant brands and 15 gift types**, with **306 illustrated pages**. Every Thai page is immediately followed by its simplified-Chinese counterpart. Dense units split at the same bullet boundaries in both languages; content is not dropped or shrunk to force a slide to fit.
 
-`index.html` and `manifest.json` are generated release artifacts for `/slides/chengdu/`. The canonical metadata value `published` means editorially approved for release generation; it does **not** by itself prove a GitHub push or a live deployment. Read back the deployed `content_version` to establish that separately. Existing site articles and navigation are unchanged.
+`index.html` and `manifest.json` are generated release artifacts for `/slides/chengdu/`. The canonical metadata value `published` means editorially approved for release generation; it does **not** by itself prove a GitHub push or a live deployment. Read back the deployed `content_version` to establish that separately. Existing site articles and navbar entries are preserved; the deck is additionally registered under Travel in the shared Slides menu and its folio provides a return link to the website. Deployment fingerprints include the renderer/template, viewport foundation, canonical data, styles, scripts and local assets.
 
 ## Community-based gift filtering
 
