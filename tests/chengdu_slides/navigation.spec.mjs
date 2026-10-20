@@ -8,6 +8,17 @@ test('reduced-motion language changes never paint two language pages at once',as
   const painted=await page.evaluate(()=>[...document.querySelectorAll('.slide')].filter(s=>getComputedStyle(s).visibility==='visible'&&parseFloat(getComputedStyle(s).opacity)>.001).map(s=>s.dataset.lang));
   expect(painted).toEqual(['zh-Hans']);
 });
+test('mobile reading controls collapse without hiding the paired content',async({page})=>{
+  await page.setViewportSize({width:390,height:844});await page.click('#read');
+  await expect(page.locator('.deck-controls')).toBeHidden();
+  await expect(page.locator('#toolbar')).toHaveAttribute('aria-expanded','false');
+  expect(await page.locator('.slide[aria-hidden="true"]').count()).toBe(0);
+  await page.click('#toolbar');await expect(page.locator('.deck-controls')).toBeVisible();
+  await expect(page.locator('#toolbar')).toHaveAttribute('aria-expanded','true');
+  await page.click('#read');await expect(page.locator('html')).not.toHaveClass(/reading/);
+  await expect(page.locator('.deck-controls')).toBeVisible();await expect(page.locator('#toolbar')).toBeHidden();
+});
+
 const path='/_reports/chengdu-slides/fixture/index.html';
 test.beforeEach(async({page})=>{await page.goto(path);});
 test('next back pair and unknown deep link retain valid slide',async({page})=>{

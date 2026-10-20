@@ -1,1085 +1,5 @@
 [
   {
-    "id": "panda-base-illustration",
-    "path": "slides/chengdu/images/panda-base-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ฐานเพาะพันธุ์แพนด้ายักษ์เฉิงตู",
-      "zh-Hans": "成都大熊猫繁育研究基地"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.panda.org.cn/en/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "sanxingdui-illustration",
-    "path": "slides/chengdu/images/sanxingdui-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "พิพิธภัณฑ์ซานซิงตุย",
-      "zh-Hans": "三星堆博物馆"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.sxd.cn/Guide?type=3",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "dujiangyan-illustration",
-    "path": "slides/chengdu/images/dujiangyan-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ระบบชลประทานตูเจียงเยี่ยน",
-      "zh-Hans": "都江堰水利工程"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://whc.unesco.org/en/list/1001/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "qingcheng-front-illustration",
-    "path": "slides/chengdu/images/qingcheng-front-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ภูเขาชิงเฉิง ฝั่งหน้า",
-      "zh-Hans": "青城山前山"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://whc.unesco.org/en/list/1001/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "wuhou-shrine-illustration",
-    "path": "slides/chengdu/images/wuhou-shrine-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ศาลเจ้าสามก๊กอู่โหว",
-      "zh-Hans": "成都武侯祠"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wuhou_temple.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "jinli-illustration",
-    "path": "slides/chengdu/images/jinli-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ถนนจิ่นหลี่",
-      "zh-Hans": "锦里古街"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/jinli-street.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "kuanzhai-illustration",
-    "path": "slides/chengdu/images/kuanzhai-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ตรอกกว้าง–ตรอกแคบ",
-      "zh-Hans": "宽窄巷子"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wide-narrow-alley.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "wenshu-illustration",
-    "path": "slides/chengdu/images/wenshu-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "วัดเหวินซู",
-      "zh-Hans": "文殊院"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/wenshu_monastery.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "peoples-park-illustration",
-    "path": "slides/chengdu/images/peoples-park-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "สวนประชาชนเฉิงตู",
-      "zh-Hans": "成都人民公园"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/peoples-park.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "chunxi-ifs-illustration",
-    "path": "slides/chengdu/images/chunxi-ifs-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ถนนชุนซีและแพนด้า IFS",
-      "zh-Hans": "春熙路与IFS熊猫"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/chunxi-road.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "dufu-cottage-illustration",
-    "path": "slides/chengdu/images/dufu-cottage-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "พิพิธภัณฑ์กระท่อมตู้ฝู่",
-      "zh-Hans": "杜甫草堂博物馆"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/dufu.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "sichuan-museum-illustration",
-    "path": "slides/chengdu/images/sichuan-museum-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "พิพิธภัณฑ์เสฉวน",
-      "zh-Hans": "四川博物院"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.scc.org.cn/centredetail.fds?id=309",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "huanhua-park-illustration",
-    "path": "slides/chengdu/images/huanhua-park-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "สวนลำธารหวนฮวาซี",
-      "zh-Hans": "浣花溪公园"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/huanhua-stream-park.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "leshan-buddha-illustration",
-    "path": "slides/chengdu/images/leshan-buddha-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "พระใหญ่เล่อซาน",
-      "zh-Hans": "乐山大佛"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/leshan/buddha_statue.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "chengdu-museum-illustration",
-    "path": "slides/chengdu/images/chengdu-museum-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "พิพิธภัณฑ์เฉิงตู",
-      "zh-Hans": "成都博物馆"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.travelchinaguide.com/attraction/sichuan/chengdu/museum.htm",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "chen-mapo-illustration",
-    "path": "slides/chengdu/images/chen-mapo-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "เฉินหมาโผโต้วฝู สาขาถนนชิงหัว",
-      "zh-Hans": "陈麻婆豆腐（青华路店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/chen-mapo-tofu-qinghua-road",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "ma-wangzi-illustration",
-    "path": "slides/chengdu/images/ma-wangzi-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "หม่าหวังจื่อ สาขาจิ่นเจียง",
-      "zh-Hans": "马旺子（锦江店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/ma-s-kitchen",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "mi-xun-illustration",
-    "path": "slides/chengdu/images/mi-xun-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "มี่สวินทีเฮาส์ ที่โรงแรม居舍",
-      "zh-Hans": "谧寻茶室（居舍）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/mi-xun-teahouse",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "laoyuanba-37-illustration",
-    "path": "slides/chengdu/images/laoyuanba-37-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "37 เหล่าหยวนป้าเฉาโส่ว สาขาหม่าหวังเมี่ยว",
-      "zh-Hans": "37号老院坝抄手（马王庙街）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/no-37-lao-yuan-ba-chao-shou",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "gan-ji-illustration",
-    "path": "slides/chengdu/images/gan-ji-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "กันจี้เฝยฉางเฝิ่น สาขาถนนหม่าอานเหนือ",
-      "zh-Hans": "甘记肥肠粉（马鞍北路）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/gan-ji-fei-chang-fen",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "long-sen-yuan-illustration",
-    "path": "slides/chengdu/images/long-sen-yuan-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "หลงเซินหยวน สาขาชิงหยาง",
-      "zh-Hans": "龙森园（青羊店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/long-sen-yuan",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "jincheng-yinxiang-illustration",
-    "path": "slides/chengdu/images/jincheng-yinxiang-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "จิ่นเฉิงอิ้นเซี่ยง สาขาถนนอู่โหวฉือ",
-      "zh-Hans": "锦城印象（武侯祠大街店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/china-samite-hot-pot-wuhouci-street",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "hu-er-ge-illustration",
-    "path": "slides/chengdu/images/hu-er-ge-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "หูเอ้อร์เกอย่าวซ่านถีฮวา สาขาถนนวงแหวนตะวันตก",
-      "zh-Hans": "胡二哥药膳蹄花（一环路西一段）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/hu-er-ge-yao-shan-ti-hua",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "nian-feng-illustration",
-    "path": "slides/chengdu/images/nian-feng-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "เหนียนเฟิงฟ่านเตี้ยน สาขาซอยเหนียนเฟิง",
-      "zh-Hans": "年丰饭店（年丰巷店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/nian-feng-restaurant",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "wu-ji-guaiwei-illustration",
-    "path": "slides/chengdu/images/wu-ji-guaiwei-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "อู๋จี้ไกว้เว่ยเมี่ยน สาขาถนนวงแหวนตะวันออก",
-      "zh-Hans": "吴记怪味面（一环路东五段）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/wu-ji-guai-wei-mian-jinjiang",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "rong-yuan-illustration",
-    "path": "slides/chengdu/images/rong-yuan-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "หรงหยวนชานกว่าน สาขาถนนสู่ฮั่น",
-      "zh-Hans": "荣园餐馆（蜀汉街店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/rong-yuan-can-guan",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "xiyu-dumpling-illustration",
-    "path": "slides/chengdu/images/xiyu-dumpling-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "สี่ยู่เจี่ยวจื่อจิ่ว สาขาถนนหลานเฉ่า",
-      "zh-Hans": "喜玉饺子酒（蓝草路店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/dumpling-drinks",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "tan-jia-illustration",
-    "path": "slides/chengdu/images/tan-jia-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ถานเจีย สาขาถนนอวี้หลินใต้",
-      "zh-Hans": "谭家（玉林南路店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/tan-jia",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "fu-rong-chuan-illustration",
-    "path": "slides/chengdu/images/fu-rong-chuan-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ฝูหรงชวน สาขาไท่กู่หลี่",
-      "zh-Hans": "福蓉川（太古里店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/fu-rong-chuan",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "yang-bo-ying-illustration",
-    "path": "slides/chengdu/images/yang-bo-ying-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "หยางป๋ออิงฉวนถ่งจ๋าเจี้ยงเมี่ยน สาขาถนนถงซือ",
-      "zh-Hans": "杨伯英传统杂酱面（铜丝街店）"
-    },
-    "visual_theme": "",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://guide.michelin.com/sg/zh_CN/chengdu-municipality/chengdu/restaurant/yangboying-za-jiang-mian",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "chengdu-panda-plush-illustration",
-    "path": "slides/chengdu/images/chengdu-panda-plush-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ตุ๊กตาแพนด้าที่ผูกกับทริปฐานแพนด้า",
-      "zh-Hans": "承载熊猫基地旅行记忆的毛绒玩具"
-    },
-    "visual_theme": "panda-textile",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://pantip.com/topic/38187468",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "sichuan-face-changing-doll-illustration",
-    "path": "slides/chengdu/images/sichuan-face-changing-doll-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ตุ๊กตาเปลี่ยนหน้ากากงิ้วเสฉวน",
-      "zh-Hans": "川剧变脸人偶"
-    },
-    "visual_theme": "sichuan-opera-mechanism",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/goChinaTrip/comments/1n26sfe/whats_the_most_popular_souvenir_to_buy_in_chengdu/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "shu-embroidered-scarf-illustration",
-    "path": "slides/chengdu/images/shu-embroidered-scarf-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ผ้าพันคอปักสู่ซิ่ว",
-      "zh-Hans": "蜀绣围巾"
-    },
-    "visual_theme": "shu-needlework",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/goChinaTrip/comments/1n26sfe/whats_the_most_popular_souvenir_to_buy_in_chengdu/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "chinese-folding-fan-illustration",
-    "path": "slides/chengdu/images/chinese-folding-fan-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "พัดจีนพับได้ที่ตรวจวัสดุแล้ว",
-      "zh-Hans": "可核对材质的中式折扇"
-    },
-    "visual_theme": "folding-fan-paper-silk",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/travelchina/comments/1tw2l8x/what_is_the_best_place_to_find_souvenirs_in_china/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "personalized-name-seal-illustration",
-    "path": "slides/chengdu/images/personalized-name-seal-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ตราหินแกะชื่อเฉพาะผู้รับ",
-      "zh-Hans": "定制姓名石印章"
-    },
-    "visual_theme": "stone-name-chop",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/travelchina/comments/1fw2shk",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "museum-collection-magnet-illustration",
-    "path": "slides/chengdu/images/museum-collection-magnet-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "แม่เหล็กแบบคอลเลกชันพิพิธภัณฑ์",
-      "zh-Hans": "博物馆藏品主题冰箱贴"
-    },
-    "visual_theme": "museum-fridge-art",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/travelchina/comments/1klp63p/coolest_things_you_bought_from_china/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "museum-metal-bookmark-illustration",
-    "path": "slides/chengdu/images/museum-metal-bookmark-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ที่คั่นหนังสือโลหะงานออกแบบพิพิธภัณฑ์",
-      "zh-Hans": "博物馆设计金属书签"
-    },
-    "visual_theme": "metal-bookmark-collection",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/travelchina/comments/1tw2l8x/what_is_the_best_place_to_find_souvenirs_in_china/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "panda-post-postcards-illustration",
-    "path": "slides/chengdu/images/panda-post-postcards-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "โปสการ์ดเขียนเองจากไปรษณีย์แพนด้า",
-      "zh-Hans": "熊猫邮局手写明信片"
-    },
-    "visual_theme": "panda-post-ink",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/Chengdu/comments/1dtq2il",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "hero-fountain-pen-illustration",
-    "path": "slides/chengdu/images/hero-fountain-pen-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ปากกาหมึกซึม Hero ที่ลองเขียนแล้ว",
-      "zh-Hans": "试写后挑选的英雄钢笔"
-    },
-    "visual_theme": "hero-pen-writing",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/fountainpens/comments/1fsxjm4",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "ceramic-teacup-illustration",
-    "path": "slides/chengdu/images/ceramic-teacup-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ถ้วยชาจีนใบเดียวที่เลือกใช้จริง",
-      "zh-Hans": "实用单只陶瓷茶杯"
-    },
-    "visual_theme": "glazed-teacup",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/AskChina/comments/1rka8p2/high_quality_souvenir_shopping_where_see_visited/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "custom-floral-name-calligraphy-illustration",
-    "path": "slides/chengdu/images/custom-floral-name-calligraphy-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "อักษรชื่อวาดดอกไม้และนกตามสั่ง",
-      "zh-Hans": "定制姓名花鸟字"
-    },
-    "visual_theme": "floral-calligraphy-paper",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://topicstock.pantip.com/library/topicstock/2010/03/K8991253/K8991253.html",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "sichuan-green-tea-illustration",
-    "path": "slides/chengdu/images/sichuan-green-tea-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ชาเขียวเสฉวนสำหรับผู้รับที่ดื่มชา",
-      "zh-Hans": "送给爱茶人的四川绿茶"
-    },
-    "visual_theme": "sichuan-green-tea",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/goChinaTrip/comments/1n26sfe/whats_the_most_popular_souvenir_to_buy_in_chengdu/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "chengdu-city-tshirt-illustration",
-    "path": "slides/chengdu/images/chengdu-city-tshirt-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "เสื้อยืดลายเมืองเฉิงตูที่ผู้รับใส่ได้",
-      "zh-Hans": "适合收礼人的成都城市主题T恤"
-    },
-    "visual_theme": "chengdu-city-wear",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/Chengdu/comments/1dtq2il",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "china-city-canvas-tote-illustration",
-    "path": "slides/chengdu/images/china-city-canvas-tote-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "กระเป๋าผ้าแคนวาสลายเมืองจีน",
-      "zh-Hans": "中国城市地标帆布袋"
-    },
-    "visual_theme": "city-landmark-canvas",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/chinalife/comments/1rkkkcz/meaningful_souvenirs_from_china/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
-    "id": "bestore-walnut-stuffed-dates-illustration",
-    "path": "slides/chengdu/images/bestore-walnut-stuffed-dates-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "พุทราจีนสอดไส้วอลนัทแบบซื้อชิมก่อน",
-      "zh-Hans": "先试吃再选的核桃夹心红枣"
-    },
-    "visual_theme": "walnut-date-snack",
-    "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://pantip.com/topic/43822061/desktop",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
-  },
-  {
     "id": "font-Kanit",
     "kind": "font",
     "path": "slides/chengdu/fonts/TravelDisplay.woff2",
@@ -1113,267 +33,2202 @@
     "license_path": "slides/chengdu/fonts/NotoSerifSC_OFL.txt"
   },
   {
-    "id": "chengdu-guide-illustration",
-    "path": "slides/chengdu/images/chengdu-guide-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "อ่านก่อนเปิดคู่มือ",
-      "zh-Hans": "阅读说明"
-    },
-    "visual_theme": "",
+    "id": "photo-panda-base-2",
+    "path": "slides/chengdu/images/Photo_panda_base_2.webp",
+    "kind": "photo",
+    "subject": "Chengdu, Sichuan, China: Giant Panda in the Chengdu panda breeding and research center",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.panda.org.cn/en/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "CEphoto, Uwe Aranas",
+    "attribution": "Photo by CEphoto, Uwe Aranas",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chengdu_Sichuan_China_Panda-breeding-and-research-center-02.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Chengdu_Sichuan_China_Panda-breeding-and-research-center-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Chengdu Sichuan China Panda-breeding-and-research-center-02.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chengdu+panda&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1200,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2009-06-01",
+    "sha256": "e761c63a855144665ad8fd3baf5b6cc5e5c8f8cedae499e0534fe3ac1eaa15c2",
+    "original_sha256": "27e491eb27ed9aaef35ac3e903d7e743ff98a3f8fed95dba2f1461e3bb78a776",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      66,
+      60
+    ],
+    "caption": {
+      "th": "แพนด้ายักษ์ที่ฐานเพาะพันธุ์เฉิงตู ภาพปี 2009",
+      "zh-Hans": "成都大熊猫繁育研究基地的大熊猫，摄于2009年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "แพนด้ายักษ์ยืนบนพื้นข้างลำไผ่และกำแพง มองเข้าหากล้อง",
+      "zh-Hans": "大熊猫站在竹竿与墙边的地面上，面向镜头"
+    },
+    "review_note": "Title and description explicitly identify Chengdu's breeding research center. Favor the single panda for a tall panel; retain its face and legs. Supplied attribution: Photo by CEphoto, Uwe Aranas; CC BY-SA 3.0."
   },
   {
-    "id": "skip-generic-hotpot-base-illustration",
-    "path": "slides/chengdu/images/skip-generic-hotpot-base-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ลดลำดับการซื้อ: ซุปหมาล่าทั่วไปเมื่อซื้อใกล้บ้านได้",
-      "zh-Hans": "降低购买优先级：附近已能买到的普通火锅底料"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-sanxingdui-1",
+    "path": "slides/chengdu/images/Photo_sanxingdui_1.webp",
+    "kind": "photo",
+    "subject": "SanXingDui Museum",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/goChinaTrip/comments/1n26sfe/whats_the_most_popular_souvenir_to_buy_in_chengdu/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "Jason Zou",
+    "attribution": "Jason Zou",
+    "license": "Public domain",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SanXingDui_Museum.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/SanXingDui_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:SanXingDui Museum.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sanxingdui+Museum&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1416,
+    "height": 1064,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2006-12-08",
+    "sha256": "2f2463bbf826dc50d90f5a44659783ed20e2b3f022141a23aa6c265f089edea1",
+    "original_sha256": "5e4a44991d2da97745efd919ff17592388f4b30793a852ad81d5ba8d458f2c74",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      70,
+      60
+    ],
+    "caption": {
+      "th": "ป้ายชื่อและทางเข้าพิพิธภัณฑ์ซานซิงตุย ภาพปี 2006",
+      "zh-Hans": "三星堆博物馆的馆名石碑与入口，摄于2006年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "ป้ายหินชื่อพิพิธภัณฑ์ซานซิงตุยหน้าแปลงดอกไม้และลานทางเข้า",
+      "zh-Hans": "刻有三星堆博物馆馆名的石碑，后方为花坛与入口广场"
+    },
+    "review_note": "Museum title and readable stone inscription support identity. Historical entrance photograph from 2006; it does not depict the exhibition building opened in 2023. Center the name stone rather than the left tower. Modest documentary quality. Supplied attribution: Jason Zou; Public domain."
   },
   {
-    "id": "skip-tour-shop-jade-illustration",
-    "path": "slides/chengdu/images/skip-tour-shop-jade-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ลดลำดับการซื้อ: หยกหรือของเก่าจากร้านทัวร์ที่พิสูจน์ไม่ได้",
-      "zh-Hans": "降低购买优先级：旅行团购物店里来源难核实的玉器或古董"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-dujiangyan-1",
+    "path": "slides/chengdu/images/Photo_dujiangyan_1.webp",
+    "kind": "photo",
+    "subject": "Dujiangyan Irrigation System, Chengdu, Sichuan, China",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://pantip.com/topic/30074952",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "星星",
+    "attribution": "星星",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dujiang_Weir.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Dujiang_Weir.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Dujiang Weir.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Dujiangyan+irrigation&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 758,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2020-05-22 11:15",
+    "sha256": "e836a5cef471bc3b1a90787cfe5bb50d1935373d188f23bb365c983190452929",
+    "original_sha256": "a37e7ab97f6402864c836e2b14955b59c531881e5d03502751fbc1508a0f5cb7",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      69,
+      54
+    ],
+    "caption": {
+      "th": "จุดแบ่งน้ำของระบบชลประทานตูเจียงเยี่ยน ภาพปี 2020",
+      "zh-Hans": "都江堰水利工程的分水景观，摄于2020年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "แนวแบ่งสายน้ำและสะพานท่ามกลางแม่น้ำ ต้นไม้ และภูเขา",
+      "zh-Hans": "河道中的分水堤与桥梁，周围有树林和远山"
+    },
+    "review_note": "Title and description explicitly identify Dujiangyan Irrigation System. Very wide panorama: prioritize the divider tip right of center; a tall crop sacrifices the complete river overview. Supplied attribution: 星星; CC BY-SA 4.0."
   },
   {
-    "id": "skip-bulky-generic-lantern-illustration",
-    "path": "slides/chengdu/images/skip-bulky-generic-lantern-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ลดลำดับการซื้อ: โคมทั่วไปชิ้นใหญ่จากถนนท่องเที่ยว",
-      "zh-Hans": "降低购买优先级：景区常见的大体积灯笼"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-qingcheng-front-1",
+    "path": "slides/chengdu/images/Photo_qingcheng_front_1.webp",
+    "kind": "photo",
+    "subject": "Mount Qingcheng, located in Sichuan, China, is a renowned Taoist mountain and is considered one of the birthplaces of Taoism. This sacred site is home to many ancient temples and monasteries, nestled among its lush peaks and verdant forests. It's a place of tranquility and historical significance, offering a glimpse into the spiritual heritage and natural beauty of China. With its inclusion as a UNESCO World Heritage Site, Mount Qingcheng holds a special place in both the cultural heart and the scenic landscape of China.",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/travelchina/comments/1tw2l8x/what_is_the_best_place_to_find_souvenirs_in_china/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "xiquinhosilva",
+    "attribution": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jianfu_Palace,_Mount_Qingcheng_(54530903712).jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Jianfu_Palace%2C_Mount_Qingcheng_%2854530903712%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Jianfu Palace, Mount Qingcheng (54530903712).jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mount+Qingcheng+temple&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1200,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2024-07-20 16:04",
+    "sha256": "25ddfb72e128f06fe5df776cef8c76a59b93e2caced67c6a862d6a82a2cb4acf",
+    "original_sha256": "0fabf3e85c8683f4f238141e2df1c89dc13fe9d6e6c085f462fd81e13a718fc8",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      41,
+      52
+    ],
+    "caption": {
+      "th": "ประตูเจี้ยนฝูกง บริเวณเชิงเขาชิงเฉิงฝั่งหน้า ภาพปี 2024",
+      "zh-Hans": "青城山前山山麓的建福宫山门，摄于2024年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "ซุ้มประตูเจี้ยนฝูกงพร้อมป้ายอักษรจีน เหนือบันไดท่ามกลางต้นไม้สูง",
+      "zh-Hans": "高树林中的建福宫山门，门上有中文匾额，前方为石阶"
+    },
+    "review_note": "The specific Jianfu Palace title and visible 建福宫 plaque support the front-mountain entrance location. Focus left of center on the gate and plaque; the foreground incense burner is secondary. Supplied attribution: xiquinhosilva; CC BY 2.0."
   },
   {
-    "id": "skip-game-cartridges-price-assumption-illustration",
-    "path": "slides/chengdu/images/skip-game-cartridges-price-assumption-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ลดลำดับการซื้อ: ตลับเกมที่ซื้อเพราะคิดว่าจีนต้องถูก",
-      "zh-Hans": "降低购买优先级：仅因以为中国便宜而购买的游戏卡带"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-wuhou-shrine-1",
+    "path": "slides/chengdu/images/Photo_wuhou_shrine_1.webp",
+    "kind": "photo",
+    "subject": "成都武侯祠",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/travelchina/comments/1fw2shk",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "User:Gisling",
+    "attribution": "User:Gisling",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chengdu_Wuhou_ci.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Chengdu_Wuhou_ci.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Chengdu Wuhou ci.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Wuhou+Chengdu&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1327,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2006-10",
+    "sha256": "578d317a66c71624b2df110a5ac970f3cfcfa412816aacc7c7ff34e7b6ec7cc9",
+    "original_sha256": "41329c76fe604437f0c92eb5547594b580bd78c28a133f4f66957a843544faec",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      62,
+      49
+    ],
+    "caption": {
+      "th": "ป้ายอู่โหวฉือและแนวประตูภายในศาลเจ้าเฉิงตู ภาพปี 2006",
+      "zh-Hans": "成都武侯祠的匾额与重重院门，摄于2006年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "ป้ายอู่โหวฉือเหนือประตูไม้ มองผ่านแนวประตูไปยังลานและผู้คน",
+      "zh-Hans": "木门上方的武侯祠匾额，重重院门后可见庭院与游客"
+    },
+    "review_note": "Title, Chinese description and visible 武侯祠 plaque establish identity. Strong gateway alignment despite grain, deep shadows and clipped highlights. Retain the plaque and receding central passage. Historical 2006 photograph. Supplied attribution: User:Gisling; CC BY 2.5."
   },
   {
-    "id": "skip-health-claim-latex-bedding-illustration",
-    "path": "slides/chengdu/images/skip-health-claim-latex-bedding-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ลดลำดับการซื้อ: เครื่องนอนทัวร์ที่ขายด้วยคำอ้างรักษาโรค",
-      "zh-Hans": "降低购买优先级：以治病宣传推销的旅行团寝具"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-jinli-1",
+    "path": "slides/chengdu/images/Photo_jinli_1.webp",
+    "kind": "photo",
+    "subject": "Jinli Street, Chengdu, Province of Chengdu, PR China",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://pantip.com/topic/37056180",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "Zairon",
+    "attribution": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chengdu_Jinli-Stra%C3%9Fe_11.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Chengdu_Jinli-Stra%C3%9Fe_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Chengdu Jinli-Straße 11.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Jinli+Chengdu+night&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1306,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2019-04-13 20:16:01",
+    "sha256": "ad05cde1409ffce1ea824b54c721337f3aaf0eeb6482f9e5bcc2112ed4b375f7",
+    "original_sha256": "98d5cf81afddcf126baace3c06c6687b6711770efbf396c377efac963cca3aca",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      50,
+      52
+    ],
+    "caption": {
+      "th": "อาคารประดับโคมแดงบนถนนจิ่นหลี่ยามค่ำ ภาพปี 2019",
+      "zh-Hans": "锦里古街夜色中的红灯笼与传统建筑，摄于2019年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "อาคารหลังคากระเบื้องประดับโคมแดง มีผู้คนเดินอยู่ด้านล่างยามค่ำ",
+      "zh-Hans": "瓦顶建筑前悬挂红灯笼，下方有夜间行走的游客"
+    },
+    "review_note": "Both title and description identify Jinli Street. Candidate 1 gives the clearer central building and lantern arrangement; preserve those in the tall crop. Shadows obscure some architectural detail. Supplied attribution: Zairon; CC BY-SA 4.0."
   },
   {
-    "id": "skip-pepper-for-unwilling-recipient-illustration",
-    "path": "slides/chengdu/images/skip-pepper-for-unwilling-recipient-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ลดลำดับการซื้อ: ฮวาเจียวเมื่อผู้รับไม่ชอบรสชา",
-      "zh-Hans": "降低购买优先级：收礼人不喜欢麻味时的花椒"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-ov-kuanzhai-1",
+    "path": "slides/chengdu/images/Photo_ov_kuanzhai_1.webp",
+    "kind": "photo",
+    "subject": "Kuanzhai Alley",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://www.reddit.com/r/goChinaTrip/comments/1n26sfe/whats_the_most_popular_souvenir_to_buy_in_chengdu/",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "xiquinhosilva",
+    "attribution": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://www.flickr.com/photos/7138083@N04/54132345216",
+    "original_url": "https://live.staticflickr.com/65535/54132345216_9173ed5b25_b.jpg",
+    "source_title": "Kuanzhai Alley",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=%22Kuanzhai%22+street&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 704,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "22596e22b033c438d17b6637c712ae0b717ca46690f3b6adb358d7ee70a7361b",
+    "original_sha256": "03f2981b0531533aa94604996d95da3c44dd6a165e195b3ee314352ed6f3aa04",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      48,
+      46
+    ],
+    "caption": {
+      "th": "ภาพผู้มาเยือนหน้าภาพแพนด้าที่ตรอกควนไจ่ เฉิงตู",
+      "zh-Hans": "游客在成都宽窄巷子的熊猫壁画前留影。"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "ผู้มาเยือนสวมชุดเหลืองยืนหน้าประตูม้วนลายแพนด้าและข้อความ Kuanzhai Alley",
+      "zh-Hans": "身穿黄色连衣裙的游客站在绘有熊猫并写着“Kuanzhai Alley”的卷帘门前。"
+    },
+    "review_note": "Visible Kuanzhai Alley lettering and Chengdu lettering agree with the retained Kuanzhai Alley title. Colorful pandas and the visitor provide a livelier composition than the existing indoor detail photos. Preserve the location lettering. Capture date is absent; the mural's continued presence is not asserted. Catalog-reported license: CC BY 2.0; ownership not independently verified."
   },
   {
-    "id": "market-snow-lotus-illustration",
-    "path": "slides/chengdu/images/market-snow-lotus-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ครีมบัวหิมะ: ไม่ซื้อเพียงเพราะไปจีน",
-      "zh-Hans": "雪莲膏：不因去中国就买"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-wenshu-1",
+    "path": "slides/chengdu/images/Photo_wenshu_1.webp",
+    "kind": "photo",
+    "subject": "Wenshu Monastery, located in Chengdu, Sichuan Province, is a historical beacon of Buddhist culture and architecture. Originally established during the Tang Dynasty, it has been a site of continuous religious importance and cultural exchange. The monastery is renowned for housing over 500 pieces of valuable paintings and calligraphy by famous artists, as well as a collection of Buddha statues made from various materials. Visitors can also enjoy the serene gardens and participate in tea ceremonies, experiencing a blend of cultural heritage and tranquility.",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://pantip.com/topic/38033969",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "xiquinhosilva",
+    "attribution": "xiquinhosilva",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wenshu_Monastery_-_55394328213.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Wenshu_Monastery_-_55394328213.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Wenshu Monastery - 55394328213.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Wenshu+monastery+Chengdu&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1200,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2024-07-22 15:13:36",
+    "sha256": "42350c7cbc37906deb1c5eb343c0402d834ada9eb3e692a95a9880d06ac734ea",
+    "original_sha256": "8bc91c279110fa9849982a5496275f9bfc008508ab15fdf5f969a32c6aa72595",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      51,
+      54
+    ],
+    "caption": {
+      "th": "อาคารวัดเหวินซูกับประตูไม้สีแดง ภาพปี 2024",
+      "zh-Hans": "文殊院的红色木门与殿宇，摄于2024年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "อาคารวัดหลังคากระเบื้องสีเทา มีประตูไม้สีแดง โคมแขวน และลานด้านหน้า",
+      "zh-Hans": "灰瓦寺院建筑，配有红色木门、悬灯和前方庭院"
+    },
+    "review_note": "Title and description explicitly identify Wenshu Monastery in Chengdu. Clear architectural photograph; center the doorway and roof ridge rather than the foreground tree. Supplied attribution: xiquinhosilva; CC BY 4.0."
   },
   {
-    "id": "market-online-snacks-illustration",
-    "path": "slides/chengdu/images/market-online-snacks-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ขนมแพ็กทั่วไป: มีรีวิวซื้อผ่าน Shopee",
-      "zh-Hans": "普通包装零食：有Shopee购买评测"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-peoples-park-2",
+    "path": "slides/chengdu/images/Photo_peoples_park_2.webp",
+    "kind": "photo",
+    "subject": "Boating is popular in People's Park (Renmin Park) in Chengdu, Sichuan, China.",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://pantip.com/topic/40622173",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "David Stanley from Nanaimo, Canada",
+    "attribution": "David Stanley from Nanaimo, Canada",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Boating_in_People%27s_Park_(32918865768).jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Boating_in_People%27s_Park_%2832918865768%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Boating in People's Park (32918865768).jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chengdu+Renmin+Park&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 768,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2018-09-16 14:52",
+    "sha256": "fbb770048e53e1e6b621e37e196a844e059e5222b5257e8d219f82fd7be14165",
+    "original_sha256": "07810a2ecaae678a8639241bf5d4c0c92351ac2a1d8866d4cad77c631e6288df",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      60,
+      56
+    ],
+    "caption": {
+      "th": "เรือพายใต้สะพานในสวนประชาชนเฉิงตู ภาพปี 2018",
+      "zh-Hans": "成都人民公园石桥下的划船场景，摄于2018年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "ผู้คนนั่งเรือพายหลายลำใกล้ซุ้มสะพานหินโค้งที่มีต้นไม้ปกคลุม",
+      "zh-Hans": "游客乘坐多艘划船，靠近绿树掩映的石拱桥"
+    },
+    "review_note": "Description explicitly identifies People's Park in Chengdu. Lively, recognizable park activity; favor the bridge opening and central boats. The 1024-pixel source limits enlargement sharpness. This 2018 scene does not establish present boating arrangements. Supplied attribution: David Stanley from Nanaimo, Canada; CC BY 2.0."
   },
   {
-    "id": "market-pineapple-pastry-illustration",
-    "path": "slides/chengdu/images/market-pineapple-pastry-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "พายสับปะรด: ผู้รีวิวมองว่าคล้ายไทย",
-      "zh-Hans": "菠萝派：评测者认为类似泰国"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-chunxi-ifs-1",
+    "path": "slides/chengdu/images/Photo_chunxi_ifs_1.webp",
+    "kind": "photo",
+    "subject": "​仰视成都国际金融中心熊猫",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://pantip.com/topic/42380303",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
-    "illustrative": true,
-    "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+    "creator": "David Xuang",
+    "attribution": "David Xuang",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_panda_at_IFS_Chengdu_from_Hongxing_Road.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/The_panda_at_IFS_Chengdu_from_Hongxing_Road.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:The panda at IFS Chengdu from Hongxing Road.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chengdu+IFS+panda&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1334,
+    "height": 1800,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2018-06-18 15:33:48",
+    "sha256": "76d641a100b0870c5c661ae515e9c3b1c745e47fc2774514b1e0700533e4560c",
+    "original_sha256": "f7d993be9ab27605ca28c2d16c1793c661a9091684b013a6ac4e6033bbbae1be",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      54,
+      56
+    ],
+    "caption": {
+      "th": "แพนด้าปีนอาคาร Chengdu IFS มองจากถนน ภาพปี 2018",
+      "zh-Hans": "从街道仰望成都IFS爬楼熊猫，摄于2018年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "ประติมากรรมแพนด้าขาวดำเกาะผนังอาคาร มองจากด้านล่างใต้ท้องฟ้ามีเมฆ",
+      "zh-Hans": "从下方仰望攀附建筑外墙的黑白熊猫雕塑，上方为云天"
+    },
+    "review_note": "Title identifies the Chengdu IFS panda viewed from Hongxing Road; description agrees. This depicts the IFS landmark rather than the whole Chunxi Road area. Native portrait framing suits the panel and retains the climbing pose. Supplied photo attribution: David Xuang; CC BY-SA 4.0. Companion metadata credits sculpture artist Lawrence Argent."
   },
   {
-    "id": "market-tour-sales-illustration",
-    "path": "slides/chengdu/images/market-tour-sales-illustration.svg",
-    "kind": "diagram",
-    "subject": {
-      "th": "ร้านทัวร์และขนมบนรถ: อย่าซื้อเพราะถูกเร่ง",
-      "zh-Hans": "旅行团购物店与车上零食：别因催促而买"
-    },
-    "visual_theme": "shopping-caution",
+    "id": "photo-ov-dufu-2",
+    "path": "slides/chengdu/images/Photo_ov_dufu_2.webp",
+    "kind": "photo",
+    "subject": "杜甫草堂Du Fu Thatched Cottage",
     "meaningful": true,
-    "width": 1100,
-    "height": 1100,
-    "creator": "Original conceptual illustration by Hermes",
-    "license": "CC0-1.0",
+    "creator": "EasonChiang",
+    "attribution": "EasonChiang",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source_url": "https://www.flickr.com/photos/39013139@N08/5703705108",
+    "original_url": "https://live.staticflickr.com/2109/5703705108_c6e0185d6a_b.jpg",
+    "source_title": "杜甫草堂Du Fu Thatched Cottage",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=%22Du+Fu+Thatched+Cottage%22&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 765,
+    "height": 1024,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "b87dbf00eabb20123fa52159c3d2bf75ff6086f7360e5cf06ac286d8957a9163",
+    "original_sha256": "760af419d2bc44b1fb90d4cabefd88b53c0efbf9ea46c739511c2bee54777b8e",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      50,
+      61
+    ],
+    "caption": {
+      "th": "ภาพศาลาหลังคามุงจากและศิลาจารึก “少陵草堂” ที่อุทยานตู้ฝู่ เฉิงตู",
+      "zh-Hans": "成都杜甫草堂的茅顶亭与“少陵草堂”石碑。"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "ศาลาหลังคามุงจากมีเสาสีแดง ล้อมศิลาจารึกอักษรจีน โดยมีต้นไผ่อยู่ด้านหลัง",
+      "zh-Hans": "红柱茅顶亭围着一块刻有汉字的石碑，后方是竹林。"
+    },
+    "review_note": "The readable 少陵草堂 inscription and retained 杜甫草堂Du Fu Thatched Cottage title jointly establish the location. This gives more recognizable site context than an isolated sculpture. Background highlights are overexposed; keep the pavilion and inscription prominent. Capture date is absent. Catalog-reported license: CC BY-SA 2.0; ownership not independently verified."
+  },
+  {
+    "id": "photo-ov-sichuan-museum-alt-1",
+    "path": "slides/chengdu/images/Photo_ov_sichuan_museum_alt_1.webp",
+    "kind": "photo",
+    "subject": "Sichuan Provincial Museum, Chengdu",
+    "meaningful": true,
+    "creator": "Gary Lee Todd, Ph.D.",
+    "attribution": "Gary Lee Todd, Ph.D.",
+    "license": "CC0 1.0",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source_url": "https://pantip.com/topic/36286011",
-    "source_role": "concept reference, not source photograph",
-    "modifications": "Original SVG shapes; display may crop margins",
+    "source_url": "https://www.flickr.com/photos/101561334@N08/9958374856",
+    "original_url": "https://live.staticflickr.com/7358/9958374856_983d003412_b.jpg",
+    "source_title": "Sichuan Provincial Museum, Chengdu",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=Sichuan+Provincial+Museum&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 683,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "09709c76c0b390acc408a1fd3ea042f79c122ecd3fa31ef696a583836abde1ee",
+    "original_sha256": "b3d1a7a41cdf955cc74823de7db99434b9fdd84f6098c47fb2134d96c362c8a9",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      50,
+      53
+    ],
+    "caption": {
+      "th": "ภาพด้านหน้าพิพิธภัณฑ์เสฉวนและลานทางเข้าในเฉิงตู",
+      "zh-Hans": "成都四川博物院正面与入口广场的照片。"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "อาคารพิพิธภัณฑ์สีเทามีหลังคาสมมาตร บันไดกว้าง ต้นไม้ และผู้คนในลาน",
+      "zh-Hans": "灰色博物馆建筑、对称屋顶、宽阔台阶，以及广场上的树木和行人。"
+    },
+    "review_note": "The entrance inscription identifies 四川博物院 and agrees with the retained title Sichuan Provincial Museum, Chengdu. The exterior supplies clearer destination context than the existing tapestry close-ups. Preserve the entrance inscription in cropping. Capture date is absent; no present-day condition claim. Catalog-reported license: CC0 1.0; ownership not independently verified."
+  },
+  {
+    "id": "photo-huanhua-park-2",
+    "path": "slides/chengdu/images/Photo_huanhua_park_2.webp",
+    "kind": "photo",
+    "subject": "浣花溪公园－小桥",
+    "meaningful": true,
+    "creator": "wuzhongj",
+    "attribution": "wuzhongj",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B5%A3%E8%8A%B1%E6%BA%AA%E5%85%AC%E5%9B%AD%EF%BC%8D%E5%B0%8F%E6%A1%A5_-_panoramio.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/%E6%B5%A3%E8%8A%B1%E6%BA%AA%E5%85%AC%E5%9B%AD%EF%BC%8D%E5%B0%8F%E6%A1%A5_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:浣花溪公园－小桥 - panoramio.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Huanhuaxi+Park+Chengdu&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "Taken on 21 March 2012",
+    "sha256": "54490a1388f45e371cfd76592d201bc0b4d444b32969e0d5c9434e0fab868c99",
+    "original_sha256": "8ab2c95f3030dd9a0540aa83662eefa826ce3c8bb67f4dc9e0cba67e0aeda2f3",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      52,
+      58
+    ],
+    "caption": {
+      "th": "สะพานหินเหนือร่องน้ำในสวนหวนฮวาซี ภาพปี 2012",
+      "zh-Hans": "浣花溪公园的小石桥与溪沟，摄于2012年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "สะพานหินโค้งข้ามร่องน้ำตื้น ท่ามกลางต้นไม้และดอกไม้สีชมพู",
+      "zh-Hans": "石拱桥横跨浅溪沟，周围有绿树和粉色花朵"
+    },
+    "review_note": "Chinese title and description explicitly identify Huanhua Creek Park and its small bridge. Better subject definition than candidate 1. Preserve the bridge arch and stream; original has a yellow 2012 date imprint at lower right, which a tall crop may exclude. Supplied attribution: wuzhongj; CC BY 3.0."
+  },
+  {
+    "id": "photo-leshan-buddha-2",
+    "path": "slides/chengdu/images/Photo_leshan_buddha_2.webp",
+    "kind": "photo",
+    "subject": "Leshan Giant Buddha",
+    "meaningful": true,
+    "creator": "xiquinhosilva",
+    "attribution": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Leshan_Giant_Buddha_(1).jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Leshan_Giant_Buddha_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Leshan Giant Buddha (1).jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Leshan+Giant+Buddha&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1200,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2018-05-23 14:42:31",
+    "sha256": "5428509b475625a8ab5c802b00ce93653cf2de7e5f18c0e3f95d526150afe1f8",
+    "original_sha256": "557f9b15d4b9413eeec919654c18c23289c6ed1e581de2fb40f68b5c6ef5381b",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      49,
+      51
+    ],
+    "caption": {
+      "th": "พระใหญ่เล่อซานสลักบนหน้าผาหินแดง ภาพปี 2018",
+      "zh-Hans": "红砂岩崖壁中的乐山大佛，摄于2018年"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "พระพุทธรูปนั่งขนาดใหญ่สลักในหน้าผาหินแดง มีผู้คนที่ลานด้านล่าง",
+      "zh-Hans": "红色崖壁中开凿的巨型坐佛，下方平台上有游客"
+    },
+    "review_note": "Title, description and distinctive visible monument establish identity. Strongest tall-panel choice: central framing retains the Buddha's head, torso, knees and feet. Peripheral carvings may crop. The 2018 photo does not establish current walkway access. Supplied attribution: xiquinhosilva; CC BY 2.0."
+  },
+  {
+    "id": "photo-museum-final-1",
+    "path": "slides/chengdu/images/Photo_museum_final_1.webp",
+    "kind": "photo",
+    "subject": "​成都市青羊区成都博物馆",
+    "meaningful": true,
+    "creator": "Liuxingy",
+    "attribution": "Liuxingy",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E9%9D%92%E7%BE%8A_%E6%88%90%E9%83%BD%E5%8D%9A%E7%89%A9%E9%A6%86_04.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/%E9%9D%92%E7%BE%8A_%E6%88%90%E9%83%BD%E5%8D%9A%E7%89%A9%E9%A6%86_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:青羊 成都博物馆 04.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=incategory%3A%22Chengdu+Museum%22&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1200,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2023-08-14 10:29:46",
+    "sha256": "52cf006d92796b2bc4d6638712d30f4e34103276aa45aa3bb96051b24cfebd83",
+    "original_sha256": "6afe7513dcdc896157ebba091b948c32c7ea17bd1e02d172d6deb21f0d207424",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "exact_place",
+    "illustrative": false,
+    "focal_point": [
+      50,
+      59
+    ],
+    "caption": {
+      "th": "ด้านหน้าพิพิธภัณฑ์เฉิงตู บริเวณจัตุรัสเทียนฝู่",
+      "zh-Hans": "天府广场旁的成都博物馆外立面。"
+    },
+    "disclosure": {},
+    "alt": {
+      "th": "ป้ายชื่อพิพิธภัณฑ์เฉิงตูภาษาจีนและอังกฤษบนผนังหิน หน้าอาคารกระจกและโลหะ",
+      "zh-Hans": "玻璃与金属外立面前，石墙上有成都博物馆的中英文名称。"
+    },
+    "review_note": "Exact Commons category and metadata identify Chengdu Museum; visible bilingual signage confirms the identity. Tianfu Square context follows the supplied cross-reference. Landscape framing preserves both name and facade and offers the strongest usable composition. Metadata credits Liuxingy, CC BY-SA 4.0."
+  },
+  {
+    "id": "photo-chen-mapo-2",
+    "path": "slides/chengdu/images/Photo_chen_mapo_2.webp",
+    "kind": "photo",
+    "subject": "Mapo Tofu - Authentic Sichuan Style",
+    "meaningful": true,
+    "creator": "Sichuanfoodlover",
+    "attribution": "Sichuanfoodlover",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Authentic_Mapo_Tofu.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Authentic_Mapo_Tofu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Authentic Mapo Tofu.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mapo+tofu&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1685,
+    "height": 1124,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2015-04-21 12:39:15",
+    "sha256": "271adcc270d2017671da75d2f3c34dc9a48fb18f76d4b82a5f3ff09543942113",
+    "original_sha256": "46d6182bffa805cae127e76c47a6bfba61a3f56168c9fa58127e49424feaba3d",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
     "illustrative": true,
+    "focal_point": [
+      48,
+      53
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างหมาโผโต้วฝู ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "麻婆豆腐示例，非本店或该分店菜品实拍。"
+    },
     "disclosure": {
-      "th": "ภาพวาดแนวคิดประกอบ ไม่ใช่ภาพถ่ายสถานที่ อาหาร หรือสินค้าจริง",
-      "zh-Hans": "概念插画，非景点、菜品或商品实拍。"
-    }
+      "th": "ภาพตัวอย่างหมาโผโต้วฝู ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "麻婆豆腐示例，非本店或该分店菜品实拍。"
+    },
+    "alt": {
+      "th": "เต้าหู้หั่นก้อนในซอสพริก โรยต้นหอมและเครื่องเทศ ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "豆腐块裹辣酱，撒有葱花和香料；非本店菜品实拍。"
+    },
+    "review_note": "Candidate 2 has the strongest appetizing color and tofu detail; candidate 1 offers a useful portrait composition. Neither shows the listed stone-pot presentation. Meat species and complete ingredients are unconfirmed; tofu does not establish vegetarian suitability."
+  },
+  {
+    "id": "photo-chen-mapo-1",
+    "path": "slides/chengdu/images/Photo_chen_mapo_1.webp",
+    "kind": "photo",
+    "subject": "Chinese Mapo Tofu",
+    "meaningful": true,
+    "creator": "Archon6812",
+    "attribution": "Archon6812",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Billyfoodmabodofu3.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Billyfoodmabodofu3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Billyfoodmabodofu3.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mapo+tofu&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1200,
+    "height": 1800,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2011-02-11",
+    "sha256": "41469af856439e3dffcd205374db915e82d8be32303d7f7776a9d4d728a6fd02",
+    "original_sha256": "7f8bce1ad78ceadb3c3b26e483e7ca5333b72ff775b2c5efecae2d1546ede2b4",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      45,
+      55
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างหมาโผโต้วฝู ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "麻婆豆腐示例，非本店或该分店菜品实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างหมาโผโต้วฝู ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "麻婆豆腐示例，非本店或该分店菜品实拍。"
+    },
+    "alt": {
+      "th": "เต้าหู้หั่นก้อนในซอสพริก โรยต้นหอมและเครื่องเทศ ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "豆腐块裹辣酱，撒有葱花和香料；非本店菜品实拍。"
+    },
+    "review_note": "Candidate 2 has the strongest appetizing color and tofu detail; candidate 1 offers a useful portrait composition. Neither shows the listed stone-pot presentation. Meat species and complete ingredients are unconfirmed; tofu does not establish vegetarian suitability."
+  },
+  {
+    "id": "photo-ma-wangzi-2",
+    "path": "slides/chengdu/images/Photo_ma_wangzi_2.webp",
+    "kind": "photo",
+    "subject": "A picture of the dish called Mao xue wang",
+    "meaningful": true,
+    "creator": "VenusL",
+    "attribution": "VenusL",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mao_xue_wang.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Mao_xue_wang.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Mao xue wang.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Mao+Xue+Wang&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2018-01-02",
+    "sha256": "cf3550bbade50c7201bd7c40f3b731e12270464fcab96417ebd12ef31fcb9889",
+    "original_sha256": "0a3e9f18f1f7096cccb04aca65c0dc3fb3829e3d884cf7370d69b5415ae629f1",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      40,
+      58
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างเหมาสวี่หวัง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "毛血旺菜式示例，非本店菜品实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างเหมาสวี่หวัง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "毛血旺菜式示例，非本店菜品实拍。"
+    },
+    "alt": {
+      "th": "จานเหมาสวี่หวังมีชิ้นสีเข้มและเครื่องในในน้ำมันพริกแดง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "毛血旺中可见深色块状食材、内脏和红油；非本店菜品实拍。"
+    },
+    "review_note": "Clearly communicates the offal-focused specialty, with more visible ingredients than candidate 1. Focus on the dark slabs and curled offal. The pictured animal species and exact duck-blood, pork-offal and eel combination are not established."
+  },
+  {
+    "id": "photo-mi-xun-1",
+    "path": "slides/chengdu/images/Photo_mi_xun_1.webp",
+    "kind": "photo",
+    "subject": "成都宽窄巷茶楼, Tea House at Wide and Narrow Alley, Chengdu, China",
+    "meaningful": true,
+    "creator": "Aaron Zhu",
+    "attribution": "Aaron Zhu",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E6%88%90%E9%83%BD%E5%AE%BD%E7%AA%84%E5%B7%B7%E8%8C%B6%E6%A5%BC,_Tea_House_at_Wide_and_Narrow_Alley,_Chengdu,_China_-_panoramio.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/%E6%88%90%E9%83%BD%E5%AE%BD%E7%AA%84%E5%B7%B7%E8%8C%B6%E6%A5%BC%2C_Tea_House_at_Wide_and_Narrow_Alley%2C_Chengdu%2C_China_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:成都宽窄巷茶楼, Tea House at Wide and Narrow Alley, Chengdu, China - panoramio.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chengdu+tea+house&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1190,
+    "height": 1800,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "Taken on 14 June 2015",
+    "sha256": "56d5040135076b813b71d92f2faba7f7144bb239913590b86d557d8844e95747",
+    "original_sha256": "fe003ae6a6c43f393701c50b7110e616f47d49c35345f958521a9bf019a537a3",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "cultural_context",
+    "illustrative": true,
+    "focal_point": [
+      51,
+      51
+    ],
+    "caption": {
+      "th": "ภาพวัฒนธรรมโรงน้ำชาเฉิงตู ไม่ใช่ภาพจากมี่สวินทีเฮาส์",
+      "zh-Hans": "成都茶楼文化示例，非谧寻茶室实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพวัฒนธรรมโรงน้ำชาเฉิงตู ไม่ใช่ภาพจากมี่สวินทีเฮาส์",
+      "zh-Hans": "成都茶楼文化示例，非谧寻茶室实拍。"
+    },
+    "alt": {
+      "th": "หน้าโรงน้ำชาเฉิงตูมีป้ายไม้ ช่องลายฉลุและจอแสดงภาพ ไม่ใช่มี่สวินทีเฮาส์",
+      "zh-Hans": "成都茶楼门面有木匾、镂空窗格和显示屏；并非谧寻茶室。"
+    },
+    "review_note": "Accept only as Chengdu teahouse culture. The record identifies a teahouse in Kuanzhai Alley, not Mi Xun. Preserve the doorway and wooden facade in the tall panel. This depicts neither Mi Xun's courtyard nor its vegetarian dishes."
+  },
+  {
+    "id": "photo-laoyuanba-37-1",
+    "path": "slides/chengdu/images/Photo_laoyuanba_37_1.webp",
+    "kind": "photo",
+    "subject": "Chinesisches Gerichte Chaoshou und Fuqifeipian, welche sehr scharf sind",
+    "meaningful": true,
+    "creator": "Yusun22",
+    "attribution": "Yusun22",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chaoshou_Fuqifeipian_2022.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Chaoshou_Fuqifeipian_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Chaoshou Fuqifeipian 2022.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sichuan+wonton&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1069,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2022-11-02 13:19:08",
+    "sha256": "7dfea198fff59a35b196d80e41cf10270f91d21ad71c6a3cbdf78791fd659d29",
+    "original_sha256": "d25adcaa2ba418492624544663032924b136e1615bc849748f39d3b2f1c9efcc",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      77,
+      45
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างเกี๊ยว抄手ในน้ำมันพริก ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "红油抄手示例，非本店菜品实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างเกี๊ยว抄手ในน้ำมันพริก ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "红油抄手示例，非本店菜品实拍。"
+    },
+    "alt": {
+      "th": "ชามเกี๊ยวในน้ำมันพริกโรยงา ด้านขวามีช้อนโลหะ ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "碗中抄手浸红油、撒芝麻，右侧有金属勺；非本店菜品实拍。"
+    },
+    "review_note": "Crop toward the right-hand wonton bowl; the left-hand plate is a separate beef/offal dish. Relevant to chaoshou, but the wet red-oil presentation does not establish the listed dry-mixed recipe. Filling and all listed toppings remain unconfirmed."
+  },
+  {
+    "id": "photo-gan-ji-1",
+    "path": "slides/chengdu/images/Photo_gan_ji_1.webp",
+    "kind": "photo",
+    "subject": "A bowl of Chengdu-style hot and sour noodles (酸辣粉 suānlàfěn), topped with pork intestines (肥肠), peanuts and bok choy.",
+    "meaningful": true,
+    "creator": "Jpatokal",
+    "attribution": "Jpatokal",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hot_and_sour_noodles_with_pork_intestines.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Hot_and_sour_noodles_with_pork_intestines.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Hot and sour noodles with pork intestines.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=%E8%82%A5%E8%82%A0%E7%B2%89&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2021-02-21 12:58:22",
+    "sha256": "1037150969ed45fbe83644fd924c2ec9c7271b764e3aeaaa24799ba39a24f05e",
+    "original_sha256": "efd7e0c14d79723b0d44bf36c53b5eba359496bec5eedb0e49c859b459a1ace5",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      50,
+      42
+    ],
+    "caption": {
+      "th": "ภาพประกอบเส้นในซุปพริก ไม่ใช่อาหารจากร้าน Gan Ji และไม่ยืนยันว่าสูตรตรงกัน",
+      "zh-Hans": "辣汤粉条示意图，并非 Gan Ji 出品，也不代表该店配方。"
+    },
+    "disclosure": {
+      "th": "ภาพประกอบเส้นในซุปพริก ไม่ใช่อาหารจากร้าน Gan Ji และไม่ยืนยันว่าสูตรตรงกัน",
+      "zh-Hans": "辣汤粉条示意图，并非 Gan Ji 出品，也不代表该店配方。"
+    },
+    "alt": {
+      "th": "ตะเกียบคีบเส้นใสเหนือชามซุปพริกที่มีถั่วลิสงและผักใบเขียว",
+      "zh-Hans": "筷子从有花生和绿叶菜的辣汤碗中夹起透明粉条。"
+    },
+    "review_note": "Clearly identifiable noodles, vivid broth and lifted strands provide an engaging composition. The catalog describes pork intestines, but that topping is not independently identifiable visually; neither caption nor alt asserts offal. Restaurant provenance and recipe equivalence are unestablished. Catalog-reported license: CC BY-SA 4.0; ownership not independently verified."
+  },
+  {
+    "id": "photo-long-sen-yuan-2",
+    "path": "slides/chengdu/images/Photo_long_sen_yuan_2.webp",
+    "kind": "photo",
+    "subject": "Yuanyangguo style Szechuan fondue in Chengdu, Sichuan, 2019 - 鸳鸯锅 known as \"mandarin ducks\". It is characterized by two flavors of broth, one spicy, one mild, with a separator in the middle.",
+    "meaningful": true,
+    "creator": "Breaknet2025",
+    "attribution": "Breaknet2025",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chengdu_Hot_Pot_Yuanyangguo_style_2019.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Chengdu_Hot_Pot_Yuanyangguo_style_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Chengdu Hot Pot Yuanyangguo style 2019.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sichuan+hot+pot&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2019-01-17 20:37:33",
+    "sha256": "1aa03eb21f237ab44e0abca061968498905936e5f567dcfb1b69f032d44c48c3",
+    "original_sha256": "08d932d797cd894abe9cc3f3db650abc784bdc1810d62a47243a0968dd95cdea",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      56,
+      64
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างหม้อไฟสองน้ำซุป ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "鸳鸯火锅示例，非本店鳝丝锅或菜品实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างหม้อไฟสองน้ำซุป ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "鸳鸯火锅示例，非本店鳝丝锅或菜品实拍。"
+    },
+    "alt": {
+      "th": "หม้อไฟแบ่งน้ำซุปใสใส่เห็ดกับน้ำซุปพริกแดง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "火锅分为带蘑菇的清汤和红辣汤两侧；非本店菜品实拍。"
+    },
+    "review_note": "Accept as a broad hotpot example only. Focus on the divider and both broths, below the diner's hands. It does not depict the signature shredded-eel pot, lettuce stems or pork cracklings; clear broth is not verified vegetarian. Other-venue branding is visible."
+  },
+  {
+    "id": "photo-jincheng-yinxiang-1",
+    "path": "slides/chengdu/images/Photo_jincheng_yinxiang_1.webp",
+    "kind": "photo",
+    "subject": "Only the middle part is not spicy.",
+    "meaningful": true,
+    "creator": "N509FZ",
+    "attribution": "N509FZ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Concentric_hot_pot_in_Chongqing_(20180217165607).jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Concentric_hot_pot_in_Chongqing_%2820180217165607%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Concentric hot pot in Chongqing (20180217165607).jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chongqing+hot+pot&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1200,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2018-02-17 16:56:07",
+    "sha256": "e8c852882596ba7f9a4f20ca2d1177b9aeb4053df9d3cc3b6d95e99f09dadec4",
+    "original_sha256": "95d6fe16a5c7f899931334a52759d4d26b7bc068bab72b82c48b83c91fb3e696",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      44,
+      53
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างหม้อไฟพริกแดง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "红汤火锅示例，非本店菜品实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างหม้อไฟพริกแดง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "红汤火锅示例，非本店菜品实拍。"
+    },
+    "alt": {
+      "th": "หม้อไฟน้ำซุปแดงมีพริกและฮวาเจียว ล้อมหม้อซุปเล็กตรงกลาง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "红汤火锅中可见辣椒、花椒，中央另有小汤锅；非本店菜品实拍。"
+    },
+    "review_note": "Steam and visible chilies make this stronger than candidate 2. The supplied record identifies Chongqing. It illustrates red hotpot, not the restaurant's verified beef-tallow recipe, goose intestines or exact vessel. Neither broth is verified vegetarian."
+  },
+  {
+    "id": "photo-ov-trotter-3",
+    "path": "slides/chengdu/images/Photo_ov_trotter_3.webp",
+    "kind": "photo",
+    "subject": "CongeeRoyal Pig's Trotter Noodles",
+    "meaningful": true,
+    "creator": "snowpea&bokchoi",
+    "attribution": "snowpea&bokchoi",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://www.flickr.com/photos/28531775@N06/4385258982",
+    "original_url": "https://live.staticflickr.com/4070/4385258982_8aa65e1a0d_b.jpg",
+    "source_title": "CongeeRoyal Pig's Trotter Noodles",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=Chinese+pork+trotter+soup&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 679,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "59cba8ae1a0dd57ae779c9788e5a787d35a8b49c14e06169d28a96d635552dfc",
+    "original_sha256": "8a4506fa27bc8ab029a5147fdcf3c112c142152cf39c40524df9fdeccd1c44f2",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "ingredient_context",
+    "illustrative": true,
+    "focal_point": [
+      51,
+      44
+    ],
+    "caption": {
+      "th": "ภาพประกอบขาหมูในน้ำซุป ไม่ใช่ซุปขาหมูของร้าน Hu Er Ge และไม่ใช่ภาพยืนยันสูตรของร้าน",
+      "zh-Hans": "猪蹄配汤汁的食材示意图，并非 Hu Er Ge 的蹄花汤，也不代表该店配方。"
+    },
+    "disclosure": {
+      "th": "ภาพประกอบขาหมูในน้ำซุป ไม่ใช่ซุปขาหมูของร้าน Hu Er Ge และไม่ใช่ภาพยืนยันสูตรของร้าน",
+      "zh-Hans": "猪蹄配汤汁的食材示意图，并非 Hu Er Ge 的蹄花汤，也不代表该店配方。"
+    },
+    "alt": {
+      "th": "ขาหมูชิ้นใหญ่ในน้ำซุปสีน้ำตาล โรยต้นหอมและมีผักใบเขียวในชามสีขาว",
+      "zh-Hans": "白碗中有大块猪蹄、褐色汤汁、葱花和绿叶菜。"
+    },
+    "review_note": "Visible skin-on trotter pieces and broth agree with the retained title CongeeRoyal Pig's Trotter Noodles. Bright close framing is stronger than candidates 1–2. Accepted only as pork-trotter ingredient context, without asserting Hu Er Ge provenance or its soup recipe. Catalog-reported license: CC BY 2.0; ownership not independently verified."
+  },
+  {
+    "id": "photo-ov-shrimp-1",
+    "path": "slides/chengdu/images/Photo_ov_shrimp_1.webp",
+    "kind": "photo",
+    "subject": "Kung Pao Shrimp Skillet Meal",
+    "meaningful": true,
+    "creator": "trenttsd",
+    "attribution": "trenttsd",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://www.flickr.com/photos/84335369@N00/5636083400",
+    "original_url": "https://live.staticflickr.com/5105/5636083400_be83fc5c55_b.jpg",
+    "source_title": "Kung Pao Shrimp Skillet Meal",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=kung+pao+shrimp&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 768,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "29027a50643bde010a14505d400a945312d90c7dc1230910439c52b4145d2b38",
+    "original_sha256": "be866a92fc6c1d472b1e9d0f6d16fa3913352905194eabaab43989cb1592ec05",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "ingredient_context",
+    "illustrative": true,
+    "focal_point": [
+      58,
+      40
+    ],
+    "caption": {
+      "th": "ภาพประกอบกุ้งสุกกับเส้นและผัก ไม่ใช่กุ้งผัดกงเป่าของร้าน Nian Feng และไม่ใช่ภาพยืนยันสูตรของร้าน",
+      "zh-Hans": "熟虾配面条和蔬菜的食材示意图，并非 Nian Feng 的宫保虾，也不代表该店配方。"
+    },
+    "disclosure": {
+      "th": "ภาพประกอบกุ้งสุกกับเส้นและผัก ไม่ใช่กุ้งผัดกงเป่าของร้าน Nian Feng และไม่ใช่ภาพยืนยันสูตรของร้าน",
+      "zh-Hans": "熟虾配面条和蔬菜的食材示意图，并非 Nian Feng 的宫保虾，也不代表该店配方。"
+    },
+    "alt": {
+      "th": "กุ้งสุก เส้น และผักสีส้มในจานสีขาว มีส้อมวางข้างอาหาร",
+      "zh-Hans": "白盘中有熟虾、面条和橙色蔬菜，食物旁放着叉子。"
+    },
+    "review_note": "Several curled cooked shrimp are visibly identifiable among noodles and vegetables. Retained title is Kung Pao Shrimp Skillet Meal, but appearance does not establish Nian Feng's dish or recipe. Lighting is subdued; use as contextual illustration rather than a hero image. Catalog-reported license: CC BY 2.0; ownership not independently verified."
+  },
+  {
+    "id": "photo-wu-ji-guaiwei-1",
+    "path": "slides/chengdu/images/Photo_wu_ji_guaiwei_1.webp",
+    "kind": "photo",
+    "subject": "Dan-dan (dun-dun) noodles served at a Sichuan restaurant in Shanghai, China.",
+    "meaningful": true,
+    "creator": "Steven G. Johnson",
+    "attribution": "Steven G. Johnson",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dan-dan_noodles,_Shanghai.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Dan-dan_noodles%2C_Shanghai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Dan-dan noodles, Shanghai.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sichuan+noodles&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1197,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "de2195dcc6f9d6641ea2881f2bad7888e2965fffdb98df5b241be8c650476024",
+    "original_sha256": "335a671fd55b5c91a76f8e5ba95c720678d95cffc2b11c0d59d3185b291c171f",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      53,
+      56
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างบะหมี่ตันตันน้ำมันพริก ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "红油担担面示例，非本店怪味面实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างบะหมี่ตันตันน้ำมันพริก ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "红油担担面示例，非本店怪味面实拍。"
+    },
+    "alt": {
+      "th": "บะหมี่ในน้ำมันพริกแดง มีเครื่องสับสีน้ำตาลและต้นหอม ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "面条浸红油，配褐色碎料和葱花；非本店菜品实拍。"
+    },
+    "review_note": "Appetizing broad Sichuan noodle example. The record calls it dandan noodles in Shanghai, not guaiwei noodles. Do not identify the topping as beef or claim the restaurant's garlic, bamboo-shoot or seasoning recipe."
+  },
+  {
+    "id": "photo-rong-yuan-2",
+    "path": "slides/chengdu/images/Photo_rong_yuan_2.webp",
+    "kind": "photo",
+    "subject": "Boiled Fish with Sichuan Pickles",
+    "meaningful": true,
+    "creator": "Pauloleong2002",
+    "attribution": "Pauloleong2002",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E9%85%B8%E8%8F%9C%E9%AD%9A.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/%E9%85%B8%E8%8F%9C%E9%AD%9A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:酸菜魚.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sichuan+boiled+fish&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1080,
+    "height": 1800,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2018-05-06 15:00:55",
+    "sha256": "00545f9c5b7e1217284ff194f1bc74d66b230b6387db89655aadce435446691d",
+    "original_sha256": "e6290dfd857c8b4c8057dc990f5d8f5950de7337184f1a09b8c7f33e3b7f5bf2",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      54,
+      57
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างปลาแผ่นในน้ำมันพริก ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "辣汤鱼片示例，非本店辣桂鱼实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างปลาแผ่นในน้ำมันพริก ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "辣汤鱼片示例，非本店辣桂鱼实拍。"
+    },
+    "alt": {
+      "th": "ตะเกียบคีบปลาแผ่นเหนือชามปลาที่มีพริกแห้งและน้ำมัน ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "筷子夹起鱼片，下方鱼碗中可见干辣椒和油汤；非本店菜品实拍。"
+    },
+    "review_note": "Usable as a general spicy-fish example, with a natural portrait format. Focus on the lifted fish and surrounding chilies. The record identifies suancai fish; neither mandarin-fish species nor the signature chopped-chili and huoxiang preparation is established."
+  },
+  {
+    "id": "photo-xiyu-dumpling-2",
+    "path": "slides/chengdu/images/Photo_xiyu_dumpling_2.webp",
+    "kind": "photo",
+    "subject": "Pork Dumplings at Wo Hop",
+    "meaningful": true,
+    "creator": "Gatorfan252525",
+    "attribution": "Gatorfan252525",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pork_Dumplings_at_Wo_Hop.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Pork_Dumplings_at_Wo_Hop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Pork Dumplings at Wo Hop.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chinese+dumplings+plate&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "Taken on 11 July 2023",
+    "sha256": "cf1b329e126b800d0086ce5c233165ce0930d7b81c207ebf72e90fd8528e7f9f",
+    "original_sha256": "4e4f9bb05671220e8cb9fc993d542b7c4d8cc9f62bf534a316a573cb8f6f52f1",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      46,
+      49
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างเกี๊ยวหมู ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "猪肉饺子示例，非本店菜品实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างเกี๊ยวหมู ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "猪肉饺子示例，非本店菜品实拍。"
+    },
+    "alt": {
+      "th": "เกี๊ยวแป้งจีบราดซอสสีน้ำตาลบนจานลายแดง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "褶边饺子淋褐色酱汁，盛在红纹盘中；非本店菜品实拍。"
+    },
+    "review_note": "The record identifies pork dumplings from Wo Hop, giving a relevant meat-dumpling example. Mushroom filling, beef-celery filling, wrapper recipe and the listed five-piece portion are not established."
+  },
+  {
+    "id": "photo-tan-jia-2",
+    "path": "slides/chengdu/images/Photo_tan_jia_2.webp",
+    "kind": "photo",
+    "subject": "Tengjiao Pepper Bobo-Chicken",
+    "meaningful": true,
+    "creator": "Zheng Zhou",
+    "attribution": "Zheng Zhou",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tengjiao_Pepper_Bobo-Chicken.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Tengjiao_Pepper_Bobo-Chicken.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Tengjiao Pepper Bobo-Chicken.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Bobo+chicken&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2019-12-23 12:13:41",
+    "sha256": "ca7295c65d91e1f8bc18e6a795ae1c8518ec7e6aade7e355bf0705749505c507",
+    "original_sha256": "ed5eb878a8f53960dc57d1f668b69d79448078b3137387602cc3422288767d9d",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      52,
+      55
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างอาหารเสียบไม้钵钵鸡 ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "钵钵鸡串食示例，非本店菜品实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างอาหารเสียบไม้钵钵鸡 ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "钵钵鸡串食示例，非本店菜品实拍。"
+    },
+    "alt": {
+      "th": "ชามอาหารเสียบไม้กับผักในน้ำปรุง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "碗中竹签串食与蔬菜浸在调味汁中；非本店菜品实拍。"
+    },
+    "review_note": "Two genuinely useful preparations: candidate 2 is recorded as tengjiao bobo chicken and shows fresh peppers; candidate 1 shows red-oil skewers with sesame. Vegetables and offal-like pieces are visible, but individual animal species and chicken pieces cannot all be confirmed. Neither image establishes vegetarian suitability."
+  },
+  {
+    "id": "photo-tan-jia-1",
+    "path": "slides/chengdu/images/Photo_tan_jia_1.webp",
+    "kind": "photo",
+    "subject": "Yepopo Bobo Chicken",
+    "meaningful": true,
+    "creator": "Roci xu",
+    "attribution": "Roci xu",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Yepopo_Bobo_Chicken.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Yepopo_Bobo_Chicken.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Yepopo Bobo Chicken.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Bobo+chicken&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1250,
+    "height": 1276,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2022-08-17",
+    "sha256": "c17e7247341c56dc240c1d298b5a8574429498c6af408e2421f36346e22178f2",
+    "original_sha256": "e052b637fd02a1cdf6cd154b292a53474f8d0866ae1c1c133d9533ac44e35484",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      62,
+      44
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างอาหารเสียบไม้钵钵鸡 ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "钵钵鸡串食示例，非本店菜品实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างอาหารเสียบไม้钵钵鸡 ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "钵钵鸡串食示例，非本店菜品实拍。"
+    },
+    "alt": {
+      "th": "ชามอาหารเสียบไม้กับผักในน้ำปรุง ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "碗中竹签串食与蔬菜浸在调味汁中；非本店菜品实拍。"
+    },
+    "review_note": "Two genuinely useful preparations: candidate 2 is recorded as tengjiao bobo chicken and shows fresh peppers; candidate 1 shows red-oil skewers with sesame. Vegetables and offal-like pieces are visible, but individual animal species and chicken pieces cannot all be confirmed. Neither image establishes vegetarian suitability."
+  },
+  {
+    "id": "photo-fu-rong-chuan-1",
+    "path": "slides/chengdu/images/Photo_fu_rong_chuan_1.webp",
+    "kind": "photo",
+    "subject": "A close-up of the Sichuan-style fish casserole. At Taste of Beijing, Frith Street. ( Wider view of same dish. )",
+    "meaningful": true,
+    "creator": "Ewan Munro from London, UK",
+    "attribution": "Ewan Munro from London, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Taste_of_Beijing,_Soho,_London_(4363225139).jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Taste_of_Beijing%2C_Soho%2C_London_%284363225139%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Taste of Beijing, Soho, London (4363225139).jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sichuan+shrimp&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1201,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2010-02-16 20:01",
+    "sha256": "bc14ef3934fd45d6bb548a50210f23679cda030c4cf48e30560d4240d8ba858e",
+    "original_sha256": "c52cba8144618159ebbedb266924df5dcad8d5e8558a94244705c8605a58e405",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      42,
+      53
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างหม้อปลากับกุ้งแบบเสฉวน ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "川味鱼虾锅示例，非本店炝锅河虾实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างหม้อปลากับกุ้งแบบเสฉวน ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "川味鱼虾锅示例，非本店炝锅河虾实拍。"
+    },
+    "alt": {
+      "th": "กุ้งทั้งตัวกับผัก รากบัวและงาในกระทะซอสสีเข้ม ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "整虾、蔬菜、藕片和芝麻盛在深色酱汁锅中；非本店菜品实拍。"
+    },
+    "review_note": "Accept only as a broader Sichuan seafood example. The prominent whole prawn supplies a useful focal subject. The record identifies a London fish casserole containing prawns, not the listed crisp river-shrimp dish. Qionghai origin, shrimp species and the restaurant's preparation are unconfirmed."
+  },
+  {
+    "id": "photo-yang-bo-ying-2",
+    "path": "slides/chengdu/images/Photo_yang_bo_ying_2.webp",
+    "kind": "photo",
+    "subject": "Dan-dan noodles served in Chengdu, in the Sichuan province of China. I suppose this is the original ??? Dandan Noodles, unlike the others I have had: - ??? Dan Dan Noodles - ??? Noodle Kingdom Russell St - Dandan Noodles - Basement, Ginza Palmy",
+    "meaningful": true,
+    "creator": "Alpha from Melbourne, Australia",
+    "attribution": "Alpha from Melbourne, Australia",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dandannoodles.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Dandannoodles.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Dandannoodles.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Dan+dan+noodles&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2007-09-02 12:49",
+    "sha256": "59daa5e4395281331af5e72e633054fac7a658caf1dbf90cc8d8531fab8555cf",
+    "original_sha256": "906f4f7c0b7d525170597c70b870259f46077b37dee2977ae66ce311648cf20c",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "dish_example",
+    "illustrative": true,
+    "focal_point": [
+      54,
+      54
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างบะหมี่ตันตันหน้าเนื้อบด ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "肉末担担面示例，非本店素椒面实拍。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างบะหมี่ตันตันหน้าเนื้อบด ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "肉末担担面示例，非本店素椒面实拍。"
+    },
+    "alt": {
+      "th": "บะหมี่เส้นสีอ่อนโปะเนื้อบดสีน้ำตาลในชามขาว ไม่ใช่จานจากร้านนี้",
+      "zh-Hans": "白碗中浅色面条上铺有褐色肉末；非本店菜品实拍。"
+    },
+    "review_note": "The dry noodle presentation and minced topping are closer to the described sujiao noodles than candidate 1. The record identifies Chengdu dandan noodles. Meat species, sesame paste and exact seasoning remain unconfirmed; 素椒 does not mean vegetarian."
+  },
+  {
+    "id": "photo-ov-panda-toy-2",
+    "path": "slides/chengdu/images/Photo_ov_panda_toy_2.webp",
+    "kind": "photo",
+    "subject": "Panda Plush",
+    "meaningful": true,
+    "creator": "Sam Howzit",
+    "attribution": "Sam Howzit",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://www.flickr.com/photos/12508217@N08/51832149402",
+    "original_url": "https://live.staticflickr.com/65535/51832149402_4b43f8c208_b.jpg",
+    "source_title": "Panda Plush",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=panda+plush&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 683,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "721eecc0a7362316602429c1cec8810f797581818fa9e6cf0945fbbe8b08e2e8",
+    "original_sha256": "7c5e97bfcb0dc7a34bad12b21d4def005f23cd16d157985b2240ca0d385b0093",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      51,
+      47
+    ],
+    "caption": {
+      "th": "ตัวอย่างตุ๊กตาแพนด้า ไม่ใช่รุ่นของฝากเฉิงตูที่แนะนำ และไม่ยืนยันแหล่งผลิตหรือสต็อก",
+      "zh-Hans": "熊猫毛绒玩具示例；并非所推荐的成都纪念品款式，不说明产地或库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างตุ๊กตาแพนด้า ไม่ใช่รุ่นของฝากเฉิงตูที่แนะนำ และไม่ยืนยันแหล่งผลิตหรือสต็อก",
+      "zh-Hans": "熊猫毛绒玩具示例；并非所推荐的成都纪念品款式，不说明产地或库存。"
+    },
+    "alt": {
+      "th": "ตุ๊กตาแพนด้าขาวดำสองตัวตากลมขอบสีฟ้าวางคู่กันบนชั้น โดยมีตุ๊กตาแพนด้าบางส่วนอยู่ด้านข้าง",
+      "zh-Hans": "两只黑白熊猫毛绒玩具并排摆在架上，圆眼带蓝色亮边，旁边还露出其他熊猫玩具的一部分。"
+    },
+    "review_note": "Two physical panda plush toys dominate the photograph, with visible fur and seams. No unicorn competes for attention. Chengdu origin, exact SKU, official affiliation and stock are unverified. Catalog reports CC BY 2.0; underlying ownership is not independently certified."
+  },
+  {
+    "id": "photo-sichuan-face-changing-doll-2",
+    "path": "slides/chengdu/images/Photo_sichuan_face_changing_doll_2.webp",
+    "kind": "photo",
+    "subject": "变脸",
+    "meaningful": true,
+    "creator": "行人三",
+    "attribution": "行人三",
+    "license": "CC BY 2.5 cn",
+    "license_url": "https://creativecommons.org/licenses/by/2.5/cn/deed.en",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bian_lian.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Bian_lian.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Bian lian.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Sichuan+face+changing&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 772,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "ab2fa37f4f7da3704bb02deb2f2a4069a0e61c7d71270b824b4c4622a4c74e18",
+    "original_sha256": "7d522be899a4bc7a4f31c45c4aa088972178bcc0ea14338759f6a1d7549973bd",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "cultural_context",
+    "illustrative": true,
+    "focal_point": [
+      51,
+      39
+    ],
+    "caption": {
+      "th": "ภาพบริบทการแสดงงิ้วเปลี่ยนหน้ากาก ไม่ใช่ตุ๊กตาหรือการยืนยันสินค้าที่มีขาย",
+      "zh-Hans": "川剧变脸表演背景图，非人偶实物，不代表商品在售或库存。"
+    },
+    "disclosure": {
+      "th": "ภาพบริบทการแสดงงิ้วเปลี่ยนหน้ากาก ไม่ใช่ตุ๊กตาหรือการยืนยันสินค้าที่มีขาย",
+      "zh-Hans": "川剧变脸表演背景图，非人偶实物，不代表商品在售或库存。"
+    },
+    "alt": {
+      "th": "นักแสดงสวมหน้ากากสีแดงและชุดสีฟ้าแดง ถือพัดกางและยกแขนบนเวที",
+      "zh-Hans": "舞台上的演员戴红色脸谱、穿蓝红戏服，手持展开的折扇并举起另一只手。"
+    },
+    "review_note": "Photographed performance with a recognizable mask and folding fan. Cultural context only; no doll, toy mechanism, seller or current venue offering is shown."
+  },
+  {
+    "id": "photo-ov-embroidery-2",
+    "path": "slides/chengdu/images/Photo_ov_embroidery_2.webp",
+    "kind": "photo",
+    "subject": "Qiang Embroidery Apron",
+    "meaningful": true,
+    "creator": "inkston",
+    "attribution": "inkston",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source_url": "https://www.flickr.com/photos/145025330@N04/29718222615",
+    "original_url": "https://live.staticflickr.com/8081/29718222615_f217af8249_b.jpg",
+    "source_title": "Qiang Embroidery Apron",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=Shu+embroidery&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 1024,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "01c1b3bc6958ec1e26e7e5a67dfed450b6675fcfd95686111ceb2bd18dd9cd72",
+    "original_sha256": "71c25e227e83324ea605425a3b5b2476efecb4fcbc5af48080a82daec02cc89a",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "cultural_context",
+    "illustrative": true,
+    "focal_point": [
+      50,
+      50
+    ],
+    "caption": {
+      "th": "ตัวอย่างผ้าปักจีนเพื่อบริบทวัฒนธรรม ไม่ใช่ผ้าพันคอที่แนะนำ ไม่รับรองว่าเป็นงานปักสู่ (蜀绣) และไม่ยืนยันแหล่งผลิตหรือสต็อก",
+      "zh-Hans": "中国刺绣文化背景示例；并非所推荐的围巾，不认证为蜀绣，也不说明产地或库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างผ้าปักจีนเพื่อบริบทวัฒนธรรม ไม่ใช่ผ้าพันคอที่แนะนำ ไม่รับรองว่าเป็นงานปักสู่ (蜀绣) และไม่ยืนยันแหล่งผลิตหรือสต็อก",
+      "zh-Hans": "中国刺绣文化背景示例；并非所推荐的围巾，不认证为蜀绣，也不说明产地或库存。"
+    },
+    "alt": {
+      "th": "ผ้าสีดำปักลายเรขาคณิต นก และดอกไม้ด้วยด้ายสีสด มีรอยพับและขอบผ้ามองเห็นได้",
+      "zh-Hans": "黑色织物上以鲜艳丝线绣有几何、鸟和花卉图案，可见布料褶皱与边缘。"
+    },
+    "review_note": "Visible stitches, folds and physical edges support a photograph of embroidered fabric. Catalog identifies a Qiang embroidery apron, not a Shu scarf. Qiang and Shu identities must not be conflated; workshop authenticity is unverified. Catalog reports CC BY-SA 2.0; underlying ownership is not independently certified."
+  },
+  {
+    "id": "photo-chinese-folding-fan-1",
+    "path": "slides/chengdu/images/Photo_chinese_folding_fan_1.webp",
+    "kind": "photo",
+    "subject": "File:Chinese - Folding Fan with Painting and Calligraphy - 138-2011.1 - Saint Louis Art Museum.jpg",
+    "meaningful": true,
+    "creator": "anonymous",
+    "attribution": "anonymous",
+    "license": "Public domain",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chinese_-_Folding_Fan_with_Painting_and_Calligraphy_-_138-2011.1_-_Saint_Louis_Art_Museum.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Chinese_-_Folding_Fan_with_Painting_and_Calligraphy_-_138-2011.1_-_Saint_Louis_Art_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Chinese - Folding Fan with Painting and Calligraphy - 138-2011.1 - Saint Louis Art Museum.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chinese+folding+fan&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1373,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "1869",
+    "sha256": "ee621d240571f0775433d456175fc9cfad37bff9b222d45ad211dd0aae994d58",
+    "original_sha256": "8a4e8fdff72b3e2601fffb78b082db32f935d74070ca53f7427f4c3e79cc84a2",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      50,
+      53
+    ],
+    "caption": {
+      "th": "ตัวอย่างพัดจีนเก่าในพิพิธภัณฑ์ ไม่ใช่รุ่นสินค้าที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "博物馆历史中式折扇示例，非所荐商品款式，不代表当前库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างพัดจีนเก่าในพิพิธภัณฑ์ ไม่ใช่รุ่นสินค้าที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "博物馆历史中式折扇示例，非所荐商品款式，不代表当前库存。"
+    },
+    "alt": {
+      "th": "พัดจีนกางออก มีภาพวาดสีบนหน้าพัดและซี่พัดที่มองเห็นได้",
+      "zh-Hans": "展开的中式折扇，扇面带彩绘，可见扇骨。"
+    },
+    "review_note": "Both photograph physical fans with visible ribs and depth, rather than flat painting reproductions. Candidate 1 shows a complete fan against grey; candidate 2 shows a detail of an eighteenth-century museum fan. Historical product-type examples only; materials, workshop authenticity and current merchandise are not established."
+  },
+  {
+    "id": "photo-chinese-folding-fan-2",
+    "path": "slides/chengdu/images/Photo_chinese_folding_fan_2.webp",
+    "kind": "photo",
+    "subject": "\"Chinese folding fan\" (18th century) - Museum of Villa Pignatelli in Naples",
+    "meaningful": true,
+    "creator": "Carlo Raso from Naples, Italy",
+    "attribution": "Carlo Raso from Naples, Italy",
+    "license": "Public domain",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%22Chinese_folding_fan%22_(18th_century)_-_Museum_of_Villa_Pignatelli_in_Naples_(45078134631).jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/%22Chinese_folding_fan%22_%2818th_century%29_-_Museum_of_Villa_Pignatelli_in_Naples_%2845078134631%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:\"Chinese folding fan\" (18th century) - Museum of Villa Pignatelli in Naples (45078134631).jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chinese+folding+fan&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2018-10-03 11:29",
+    "sha256": "2b89e6800bbb97042074798438f60a8d9e384e630fbc8a0e8bfd2c43298ac55a",
+    "original_sha256": "3c854b0087acb5873be8759fa1b8bb2e98c74323527514fe2be8f703b57a742d",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      55,
+      48
+    ],
+    "caption": {
+      "th": "ตัวอย่างพัดจีนเก่าในพิพิธภัณฑ์ ไม่ใช่รุ่นสินค้าที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "博物馆历史中式折扇示例，非所荐商品款式，不代表当前库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างพัดจีนเก่าในพิพิธภัณฑ์ ไม่ใช่รุ่นสินค้าที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "博物馆历史中式折扇示例，非所荐商品款式，不代表当前库存。"
+    },
+    "alt": {
+      "th": "พัดจีนกางออก มีภาพวาดสีบนหน้าพัดและซี่พัดที่มองเห็นได้",
+      "zh-Hans": "展开的中式折扇，扇面带彩绘，可见扇骨。"
+    },
+    "review_note": "Both photograph physical fans with visible ribs and depth, rather than flat painting reproductions. Candidate 1 shows a complete fan against grey; candidate 2 shows a detail of an eighteenth-century museum fan. Historical product-type examples only; materials, workshop authenticity and current merchandise are not established."
+  },
+  {
+    "id": "photo-seal-final-2",
+    "path": "slides/chengdu/images/Photo_seal_final_2.webp",
+    "kind": "photo",
+    "subject": "HK Admiralty zh:香港公園 Hong Kong Park zh:香港茶具文物館 Museum of Tea ware 羅桂祥茶藝館 Dr SK Lo Gallery exhibition Chinese seal art 圖章紅印 藝術 in July 2022",
+    "meaningful": true,
+    "creator": "NAU JAG 202 HWOAM",
+    "attribution": "NAU JAG 202 HWOAM",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:HK_Admiralty_%E9%A6%99%E6%B8%AF%E5%85%AC%E5%9C%92_Hong_Kong_Park_%E9%A6%99%E6%B8%AF%E8%8C%B6%E5%85%B7%E6%96%87%E7%89%A9%E9%A4%A8_Museum_of_Tea_ware_%E7%BE%85%E6%A1%82%E7%A5%A5%E8%8C%B6%E8%97%9D%E9%A4%A8_Dr_SK_Lo_Gallery_exhibition_Chinese_seal_art_%E5%9C%96%E7%AB%A0%E7%B4%85%E5%8D%B0_%E8%97%9D%E8%A1%93_red_chop_print_July_2022_Px3_058.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/HK_Admiralty_%E9%A6%99%E6%B8%AF%E5%85%AC%E5%9C%92_Hong_Kong_Park_%E9%A6%99%E6%B8%AF%E8%8C%B6%E5%85%B7%E6%96%87%E7%89%A9%E9%A4%A8_Museum_of_Tea_ware_%E7%BE%85%E6%A1%82%E7%A5%A5%E8%8C%B6%E8%97%9D%E9%A4%A8_Dr_SK_Lo_Gallery_exhibition_Chinese_seal_art_%E5%9C%96%E7%AB%A0%E7%B4%85%E5%8D%B0_%E8%97%9D%E8%A1%93_red_chop_print_July_2022_Px3_058.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:HK Admiralty 香港公園 Hong Kong Park 香港茶具文物館 Museum of Tea ware 羅桂祥茶藝館 Dr SK Lo Gallery exhibition Chinese seal art 圖章紅印 藝術 red chop print July 2022 Px3 058.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=intitle%3A%22Chinese+seal%22+-intitle%3Ascript&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2022-07-04 14:06:44",
+    "sha256": "67d37c9362ee89e46a5045301ac227edbb28955e20aed80730c31ada2ac679bd",
+    "original_sha256": "7e9fd1191cf574a2e5072da3a802e3c2e43b2b88bee26bfc5280d380475d6d3f",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "cultural_context",
+    "illustrative": true,
+    "focal_point": [
+      68,
+      47
+    ],
+    "caption": {
+      "th": "ภาพถ่ายแผงนิทรรศการงานตราประทับจีนในฮ่องกง เพื่อบริบทวัฒนธรรม ไม่ใช่ตราชื่อสั่งทำหรือสต็อกร้านปัจจุบัน",
+      "zh-Hans": "香港中国印章艺术展板的实拍，供文化背景参考；并非店铺定制姓名印章或当前库存。"
+    },
+    "disclosure": {
+      "th": "ภาพถ่ายแผงนิทรรศการงานตราประทับจีนในฮ่องกง เพื่อบริบทวัฒนธรรม ไม่ใช่ตราชื่อสั่งทำหรือสต็อกร้านปัจจุบัน",
+      "zh-Hans": "香港中国印章艺术展板的实拍，供文化背景参考；并非店铺定制姓名印章或当前库存。"
+    },
+    "alt": {
+      "th": "ภาพหินทำตราประทับและมีดแกะสลักบนแผงนิทรรศการ พร้อมคำอธิบายจีนและอังกฤษ",
+      "zh-Hans": "展板上的印石与刻刀图像，配有中英文说明。"
+    },
+    "review_note": "Metadata documents a July 2022 exhibition at Hong Kong's Museum of Tea Ware, Dr SK Lo Gallery. Visible panel edge, perspective and bilingual labels establish photographed exhibition context. Accept as a photograph of an exhibit panel; do not describe its depicted stones/tools as verified separate physical objects or as seal impressions. Metadata credits NAU JAG 202 HWOAM, CC BY-SA 4.0."
+  },
+  {
+    "id": "photo-museum-collection-magnet-1",
+    "path": "slides/chengdu/images/Photo_museum_collection_magnet_1.webp",
+    "kind": "photo",
+    "subject": "Mervat Salman's collection",
+    "meaningful": true,
+    "creator": "Mervat Salman",
+    "attribution": "Mervat Salman",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fridge_magnets_board.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Fridge_magnets_board.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Fridge magnets board.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=souvenir+fridge+magnets&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2015-06-20 22:45:21",
+    "sha256": "9b03d3313263940a27ed93805936ebfc2e138dbf9e82da62c6e64ab025657da1",
+    "original_sha256": "31bff766ba69745b29af9a6486cffe30c7898eab00a324fb2fb0bf8b791d8302",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      50,
+      50
+    ],
+    "caption": {
+      "th": "ตัวอย่างแม่เหล็กของที่ระลึกทั่วไป ไม่ใช่คอลเลกชันพิพิธภัณฑ์ที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "普通纪念冰箱贴类型示例，非所荐博物馆系列，不代表当前库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างแม่เหล็กของที่ระลึกทั่วไป ไม่ใช่คอลเลกชันพิพิธภัณฑ์ที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "普通纪念冰箱贴类型示例，非所荐博物馆系列，不代表当前库存。"
+    },
+    "alt": {
+      "th": "แม่เหล็กของที่ระลึกหลายชิ้นลายบุคคลและสถานที่เรียงบนแผงสีอ่อน",
+      "zh-Hans": "浅色展板上排列着多枚人物与地标图案的纪念冰箱贴。"
+    },
+    "review_note": "Candidate 1 is a colorful international souvenir-magnet collection and is preferred. Candidate 2 shows Mother Teresa, Albania-map and Gjirokastra magnets; acceptable only as a generic magnet-type example with the explicit caption. Neither establishes Chinese museum design, official merchandise, licensing or stock."
+  },
+  {
+    "id": "photo-museum-collection-magnet-2",
+    "path": "slides/chengdu/images/Photo_museum_collection_magnet_2.webp",
+    "kind": "photo",
+    "subject": "File:Mother Teresa Fridge Magnets - Gjirokastra - Albania (41509408375).jpg",
+    "meaningful": true,
+    "creator": "Adam Jones from Kelowna, BC, Canada",
+    "attribution": "Adam Jones from Kelowna, BC, Canada",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mother_Teresa_Fridge_Magnets_-_Gjirokastra_-_Albania_(41509408375).jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Mother_Teresa_Fridge_Magnets_-_Gjirokastra_-_Albania_%2841509408375%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Mother Teresa Fridge Magnets - Gjirokastra - Albania (41509408375).jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=souvenir+fridge+magnets&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1386,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "Taken on 28 May 2018, 11:18",
+    "sha256": "0b0cec310a3a9fd11e865fb0ef8236ad62d2f1eccb9ed58ea4caa34ce31f1459",
+    "original_sha256": "ce8c578d244fac18ec0e9078beab0fd6a6ade6438e70e516f7a5e81a81d3400e",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      51,
+      54
+    ],
+    "caption": {
+      "th": "ตัวอย่างแม่เหล็กของที่ระลึกทั่วไป ไม่ใช่คอลเลกชันพิพิธภัณฑ์ที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "普通纪念冰箱贴类型示例，非所荐博物馆系列，不代表当前库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างแม่เหล็กของที่ระลึกทั่วไป ไม่ใช่คอลเลกชันพิพิธภัณฑ์ที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "普通纪念冰箱贴类型示例，非所荐博物馆系列，不代表当前库存。"
+    },
+    "alt": {
+      "th": "แม่เหล็กของที่ระลึกหลายชิ้นลายบุคคลและสถานที่เรียงบนแผงสีอ่อน",
+      "zh-Hans": "浅色展板上排列着多枚人物与地标图案的纪念冰箱贴。"
+    },
+    "review_note": "Candidate 1 is a colorful international souvenir-magnet collection and is preferred. Candidate 2 shows Mother Teresa, Albania-map and Gjirokastra magnets; acceptable only as a generic magnet-type example with the explicit caption. Neither establishes Chinese museum design, official merchandise, licensing or stock."
+  },
+  {
+    "id": "photo-museum-metal-bookmark-1",
+    "path": "slides/chengdu/images/Photo_museum_metal_bookmark_1.webp",
+    "kind": "photo",
+    "subject": "Metal Bookmark",
+    "meaningful": true,
+    "creator": "Mervat Salman",
+    "attribution": "Mervat Salman",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Metal_Bookmark.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Metal_Bookmark.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Metal Bookmark.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=metal+bookmark&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1800,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2016-12-12 10:45:01",
+    "sha256": "918663e732d87b1cc0e881f6da65621ba26e7fc505e272f4624c4c88bb7c3022",
+    "original_sha256": "63c0c1796f46994cff73939a2a17368eba04417765df61f6c32850b350d6fd5d",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      53,
+      50
+    ],
+    "caption": {
+      "th": "ตัวอย่างที่คั่นหนังสือโลหะ ไม่ใช่รุ่นของพิพิธภัณฑ์ที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "金属书签类型示例，非所荐博物馆款式，不代表当前库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างที่คั่นหนังสือโลหะ ไม่ใช่รุ่นของพิพิธภัณฑ์ที่แนะนำหรือการยืนยันสต็อก",
+      "zh-Hans": "金属书签类型示例，非所荐博物馆款式，不代表当前库存。"
+    },
+    "alt": {
+      "th": "ที่คั่นหนังสือโลหะสีเงินทรงโค้ง แต่งลูกปัดสีม่วงอ่อนและพู่สีชมพูบนพื้นมืด",
+      "zh-Hans": "深色背景上的银色弯钩金属书签，饰有浅紫色珠子和粉色流苏。"
+    },
+    "review_note": "The photograph actually shows a physical metal bookmark. Keep the hooked blade and tassel recognizable. No museum attribution, exact metal alloy or current stock established."
+  },
+  {
+    "id": "photo-ov-postcard-1",
+    "path": "slides/chengdu/images/Photo_ov_postcard_1.webp",
+    "kind": "photo",
+    "subject": "Couldn't understand a word of this so we got our hotel peeps to send our postcards :D",
+    "meaningful": true,
+    "creator": "goosmurf",
+    "attribution": "goosmurf",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://www.flickr.com/photos/19349404@N00/23472087063",
+    "original_url": "https://live.staticflickr.com/5636/23472087063_d2c8e538b2_b.jpg",
+    "source_title": "Couldn't understand a word of this so we got our hotel peeps to send our postcards :D",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=Chengdu+postcards&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 683,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "919258c16ef2cf81093f4cfe7c0d603334570c277c4e056104cea5071b5a0b38",
+    "original_sha256": "623aaddaa4e4d1936cdbfa48e1697f09c7263d21923120efde42579d7f152938",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "cultural_context",
+    "illustrative": true,
+    "focal_point": [
+      50,
+      49
+    ],
+    "caption": {
+      "th": "ภาพป้ายขั้นตอนบริการไปรษณีย์ลายแพนด้าเพื่อประกอบบริบท ไม่ใช่ภาพชุดโปสการ์ดที่แนะนำหรือหลักฐานว่ามีสินค้าในสต็อก",
+      "zh-Hans": "熊猫图案邮政服务流程告示的实景照片；仅供背景参考，并非所推荐的明信片套装，也不表示有货。"
+    },
+    "disclosure": {
+      "th": "ภาพป้ายขั้นตอนบริการไปรษณีย์ลายแพนด้าเพื่อประกอบบริบท ไม่ใช่ภาพชุดโปสการ์ดที่แนะนำหรือหลักฐานว่ามีสินค้าในสต็อก",
+      "zh-Hans": "熊猫图案邮政服务流程告示的实景照片；仅供背景参考，并非所推荐的明信片套装，也不表示有货。"
+    },
+    "alt": {
+      "th": "ป้ายภาษาจีนหัวข้อ 时光邮件 พร้อมภาพแพนด้าหกช่อง ติดอยู่หลังกระจกที่มีเงาสะท้อน",
+      "zh-Hans": "玻璃后贴着题为“时光邮件”的中文告示，上有六格熊猫示意图，玻璃上可见反光。"
+    },
+    "review_note": "Actual photograph of an installed postal-service notice behind reflective glass. Visible posting instructions establish postal context; the drawings belong to the physical notice. No physical postcard set, exact branch, merchandise model or stock is established. Catalog reports CC BY 2.0; underlying ownership is not independently certified."
+  },
+  {
+    "id": "photo-hero-fountain-pen-1",
+    "path": "slides/chengdu/images/Photo_hero_fountain_pen_1.webp",
+    "kind": "photo",
+    "subject": "It is a green Hero 329 fountain pen, which I bought in 2002.",
+    "meaningful": true,
+    "creator": "Vee Satayamas",
+    "attribution": "Vee Satayamas",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_green_Hero_329_Fountain_Pen.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/A_green_Hero_329_Fountain_Pen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:A green Hero 329 Fountain Pen.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hero+fountain+pen&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1200,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2022-08-19 18:06:33",
+    "sha256": "d70d5a995b6e2c22435c600ceeaf10c26c1811b905398303b6e212f8c22fb0c6",
+    "original_sha256": "56d04375e3c9133edf82e6b10b5a81d54957223777ba80212f20cb4f108dde2d",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      57,
+      54
+    ],
+    "caption": {
+      "th": "ตัวอย่างปากกา Hero คนละรุ่นกับที่กล่าวถึง ไม่ยืนยันรุ่นที่ขายหรือสต็อกปัจจุบัน",
+      "zh-Hans": "英雄钢笔类型示例，并非文中所举型号，不代表当前在售款或库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างปากกา Hero คนละรุ่นกับที่กล่าวถึง ไม่ยืนยันรุ่นที่ขายหรือสต็อกปัจจุบัน",
+      "zh-Hans": "英雄钢笔类型示例，并非文中所举型号，不代表当前在售款或库存。"
+    },
+    "alt": {
+      "th": "ปากกาหมึกซึมเปิดฝา มีส่วนจับสีเข้มและปลอกโลหะวางข้างกันบนพื้นสีอ่อน",
+      "zh-Hans": "浅色表面上放着一支打开笔帽、握位颜色较深的钢笔，金属笔帽置于旁边。"
+    },
+    "review_note": "Metadata identifies candidate 1 as Hero 329 and candidate 2 as Hero 100; neither matches the article's 616/7032 examples. Both clearly photograph physical fountain pens and separate caps. No current stock, writing quality, authenticity certification or China-only availability established."
+  },
+  {
+    "id": "photo-hero-fountain-pen-2",
+    "path": "slides/chengdu/images/Photo_hero_fountain_pen_2.webp",
+    "kind": "photo",
+    "subject": "Hero 100 pen (Parker 51 copycat)",
+    "meaningful": true,
+    "creator": "Stevenliuyi",
+    "attribution": "Stevenliuyi",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hero_100_pen.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Hero_100_pen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Hero 100 pen.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Hero+fountain+pen&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2012-10-15 05:38:05",
+    "sha256": "a77cbe492b1dd73172cad26fa5bb66e3d4af71ea0e52f788577086b8a74e0656",
+    "original_sha256": "5fc46e0573ac57901487a8c45b0c10d78d9e008d762aeb55cf86368d4d45c30a",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      55,
+      58
+    ],
+    "caption": {
+      "th": "ตัวอย่างปากกา Hero คนละรุ่นกับที่กล่าวถึง ไม่ยืนยันรุ่นที่ขายหรือสต็อกปัจจุบัน",
+      "zh-Hans": "英雄钢笔类型示例，并非文中所举型号，不代表当前在售款或库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างปากกา Hero คนละรุ่นกับที่กล่าวถึง ไม่ยืนยันรุ่นที่ขายหรือสต็อกปัจจุบัน",
+      "zh-Hans": "英雄钢笔类型示例，并非文中所举型号，不代表当前在售款或库存。"
+    },
+    "alt": {
+      "th": "ปากกาหมึกซึมเปิดฝา มีส่วนจับสีเข้มและปลอกโลหะวางข้างกันบนพื้นสีอ่อน",
+      "zh-Hans": "浅色表面上放着一支打开笔帽、握位颜色较深的钢笔，金属笔帽置于旁边。"
+    },
+    "review_note": "Metadata identifies candidate 1 as Hero 329 and candidate 2 as Hero 100; neither matches the article's 616/7032 examples. Both clearly photograph physical fountain pens and separate caps. No current stock, writing quality, authenticity certification or China-only availability established."
+  },
+  {
+    "id": "photo-cup-final-1",
+    "path": "slides/chengdu/images/Photo_cup_final_1.webp",
+    "kind": "photo",
+    "subject": "Shou Mei, chinesischer, weißer Teestrauch-Tee, in Gaiwan-Schale",
+    "meaningful": true,
+    "creator": "Fritzober",
+    "attribution": "Fritzober",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shou_Mei_in_Gaiwan-Schale.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Shou_Mei_in_Gaiwan-Schale.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Shou Mei in Gaiwan-Schale.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=intitle%3AGaiwan&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1615,
+    "height": 1800,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2025-10-17 11:53:05",
+    "sha256": "1a7c8b413069d08a9630ff1328f48441fe0b2d7a011545059e06f0f6ffe4d627",
+    "original_sha256": "69dcf568230def66708a969c56703b14138116923a81d8eac6eb669a947e372a",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      50,
+      47
+    ],
+    "caption": {
+      "th": "ตัวอย่างถ้วยชาเซรามิกแบบไกหว่าน ไม่ใช่สินค้ารุ่นเฉพาะหรือการยืนยันสต็อกปัจจุบัน",
+      "zh-Hans": "陶瓷盖碗示例，并非指定商品，也不表示当前有货。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างถ้วยชาเซรามิกแบบไกหว่าน ไม่ใช่สินค้ารุ่นเฉพาะหรือการยืนยันสต็อกปัจจุบัน",
+      "zh-Hans": "陶瓷盖碗示例，并非指定商品，也不表示当前有货。"
+    },
+    "alt": {
+      "th": "ถ้วยชาเซรามิกใส่น้ำชาและใบชา วางบนจานรองบนโต๊ะไม้",
+      "zh-Hans": "木桌上的陶瓷茶碗与托碟，碗内有茶汤和茶叶。"
+    },
+    "review_note": "Both visibly show ceramic bowls, saucers and brewing tea; neither shows a lid. Metadata identifies Shou Mei in candidate 1 and Longjing in candidate 2. These are relevant gaiwan examples without implying Chengdu manufacture or shop availability. Metadata credits Fritzober and Difference engine respectively, CC BY-SA 4.0."
+  },
+  {
+    "id": "photo-cup-final-2",
+    "path": "slides/chengdu/images/Photo_cup_final_2.webp",
+    "kind": "photo",
+    "subject": "Pre-Qingming 2017 Longjing green tea, being steeped in a pale green gaiwan.",
+    "meaningful": true,
+    "creator": "Difference engine",
+    "attribution": "Difference engine",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Longjing_tea_steeping_in_gaiwan.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Longjing_tea_steeping_in_gaiwan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Longjing tea steeping in gaiwan.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=intitle%3AGaiwan&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1800,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2017-06-17 15:13:26",
+    "sha256": "8a6f9653631e30f5e751d40da0ec6bd1fb937d910db03600609506cd08ec1a29",
+    "original_sha256": "901dfa8b521f9b90c5c0b2e1fa73aef9f0c6363c2169eac963efdda37a0bfa42",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      50,
+      53
+    ],
+    "caption": {
+      "th": "ตัวอย่างถ้วยชาเซรามิกแบบไกหว่าน ไม่ใช่สินค้ารุ่นเฉพาะหรือการยืนยันสต็อกปัจจุบัน",
+      "zh-Hans": "陶瓷盖碗示例，并非指定商品，也不表示当前有货。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างถ้วยชาเซรามิกแบบไกหว่าน ไม่ใช่สินค้ารุ่นเฉพาะหรือการยืนยันสต็อกปัจจุบัน",
+      "zh-Hans": "陶瓷盖碗示例，并非指定商品，也不表示当前有货。"
+    },
+    "alt": {
+      "th": "ถ้วยชาเซรามิกใส่น้ำชาและใบชา วางบนจานรองบนโต๊ะไม้",
+      "zh-Hans": "木桌上的陶瓷茶碗与托碟，碗内有茶汤和茶叶。"
+    },
+    "review_note": "Both visibly show ceramic bowls, saucers and brewing tea; neither shows a lid. Metadata identifies Shou Mei in candidate 1 and Longjing in candidate 2. These are relevant gaiwan examples without implying Chengdu manufacture or shop availability. Metadata credits Fritzober and Difference engine respectively, CC BY-SA 4.0."
+  },
+  {
+    "id": "photo-custom-floral-name-calligraphy-2",
+    "path": "slides/chengdu/images/Photo_custom_floral_name_calligraphy_2.webp",
+    "kind": "photo",
+    "subject": "What is a Xuan Brush? Brushes in use at studio of Wang Hui Xuan brushes (宣笔 Xuān bǐ) are one of the most famous Chinese brush types used for both Calligraphy and Chinese painting. They are called Xuan because they are made in Xuan Cheng, the same area as Xuan paper, so naturally the two are ofte... bit.ly/2rrJT5b",
+    "meaningful": true,
+    "creator": "ink stone",
+    "attribution": "ink stone",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Xuan_Brushes_for_Chinese_Brush_painting_and_calligraphy.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Xuan_Brushes_for_Chinese_Brush_painting_and_calligraphy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Xuan Brushes for Chinese Brush painting and calligraphy.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Chinese+calligraphy+brushes&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1280,
+    "height": 893,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2016-08-17 13:35:24",
+    "sha256": "c5056c6c5aa1fdc381ae10f8aaa6c8b17929280e9884d9fd6e4d139c043a541e",
+    "original_sha256": "b7260fad79db2deb28c478851a8e04c7d2375007f9a0c221a11ff2f601d2c4bf",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "cultural_context",
+    "illustrative": true,
+    "focal_point": [
+      57,
+      46
+    ],
+    "caption": {
+      "th": "ภาพพู่กันประกอบบริบทอักษรจีน ไม่ใช่งานชื่อดอกไม้ตามสั่งหรือการยืนยันสินค้าที่มีขาย",
+      "zh-Hans": "毛笔实拍仅作书写文化背景，非定制姓名花鸟字成品，不代表商品在售或库存。"
+    },
+    "disclosure": {
+      "th": "ภาพพู่กันประกอบบริบทอักษรจีน ไม่ใช่งานชื่อดอกไม้ตามสั่งหรือการยืนยันสินค้าที่มีขาย",
+      "zh-Hans": "毛笔实拍仅作书写文化背景，非定制姓名花鸟字成品，不代表商品在售或库存。"
+    },
+    "alt": {
+      "th": "พู่กันสามด้ามวางขนานบนที่พักพู่กันเซรามิกสีขาวลายน้ำเงินบนพื้นมืด",
+      "zh-Hans": "三支毛笔平行放在白底蓝纹陶瓷笔搁上，背景为深色。"
+    },
+    "review_note": "Clearly photographed real brushes and a ceramic brush rest. Cultural tool context only; no finished floral-name artwork, customization service or authenticated Chengdu workshop is shown."
+  },
+  {
+    "id": "photo-sichuan-green-tea-1",
+    "path": "slides/chengdu/images/Photo_sichuan_green_tea_1.webp",
+    "kind": "photo",
+    "subject": "Zhu Ye Qing Tea (竹叶青), also known as green bamboo leaf tea , is a tea that grows on the slopes of Mount Emei in the Sichuan province, China. It was given the name Zhu Ye Qing by the Foreign Minister Chen Yi in 1964 when he first tasted the tea in the Temple of Ten Thousand Years in Mount Emei. The name means 'green bamboo leaf', which is a tribute to its clear liquid appearance and its leaves that seemingly dance in the water when infused.",
+    "meaningful": true,
+    "creator": "CEphoto, Uwe Aranas",
+    "attribution": "Photo by CEphoto, Uwe Aranas",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Zhu-Ye-Qing-Tea-03.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Zhu-Ye-Qing-Tea-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Zhu-Ye-Qing-Tea-03.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=green+tea+leaves&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1200,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2017-05-12",
+    "sha256": "08b3c443e459920e804282bc7f28f071639fdea7f49b4af9303e86f432fc1ea2",
+    "original_sha256": "7310d36fdf0a50974bc67158cb97cc376264add3443a906e7e8ad9cf245e96f6",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      50,
+      54
+    ],
+    "caption": {
+      "th": "ตัวอย่างใบชาเขียวแห้ง ไม่ใช่บรรจุภัณฑ์หรือสต็อกสินค้าที่ตรวจยืนยันแล้ว",
+      "zh-Hans": "干绿茶茶叶类型示例，非已核验的商品包装或当前库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างใบชาเขียวแห้ง ไม่ใช่บรรจุภัณฑ์หรือสต็อกสินค้าที่ตรวจยืนยันแล้ว",
+      "zh-Hans": "干绿茶茶叶类型示例，非已核验的商品包装或当前库存。"
+    },
+    "alt": {
+      "th": "กองใบชาแห้งสีเขียวอมเหลืองทรงเรียวยาวบนพื้นสีอ่อน",
+      "zh-Hans": "浅色背景上堆着细长的黄绿色干茶叶。"
+    },
+    "review_note": "Visibly shows processed loose tea; metadata identifies Zhu Ye Qing. Type-level example only. No current brand package, batch, grade, sealed condition, price or availability established."
+  },
+  {
+    "id": "photo-ov-tshirt-1",
+    "path": "slides/chengdu/images/Photo_ov_tshirt_1.webp",
+    "kind": "photo",
+    "subject": "Laying out the plain t-shirts",
+    "meaningful": true,
+    "creator": "ben-the-geek",
+    "attribution": "ben-the-geek",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://www.flickr.com/photos/25440132@N03/5362774965",
+    "original_url": "https://live.staticflickr.com/5005/5362774965_9ee957c7b9_b.jpg",
+    "source_title": "Laying out the plain t-shirts",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=plain+t+shirt&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 683,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "40069b79d644920ea9ded9766fb45426b111f3d7fec44227c188ea61eef4e227",
+    "original_sha256": "28cafdf81da8fb31815c2276a8285813963896572f5c79c0fe9f9df0e20048cd",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      51,
+      79
+    ],
+    "caption": {
+      "th": "ตัวอย่างเสื้อยืดพื้นเรียบบนโต๊ะทำงาน ไม่ใช่เสื้อยืดลายเมืองเฉิงตูที่แนะนำ และไม่ยืนยันแหล่งผลิตหรือสต็อก",
+      "zh-Hans": "工作台上的素色T恤示例；并非所推荐的成都城市款，不说明产地或库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างเสื้อยืดพื้นเรียบบนโต๊ะทำงาน ไม่ใช่เสื้อยืดลายเมืองเฉิงตูที่แนะนำ และไม่ยืนยันแหล่งผลิตหรือสต็อก",
+      "zh-Hans": "工作台上的素色T恤示例；并非所推荐的成都城市款，不说明产地或库存。"
+    },
+    "alt": {
+      "th": "ชายสวมผ้ากันเปื้อนจัดเสื้อยืดสีเทาบนโต๊ะเปื้อนสี โดยมีเสื้อสีน้ำเงินวางอยู่ด้านหลัง",
+      "zh-Hans": "一名穿围裙的男子在沾有颜料的工作台上整理灰色T恤，后方放着蓝色T恤。"
+    },
+    "review_note": "Actual shirts, folds, hands and worktable are visible. The person is directly engaged with the shirts. No Chengdu design, origin or specific workshop identity is established. Catalog reports CC BY 2.0; underlying ownership is not independently certified."
+  },
+  {
+    "id": "photo-ov-tote-3",
+    "path": "slides/chengdu/images/Photo_ov_tote_3.webp",
+    "kind": "photo",
+    "subject": "Canvas tote bag printed with NIKON!",
+    "meaningful": true,
+    "creator": "MIKI Yoshihito. (#mikiyoshihito)",
+    "attribution": "MIKI Yoshihito. (#mikiyoshihito)",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://www.flickr.com/photos/7940758@N07/28554102647",
+    "original_url": "https://live.staticflickr.com/915/28554102647_aa4da54657_b.jpg",
+    "source_title": "Canvas tote bag printed with NIKON!",
+    "metadata_url": "https://api.openverse.org/v1/images/?q=canvas+tote+bag&source=flickr&license=by%2Cby-sa%2Ccc0%2Cpdm&page_size=10",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1024,
+    "height": 576,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "",
+    "sha256": "591f7efd9486067b6baa2add637af824d937b5fdd2db762a03aa831a073217d1",
+    "original_sha256": "6a4455eb3012831f9eaf9e030aa25dede6b2d3d05b8282abb3d560c767fa330c",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "product_example",
+    "illustrative": true,
+    "focal_point": [
+      49,
+      37
+    ],
+    "caption": {
+      "th": "ตัวอย่างกระเป๋าผ้าแคนวาสลายกล้อง ไม่ใช่กระเป๋าลายเมืองจีนที่แนะนำ และไม่ยืนยันแหล่งผลิตหรือสต็อก",
+      "zh-Hans": "相机图案帆布托特包示例；并非所推荐的中国城市款，不说明产地或库存。"
+    },
+    "disclosure": {
+      "th": "ตัวอย่างกระเป๋าผ้าแคนวาสลายกล้อง ไม่ใช่กระเป๋าลายเมืองจีนที่แนะนำ และไม่ยืนยันแหล่งผลิตหรือสต็อก",
+      "zh-Hans": "相机图案帆布托特包示例；并非所推荐的中国城市款，不说明产地或库存。"
+    },
+    "alt": {
+      "th": "คนสวมเสื้อแดงสะพายกระเป๋าผ้าสีขาวพิมพ์รูปกล้องสีดำข้างกำแพง",
+      "zh-Hans": "穿红衣的人肩挎印有黑色相机图案的白色布袋，旁边是墙壁。"
+    },
+    "review_note": "Physical shoulder bag, straps and fabric folds are clearly visible; catalog identifies a canvas tote. The small Nikon wordmark remains visible, but the bag dominates. No Chinese-city design is established. Catalog reports CC BY 2.0; underlying ownership is not independently certified."
+  },
+  {
+    "id": "photo-dates-final-1",
+    "path": "slides/chengdu/images/Photo_dates_final_1.webp",
+    "kind": "photo",
+    "subject": "Dried jujube at a shop in Kerala, India",
+    "meaningful": true,
+    "creator": "Vis M",
+    "attribution": "Vis M",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dried_jujube.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Dried_jujube.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "source_title": "File:Dried jujube.jpg",
+    "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=intitle%3Ajujube+dried&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&iiurlwidth=1600&format=json",
+    "modifications": "Resized and WebP re-encoded; metadata removed; display cropping may apply; no generated image content. CSS may apply mild saturation/contrast on presentation panels.",
+    "license_path": "slides/chengdu/images/PHOTO_CREDITS.md",
+    "width": 1800,
+    "height": 1350,
+    "retrieved_at": "2026-10-20",
+    "captured_at": "2023-08-04 18:39:40",
+    "sha256": "f778257a6fb0deae127e9952ab0501e0d59926b1ffe39ea6ac17dec4bdcdcf78",
+    "original_sha256": "65dd1f7c8dc209b3a867bd5af185c91e16baa5192afd252449a1d063ec4b041d",
+    "license_checked": true,
+    "photo_review": "approved",
+    "depiction_scope": "ingredient_context",
+    "illustrative": true,
+    "focal_point": [
+      52,
+      48
+    ],
+    "caption": {
+      "th": "ภาพตัวอย่างพุทราแห้งในร้านที่อินเดีย ไม่ใช่สินค้า Bestore และไม่ยืนยันไส้วอลนัตหรือสต็อกปัจจุบัน",
+      "zh-Hans": "印度店内的干枣原料示例；并非良品铺子商品，不代表含核桃馅或当前库存。"
+    },
+    "disclosure": {
+      "th": "ภาพตัวอย่างพุทราแห้งในร้านที่อินเดีย ไม่ใช่สินค้า Bestore และไม่ยืนยันไส้วอลนัตหรือสต็อกปัจจุบัน",
+      "zh-Hans": "印度店内的干枣原料示例；并非良品铺子商品，不代表含核桃馅或当前库存。"
+    },
+    "alt": {
+      "th": "พุทราสีน้ำตาลแดงในถาดโลหะหลังตู้กระจก พร้อมป้าย Jujube Fruits",
+      "zh-Hans": "玻璃柜后的金属托盘内盛有红褐色枣果，前方标有 Jujube Fruits。"
+    },
+    "review_note": "Metadata identifies dried jujube at a Kerala shop; the visible fruit label supports ingredient identification. No walnut filling or Bestore branding is visible; glossiness alone does not establish processing. Metadata credits Vis M, CC BY-SA 4.0."
   }
 ]

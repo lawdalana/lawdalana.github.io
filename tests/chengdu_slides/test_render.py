@@ -83,13 +83,16 @@ class RenderTests(unittest.TestCase):
         self.assertTrue(callable(standalone),'standalone exporter is not implemented')
         from scripts.chengdu_slides.model import load_dataset
         result=standalone(load_dataset(DATA_DIR),ROOT)
-        self.assertIn('data:image/svg+xml;base64,',result)
-        self.assertIn('data:font/woff2;base64,',result)
-        self.assertNotIn('src="images/',result)
-        self.assertNotIn("url('fonts/",result)
-        self.assertIn('DRAFT',result)
-        self.assertIn('font-license-notices',result)
-        self.assertIn('SIL OPEN FONT LICENSE',result)
+        import mimetypes
+        data=load_dataset(DATA_DIR)
+        mimes={mimetypes.guess_type(asset['path'])[0] for asset in data['assets'] if asset['kind']!='font'}
+        for mime in mimes:
+            self.assertIsNotNone(mime);assert mime is not None
+            self.assertTrue('data:'+mime+';base64,' in result,'actual image MIME not embedded: '+mime)
+        for required in ('data:font/woff2;base64,','DRAFT','font-license-notices','SIL OPEN FONT LICENSE','photo-license-notices'):
+            self.assertTrue(required in result,'missing offline feature: '+required)
+        for remaining in ('src="images/',"url('fonts/"):
+            self.assertFalse(remaining in result,'unembedded runtime asset: '+remaining)
 
     def test_preview_cannot_write_into_public_slide_route(self):
         from scripts.chengdu_slides import render as rendering

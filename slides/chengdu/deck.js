@@ -16,6 +16,8 @@ class SlidePresentation {
     });
     this.contents.addEventListener('change',()=>this.show(this.slides.findIndex(s=>s.id===this.contents.value)));
     document.getElementById('read').addEventListener('click',()=>this.toggleReading());
+    this.toolbar=document.getElementById('toolbar');
+    this.toolbar.addEventListener('click',()=>this.toggleToolbar(!document.documentElement.classList.contains('toolbar-collapsed')));
     document.getElementById('fullscreen').addEventListener('click',async()=>{
       try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();}
       catch{this.progress.title='Fullscreen unavailable; normal navigation remains available.';}
@@ -53,7 +55,7 @@ class SlidePresentation {
       if(Math.abs(e.deltaY)>45&&performance.now()-this.lastWheel>650){this.lastWheel=performance.now();this.show(this.index+(e.deltaY>0?1:-1));}
     },{passive:true});
     document.documentElement.classList.add('enhanced');
-    this.fromHash();this.scale();
+    this.fromHash();this.scale();document.fonts.ready.then(()=>this.scale());
   }
   interactive(target){return target instanceof Element&&!!target.closest('input,textarea,select,button,a,[contenteditable]');}
   fromHash(){
@@ -71,7 +73,7 @@ class SlidePresentation {
     if(reading&&scroll)slide.scrollIntoView({block:'start',behavior:'instant'});
   }
   scale(){
-    if(document.documentElement.classList.contains('reading'))return;
+    if(document.documentElement.classList.contains('reading')){this.reserveReadingSpace();return;}
     const controls=document.querySelector('.deck-controls').getBoundingClientRect().height;
     const available=Math.max(120,innerHeight-controls-36),factor=Math.min(innerWidth/1920,available/1080);
     this.stage.style.transform=`translate(${(innerWidth-1920*factor)/2}px,${(available-1080*factor)/2+8}px) scale(${factor})`;
@@ -84,8 +86,19 @@ class SlidePresentation {
   }
   toggleReading(){
     this.syncReadingPosition();
-    document.documentElement.classList.toggle('reading');this.show(this.index,false);this.scale();
+    document.documentElement.classList.toggle('reading');
+    this.toggleToolbar(document.documentElement.classList.contains('reading')&&innerWidth<=650);
+    this.show(this.index,false);this.scale();
     if(!document.documentElement.classList.contains('reading'))window.scrollTo(0,0);
+  }
+  toggleToolbar(collapsed){
+    document.documentElement.classList.toggle('toolbar-collapsed',collapsed);
+    this.toolbar.setAttribute('aria-expanded',String(!collapsed));this.reserveReadingSpace();
+  }
+  reserveReadingSpace(){
+    const collapsed=document.documentElement.classList.contains('toolbar-collapsed');
+    const height=collapsed?84:document.querySelector('.deck-controls').getBoundingClientRect().height+90;
+    document.documentElement.style.setProperty('--reading-controls-space',height+'px');
   }
 }
 new SlidePresentation();

@@ -20,5 +20,7 @@
     "reviewed_at": "2026-10-19",
     "coverage": "All 45 selected entries, 140 entry units and 13 supporting units reviewed internally against retained observations; three Important and one Minor editorial findings corrected.",
     "limitations": "Not an independent re-fetch of the 83 retained source records, not current-market or medical certification. Community quotes are attributed experiences, not proven opinions. Local release approval is not a live deployment assertion."
-  }
+  },
+  "visual_policy": "licensed_photography",
+  "photo_researched_at": "2026-10-20"
 }

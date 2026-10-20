@@ -42,6 +42,7 @@ test('actual reading view follows natural scroll before language and mode change
   await page.setViewportSize({width:390,height:844});await page.goto(draft);await page.click('#read');
   await page.locator('#yang-bo-ying-intro--th').evaluate(e=>e.scrollIntoView({block:'start'}));
   await expect(page.locator('.slide.active')).toHaveAttribute('data-slide-id','yang-bo-ying-intro--th');
+  await page.click('#toolbar');
   await page.click('#pair');
   await expect(page.locator('.slide.active')).toHaveAttribute('data-slide-id','yang-bo-ying-intro--zh-Hans');
   expect(await page.locator('.slide[lang="th"] .copy ul').first().evaluate(e=>getComputedStyle(e).fontFamily)).toContain('TravelThai');
@@ -73,5 +74,15 @@ test('actual deck is readable with JavaScript disabled',async({browser})=>{
   await page.goto('http://127.0.0.1:8765'+draft);
   expect(await page.locator('.slide').count()).toBe(expectedSlides);
   await expect(page.locator('.slide').first()).toBeVisible();await expect(page.locator('.slide').last()).toBeVisible();
+  await context.close();
+});
+
+test('tablet no-JavaScript photo details keep a readable copy column',async({browser})=>{
+  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:1024,height:768}}),page=await context.newPage();
+  await page.goto('http://127.0.0.1:8765'+draft);
+  const details=page.locator('.photo-slide.layout-details').first();
+  const columns=await details.evaluate(e=>({copy:e.querySelector('.copy').getBoundingClientRect().width,image:e.querySelector('.visual').getBoundingClientRect().width}));
+  expect(columns.copy).toBeGreaterThan(columns.image);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
   await context.close();
 });

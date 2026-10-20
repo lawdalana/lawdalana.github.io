@@ -2,7 +2,7 @@
 
 ## Content and release state
 
-The local release contains **15 attractions, 15 distinct restaurant brands and 15 gift types**, with **306 illustrated pages**. Every Thai page is immediately followed by its simplified-Chinese counterpart. Dense units split at the same bullet boundaries in both languages; content is not dropped or shrunk to force a slide to fit.
+The photographic release contains **15 attractions, 15 distinct restaurant brands and 15 gift types**, with **442 pages using 51 credited source photographs**. Every Thai page is immediately followed by its simplified-Chinese counterpart. Entry units use at most two bullets per page, split at the same boundaries in both languages; original entry text and evidence are not dropped or shrunk to force a slide to fit.
 
 `index.html` and `manifest.json` are generated release artifacts for `/slides/chengdu/`. The canonical metadata value `published` means editorially approved for release generation; it does **not** by itself prove a GitHub push or a live deployment. Read back the deployed `content_version` to establish that separately. Existing site articles and navbar entries are preserved; the deck is additionally registered under Travel in the shared Slides menu and its folio provides a return link to the website. Deployment fingerprints include the renderer/template, viewport foundation, canonical data, styles, scripts and local assets.
 
@@ -18,21 +18,23 @@ The user's amended policy is `gift_policy: community_curated` (Route C). It sele
 - The Bestore walnut-date option is a single dated Chengdu tasting opinion, conditional on labels/allergens/import checks, not a matched current SKU or a China-only claim.
 - Personal-use FDA guidance and dated Customs context do not automatically authorize food gifts. No medical efficacy is endorsed.
 
-All 45 entries and 13 supporting units received a complete internal bilingual/source-to-retained-observation review. This was not an independent re-fetch of all sources or certification that opinions, current prices, availability or import conditions are true. Supporting source records retain retrieval and publication context.
+The preceding community release's 45 entries and 13 supporting units received an internal bilingual/source-to-retained-observation review. The photographic edition preserves all original entry text/evidence and has 20 supporting units, including its new cover/chapter treatments. Photo review checks retained metadata and visible subjects; it is not a fresh factual audit of every travel source or certification of opinions, current prices, stock or import rules.
 
 ## Images and fonts
 
-Every page has an **original conceptual SVG illustration**, visibly identified as not a documentary photograph. They are not photographs of actual dishes, restaurant interiors, exact building appearances or currently available product SKUs. Gift illustrations use appropriate subject motifs, including postcards, seals, textiles, pen, shirt, tote, calligraphy and walnut-stuffed dates.
+Every current page has an **actual local photographic bitmap**, not the preceding edition's conceptual SVGs. Projection mode uses large panels, alternating layouts, full-image chapter openers and readable attribution backings. Location images are reviewed for the actual place; restaurant dishes, product types, ingredients and cultural-context examples explicitly disclose when they are not the recommended restaurant plate, exact merchandise, certified workshop or current stock. Photos may be historical or undated.
 
-Local WOFF2 derivatives originate from Kanit, Noto Sans Thai and Noto Serif SC. Original OFL notices remain at `fonts/*_OFL.txt`; derivative family names were changed. The Chinese subset preserves requested supported codepoints from the dataset. `fonts/source-manifest.json` records original and derivative SHA256 values. Regenerating fonts requires the corresponding source TTF cache and verification of those hashes, licenses and derivative-name requirements.
+`images/PHOTO_CREDITS.md` retains each work's supplied title, creator/credit, primary source, original image, license, retrieval date, modifications and derivative SHA256. Explicit Commons or Openverse/Flickr rights metadata is retained, not an independent ownership certification. CC BY-SA derivatives retain the stated license. Files are resized/re-encoded with metadata removed; display may crop and lightly change color. No photographic content was generated. Every photo is provenance-gated even if the edition flag is missing; `visual_policy: licensed_photography` additionally prohibits diagrams in this edition.
 
-The standalone HTML embeds actual font/image bytes plus full font copyright/license notices in non-executable JSON (`font-license-notices`). It needs no runtime CDN, analytics or network images. `render_standalone(data, site_root)` remains an explicitly labeled preview by default; the opt-in `publication=True` export rechecks publication/asset approval before retaining release labels and all community disclosures.
+Local WOFF2 derivatives originate from Kanit, Noto Sans Thai and Noto Serif SC. Original OFL notices remain at `fonts/*_OFL.txt`; derivative family names were changed. The Chinese subset includes requested supported codepoints from canonical captions and the fixed interface; an explicit `--extra-text` input can cover private prototypes. `fonts/source-manifest.json` records original and derivative SHA256 values. Regenerating fonts requires the corresponding source TTF cache and verification of those hashes, licenses and derivative-name requirements.
+
+The standalone HTML embeds actual font/image bytes plus full font and photo rights notices in non-executable JSON (`font-license-notices`, `photo-license-notices`). It needs no runtime CDN, analytics or network images. Single-file photographic exports are large because repeated image references are embedded; a portable directory/ZIP avoids that repetition. `render_standalone(data, site_root)` remains an explicitly labeled preview by default; the opt-in `publication=True` export rechecks publication/asset approval before retaining release labels and all community disclosures. Mobile reading collapses the toolbar by default, with an accessible reopen button; all paired content remains exposed.
 
 The fixed-stage foundation comes from the MIT-licensed [frontend-slides](https://github.com/zarazhangrui/frontend-slides) skill at commit `9906a34d640d2111f724544cbc50f7f130569ae1`. Its notice remains at `scripts/chengdu_slides/FRONTEND_SLIDES_LICENSE.txt`.
 
 ## Source of truth
 
-- `_data/chengdu_slides/`: canonical bilingual JSON and public-source observations retrieved on 2026-10-19.
+- `_data/chengdu_slides/`: canonical bilingual JSON and public-source observations from 2026-10-19; photographic research and metadata from 2026-10-20.
 - `scripts/chengdu_slides/`: validation, evidence gate, deterministic renderer, illustration and font tooling.
 - `deck.css` / `deck.js`: presentation styling/navigation, inlined by the renderer.
 - `tests/chengdu_slides/`: Python contracts and actual Chromium tests.
@@ -54,6 +56,6 @@ npm exec -- playwright install chromium
 npm test
 ```
 
-The browser test server builds the local preview and an explicitly synthetic navigation fixture, binds only to 127.0.0.1, and shuts down after Playwright. Offline-export tests create actual screenshots and a printable PDF, not placeholder reports. Synthetic unit/navigation records are never canonical publication inputs. Scoped Jekyll exclusions keep the new build scripts, tests/dependency directory and project verification/spec documents out of the website distribution; they remain version-controlled development sources. Raw research captures, worker reports, build outputs and dependency caches stay in ignored local directories; a clean checkout can build the release using the checked-in canonical excerpts/assets without those private captures.
+The browser test server builds the local preview and an explicitly synthetic navigation fixture, binds only to 127.0.0.1, and shuts down after Playwright. Offline-export tests create actual screenshots and a printable PDF, not placeholder reports; they require Poppler's `pdfunite`/`pdfinfo`, print in bounded batches and verify the merged page count. Synthetic unit/navigation records are never canonical publication inputs. Scoped Jekyll exclusions keep build scripts, tests/dependencies and project verification/spec documents out of the website distribution; they remain version-controlled development sources. Raw research captures, worker reports, build outputs and dependency caches stay ignored; a clean checkout can build the release using checked-in canonical excerpts/assets without private captures.
 
 Preview exports live under ignored `_reports/chengdu-slides/draft/`. The release gate rejects incomplete/unreviewed data, unsafe/missing assets and malformed or untraceable evidence. Do not set editorial flags to bypass real findings.

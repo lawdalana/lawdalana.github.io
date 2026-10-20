@@ -6,15 +6,25 @@ import shutil
 from pathlib import Path
 
 
+def collect_text(root: Path, extra_text: Path | None = None) -> str:
+    text=''.join(path.read_text(encoding='utf-8') for path in (root/'_data/chengdu_slides').glob('*.json'))
+    for relative in ('scripts/chengdu_slides/render.py','slides/chengdu/deck.js'):
+        path=root/relative
+        if path.is_file():text+=path.read_text(encoding='utf-8')
+    if extra_text is not None:text+=extra_text.read_text(encoding='utf-8')
+    return text
+
+
 def main():
     from fontTools import subset
     from fontTools.ttLib import TTFont
     parser=argparse.ArgumentParser(description=__doc__)
     root=Path(__file__).resolve().parents[2]
     parser.add_argument('--source-dir',type=Path,default=root/'_reports/chengdu-slides/font-sources')
+    parser.add_argument('--extra-text',type=Path,help='Explicit additional preview/photo captions to preserve in the subset')
     args=parser.parse_args();args.source_dir.mkdir(parents=True,exist_ok=True)
     folder=root/'slides/chengdu/fonts'
-    text=''.join(p.read_text() for p in (root/'_data/chengdu_slides').glob('*.json'))+'蜀ไทย中文อ่าน阅读สารบัญ目录'
+    text=collect_text(root,args.extra_text)+'蜀ไทย中文อ่าน阅读สารบัญ目录'
     requested={ord(c) for c in text if not c.isspace() and not 0x0e00<=ord(c)<=0x0e7f}|set(range(32,127))
     audit=[]
     for original,derivative,should_subset in [('Kanit-Medium','TravelDisplay',False),('NotoSansThai','TravelThai',False),('NotoSerifSC','TravelChinese',True)]:
