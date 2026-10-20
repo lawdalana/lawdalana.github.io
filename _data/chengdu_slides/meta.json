@@ -22,5 +22,7 @@
     "limitations": "Not an independent re-fetch of the 83 retained source records, not current-market or medical certification. Community quotes are attributed experiences, not proven opinions. Local release approval is not a live deployment assertion."
   },
   "visual_policy": "licensed_photography",
-  "photo_researched_at": "2026-10-20"
+  "photo_researched_at": "2026-10-20",
+  "pagination_policy": "thai-first-measured",
+  "pagination_signature": "5a5e70eadb2429e2276ecd29528cfff0247dbe4f65e8f985e87aa73dc05e4ea4"
 }

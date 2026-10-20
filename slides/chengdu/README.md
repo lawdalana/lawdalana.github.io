@@ -2,13 +2,17 @@
 
 ## Content and release state
 
-The photographic release contains **15 attractions, 15 distinct restaurant brands and 15 gift types**, with **442 pages using 51 credited source photographs**. Every Thai page is immediately followed by its simplified-Chinese counterpart. Entry units use at most two bullets per page, split at the same boundaries in both languages; original entry text and evidence are not dropped or shrunk to force a slide to fit.
+The Thai-primary photographic release contains **15 attractions, 15 distinct restaurant brands and 15 gift types**, with **123 Thai pages and 130 simplified-Chinese pages (253 total)**. Every page uses a credited local photograph. Thai pages are packed using actual rendered space, not a fixed bullet limit; Chinese may span additional pages without forcing extra Thai pages. Original entry text, evidence and readable font sizes are preserved.
 
 `index.html` and `manifest.json` are generated release artifacts for `/slides/chengdu/`. The canonical metadata value `published` means editorially approved for release generation; it does **not** by itself prove a GitHub push or a live deployment. Read back the deployed `content_version` to establish that separately. Existing site articles and navbar entries are preserved; the deck is additionally registered under Travel in the shared Slides menu and its folio provides a return link to the website. Deployment fingerprints include the renderer/template, viewport foundation, canonical data, styles, scripts and local assets.
 
 ## Presentation language navigation
 
-Next/Previous, keyboard navigation, wheel and horizontal swipes advance within the current language, rather than stopping on the other translation of the same page. The bottom `ไทย / 中文` button switches to the same logical page in the other language. Contents, progress and first/last boundaries follow the chosen language: 221 logical pages per language. Both translations share a footer number. Explicit language deep links and browser history still work. Canonical HTML order, no-JavaScript fallback, paired reading and bilingual print exports retain both languages; no content is removed.
+Next/Previous, keyboard navigation, wheel and horizontal swipes advance within the current language. The bottom `ไทย / 中文` button always opens the **first page of the same topic** in the other language, including when switching from a continuation page. Contents, progress, footer numbering and first/last boundaries count the chosen language independently. Explicit continuation deep links and browser history work; legacy split-page links resolve to the original topic. No-JavaScript reading and bilingual print exports retain all text in both languages.
+
+## Regenerating measured pagination
+
+Run `python3 -m scripts.chengdu_slides.pagination --write` with the isolated browser-test dependencies installed, then `python3 -m scripts.chengdu_slides.cli build`. Chromium measures the real 1920×1080 layout with all three local fonts loaded. It merges old artificial splits, packs Thai first, and partitions each corresponding Chinese range only if necessary. Canonical `pagination` ranges must cover every source bullet exactly once. A layout-input signature rejects stale plans after source, rendering, font or stylesheet changes. Measurement reports stay under ignored `_reports/`, not in the public site.
 
 ## Community-based gift filtering
 

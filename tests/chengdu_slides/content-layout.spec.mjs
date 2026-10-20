@@ -3,17 +3,21 @@ import {readFileSync} from 'node:fs';
 
 const draft='/_reports/chengdu-slides/draft/index.html';
 const canonical=name=>JSON.parse(readFileSync(new URL('../../_data/chengdu_slides/'+name+'.json',import.meta.url),'utf8'));
-const expectedSlides=2*(canonical('support').length+['attractions','restaurants','gifts'].reduce((sum,cat)=>sum+canonical(cat).reduce((n,item)=>n+item.units.length,0),0));
+const sourceEntries=[...canonical('support').map(unit=>({unit,facts:unit.facts||{}})),...['attractions','restaurants','gifts'].flatMap(cat=>canonical(cat).flatMap(item=>item.units.map(unit=>({unit,facts:item.facts}))))];
+const expectedSlides=sourceEntries.reduce((n,{unit})=>n+(unit.pagination?unit.pagination.length+unit.pagination.reduce((sum,p)=>sum+p['zh-Hans'].length,0):2),0);
+const expectedBodies=Object.fromEntries(sourceEntries.map(({unit,facts})=>[unit.id,Object.fromEntries(['th','zh-Hans'].map(lang=>[lang,unit.body[lang].map(t=>t.replace(/\{(\w+)\}/g,(_,key)=>String(facts[key])))]))]));
 
-test('actual sourced draft: every pair, image, font and fixed-stage text fits',async({page})=>{
+test('actual sourced draft: every unequal-language topic, image, font and fixed-stage text fits',async({page})=>{
   test.setTimeout(90000);
   const errors=[];page.on('pageerror',e=>errors.push(String(e)));
   await page.goto(draft);await page.evaluate(()=>document.fonts.ready);
   const result=await page.evaluate(async()=>{
-    const slides=[...document.querySelectorAll('.slide')],bad=[],pairs=[];
+    const slides=[...document.querySelectorAll('.slide')],bad=[],pairs=[],bodies={},groups=new Map();
     for(let i=0;i<slides.length;i++){
       const s=slides[i];
-      if(i%2===0&&(!slides[i+1]||s.dataset.lang!=='th'||slides[i+1].dataset.lang!=='zh-Hans'||s.dataset.pairId!==slides[i+1].dataset.pairId))pairs.push(s.id);
+      if(!groups.has(s.dataset.pairId))groups.set(s.dataset.pairId,[]);groups.get(s.dataset.pairId).push(s);
+      bodies[s.dataset.pairId]??={th:[],'zh-Hans':[]};
+      bodies[s.dataset.pairId][s.dataset.lang].push(...[...s.querySelectorAll('.copy li')].map(li=>li.textContent));
       const image=s.querySelector('img');image.loading='eager';
       try{await image.decode();}catch{bad.push({id:s.id,error:'image decode failed'});}
       const scale=document.querySelector('#deckStage').getBoundingClientRect().width/1920;
@@ -23,9 +27,14 @@ test('actual sourced draft: every pair, image, font and fixed-stage text fits',a
       const caption=s.querySelector('figcaption').getBoundingClientRect().bottom;
       if(caption>footer-8*scale)bad.push({id:s.id,error:'caption overlaps footer',overflow:(caption-footer)/scale});
     }
-    return{count:slides.length,bad,pairs,fonts:[...document.fonts].map(f=>({family:f.family,status:f.status})),images:slides.filter(s=>s.querySelector('img').naturalWidth>0).length};
+    for(const [topic,rows] of groups)for(const lang of ['th','zh-Hans']){
+      const pages=rows.filter(s=>s.dataset.lang===lang);
+      if(!pages.length||pages[0].id!==topic+'--'+lang||pages.some((s,n)=>Number(s.dataset.pagePart)!==n+1||Number(s.dataset.pageTotal)!==pages.length))pairs.push(topic+':'+lang);
+    }
+    return{count:slides.length,bad,pairs,bodies,fonts:[...document.fonts].map(f=>({family:f.family,status:f.status})),images:slides.filter(s=>s.querySelector('img').naturalWidth>0).length};
   });
   expect(result.count).toBe(expectedSlides);expect(result.pairs).toEqual([]);expect(result.images).toBe(expectedSlides);expect(errors).toEqual([]);
+  expect(result.bodies).toEqual(expectedBodies);
   expect(result.fonts.filter(f=>f.status!=='loaded')).toEqual([]);
   await test.info().attach('actual-content-layout.json',{body:JSON.stringify(result,null,2),contentType:'application/json'});
   expect(result.bad).toEqual([]);

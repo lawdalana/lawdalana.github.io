@@ -123,6 +123,9 @@ def _validate(data, *, publication=False, only=None):
                     errors.append(_finding('visual', path, 'meaningful asset and bilingual alternative text required'))
     if publication and not only and not data.get('support'):
         errors.append(_finding('support', 'support', 'paired supporting content required'))
+    if not only:
+        from .pagination import validate_pagination
+        errors.extend(validate_pagination(data))
     return errors
 
 

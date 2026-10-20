@@ -12,6 +12,7 @@ class SlidePresentation {
     document.getElementById('pair').addEventListener('click',()=>{
       this.syncReadingPosition();
       const current=this.slides[this.index];
+      // A topic can have unequal page counts. Always switch to its first page.
       const next=this.slides.findIndex(s=>s.dataset.pairId===current.dataset.pairId&&s.dataset.lang!==current.dataset.lang);
       if(next>=0)this.show(next);
     });
@@ -61,7 +62,9 @@ class SlidePresentation {
   interactive(target){return target instanceof Element&&!!target.closest('input,textarea,select,button,a,[contenteditable]');}
   fromHash(){
     let id='';try{id=decodeURIComponent(location.hash.startsWith('#slide=')?location.hash.slice(7):'');}catch{}
-    const found=this.slides.findIndex(s=>s.id===id);this.show(found<0?0:found,false);
+    let found=this.slides.findIndex(s=>s.id===id);
+    if(found<0)found=this.slides.findIndex(s=>JSON.parse(s.dataset.legacyIds||'[]').includes(id));
+    this.show(found<0?0:found,false);
   }
   languageIndices(){
     const lang=this.slides[this.index].dataset.lang;
