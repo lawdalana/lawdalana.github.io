@@ -1,0 +1,32 @@
+/* Scoped to the GSQ/RCO notes; do not change existing garden pages. */
+.quantization-article {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.quantization-article .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.4rem;
+}
+
+.quantization-article .katex-display > .katex {
+  text-align: left;
+}
+
+.quantization-article table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.quantization-article pre code {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-x: auto !important;
+}
