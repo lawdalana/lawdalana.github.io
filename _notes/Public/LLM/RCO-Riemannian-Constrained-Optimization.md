@@ -2,7 +2,7 @@
 title: "RCO: Riemannian Constrained Optimization จัดสรรบิตภายใต้งบขนาดโมเดล"
 notetype: feed
 date: 2026-10-28
-last_modified: 2026-10-28
+last_modified: 2026-10-29
 tags: [RCO, Riemannian-optimization, quantization, mixed-precision, LLM, model-compression, budget]
 status: published
 permalink: /notes/rco-riemannian-constrained-optimization
@@ -105,6 +105,13 @@ $$
 Paper ใช้ **Euclidean ambient metric ใน logit space** จึงคำนวณ projection ได้ง่าย ไม่ได้หมายความว่าใช้ Fisher information หรือ natural gradient โดยอัตโนมัติ และ “Riemannian” ไม่ใช่ชื่อ kernel สำหรับคูณเมทริกซ์บิตต่ำ.[3]
 
 ## 4. สาม operation ที่ครอบ Adam
+
+<figure class="quantization-figure">
+  <a href="/assets/img/LLM/GSQ-RCO/rco-budget-manifold.svg" target="_blank" rel="noopener noreferrer" aria-label="ขยายภาพ projection retraction และ momentum transport ของ RCO ในแท็บใหม่">
+    <img src="/assets/img/LLM/GSQ-RCO/rco-budget-manifold.svg" alt="ภาพแนวคิด budget manifold แยก tangent projection การคืนจุดด้วย retraction และการจัด momentum ให้ตรง tangent space ใหม่" width="800" height="1060" loading="lazy" decoding="async">
+  </a>
+  <figcaption><strong>สามหน้าที่ที่ไม่เหมือนกัน:</strong> 1 ตัดส่วน normal ออกจาก gradient, 2 คืนจุดหลัง update ให้ expected cost กลับสู่งบ, 3 จัด first moment ให้ตรง tangent space ใหม่ ลูกศร retraction แสดงการเลื่อนตาม cost direction ไม่จำเป็นต้องตั้งฉากกับผิว ภาพนี้เป็น schematic สองมิติ ไม่ใช่ logit geometry หรือกราฟ convergence จริง และยังต้องมี constrained DP สำหรับ hard choices — แตะภาพเพื่อขยาย</figcaption>
+</figure>
 
 ### 4.1 Tangent projection: ตัดทิศที่เปลี่ยนงบออกจาก gradient
 
@@ -339,6 +346,13 @@ Residual ของ dot product ใกล้ศูนย์เป็น floating-
 
 งบ discrete เป็น 10 หน่วย ถ้าเลือกคะแนนสูงสุดแยกทุกแถวจะได้ `[4, 4, 2]` ใช้ต้นทุน **14** เกินงบ แต่ constrained DP ให้ `[4, 2, 2]` ใช้ต้นทุน **10** และคะแนนรวม **5**
 
+<figure class="quantization-figure">
+  <a href="/assets/img/LLM/GSQ-RCO/rco-bit-allocation.svg" target="_blank" rel="noopener noreferrer" aria-label="ขยายภาพเปรียบเทียบ independent argmax กับ constrained DP ในแท็บใหม่">
+    <img src="/assets/img/LLM/GSQ-RCO/rco-bit-allocation.svg" alt="ขนาดกลุ่ม A B C เท่ากับ 1 2 และ 1 ล้านพารามิเตอร์ การเลือกบิตแบบ argmax ใช้งบ 14 ล้านบิต ส่วน DP ใช้ 10 ล้านบิต" width="800" height="1000" loading="lazy" decoding="async">
+  </a>
+  <figcaption><strong>บิตเท่ากันไม่ได้แปลว่าต้นทุนเท่ากัน:</strong> B มีพารามิเตอร์สองเท่าของ A จึงมีต้นทุนสองเท่าเมื่อใช้ precision เดียวกัน แถบทั้งสองชุดใช้สเกลเดียวกัน และคำนวณจาก toy DP จริง: argmax ใช้ 14 ล้าน payload bits แต่ DP เลือกให้เหลือ 10 ล้าน bits ตัวเลขนี้ยังไม่รวม scales หรือ overhead และไม่ใช่การเปรียบเทียบ accuracy ของ LLM — แตะภาพเพื่อขยาย</figcaption>
+</figure>
+
 ```text
 argmax_bits          = [4, 4, 2]
 argmax_cost          = 14
@@ -361,6 +375,13 @@ scale bytes        = 62,502
 fixed bytes        = 100,000
 modeled_file_bytes = 1,412,502
 ```
+
+<figure class="quantization-figure">
+  <a href="/assets/img/LLM/GSQ-RCO/rco-file-budget.svg" target="_blank" rel="noopener noreferrer" aria-label="ขยายภาพแยก payload scales และ overhead ของขนาดไฟล์ในแท็บใหม่">
+    <img src="/assets/img/LLM/GSQ-RCO/rco-file-budget.svg" alt="งบไฟล์จำลองรวม 1,412,502 bytes แยกเป็น packed codes 1,250,000 scales 62,502 และ fixed overhead 100,000 bytes" width="800" height="950" loading="lazy" decoding="async">
+  </a>
+  <figcaption><strong>Payload ไม่ใช่ขนาดไฟล์ทั้งหมด:</strong> สำหรับ toy ขนาด 4 ล้านพารามิเตอร์นี้ ต้องบวก FP16 scales ของ 31,251 groups และ fixed overhead ด้วย แถบแบ่งตามสัดส่วน bytes จริงของโมเดลต้นทุนอย่างง่ายนี้ ไม่ใช่ผล serialize GGUF/safetensors และยังไม่ได้รวม zero-points หรือ row padding — แตะภาพเพื่อขยาย</figcaption>
+</figure>
 
 จำนวน groups ใช้ $\lceil n_i/128\rceil$ **แยกต่อ tensor ใน fixture** จึงไม่ได้เท่ากับการรวมพารามิเตอร์แล้วหาร 128 เสมอไป ฟังก์ชัน `modeled_bytes()` เป็น calculator แบบง่าย ไม่ใช่ GGUF/safetensors serializer; row boundaries และ padding จริงยังต้องเพิ่มเอง
 

@@ -162,8 +162,11 @@ defaults:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# Chengdu slide build/test tooling is repository source, not website content.
+# Build/test tooling is repository source, not website content.
 exclude:
+  - scripts/render_quantization_figures.py
+  - tests/test_quantization_figures.py
+  - tests/quantization-illustrations.browser.cjs
   - scripts/chengdu_slides
   - tests/chengdu_slides
   - docs/superpowers/specs/2026-10-19-chengdu-bilingual-travel-slides-design.md

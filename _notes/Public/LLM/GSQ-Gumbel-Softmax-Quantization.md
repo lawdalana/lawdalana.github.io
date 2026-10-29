@@ -2,7 +2,7 @@
 title: "GSQ: Gumbel-Softmax Quantization บีบอัดน้ำหนัก LLM ให้แม่นยำในบิตต่ำ"
 notetype: feed
 date: 2026-10-28
-last_modified: 2026-10-28
+last_modified: 2026-10-29
 tags: [GSQ, Gumbel-Softmax, quantization, LLM, model-compression, low-precision, PTQ]
 status: published
 permalink: /notes/gsq-gumbel-softmax-quantization
@@ -128,6 +128,13 @@ $$
 
 เมื่อ temperature สูง distribution จะนุ่มกว่าและมี gradient ผ่านหลาย candidate เมื่อค่อย ๆ ลด temperature การเลือกจะใกล้ one-hot มากขึ้น แต่การมี soft loss ต่ำไม่ได้พิสูจน์ว่าการเลือกค่าเดียวหลัง export จะดีเท่ากัน.[1]
 
+<figure class="quantization-figure">
+  <a href="/assets/img/LLM/GSQ-RCO/gsq-soft-to-hard.svg" target="_blank" rel="noopener noreferrer" aria-label="ขยายภาพ GSQ จาก soft assignment สู่ hard weights ในแท็บใหม่">
+    <img src="/assets/img/LLM/GSQ-RCO/gsq-soft-to-hard.svg" alt="กริด 2 บิตเดิมมีสี่ค่า เมื่อ temperature ลดลง probability จะกระจุกตัว ก่อน export เป็น hard code กับ scale" width="800" height="1100" loading="lazy" decoding="async">
+  </a>
+  <figcaption><strong>จาก soft สู่ hard:</strong> ใช้ logits และ noise ชุดเดิมเพื่อให้เห็นผลของ temperature ต่อการกระจาย probability บนกริดเดียวกัน ก่อน export เป็น code เดียวกับ scale ภาพนี้เป็นตัวอย่างคำนวณเพื่ออธิบายแนวคิด ไม่ใช่ผลฝึก LLM จริง — แตะภาพเพื่อขยาย</figcaption>
+</figure>
+
 ตัวอย่างเชิงแนวคิด: หาก grid มีเพียง 0 กับ 1 แล้ว soft mixture เท่ากับ 0.49 ก็อาจ fit เป้าหมาย 0.49 ได้พอดี แต่ checkpoint ที่เก็บได้จริงต้องเลือก 0 หรือ 1 ดังนั้นควรประเมิน **hard reconstruction loss** ระหว่างปรับแต่งและหลัง export ด้วย
 
 สุดท้ายเลือกแบบไม่มี Gumbel noise
@@ -188,6 +195,13 @@ $$
 ## 5. Pipeline จริง: มากกว่า softmax หนึ่งบรรทัด
 
 Paper และ repository ประกอบด้วยขั้นตอนสำคัญต่อไปนี้.[1][2]
+
+<figure class="quantization-figure">
+  <a href="/assets/img/LLM/GSQ-RCO/gsq-optimization-pipeline.svg" target="_blank" rel="noopener noreferrer" aria-label="ขยายภาพขั้นตอน optimization และ export ของ GSQ ในแท็บใหม่">
+    <img src="/assets/img/LLM/GSQ-RCO/gsq-optimization-pipeline.svg" alt="ขั้นตอนจาก pretrained weights และ calibration ผ่าน GPTQ เรียนรู้ logits และ scales แล้ว freeze pack และตรวจ hard checkpoint" width="800" height="1120" loading="lazy" decoding="async">
+  </a>
+  <figcaption><strong>สิ่งที่เรียนรู้กับสิ่งที่นำไปใช้จริงเป็นคนละส่วน:</strong> logits และการสุ่ม Gumbel ใช้ในช่วง optimization ส่วน inference ใช้ hard codes กับ scales ภาพเป็นสรุปขั้นตอนหลัก; การปรับ scales เพิ่มหลัง freeze เป็นขั้นเสริมในบางการทดลองตามรายละเอียดด้านล่าง — แตะภาพเพื่อขยาย</figcaption>
+</figure>
 
 ```text
 pretrained model + calibration data
@@ -313,6 +327,13 @@ scale      = 0.2752165279662071
 weights    = [-0.5504330559324142, 0.0]
 hard_mse   = 0.0007347016581720856
 ```
+
+<figure class="quantization-figure">
+  <a href="/assets/img/LLM/GSQ-RCO/gsq-output-reconstruction.svg" target="_blank" rel="noopener noreferrer" aria-label="ขยายกราฟ output error จากตัวอย่าง GSQ ที่รันจริงในแท็บใหม่">
+    <img src="/assets/img/LLM/GSQ-RCO/gsq-output-reconstruction.svg" alt="กราฟ absolute output error ของ calibration ห้าตัวอย่าง เปรียบเทียบ RTN กับ hard weights ที่ optimize แล้ว พร้อม output MSE และ weight MSE" width="800" height="960" loading="lazy" decoding="async">
+  </a>
+  <figcaption><strong>ดู output ไม่ใช่ดูระยะของ weights อย่างเดียว:</strong> แท่งแต่ละคู่แสดง absolute error เทียบ output ต้นฉบับบน calibration sample เดียวกัน ข้อมูลและความสูงของแท่งคำนวณจากการรัน seed 7 จริง แม้ weight MSE เพิ่ม แต่ output MSE รวมลดลง ตัวอย่างนี้ใช้ข้อมูลสังเคราะห์และไม่มี held-out evaluation ไม่ใช่ benchmark ของ LLM — แตะภาพเพื่อขยาย</figcaption>
+</figure>
 
 Output MSE ลดลงประมาณ **82.55% ในข้อมูลสาธิตชุดนี้** ขณะที่ weight MSE กลับเพิ่มจาก **0.01625** เป็นประมาณ **0.12235** จึงเห็นชัดว่า “น้ำหนักใกล้เดิม” กับ “output ใกล้เดิมบนข้อมูลชุดนี้” เป็นคนละเป้าหมาย
 
