@@ -2,7 +2,7 @@
 title: "GSQ: Gumbel-Softmax Quantization บีบอัดน้ำหนัก LLM ให้แม่นยำในบิตต่ำ"
 notetype: feed
 date: 2026-10-28
-last_modified: 2026-10-29
+last_modified: 2026-11-04
 tags: [GSQ, Gumbel-Softmax, quantization, LLM, model-compression, low-precision, PTQ]
 status: published
 permalink: /notes/gsq-gumbel-softmax-quantization
@@ -12,6 +12,8 @@ permalink: /notes/gsq-gumbel-softmax-quantization
 <div class="quantization-article" markdown="1">
 
 > **ขอบเขตและที่มา:** บทความนี้อธิบายงาน *GSQ: Highly-Accurate Low-Precision Scalar Quantization for LLMs via Gumbel-Softmax Sampling* โดย Alireza Dadgarnia และคณะ อ้างอิง paper **arXiv:2604.18556v2** และโค้ดของผู้วิจัยที่ตรวจเมื่อ **28 ตุลาคม 2026** ตัวเลข benchmark เป็น **ผลที่ผู้วิจัยรายงาน** ไม่ใช่ผลทดสอบ LLM ของผู้เขียน ส่วนตัวอย่าง Python ด้านล่างเป็น **การสาธิตขนาดเล็กที่รันจริงบน CPU** ไม่ใช่การทำซ้ำ pipeline ทั้ง paper.[1][2]
+
+> **ทบทวนเพิ่มเติม 4 พฤศจิกายน 2026:** เพิ่มงานวิจัยที่เกี่ยวข้อง 14 งานในหัวข้อ 11, ผล ablation และ GGUF, ข้อจำกัดด้านต้นทุน/ความไม่แน่นอน และแก้ FAQ ให้ตรงกับการใช้ RCO ที่ GSQ v2 รายงานไว้แล้ว ส่วน RCO ตรวจเพิ่มถึง **v3** ไม่เปลี่ยนตัวเลขจากคนละ version มาปะปนโดยไม่ระบุ.[1][16]
 
 ## TL;DR
 
@@ -426,7 +428,69 @@ PTQ หมายถึงแปลงโมเดลที่ pretrained แล�
 ไม่ใช่ขอบเขตของ weight-only recipe ที่อธิบายในบทความ ต้องเลือกวิธีและ kernel สำหรับ activation/KV cache แยกต่างหาก.[1]
 
 **ใช้ GSQ กับ RCO ได้เลยหรือไม่?**
-ในเชิงสถาปัตยกรรมสามารถมอง GSQ เป็นวิธีสร้าง candidate weights และ RCO เป็นตัวค้น allocation ได้ แต่ released RCO pipeline ที่ตรวจใช้ฐาน GPTQ เป็นหลัก ต้องเชื่อม candidate store, scales และ exporter ให้ตรงกันก่อน ไม่ควรอ้างว่า workflow สองโครงการนี้เชื่อมกันครบเพียงเพราะใช้ Gumbel เหมือนกัน.[2][4]
+**มีผลทดลองร่วมกันใน paper แล้ว:** GSQ v2, Section 4.2 ใช้ RCO ค้น per-layer bit assignments และรายงาน mixed 2/3-bit ที่ 2.37 และ 2.62 bpp จึงไม่ใช่เพียงแนวคิดที่ยังไม่มีการทดลอง อย่างไรก็ตาม ตัวอย่าง quantization ใน RCO paper ใช้ GPTQ candidates และการมีผลวิจัยร่วมกันไม่ได้รับประกันว่า released pipeline จะรัน GSQ กับทุกโมเดล/backend ได้ทันที ต้องตรวจ candidate database, scales, exporter และ kernel ของเป้าหมายก่อน เรายังไม่ได้ทำซ้ำ integration นี้เอง.[1][16][4]
+
+## 11. งานวิจัยที่เกี่ยวข้องและผลที่ควรอ่านร่วมกัน
+
+ส่วนนี้คัดงานที่เกี่ยวข้อง **14 งาน นอกเหนือจาก GSQ** โดยแยกพื้นฐาน วิธีคู่เทียบ และวิธีที่แก้ปัญหาคนละส่วน ไม่ใช่ systematic review หรือการทำซ้ำ benchmark ตัวเลขที่ยกมาระบุแหล่งและบริบท ไม่ควรเอา PPL/accuracy/speedup จากคนละโมเดลหรือ protocol มาเรียงเป็น leaderboard เดียว
+
+### 11.1 พื้นฐานของ discrete relaxation
+
+**1. Categorical Reparameterization with Gumbel-Softmax — Jang, Gu, Poole; ICLR 2017.** งานพื้นฐานของ differentiable categorical sampling และ temperature annealing ซึ่ง GSQ นำมาใช้กับการเลือกค่าบน quantization grid งานเดิมแสดงผลด้าน structured prediction, generative modeling และ semi-supervised classification ไม่ใช่ LLM quantization จึงไม่ควรยืมผลของ estimator มาอ้างเป็นเปอร์เซ็นต์ accuracy ของ GSQ.[5]
+
+**2. The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables — Maddison, Mnih, Teh; ICLR 2017.** อธิบาย continuous relaxation และ gradient estimator ที่ variance ต่ำแต่มี bias ต่อโจทย์ discrete เดิม ช่วยให้เข้าใจว่าการ optimize soft objective ไม่ใช่หลักประกันของ hard solution และไม่ได้ทำให้ GSQ รับประกัน global optimum.[6][1]
+
+### 11.2 จาก learned rounding ไปสู่ scalar quantization ที่แม่นยำขึ้น
+
+**3. AdaRound — Up or Down? Adaptive Rounding for Post-Training Quantization; Nagel และคณะ, ICML 2020.** เรียนรู้ว่าจะปัดขึ้นหรือลงตาม local/task-aware objective แทน nearest rounding; งานเดิมรายงาน ResNet18/50 ที่ weights 4-bit มี accuracy loss อยู่ภายใน 1% ตาม abstract นี่เป็นหลักฐานจาก vision ว่า rounding strategy สำคัญ ไม่ใช่ผล 2-bit ของ Llama และ AdaRound ไม่ใช่ GSQ อีกชื่อหนึ่ง.[7]
+
+**4. GPTQ — Accurate Post-Training Quantization for Generative Pre-trained Transformers; Frantar และคณะ, ICLR 2023.** ใช้ approximate second-order information และเป็น warm start ของ GSQ งานเดิมรายงาน GPT 175B ที่ 3–4-bit ใช้ประมาณ 4 GPU-hours และ inference speedup ราว 3.25× บน A100 / 4.5× บน A6000 ภายใต้ระบบของงานนั้น ไม่ใช่ความเร็วที่รับประกันบนโมเดล/เครื่องปัจจุบัน.[8][1]
+
+**5. AWQ — Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration; Lin และคณะ, MLSys 2024.** ใช้ activation statistics หา channel scaling เพื่อปกป้อง salient weights งานรายงานว่าการปกป้องประมาณ 1% ช่วยลด quantization error และ inference framework ที่มากับงานเร็วกว่า Hugging Face FP16 มากกว่า 3× บน desktop/mobile GPUs ไม่ควรอ่านว่าต้องเก็บ 1% เป็น FP16 เสมอ หรือว่าความเร็วเกิดจาก scaling อย่างเดียว.[9]
+
+**6. EfficientQAT — Efficient Quantization-Aware Training for Large Language Models; Chen และคณะ, ACL 2025 Main.** ใช้ block-wise training ของทุก parameter แล้ว end-to-end tuning ของ quantization parameters งานเดิมรายงาน Llama-2-70B 2-bit ได้ commonsense average 69.48 เทียบ FP16 72.41 ใช้ A100-80GB ใบเดียว 41 ชั่วโมง อย่าปะปนกับคะแนน Llama-3.1-Instruct ที่ทีม GSQ ประเมินใน Table 1 และอย่าเทียบเวลาต่าง GPU เป็น matched efficiency benchmark.[10][24][1]
+
+### 11.3 เมื่อเปลี่ยน representation: additive, lattice และ trellis
+
+**7. AQLM — Extreme Compression of Large Language Models via Additive Quantization; Egiazarian และคณะ, ICML 2024.** ใช้ additive multi-codebook และ optimize codebooks ร่วมกันใน Transformer block ไม่ใช่ scalar grid แบบ GSQ; Table 1 ของ AQLM รายงาน Llama-2-70B ที่ 2.07 average bits ได้ WikiText-2 PPL 3.94 เทียบ FP16 3.12 และ zero-shot average 68.75 เทียบ 70.17 ต้องนับ codebook และตรวจ kernel ด้วย.[11][20]
+
+**8. QuIP# — Even Better LLM Quantization with Hadamard Incoherence and Lattice Codebooks; Tseng และคณะ, ICML 2024.** ผสาน random Hadamard transform, E8 lattice vector quantization และ fine-tuning; Table 2 ของ QuIP# รายงาน Llama-2-70B ที่ 2-bit ได้ WikiText-2 PPL 4.16 เทียบ FP16 3.32 ที่ context 2048 ไม่ควรใช้ 4.16 เทียบ 3.94 ของ AQLM แล้วประกาศผู้ชนะ เพราะแม้ FP16 baseline ของสอง paper ยังต่างกัน.[13][21][20]
+
+**9. QTIP — Quantization with Trellises and Incoherence Processing; Tseng และคณะ, NeurIPS 2024.** ใช้ trellis-coded quantization เพิ่ม effective dimension โดยไม่ต้องขยาย unstructured vector codebook แบบ exponential ใน GSQ Table 1, QTIP ที่ 2.00 bpp ได้ 69.88 / 77.25 บน Llama-3.1-8B/70B-Instruct เทียบ GSQ 68.55 / 75.57 ที่ 2.13 bpp นี่เป็นผลประเมินของทีม GSQ ไม่ใช่ตัวเลขจาก abstract ของ QTIP และรูปแบบ storage ไม่เหมือนกัน.[14][1]
+
+**10. PV-Tuning — Beyond Straight-Through Estimation for Extreme LLM Compression; Malinovskii และคณะ, NeurIPS 2024.** เน้น optimize ทั้ง discrete/continuous parameters ของ representation ที่มีอยู่ แทนการถือว่า STE ดีที่สุดเสมอ; ใน GSQ Table 1 ได้ 69.83 ที่ 2.27 bpp สำหรับ 8B และ 76.27 ที่ 2.07 bpp สำหรับ 70B สูงกว่า GSQ ในสองจุดนี้ แต่ bpp ไม่เท่ากัน ส่วน convergence guarantees ของ PV-Tuning เป็นกรณีจำกัด ไม่ใช่ LLM global-optimum guarantee.[15][1]
+
+### 11.4 งานที่ใช้การเลือกแบบไม่ต่อเนื่องกับ sparsity และงบบิต
+
+**11. MaskLLM — Learnable Semi-Structured Sparsity for Large Language Models; Fang และคณะ, NeurIPS 2024.** เกี่ยวข้องโดยตรงเป็นพิเศษ: ใช้ Gumbel-Softmax เรียนรู้ N:M masks และ Appendix I ของ GSQ ระบุว่าได้รับแรงบันดาลใจโดยตรงจากงานนี้ MaskLLM รายงานตัวอย่าง 2:4 sparsity ที่ Wikitext PPL 6.72 เทียบ dense 5.12 โดยตรึง weights แล้วเรียนรู้เฉพาะ mask.[17][1]
+
+GSQ Table 12 ทดลองกลับไปยังโจทย์ sparsity บน Llama-2-7B: MaskLLM ได้ zero-shot average 62.53 เทียบ GSQ block-wise variant 62.86 แต่ฝั่งหลังปรับทั้ง **mask + weights** จึงไม่ใช่ optimizer-only matched ablation และไม่ใช่การเปรียบเทียบ 2-bit quantization กับ 2:4 sparsity โดยตรง.[1]
+
+**12. RCO — Model Compression with Exact Budget Constraints via Riemannian Manifolds; Helcig, Alistarh, arXiv 2026.** เลือก bitwidth ต่อ layer/expert ภายใต้งบรวม โดย GSQ v2 มีผลใช้งานร่วมกันแล้ว บน Llama-3.1-70B-Instruct, uniform GSQ 3.13 bpp ได้ 77.99; mixed 2.62 bpp ได้ 77.50 และ mixed 2.37 bpp ได้ 77.40 ดังนั้น 2.37 เทียบ 3.13 bpp มี reported rate ต่ำลงประมาณ 24.28% แลกคะแนนลด 0.59 จุด ไม่ใช่การวัดไฟล์จริงหรือ VRAM ทั้งระบบ.[1]
+
+RCO **v3** Table 2 รายงาน Qwen3-8B ที่ 2.5 average bits: RCO (g=32, T=50) ได้ FineWeb-Edu/C4 PPL 15.43/24.00 ใน 117 นาที เทียบ EvoPress reproduction 15.64/24.63 ใน 11–14 ชั่วโมง โดยใช้ GPTQ candidates ร่วมกัน เวลาเป็น **allocation search ไม่ใช่ serving speed** และการ discretize cost ตอน decoding ยังต้องแยกจาก expected budget กับจำนวน bytes ที่ serialize จริง.[16]
+
+### 11.5 เกี่ยวข้องแต่ไม่ใช่โจทย์เดียวกัน: KV cache กับการฝึก ternary ตั้งแต่ต้น
+
+**13. KIVI — A Tuning-Free Asymmetric 2bit Quantization for KV Cache; Liu และคณะ, ICML 2024.** ลดหน่วยความจำ context แทน weights โดย quantize keys per-channel และ values per-token งานรายงาน peak memory รวม weights ลดประมาณ 2.6×, batch ใหญ่ขึ้นสูงสุด 4× และ throughput 2.35–3.47× ใน workload ของ paper เป็นวิธีเติมเต็ม GSQ ในเชิงระบบ ไม่ใช่ baseline แทนกัน และห้ามนำ speedup สอง paper มาคูณเป็นคำรับประกันความเร็วรวม.[18]
+
+**14. BitNet b1.58 — The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits; Ma และคณะ, arXiv 2024.** ใช้ ternary weights แต่ **ฝึกจากศูนย์** กับ 8-bit activations ไม่ใช่แปลง pretrained model แบบ GSQ ที่ 3B และ training budget 100B tokens งานรายงาน zero-shot average 50.2 เทียบ FP16 LLaMA-style baseline ที่ผู้วิจัยฝึก 49.7 จึงเป็นหลักฐานของ low-bit-aware pretraining ไม่ใช่ proof ว่า Llama BF16 ใด ๆ แปลงเป็น ternary ได้โดยไม่เสียคุณภาพ.[19]
+
+### 11.6 ผล ablation และต้นทุนของ GSQ ที่ทำให้ตีความงานได้ครบขึ้น
+
+- **Optimizer matters:** Appendix B / Table 5, Llama-3.1-8B-Instruct 2-bit: AdamW เฉลี่ย 61.84 เทียบ Lion 65.54 ต่าง 3.70 จุดใน ablation นี้ ไม่ใช่ข้อสรุปว่า Lion เหนือกว่าทุก optimizer ทุกโจทย์.[1]
+- **Scale refinement ไม่ใช่ส่วนเล็กที่ละได้:** Appendix H / Table 11: 8B เพิ่มจาก block-wise 65.54 เป็น 68.55 (+3.01 จุด), 70B จาก 74.45 เป็น 75.57 (+1.12 จุด) จึงไม่ควรยก final score ทั้งหมดให้ Gumbel assignment learning อย่างเดียว.[1]
+- **ผล GGUF:** Table 4 บน Qwen3-8B, ค่าเฉลี่ย AIME25/GPQA Diamond/MMLU-Pro: Unsloth Q2_K 50.03 → GSQ Q2_K 56.28 (+6.25 จุด), Q3_K_M 60.52 → 61.61 (+1.09 จุด), ขณะที่ BF16 65.16 ผลยังไม่ lossless และเป็นการรักษา K-Quant format เดิม.[1]
+- **ต้นทุน quantization:** Appendix G.4 รายงานบน node 8×H200: 8B 10 ชั่วโมง, 70B 68 ชั่วโมง, Kimi-K2.5 24 ชั่วโมง ไม่ใช่เวลาบน GPU ใบเดียว และ Kimi ไม่ได้ quantize ทุกส่วนเหมือน dense models.[1]
+- **ความไม่แน่นอน:** Appendix G.3 ใช้ single quantization run ต่อ configuration การทำ evaluation ซ้ำบาง benchmark ไม่เท่ากับสร้าง quantized checkpoint ซ้ำหลาย seeds จึงยังไม่ควรเรียกความต่างเล็ก ๆ ว่า statistically significant โดยไม่มี uncertainty เพิ่ม.[1]
+
+### 11.7 เลือกหลักฐานและตั้งคำถามทดลองต่ออย่างไร
+
+ตรวจ venue จาก PDF/proceedings ต้นฉบับ ไม่ใช้ชื่อสถาบัน ยอดดาว GitHub หรือการมี checklist ของ conference เป็นหลักฐานว่า paper ผ่าน peer review สำหรับ GSQ/RCO จาก metadata ที่ตรวจยังไม่ได้ยืนยัน accepted venue จึงอ้างเป็น preprint; GSQ ที่ตรวจยังเป็น v2 ส่วน RCO มี v3 ลงวันที่ 27 กันยายน 2026 ใหม่กว่า v2 ที่บทความเดิมใช้.[22][23]
+
+**ข้อเสนอทดลอง ไม่ใช่ผลที่วัดแล้ว:** ใช้ model/tokenizer revision เดียวกัน, calibration และ held-out split แยกกัน, เทียบ footprint จริงและ GPU-hours, ทำ ablation แยก assignment learning กับ scale-only tuning และลอง calibration ภาษาไทยสำหรับงานไทยโดยไม่อ้างล่วงหน้าว่าจะดีขึ้น เก็บ actual bytes, peak VRAM, TTFT, TPOT และ throughput แยกกัน
+
+หากอ่านต่อให้เริ่ม **MaskLLM → AdaRound/GPTQ → EfficientQAT → QTIP/PV-Tuning → RCO** ส่วน KIVI ควรอ่านเมื่อคอขวดอยู่ที่ long context/batching ลำดับนี้เป็นข้อเสนอการอ่านตามความเชื่อมโยง ไม่ใช่อันดับความเก่งของวิธี
 
 ## สรุป
 
@@ -444,6 +508,44 @@ GSQ แสดงให้เห็นว่า low-bit scalar quantization ย�
 
 [4] <https://github.com/IST-DASLab/RCO>
 
+[5] <https://arxiv.org/pdf/1611.01144>
+
+[6] <https://arxiv.org/pdf/1611.00712>
+
+[7] <https://proceedings.mlr.press/v119/nagel20a.html>
+
+[8] <https://arxiv.org/abs/2210.17323>
+
+[9] <https://proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9ba4aa95cc1ef21-Abstract-Conference.html>
+
+[10] <https://arxiv.org/html/2407.11062v3>
+
+[11] <https://proceedings.mlr.press/v235/egiazarian24a.html>
+
 [12] <https://raw.githubusercontent.com/IST-DASLab/GSQ/03fc16484c369e3127225615d5e03e8d3a6043e3/src/quantization/gumbel_quantizer_2bit.py>
+
+[13] <https://proceedings.mlr.press/v235/tseng24a.html>
+
+[14] <https://proceedings.neurips.cc/paper_files/paper/2024/hash/6de2e84b8da47bb2eb5e2ac96c63d2b0-Abstract-Conference.html>
+
+[15] <https://proceedings.neurips.cc/paper_files/paper/2024/hash/091166620a04a289c555f411d8899049-Abstract-Conference.html>
+
+[16] <https://arxiv.org/html/2605.00649v3>
+
+[17] <https://proceedings.neurips.cc/paper_files/paper/2024/hash/0e9a05f5ce62284c91e4a33498899124-Abstract-Conference.html>
+
+[18] <https://proceedings.mlr.press/v235/liu24bz.html>
+
+[19] <https://arxiv.org/html/2402.17764v1>
+
+[20] <https://raw.githubusercontent.com/mlresearch/v235/main/assets/egiazarian24a/egiazarian24a.pdf>
+
+[21] <https://raw.githubusercontent.com/mlresearch/v235/main/assets/tseng24a/tseng24a.pdf>
+
+[22] <https://arxiv.org/abs/2604.18556>
+
+[23] <https://arxiv.org/abs/2605.00649>
+
+[24] <https://arxiv.org/abs/2407.11062>
 
 </div>
